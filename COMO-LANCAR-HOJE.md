@@ -9,17 +9,19 @@ Miriam, é isso aqui. 4 passos, sem enrolação. Todo o código já está pronto
 Abre o arquivo `apps/web/src/main.tsx` no Cursor. Nas primeiras linhas, confere estas duas constantes:
 
 ```ts
-const TRIADE_API_URL = ... || "https://misscanvas.com/api/insta-site";
+const TRIADE_API_URL = ... || "https://2minutes.site/api/insta-site";
 const WHATSAPP_MIRIAM = ... || "5511999999999"; // ← TROCA ESSE NÚMERO PELO SEU
 ```
 
-- **`TRIADE_API_URL`**: URL do seu worker MissCanvas que responde `handleInstaSite`. Se for `https://misscanvas.com/api/insta-site` mesmo, deixa. Se for outro endpoint, edita.
-- **`WHATSAPP_MIRIAM`**: seu WhatsApp com DDI. Formato: `55` + DDD (2 dígitos) + número (9 dígitos). Exemplo: `5511987654321`.
+- **`TRIADE_API_URL`**: URL do worker MissCanvas que responde `handleInstaSite`.
+  - **Use:** `https://2minutes.site/api/insta-site` (confirmado vivo em 2026-07-17; OPTIONS/CORS `*` OK).
+  - **Não use:** `https://misscanvas.com/api/insta-site` → **404**.
+- **`WHATSAPP_MIRIAM`**: seu WhatsApp com DDI. Formato: `55` + DDD (2 dígitos) + número (9 dígitos). Exemplo: `5511987654321`. Só dígitos, sem `+` nem espaços.
 
 Prefer configurar por variável de ambiente em vez de editar o código? Cria um arquivo `apps/web/.env.local`:
 
 ```
-VITE_TRIADE_API=https://misscanvas.com/api/insta-site
+VITE_TRIADE_API=https://2minutes.site/api/insta-site
 VITE_WHATSAPP=5511987654321
 ```
 
@@ -35,11 +37,12 @@ No dashboard Cloudflare (a conta onde você comprou triade56.com):
 
 1. **Workers & Pages** → seu projeto **aurahype** (renomeia depois se quiser)
 2. **Settings** → **Environment variables** → **Production** → adiciona 2 variáveis (se você fez o passo 1 com `.env.local` local, precisa refazer aqui também):
-   - `VITE_TRIADE_API` = `https://misscanvas.com/api/insta-site`
+   - `VITE_TRIADE_API` = `https://2minutes.site/api/insta-site`
    - `VITE_WHATSAPP` = `5511987654321` (o SEU número, com DDI, só dígitos)
    - `NODE_VERSION` = `22`
 3. **Settings** → **Custom domains** → **Set up a custom domain** → digita `triade56.com` → **Continue**
-   - Cloudflare vê que o domínio já está na sua conta e configura o DNS automaticamente.
+   - Se o domínio ainda estiver no **name.com** (parking), a Cloudflare pede pra apontar os NS pra ela — aceita e troca no painel do name.com.
+   - Hoje (2026-07-17) `triade56.com` ainda aponta pra parking (`91.195.240.94` / Parking/1.0), não pro Pages.
    - Em 1-2 minutos o SSL fica verde.
 4. Repete pra `www.triade56.com` se você quiser que o `www` também abra.
 5. Vai em **Deployments** → **Retry deployment** (pra ele rebuildar com as env vars novas)
@@ -48,7 +51,7 @@ Em ~3 minutos, **triade56.com** está no ar com o build mais recente.
 
 ## 4. Ligue CORS no worker MissCanvas (crítico, 2 minutos)
 
-O botão "INICIAR IMERSÃO" no site chama `misscanvas.com/api/insta-site`. Se você não permitir `triade56.com` no CORS do worker, o navegador vai bloquear.
+O botão "INICIAR IMERSÃO" no site chama `2minutes.site/api/insta-site`. Probe já viu CORS `Access-Control-Allow-Origin: *` — se no futuro restringir origem, inclua `https://triade56.com`.
 
 No seu worker `handleInstaSite`, garanta que o response inclui:
 

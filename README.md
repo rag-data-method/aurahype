@@ -7,7 +7,7 @@ Domínio: **[triade56.com](https://triade56.com)**
 ## Stack
 
 - **Frontend**: React + Vite (esse repo) → publicado no Cloudflare Pages
-- **Backend**: worker MissCanvas (`handleInstaSite`) que já roda em produção — gera o site a partir do @
+- **Backend**: worker MissCanvas (`handleInstaSite`) em produção via `https://2minutes.site/api/insta-site` (não usar misscanvas.com/api/insta-site — 404)
 - **Pagamento (hoje)**: WhatsApp + Pix manual (botão em cada plano abre conversa pronta)
 - **Pagamento (semana que vem)**: Stripe Checkout
 
@@ -25,7 +25,7 @@ Depois, abre http://localhost:5173.
 
 Duas variáveis mandam em tudo — dá pra setar no Cloudflare Pages (Environment variables) ou em `apps/web/.env.local`:
 
-- `VITE_TRIADE_API` — URL do worker MissCanvas que gera o site (default: `https://misscanvas.com/api/insta-site`)
+- `VITE_TRIADE_API` — URL do worker MissCanvas que gera o site (default: `https://2minutes.site/api/insta-site`; `misscanvas.com/api/insta-site` = 404)
 - `VITE_WHATSAPP` — número da Miriam com DDI, só dígitos (default placeholder: `5511999999999`)
 
 Detalhes em [`COMO-LANCAR-HOJE.md`](./COMO-LANCAR-HOJE.md).

@@ -6,7 +6,8 @@ import "./styles.css";
 // ─────────────────────────────────────────────────────────────────
 // CONFIGURAÇÃO — Miriam, você mexe SÓ AQUI pra lançar:
 //   1) TRIADE_API_URL = URL do worker MissCanvas que gera o site
-//      (o que tem `handleInstaSite`, roda em misscanvas.com/api/insta-site)
+//      (handleInstaSite). Probe 2026-07-17: misscanvas.com/api/insta-site = 404.
+//      Endpoint vivo: https://2minutes.site/api/insta-site (CORS * OK).
 //   2) WHATSAPP_MIRIAM = seu WhatsApp com DDI, só números (55 + DDD + número)
 //
 // Em produção esses valores vêm do runtime-config.js (Cloudflare Pages)
@@ -21,11 +22,11 @@ declare global {
 const TRIADE_API_URL =
   (import.meta.env.VITE_TRIADE_API as string | undefined) ||
   window.__TRIADE_RUNTIME__?.apiUrl ||
-  "https://misscanvas.com/api/insta-site";
+  "https://2minutes.site/api/insta-site";
 const WHATSAPP_MIRIAM =
   (import.meta.env.VITE_WHATSAPP as string | undefined) ||
   window.__TRIADE_RUNTIME__?.whatsapp ||
-  "5511999999999"; // ← TROCA ESSE NÚMERO PELO SEU
+  "5511999999999"; // ← TROCA ESSE NÚMERO PELO SEU (não commitar número real sem OK)
 
 // Registra o service worker para permitir "Instalar app" no Android/iOS.
 if ("serviceWorker" in navigator && window.location.protocol === "https:") {
@@ -326,48 +327,49 @@ function App() {
       </div>
       <div className="plans-grid">
         <article className="plan plan-essencia">
-          <p className="plan-tag">Essência</p>
+          <p className="plan-tag">Essência · Starter</p>
           <p className="plan-price">R$ 15,60<small>/mês</small></p>
           <p className="plan-signature"><em>Seu site assinado pelo</em> <b>GPT&nbsp;5.6</b></p>
-          <p className="plan-line">Comece pequeno. Prove pra você mesma.</p>
+          <p className="plan-line">Só site. Modelo Luna. Comece pequeno e prove pra você mesma.</p>
           <ul className="plan-features">
-            <li><b>1 face</b> — você escolhe Luna, Terra ou Sol</li>
+            <li><b>1 modelo</b> — Luna</li>
             <li>Site publicado no seu subdomínio</li>
             <li>Botão de <b>WhatsApp</b> e <b>e-mail</b> integrados</li>
-            <li>Edição de texto pelo chat</li>
           </ul>
           <a className="plan-cta" href={planoWhatsapp("Essência", "R$ 15,60")} target="_blank" rel="noreferrer">Assinar Essência  →</a>
           <p className="plan-cta-hint">Pagamento por Pix pelo WhatsApp</p>
         </article>
 
         <article className="plan plan-dupla">
-          <p className="plan-tag">Dupla</p>
-          <p className="plan-price">R$ 29,90<small>/mês</small></p>
-          <p className="plan-line">O caminho mais escolhido. Duas vozes conversando sobre você.</p>
+          <p className="plan-tag">Dupla · Creator</p>
+          <p className="plan-price">R$ 35,60<small>/mês</small></p>
+          <p className="plan-line">Duas vozes conversando sobre você, com edição Luna.</p>
           <ul className="plan-features">
-            <li><b>2 faces</b> — combine Sol+Terra, Sol+Luna ou Terra+Luna</li>
-            <li>Chat de edição com <b>Pitágoras</b> (textos, fotos e vídeos)</li>
+            <li><b>2 modelos</b> — combine Sol+Terra, Sol+Luna ou Terra+Luna</li>
+            <li><b>40 créditos de chat</b> incluídos</li>
+            <li>Edição com <b>Luna</b></li>
             <li><b>Atualização semanal</b> automática com posts novos</li>
             <li><b>Download do pacote</b> em ZIP</li>
             <li>Tudo do plano Essência</li>
           </ul>
-          <a className="plan-cta" href={planoWhatsapp("Dupla", "R$ 29,90")} target="_blank" rel="noreferrer">Assinar Dupla  →</a>
+          <a className="plan-cta" href={planoWhatsapp("Dupla", "R$ 35,60")} target="_blank" rel="noreferrer">Assinar Dupla  →</a>
           <p className="plan-cta-hint">Pagamento por Pix pelo WhatsApp</p>
         </article>
 
         <article className="plan plan-triade" data-highlight="true">
           <span className="plan-highlight">Tríade completa</span>
-          <p className="plan-tag">Tríade</p>
-          <p className="plan-price">R$ 69,90<small>/mês</small></p>
-          <p className="plan-line">Todas as três faces. Zênite mediando. Pitágoras editando. A conversa cheia.</p>
+          <p className="plan-tag">Tríade · Pro</p>
+          <p className="plan-price">R$ 96,50<small>/mês</small></p>
+          <p className="plan-line">Site profissional completo. Três modelos, chat e edição com Terra.</p>
           <ul className="plan-features">
-            <li><b>3 faces</b> — Luna, Terra e Sol simultaneamente</li>
+            <li><b>3 modelos</b> — Luna, Terra e Sol simultaneamente</li>
             <li><b>Zênite</b> escuta as três e resolve os conflitos</li>
-            <li><b>Pitágoras</b> como editor: chat completo (texto, foto, vídeo)</li>
+            <li><b>100 créditos de chat</b> incluídos</li>
+            <li><b>Terra</b> no chat e na edição</li>
             <li>Atualização semanal + download ZIP</li>
             <li>Prioridade na geração e no suporte</li>
           </ul>
-          <a className="plan-cta plan-cta-highlight" href={planoWhatsapp("Tríade Completa", "R$ 69,90")} target="_blank" rel="noreferrer">Assinar Tríade  →</a>
+          <a className="plan-cta plan-cta-highlight" href={planoWhatsapp("Tríade Completa", "R$ 96,50")} target="_blank" rel="noreferrer">Assinar Tríade  →</a>
           <p className="plan-cta-hint">Pagamento por Pix pelo WhatsApp</p>
         </article>
       </div>
