@@ -191,8 +191,21 @@ h1 em { display: block; color: var(--fg-secondary); }
 .site-gallery figure:hover img { transform: scale(1.05); }
 .site-gallery figcaption { padding: 10px 12px; font-size: .78rem; color: #4a3f52; }
 
+/* ─── TAGLINE NO WORDMARK ─── */
+.wordmark-name { display: inline-flex; align-items: baseline; gap: 12px; }
+.wordmark-tagline { position: relative; padding-left: 12px; color: var(--fg-tertiary); font-size: .82rem; letter-spacing: 0; }
+.wordmark-tagline::before { content: "·"; position: absolute; left: 0; color: var(--fg-muted); }
+.wordmark-tagline em { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+@media (max-width: 620px) { .wordmark-tagline { display: none; } }
+
+/* ─── LEDE DO MANIFESTO ─── */
+.forge-lede { max-width: 640px; margin: 28px auto 0; font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.65; font-weight: 300; color: var(--fg-secondary); }
+.forge-lede i { color: var(--fg); font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+
 /* ─── FOOTER ─── */
-footer { padding: 40px 24px; background: var(--bg-elev); border-top: 1px solid var(--border); text-align: center; color: var(--fg-tertiary); font-size: .72rem; letter-spacing: .1em; }
+footer { padding: 60px 24px 40px; background: var(--bg-elev); border-top: 1px solid var(--border); text-align: center; }
+.footer-tagline { margin: 0 0 10px; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.7rem); color: var(--fg); letter-spacing: 0; }
+.footer-meta { margin: 0; font-size: .7rem; letter-spacing: .12em; color: var(--fg-tertiary); font-weight: 500; }
 
 /* ─── RESPONSIVO ─── */
 @media (max-width: 720px) {

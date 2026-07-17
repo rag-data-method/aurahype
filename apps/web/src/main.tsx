@@ -137,7 +137,10 @@ function App() {
       <div className="orb-container"><div className="orb luna" /><div className="orb terra" /><div className="orb sol" /></div>
       <div className="triad-halo" aria-hidden="true" />
       <nav>
-        <a href="#top" className="wordmark"><span className="triad-logo" aria-hidden="true"><span /><span /><span /></span>AuraHype</a>
+        <a href="#top" className="wordmark">
+          <span className="triad-logo" aria-hidden="true"><span /><span /><span /></span>
+          <span className="wordmark-name">AuraHype<span className="wordmark-tagline"><em>Sites que respiram</em></span></span>
+        </a>
         {!install.installed && install.canInstall && <button type="button" className="install-button" onClick={install.install}>Instalar app  ↗</button>}
         {!install.installed && !install.canInstall && <span className="nav-note">ambiente de criação ativo</span>}
       </nav>
@@ -176,7 +179,11 @@ function App() {
     </section>
 
     <section className="forge">
-      <div className="forge-title"><p className="kicker">O PROCESSO</p><h2>Tecnologia que<br /><i>respira.</i></h2></div>
+      <div className="forge-title">
+        <p className="kicker">O MANIFESTO</p>
+        <h2>A máquina não respira.<br /><i>O seu site, sim.</i></h2>
+        <p className="forge-lede">Luna, Terra e Sol são código. Não têm pulso, não têm ar. Mas quando as três leem <i>você</i> — o seu ritmo, os seus silêncios, o que você escolhe mostrar —, o site que nasce dessa triangulação passa a respirar. Porque a respiração é sua. A gente só constrói o corpo que ela vai habitar.</p>
+      </div>
       <div className="how-it-works">
         <article className="face-luna"><span>LUNA</span><h3>A exploração intuitiva</h3><p>Lê o que ainda não é palavra. Extrai atmosfera, temperatura e nuance da sua expressão.</p></article>
         <article className="face-terra"><span>TERRA</span><h3>A fundamentação lógica</h3><p>Ancora a intuição em estrutura, hierarquia e ritmo. Faz o pensamento parar em pé.</p></article>
@@ -192,7 +199,10 @@ function App() {
       {shareUrl && <p className="share-line">Compartilhe: <a href={shareUrl} target="_blank" rel="noreferrer">{shareUrl}</a></p>}
       <GeneratedLanding site={site} />
     </section>}
-    <footer>AuraHype · a triangulação da inteligência · Luna &nbsp;·&nbsp; Terra &nbsp;·&nbsp; Sol</footer>
+    <footer>
+      <p className="footer-tagline"><em>Sites que respiram.</em></p>
+      <p className="footer-meta">AuraHype · Luna &nbsp;·&nbsp; Terra &nbsp;·&nbsp; Sol · a triangulação da inteligência</p>
+    </footer>
   </main>;
 }
 
