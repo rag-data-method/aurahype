@@ -1,0 +1,71 @@
+name: Deploy acervo-worker
+
+# Roda sozinho toda vez que a pasta services/acervo-worker mudar em main,
+# ou manualmente pelo botao "Run workflow" no GitHub.
+#
+# Precisa de secrets no repo (Settings -> Secrets and variables -> Actions):
+#   CLOUDFLARE_API_TOKEN    (obrigatorio) — gera em dash.cloudflare.com/profile/api-tokens (template "Edit Cloudflare Workers")
+#   CLOUDFLARE_ACCOUNT_ID   (obrigatorio) — ID da conta, no topo direito do dashboard
+#   INGEST_TOKEN            (opcional)    — protege /ingest, /scrape/extract, /scrape/crawl
+#   TAVILY_API_KEY          (opcional)    — habilita /scrape/extract (Tavily) e /scrape/crawl
+#   SCRAPFLY_API_KEY        (opcional)    — fallback pro /scrape/extract quando Tavily ausente
+#   SOCIALCRAWL_KEY         (opcional)    — reservado pra /scrape/social (feature futura)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "services/acervo-worker/**"
+      - ".github/workflows/deploy-acervo.yml"
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm install --no-audit --no-fund
+
+      - name: Typecheck
+        working-directory: services/acervo-worker
+        run: npx tsc --noEmit
+
+      - name: Bootstrap Cloudflare (Vectorize + D1 + schema + secrets)
+        working-directory: services/acervo-worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          SCRAPFLY_API_KEY: ${{ secrets.SCRAPFLY_API_KEY }}
+          SOCIALCRAWL_KEY: ${{ secrets.SOCIALCRAWL_KEY }}
+        run: node scripts/bootstrap.mjs
+
+      - name: Deploy Worker
+        working-directory: services/acervo-worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler deploy
+
+      - name: Ping /health
+        working-directory: services/acervo-worker
+        run: |
+          # Descobre o subdominio a partir da conta e testa /health.
+          # Nao falha o workflow se o ping falhar (worker pode levar segundos pra propagar).
+          SUB=$(npx wrangler whoami 2>/dev/null | grep -oE '[a-z0-9-]+\.workers\.dev' | head -n1 || true)
+          if [ -z "$SUB" ]; then
+            echo "nao consegui detectar subdominio — pula ping"
+            exit 0
+          fi
+          URL="https://triade-acervo.${SUB#*.}"
+          echo "GET $URL/health"
+          curl -sS --max-time 10 "$URL/health" || echo "(ping falhou — normal se propagacao ainda nao acabou)"
