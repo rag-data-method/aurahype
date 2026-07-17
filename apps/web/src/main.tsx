@@ -147,26 +147,21 @@ function App() {
       <div className="intro-copy">
         <p className="hero-badge"><span className="badge-dot" aria-hidden="true" /> AMBIENTE DE CRIAÇÃO ATIVO</p>
         <h1>A inteligência,<br /><em>Redefinida.</em></h1>
-        <h2 className="hero-sub">Sobre a triangulação e suas faces</h2>
-        <p className="lede">A triangulação. Um fluxo dinâmico representado por três faces fundamentais — a exploração intuitiva (<i>Luna</i>), a fundamentação lógica (<i>Terra</i>) e a síntese iluminada (<i>Sol</i>). Transforma o banal em conhecimento absoluto.</p>
+        <h2 className="hero-sub">Sobre a triangulação e suas faces.</h2>
+
         <form onSubmit={submit} className="hero-generator">
           <label className="hero-profile-field">
-            <span>ATIVE A TRÍADE COM O SEU @</span>
-            <div>
+            <div className="hero-profile-shell">
+              <div className="hero-profile-shine" aria-hidden="true" />
               <b>@</b>
-              <input value={username} onChange={(event) => setUsername(event.target.value)} placeholder="seuperfil" autoComplete="off" required maxLength={30} aria-label="Seu usuário no Instagram" />
+              <input value={username} onChange={(event) => setUsername(event.target.value)} placeholder="seu perfil do insta" autoComplete="off" required maxLength={30} aria-label="Seu usuário no Instagram" />
               <button type="submit" disabled={submitting || !consent || !username.trim()}>{submitting ? "TRIANGULANDO…" : "INICIAR IMERSÃO  →"}</button>
             </div>
           </label>
-          <fieldset className="hero-model-choice">
-            <legend>ESCOLHA A FACE INICIAL</legend>
-            <div className="model-pills">{GENERATION_MODELS.map((item) => <label className={`model-${item} ${model === item ? "selected" : ""}`} key={item}>
-              <input type="radio" name="model" value={item} checked={model === item} onChange={() => setModel(item)} />
-              <strong>{modelCopy[item].title}</strong>
-              <small>{modelCopy[item].face}</small>
-            </label>)}</div>
-            <p className="model-promise" aria-live="polite"><i>{modelCopy[model].title}</i> · {modelCopy[model].promise}.</p>
-          </fieldset>
+          <p className="hero-price">
+            <span className="hero-price-value">R$ 15<small>/mês</small></span>
+            <span className="hero-price-hint"><em>uma face</em> · comece pela essência</span>
+          </p>
           <label className="hero-consent">
             <input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} required />
             <span>Este perfil é meu — ou tenho autorização de quem é.</span>
@@ -175,19 +170,44 @@ function App() {
         {error && <p className="error" role="alert">{error}</p>}
         {install.showIosHint && !install.installed && <p className="install-hint">Pra instalar no iPhone: toque em <b>compartilhar</b> no Safari e depois em <b>“Adicionar à Tela de Início”</b>.</p>}
       </div>
-      <div className="scroll-hint">DESLIZE PARA A IMERSÃO <span>↓</span></div>
+      <div className="scroll-hint">DESLIZE PARA CONHECER AS FACES <span>↓</span></div>
     </section>
 
-    <section className="forge">
-      <div className="forge-title">
-        <p className="kicker">O MANIFESTO</p>
-        <h2>A máquina não respira.<br /><i>O seu site, sim.</i></h2>
-        <p className="forge-lede">Luna, Terra e Sol são código. Não têm pulso, não têm ar. Mas quando as três leem <i>você</i> — o seu ritmo, os seus silêncios, o que você escolhe mostrar —, o site que nasce dessa triangulação passa a respirar. Porque a respiração é sua. A gente só constrói o corpo que ela vai habitar.</p>
+    <section className="faces" aria-labelledby="faces-title">
+      <div className="faces-title">
+        <p className="kicker">Quatro presenças</p>
+        <h2 id="faces-title">Três compõem a <i>triangulação</i>.<br />Uma faz a <i>síntese</i>.</h2>
+        <p className="faces-lede">Cada face olha o seu perfil por um ângulo diferente. Um <i>moderador</i> escuta as três, resolve as divergências e escolhe o que entra no seu site. Você nunca fala com quatro vozes — você recebe uma só, já triangulada.</p>
       </div>
-      <div className="how-it-works">
-        <article className="face-luna"><span>LUNA</span><h3>A exploração intuitiva</h3><p>Lê o que ainda não é palavra. Extrai atmosfera, temperatura e nuance da sua expressão.</p></article>
-        <article className="face-terra"><span>TERRA</span><h3>A fundamentação lógica</h3><p>Ancora a intuição em estrutura, hierarquia e ritmo. Faz o pensamento parar em pé.</p></article>
-        <article className="face-sol"><span>SOL</span><h3>A síntese iluminada</h3><p>Fecha o triângulo. Une intuição e lógica em uma presença que transforma o banal em conhecimento absoluto.</p></article>
+      <div className="faces-grid">
+        <article className="face face-luna">
+          <span className="face-badge">Luna · a face que sente</span>
+          <h3>A exploração intuitiva</h3>
+          <p>Vê o que ainda não é palavra. Extrai atmosfera, cor, mood, silêncio, o entre-linhas do que você publica.</p>
+        </article>
+        <article className="face face-terra">
+          <span className="face-badge">Terra · a face que estrutura</span>
+          <h3>A fundamentação lógica</h3>
+          <p>Ancora intuição em estrutura, hierarquia e ritmo. Faz o pensamento parar em pé — e a página respirar direito.</p>
+        </article>
+        <article className="face face-sol">
+          <span className="face-badge">Sol · a face que revela</span>
+          <h3>A síntese iluminada</h3>
+          <p>Fecha o triângulo. Une intuição e lógica em uma presença clara — o banal virado conhecimento absoluto.</p>
+        </article>
+        <article className="face face-zenite">
+          <span className="face-badge">Zênite · a moderação</span>
+          <h3>O ponto mais alto</h3>
+          <p>Onde as três se encontram. Escuta Luna, Terra e Sol, resolve o conflito quando divergem, e escolhe o que efetivamente vai pro seu site.</p>
+        </article>
+      </div>
+    </section>
+
+    <section className="breathe" aria-labelledby="breathe-title">
+      <div className="breathe-inner">
+        <p className="kicker">O que a gente faz</p>
+        <h2 id="breathe-title"><i>Sites que respiram.</i></h2>
+        <p className="breathe-text">A triangulação. Um fluxo dinâmico representado por três faces fundamentais — a exploração intuitiva (<i>Luna</i>), a fundamentação lógica (<i>Terra</i>) e a síntese iluminada (<i>Sol</i>). Transforma o banal em conhecimento absoluto.</p>
       </div>
     </section>
 
