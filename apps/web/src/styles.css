@@ -318,6 +318,73 @@ h1 em { display: block; color: var(--fg-secondary); }
 @media (max-width: 980px) { .faces-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .faces-grid { grid-template-columns: 1fr; } .faces { padding: 100px 24px; } }
 
+/* ─── SEÇÃO "TRÊS PASSOS" ─── */
+.flow { position: relative; z-index: 1; padding: 140px clamp(24px, 8vw, 120px); background: var(--bg); }
+.flow-title { text-align: center; max-width: 720px; margin: 0 auto 76px; }
+.flow-title .kicker { display: block; margin-bottom: 20px; }
+.flow-title h2 { font-family: "Inter"; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.08; }
+.flow-title h2 i { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--fg-secondary); }
+.flow-steps { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; list-style: none; padding: 0; counter-reset: step; }
+.flow-steps li { position: relative; padding: 34px 30px 32px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 22px; transition: .5s cubic-bezier(.22,1,.36,1); }
+.flow-steps li:hover { background: var(--bg-card-hover); border-color: var(--border-hover); transform: translateY(-4px); }
+.flow-num { display: inline-block; margin-bottom: 20px; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 2.2rem; color: var(--fg-tertiary); letter-spacing: 0; }
+.flow-steps h3 { font-family: "Inter"; font-size: 1.2rem; font-weight: 500; letter-spacing: -.015em; margin-bottom: 12px; }
+.flow-steps p { color: var(--fg-secondary); font-size: .92rem; font-weight: 300; line-height: 1.6; }
+@media (max-width: 900px) { .flow-steps { grid-template-columns: 1fr; } .flow { padding: 100px 24px; } }
+
+/* ─── SEÇÃO "PLANOS" ─── */
+.plans { position: relative; z-index: 1; padding: 140px clamp(24px, 8vw, 120px); background: var(--bg-elev); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.plans-title { text-align: center; max-width: 720px; margin: 0 auto 80px; }
+.plans-title .kicker { display: block; margin-bottom: 20px; }
+.plans-title h2 { font-family: "Inter"; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.08; }
+.plans-title h2 i { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--fg-secondary); }
+.plans-lede { margin: 24px auto 0; max-width: 560px; font-size: .95rem; line-height: 1.6; color: var(--fg-secondary); font-weight: 300; }
+.plans-lede i { color: var(--fg); font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+.plans-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.plan { position: relative; padding: 40px 34px 36px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; transition: .5s cubic-bezier(.22,1,.36,1); display: flex; flex-direction: column; }
+.plan:hover { background: var(--bg-card-hover); border-color: var(--border-hover); transform: translateY(-6px); }
+.plan[data-highlight="true"] { border-color: rgba(255, 255, 255, 0.22); background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); }
+.plan-highlight { position: absolute; top: -12px; right: 22px; padding: 5px 14px; border-radius: 100px; background: var(--fg); color: var(--bg); font-size: .62rem; letter-spacing: .1em; font-weight: 600; text-transform: uppercase; }
+.plan-tag { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 1.55rem; letter-spacing: 0; color: var(--fg); margin-bottom: 8px; }
+.plan-price { font-family: "Inter"; font-size: clamp(2.2rem, 3.5vw, 2.8rem); font-weight: 500; letter-spacing: -.03em; color: var(--fg); margin-bottom: 6px; }
+.plan-price small { font-size: .38em; color: var(--fg-tertiary); font-weight: 400; letter-spacing: 0; margin-left: 3px; }
+.plan-line { color: var(--fg-secondary); font-size: .9rem; font-weight: 300; line-height: 1.5; margin-bottom: 26px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+.plan-features { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.plan-features li { color: var(--fg-secondary); font-size: .88rem; font-weight: 300; line-height: 1.55; padding-left: 20px; position: relative; }
+.plan-features li::before { content: "·"; position: absolute; left: 6px; top: -.15em; color: var(--fg); font-size: 1.4em; }
+.plan-features b { color: var(--fg); font-weight: 500; }
+@media (max-width: 900px) { .plans-grid { grid-template-columns: 1fr; } .plans { padding: 100px 24px; } }
+
+/* ─── SEÇÃO "FAQ" ─── */
+.faq { position: relative; z-index: 1; padding: 130px clamp(24px, 8vw, 120px); background: var(--bg); }
+.faq-title { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+.faq-title .kicker { display: block; margin-bottom: 18px; }
+.faq-title h2 { font-family: "Inter"; font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.08; }
+.faq-title h2 i { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--fg-secondary); }
+.faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+.faq details { border: 1px solid var(--border); border-radius: 16px; background: var(--bg-card); overflow: hidden; transition: border-color .3s; }
+.faq details[open] { border-color: var(--border-hover); background: var(--bg-card-hover); }
+.faq summary { padding: 22px 26px; cursor: pointer; font-family: "Inter"; font-size: 1rem; font-weight: 500; color: var(--fg); list-style: none; position: relative; padding-right: 56px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 26px; top: 50%; transform: translateY(-50%); font-family: "Instrument Serif", serif; font-size: 1.6rem; color: var(--fg-tertiary); transition: transform .3s; }
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); color: var(--fg); }
+.faq p { padding: 0 26px 24px; color: var(--fg-secondary); font-size: .95rem; font-weight: 300; line-height: 1.65; }
+.faq p i { color: var(--fg); font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+@media (max-width: 600px) { .faq { padding: 90px 24px; } .faq summary { font-size: .95rem; padding: 20px 22px; padding-right: 48px; } }
+
+/* ─── CTA FINAL ─── */
+.final-cta { position: relative; z-index: 1; padding: 160px clamp(24px, 8vw, 120px); background: var(--bg-elev); border-top: 1px solid var(--border); text-align: center; overflow: hidden; }
+.final-cta::before { content: ""; position: absolute; top: 50%; left: 50%; width: min(60vw, 480px); aspect-ratio: 1; border-radius: 50%; transform: translate(-50%, -50%); background: conic-gradient(from 0deg, var(--c-luna), var(--c-terra), var(--c-sol), var(--c-luna)); filter: blur(80px); opacity: .28; z-index: 0; animation: haloSpin 22s linear infinite; pointer-events: none; }
+.final-cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.final-cta .kicker { display: block; margin-bottom: 24px; }
+.final-cta h2 { font-family: "Inter"; font-size: clamp(2.6rem, 6.5vw, 4.4rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.02; margin-bottom: 40px; }
+.final-cta h2 em { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--c-sol); font-size: 1.15em; }
+.final-cta h2 i { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--fg-secondary); }
+.final-cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 18px 34px; border-radius: 100px; background: var(--fg); color: var(--bg); font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5); transition: .3s cubic-bezier(.22,1,.36,1); }
+.final-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 20px 44px rgba(255, 255, 255, .18); }
+.final-cta-hint { margin-top: 24px; color: var(--fg-tertiary); font-size: .82rem; }
+.final-cta-hint b { color: var(--fg); font-weight: 500; }
+
 /* ─── SEÇÃO "SITES QUE RESPIRAM" ─── */
 .breathe {
   position: relative;
