@@ -1,0 +1,162 @@
+name: Deploy AWS (Tríade 56)
+
+# Roda automaticamente quando main muda algo relevante (apps/web, services/api,
+# packages/shared, infra), ou manualmente pelo botão "Run workflow".
+#
+# Secrets obrigatórios (GitHub → Settings → Secrets and variables → Actions):
+#   AWS_ACCESS_KEY_ID       — user IAM com permissões pra CDK deploy
+#   AWS_SECRET_ACCESS_KEY   — segredo do user IAM
+#
+# Secrets recomendados:
+#   AZURE_OPENAI_KEY        — key da Azure OpenAI. Se setada, o workflow
+#                             faz put-secret-value no Secret AWS criado pelo CDK.
+#                             Sem ela, o Lambda falha até você preencher o Secret
+#                             manualmente no console AWS.
+#
+# Variables opcionais (mesma tela, aba "Variables"):
+#   AWS_REGION              — default: sa-east-1
+#   CUSTOM_DOMAIN_NAME      — ex: triade56.com. Sem ela, usa só CloudFront URL.
+#   AZURE_OPENAI_ENDPOINT   — override do endpoint padrão do stack
+#   LUNA_DEPLOYMENT         — override do deployment name (default gpt-5.6-luna)
+#   TERRA_DEPLOYMENT        — default gpt-5.6-terra
+#   SOL_DEPLOYMENT          — default gpt-5.6-sol
+#   FALLBACK_DEPLOYMENT     — ex: gpt-5.4. Vazio = sem fallback.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/web/**"
+      - "services/api/**"
+      - "packages/shared/**"
+      - "infra/**"
+      - ".github/workflows/deploy-aws.yml"
+  workflow_dispatch: {}
+
+concurrency:
+  group: aws-deploy
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: ${{ vars.AWS_REGION || 'sa-east-1' }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm install --no-audit --no-fund
+
+      - name: Build (shared → api → web → infra)
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # Bootstrap idempotente — só cria o CDKToolkit stack se não existir.
+      - name: CDK bootstrap (idempotent)
+        working-directory: infra
+        run: |
+          set -euo pipefail
+          if aws cloudformation describe-stacks --stack-name CDKToolkit --region "${AWS_REGION}" >/dev/null 2>&1; then
+            echo "CDKToolkit ja bootstrapped em ${AWS_REGION}"
+          else
+            echo "Bootstrapping CDK em ${AWS_REGION}..."
+            npx cdk bootstrap "aws://$(aws sts get-caller-identity --query Account --output text)/${AWS_REGION}"
+          fi
+
+      - name: CDK deploy
+        working-directory: infra
+        run: |
+          set -euo pipefail
+          PARAMS=""
+          if [ -n "${CUSTOM_DOMAIN_NAME:-}" ]; then
+            PARAMS="$PARAMS --parameters CustomDomainName=${CUSTOM_DOMAIN_NAME}"
+          fi
+          if [ -n "${AZURE_OPENAI_ENDPOINT:-}" ]; then
+            PARAMS="$PARAMS --parameters AzureOpenAiEndpoint=${AZURE_OPENAI_ENDPOINT}"
+          fi
+          if [ -n "${LUNA_DEPLOYMENT:-}" ]; then
+            PARAMS="$PARAMS --parameters LunaDeployment=${LUNA_DEPLOYMENT}"
+          fi
+          if [ -n "${TERRA_DEPLOYMENT:-}" ]; then
+            PARAMS="$PARAMS --parameters TerraDeployment=${TERRA_DEPLOYMENT}"
+          fi
+          if [ -n "${SOL_DEPLOYMENT:-}" ]; then
+            PARAMS="$PARAMS --parameters SolDeployment=${SOL_DEPLOYMENT}"
+          fi
+          if [ -n "${FALLBACK_DEPLOYMENT:-}" ]; then
+            PARAMS="$PARAMS --parameters FallbackDeployment=${FALLBACK_DEPLOYMENT}"
+          fi
+          echo "Params: $PARAMS"
+          npx cdk deploy \
+            --require-approval never \
+            --outputs-file cdk-outputs.json \
+            $PARAMS
+        env:
+          CUSTOM_DOMAIN_NAME: ${{ vars.CUSTOM_DOMAIN_NAME }}
+          AZURE_OPENAI_ENDPOINT: ${{ vars.AZURE_OPENAI_ENDPOINT }}
+          LUNA_DEPLOYMENT: ${{ vars.LUNA_DEPLOYMENT }}
+          TERRA_DEPLOYMENT: ${{ vars.TERRA_DEPLOYMENT }}
+          SOL_DEPLOYMENT: ${{ vars.SOL_DEPLOYMENT }}
+          FALLBACK_DEPLOYMENT: ${{ vars.FALLBACK_DEPLOYMENT }}
+
+      - name: Extract stack outputs
+        id: outputs
+        working-directory: infra
+        run: |
+          set -euo pipefail
+          test -f cdk-outputs.json
+          STACK_KEY=$(jq -r 'keys[0]' cdk-outputs.json)
+          echo "stack=$STACK_KEY" >> $GITHUB_OUTPUT
+          SECRET_ARN=$(jq -r ".\"$STACK_KEY\".AzureOpenAiKeySecretArn // empty" cdk-outputs.json)
+          API_URL=$(jq -r ".\"$STACK_KEY\".ApiUrl // empty" cdk-outputs.json)
+          CF_URL=$(jq -r ".\"$STACK_KEY\".CloudFrontUrl // empty" cdk-outputs.json)
+          echo "azure_secret_arn=$SECRET_ARN" >> $GITHUB_OUTPUT
+          echo "api_url=$API_URL" >> $GITHUB_OUTPUT
+          echo "cloudfront_url=$CF_URL" >> $GITHUB_OUTPUT
+          echo "----- CDK Outputs -----"
+          cat cdk-outputs.json
+
+      - name: Update Azure OpenAI key secret (se disponivel)
+        if: ${{ steps.outputs.outputs.azure_secret_arn != '' && env.AZURE_OPENAI_KEY != '' }}
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          SECRET_ARN: ${{ steps.outputs.outputs.azure_secret_arn }}
+        run: |
+          set -euo pipefail
+          echo "Atualizando Secret $SECRET_ARN com a key real..."
+          aws secretsmanager put-secret-value \
+            --secret-id "$SECRET_ARN" \
+            --secret-string "$AZURE_OPENAI_KEY" \
+            --region "$AWS_REGION" \
+            > /dev/null
+          echo "OK — Lambda ja consegue autenticar no Azure."
+
+      - name: Resumo
+        run: |
+          echo "----------------------------------------------------------"
+          echo "Deploy AWS concluido em ${AWS_REGION}"
+          echo "CloudFront: ${{ steps.outputs.outputs.cloudfront_url }}"
+          echo "API:        ${{ steps.outputs.outputs.api_url }}"
+          echo ""
+          echo "Se voce nao setou AZURE_OPENAI_KEY como GitHub secret ainda,"
+          echo "vai no console AWS Secrets Manager e cola a key no secret:"
+          echo "  ${{ steps.outputs.outputs.azure_secret_arn }}"
+          echo "----------------------------------------------------------"

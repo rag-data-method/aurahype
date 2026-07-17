@@ -1,87 +1,162 @@
-export const GENERATION_MODELS = ["sol", "terra", "luna"] as const;
+/**
+ * Contratos compartilhados entre backend Lambda (services/api) e frontend
+ * (apps/web) do Tríade 56.
+ *
+ * Fluxo:
+ *   cliente escreve um brief (+ @ opcional) → pipeline Luna → Terra → Sol
+ *   (dependendo do plano) → HTML final salvo em S3.
+ */
 
-export type GenerationModel = (typeof GENERATION_MODELS)[number];
+/** Nomes canônicos das três faces da Tríade. */
+export const TRIADE_MODELS = ["luna", "terra", "sol"] as const;
+export type TriadeModel = (typeof TRIADE_MODELS)[number];
+
+/**
+ * Planos de assinatura da Tríade 56:
+ *   "15" → só Luna (R$ 15,60 — 1 GPT)
+ *   "35" → Luna + Terra (R$ 35,60 — 2 GPTs)
+ *   "96" → Tríade completa Luna + Terra + Sol (R$ 96,50 — 3 GPTs)
+ */
+export const PLANS = ["15", "35", "96"] as const;
+export type Plan = (typeof PLANS)[number];
+
 export type JobStatus = "queued" | "processing" | "published" | "failed";
 
-export interface InstagramProfile {
-  username: string;
-  name?: string;
-  biography?: string;
-  website?: string;
-  profilePictureUrl?: string;
-  followersCount?: number;
-  mediaCount?: number;
-  media: Array<{
-    id: string;
-    caption?: string;
-    mediaType?: string;
-    mediaUrl?: string;
-    thumbnailUrl?: string;
-    permalink?: string;
-    timestamp?: string;
-  }>;
-}
+// ----- entrada do cliente ------------------------------------------------
 
 export interface CreateGenerationRequest {
-  username: string;
-  model: GenerationModel;
+  /** Descrição livre do negócio, ou o próprio handle Insta, ou ambos combinados. */
+  brief: string;
+  plan: Plan;
+  /** Handle do Instagram opcional, guardado como metadado. Sem @. */
+  handle?: string;
+  /** Confirmação explícita — o cliente autoriza processar o brief. */
   consent: true;
 }
 
+// ----- saídas de cada face -----------------------------------------------
+
+export interface Palette {
+  primary: string;
+  accent: string;
+  bg: string;
+  text: string;
+}
+
+/** O que a Luna devolve: essência + copy + paleta. */
+export interface LunaOutput {
+  essencia: string;
+  tom: string;
+  paleta: Palette;
+  headline: string;
+  subheadline: string;
+  cta_texto: string;
+  palavras_chave: string[];
+}
+
+/** O que a Terra devolve: HTML estruturado. */
+export interface TerraOutput {
+  html: string;
+  sections: string[];
+}
+
+/** O que a Sol devolve: HTML refinado + decisões que ela tomou. */
+export interface SolOutput {
+  html: string;
+  decisoes: string[];
+}
+
+// ----- site persistido ---------------------------------------------------
+
+export interface GeneratedSite {
+  slug: string;
+  brief: string;
+  plan: Plan;
+  handle?: string;
+  /** HTML final (Sol se plano 96, Terra se 35, Luna-inline se 15). */
+  html: string;
+  luna: LunaOutput;
+  terra?: TerraOutput;
+  sol?: SolOutput;
+  models_used: TriadeModel[];
+  generated_at: string;
+}
+
+// ----- job trail --------------------------------------------------------
+
 export interface GenerationJob {
   id: string;
-  username: string;
-  model: GenerationModel;
+  brief: string;
+  plan: Plan;
+  handle?: string;
   status: JobStatus;
   createdAt: string;
   updatedAt: string;
-  profile: InstagramProfile;
   siteSlug?: string;
   errorMessage?: string;
 }
 
-export interface GeneratedSite {
-  slug: string;
-  title: string;
-  brandName: string;
-  tagline: string;
-  about: string;
-  primaryColor: string;
-  accentColor: string;
-  ctaLabel: string;
-  ctaUrl?: string;
-  instagramUrl: string;
-  gallery: Array<{
-    imageUrl: string;
-    alt: string;
-    caption?: string;
-  }>;
-  generatedWith: GenerationModel;
+// ----- helpers de tipo --------------------------------------------------
+
+export function isTriadeModel(value: unknown): value is TriadeModel {
+  return typeof value === "string" && (TRIADE_MODELS as readonly string[]).includes(value);
 }
 
-const USERNAME = /^[a-zA-Z0-9._]{1,30}$/;
-
-export function isGenerationModel(value: unknown): value is GenerationModel {
-  return typeof value === "string" && (GENERATION_MODELS as readonly string[]).includes(value);
+export function isPlan(value: unknown): value is Plan {
+  return typeof value === "string" && (PLANS as readonly string[]).includes(value);
 }
+
+// ----- parser da requisição --------------------------------------------
+
+const HANDLE_RE = /^[a-zA-Z0-9._]{1,30}$/;
 
 export function parseCreateGenerationRequest(value: unknown): CreateGenerationRequest {
-  if (!value || typeof value !== "object") throw new Error("Corpo da requisição inválido.");
+  if (!value || typeof value !== "object") {
+    throw new Error("Corpo da requisição inválido.");
+  }
   const input = value as Record<string, unknown>;
-  const username = typeof input.username === "string" ? input.username.replace(/^@/, "").trim() : "";
 
-  if (!USERNAME.test(username)) {
-    throw new Error("Informe um usuário do Instagram válido, sem @.");
+  const brief =
+    typeof input.brief === "string" ? input.brief.trim() : "";
+  if (brief.length < 3) {
+    throw new Error("Descreva pelo menos rapidamente o que a Tríade vai criar (mínimo 3 caracteres).");
   }
-  if (!isGenerationModel(input.model)) {
-    throw new Error("Escolha Sol, Terra ou Luna.");
+  if (brief.length > 4000) {
+    throw new Error("Brief muito longo (máx 4000 caracteres).");
   }
+
+  if (!isPlan(input.plan)) {
+    throw new Error("Plano inválido. Use 15, 35 ou 96.");
+  }
+
+  let handle: string | undefined;
+  if (typeof input.handle === "string" && input.handle.trim()) {
+    handle = input.handle.replace(/^@/, "").trim();
+    if (!HANDLE_RE.test(handle)) {
+      throw new Error("Handle do Instagram inválido.");
+    }
+  }
+
   if (input.consent !== true) {
-    throw new Error("A autorização para usar os dados do perfil é obrigatória.");
+    throw new Error("A autorização (consent) é obrigatória.");
   }
 
-  return { username, model: input.model, consent: true };
+  return { brief, plan: input.plan, handle, consent: true };
 }
+
+// ----- aliases legacy (compat com apps/web atual) ----------------------
+// O frontend em apps/web ainda importa GENERATION_MODELS/GenerationModel
+// pra escolher a face antes de chamar o worker Cloudflare (MissCanvas).
+// Quando o front migrar pra apontar pro API Gateway AWS novo (que usa
+// {brief, plan}), estas aliases podem sumir. Por ora, mantém o build verde.
+
+/** @deprecated Use TRIADE_MODELS. */
+export const GENERATION_MODELS = TRIADE_MODELS;
+
+/** @deprecated Use TriadeModel. */
+export type GenerationModel = TriadeModel;
+
+// ----- guard de site persistido ----------------------------------------
 
 export function isGeneratedSite(value: unknown): value is GeneratedSite {
   if (!value || typeof value !== "object") return false;
@@ -89,15 +164,11 @@ export function isGeneratedSite(value: unknown): value is GeneratedSite {
   return (
     typeof site.slug === "string" &&
     /^[a-z0-9-]{3,80}$/.test(site.slug) &&
-    typeof site.title === "string" &&
-    typeof site.brandName === "string" &&
-    typeof site.tagline === "string" &&
-    typeof site.about === "string" &&
-    typeof site.primaryColor === "string" &&
-    typeof site.accentColor === "string" &&
-    typeof site.ctaLabel === "string" &&
-    typeof site.instagramUrl === "string" &&
-    Array.isArray(site.gallery) &&
-    isGenerationModel(site.generatedWith)
+    typeof site.brief === "string" &&
+    isPlan(site.plan) &&
+    typeof site.html === "string" &&
+    !!site.luna &&
+    typeof site.luna === "object" &&
+    Array.isArray((site as { models_used?: unknown }).models_used)
   );
 }
