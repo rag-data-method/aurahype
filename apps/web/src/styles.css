@@ -71,48 +71,33 @@ em, .serif { font-family: "Instrument Serif", serif; font-style: italic; font-we
 .triad-halo::after { content: ""; position: absolute; inset: 14%; border-radius: 50%; background: radial-gradient(circle at 32% 30%, rgba(255,255,255,.18), rgba(5,5,5,.9) 62%); }
 @keyframes haloSpin { to { transform: rotate(360deg); } }
 
-/* Variante "flutuante": bolota fixa na viewport, acompanha o scroll pela página inteira.
-   mix-blend-mode: screen faz ela "brilhar através" dos fundos escuros das seções, então
-   fica sempre visível como aura de fundo — sem atrapalhar leitura de texto. */
-.triad-halo-floating {
+/* "56" GIGANTE FLUTUANTE — fixo no canto direito da viewport, acompanha o
+   scroll pela página inteira. Muda de cor conforme a seção visível
+   (usa --tone-color do useScrollTone). Marca d'água viva. */
+.big-56-floating {
   position: fixed;
   top: 50%;
-  left: 50%;
-  width: min(72vw, 480px);
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  z-index: 100;                       /* acima dos backgrounds das seções */
+  right: -8%;
+  transform: translateY(-50%);
+  z-index: 1;                              /* atrás do conteúdo, na frente dos fundos */
+  font-family: Georgia, "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(260px, 42vw, 620px);
+  line-height: 0.85;
+  letter-spacing: -.06em;
+  color: var(--tone-color, rgba(255, 248, 240, 0.06));
+  opacity: 0.08;                           /* bem sutil — não atrapalha leitura */
   pointer-events: none;
-  mix-blend-mode: screen;             /* soma as cores sobre o fundo escuro em vez de tapar */
-  will-change: transform;
+  user-select: none;
+  mix-blend-mode: screen;                  /* soma cor sobre o fundo escuro em vez de tapar */
+  transition: color 1.2s ease, opacity .6s ease;
 }
-.triad-halo-floating::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--c-luna), var(--c-terra), var(--c-sol), var(--c-luna));
-  filter: blur(56px);
-  opacity: .28;                       /* sutil — presença sem invasão */
-  animation: haloSpin 26s linear infinite;
-}
-.triad-halo-floating::after {
-  /* Versão flutuante não tem a "cratera" central escura — só o glow puro */
-  display: none;
-}
-/* Menos intensa dentro do hero (onde a bolota original + os orbs + o "56" já competem) */
-.intro ~ .triad-halo-floating,
-.triad-halo-floating.at-hero::before { opacity: .18; }
-
-/* Suave em mobile — tela menor, evita sensação de "nuvem tomando tudo" */
 @media (max-width: 720px) {
-  .triad-halo-floating { width: 88vw; }
-  .triad-halo-floating::before { opacity: .22; filter: blur(44px); }
+  .big-56-floating { right: -14%; font-size: clamp(220px, 78vw, 380px); opacity: 0.06; }
 }
-
-/* Respeita quem prefere menos movimento */
 @media (prefers-reduced-motion: reduce) {
-  .triad-halo-floating::before { animation: none; }
+  .big-56-floating { transition: none; }
 }
 
 /* "56" gigante como marca d'água atrás do hero — protagonismo do número, onda OpenAI */
@@ -811,12 +796,8 @@ main[data-current-tone="mix"] {
   --tone-gradient: conic-gradient(from 0deg, var(--c-luna), var(--c-terra), var(--c-sol), var(--c-luna));
 }
 
-/* A bolota flutuante puxa o gradiente do tom vigente — muda de cor
-   conforme o scroll, transição bem suave */
-.triad-halo-floating::before {
-  background: var(--tone-gradient) !important;
-  transition: background 1.2s ease, opacity 0.8s ease;
-}
+/* O "56" flutuante puxa a cor do tom vigente — muda de cor conforme
+   o scroll, transição bem suave (definida acima na .big-56-floating) */
 
 /* Detalhes por seção que puxam o tom — bordas sutis, glows */
 .faces[data-tone] .faces-title h2 i,

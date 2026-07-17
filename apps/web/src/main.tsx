@@ -244,13 +244,14 @@ function App() {
         Substitui a tela simples "gerando" por espetáculo hexagonal 3D. */}
     <SeloMemoria active={USE_SELO_3D && status === "gerando"} legend={username ? `Perfil: @${username.replace(/^@+/, "")}` : undefined} />
 
-    {/* Bolota que acompanha o scroll — muda de cor conforme a seção visível.
-        Site inteiro respira Luna → Terra → Sol → Zênite conforme o usuário rola. */}
-    <div className="triad-halo triad-halo-floating" aria-hidden="true" />
+    {/* "56" gigante no canto direito acompanhando o scroll — muda de cor
+        conforme a seção visível (Luna → Terra → Sol → Zênite). É a marca
+        d'água viva da Tríade 56 seguindo o usuário pela página inteira. */}
+    <span className="big-56 big-56-floating" aria-hidden="true">56</span>
 
     <section className="intro" data-tone="mix">
       <div className="orb-container"><div className="orb luna" /><div className="orb terra" /><div className="orb sol" /></div>
-      <span className="big-56" aria-hidden="true">56</span>
+      <div className="triad-halo" aria-hidden="true" />
       <nav>
         <a href="#top" className="wordmark" aria-label="Tríade 56 — sites que respiram">
           <svg className="brand-emblem" viewBox="0 0 60 60" width="42" height="42" aria-hidden="true">
