@@ -134,7 +134,7 @@ function App() {
 
   return <main>
     <section className="intro">
-      <div className="orb orb-one" /><div className="orb orb-two" />
+      <div className="orb-container"><div className="orb luna" /><div className="orb terra" /><div className="orb sol" /></div>
       <nav>
         <span className="wordmark">AURA<span>HYPE</span></span>
         {!install.installed && install.canInstall && <button type="button" className="install-button" onClick={install.install}>Instalar app  ↗</button>}
