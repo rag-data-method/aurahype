@@ -202,9 +202,17 @@ function App() {
   const [status, setStatus] = useState<"idle" | "gerando" | "pronto" | "erro">("idle");
   const [siteUrl, setSiteUrl] = useState<string>();
   const [errorMsg, setErrorMsg] = useState<string>();
+  const [waToast, setWaToast] = useState<{ plano: string; preco: string } | null>(null);
   const install = useInstallPrompt();
   const gerandoHash = useGeneratingHash(status === "gerando");
   const currentTone = useScrollTone();
+
+  // Auto-esconde o toast do WhatsApp depois de 8s
+  useEffect(() => {
+    if (!waToast) return;
+    const id = window.setTimeout(() => setWaToast(null), 8000);
+    return () => window.clearTimeout(id);
+  }, [waToast]);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -407,7 +415,7 @@ function App() {
             <li>Site publicado no seu subdomínio</li>
             <li>Botão de <b>WhatsApp</b> e <b>e-mail</b> integrados</li>
           </ul>
-          <a className="plan-cta" href={planoWhatsapp("Essência", "R$ 15,60")} target="_blank" rel="noreferrer">Assinar Essência  →</a>
+          <a className="plan-cta" href={planoWhatsapp("Essência", "R$ 15,60")} target="_blank" rel="noreferrer" onClick={() => setWaToast({ plano: "Essência", preco: "R$ 15,60" })}>Assinar Essência  →</a>
           <p className="plan-cta-hint">Pagamento por Pix pelo WhatsApp</p>
         </article>
 
@@ -423,7 +431,7 @@ function App() {
             <li><b>Download do pacote</b> em ZIP</li>
             <li>Tudo do plano Essência</li>
           </ul>
-          <a className="plan-cta" href={planoWhatsapp("Dupla", "R$ 35,60")} target="_blank" rel="noreferrer">Assinar Dupla  →</a>
+          <a className="plan-cta" href={planoWhatsapp("Dupla", "R$ 35,60")} target="_blank" rel="noreferrer" onClick={() => setWaToast({ plano: "Dupla", preco: "R$ 35,60" })}>Assinar Dupla  →</a>
           <p className="plan-cta-hint">Pagamento por Pix pelo WhatsApp</p>
         </article>
 
@@ -440,7 +448,7 @@ function App() {
             <li>Atualização semanal + download ZIP</li>
             <li>Prioridade na geração e no suporte</li>
           </ul>
-          <a className="plan-cta plan-cta-highlight" href={planoWhatsapp("Tríade Completa", "R$ 96,50")} target="_blank" rel="noreferrer">Assinar Tríade  →</a>
+          <a className="plan-cta plan-cta-highlight" href={planoWhatsapp("Tríade Completa", "R$ 96,50")} target="_blank" rel="noreferrer" onClick={() => setWaToast({ plano: "Tríade Completa", preco: "R$ 96,50" })}>Assinar Tríade  →</a>
           <p className="plan-cta-hint">Pagamento por Pix pelo WhatsApp</p>
         </article>
       </div>
@@ -497,6 +505,20 @@ function App() {
       <p className="footer-meta">Tríade&nbsp;56 · Luna &nbsp;·&nbsp; Terra &nbsp;·&nbsp; Sol · a triangulação da inteligência</p>
       <p className="footer-meta">triade56.com · assinado pelo <b>GPT&nbsp;5.6</b></p>
     </footer>
+
+    {/* Toast pós-clique: quando abre o WhatsApp, essa mensagem aparece
+        na aba original pra pessoa saber que a conversa foi iniciada */}
+    {waToast && (
+      <div className="wa-toast" role="status" aria-live="polite">
+        <div className="wa-toast-inner">
+          <p className="wa-toast-title"><b>Já te chamei no WhatsApp</b> 💛</p>
+          <p className="wa-toast-body">
+            <em>{waToast.plano}</em> · {waToast.preco}/mês — te espero por lá com o Pix. Se não abriu, tenta de novo pelo botão.
+          </p>
+          <button type="button" className="wa-toast-close" onClick={() => setWaToast(null)} aria-label="Fechar">×</button>
+        </div>
+      </div>
+    )}
   </main>;
 }
 

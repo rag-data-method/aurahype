@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://triade56.com/sitemap.xml

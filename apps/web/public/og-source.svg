@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Tríade 56 · Sites que respiram">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050505" />
+      <stop offset="0.55" stop-color="#0a0a0c" />
+      <stop offset="1" stop-color="#1a1024" />
+    </linearGradient>
+    <radialGradient id="glowLuna" cx="0.2" cy="0.4" r="0.35">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowTerra" cx="0.8" cy="0.75" r="0.3">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#34d399" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowSol" cx="0.75" cy="0.25" r="0.28">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Fundo escuro premium com 3 halos das faces -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glowLuna)" />
+  <rect width="1200" height="630" fill="url(#glowTerra)" />
+  <rect width="1200" height="630" fill="url(#glowSol)" />
+
+  <!-- Triângulo da Tríade com "56" no centro (o logotipo) -->
+  <g transform="translate(90 130)">
+    <polygon points="60,20 116,120 4,120" fill="none" stroke="rgba(255,248,240,0.5)" stroke-width="2.4" stroke-linejoin="round" />
+    <circle cx="60" cy="20" r="4" fill="#a78bfa" />
+    <circle cx="116" cy="120" r="4" fill="#fbbf24" />
+    <circle cx="4" cy="120" r="4" fill="#34d399" />
+    <text x="60" y="103" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="56" fill="#fff8f0" letter-spacing="-2">56</text>
+  </g>
+
+  <!-- Wordmark ao lado -->
+  <text x="230" y="185" font-family="Georgia, serif" font-style="italic" font-size="52" fill="#fff8f0" letter-spacing="0">Tríade</text>
+  <text x="230" y="220" font-family="'Inter', system-ui, sans-serif" font-size="13" letter-spacing="4.5" fill="#9e9ea7" font-weight="600">SITES · QUE · RESPIRAM</text>
+
+  <!-- Título grande -->
+  <text x="80" y="360" font-family="'Inter', system-ui, sans-serif" font-size="76" font-weight="500" fill="#fff8f0" letter-spacing="-3">A inteligência,</text>
+  <text x="80" y="440" font-family="Georgia, serif" font-style="italic" font-size="80" fill="#9e9ea7" letter-spacing="-2">Redefinida.</text>
+
+  <!-- Assinatura GPT 5.6 + preço -->
+  <g transform="translate(80 510)">
+    <rect x="0" y="0" width="330" height="46" rx="23" fill="rgba(251,191,36,0.12)" stroke="#fbbf24" stroke-width="1.2" stroke-opacity="0.5" />
+    <text x="165" y="30" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="500" fill="#fbbf24">Assinado pelo GPT 5.6</text>
+  </g>
+  <text x="80" y="588" font-family="Georgia, serif" font-style="italic" font-size="32" fill="#fff8f0">a partir de <tspan font-weight="700" font-style="normal" font-family="'Inter', system-ui">R$ 15,60</tspan>/mês</text>
+
+  <!-- Halo colorido no canto direito (bolota simbolizando a Tríade) -->
+  <g transform="translate(950 315)">
+    <circle r="180" fill="url(#glowLuna)" opacity="0.7" />
+    <circle r="140" fill="url(#glowTerra)" opacity="0.6" />
+    <circle r="110" fill="url(#glowSol)" opacity="0.7" />
+    <circle r="60" fill="none" stroke="rgba(255,248,240,0.3)" stroke-width="1.5" />
+    <circle cx="0" cy="-60" r="6" fill="#a78bfa" />
+    <circle cx="52" cy="30" r="6" fill="#fbbf24" />
+    <circle cx="-52" cy="30" r="6" fill="#34d399" />
+    <text x="0" y="15" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="90" fill="#fff8f0" letter-spacing="-4">56</text>
+  </g>
+
+  <!-- Rodapé -->
+  <text x="80" y="605" font-family="'Inter', system-ui, sans-serif" font-size="14" letter-spacing="2.5" fill="#63636e" font-weight="500">TRIADE56.COM · LUNA · TERRA · SOL · ZÊNITE · PITÁGORAS</text>
+</svg>

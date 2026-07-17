@@ -848,3 +848,46 @@ main[data-current-tone="sol"] ::selection { background: rgba(251,191,36,.35); }
 @media (prefers-reduced-motion: reduce) {
   main, .triad-halo-floating::before { transition: none !important; }
 }
+
+
+
+/* ─── TOAST PÓS-CLIQUE (WhatsApp aberto em nova aba) ─── */
+.wa-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 500;
+  animation: waToastEnter .5s cubic-bezier(.22,1,.36,1);
+  max-width: calc(100vw - 48px);
+  width: min(400px, 100%);
+}
+.wa-toast-inner {
+  position: relative;
+  padding: 20px 44px 20px 22px;
+  border-radius: 16px;
+  background: rgba(5, 5, 5, 0.94);
+  backdrop-filter: blur(20px);
+  border: 1px solid color-mix(in srgb, #25d366, transparent 65%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px color-mix(in srgb, #25d366, transparent 82%);
+}
+.wa-toast-title { font-size: .95rem; color: var(--fg); margin: 0 0 6px; font-weight: 400; }
+.wa-toast-title b { font-weight: 600; }
+.wa-toast-body { font-size: .82rem; color: var(--fg-secondary); line-height: 1.5; margin: 0; }
+.wa-toast-body em { color: var(--fg); font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; margin-right: 2px; }
+.wa-toast-close {
+  position: absolute; top: 10px; right: 12px;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(255,255,255,.05);
+  color: var(--fg-tertiary);
+  font-size: 1.3rem; line-height: 1; display: grid; place-items: center;
+  transition: background .2s, color .2s;
+}
+.wa-toast-close:hover { background: rgba(255,255,255,.12); color: var(--fg); }
+@keyframes waToastEnter {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@media (max-width: 520px) {
+  .wa-toast { right: 12px; bottom: 12px; left: 12px; width: auto; }
+  .wa-toast-body { font-size: .78rem; }
+}
