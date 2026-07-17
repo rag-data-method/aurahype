@@ -1,41 +1,41 @@
-# 2Minutes — Instagram Site Forge
+# Tríade 56 — Sites que respiram
 
-Digite seu @, veja a mágica. Aplicação full-stack **AWS**: frontend em CloudFront + S3, backend em API Gateway + Lambda, dados em DynamoDB + S3.
+Cole seu @, veja seu site nascer da triangulação de **Luna**, **Terra** e **Sol**, moderada pelo **Zênite**. O **Pitágoras** cuida da geometria depois. Tudo assinado pelo **GPT 5.6**.
 
-Três IAs autorais transformam o perfil em uma página com voz, paleta e ritmo próprios:
+Domínio: **[triade56.com](https://triade56.com)**
 
-- **Sol** — vibrante, direta, impossível de ignorar.
-- **Terra** — autêntica, editorial, feita pra converter.
-- **Luna** — sofisticada, magnética, cheia de presença.
+## Stack
 
-Roda em **modo demo** sem credenciais externas. Conecte a Instagram Graph API oficial quando quiser dados reais.
+- **Frontend**: React + Vite (esse repo) → publicado no Cloudflare Pages
+- **Backend**: worker MissCanvas (`handleInstaSite`) que já roda em produção — gera o site a partir do @
+- **Pagamento (hoje)**: WhatsApp + Pix manual (botão em cada plano abre conversa pronta)
+- **Pagamento (semana que vem)**: Stripe Checkout
 
-## Deploy
-
-Ver [`COMO-USAR.md`](./COMO-USAR.md) — passo a passo em português, do zero.
-
-Resumo pra quem já é fluente em AWS:
+## Rodar local (opcional)
 
 ```bash
 npm install
-npm run build
-npx cdk bootstrap --app "node infra/dist/bin/app.js"      # só na primeira vez
-npx cdk deploy    --app "node infra/dist/bin/app.js" --require-approval never
+npm run build --workspace=@site-forge/shared
+npm run dev  --workspace=@site-forge/web
 ```
 
-Saída: `WebUrl` (frontend público) e `ApiUrl` (backend).
+Depois, abre http://localhost:5173.
+
+## Configuração de runtime
+
+Duas variáveis mandam em tudo — dá pra setar no Cloudflare Pages (Environment variables) ou em `apps/web/.env.local`:
+
+- `VITE_TRIADE_API` — URL do worker MissCanvas que gera o site (default: `https://misscanvas.com/api/insta-site`)
+- `VITE_WHATSAPP` — número da Miriam com DDI, só dígitos (default placeholder: `5511999999999`)
+
+Detalhes em [`COMO-LANCAR-HOJE.md`](./COMO-LANCAR-HOJE.md).
 
 ## Estrutura
 
 ```
-apps/web/           frontend React/Vite
-services/api/       Lambda handlers TypeScript
-packages/shared/    tipos compartilhados
-infra/              AWS CDK
+apps/web/          frontend Vite (o que a Cloudflare publica)
+services/api/      Lambda TypeScript legado (AWS) — não usada nesta versão
+packages/shared/   tipos TypeScript compartilhados
+infra/             AWS CDK legado — não usada nesta versão
+mobile/            manifest Bubblewrap pra gerar o .aab da Play Store depois
 ```
-
-## Endpoints
-
-- `POST /jobs` — recebe `{ username, model, consent }` e devolve `{ job, site, shareUrl? }` em uma única chamada.
-- `GET /jobs/{id}` — status e dados de um job.
-- `GET /sites/{slug}` — recupera um site publicado.

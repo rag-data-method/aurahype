@@ -1,10 +1,33 @@
-import { useEffect, useState, type CSSProperties, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { createRoot } from "react-dom/client";
-import { GENERATION_MODELS, type GeneratedSite, type GenerationJob, type GenerationModel } from "@site-forge/shared";
+import { GENERATION_MODELS, type GenerationModel } from "@site-forge/shared";
 import "./styles.css";
 
+// ─────────────────────────────────────────────────────────────────
+// CONFIGURAÇÃO — Miriam, você mexe SÓ AQUI pra lançar:
+//   1) TRIADE_API_URL = URL do worker MissCanvas que gera o site
+//      (o que tem `handleInstaSite`, roda em misscanvas.com/api/insta-site)
+//   2) WHATSAPP_MIRIAM = seu WhatsApp com DDI, só números (55 + DDD + número)
+//
+// Em produção esses valores vêm do runtime-config.js (Cloudflare Pages)
+// ou de VITE_TRIADE_API / VITE_WHATSAPP em .env.local — o padrão abaixo
+// é usado só se nenhum dos dois estiver setado.
+// ─────────────────────────────────────────────────────────────────
+declare global {
+  interface Window {
+    __TRIADE_RUNTIME__?: { apiUrl?: string; whatsapp?: string };
+  }
+}
+const TRIADE_API_URL =
+  (import.meta.env.VITE_TRIADE_API as string | undefined) ||
+  window.__TRIADE_RUNTIME__?.apiUrl ||
+  "https://misscanvas.com/api/insta-site";
+const WHATSAPP_MIRIAM =
+  (import.meta.env.VITE_WHATSAPP as string | undefined) ||
+  window.__TRIADE_RUNTIME__?.whatsapp ||
+  "5511999999999"; // ← TROCA ESSE NÚMERO PELO SEU
+
 // Registra o service worker para permitir "Instalar app" no Android/iOS.
-// Silencioso em desenvolvimento — só registra quando existe SW no build final.
 if ("serviceWorker" in navigator && window.location.protocol === "https:") {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("/service-worker.js").catch(() => undefined);
@@ -17,50 +40,61 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
-declare global {
-  interface Window {
-    __SITE_FORGE_RUNTIME__?: { apiUrl?: string };
-  }
-}
-
-const apiBaseUrl = (import.meta.env.VITE_API_URL || window.__SITE_FORGE_RUNTIME__?.apiUrl || "").replace(/\/$/, "");
-
 const modelCopy: Record<GenerationModel, { title: string; promise: string; face: string }> = {
   luna: { title: "Luna", promise: "exploração intuitiva", face: "a face que sente" },
   terra: { title: "Terra", promise: "fundamentação lógica", face: "a face que estrutura" },
   sol: { title: "Sol", promise: "síntese iluminada", face: "a face que revela" }
 };
 
-interface GenerationResponse {
-  job: GenerationJob;
-  site: GeneratedSite;
-  shareUrl?: string;
+// ─────────────────────────────────────────────────────────────────
+// Chamada ao worker MissCanvas (handleInstaSite). Body compatível com
+// o que ele espera: { handle, model, temp, async }. Se async=true, o
+// worker devolve NDJSON com heartbeat + o URL final quando pronto.
+// ─────────────────────────────────────────────────────────────────
+interface GenerationResult {
+  ok: boolean;
+  url?: string;
+  slug?: string;
+  temporary?: boolean;
+  voucher?: string;
+  error?: string;
 }
 
-async function requestGeneration(body: { username: string; model: GenerationModel; consent: true }): Promise<GenerationResponse> {
-  if (!apiBaseUrl) throw new Error("A URL da API ainda não foi configurada. Faça o deploy da infraestrutura AWS.");
-  const response = await fetch(`${apiBaseUrl}/jobs`, {
+async function iniciarImersao(username: string, model: GenerationModel): Promise<GenerationResult> {
+  const response = await fetch(TRIADE_API_URL, {
     method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(body)
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ handle: username, model, temp: true, async: false })
   });
-  const payload = (await response.json()) as GenerationResponse & { message?: string };
-  if (!response.ok) throw new Error(payload.message || "Não foi possível gerar seu site.");
-  return payload;
+  const contentType = response.headers.get("content-type") || "";
+  // NDJSON: lê linha por linha e devolve a última { done: true }
+  if (contentType.includes("ndjson") && response.body) {
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let last: GenerationResult = { ok: false };
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      let nl: number;
+      while ((nl = buffer.indexOf("\n")) >= 0) {
+        const line = buffer.slice(0, nl).trim();
+        buffer = buffer.slice(nl + 1);
+        if (!line) continue;
+        try {
+          const obj = JSON.parse(line) as GenerationResult & { done?: boolean };
+          if (obj.done) last = obj;
+        } catch { /* ignora linhas parciais */ }
+      }
+    }
+    return last;
+  }
+  return (await response.json()) as GenerationResult;
 }
 
-function GeneratedLanding({ site }: { site: GeneratedSite }) {
-  return <section className="generated-site" style={{ "--brand": site.primaryColor, "--accent": site.accentColor } as CSSProperties}>
-    <div className="site-topline"><span>feito com {site.generatedWith}</span><a href={site.instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a></div>
-    <div className="site-hero">
-      <p className="eyebrow">{site.brandName}</p>
-      <h2>{site.title}</h2>
-      <p className="site-tagline">{site.tagline}</p>
-      {site.ctaUrl && <a className="site-cta" href={site.ctaUrl} target="_blank" rel="noreferrer">{site.ctaLabel} <span>→</span></a>}
-    </div>
-    <div className="site-about"><p>{site.about}</p></div>
-    {site.gallery.length > 0 && <div className="site-gallery">{site.gallery.slice(0, 6).map((item, index) => <figure key={`${item.imageUrl}-${index}`}><img src={item.imageUrl} alt={item.alt} loading="lazy" /><figcaption>{item.caption}</figcaption></figure>)}</div>}
-  </section>;
+function whatsappLink(mensagem: string): string {
+  return `https://wa.me/${WHATSAPP_MIRIAM}?text=${encodeURIComponent(mensagem)}`;
 }
 
 function useInstallPrompt() {
@@ -107,39 +141,54 @@ function App() {
   const [username, setUsername] = useState("");
   const [model, setModel] = useState<GenerationModel>("terra");
   const [consent, setConsent] = useState(false);
-  const [site, setSite] = useState<GeneratedSite>();
-  const [shareUrl, setShareUrl] = useState<string>();
-  const [error, setError] = useState<string>();
-  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "gerando" | "pronto" | "erro">("idle");
+  const [siteUrl, setSiteUrl] = useState<string>();
+  const [errorMsg, setErrorMsg] = useState<string>();
   const install = useInstallPrompt();
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setError(undefined);
-    setSite(undefined);
-    setShareUrl(undefined);
-    setSubmitting(true);
+    setErrorMsg(undefined);
+    setSiteUrl(undefined);
+    setStatus("gerando");
     try {
       const cleanUsername = username.replace(/^@+/, "").trim();
-      const response = await requestGeneration({ username: cleanUsername, model, consent: true });
-      setSite(response.site);
-      setShareUrl(response.shareUrl);
-      requestAnimationFrame(() => document.querySelector(".result")?.scrollIntoView({ behavior: "smooth" }));
+      const result = await iniciarImersao(cleanUsername, model);
+      if (result.ok && result.url) {
+        setSiteUrl(result.url);
+        setStatus("pronto");
+      } else {
+        throw new Error(result.error || "Não consegui gerar seu preview agora.");
+      }
     } catch (submitError) {
-      setError(submitError instanceof Error ? submitError.message : "Não foi possível gerar seu site.");
-    } finally {
-      setSubmitting(false);
+      setErrorMsg(submitError instanceof Error ? submitError.message : "Não consegui gerar seu preview agora.");
+      setStatus("erro");
     }
+  }
+
+  function planoWhatsapp(planoNome: string, preco: string) {
+    const perfil = username ? `@${username.replace(/^@+/, "")}` : "meu @";
+    return whatsappLink(`Oi Miriam! Quero assinar o plano ${planoNome} da Tríade 56 (${preco}/mês). Meu perfil é ${perfil}. Como pago?`);
   }
 
   return <main>
     <section className="intro">
       <div className="orb-container"><div className="orb luna" /><div className="orb terra" /><div className="orb sol" /></div>
       <div className="triad-halo" aria-hidden="true" />
+      <span className="big-56" aria-hidden="true">56</span>
       <nav>
-        <a href="#top" className="wordmark">
-          <span className="triad-logo" aria-hidden="true"><span /><span /><span /></span>
-          <span className="wordmark-name">AuraHype<span className="wordmark-tagline"><em>Sites que respiram</em></span></span>
+        <a href="#top" className="wordmark" aria-label="Tríade 56 — sites que respiram">
+          <svg className="brand-emblem" viewBox="0 0 60 60" width="42" height="42" aria-hidden="true">
+            <polygon points="30,8 54,52 6,52" fill="none" stroke="rgba(255,248,240,0.35)" strokeWidth="1.4" strokeLinejoin="round" />
+            <circle cx="30" cy="8" r="2" fill="#a78bfa" />
+            <circle cx="54" cy="52" r="2" fill="#fbbf24" />
+            <circle cx="6" cy="52" r="2" fill="#34d399" />
+            <text x="30" y="43" textAnchor="middle" fontFamily="Georgia, 'Instrument Serif', serif" fontStyle="italic" fontWeight="400" fontSize="26" fill="#fff8f0" letterSpacing="-1">56</text>
+          </svg>
+          <span className="wordmark-name">
+            <span className="wordmark-primary"><em>Tríade</em></span>
+            <span className="wordmark-tagline">sites que respiram</span>
+          </span>
         </a>
         {!install.installed && install.canInstall && <button type="button" className="install-button" onClick={install.install}>Instalar app  ↗</button>}
         {!install.installed && !install.canInstall && <span className="nav-note">ambiente de criação ativo</span>}
@@ -155,7 +204,7 @@ function App() {
               <div className="hero-profile-shine" aria-hidden="true" />
               <b>@</b>
               <input value={username} onChange={(event) => setUsername(event.target.value)} placeholder="seu perfil do insta" autoComplete="off" required maxLength={30} aria-label="Seu usuário no Instagram" />
-              <button type="submit" disabled={submitting || !consent || !username.trim()}>{submitting ? "TRIANGULANDO…" : "INICIAR IMERSÃO  →"}</button>
+              <button type="submit" disabled={status === "gerando" || !consent || !username.trim()}>{status === "gerando" ? "TRIANGULANDO…" : "INICIAR IMERSÃO  →"}</button>
             </div>
           </label>
           <div className="hero-price">
@@ -163,14 +212,20 @@ function App() {
               <span className="hero-price-value">R$ 15,60<small>/mês</small></span>
               <span className="hero-price-signature" aria-label="Seu site assinado pelo GPT 5.6"><em>Seu site assinado pelo</em> <b>GPT&nbsp;5.6</b></span>
             </div>
-            <p className="hero-price-hint"><em>uma face</em> · comece pela essência</p>
+            <p className="hero-price-hint"><em>preview grátis</em> · comece pela essência</p>
           </div>
           <label className="hero-consent">
             <input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} required />
             <span>Este perfil é meu — ou tenho autorização de quem é.</span>
           </label>
         </form>
-        {error && <p className="error" role="alert">{error}</p>}
+        {status === "gerando" && <p className="status-line">Luna sente, Terra estrutura, Sol revela. Zênite modera. <em>Levo 2 minutinhos.</em></p>}
+        {status === "pronto" && siteUrl && <div className="status-line status-ready">
+          <p><b>Seu preview está pronto.</b> Abre num toque:</p>
+          <a href={siteUrl} target="_blank" rel="noreferrer" className="preview-link">{siteUrl} ↗</a>
+          <p className="status-hint">Gostou? Escolha um plano abaixo pra manter no ar.</p>
+        </div>}
+        {status === "erro" && errorMsg && <p className="error" role="alert">{errorMsg}</p>}
         {install.showIosHint && !install.installed && <p className="install-hint">Pra instalar no iPhone: toque em <b>compartilhar</b> no Safari e depois em <b>“Adicionar à Tela de Início”</b>.</p>}
       </div>
       <div className="scroll-hint">DESLIZE PARA CONHECER AS FACES <span>↓</span></div>
@@ -263,7 +318,7 @@ function App() {
       </ol>
     </section>
 
-    <section className="plans" aria-labelledby="plans-title">
+    <section className="plans" aria-labelledby="plans-title" id="planos">
       <div className="plans-title">
         <p className="kicker">Planos mensais</p>
         <h2 id="plans-title">Comece pela <i>essência</i>.<br />Cresça até a <i>tríade</i>.</h2>
@@ -281,6 +336,8 @@ function App() {
             <li>Botão de <b>WhatsApp</b> e <b>e-mail</b> integrados</li>
             <li>Edição de texto pelo chat</li>
           </ul>
+          <a className="plan-cta" href={planoWhatsapp("Essência", "R$ 15,60")} target="_blank" rel="noreferrer">Assinar Essência  →</a>
+          <p className="plan-cta-hint">Pagamento por Pix pelo WhatsApp</p>
         </article>
 
         <article className="plan plan-dupla">
@@ -294,6 +351,8 @@ function App() {
             <li><b>Download do pacote</b> em ZIP</li>
             <li>Tudo do plano Essência</li>
           </ul>
+          <a className="plan-cta" href={planoWhatsapp("Dupla", "R$ 29,90")} target="_blank" rel="noreferrer">Assinar Dupla  →</a>
+          <p className="plan-cta-hint">Pagamento por Pix pelo WhatsApp</p>
         </article>
 
         <article className="plan plan-triade" data-highlight="true">
@@ -308,6 +367,8 @@ function App() {
             <li>Atualização semanal + download ZIP</li>
             <li>Prioridade na geração e no suporte</li>
           </ul>
+          <a className="plan-cta plan-cta-highlight" href={planoWhatsapp("Tríade Completa", "R$ 69,90")} target="_blank" rel="noreferrer">Assinar Tríade  →</a>
+          <p className="plan-cta-hint">Pagamento por Pix pelo WhatsApp</p>
         </article>
       </div>
     </section>
@@ -321,6 +382,10 @@ function App() {
         <details>
           <summary>É assinatura mensal? Posso cancelar?</summary>
           <p>Sim, mensal. Cancela quando quiser, sem fidelidade. O site fica no ar até o fim do mês pago; depois disso pausa até você voltar.</p>
+        </details>
+        <details>
+          <summary>Como é o pagamento?</summary>
+          <p>Por enquanto, direto no WhatsApp por Pix. Você clica em "Assinar" no plano que quiser, cai numa conversa comigo, eu te mando a chave Pix e libero seu site em minutos. Em breve vamos ter pagamento automático por cartão.</p>
         </details>
         <details>
           <summary>Preciso subir fotos ou vídeos?</summary>
@@ -354,17 +419,10 @@ function App() {
       </div>
     </section>
 
-    {site && <section className="result">
-      <div className="result-label">
-        <span>OBRA</span>
-        <p>A Tríade, <i>manifestada.</i></p>
-      </div>
-      {shareUrl && <p className="share-line">Compartilhe: <a href={shareUrl} target="_blank" rel="noreferrer">{shareUrl}</a></p>}
-      <GeneratedLanding site={site} />
-    </section>}
     <footer>
       <p className="footer-tagline"><em>Sites que respiram.</em></p>
-      <p className="footer-meta">AuraHype · Luna &nbsp;·&nbsp; Terra &nbsp;·&nbsp; Sol · a triangulação da inteligência</p>
+      <p className="footer-meta">Tríade&nbsp;56 · Luna &nbsp;·&nbsp; Terra &nbsp;·&nbsp; Sol · a triangulação da inteligência</p>
+      <p className="footer-meta">triade56.com · assinado pelo <b>GPT&nbsp;5.6</b></p>
     </footer>
   </main>;
 }

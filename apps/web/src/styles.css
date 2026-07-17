@@ -71,16 +71,44 @@ em, .serif { font-family: "Instrument Serif", serif; font-style: italic; font-we
 .triad-halo::after { content: ""; position: absolute; inset: 14%; border-radius: 50%; background: radial-gradient(circle at 32% 30%, rgba(255,255,255,.18), rgba(5,5,5,.9) 62%); }
 @keyframes haloSpin { to { transform: rotate(360deg); } }
 
-/* Nav */
+/* "56" gigante como marca d'água atrás do hero — protagonismo do número, onda OpenAI */
+.big-56 {
+  position: absolute;
+  top: 50%;
+  right: -6%;
+  transform: translateY(-45%);
+  z-index: 0;
+  font-family: Georgia, "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(280px, 42vw, 620px);
+  line-height: 0.85;
+  letter-spacing: -.06em;
+  color: rgba(255, 248, 240, 0.04);
+  pointer-events: none;
+  user-select: none;
+  mix-blend-mode: screen;
+}
+@media (max-width: 720px) { .big-56 { right: -12%; font-size: clamp(240px, 78vw, 380px); } }
+
+/* Nav — o LOGO é o "56" dentro do triângulo (Tríade fica ao lado, sussurrando) */
 nav { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 8px 0 4px; }
-.wordmark { display: inline-flex; align-items: center; gap: 12px; font-weight: 500; font-size: 1.05rem; letter-spacing: -.01em; color: var(--fg); text-decoration: none; }
-.triad-logo { display: inline-flex; gap: 3px; }
-.triad-logo > span { width: 6px; height: 6px; border-radius: 50%; }
-.triad-logo > span:nth-child(1) { background: var(--c-luna);  box-shadow: 0 0 8px var(--c-luna); }
-.triad-logo > span:nth-child(2) { background: var(--c-terra); box-shadow: 0 0 8px var(--c-terra); transform: translateY(-3px); }
-.triad-logo > span:nth-child(3) { background: var(--c-sol);   box-shadow: 0 0 8px var(--c-sol); }
+.wordmark { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: var(--fg); }
+.brand-emblem { flex-shrink: 0; }
+.brand-emblem text { transition: fill .3s; }
+.wordmark:hover .brand-emblem polygon { stroke: rgba(255,248,240,0.55); }
+.wordmark-name { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0; line-height: 1; }
+.wordmark-primary { font-family: "Instrument Serif", serif; font-size: 1.35rem; letter-spacing: 0; color: var(--fg); }
+.wordmark-primary em { font-style: italic; font-weight: 400; }
+.wordmark-tagline { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: var(--fg-tertiary); font-weight: 500; margin-top: 3px; font-family: "Inter", sans-serif; }
 .install-button { padding: 9px 18px; border: 1px solid var(--border); border-radius: 40px; color: var(--fg); font-size: .75rem; font-weight: 500; letter-spacing: .06em; transition: .3s; }
 .install-button:hover { background: rgba(255,255,255,.03); border-color: var(--border-hover); }
+@media (max-width: 520px) {
+  .wordmark { gap: 10px; }
+  .brand-emblem { width: 36px; height: 36px; }
+  .wordmark-primary { font-size: 1.15rem; }
+  .wordmark-tagline { font-size: .52rem; }
+}
 
 /* Conteúdo do hero */
 .intro-copy { position: relative; z-index: 2; max-width: 900px; margin: auto 0; padding: 8vh 0 4vh; }
@@ -622,3 +650,20 @@ footer { padding: 60px 24px 40px; background: var(--bg-elev); border-top: 1px so
   .triad-halo { width: 90vw; }
   .install-button { padding: 7px 12px; font-size: .68rem; }
 }
+
+
+/* ─── Estados após envio (preview pronto, gerando, erro) ─── */
+.status-line { margin: 18px 0 0; max-width: 640px; padding: 14px 18px; border-radius: 14px; background: rgba(255, 248, 240, 0.03); border: 1px solid var(--border); font-size: .95rem; line-height: 1.55; color: var(--fg-secondary); }
+.status-line em { color: var(--fg); font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+.status-line b { color: var(--fg); font-weight: 500; }
+.status-line.status-ready { border-color: color-mix(in srgb, var(--c-sol), transparent 60%); background: color-mix(in srgb, var(--c-sol), transparent 92%); }
+.preview-link { display: inline-block; margin: 8px 0 6px; padding: 12px 18px; background: var(--fg); color: var(--bg); border-radius: 100px; font-family: "Inter", sans-serif; font-size: .82rem; font-weight: 500; letter-spacing: .04em; text-decoration: none; word-break: break-all; transition: .3s; }
+.preview-link:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(255,255,255,.15); }
+.status-hint { margin-top: 8px; font-size: .82rem; color: var(--fg-tertiary); }
+
+/* ─── Botões de assinar nos planos (WhatsApp) ─── */
+.plan-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: 26px; padding: 14px 24px; border-radius: 100px; background: var(--fg); color: var(--bg); font-family: "Inter", sans-serif; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-decoration: none; transition: .3s cubic-bezier(.22,1,.36,1); text-align: center; }
+.plan-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(255,255,255,.16); }
+.plan-cta-highlight { background: linear-gradient(120deg, var(--c-sol), #ff9840); color: #1a0a00; }
+.plan-cta-highlight:hover { box-shadow: 0 20px 40px color-mix(in srgb, var(--c-sol), transparent 55%); }
+.plan-cta-hint { margin-top: 10px; font-size: .72rem; color: var(--fg-tertiary); text-align: center; letter-spacing: .02em; }
