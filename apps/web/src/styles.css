@@ -4,8 +4,12 @@
 * { box-sizing: border-box; } body { margin: 0; } button, input { font: inherit; } button { cursor: pointer; } main { overflow: hidden; }
 .intro { min-height: 88vh; padding: 30px clamp(24px, 6vw, 96px) 36px; background: #17141a; color: #fff8f0; position: relative; display: flex; flex-direction: column; isolation: isolate; }
 .intro::after { content: ""; position: absolute; inset: 0; opacity: .13; pointer-events: none; background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 6px 6px; mix-blend-mode: soft-light; }
-/* A Tríade Orbital: cada bolha é uma das IAs — Luna violeta, Terra esmeralda, Sol âmbar.
-   Blur pesado + mix-blend-mode screen faz o efeito de "foto colorida redonda" fundida. */
+/* A Tríade Orbital
+   -----------------
+   Fundo: 3 bolhas difusas com blur pesado, mix-blend-mode screen — dão a atmosfera.
+   Frente: uma esfera grande e nítida, o "halo" da Tríade, com conic-gradient rotativo
+   nas 3 cores (Luna violeta, Terra esmeralda, Sol âmbar) — é a "foto colorida redonda"
+   protagonista, visível de verdade. */
 .orb-container { position: absolute; inset: 0; z-index: 0; pointer-events: none; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .orb { position: absolute; border-radius: 50%; will-change: transform; mix-blend-mode: screen; }
 .orb.luna { width: min(70vw, 640px); aspect-ratio: 1; background: radial-gradient(circle, #a78bfa 0%, transparent 65%); filter: blur(140px); opacity: .55; animation: orbLuna 22s ease-in-out infinite alternate; }
@@ -14,6 +18,11 @@
 @keyframes orbLuna { 0% { transform: translate(-110px, -60px) scale(1); } 100% { transform: translate(120px, 90px) scale(1.12); } }
 @keyframes orbTerra { 0% { transform: translate(130px, 60px) scale(1); } 100% { transform: translate(-90px, -110px) scale(1.18); } }
 @keyframes orbSol { 0% { transform: translate(-50px, 130px) scale(1); } 100% { transform: translate(70px, -70px) scale(.88); } }
+
+.triad-halo { position: absolute; top: 50%; left: 50%; width: min(80vw, 520px); aspect-ratio: 1; border-radius: 50%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; }
+.triad-halo::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, #a78bfa, #34d399, #fbbf24, #a78bfa); filter: blur(24px); opacity: .78; animation: haloSpin 18s linear infinite; }
+.triad-halo::after { content: ""; position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(23,20,26,.85) 60%); mix-blend-mode: overlay; }
+@keyframes haloSpin { to { transform: rotate(360deg); } }
 nav { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; } .wordmark { font-weight: 700; letter-spacing: -.06em; font-size: 23px; } .wordmark span { color: #ffbb46; } .nav-note, .kicker, .scroll-hint { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .1em; }
 .intro-copy { max-width: 870px; margin: auto 0; padding-top: 6vh; position: relative; z-index: 1; } .kicker { color: #ffca65; margin: 0 0 20px; font-weight: 500; } h1, h2 { font-family: "Playfair Display", serif; font-weight: 600; letter-spacing: -.065em; margin: 0; line-height: .92; } h1 { font-size: clamp(55px, 10.5vw, 148px); } h1 em { color: #ffbb46; } .lede { margin: 34px 0 0; max-width: 480px; font-size: clamp(17px, 2vw, 21px); line-height: 1.45; color: #f9eae4; } .scroll-hint { display: flex; gap: 10px; margin-top: auto; position: relative; z-index: 1; color: #f3d9d1; } .scroll-hint span { font-size: 16px; line-height: 8px; }
 .forge { background: #f7f2e9; padding: 110px clamp(24px, 12vw, 180px); display: grid; grid-template-columns: minmax(180px, .7fr) minmax(500px, 1.3fr); gap: clamp(40px, 10vw, 160px); } .forge-title h2 { color: #271d35; font-size: clamp(42px, 5vw, 72px); } .forge-title h2 i { color: #ee4d72; } .forge .kicker { color: #cf3d63; }
