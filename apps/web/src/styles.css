@@ -376,6 +376,86 @@ h1 em { display: block; color: var(--fg-secondary); }
 @media (max-width: 980px) { .faces-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .faces-grid { grid-template-columns: 1fr; } .faces { padding: 100px 24px; } }
 
+/* ─── SEÇÃO "PITÁGORAS" (o editor) ─── */
+.editor {
+  position: relative;
+  z-index: 1;
+  padding: 130px clamp(24px, 8vw, 120px);
+  background: var(--bg);
+  text-align: center;
+  overflow: hidden;
+}
+.editor::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: min(80vw, 640px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.editor-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+.editor-emblem {
+  display: inline-flex;
+  margin-bottom: 26px;
+  padding: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  animation: emblemFloat 6s ease-in-out infinite;
+}
+@keyframes emblemFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.editor .kicker { display: block; margin-bottom: 18px; }
+.editor h2 {
+  font-family: "Inter";
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 500;
+  letter-spacing: -.04em;
+  line-height: 1.05;
+  margin-bottom: 28px;
+}
+.editor h2 i {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--fg-secondary);
+}
+.editor-text {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--fg-secondary);
+  font-weight: 300;
+  max-width: 560px;
+  margin: 0 auto 24px;
+}
+.editor-text i { color: var(--fg); font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+.editor-text b { color: var(--fg); font-weight: 500; }
+.editor-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: .82rem;
+  color: var(--fg-tertiary);
+  letter-spacing: .02em;
+}
+.editor-tag em {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  color: var(--fg);
+  font-weight: 400;
+}
+
 /* ─── SEÇÃO "TRÊS PASSOS" ─── */
 .flow { position: relative; z-index: 1; padding: 140px clamp(24px, 8vw, 120px); background: var(--bg); }
 .flow-title { text-align: center; max-width: 720px; margin: 0 auto 76px; }

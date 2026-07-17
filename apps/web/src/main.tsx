@@ -214,6 +214,31 @@ function App() {
       </div>
     </section>
 
+    <section className="editor" aria-labelledby="editor-title">
+      <div className="editor-inner">
+        <div className="editor-emblem" aria-hidden="true">
+          <svg viewBox="0 0 120 120" width="88" height="88">
+            <defs>
+              <linearGradient id="pitLine" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stopColor="#ffffff" stopOpacity="0.9" />
+                <stop offset="1" stopColor="#ffffff" stopOpacity="0.35" />
+              </linearGradient>
+            </defs>
+            <polygon points="60,14 106,96 14,96" fill="none" stroke="url(#pitLine)" strokeWidth="1.6" strokeLinejoin="round" />
+            <line x1="60" y1="14" x2="60" y2="96" stroke="#ffffff" strokeOpacity="0.28" strokeWidth="1" strokeDasharray="3 3" />
+            <circle cx="60" cy="14" r="3" fill="#a78bfa" />
+            <circle cx="106" cy="96" r="3" fill="#fbbf24" />
+            <circle cx="14" cy="96" r="3" fill="#34d399" />
+            <circle cx="60" cy="96" r="4" fill="#ffffff" />
+          </svg>
+        </div>
+        <p className="kicker">Depois da triangulação</p>
+        <h2 id="editor-title">Pitágoras <i>entra em cena</i>.</h2>
+        <p className="editor-text">Quando as três faces já triangularam e o Zênite escolheu, seu site nasce. A partir daí, quem cuida da <i>geometria</i> — a cor de um botão, o tom de uma frase, trocar a foto principal, ajustar uma seção — é o <b>Pitágoras</b>. Um chat direto. Você fala em português, ele calcula, ele mexe. Sem código.</p>
+        <p className="editor-tag"><em>a² + b² = c²</em> · o editor que entende triângulo</p>
+      </div>
+    </section>
+
     <section className="flow" aria-labelledby="flow-title">
       <div className="flow-title">
         <p className="kicker">Do @ ao site</p>
@@ -264,7 +289,7 @@ function App() {
           <p className="plan-line">O caminho mais escolhido. Duas vozes conversando sobre você.</p>
           <ul className="plan-features">
             <li><b>2 faces</b> — combine Sol+Terra, Sol+Luna ou Terra+Luna</li>
-            <li>Chat de edição de <b>textos, fotos e vídeos</b></li>
+            <li>Chat de edição com <b>Pitágoras</b> (textos, fotos e vídeos)</li>
             <li><b>Atualização semanal</b> automática com posts novos</li>
             <li><b>Download do pacote</b> em ZIP</li>
             <li>Tudo do plano Essência</li>
@@ -275,11 +300,11 @@ function App() {
           <span className="plan-highlight">Tríade completa</span>
           <p className="plan-tag">Tríade</p>
           <p className="plan-price">R$ 69,90<small>/mês</small></p>
-          <p className="plan-line">Todas as três faces. Zênite mediando. A conversa cheia.</p>
+          <p className="plan-line">Todas as três faces. Zênite mediando. Pitágoras editando. A conversa cheia.</p>
           <ul className="plan-features">
             <li><b>3 faces</b> — Luna, Terra e Sol simultaneamente</li>
             <li><b>Zênite</b> escuta as três e resolve os conflitos</li>
-            <li>Chat de edição completo (texto, foto, vídeo)</li>
+            <li><b>Pitágoras</b> como editor: chat completo (texto, foto, vídeo)</li>
             <li>Atualização semanal + download ZIP</li>
             <li>Prioridade na geração e no suporte</li>
           </ul>
@@ -308,6 +333,10 @@ function App() {
         <details>
           <summary>Posso trocar de plano depois?</summary>
           <p>Pode. Sobe pra Dupla ou Tríade a qualquer momento — a diferença é cobrada proporcionalmente. Descer também dá; o novo valor vale a partir da próxima cobrança.</p>
+        </details>
+        <details>
+          <summary>Quem é o Pitágoras?</summary>
+          <p>É o <i>editor</i>. Depois que Luna, Terra e Sol triangulam e o Zênite modera, seu site nasce. Se você quiser mudar qualquer coisa depois — cor, tom, foto, seção inteira — é com o Pitágoras que você conversa. Chat direto, em português. Ele entende <i>geometria de site</i>, então ele mexe. Sem código, sem painel complicado. Está incluído nos planos Dupla e Tríade.</p>
         </details>
         <details>
           <summary>Posso ter meu próprio domínio?</summary>
