@@ -290,7 +290,7 @@ function App() {
         </div>
         <p className="kicker">Depois da triangulação</p>
         <h2 id="editor-title">Pitágoras <i>entra em cena</i>.</h2>
-        <p className="editor-text">Quando as três faces já triangularam e o Zênite escolheu, seu site nasce. A partir daí, quem cuida da <i>geometria</i> — a cor de um botão, o tom de uma frase, trocar a foto principal, ajustar uma seção — é o <b>Pitágoras</b>. Um chat direto. Você fala em português, ele calcula, ele mexe. Sem código.</p>
+        <p className="editor-text">Quando as três faces já triangularam e o Zênite escolheu, seu site nasce. A partir daí, quem cuida da <i>geometria</i> — a cor de um botão, o tom de uma frase, trocar a foto principal, ajustar uma seção — é o <b>Pitágoras</b>, no meu bastidor. Você manda o pedido no <b>WhatsApp</b>; eu ajusto e te devolvo o link novo. Sem instalar nada.</p>
         <p className="editor-tag"><em>a² + b² = c²</em> · o editor que entende triângulo</p>
       </div>
     </section>
@@ -343,11 +343,11 @@ function App() {
         <article className="plan plan-dupla">
           <p className="plan-tag">Dupla · Creator</p>
           <p className="plan-price">R$ 35,60<small>/mês</small></p>
-          <p className="plan-line">Duas vozes conversando sobre você, com edição Luna.</p>
+          <p className="plan-line">Duas vozes conversando sobre você. Ajustes pelo WhatsApp.</p>
           <ul className="plan-features">
             <li><b>2 modelos</b> — combine Sol+Terra, Sol+Luna ou Terra+Luna</li>
             <li><b>40 créditos de chat</b> incluídos</li>
-            <li>Edição com <b>Luna</b></li>
+            <li>Ajustes ilimitados no site (pedidos pelo WhatsApp)</li>
             <li><b>Atualização semanal</b> automática com posts novos</li>
             <li><b>Download do pacote</b> em ZIP</li>
             <li>Tudo do plano Essência</li>
@@ -360,12 +360,12 @@ function App() {
           <span className="plan-highlight">Tríade completa</span>
           <p className="plan-tag">Tríade · Pro</p>
           <p className="plan-price">R$ 96,50<small>/mês</small></p>
-          <p className="plan-line">Site profissional completo. Três modelos, chat e edição com Terra.</p>
+          <p className="plan-line">Site profissional completo. Três modelos e ajustes prioritários pelo WhatsApp.</p>
           <ul className="plan-features">
             <li><b>3 modelos</b> — Luna, Terra e Sol simultaneamente</li>
             <li><b>Zênite</b> escuta as três e resolve os conflitos</li>
             <li><b>100 créditos de chat</b> incluídos</li>
-            <li><b>Terra</b> no chat e na edição</li>
+            <li>Ajustes prioritários e ilimitados (pedidos pelo WhatsApp)</li>
             <li>Atualização semanal + download ZIP</li>
             <li>Prioridade na geração e no suporte</li>
           </ul>
@@ -403,7 +403,7 @@ function App() {
         </details>
         <details>
           <summary>Quem é o Pitágoras?</summary>
-          <p>É o <i>editor</i>. Depois que Luna, Terra e Sol triangulam e o Zênite modera, seu site nasce. Se você quiser mudar qualquer coisa depois — cor, tom, foto, seção inteira — é com o Pitágoras que você conversa. Chat direto, em português. Ele entende <i>geometria de site</i>, então ele mexe. Sem código, sem painel complicado. Está incluído nos planos Dupla e Tríade.</p>
+          <p>É o motor de edição que roda no meu computador. Quando você quer mudar algo — cor, tom, foto, seção inteira — me manda o pedido no WhatsApp que eu ajusto e te devolvo o link novo em minutos. Você não precisa instalar nada.</p>
         </details>
         <details>
           <summary>Posso ter meu próprio domínio?</summary>

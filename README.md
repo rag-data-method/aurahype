@@ -1,6 +1,6 @@
 # Tríade 56 — Sites que respiram
 
-Cole seu @, veja seu site nascer da triangulação de **Luna**, **Terra** e **Sol**, moderada pelo **Zênite**. O **Pitágoras** cuida da geometria depois. Tudo assinado pelo **GPT 5.6**.
+Cole seu @, veja seu site nascer da triangulação de **Luna**, **Terra** e **Sol**, moderada pelo **Zênite**. Ajustes depois: pedido no **WhatsApp** (Pitágoras roda só no bastidor da Miriam). Tudo assinado pelo **GPT 5.6**.
 
 Domínio: **[triade56.com](https://triade56.com)**
 

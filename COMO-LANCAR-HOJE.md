@@ -9,8 +9,8 @@ Miriam, é isso aqui. 4 passos, sem enrolação. Todo o código já está pronto
 | Plano | Preço | Modelos / chat |
 |-------|-------|----------------|
 | **Essência** | **R$ 15,60** | Luna · só site |
-| **Dupla** | **R$ 35,60** | 2 modelos · **40 créditos** · Luna edita · Pitágoras no template |
-| **Tríade** | **R$ 96,50** | 3 modelos · **100 créditos** · Terra no chat · Sol fora do hot path |
+| **Dupla** | **R$ 35,60** | 2 modelos · **40 créditos** · ajustes ilimitados via WhatsApp |
+| **Tríade** | **R$ 96,50** | 3 modelos · **100 créditos** · ajustes prioritários via WhatsApp · Sol fora do hot path |
 
 ### Fluxo SEM upload
 

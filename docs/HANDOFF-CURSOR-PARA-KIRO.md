@@ -10,29 +10,46 @@ Fontes consolidadas (Cursor `cria-site-kimi/outputs/`): `planos_triade56_2minute
 
 ---
 
+## 0. Pitágoras = só bastidor (URGENTE · 2026-07-17)
+
+| Quem | O quê |
+|------|--------|
+| **Pitágoras** | Ferramenta **interna** da Miriam (desktop dela). Cliente **nunca** instala Python nem abre chat com Pitágoras. |
+| **Cliente** | Pede ajuste no **WhatsApp** → Miriam roda Pitágoras no PC → devolve link novo. |
+
+**Produto no ar hoje = landing Tríade 56.** Copy de venda não pode prometer “chat com Pitágoras” / “conversa com Pitágoras”. Bullets honestos:
+
+- Dupla: *Ajustes ilimitados no site (pedidos pelo WhatsApp)*
+- Tríade: *Ajustes prioritários e ilimitados (pedidos pelo WhatsApp)*
+
+FAQ “Quem é o Pitágoras?”: motor no computador da Miriam; pedido via WhatsApp; cliente não instala nada.
+
+---
+
 ## 1. Planos oficiais (Miriam)
 
-| Marketing | Interno | Preço | Inclui | Modelos | Créditos chat | Quem edita / chat |
-|-----------|---------|-------|--------|---------|---------------|-------------------|
-| **Essência** | Starter | **R$ 15,60** | Só site | **Luna** | — | edição leve (se houver) |
-| **Dupla** | Creator | **R$ 35,60** | Site + edição + chat | 2 modelos (foco Luna) | **40** | **Luna** (+ **Pitágoras** no template) |
-| **Tríade** | Pro | **R$ 96,50** | Site completo + 3 modelos + chat | Sol / Terra / Luna | **100** | Chat/edição pesada: **Terra** |
+| Marketing | Interno | Preço | Inclui | Modelos | Créditos chat | Ajustes pós-site |
+|-----------|---------|-------|--------|---------|---------------|------------------|
+| **Essência** | Starter | **R$ 15,60** | Só site | **Luna** | — | — |
+| **Dupla** | Creator | **R$ 35,60** | Site + chat + ajustes WA | 2 modelos | **40** | Ilimitados via **WhatsApp** |
+| **Tríade** | Pro | **R$ 96,50** | Site completo + 3 modelos + chat | Sol / Terra / Luna | **100** | Prioritários + ilimitados via **WhatsApp** |
 
 ### Papéis canônicos
 
 | Agente | Papel | Onde usa |
 |--------|-------|----------|
-| **Luna** | Site barato, copy/UI, edição leve | Essência (site); **Creator** (edita) |
-| **Terra** | Backend/código, chat/edição **pesada** | **Pro** = hot path do chat |
+| **Luna** | Site barato, copy/UI | Essência (site); Dupla (geração) |
+| **Terra** | Backend/código, geração pesada | Tríade |
 | **Sol** | Plano / orquestração | **Evitar hot path** — reasoning lenta; só excepcional |
-| **Pitágoras** | Editor conversacional do **template** pós-geração | Dupla + Tríade (geometria: cor, texto, foto, seção) |
+| **Pitágoras** | Editor **só no desktop da Miriam** (não é app do cliente) | Bastidor: pedidos WhatsApp → Miriam edita → link novo |
 | **Zênite** | Moderação das 3 faces na geração | Tríade |
 
 ### Regras duras
 
 - Não vender Essência como “3 modelos”.
 - Não colocar **Sol** no hot path de chat/edição (é lenta).
-- UI em `apps/web/src/main.tsx` (commit `c324182+`) já tem preços 15,60 / 35,60 / 96,50 e bullets de créditos — manter alinhado.
+- **Não** prometer chat/conversa do cliente com Pitágoras — caminho do cliente = WhatsApp.
+- UI em `apps/web/src/main.tsx` — preços 15,60 / 35,60 / 96,50 e créditos 40/100 — manter alinhado.
 - Pagamento **hoje:** WhatsApp + Pix manual (botão Assinar). Stripe = semana que vem.
 
 ---
@@ -60,6 +77,8 @@ VITE_WHATSAPP=55XXXXXXXXXXX
 NODE_VERSION=22
 ```
 
+**Atenção Kiro:** se o passo 3 de algum guia antigo disse `misscanvas` em `VITE_TRIADE_API`, **ignore** — use só `https://2minutes.site/api/insta-site`.
+
 - `VITE_WHATSAPP`: só dígitos = `55` + DDD (2) + número (9). Placeholder `5511999999999` **não é real** — Miriam troca antes de vender.
 - **Não** commitar número real nem chaves Azure / Firebase service account.
 
@@ -75,10 +94,11 @@ CORS no worker (já probeado com `*`): se restringir no futuro, incluir `https:/
 2. Scraping via **Context.dev** (e cascade do 2Minutes: Context → SocialCrawl (+ Tavily) → Silver → Apify last).
 3. Apresentar mídia rasgada → usuário escolhe o que é **principal** e o que é **secundária**.
 4. **Publicar** o site com essa escolha.
+5. Ajustes depois = **WhatsApp** → Miriam (+ Pitágoras no PC dela) → link novo.
 
 Copy atual do front já diz “nada de upload” (cola o @). O gap de produto a fechar no UX/API é o passo **escolher principal/secundária** antes do publish — não inventar formulário de upload.
 
-Na geração/edição: GPTs da Tríade (**Luna** / **Terra**; **Sol** fora do hot path).
+Na geração: GPTs da Tríade (**Luna** / **Terra**; **Sol** fora do hot path).
 
 ---
 
@@ -110,6 +130,7 @@ Passos Miriam/Kiro:
 |------|-------|-------------|
 | **Foundry Studio** | Chat web (zip “Lovable” TanStack) — chat Azure, **não** edita arquivos | `Downloads/your-interactive-app-main/...` |
 | **Copiloto / Agente Azure Local** | Desktop Tkinter + EXE — Assistente + Construtor Full-Stack | `Documents\Copiloto\` (`debug_gui.py`, `AgenteAzureLocal.exe`) |
+| **Pitágoras** | Motor de edição no **desktop Miriam** | Interno — cliente só manda pedido no WhatsApp |
 
 ### Veredito
 
@@ -128,7 +149,7 @@ Próximo salto Lovable (fora do escopo Pages): Construtor chama LLM e escreve em
 |--------|------------|
 | Front | React + Vite → Cloudflare Pages |
 | Backend de geração | Worker MissCanvas `handleInstaSite` via `https://2minutes.site/api/insta-site` |
-| Pagamento | WhatsApp + Pix (agora); Stripe (depois) |
+| Pagamento + pedidos de ajuste | WhatsApp + Pix (agora); Stripe (depois) |
 | Domínio produto | **triade56.com** |
 
 Estrutura: `apps/web/` (publicado), `packages/shared/`, `services/api/` e `infra/` = legado AWS (não usar nesta versão).
@@ -138,8 +159,9 @@ Estrutura: `apps/web/` (publicado), `packages/shared/`, `services/api/` e `infra
 ## 7. Checklist Kiro (aceite)
 
 - [ ] Preços UI = 15,60 / 35,60 / 96,50 + créditos 40/100
-- [ ] Essência = Luna; Dupla = Luna edita + Pitágoras; Tríade = Terra no chat; Sol fora do hot path
-- [ ] `VITE_TRIADE_API` → `2minutes.site` (nunca misscanvas 404)
+- [ ] Copy: ajustes via WhatsApp — **zero** “chat com Pitágoras” pro cliente
+- [ ] Pitágoras documentado como ferramenta só da Miriam
+- [ ] `VITE_TRIADE_API` → `https://2minutes.site/api/insta-site` (nunca misscanvas 404)
 - [ ] `VITE_WHATSAPP` real (só dígitos), sem placeholder
 - [ ] Fluxo SEM upload; scrape → escolha principal/secundária → publish
 - [ ] `triade56.com` no Pages + SSL
@@ -152,9 +174,10 @@ Estrutura: `apps/web/` (publicado), `packages/shared/`, `services/api/` e `infra
 - Deploy Pages com secrets sem OK da Miriam.
 - Inventar número de WhatsApp.
 - Voltar default da API para `misscanvas.com`.
+- Prometer ao cliente chat/app/instalação do Pitágoras.
 - Misturar Onda 2 / builder Copiloto no hot path do front de venda.
 - Colocar Sol no chat pesado “pra ficar completo”.
 
 ---
 
-*Handoff consolidado 2026-07-17 — Cursor → Kiro. Sem secrets.*
+*Handoff consolidado 2026-07-17 — Cursor → Kiro. Sem secrets. Atualizado: Pitágoras = bastidor Miriam; cliente = WhatsApp.*
