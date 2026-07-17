@@ -1,7 +1,34 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { createRoot } from "react-dom/client";
 import { GENERATION_MODELS, type GenerationModel } from "@site-forge/shared";
+import { SeloMemoria } from "./components/SeloMemoria.js";
 import "./styles.css";
+
+// ─────────────────────────────────────────────────────────────────
+// Hash cyberpunk animado — mostra durante a geração pra dar
+// sensação de "algo caro está acontecendo". Zero dependência.
+// ─────────────────────────────────────────────────────────────────
+function useGeneratingHash(active: boolean) {
+  const [hash, setHash] = useState("0x0000000000000000");
+  useEffect(() => {
+    if (!active) return;
+    const chars = "0123456789abcdef";
+    const gen = () => {
+      let h = "0x";
+      for (let i = 0; i < 16; i++) h += chars[Math.floor(Math.random() * 16)];
+      setHash(h);
+    };
+    gen();
+    const id = window.setInterval(gen, 180);
+    return () => window.clearInterval(id);
+  }, [active]);
+  return hash;
+}
+
+// Flag pra ativar o Selo Three.js fullscreen (quando quiser trocar
+// a tela simples de "gerando" pelo espetáculo 3D). Miriam decide via
+// env var ou trocando pra `true` aqui.
+const USE_SELO_3D = (import.meta.env.VITE_SELO_3D as string | undefined) === "true";
 
 // ─────────────────────────────────────────────────────────────────
 // CONFIGURAÇÃO — Miriam, você mexe SÓ AQUI pra lançar:
@@ -146,6 +173,7 @@ function App() {
   const [siteUrl, setSiteUrl] = useState<string>();
   const [errorMsg, setErrorMsg] = useState<string>();
   const install = useInstallPrompt();
+  const gerandoHash = useGeneratingHash(status === "gerando");
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -173,6 +201,10 @@ function App() {
   }
 
   return <main>
+    {/* Selo Three.js fullscreen — DORMANT. Só ativa se VITE_SELO_3D=true.
+        Substitui a tela simples "gerando" por espetáculo hexagonal 3D. */}
+    <SeloMemoria active={USE_SELO_3D && status === "gerando"} legend={username ? `Perfil: @${username.replace(/^@+/, "")}` : undefined} />
+
     {/* Bolota que acompanha o scroll — fica ancorada na viewport, flutua por trás/frente
         de todas as seções conforme o usuário rola a página. */}
     <div className="triad-halo triad-halo-floating" aria-hidden="true" />
@@ -223,7 +255,12 @@ function App() {
             <span>Este perfil é meu — ou tenho autorização de quem é.</span>
           </label>
         </form>
-        {status === "gerando" && <p className="status-line">Luna sente, Terra estrutura, Sol revela. Zênite modera. <em>Levo 2 minutinhos.</em></p>}
+        {status === "gerando" && (
+          <div className="status-line">
+            <p>Luna sente, Terra estrutura, Sol revela. Zênite modera. <em>Levo 2 minutinhos.</em></p>
+            <span className="gerando-hash">HASH: {gerandoHash}</span>
+          </div>
+        )}
         {status === "pronto" && siteUrl && <div className="status-line status-ready">
           <p><b>Seu preview está pronto.</b> Abre num toque:</p>
           <a href={siteUrl} target="_blank" rel="noreferrer" className="preview-link">{siteUrl} ↗</a>

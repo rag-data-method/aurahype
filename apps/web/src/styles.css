@@ -711,3 +711,58 @@ footer { padding: 60px 24px 40px; background: var(--bg-elev); border-top: 1px so
 .plan-cta-highlight { background: linear-gradient(120deg, var(--c-sol), #ff9840); color: #1a0a00; }
 .plan-cta-highlight:hover { box-shadow: 0 20px 40px color-mix(in srgb, var(--c-sol), transparent 55%); }
 .plan-cta-hint { margin-top: 10px; font-size: .72rem; color: var(--fg-tertiary); text-align: center; letter-spacing: .02em; }
+
+
+
+/* ─── SELO MEMÓRIA (dormant — só ativa quando o App montar <SeloMemoria active />) ─── */
+.selo-memoria {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #050505;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  animation: seloEnter .6s cubic-bezier(.22,1,.36,1);
+}
+.selo-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.selo-scanline {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, rgba(167,139,250,.06) 50%, transparent 100%);
+  background-size: 100% 200px;
+  animation: seloScan 8s linear infinite;
+  z-index: 1;
+}
+.selo-hud {
+  position: relative;
+  z-index: 2;
+  padding: 24px 32px;
+  border: 1px solid rgba(167,139,250,.25);
+  border-radius: 16px;
+  background: rgba(5,5,5,.55);
+  backdrop-filter: blur(14px);
+  text-align: center;
+  max-width: 520px;
+}
+.selo-title { font-family: "Inter", sans-serif; font-size: .82rem; letter-spacing: .18em; color: #a78bfa; margin-bottom: 12px; font-weight: 600; }
+.selo-title span { color: #fbbf24; }
+.selo-sub { font-family: "Instrument Serif", serif; font-style: italic; font-size: 1.4rem; color: #fdfbf7; letter-spacing: 0; line-height: 1.3; }
+.selo-legend { margin-top: 14px; font-family: "Inter", sans-serif; font-size: .72rem; color: rgba(255,248,240,.6); letter-spacing: .06em; word-break: break-all; }
+@keyframes seloEnter { from { opacity: 0; } to { opacity: 1; } }
+@keyframes seloScan { from { background-position: 0 -200px; } to { background-position: 0 100vh; } }
+
+/* ─── HASH cyberpunk aparecendo enquanto gera (leve, sem Three.js) ─── */
+.gerando-hash {
+  display: block;
+  margin-top: 10px;
+  font-family: "Inter", monospace, "Courier New";
+  font-size: .72rem;
+  letter-spacing: .05em;
+  color: var(--c-luna);
+  opacity: .8;
+  word-break: break-all;
+}
+.gerando-hash::before {
+  content: "▸ ";
+  color: var(--c-sol);
+}
