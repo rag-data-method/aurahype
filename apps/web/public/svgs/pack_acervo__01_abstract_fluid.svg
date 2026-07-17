@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050b1e"/>
+      <stop offset="100%" stop-color="#1a1040"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2b6c"/>
+      <stop offset="100%" stop-color="#5b21b6"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0e7490"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4c1d95"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="b" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <circle cx="1200" cy="250" r="300" fill="#22d3ee" opacity="0.15" filter="url(#b)">
+    <animate attributeName="cy" values="250;290;250" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.24;0.15" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="700" r="280" fill="#7c3aed" opacity="0.15" filter="url(#b)">
+    <animate attributeName="cy" values="700;660;700" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.22;0.15" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <g opacity="0.8">
+    <path fill="url(#g1)" d="M0,320 C360,180 640,520 1040,360 C1320,250 1600,420 1600,420 V900 H0 Z">
+      <animateTransform attributeName="transform" type="translate" values="-40,0;40,0;-40,0" dur="18s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g opacity="0.75">
+    <path fill="url(#g2)" d="M0,520 C340,400 720,660 1120,500 C1420,390 1600,560 1600,560 V900 H0 Z">
+      <animateTransform attributeName="transform" type="translate" values="30,0;-30,0;30,0" dur="14s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g opacity="0.85">
+    <path fill="url(#g3)" d="M0,680 C400,560 820,820 1240,660 C1500,540 1600,720 1600,720 V900 H0 Z">
+      <animateTransform attributeName="transform" type="translate" values="-20,15;20,-10;-20,15" dur="16s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

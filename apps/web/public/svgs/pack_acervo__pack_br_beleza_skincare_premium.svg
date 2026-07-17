@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f0b12"/>
+      <stop offset="45%" stop-color="#4a1a2c"/>
+      <stop offset="100%" stop-color="#120608"/>
+    </linearGradient>
+    <radialGradient id="ambientGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#ff9eb5" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#ff7f50" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="roseGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8b4b4"/>
+      <stop offset="35%" stop-color="#d48c8c"/>
+      <stop offset="60%" stop-color="#b76e79"/>
+      <stop offset="100%" stop-color="#f9d7c6"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.12"/>
+      <stop offset="22%" stop-color="#fff" stop-opacity="0.42"/>
+      <stop offset="50%" stop-color="#ffd1dc" stop-opacity="0.18"/>
+      <stop offset="78%" stop-color="#fff" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="serumGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd27a"/>
+      <stop offset="55%" stop-color="#ff9f43"/>
+      <stop offset="100%" stop-color="#ff6b6b"/>
+    </linearGradient>
+    <radialGradient id="dropGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd1dc" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#ff9f43" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ff9f43" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="glowBlur">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+  <ellipse cx="960" cy="480" rx="700" ry="520" fill="url(#ambientGlow)"/>
+
+  <g transform="translate(960,0)">
+    <ellipse cx="0" cy="840" rx="260" ry="52" fill="#ff7f50" opacity="0.12" filter="url(#softBlur)">
+      <animate attributeName="opacity" values="0.12;0.22;0.12" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <g fill="none" stroke-linecap="round">
+      <ellipse cx="0" cy="840" rx="60" ry="12" stroke="#ffbf9e" stroke-width="3" opacity="0">
+        <animateTransform attributeName="transform" type="scale" values="0;2.8" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="0" cy="840" rx="60" ry="12" stroke="#ffb6c1" stroke-width="2.5" opacity="0">
+        <animateTransform attributeName="transform" type="scale" values="0;2.4" dur="3s" begin="1.9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0" dur="3s" begin="1.9s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="0" cy="840" rx="60" ry="12" stroke="#ffd700" stroke-width="2" opacity="0">
+        <animateTransform attributeName="transform" type="scale" values="0;2" dur="3s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0" dur="3s" begin="2.3s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+
+    <g id="dropper">
+      <rect x="-55" y="150" width="110" height="75" rx="10" fill="url(#roseGold)"/>
+      <rect x="-45" y="160" width="90" height="10" rx="5" fill="#fff" opacity="0.35"/>
+      <path d="M-52 225 L-52 520 Q-52 565 0 615 Q52 565 52 520 L52 225 Q52 205 0 205 Q-52 205 -52 225 Z" fill="url(#glassGrad)" stroke="#fff" stroke-opacity="0.25" stroke-width="1.5"/>
+      <path d="M-42 405 L-42 505 Q-42 540 0 585 Q42 540 42 505 L42 405 Q42 415 0 415 Q-42 415 -42 405 Z" fill="url(#serumGrad)" opacity="0.88"/>
+      <path d="M-30 240 L-30 490 Q-30 525 -15 555" stroke="#fff" stroke-width="4" stroke-opacity="0.4" fill="none" stroke-linecap="round"/>
+      <path d="M20 250 L20 360" stroke="#fff" stroke-width="2.5" stroke-opacity="0.25" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(0,615)">
+      <circle r="28" fill="url(#dropGlow)" filter="url(#glowBlur)"/>
+      <circle r="14" fill="url(#serumGrad)"/>
+      <circle r="5" cx="-4" cy="-4" fill="#fff" opacity="0.7"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,230;0,230" keyTimes="0;0.5;1" dur="3s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.6;1" dur="3s" repeatCount="indefinite"/>
+    </g>
+
+    <g opacity="0.7">
+      <path d="M-120 720 L-116 720 L-116 716 L-114 720 L-110 720 L-113 723 L-112 727 L-116 725 L-120 727 L-118 723 Z" fill="#fff">
+        <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M140 680 L144 680 L144 676 L146 680 L150 680 L147 683 L148 687 L144 685 L140 687 L142 683 Z" fill="#ffd1dc">
+        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.7s" begin="0.6s" repeatCount="indefinite"/>
+      </path>
+      <path d="M90 780 L93 780 L93 777 L95 780 L98 780 L95 783 L96 786 L93 784 L90 786 L92 783 Z" fill="#ffd27a">
+        <animate attributeName="opacity" values="0.2;0.85;0.2" dur="3.5s" begin="1.2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-160 600 L-157 600 L-157 597 L-155 600 L-152 600 L-155 603 L-154 606 L-157 604 L-160 606 L-158 603 Z" fill="#fff">
+        <animate attributeName="opacity" values="0.2;0.75;0.2" dur="2.9s" begin="0.3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+</svg>

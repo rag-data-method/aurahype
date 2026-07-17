@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="laptopBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A3530"/>
+      <stop offset="100%" stop-color="#2B2620"/>
+    </linearGradient>
+    <linearGradient id="screenActive" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7B84E3"/>
+      <stop offset="100%" stop-color="#5E6AD2"/>
+    </linearGradient>
+    <linearGradient id="vrLensGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8B94F3"/>
+      <stop offset="100%" stop-color="#5E6AD2"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+    </filter>
+    <filter id="steam">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#F5F0E6"/>
+  
+  <g transform="translate(800, 450)">
+    <!-- Main Shadow -->
+    <ellipse cx="0" cy="280" rx="300" ry="40" fill="#2B2620" opacity="0.15" filter="url(#shadow)">
+      <animate attributeName="rx" values="300;320;300" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.1;0.15" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Laptop Base -->
+    <path d="M-240,200 L240,200 L260,280 L-260,280 Z" fill="url(#laptopBody)"/>
+    <path d="M-260,280 L260,280 L240,300 L-240,300 Z" fill="#1A1612"/>
+    <!-- Keyboard Hint -->
+    <g opacity="0.3" fill="#5E6AD2">
+      <rect x="-200" y="230" width="30" height="8" rx="2">
+        <animate attributeName="opacity" values="0.3;0.5;0.3" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-160" y="230" width="30" height="8" rx="2"/>
+      <rect x="-120" y="230" width="30" height="8" rx="2"/>
+      <rect x="-80" y="230" width="30" height="8" rx="2"/>
+      <rect x="-40" y="230" width="30" height="8" rx="2"/>
+      <rect x="0" y="230" width="30" height="8" rx="2"/>
+      <rect x="40" y="230" width="30" height="8" rx="2"/>
+      <rect x="80" y="230" width="30" height="8" rx="2"/>
+      <rect x="120" y="230" width="30" height="8" rx="2"/>
+      <rect x="160" y="230" width="30" height="8" rx="2"/>
+    </g>
+    
+    <!-- Laptop Screen -->
+    <g transform="translate(0, -20)">
+      <path d="M-240,220 L240,220 L240,20 L-240,20 Z" fill="#2B2620"/>
+      <!-- Display -->
+      <path d="M-220,210 L220,210 L220,30 L-220,30 Z" fill="url(#screenActive)" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <!-- Screen Reflection -->
+      <path d="M-220,30 L-100,30 L-150,210 L-220,210 Z" fill="#FFFFFF" opacity="0.08">
+        <animate attributeName="opacity" values="0.08;0.15;0.08" dur="5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- VR Goggles -->
+    <g transform="translate(0, -100)">
+      <!-- Back Strap -->
+      <path d="M-200,50 Q-260,70 -250,110 Q-240,150 -190,130" fill="none" stroke="#2B2620" stroke-width="8" opacity="0.5">
+        <animate attributeName="d" values="M-200,50 Q-260,70 -250,110 Q-240,150 -190,130;M-200,50 Q-262,72 -252,112 Q-242,152 -190,130;M-200,50 Q-260,70 -250,110 Q-240,150 -190,130" dur="6s" repeatCount="indefinite"/>
+      </path>
+      <!-- Main Frame -->
+      <path d="M-180,30 L180,30 L190,70 L170,90 L-170,90 L-190,70 Z" fill="#2B2620"/>
+      <!-- Front Panel -->
+      <path d="M-170,35 L170,35 L165,65 L-165,65 Z" fill="#3A3530"/>
+      <!-- Left Lens -->
+      <ellipse cx="-80" cy="50" rx="55" ry="28" fill="url(#vrLensGrad)" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="2.5s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- Right Lens -->
+      <ellipse cx="80" cy="50" rx="55" ry="28" fill="url(#vrLensGrad)" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="2.5s" begin="1.25s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- Lens Glow -->
+      <ellipse cx="-80" cy="50" rx="55" ry="28" fill="#5E6AD2" opacity="0.4" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.5s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="80" cy="50" rx="55" ry="28" fill="#5E6AD2" opacity="0.4" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.5s" begin="1.25s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- Accent Bar -->
+      <rect x="-170" y="75" width="340" height="5" fill="#C9A85C" opacity="0.9"/>
+      <!-- Status Lights -->
+      <circle cx="-150" cy="82" r="4" fill="#5E6AD2">
+        <animate attributeName="fill" values="#5E6AD2;#C9A85C;#5E6AD2" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="150" cy="82" r="4" fill="#5E6AD2">
+        <animate attributeName="fill" values="#5E6AD2;#C9A85C;#5E6AD2" dur="4s" begin="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Coffee Cup -->
+    <g transform="translate(380, 200)">
+      <ellipse cx="0" cy="65" rx="55" ry="18" fill="#2B2620" opacity="0.2" filter="url(#shadow)"/>
+      <!-- Cup Body -->
+      <path d="M-45,0 L-40,50 Q0,65 40,50 L45,0 Z" fill="#F5F0E6" stroke="#2B2620" stroke-width="3"/>
+      <!-- Rim -->
+      <ellipse cx="0" cy="0" rx="45" ry="15" fill="#2B2620"/>
+      <ellipse cx="0" cy="3" rx="40" ry="12" fill="#1A1612"/>
+      <!-- Coffee -->
+      <ellipse cx="0" cy="4" rx="36" ry="10" fill="#2B2620">
+        <animate attributeName="rx" values="36;38;36" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="ry" values="10;11;10" dur="3s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- Handle -->
+      <path d="M43,15 Q60,15 60,35 Q60,55 43,50" fill="none" stroke="#2B2620" stroke-width="5" stroke-linecap="round"/>
+      <!-- Steam Particles -->
+      <path d="M-20,0 Q-15,-20 -20,-40 Q-25,-60 -15,-80" fill="none" stroke="#C9A85C" stroke-width="4" opacity="0" filter="url(#steam)" stroke-linecap="round">
+        <animate attributeName="d" values="M-20,0 Q-15,-20 -20,-40 Q-25,-60 -15,-80;M-20,-15 Q-25,-35 -15,-55 Q-10,-75 -20,-95;M-20,0 Q-15,-20 -20,-40 Q-25,-60 -15,-80" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="4;6;2" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0,-5 Q5,-25 0,-45 Q-5,-65 5,-85" fill="none" stroke="#C9A85C" stroke-width="3" opacity="0" filter="url(#steam)" stroke-linecap="round">
+        <animate attributeName="d" values="M0,-5 Q5,-25 0,-45 Q-5,-65 5,-85;M0,-20 Q-5,-40 5,-60 Q10,-80 0,-100;M0,-5 Q5,-25 0,-45 Q-5,-65 5,-85" dur="5s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.7;0" dur="5s" begin="1.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M20,-10 Q25,-30 20,-50 Q15,-70 25,-90" fill="none" stroke="#C9A85C" stroke-width="3" opacity="0" filter="url(#steam)" stroke-linecap="round">
+        <animate attributeName="d" values="M20,-10 Q25,-30 20,-50 Q15,-70 25,-90;M20,-25 Q15,-45 25,-65 Q30,-85 20,-105;M20,-10 Q25,-30 20,-50 Q15,-70 25,-90" dur="6s" begin="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.6;0" dur="6s" begin="0.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Ambient Elements -->
+    <circle cx="-300" cy="-50" r="3" fill="#5E6AD2" opacity="0.3">
+      <animate attributeName="cy" values="-50;-120;-50" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="50" r="2" fill="#C9A85C" opacity="0.4">
+      <animate attributeName="cy" values="50;-30;50" dur="7s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="7s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="-200" r="2.5" fill="#5E6AD2" opacity="0.25">
+      <animate attributeName="cy" values="-200;-280;-200" dur="9s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="100;130;100" dur="9s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

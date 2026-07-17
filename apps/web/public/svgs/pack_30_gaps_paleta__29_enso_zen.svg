@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Paper Texture Grain -->
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.08"/>
+      </feComponentTransfer>
+    </filter>
+
+    <!-- Ink Stroke Turbulence Filter -->
+    <filter id="ink" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.008" numOctaves="2" result="noise" seed="5"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="0.8"/>
+    </filter>
+
+    <!-- Soft Glow / Rim Light Halo -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="20" result="blur1"/>
+      <feGaussianBlur stdDeviation="60" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Atmospheric Blur Layers -->
+    <filter id="blur40">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="blur80">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="blur120">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="blur160">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+
+    <!-- Soft Drop Shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="10" dy="25" stdDeviation="20" flood-color="#0A0A0A" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- Main Light Direction Gradient -->
+    <linearGradient id="light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBF7EE"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FBF7EE"/>
+    </linearGradient>
+
+    <!-- Atmospheric Haze Gradient -->
+    <radialGradient id="haze" cx="25%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FBF7EE"/>
+    </radialGradient>
+
+    <!-- Ensō Stroke Gradient for depth -->
+    <linearGradient id="strokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#1A1A1A"/>
+    </linearGradient>
+
+    <!-- Ink Splatter Clip -->
+    <clipPath id="canvasClip">
+      <rect width="1600" height="900"/>
+    </clipPath>
+  </defs>
+
+  <!-- 1. Base Background -->
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+
+  <!-- 2. Light Direction Gradient Overlay -->
+  <rect width="1600" height="900" fill="url(#light)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.65;0.6" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- 3. Paper Texture Layer -->
+  <rect width="1600" height="900" fill="#FBF7EE" filter="url(#grain)"/>
+
+  <!-- 4. Atmospheric Depth Layer 1 (blur160) -->
+  <rect x="-200" y="-200" width="2000" height="1300" fill="#FFFFFF" opacity="0.15" filter="url(#blur160)">
+    <animate attributeName="opacity" values="0.15;0.2;0.15" dur="18s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 5. Atmospheric Depth Layer 2 (blur120) -->
+  <rect x="0" y="0" width="1600" height="900" fill="#FBF7EE" opacity="0.3" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.3;0.4;0.3" dur="14s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 6. Atmospheric Haze Center Glow -->
+  <ellipse cx="400" cy="450" rx="500" ry="400" fill="url(#haze)" opacity="0.5" filter="url(#blur80)">
+    <animate attributeName="rx" values="500;520;500" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="400;420;400" dur="12s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 7. Negative Space Warmth (Left Third) -->
+  <rect x="0" y="0" width="600" height="900" fill="#FFFFFF" opacity="0.1" filter="url(#blur40)">
+    <animate attributeName="opacity" values="0.1;0.15;0.1" dur="20s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 8. Ensō Drop Shadow -->
+  <ellipse cx="1050" cy="460" rx="210" ry="260" fill="#0A0A0A" opacity="0.08" filter="url(#shadow)">
+    <animate attributeName="cx" values="1050;1060;1050" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.08;0.12;0.08" dur="10s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 9. Ensō Main Ink Stroke -->
+  <!-- Imperfect Ensō path: starts bottom-left, sweeps up counter-clockwise with a gap at the top -->
+  <path id="enso" fill="none" stroke="url(#strokeGrad)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)"
+        d="M 960 700 C 1180 680, 1280 500, 1260 350 C 1240 200, 1100 120, 960 130 C 820 140, 720 240, 700 380 C 680 520, 780 660, 960 700 Z">
+    
+    <!-- Stroke Breathing Animation 1: Scale -->
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="12s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    
+    <!-- Stroke Breathing Animation 2: Slight Rotation -->
+    <animateTransform attributeName="transform" type="rotate" values="0 1050 450; 1.5 1050 450; 0 1050 450" dur="18s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    
+    <!-- Stroke Breathing Animation 3: Slight Translate -->
+    <animateTransform attributeName="transform" type="translate" values="0 0; 5 -5; 0 0" dur="15s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+
+    <!-- Turbulence breathing -->
+    <animate attributeName="stroke-width" values="48;52;48" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- 10. Ensō Rim Light (Right Edge Highlight) -->
+  <path id="ensoRim" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.6" filter="url(#glow)"
+        d="M 960 700 C 1180 680, 1280 500, 1260 350 C 1240 200, 1100 120, 960 130 C 820 140, 720 240, 700 380">
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="12s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1050 450; 1.5 1050 450; 0 1050 450" dur="18s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- 11. Inner Blur Echo of Ensō (blur40) -->
+  <path fill="none" stroke="#1A1A1A" stroke-width="80" stroke-linecap="round" opacity="0.04" filter="url(#blur40)"
+        d="M 960 700 C 1180 680, 1280 500, 1260 350 C 1240 200, 1100 120, 960 130 C 820 140, 720 240, 700 380 C 680 520, 780 660, 960 700 Z">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="16s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0.04;0.07;0.04" dur="16s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 12. Outer Blur Echo of Ensō (blur80) -->
+  <path fill="none" stroke="#888888" stroke-width="120" stroke-linecap="round" opacity="0.03" filter="url(#blur80)"
+        d="M 960 700 C 1180 680, 1280 500, 1260 350 C 1240 200, 1100 120, 960 130 C 820 140, 720 240, 700 380 C 680 520, 780 660, 960 700 Z">
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="20s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0.03;0.06;0.03" dur="20s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 13. Atmosphere Fog Layer 1 -->
+  <rect x="500" y="100" width="900" height="700" fill="#FFFFFF" opacity="0.1" filter="url(#blur120)">
+    <animate attributeName="x" values="500;450;500" dur="22s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.15;0.1" dur="22s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 14. Atmosphere Fog Layer 2 -->
+  <rect x="800" y="200" width="700" height="500" fill="#FBF7EE" opacity="0.15" filter="url(#blur160)">
+    <animate attributeName="x" values="800;850;800" dur="25s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.2;0.15" dur="25s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 15. Ink Splatter 1 -->
+  <ellipse cx="1280" cy="320" rx="3" ry="2" fill="#1A1A1A" opacity="0.8" filter="url(#ink)">
+    <animate attributeName="opacity" values="0.8;0.5;0.8" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="320;315;320" dur="9s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 16. Ink Splatter 2 -->
+  <ellipse cx="1295" cy="340" rx="5" ry="4" fill="#0A0A0A" opacity="0.7" filter="url(#ink)">
+    <animate attributeName="opacity" values="0.7;0.4;0.7" dur="11s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="1295;1300;1295" dur="11s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 17. Ink Splatter 3 -->
+  <ellipse cx="1265" cy="305" rx="2" ry="2" fill="#1A1A1A" opacity="0.6" filter="url(#ink)">
+    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="13s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 18. Ink Splatter 4 (Small droplet below) -->
+  <ellipse cx="1310" cy="680" rx="4" ry="3" fill="#0A0A0A" opacity="0.5" filter="url(#ink)">
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="680;685;680" dur="15s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 19. Subtle Highlight Glow Layer -->
+  <ellipse cx="1220" cy="280" rx="150" ry="180" fill="#FFFFFF" opacity="0.15" filter="url(#blur80)">
+    <animate attributeName="rx" values="150;170;150" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="180;200;180" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.2;0.15" dur="14s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 20. Bottom Mist Layer -->
+  <rect x="0" y="700" width="1600" height="200" fill="#FFFFFF" opacity="0.2" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.2;0.3;0.2" dur="17s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 21. Left Side Cool Shadow (complementary depth) -->
+  <rect x="0" y="0" width="200" height="900" fill="#FBF7EE" opacity="0.3" filter="url(#blur80)">
+    <animate attributeName="opacity" values="0.3;0.4;0.3" dur="19s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 22. Global Soft Vignette for Cinematic Edge -->
+  <rect width="1600" height="900" fill="none" stroke="#FBF7EE" stroke-width="100" opacity="0.4" filter="url(#blur160)">
+    <animate attributeName="opacity" values="0.4;0.5;0.4" dur="21s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 23. Top Atmosphere Haze -->
+  <rect x="0" y="0" width="1600" height="300" fill="#FFFFFF" opacity="0.15" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.15;0.2;0.15" dur="16s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 24. Ensō Breathing Core Glow -->
+  <circle cx="1050" cy="450" r="250" fill="#FFFFFF" opacity="0.05" filter="url(#blur80)">
+    <animate attributeName="r" values="250;270;250" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.05;0.08;0.05" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- 25. Final Soft Grain Overlay for Editorial Print Texture -->
+  <rect width="1600" height="900" fill="#FBF7EE" opacity="0.05" filter="url(#grain)">
+    <animate attributeName="opacity" values="0.05;0.07;0.05" dur="10s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#0a0c1b"/>
+<stop offset=".5" stop-color="#1a0b2e"/>
+<stop offset="1" stop-color="#020306"/>
+</linearGradient>
+<radialGradient id="neon1" cx="0" cy="0" r="1400" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#00f2ff" stop-opacity=".35"/>
+<stop offset="1" stop-color="#00f2ff" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="neon2" cx="1920" cy="1080" r="1400" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ff2a8a" stop-opacity=".28"/>
+<stop offset="1" stop-color="#ff2a8a" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#fff8bd"/>
+<stop offset=".2" stop-color="#ffd700"/>
+<stop offset=".55" stop-color="#d4af37"/>
+<stop offset=".85" stop-color="#8a6218"/>
+<stop offset="1" stop-color="#4a3409"/>
+</linearGradient>
+<linearGradient id="goldV" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff6a3"/>
+<stop offset=".35" stop-color="#ffcc00"/>
+<stop offset="1" stop-color="#6e4e0e"/>
+</linearGradient>
+<radialGradient id="cartGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0" stop-color="#ffd700" stop-opacity=".45"/>
+<stop offset=".55" stop-color="#ffae00" stop-opacity=".15"/>
+<stop offset="1" stop-color="#ffae00" stop-opacity="0"/>
+</radialGradient>
+<filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="24"/>
+</filter>
+<filter id="blurStrong" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="55"/>
+</filter>
+<clipPath id="basketClip">
+<path d="M-140,-80 L170,-80 L140,120 L-160,120 Z"/>
+</clipPath>
+</defs>
+
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<rect width="1920" height="1080" fill="url(#neon1)" opacity=".55">
+<animate attributeName="opacity" values=".55;.25;.55" dur="9s" repeatCount="indefinite"/>
+</rect>
+<rect width="1920" height="1080" fill="url(#neon2)" opacity=".45">
+<animate attributeName="opacity" values=".45;.7;.45" dur="11s" repeatCount="indefinite"/>
+</rect>
+
+<g opacity=".35" fill="#00f2ff" filter="url(#softGlow)">
+<circle cx="300" cy="250" r="4">
+<animate attributeName="opacity" values=".3;1;.3" dur="4s" repeatCount="indefinite"/>
+</circle>
+<circle cx="1600" cy="200" r="5">
+<animate attributeName="opacity" values="1;.3;1" dur="5s" repeatCount="indefinite"/>
+</circle>
+<circle cx="1500" cy="850" r="4">
+<animate attributeName="opacity" values=".3;.9;.3" dur="6s" repeatCount="indefinite"/>
+</circle>
+<circle cx="420" cy="800" r="5">
+<animate attributeName="opacity" values=".9;.3;.9" dur="7s" repeatCount="indefinite"/>
+</circle>
+</g>
+
+<g transform="translate(960,540)">
+<g>
+<animateTransform attributeName="transform" type="translate" values="0,0;0,-18;0,0" dur="5.5s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" keyTimes="0;.5;1"/>
+
+<ellipse cx="0" cy="210" rx="190" ry="22" fill="#000" opacity=".35" filter="url(#softGlow)"/>
+<ellipse cx="0" cy="-10" rx="330" ry="270" fill="url(#cartGlow)" filter="url(#blurStrong)">
+<animate attributeName="opacity" values=".9;.55;.9" dur="4s" repeatCount="indefinite"/>
+</ellipse>
+
+<path d="M-260,-160 L-170,-160 L-140,-80 L170,-80 L140,120 L-160,120 Z" fill="url(#gold)" stroke="#fff8bd" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="-260" cy="-160" r="14" fill="url(#goldV)" stroke="#fff8bd" stroke-width="3"/>
+
+<g clip-path="url(#basketClip)" stroke="url(#goldV)" stroke-width="3" opacity=".55" stroke-linecap="round">
+<line x1="-100" y1="-80" x2="-115" y2="120"/>
+<line x1="-40" y1="-80" x2="-55" y2="120"/>
+<line x1="20" y1="-80" x2="5" y2="120"/>
+<line x1="80" y1="-80" x2="65" y2="120"/>
+<line x1="-140" y1="-20" x2="170" y2="-20"/>
+<line x1="-150" y1="50" x2="160" y2="50"/>
+</g>
+
+<path d="M-120,-60 L80,100" stroke="#fff" stroke-width="14" stroke-linecap="round" opacity=".18"/>
+
+<g transform="translate(-110,160)">
+<circle r="34" fill="url(#gold)" stroke="#fff8bd" stroke-width="4"/>
+<circle r="16" fill="#1a1205"/>
+<circle r="8" fill="url(#goldV)"/>
+<g stroke="#fff8bd" stroke-width="4" stroke-linecap="round">
+<line x1="0" y1="-20" x2="0" y2="20"/>
+<line x1="-20" y1="0" x2="20" y2="0"/>
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+</g>
+</g>
+
+<g transform="translate(90,160)">
+<circle r="34" fill="url(#gold)" stroke="#fff8bd" stroke-width="4"/>
+<circle r="16" fill="#1a1205"/>
+<circle r="8" fill="url(#goldV)"/>
+<g stroke="#fff8bd" stroke-width="4" stroke-linecap="round">
+<line x1="0" y1="-20" x2="0" y2="20"/>
+<line x1="-20" y1="0" x2="20" y2="0"/>
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+</g>
+</g>
+
+<path d="M-160,120 L140,120" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".4"/>
+</g>
+</g>
+</svg>

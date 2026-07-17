@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="50" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+    </filter>
+    
+    <radialGradient id="glassSheen" cx="30%" cy="30%">
+      <stop offset="0%" stop-color="#FFFBEB" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#F4A261" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#F4A261" stop-opacity="0.2"/>
+    </radialGradient>
+    
+    <linearGradient id="metalBase" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5D4A24" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#F4A261" stop-opacity="0.85"/>
+      <stop offset="70%" stop-color="#F4A261" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#5D4A24" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <g transform="translate(800, 450)">
+    <ellipse cx="0" cy="260" rx="100" ry="25" fill="#5D4A24" opacity="0.8" filter="url(#softShadow)">
+      <animate attributeName="rx" values="100;90;100" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.7;0.8" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 2; 0; -2; 0" dur="8s" repeatCount="indefinite" additive="sum"/>
+      
+      <circle cx="0" cy="-20" r="150" fill="#F4A261" opacity="0.85" filter="url(#glow)">
+        <animate attributeName="r" values="150;170;150;160;150" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.85;0.95;0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      
+      <path d="M -60 180 C -60 220 -40 240 0 240 C 40 240 60 220 60 180 C 60 80 40 0 25 -60 C 15 -100 0 -130 0 -130 C 0 -130 -15 -100 -25 -60 C -40 0 -60 80 -60 180 Z" fill="url(#glassSheen)" stroke="#FFFBEB" stroke-width="1.5" stroke-opacity="0.7"/>
+      
+      <path d="M -35 -40 Q -25 -80 -15 -40 Q -20 -20 -35 -40" fill="#FFFBEB" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;0.95;0.7" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <ellipse cx="-25" cy="60" rx="8" ry="20" fill="#FFFBEB" opacity="0.5" transform="rotate(-15)">
+        <animate attributeName="opacity" values="0.5;0.8;0.5" dur="5s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <g stroke="#FFFBEB" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="-15" y1="180" x2="-15" y2="80" stroke-width="1.5" opacity="0.8"/>
+        <line x1="15" y1="180" x2="15" y2="80" stroke-width="1.5" opacity="0.8"/>
+        
+        <path d="M -15 80 Q -15 70 0 70 Q 15 70 15 80 L 15 120 Q 15 130 0 130 Q -15 130 -15 120 Z" stroke-width="2" fill="#F4A261" fill-opacity="0.9" opacity="0.95">
+          <animate attributeName="fill-opacity" values="0.9;1;0.9;0.95;0.9" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="stroke-width" values="2;3;2;2.5;2" dur="2s" repeatCount="indefinite"/>
+        </path>
+        
+        <path d="M -15 75 Q -8 65 0 75 Q 8 85 15 75 M -15 85 Q -8 75 0 85 Q 8 95 15 85 M -15 95 Q -8 85 0 95 Q 8 105 15 95 M -15 105 Q -8 95 0 105 Q 8 115 15 105 M -15 115 Q -8 105 0 115 Q 8 125 15 115" stroke-width="1.5" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;1;0.9;1;0.9" dur="0.3s" repeatCount="indefinite"/>
+        </path>
+      </g>
+      
+      <rect x="-50" y="180" width="100" height="15" fill="#5D4A24" opacity="0.9"/>
+      <rect x="-55" y="195" width="110" height="35" rx="3" fill="url(#metalBase)"/>
+      <line x1="-55" y1="205" x2="55" y2="205" stroke="#5D4A24" stroke-width="2" opacity="0.8"/>
+      <line x1="-55" y1="215" x2="55" y2="215" stroke="#5D4A24" stroke-width="2" opacity="0.8"/>
+      <line x1="-55" y1="225" x2="55" y2="225" stroke="#5D4A24" stroke-width="2" opacity="0.8"/>
+      
+      <path d="M -20 230 L -15 250 Q 0 255 15 250 L 20 230 Z" fill="#5D4A24" opacity="0.95"/>
+      <circle cx="0" cy="245" r="10" fill="#F4A261" opacity="0.9"/>
+    </g>
+    
+    <g>
+      <path d="M 140 -80 L 143 -90 L 146 -80 L 156 -77 L 146 -74 L 143 -64 L 140 -74 L 130 -77 Z" fill="#FFFBEB" opacity="0">
+        <animate attributeName="opacity" values="0;0.95;0" dur="3s" begin="0s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="3s" begin="0s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 30,-40" dur="3s" begin="0s" repeatCount="indefinite" additive="sum"/>
+      </path>
+      
+      <path d="M -160 -60 L -157 -70 L -154 -60 L -144 -57 L -154 -54 L -157 -44 L -160 -54 L -170 -57 Z" fill="#F4A261" opacity="0">
+        <animate attributeName="opacity" values="0;0.9;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="0;1.2;0" dur="4s" begin="1s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; -20,-50" dur="4s" begin="1s" repeatCount="indefinite" additive="sum"/>
+      </path>
+      
+      <path d="M 180 20 L 183 10 L 186 20 L 196 23 L 186 26 L 183 36 L 180 26 L 170 23 Z" fill="#FFFBEB" opacity="0">
+        <animate attributeName="opacity" values="0;0.95;0" dur="5s" begin="2s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="0;0.8;0" dur="5s" begin="2s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 20,30" dur="5s" begin="2s" repeatCount="indefinite" additive="sum"/>
+      </path>
+      
+      <path d="M -140 100 L -137 90 L -134 100 L -124 103 L -134 106 L -137 116 L -140 106 L -150 103 Z" fill="#F4A261" opacity="0">
+        <animate attributeName="opacity" values="0;0.9;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="3.5s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; -30,20" dur="3.5s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+      </path>
+    </g>
+    
+    <g stroke="#F4A261" stroke-width="3" opacity="0.85" stroke-linecap="round" fill="none">
+      <line x1="0" y1="-180" x2="0" y2="-240" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="-240;-260;-240" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="3;5;3" dur="6s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="-180" x2="0" y2="-240" opacity="0" transform="rotate(45)">
+        <animate attributeName="opacity" values="0;0.8;0" dur="6s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="-240;-260;-240" dur="6s" begin="1s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="-180" x2="0" y2="-240" opacity="0" transform="rotate(-45)">
+        <animate attributeName="opacity" values="0;0.8;0" dur="6s" begin="2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="-240;-260;-240" dur="6s" begin="2s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="sf" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" in="SourceGraphic"/>
+    </filter>
+    <filter id="gf" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="mg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2B2620" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#2B2620" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2B2620" stop-opacity="0.95"/>
+      <animate attributeName="x1" values="0;0.3;0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;0.7;1" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12; 0,0" dur="5s" repeatCount="indefinite" calcMode="easeInOut"/>
+    
+    <ellipse cx="800" cy="680" rx="200" ry="30" fill="#2B2620" filter="url(#sf)" opacity="0.15">
+      <animate attributeName="rx" values="200;210;200" dur="5s" repeatCount="indefinite" calcMode="easeInOut"/>
+      <animate attributeName="opacity" values="0.15;0.1;0.15" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <g>
+      <path d="M 720,630 L 880,630 L 900,660 L 700,660 Z" fill="url(#mg)"/>
+      <path d="M 740,630 L 745,470 L 775,470 L 780,630" fill="#2B2620" opacity="0.85"/>
+      <path d="M 820,630 L 825,470 L 855,470 L 860,630" fill="#2B2620" opacity="0.85"/>
+      <ellipse cx="760" cy="470" rx="15" ry="8" fill="#2B2620" opacity="0.9"/>
+      <ellipse cx="840" cy="470" rx="15" ry="8" fill="#2B2620" opacity="0.9"/>
+      <rect x="750" y="465" width="100" height="10" rx="3" fill="#2B2620" opacity="0.9"/>
+    </g>
+    
+    <g opacity="0.9">
+      <rect x="870" y="475" width="6" height="155" fill="#2B2620" opacity="0.6"/>
+      <rect x="875" y="473" width="4" height="155" fill="#FAFAFA" opacity="0.85"/>
+      <rect x="879" y="471" width="3" height="155" fill="#FAFAFA" opacity="0.7"/>
+    </g>
+    
+    <g id="p2">
+      <rect x="700" y="475" width="170" height="155" fill="#FAFAFA" opacity="0.85"/>
+      <text x="785" y="570" text-anchor="middle" font-family="system-ui, -apple-system" font-size="56" font-weight="700" fill="#2B2620" opacity="0.9">02</text>
+      <rect x="730" y="530" width="110" height="4" fill="#2B2620" opacity="0.1"/>
+      <animate attributeName="opacity" values="0.85;0.95;0.85" dur="3s" repeatCount="indefinite"/>
+    </g>
+    
+    <g opacity="0.95">
+      <animate attributeName="opacity" values="0.95;0;0.95" dur="4s" repeatCount="indefinite" keyTimes="0;0.8;1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-40; 0,0" dur="4s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 785 475; -15 785 475; 0 785 475" dur="4s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="scale" values="1,1; 0.9,0.8; 1,1" dur="4s" repeatCount="indefinite" additive="sum"/>
+      
+      <rect x="700" y="475" width="170" height="155" fill="#FAFAFA"/>
+      <text x="785" y="560" text-anchor="middle" font-family="system-ui, -apple-system" font-size="56" font-weight="700" fill="#2B2620" opacity="0.8">01</text>
+      <text x="785" y="590" text-anchor="middle" font-family="system-ui, -apple-system" font-size="13" fill="#2B2620" opacity="0.6" letter-spacing="2">JAN</text>
+      <path d="M 700,475 L 870,475 L 870,490 Q 785,500 700,490 Z" fill="#2B2620" opacity="0.05"/>
+    </g>
+    
+    <g>
+      <path d="M 850,475 L 850,600 Q 860,615 870,600 L 870,475 Z" fill="#E63946" opacity="0.9">
+        <animate attributeName="d" values="M 850,475 L 850,600 Q 860,615 870,600 L 870,475 Z; M 850,475 L 852,605 Q 862,620 872,595 L 870,475 Z; M 850,475 L 850,600 Q 860,615 870,600 L 870,475 Z" dur="3s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </path>
+      <animateTransform attributeName="transform" type="rotate" values="0 860 475; 3 860 475; 0 860 475" dur="2.5s" repeatCount="indefinite"/>
+    </g>
+    
+    <g fill="#FAFAFA" filter="url(#gf)" opacity="0.6">
+      <circle cx="900" cy="450" r="4">
+        <animate attributeName="cy" values="450;400;450" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="670" cy="500" r="3">
+        <animate attributeName="cy" values="500;440;500" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.6;0" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="780" cy="420" r="5">
+        <animate attributeName="cy" values="420;360;420" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="820" cy="650" r="2">
+        <animate attributeName="cy" values="650;600;650" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.7;0" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <g transform="translate(750,620)">
+      <path d="M 0,-8 L 2,-2 L 8,0 L 2,2 L 0,8 L -2,2 L -8,0 L -2,-2 Z" fill="#E63946" opacity="0">
+        <animate attributeName="opacity" values="0;0.9;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+        <animateTransform attributeName="transform" type="rotate" values="0;180;360" dur="4s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" additive="sum"/>
+      </path>
+    </g>
+    
+    <g transform="translate(850,480)">
+      <path d="M 0,-6 L 1.5,-1.5 L 6,0 L 1.5,1.5 L 0,6 L -1.5,1.5 L -6,0 L -1.5,-1.5 Z" fill="#FAFAFA" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+</svg>

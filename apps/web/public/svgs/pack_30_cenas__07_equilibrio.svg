@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="groundShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+    </filter>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="2" dy="4" result="offsetblur"/>
+      <feFlood flood-color="#2d2410" flood-opacity="0.2"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="crystalGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4B76A"/>
+      <stop offset="50%" stop-color="#C9A85C"/>
+      <stop offset="100%" stop-color="#A68A3D"/>
+    </linearGradient>
+    <radialGradient id="crystalGrad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#E0F4F8"/>
+      <stop offset="60%" stop-color="#A8D8EA"/>
+      <stop offset="100%" stop-color="#8BC4D6"/>
+    </radialGradient>
+    <linearGradient id="billGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7D9269"/>
+      <stop offset="100%" stop-color="#6B7E5B"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <ellipse cx="800" cy="780" rx="280" ry="35" fill="#C9A85C" opacity="0.15" filter="url(#groundShadow)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="280;300;280" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <g transform="translate(800, 420)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      
+      <path d="M-90,280 L90,280 L70,330 L-70,330 Z" fill="url(#brassGrad)" opacity="0.95" filter="url(#dropShadow)">
+        <animate attributeName="opacity" values="0.95;0.85;0.95" dur="5s" repeatCount="indefinite"/>
+      </path>
+      
+      <rect x="-25" y="0" width="50" height="280" fill="url(#brassGrad)" opacity="0.9" rx="6" filter="url(#dropShadow)"/>
+      <rect x="-15" y="20" width="30" height="240" fill="#D4B76A" opacity="0.4" rx="3"/>
+      
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="-3.5;3.5;-3.5" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+        
+        <rect x="-340" y="-12" width="680" height="24" fill="url(#brassGrad)" rx="12" opacity="0.95"/>
+        <circle cx="0" cy="0" r="18" fill="#B89A4F" opacity="0.9"/>
+        <circle cx="0" cy="0" r="10" fill="#D4B76A" opacity="0.6"/>
+        
+        <g transform="translate(-300, 0)">
+          <line x1="0" y1="0" x2="0" y2="140" stroke="#A68A3D" stroke-width="3" opacity="0.8">
+            <animate attributeName="x2" values="0;-4;0;4;0" dur="3.2s" repeatCount="indefinite"/>
+          </line>
+          <line x1="4" y1="0" x2="4" y2="140" stroke="#C9A85C" stroke-width="2" opacity="0.6">
+            <animate attributeName="x2" values="4;0;4;8;4" dur="3.5s" repeatCount="indefinite"/>
+          </line>
+          
+          <g transform="translate(0, 140)">
+            <animateTransform attributeName="transform" type="translate" values="0,18; 0,-18; 0,18" dur="5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="rotate" values="3.5;-3.5;3.5" dur="5s" repeatCount="indefinite" additive="sum"/>
+            
+            <path d="M-65,0 Q0,45 65,0 L55,25 Q0,60 -55,25 Z" fill="url(#brassGrad)" opacity="0.9" filter="url(#dropShadow)"/>
+            
+            <g transform="translate(0, -25)">
+              <animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+              <path d="M0,-35 L25,-10 L0,35 L-25,-10 Z" fill="url(#crystalGrad)" opacity="0.85" filter="url(#crystalGlow)"/>
+              <path d="M0,-35 L25,-10 L0,5 L-25,-10 Z" fill="#F0F8FB" opacity="0.6"/>
+              <path d="M-25,-10 L0,35 L0,5 Z" fill="#8BC4D6" opacity="0.4"/>
+              <path d="M25,-10 L0,35 L0,5 Z" fill="#A8D8EA" opacity="0.5">
+                <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
+              </path>
+            </g>
+          </g>
+        </g>
+        
+        <g transform="translate(300, 0)">
+          <line x1="0" y1="0" x2="0" y2="140" stroke="#A68A3D" stroke-width="3" opacity="0.8">
+            <animate attributeName="x2" values="0;4;0;-4;0" dur="3.4s" repeatCount="indefinite"/>
+          </line>
+          <line x1="-4" y1="0" x2="-4" y2="140" stroke="#C9A85C" stroke-width="2" opacity="0.6">
+            <animate attributeName="x2" values="-4;0;-4;-8;-4" dur="3.7s" repeatCount="indefinite"/>
+          </line>
+          
+          <g transform="translate(0, 140)">
+            <animateTransform attributeName="transform" type="translate" values="0,-18; 0,18; 0,-18" dur="5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="rotate" values="3.5;-3.5;3.5" dur="5s" repeatCount="indefinite" additive="sum"/>
+            
+            <path d="M-65,0 Q0,45 65,0 L55,25 Q0,60 -55,25 Z" fill="url(#brassGrad)" opacity="0.9" filter="url(#dropShadow)"/>
+            
+            <g transform="translate(0, -20)">
+              <animateTransform attributeName="transform" type="scale" values="1,1; 1,0.96; 1,1" dur="4s" repeatCount="indefinite"/>
+              <rect x="-42" y="-12" width="84" height="54" fill="url(#billGrad)" opacity="0.85" rx="3" transform="rotate(-3)"/>
+              <rect x="-42" y="-18" width="84" height="54" fill="#6B7E5B" opacity="0.75" rx="3" transform="rotate(2)"/>
+              <rect x="-42" y="-24" width="84" height="54" fill="#7D9269" opacity="0.9" rx="3" transform="rotate(-1)">
+                <animateTransform attributeName="transform" type="rotate" values="-1;2;-1" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+              </rect>
+              <line x1="-32" y1="-5" x2="32" y2="-5" stroke="#FBF7EE" stroke-width="2" opacity="0.4"/>
+              <line x1="-32" y1="8" x2="32" y2="8" stroke="#FBF7EE" stroke-width="2" opacity="0.4"/>
+              <circle cx="0" cy="0" r="8" fill="none" stroke="#FBF7EE" stroke-width="1.5" opacity="0.3"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

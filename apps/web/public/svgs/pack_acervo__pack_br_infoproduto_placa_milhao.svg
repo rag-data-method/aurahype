@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#241044"/>
+      <stop offset="45%" stop-color="#110824"/>
+      <stop offset="100%" stop-color="#020103"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bf953f"/>
+      <stop offset="25%" stop-color="#fcf6ba"/>
+      <stop offset="50%" stop-color="#b38728"/>
+      <stop offset="75%" stop-color="#fbf5b7"/>
+      <stop offset="100%" stop-color="#aa771c"/>
+    </linearGradient>
+    <linearGradient id="blackGloss" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="50%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dx="0" dy="16" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.6"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offsetblur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <g opacity="0.35">
+    <circle cx="960" cy="540" r="420" fill="url(#gold)" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g transform="translate(960,540)">
+    <animateTransform attributeName="transform" type="translate" values="960,535;960,545;960,535" dur="6s" repeatCount="indefinite" additive="replace"/>
+
+    <g opacity="0.15">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="80s" repeatCount="indefinite"/>
+      <line x1="0" y1="-520" x2="0" y2="520" stroke="url(#gold)" stroke-width="2"/>
+      <line x1="-520" y1="0" x2="520" y2="0" stroke="url(#gold)" stroke-width="2"/>
+      <line x1="-368" y1="-368" x2="368" y2="368" stroke="url(#gold)" stroke-width="1"/>
+      <line x1="368" y1="-368" x2="-368" y2="368" stroke="url(#gold)" stroke-width="1"/>
+      <line x1="-520" y1="-260" x2="520" y2="260" stroke="url(#gold)" stroke-width="1"/>
+      <line x1="520" y1="-260" x2="-520" y2="260" stroke="url(#gold)" stroke-width="1"/>
+    </g>
+
+    <rect x="-410" y="-260" width="820" height="520" rx="44" fill="#000" opacity="0.4" filter="url(#glow)"/>
+
+    <rect x="-400" y="-250" width="800" height="500" rx="40" fill="url(#blackGloss)" stroke="url(#gold)" stroke-width="10" filter="url(#shadow)"/>
+
+    <rect x="-375" y="-225" width="750" height="450" rx="30" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.45"/>
+
+    <path d="M-360 -200 L360 -200 L360 -80 L-360 -120 Z" fill="url(#sheen)"/>
+    <path d="M-360 180 L360 220 L360 240 L-360 240 Z" fill="url(#sheen)" opacity="0.6"/>
+
+    <g>
+      <rect x="-130" y="-168" width="260" height="10" rx="5" fill="url(#gold)"/>
+      <rect x="-100" y="-150" width="200" height="8" rx="4" fill="url(#gold)" opacity="0.9"/>
+      <rect x="-70" y="-134" width="140" height="6" rx="3" fill="url(#gold)" opacity="0.75"/>
+      <rect x="-130" y="158" width="260" height="10" rx="5" fill="url(#gold)"/>
+      <rect x="-100" y="142" width="200" height="8" rx="4" fill="url(#gold)" opacity="0.9"/>
+      <rect x="-70" y="128" width="140" height="6" rx="3" fill="url(#gold)" opacity="0.75"/>
+    </g>
+
+    <g>
+      <path d="M-340 -80 Q-280 -40 -280 0 Q-280 40 -340 80" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M-320 -60 Q-270 -25 -270 0 Q-270 25 -320 60" fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <circle cx="-340" cy="-80" r="5" fill="url(#gold)"/>
+      <circle cx="-340" cy="80" r="5" fill="url(#gold)"/>
+    </g>
+    <g transform="scale(-1,1)">
+      <path d="M-340 -80 Q-280 -40 -280 0 Q-280 40 -340 80" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M-320 -60 Q-270 -25 -270 0 Q-270 25 -320 60" fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <circle cx="-340" cy="-80" r="5" fill="url(#gold)"/>
+      <circle cx="-340" cy="80" r="5" fill="url(#gold)"/>
+    </g>
+
+    <circle cx="0" cy="0" r="130" fill="url(#gold)" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="100" fill="url(#blackGloss)"/>
+    <circle cx="0" cy="0" r="106" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.5"/>
+
+    <g filter="url(#glow)">
+      <polygon points="0,-90 21,-34 80,-26 38,12 50,72 0,45 -50,72 -38,12 -80,-26 -21,-34" fill="#fff4a3" stroke="url(#gold)" stroke-width="3">
+        <animateTransform attributeName="transform" type="scale" values="1;1.06;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+      </polygon>
+    </g>
+
+    <g opacity="0.9">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite"/>
+      <path d="M0 -155 L6 -135 L0 -115 L-6 -135 Z" fill="url(#gold)"/>
+      <path d="M0 155 L6 135 L0 115 L-6 135 Z" fill="url(#gold)"/>
+      <path d="M155 0 L135 6 L115 0 L135 -6 Z" fill="url(#gold)"/>
+      <path d="M-155 0 L-135 6 L-115 0 L-135 -6 Z" fill="url(#gold)"/>
+    </g>
+  </g>
+
+  <g opacity="0.8">
+    <circle cx="300" cy="250" r="4" fill="url(#gold)">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1620" cy="250" r="4" fill="url(#gold)">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="260" cy="830" r="5" fill="url(#gold)">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="1660" cy="830" r="5" fill="url(#gold)">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <circle cx="960" cy="150" r="3" fill="url(#gold)">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.5s" repeatCount="indefinite" begin="0.7s"/>
+    </circle>
+    <circle cx="960" cy="930" r="3" fill="url(#gold)">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.5s" repeatCount="indefinite" begin="1.8s"/>
+    </circle>
+  </g>
+</svg>

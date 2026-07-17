@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+    <defs>
+        <!-- Filters -->
+        <filter id="blur40" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="40"/>
+        </filter>
+        <filter id="blur80" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="80"/>
+        </filter>
+        <filter id="blur120" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="120"/>
+        </filter>
+        <filter id="blur160" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="160"/>
+        </filter>
+
+        <!-- Wood Gradient -->
+        <linearGradient id="woodGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3D2A1F">
+                <animate attributeName="stop-color" values="#3D2A1F;#8B5A2B;#3D2A1F" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </stop>
+            <stop offset="50%" stop-color="#8B5A2B">
+                <animate attributeName="stop-color" values="#8B5A2B;#C9A574;#8B5A2B" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </stop>
+            <stop offset="100%" stop-color="#3D2A1F">
+                <animate attributeName="stop-color" values="#3D2A1F;#5e3926;#3D2A1F" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </stop>
+        </linearGradient>
+
+        <!-- Light Beam Gradient -->
+        <radialGradient id="beamGrad" cx="0%" cy="0%" r="100%">
+            <stop offset="0%" stop-color="#F5C97A" stop-opacity="0.35">
+                <animate attributeName="stop-opacity" values="0.35;0.45;0.35" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+                <animate attributeName="stop-color" values="#F5C97A;#D4A055;#F5C97A" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </stop>
+            <stop offset="60%" stop-color="#C9A574" stop-opacity="0.1">
+                <animate attributeName="stop-opacity" values="0.1;0.2;0.1" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </stop>
+            <stop offset="100%" stop-color="#3D2A1F" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Book Cover Base Gradient -->
+        <linearGradient id="coverGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C9A574"/>
+            <stop offset="50%" stop-color="#D4A055"/>
+            <stop offset="100%" stop-color="#8B5A2B"/>
+        </linearGradient>
+
+        <!-- Book Spine Gradient -->
+        <linearGradient id="spineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8B5A2B"/>
+            <stop offset="100%" stop-color="#3D2A1F"/>
+        </linearGradient>
+
+        <!-- Shimmering Gold Gradient for Details -->
+        <linearGradient id="goldShimmer" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F5C97A">
+                <animate attributeName="stop-color" values="#F5C97A;#D4A055;#F5C97A" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </stop>
+            <stop offset="50%" stop-color="#D4A055">
+                <animate attributeName="stop-color" values="#D4A055;#F5C97A;#D4A055" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </stop>
+            <stop offset="100%" stop-color="#C9A574">
+                <animate attributeName="stop-color" values="#C9A574;#F5C97A;#C9A574" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </stop>
+        </linearGradient>
+
+        <!-- Dust Mote Glow -->
+        <radialGradient id="moteGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F5C97A" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#D4A055" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Motion Paths for Dust -->
+        <path id="path1" d="M 200,0 Q 350,300 500,500 T 800,900" fill="none"/>
+        <path id="path2" d="M 300,0 Q 200,200 600,450 T 900,900" fill="none"/>
+        <path id="path3" d="M 0,100 Q 400,400 550,550 T 700,900" fill="none"/>
+        <path id="path4" d="M 100,0 Q 500,200 450,500 T 600,900" fill="none"/>
+        <path id="path5" d="M 150,0 Q 300,300 650,400 T 750,900" fill="none"/>
+        <path id="path6" d="M 250,0 Q 450,150 500,500 T 850,900" fill="none"/>
+        <path id="path7" d="M 50,50 Q 350,350 600,600 T 950,900" fill="none"/>
+        <path id="path8" d="M 400,0 Q 200,300 450,600 T 650,900" fill="none"/>
+        <path id="path9" d="M 350,0 Q 550,250 700,500 T 850,900" fill="none"/>
+        <path id="path10" d="M 450,0 Q 350,350 550,550 T 900,900" fill="none"/>
+        <path id="path11" d="M 500,0 Q 650,200 750,500 T 950,900" fill="none"/>
+        <path id="path12" d="M 600,0 Q 750,300 850,600 T 1000,900" fill="none"/>
+    </defs>
+
+    <!-- Background Atmosphere -->
+    <rect width="1600" height="900" fill="#3D2A1F">
+        <animate attributeName="fill" values="#3D2A1F;#2a1a12;#3D2A1F" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </rect>
+
+    <!-- Wood Grain Layers (Blurred for atmosphere) -->
+    <g filter="url(#blur80)">
+        <path d="M0,500 Q400,480 800,520 T1600,500 L1600,900 L0,900Z" fill="url(#woodGrad)">
+            <animate attributeName="d" values="M0,500 Q400,480 800,520 T1600,500 L1600,900 L0,900Z;M0,510 Q400,490 800,530 T1600,510 L1600,900 L0,900Z;M0,500 Q400,480 800,520 T1600,500 L1600,900 L0,900Z" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M0,550 Q600,530 1200,570 T1600,550 L1600,900 L0,900Z" fill="#8B5A2B" opacity="0.3">
+            <animate attributeName="d" values="M0,550 Q600,530 1200,570 T1600,550 L1600,900 L0,900Z;M0,560 Q600,540 1200,580 T1600,560 L1600,900 L0,900Z;M0,550 Q600,530 1200,570 T1600,550 L1600,900 L0,900Z" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            <animate attributeName="opacity" values="0.3;0.4;0.3" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+    </g>
+
+    <!-- Sharp Wood Grain Lines -->
+    <g>
+        <path d="M0,600 Q500,580 1000,610 T1600,600" fill="none" stroke="#C9A574" stroke-width="2" opacity="0.1">
+            <animate attributeName="d" values="M0,600 Q500,580 1000,610 T1600,600;M0,605 Q500,585 1000,615 T1600,605;M0,600 Q500,580 1000,610 T1600,600" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M0,650 Q700,630 1300,660 T1600,650" fill="none" stroke="#D4A055" stroke-width="3" opacity="0.15">
+            <animate attributeName="d" values="M0,650 Q700,630 1300,660 T1600,650;M0,660 Q700,640 1300,670 T1600,660;M0,650 Q700,630 1300,660 T1600,650" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+    </g>
+
+    <!-- Light Beam (Atmosphere) -->
+    <polygon points="0,0 600,0 900,900 0,900" fill="url(#beamGrad)" opacity="0.6">
+        <animate attributeName="points" values="0,0 600,0 900,900 0,900;0,0 620,0 920,900 0,900;0,0 600,0 900,900 0,900" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        <animate attributeName="opacity" values="0.6;0.7;0.6" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </polygon>
+
+    <!-- Blurred Light Halo -->
+    <circle cx="400" cy="300" r="300" fill="#F5C97A" filter="url(#blur160)" opacity="0.15">
+        <animate attributeName="r" values="300;320;300" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        <animate attributeName="opacity" values="0.15;0.2;0.15" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+
+    <!-- Shadow under the book -->
+    <ellipse cx="1000" cy="680" rx="350" ry="100" fill="#3D2A1F" filter="url(#blur120)" opacity="0.8">
+        <animate attributeName="rx" values="350;360;350" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        <animate attributeName="opacity" values="0.8;0.9;0.8" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+
+    <!-- The Book Group (Right two-thirds) -->
+    <g transform="translate(0, 0)">
+        <!-- Global Book Breath Animation -->
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+
+        <!-- Back Cover (Thickness) -->
+        <path d="M 800,450 L 1250,450 L 1250,480 Q 1200,480 1150,480 L 800,480 Z" fill="#3D2A1F">
+             <animate attributeName="fill" values="#3D2A1F;#2a1a12;#3D2A1F" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+
+        <!-- Spine -->
+        <path d="M 775,440 Q 790,460 800,480 L 800,750 Q 790,770 775,790 Q 760,770 750,750 L 750,480 Q 760,460 775,440 Z" fill="url(#spineGrad)">
+            <animate attributeName="opacity" values="1;0.95;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+
+        <!-- Pages (Fore-edge) -->
+        <path d="M 800,480 L 1250,480 L 1250,780 L 800,750 Z" fill="#C9A574">
+            <animate attributeName="fill" values="#C9A574;#D4A055;#C9A574" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <!-- Page lines -->
+        <g stroke="#F5C97A" stroke-width="1" opacity="0.4">
+            <path d="M 805,490 L 1245,490">
+                <animate attributeName="d" values="M 805,490 L 1245,490; M 805,491 L 1245,491; M 805,490 L 1245,490" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 805,500 L 1245,500">
+                <animate attributeName="d" values="M 805,500 L 1245,500; M 805,501 L 1245,501; M 805,500 L 1245,500" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 805,510 L 1245,510">
+                <animate attributeName="d" values="M 805,510 L 1245,510; M 805,511 L 1245,511; M 805,510 L 1245,510" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 805,520 L 1245,520">
+                <animate attributeName="d" values="M 805,520 L 1245,520; M 805,521 L 1245,521; M 805,520 L 1245,520" dur="21s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 805,530 L 1245,530">
+                <animate attributeName="d" values="M 805,530 L 1245,530; M 805,531 L 1245,531; M 805,530 L 1245,530" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 805,540 L 1245,540">
+                <animate attributeName="d" values="M 805,540 L 1245,540; M 805,541 L 1245,541; M 805,540 L 1245,540" dur="23s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 805,550 L 1245,550">
+                <animate attributeName="d" values="M 805,550 L 1245,550; M 805,551 L 1245,551; M 805,550 L 1245,550" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 805,560 L 1245,560">
+                <animate attributeName="d" values="M 805,560 L 1245,560; M 805,561 L 1245,561; M 805,560 L 1245,560" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 805,570 L 1245,570">
+                <animate attributeName="d" values="M 805,570 L 1245,570; M 805,571 L 1245,571; M 805,570 L 1245,570" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 805,580 L 1245,580">
+                <animate attributeName="d" values="M 805,580 L 1245,580; M 805,581 L 1245,581; M 805,580 L 1245,580" dur="27s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 810,600 L 1240,600">
+                <animate attributeName="d" values="M 810,600 L 1240,600; M 810,601 L 1240,601; M 810,600 L 1240,600" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 810,620 L 1240,620">
+                <animate attributeName="d" values="M 810,620 L 1240,620; M 810,621 L 1240,621; M 810,620 L 1240,620" dur="29s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 810,640 L 1240,640">
+                <animate attributeName="d" values="M 810,640 L 1240,640; M 810,641 L 1240,641; M 810,640 L 1240,640" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 810,660 L 1240,660">
+                <animate attributeName="d" values="M 810,660 L 1240,660; M 810,661 L 1240,661; M 810,660 L 1240,660" dur="31s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 810,680 L 1240,680">
+                <animate attributeName="d" values="M 810,680 L 1240,680; M 810,681 L 1240,681; M 810,680 L 1240,680" dur="32s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 810,700 L 1240,700">
+                <animate attributeName="d" values="M 810,700 L 1240,700; M 810,701 L 1240,701; M 810,700 L 1240,700" dur="33s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 810,720 L 1240,720">
+                <animate attributeName="d" values="M 810,720 L 1240,720; M 810,721 L 1240,721; M 810,720 L 1240,720" dur="34s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 810,740 L 1240,740">
+                <animate attributeName="d" values="M 810,740 L 1240,740; M 810,741 L 1240,741; M 810,740 L 1240,740" dur="35s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+        </g>
+
+        <!-- Front Cover -->
+        <path d="M 775,440 C 900,430 1100,430 1250,450 L 1250,780 C 1100,760 900,760 775,790 C 775,750 775,480 775,440 Z" fill="url(#coverGrad)">
+            <animate attributeName="opacity" values="1;0.95;1" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+
+        <!-- Cover Edge Highlight -->
+        <path d="M 775,440 C 900,430 1100,430 1250,450 L 1250,780 C 1100,760 900,760 775,790" fill="none" stroke="#F5C97A" stroke-width="2" opacity="0.3">
+            <animate attributeName="opacity" values="0.3;0.5;0.3" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+
+        <!-- Gold Embossed Border -->
+        <path d="M 805,460 C 910,455 1100,455 1220,470 L 1220,760 C 1100,745 910,745 805,770 C 805,740 805,490 805,460 Z" fill="none" stroke="url(#goldShimmer)" stroke-width="4">
+            <animate attributeName="stroke-width" values="4;5;4" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+
+        <!-- Inner Gold Frame -->
+        <path d="M 830,485 C 920,480 1080,480 1195,495 L 1195,735 C 1080,720 920,720 830,745 Z" fill="none" stroke="url(#goldShimmer)" stroke-width="2" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+
+        <!-- Center Decorative Ornament (Simulated Embossing) -->
+        <circle cx="1015" cy="610" r="60" fill="none" stroke="url(#goldShimmer)" stroke-width="3">
+            <animate attributeName="r" values="60;62;60" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <ellipse cx="1015" cy="610" rx="40" ry="70" fill="none" stroke="url(#goldShimmer)" stroke-width="2" transform="rotate(45 1015 610)">
+            <animateTransform attributeName="transform" type="rotate" values="45 1015 610; 46 1015 610; 45 1015 610" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </ellipse>
+
+        <!-- Corner Decorations -->
+        <g stroke="url(#goldShimmer)" stroke-width="2" fill="none">
+            <path d="M 850,490 Q 850,520 880,520">
+                <animate attributeName="d" values="M 850,490 Q 850,520 880,520; M 852,492 Q 852,522 882,522; M 850,490 Q 850,520 880,520" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 1180,490 Q 1180,520 1150,520">
+                <animate attributeName="d" values="M 1180,490 Q 1180,520 1150,520; M 1182,492 Q 1182,522 1152,522; M 1180,490 Q 1180,520 1150,520" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 850,740 Q 850,710 880,710">
+                <animate attributeName="d" values="M 850,740 Q 850,710 880,710; M 852,742 Q 852,712 882,712; M 850,740 Q 850,710 880,710" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 1180,740 Q 1180,710 1150,710">
+                <animate attributeName="d" values="M 1180,740 Q 1180,710 1150,710; M 1182,742 Q 1182,712 1152,712; M 1180,740 Q 1180,710 1150,710" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+        </g>
+
+        <!-- Spine Bands (Gold) -->
+        <g fill="none" stroke="url(#goldShimmer)" stroke-width="4">
+            <path d="M 755,520 Q 775,525 795,520">
+                <animate attributeName="d" values="M 755,520 Q 775,525 795,520; M 755,521 Q 775,526 795,521; M 755,520 Q 775,525 795,520" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 755,560 Q 775,565 795,560">
+                <animate attributeName="d" values="M 755,560 Q 775,565 795,560; M 755,561 Q 775,566 795,561; M 755,560 Q 775,565 795,560" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 755,600 Q 775,605 795,600">
+                <animate attributeName="d" values="M 755,600 Q 775,605 795,600; M 755,601 Q 775,606 795,601; M 755,600 Q 775,605 795,600" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 755,640 Q 775,645 795,640">
+                <animate attributeName="d" values="M 755,640 Q 775,645 795,640; M 755,641 Q 775,646 795,641; M 755,640 Q 775,645 795,640" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 755,680 Q 775,685 795,680">
+                <animate attributeName="d" values="M 755,680 Q 775,685 795,680; M 755,681 Q 775,686 795,681; M 755,680 Q 775,685 795,680" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+            <path d="M 755,720 Q 775,725 795,720">
+                <animate attributeName="d" values="M 755,720 Q 775,725 795,720; M 755,721 Q 775,726 795,721; M 755,720 Q 775,725 795,720" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </path>
+        </g>
+    </g>
+
+    <!-- Dust Motes (12 particles) -->
+    <g>
+        <circle r="3" fill="url(#moteGlow)" opacity="0.8">
+            <animateMotion dur="20s" repeatCount="indefinite" path="M 200,0 Q 350,300 500,500 T 800,900"/>
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            <animateTransform attributeName="transform" type="scale" values="1;1.5;1" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="2" fill="#F5C97A" opacity="0.6">
+            <animateMotion dur="22s" repeatCount="indefinite" path="M 300,0 Q 200,200 600,450 T 900,900"/>
+            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="4" fill="url(#moteGlow)" opacity="0.9">
+            <animateMotion dur="18s" repeatCount="indefinite" path="M 0,100 Q 400,400 550,550 T 700,900"/>
+            <animate attributeName="opacity" values="0.9;0.4;0.9" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="2.5" fill="#D4A055" opacity="0.7">
+            <animateMotion dur="25s" repeatCount="indefinite" path="M 100,0 Q 500,200 450,500 T 600,900"/>
+            <animate attributeName="opacity" values="0.7;0.3;0.7" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="3" fill="url(#moteGlow)" opacity="0.8">
+            <animateMotion dur="19s" repeatCount="indefinite" path="M 150,0 Q 300,300 650,400 T 750,900"/>
+            <animate attributeName="opacity" values="0.8;0.2;0.8" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="2" fill="#F5C97A" opacity="0.5">
+            <animateMotion dur="21s" repeatCount="indefinite" path="M 250,0 Q 450,150 500,500 T 850,900"/>
+            <animate attributeName="opacity" values="0.5;0.1;0.5" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="3.5" fill="url(#moteGlow)" opacity="0.9">
+            <animateMotion dur="23s" repeatCount="indefinite" path="M 50,50 Q 350,350 600,600 T 950,900"/>
+            <animate attributeName="opacity" values="0.9;0.3;0.9" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="2" fill="#C9A574" opacity="0.6">
+            <animateMotion dur="24s" repeatCount="indefinite" path="M 400,0 Q 200,300 450,600 T 650,900"/>
+            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="3" fill="url(#moteGlow)" opacity="0.8">
+            <animateMotion dur="20s" repeatCount="indefinite" path="M 350,0 Q 550,250 700,500 T 850,900"/>
+            <animate attributeName="opacity" values="0.8;0.4;0.8" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="2.5" fill="#F5C97A" opacity="0.7">
+            <animateMotion dur="22s" repeatCount="indefinite" path="M 450,0 Q 350,350 550,550 T 900,900"/>
+            <animate attributeName="opacity" values="0.7;0.3;0.7" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="4" fill="url(#moteGlow)" opacity="0.9">
+            <animateMotion dur="19s" repeatCount="indefinite" path="M 500,0 Q 650,200 750,500 T 950,900"/>
+            <animate attributeName="opacity" values="0.9;0.5;0.9" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+        <circle r="2" fill="#D4A055" opacity="0.5">
+            <animateMotion dur="25s" repeatCount="indefinite" path="M 600,0 Q 750,300 850,600 T 1000,900"/>
+            <animate attributeName="opacity" values="0.5;0.1;0.5" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+    </g>
+
+    <!-- Foreground Subtle Atmosphere Overlay -->
+    <g opacity="0.15">
+        <circle cx="200" cy="200" r="300" fill="#F5C97A" filter="url(#blur160)">
+            <animate attributeName="r" values="300;330;300" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            <animate attributeName="opacity" values="0.15;0.25;0.15" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </circle>
+    </g>
+
+    <!-- Additional Layered Blurs for Cinematic Vignette -->
+    <rect width="1600" height="900" fill="none" stroke="#3D2A1F" stroke-width="400" filter="url(#blur160)" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.5;0.4" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </rect>
+
+</svg>

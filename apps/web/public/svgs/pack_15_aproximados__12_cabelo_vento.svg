@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#8B5A2B"><animate attributeName="stop-color" values="#8B5A2B;#9D6B3A;#8B5A2B" dur="11s" repeatCount="indefinite"/></stop>
+<stop offset="50%" stop-color="#C9A574"><animate attributeName="stop-color" values="#C9A574;#D9B587;#C9A574" dur="11s" repeatCount="indefinite"/></stop>
+<stop offset="100%" stop-color="#F5C97A"><animate attributeName="stop-color" values="#F5C97A;#FFE09A;#F5C97A" dur="11s" repeatCount="indefinite"/></stop>
+</linearGradient>
+<linearGradient id="g2" x1="100%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#6B4226"/>
+<stop offset="60%" stop-color="#C9A574"/>
+<stop offset="100%" stop-color="#F5E6D3"/>
+</linearGradient>
+<radialGradient id="g3" cx="30%" cy="30%" r="80%">
+<stop offset="0%" stop-color="#F5C97A" stop-opacity="0.5"><animate attributeName="stop-opacity" values="0.5;0.7;0.5" dur="10s" repeatCount="indefinite"/></stop>
+<stop offset="100%" stop-color="#F5E6D3" stop-opacity="0"/>
+</radialGradient>
+<filter id="f1"><feGaussianBlur stdDeviation="120"/></filter>
+<filter id="f2"><feGaussianBlur stdDeviation="60"/></filter>
+<filter id="f3"><feGaussianBlur stdDeviation="20"/></filter>
+<filter id="f4"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="6"/></filter>
+</defs>
+<rect width="1600" height="900" fill="#F5E6D3"/>
+<circle cx="400" cy="250" r="700" fill="url(#g3)"><animate attributeName="r" values="700;750;700" dur="12s" repeatCount="indefinite"/></circle>
+<circle cx="1300" cy="750" r="400" fill="url(#g3)" opacity="0.15" filter="url(#f2)"/>
+
+<path d="M150,250 C350,300 250,500 400,650 S 500,780 550,780" stroke="#8B5A2B" stroke-width="180" fill="none" stroke-linecap="round" filter="url(#f1)" opacity="0.2">
+<animateTransform attributeName="transform" type="translate" values="0,0;12,-6;0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.2;0.3;0.2" dur="10s" repeatCount="indefinite"/>
+</path>
+
+<path d="M400,200 C300,350 450,550 350,700 S 450,780 500,780" stroke="#C9A574" stroke-width="220" fill="none" stroke-linecap="round" filter="url(#f1)" opacity="0.15">
+<animateTransform attributeName="transform" type="translate" values="0,0;-8,5;0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.15;0.22;0.15" dur="12s" repeatCount="indefinite"/>
+</path>
+
+<path d="M700,180 C900,250 850,450 950,650 S 1050,780 1100,780" stroke="#8B5A2B" stroke-width="160" fill="none" stroke-linecap="round" filter="url(#f1)" opacity="0.2">
+<animateTransform attributeName="transform" type="translate" values="0,0;10,-4;0,0" dur="17s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.2;0.28;0.2" dur="11s" repeatCount="indefinite"/>
+</path>
+
+<path d="M950,220 C1100,280 1000,500 1150,650 S 1250,780 1300,780" stroke="#C9A574" stroke-width="140" fill="none" stroke-linecap="round" filter="url(#f2)" opacity="0.3">
+<animateTransform attributeName="transform" type="translate" values="0,0;14,-8;0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.3;0.4;0.3" dur="9s" repeatCount="indefinite"/>
+</path>
+
+<path d="M1250,280 C1350,350 1300,550 1400,700 S 1450,780 1500,780" stroke="#8B5A2B" stroke-width="200" fill="none" stroke-linecap="round" filter="url(#f1)" opacity="0.15">
+<animateTransform attributeName="transform" type="translate" values="0,0;9,-6;0,0" dur="19s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.15;0.22;0.15" dur="12s" repeatCount="indefinite"/>
+</path>
+
+<path d="M300,300 C450,350 400,550 500,700 S 550,780 550,780" stroke="#8B5A2B" stroke-width="100" fill="none" stroke-linecap="round" filter="url(#f2)" opacity="0.35">
+<animateTransform attributeName="transform" type="translate" values="0,0;-10,6;0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+
+<path d="M550,250 C700,300 650,500 750,650 S 800,780 800,780" stroke="url(#g1)" stroke-width="120" fill="none" stroke-linecap="round" filter="url(#f2)" opacity="0.4">
+<animateTransform attributeName="transform" type="translate" values="0,0;11,-7;0,0" dur="13s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.4;0.5;0.4" dur="9s" repeatCount="indefinite"/>
+</path>
+
+<path d="M850,280 C1000,330 950,530 1050,680 S 1050,780 1050,780" stroke="url(#g2)" stroke-width="90" fill="none" stroke-linecap="round" filter="url(#f3)" opacity="0.5">
+<animateTransform attributeName="transform" type="translate" values="0,0;8,-5;0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+
+<path d="M1100,300 C1250,350 1150,550 1250,700 S 1300,780 1300,780" stroke="url(#g1)" stroke-width="110" fill="none" stroke-linecap="round" filter="url(#f2)" opacity="0.35">
+<animateTransform attributeName="transform" type="translate" values="0,0;12,-6;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.35;0.45;0.35" dur="10s" repeatCount="indefinite"/>
+</path>
+
+<path d="M350,350 C500,400 450,600 550,750 S 650,780 650,780" stroke="url(#g2)" stroke-width="80" fill="none" stroke-linecap="round" filter="url(#f3)" opacity="0.6">
+<animateTransform attributeName="transform" type="translate" values="0,0;9,-8;0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animateTransform attributeName="transform" type="rotate" values="-1 800 450;1 800 450;-1 800 450" dur="16s" repeatCount="indefinite" additive="sum"/>
+</path>
+
+<path d="M650,320 C750,380 700,580 800,730 S 850,780 850,780" stroke="url(#g1)" stroke-width="70" fill="none" stroke-linecap="round" filter="url(#f3)" opacity="0.7">
+<animateTransform attributeName="transform" type="translate" values="0,0;7,-6;0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="d" values="M650,320 C750,380 700,580 800,730 S 850,780 850,780;M660,310 C740,370 710,570 790,720 S 840,770 840,770;M650,320 C750,380 700,580 800,730 S 850,780 850,780" dur="12s" repeatCount="indefinite"/>
+</path>
+
+<path d="M900,340 C1050,400 1000,600 1100,750 S 1150,780 1150,780" stroke="url(#g2)" stroke-width="45" fill="none" stroke-linecap="round" opacity="0.85">
+<animateTransform attributeName="transform" type="translate" values="0,0;10,-7;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.85;0.95;0.85" dur="8s" repeatCount="indefinite"/>
+<animate attributeName="stroke-width" values="45;48;45" dur="10s" repeatCount="indefinite"/>
+</path>
+
+<path d="M1150,360 C1250,420 1200,620 1300,770 S 1300,780 1300,780" stroke="url(#g1)" stroke-width="55" fill="none" stroke-linecap="round" filter="url(#f3)" opacity="0.75">
+<animateTransform attributeName="transform" type="translate" values="0,0;8,-5;0,0" dur="13s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animateTransform attributeName="transform" type="rotate" values="0 800 450;2 800 450;0 800 450" dur="14s" repeatCount="indefinite" additive="sum"/>
+</path>
+
+<path d="M450,420 C550,480 500,680 600,750 S 650,780 650,780" stroke="#F5C97A" stroke-width="30" fill="none" stroke-linecap="round" opacity="0.5">
+<animateTransform attributeName="transform" type="translate" values="0,0;12,-9;0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+
+<path d="M950,400 C1050,460 1000,660 1100,730 S 1100,780 1100,780" stroke="#F5C97A" stroke-width="25" fill="none" stroke-linecap="round" opacity="0.6">
+<animateTransform attributeName="transform" type="translate" values="0,0;9,-7;0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.6;0.8;0.6" dur="7s" repeatCount="indefinite"/>
+</path>
+
+<path d="M500,400 C650,450 600,650 700,750 S 750,780 750,780" stroke="#C9A574" stroke-width="40" fill="none" stroke-linecap="round" filter="url(#f4)" opacity="0.25">
+<animateTransform attributeName="transform" type="translate" values="0,0;6,-4;0,0" dur="13s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+
+<path d="M380,380 C480,450 430,650 520,750 S 550,780 550,780" stroke="#F5C97A" stroke-width="3" fill="none" stroke-linecap="round">
+<animateTransform attributeName="transform" type="translate" values="0,0;18,-12;0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="stroke-opacity" values="0.3;0.9;0.3" dur="5s" repeatCount="indefinite"/>
+</path>
+
+<path d="M580,360 C680,430 630,630 720,730 S 750,780 750,780" stroke="#C9A574" stroke-width="2" fill="none" stroke-linecap="round">
+<animateTransform attributeName="transform" type="translate" values="0,0;15,-10;0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+
+<path d="M1180,420 C1280,490 1230,690 1320,790 S 1350,780 1350,780" stroke="#F5C97A" stroke-width="2" fill="none" stroke-linecap="round">
+<animateTransform attributeName="transform" type="translate" values="0,0;20,-14;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="6s" repeatCount="indefinite"/>
+</path>
+
+<path d="M780,450 C880,520 830,720 920,760 S 950,780 950,780" stroke="#F5C97A" stroke-width="3" fill="none" stroke-linecap="round">
+<animateTransform attributeName="transform" type="translate" values="0,0;16,-11;0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+
+<path d="M1280,380 C1180,480 1330,680 1240,760 S 1250,780 1250,780" stroke="#C9A574" stroke-width="2" fill="none" stroke-linecap="round">
+<animateTransform attributeName="transform" type="translate" values="0,0;14,-9;0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="7s" repeatCount="indefinite"/>
+</path>
+
+<path d="M1380,450 C1280,550 1380,700 1280,760 S 1300,780 1300,780" stroke="#F5C97A" stroke-width="3" fill="none" stroke-linecap="round">
+<animateTransform attributeName="transform" type="translate" values="0,0;22,-15;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="5s" repeatCount="indefinite"/>
+</path>
+
+<path d="M480,450 C580,520 530,680 620,750 S 650,750 650,750" stroke="#FFF5E0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">
+<animate attributeName="opacity" values="0;0.6;0" dur="5s" repeatCount="indefinite"/>
+</path>
+
+<path d="M880,480 C980,550 930,700 1020,740 S 1050,750 1050,750" stroke="#FFF5E0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0">
+<animate attributeName="opacity" values="0;0.7;0" dur="6s" repeatCount="indefinite"/>
+</path>
+
+<path d="M1200,500 C1300,570 1250,720 1340,760 S 1350,750 1350,750" stroke="#FFF5E0" stroke-width="1" fill="none" stroke-linecap="round" opacity="0">
+<animate attributeName="opacity" values="0;0.5;0" dur="5s" repeatCount="indefinite"/>
+</path>
+
+</svg>

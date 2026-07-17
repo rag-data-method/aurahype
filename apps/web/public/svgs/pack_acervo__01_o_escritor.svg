@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <radialGradient id="lampGlow" cx="1" cy="0" r="1">
+      <stop offset="0%" stop-color="#A0522D" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#A0522D" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#F5E6D3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pageGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFDF8"/>
+      <stop offset="100%" stop-color="#F7ECD8"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="45%" stop-color="#3E2723" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#3E2723" stop-opacity="0.18"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="#F5E6D3"/>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+
+  <ellipse cx="1410" cy="170" rx="400" ry="310" fill="url(#lampGlow)">
+    <animate attributeName="opacity" values="0.65;0.95;0.65" dur="4.2s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="1410" cy="170" rx="290" ry="220" fill="#A0522D" opacity="0.07">
+    <animate attributeName="opacity" values="0.04;0.11;0.04" dur="3.1s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <rect x="120" y="660" width="1360" height="190" rx="8" fill="#3E2723" opacity="0.05"/>
+
+  <g transform="translate(380, 500)">
+    <rect x="-8" y="12" width="816" height="326" rx="6" fill="#3E2723" opacity="0.12"/>
+    <path d="M10,35 Q210,5 410,35 L410,295 Q210,325 10,295 Z" fill="url(#pageGrad)" stroke="#D4A574" stroke-width="1"/>
+    <path d="M410,35 Q610,5 810,35 L810,295 Q610,325 410,295 Z" fill="url(#pageGrad)" stroke="#D4A574" stroke-width="1"/>
+    <path d="M410,35 Q415,165 410,295" stroke="#A0522D" stroke-width="3" fill="none" opacity="0.35"/>
+
+    <g stroke="#A0522D" stroke-width="0.6" opacity="0.22">
+      <line x1="50" y1="75" x2="370" y2="75"/>
+      <line x1="50" y1="115" x2="370" y2="115"/>
+      <line x1="50" y1="155" x2="370" y2="155"/>
+      <line x1="50" y1="195" x2="370" y2="195"/>
+      <line x1="50" y1="235" x2="370" y2="235"/>
+      <line x1="450" y1="75" x2="770" y2="75"/>
+      <line x1="450" y1="115" x2="770" y2="115"/>
+      <line x1="450" y1="155" x2="770" y2="155"/>
+      <line x1="450" y1="195" x2="770" y2="195"/>
+      <line x1="450" y1="235" x2="770" y2="235"/>
+    </g>
+
+    <g stroke="#3E2723" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.88">
+      <path d="M55,82 Q95,70 135,84 T215,86 T295,88 T355,92" stroke-dasharray="340" stroke-dashoffset="340">
+        <animate attributeName="stroke-dashoffset" values="340;0;340" dur="5.8s" begin="0s" repeatCount="indefinite"/>
+      </path>
+      <path d="M50,122 Q110,110 170,124 T250,126 T330,128 T375,132" stroke-dasharray="360" stroke-dashoffset="360">
+        <animate attributeName="stroke-dashoffset" values="360;0;360" dur="6.4s" begin="0.4s" repeatCount="indefinite"/>
+      </path>
+      <path d="M58,162 Q118,150 178,164 T258,166 T338,168 T368,172" stroke-dasharray="350" stroke-dashoffset="350">
+        <animate attributeName="stroke-dashoffset" values="350;0;350" dur="5.5s" begin="0.9s" repeatCount="indefinite"/>
+      </path>
+      <path d="M62,202 Q112,190 172,204 T252,206 T332,208 T372,212" stroke-dasharray="350" stroke-dashoffset="350">
+        <animate attributeName="stroke-dashoffset" values="350;0;350" dur="6.9s" begin="1.3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M445,82 Q485,70 525,84 T605,86 T685,88 T745,92" stroke-dasharray="350" stroke-dashoffset="350">
+        <animate attributeName="stroke-dashoffset" values="350;0;350" dur="6.1s" begin="0.2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M440,122 Q500,110 560,124 T640,126 T720,128 T765,132" stroke-dasharray="370" stroke-dashoffset="370">
+        <animate attributeName="stroke-dashoffset" values="370;0;370" dur="6.7s" begin="0.6s" repeatCount="indefinite"/>
+      </path>
+      <path d="M448,162 Q508,150 568,164 T648,166 T728,168 T758,172" stroke-dasharray="360" stroke-dashoffset="360">
+        <animate attributeName="stroke-dashoffset" values="360;0;360" dur="5.9s" begin="1.1s" repeatCount="indefinite"/>
+      </path>
+      <path d="M452,202 Q502,190 562,204 T642,206 T722,208 T762,212" stroke-dasharray="360" stroke-dashoffset="360">
+        <animate attributeName="stroke-dashoffset" values="360;0;360" dur="7.2s" begin="1.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <g fill="#FFF8F0" stroke="#D4A574" stroke-width="1" opacity="0.92">
+    <path d="M230,730 l12,-18 l18,6 l8,-14 l14,16 l-6,18 l16,8 l-12,14 l4,14 l-22,4 l-14,-14 l-18,10 l-4,-18 l-14,-6 l10,-14 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="4.3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1130,670 l14,-16 l20,4 l10,-12 l16,14 l-4,16 l18,10 l-14,12 l6,14 l-24,6 l-16,-12 l-20,8 l-6,-18 l-16,-4 l12,-12 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="5.1s" begin="1.2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1280,750 l10,-14 l16,6 l8,-10 l12,14 l-4,14 l14,8 l-10,12 l4,12 l-20,4 l-12,-12 l-16,8 l-4,-16 l-12,-6 l8,-12 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="4.7s" begin="2.1s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g transform="translate(920, 350)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12; 0,0" dur="3.6s" repeatCount="indefinite"/>
+      <g transform="rotate(-35)">
+        <rect x="-10" y="-135" width="20" height="155" rx="3" fill="#3E2723"/>
+        <rect x="-11" y="-95" width="22" height="7" fill="#A0522D"/>
+        <path d="M-7,20 L0,55 L7,20 Z" fill="#A0522D"/>
+        <path d="M0,20 L0,50" stroke="#3E2723" stroke-width="1.5"/>
+        <rect x="-6" y="-125" width="3" height="135" fill="#FFF8F0" opacity="0.18"/>
+      </g>
+      <g fill="#3E2723">
+        <circle cx="32" cy="46" r="4">
+          <animate attributeName="cy" values="46;210" dur="1.3s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.9;0" dur="1.3s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="4;6" dur="1.3s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="36" cy="46" r="3">
+          <animate attributeName="cy" values="46;200" dur="1.5s" begin="0.4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.9;0" dur="1.5s" begin="0.4s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="3;5" dur="1.5s" begin="0.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="28" cy="46" r="3">
+          <animate attributeName="cy" values="46;220" dur="1.4s" begin="0.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.9;0" dur="1.4s" begin="0.8s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="3;5" dur="1.4s" begin="0.8s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+  </g>
+
+  <g fill="#3E2723" opacity="0.35">
+    <ellipse cx="952" cy="600" rx="9" ry="5">
+      <animate attributeName="opacity" values="0;0.35;0.35;0" dur="2.8s" begin="1.3s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="976" cy="615" rx="6" ry="3.5">
+      <animate attributeName="opacity" values="0;0.28;0.28;0" dur="3s" begin="1.9s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g fill="#A0522D" opacity="0.25">
+    <circle cx="1220" cy="320" r="2">
+      <animate attributeName="cy" values="320;260;320" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1220;1260;1220" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.25;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <text x="1420" y="820" text-anchor="end" font-family="Georgia, serif" font-size="44" fill="#3E2723" opacity="0.85">O Escritor</text>
+</svg>

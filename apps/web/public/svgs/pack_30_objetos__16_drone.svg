@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bodyTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2A2A2A"/>
+      <stop offset="100%" stop-color="#1A1A1A"/>
+    </linearGradient>
+    <radialGradient id="lensGrad" cx="35%" cy="35%">
+      <stop offset="0%" stop-color="#FAFAFA" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#4CC9FE" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1A1A1A" stop-opacity="0.9"/>
+    </radialGradient>
+    <filter id="shadowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18"/>
+    </filter>
+    <filter id="propBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5"/>
+    </filter>
+    <filter id="ledGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#DCE2E8"/>
+  
+  <ellipse cx="800" cy="660" rx="170" ry="35" fill="#1A1A1A" opacity="0.12" filter="url(#shadowBlur)">
+    <animate attributeName="rx" values="170;190;170" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="35;30;35" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.12;0.08;0.12" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-18; 0,0" dur="3s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="-1.5 800 450; 1.5 800 450; -1.5 800 450" dur="4s" repeatCount="indefinite" additive="sum"/>
+    
+    <path d="M 760 400 L 630 320 L 650 310 L 780 390 Z" fill="#1A1A1A" opacity="0.9"/>
+    <path d="M 840 400 L 970 320 L 950 310 L 820 390 Z" fill="#1A1A1A" opacity="0.9"/>
+    <path d="M 760 440 L 630 560 L 650 570 L 780 450 Z" fill="#1A1A1A" opacity="0.95"/>
+    <path d="M 840 440 L 970 560 L 950 570 L 820 450 Z" fill="#1A1A1A" opacity="0.95"/>
+    
+    <line x1="760" y1="400" x2="640" y2="315" stroke="#4CC9FE" stroke-width="3" opacity="0.85"/>
+    <line x1="840" y1="400" x2="960" y2="315" stroke="#4CC9FE" stroke-width="3" opacity="0.85"/>
+    <line x1="760" y1="440" x2="640" y2="565" stroke="#4CC9FE" stroke-width="3" opacity="0.85"/>
+    <line x1="840" y1="440" x2="960" y2="565" stroke="#4CC9FE" stroke-width="3" opacity="0.85"/>
+    
+    <g transform="translate(640, 315)">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="0.08s" repeatCount="indefinite"/>
+        <ellipse cx="0" cy="0" rx="32" ry="5" fill="#FAFAFA" opacity="0.7" filter="url(#propBlur)"/>
+        <ellipse cx="0" cy="0" rx="5" ry="32" fill="#FAFAFA" opacity="0.7" filter="url(#propBlur)"/>
+      </g>
+      <circle cx="0" cy="0" r="7" fill="#4CC9FE" opacity="0.9"/>
+    </g>
+    
+    <g transform="translate(960, 315)">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="0.08s" repeatCount="indefinite"/>
+        <ellipse cx="0" cy="0" rx="32" ry="5" fill="#FAFAFA" opacity="0.7" filter="url(#propBlur)"/>
+        <ellipse cx="0" cy="0" rx="5" ry="32" fill="#FAFAFA" opacity="0.7" filter="url(#propBlur)"/>
+      </g>
+      <circle cx="0" cy="0" r="7" fill="#4CC9FE" opacity="0.9"/>
+    </g>
+    
+    <g transform="translate(640, 565)">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="0.08s" repeatCount="indefinite"/>
+        <ellipse cx="0" cy="0" rx="32" ry="5" fill="#FAFAFA" opacity="0.7" filter="url(#propBlur)"/>
+        <ellipse cx="0" cy="0" rx="5" ry="32" fill="#FAFAFA" opacity="0.7" filter="url(#propBlur)"/>
+      </g>
+      <circle cx="0" cy="0" r="7" fill="#4CC9FE" opacity="0.9"/>
+    </g>
+    
+    <g transform="translate(960, 565)">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="0.08s" repeatCount="indefinite"/>
+        <ellipse cx="0" cy="0" rx="32" ry="5" fill="#FAFAFA" opacity="0.7" filter="url(#propBlur)"/>
+        <ellipse cx="0" cy="0" rx="5" ry="32" fill="#FAFAFA" opacity="0.7" filter="url(#propBlur)"/>
+      </g>
+      <circle cx="0" cy="0" r="7" fill="#4CC9FE" opacity="0.9"/>
+    </g>
+    
+    <ellipse cx="800" cy="380" rx="85" ry="22" fill="url(#bodyTop)" opacity="0.95"/>
+    <rect x="735" y="380" width="130" height="90" rx="18" fill="#1A1A1A" opacity="0.95"/>
+    <rect x="735" y="380" width="130" height="90" rx="18" fill="none" stroke="#4CC9FE" stroke-width="2" opacity="0.6"/>
+    
+    <g transform="translate(800, 470)">
+      <ellipse cx="0" cy="0" rx="22" ry="18" fill="#1A1A1A" opacity="0.9"/>
+      <circle cx="0" cy="0" r="14" fill="#0F0F0F"/>
+      <circle cx="0" cy="0" r="10" fill="url(#lensGrad)"/>
+      <circle cx="-4" cy="-4" r="3" fill="#FAFAFA" opacity="0.8">
+        <animate attributeName="cx" values="-4;4;-4" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="-4;2;-4" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <circle cx="640" cy="315" r="3.5" fill="#4CC9FE" filter="url(#ledGlow)" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="960" cy="315" r="3.5" fill="#4CC9FE" filter="url(#ledGlow)" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="0.6s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="640" cy="565" r="3.5" fill="#4CC9FE" filter="url(#ledGlow)" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="0.6s" begin="0.15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="960" cy="565" r="3.5" fill="#4CC9FE" filter="url(#ledGlow)" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="0.6s" begin="0.45s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="800" cy="395" r="2.5" fill="#4CC9FE" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

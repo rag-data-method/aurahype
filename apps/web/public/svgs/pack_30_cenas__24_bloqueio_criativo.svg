@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="b1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="b3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  
+  <rect fill="#F5EDDC" width="1600" height="900"/>
+  
+  <!-- Paper Ball 1 (back left) -->
+  <g>
+    <path fill="#FAFAFA" opacity="0.9" d="M480,680 L520,650 L560,670 L575,710 L540,745 L490,740 L465,710 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-18; 0,0" dur="5.2s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </path>
+    <ellipse cx="520" cy="745" rx="45" ry="14" fill="#2B2620" opacity="0.15" filter="url(#b2)">
+      <animate attributeName="rx" values="45;38;45" dur="5.2s" repeatCount="indefinite" calcMode="easeInOut"/>
+      <animate attributeName="opacity" values="0.15;0.1;0.15" dur="5.2s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  
+  <!-- Paper Ball 2 (back right) -->
+  <g>
+    <path fill="#FAFAFA" opacity="0.85" d="M1080,660 L1120,640 L1160,660 L1170,700 L1140,730 L1090,725 L1070,690 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="4.5s" repeatCount="indefinite" begin="0.7s" calcMode="easeInOut"/>
+    </path>
+    <ellipse cx="1115" cy="725" rx="40" ry="12" fill="#2B2620" opacity="0.15" filter="url(#b2)">
+      <animate attributeName="rx" values="40;34;40" dur="4.5s" repeatCount="indefinite" begin="0.7s" calcMode="easeInOut"/>
+    </ellipse>
+  </g>
+  
+  <!-- Paper Ball 3 (mid left) -->
+  <g>
+    <path fill="#FAFAFA" opacity="0.9" d="M580,720 L610,690 L650,705 L665,745 L630,775 L590,770 L570,740 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="6.1s" repeatCount="indefinite" begin="1.2s" calcMode="easeInOut"/>
+    </path>
+    <ellipse cx="615" cy="770" rx="42" ry="13" fill="#2B2620" opacity="0.15" filter="url(#b2)">
+      <animate attributeName="rx" values="42;35;42" dur="6.1s" repeatCount="indefinite" begin="1.2s" calcMode="easeInOut"/>
+    </ellipse>
+  </g>
+  
+  <!-- Paper Ball 4 (mid right) -->
+  <g>
+    <path fill="#FAFAFA" opacity="0.85" d="M980,730 L1015,705 L1055,720 L1065,760 L1030,790 L990,785 L975,755 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-16; 0,0" dur="4.8s" repeatCount="indefinite" begin="2.1s" calcMode="easeInOut"/>
+    </path>
+    <ellipse cx="1015" cy="785" rx="40" ry="12" fill="#2B2620" opacity="0.15" filter="url(#b2)">
+      <animate attributeName="rx" values="40;33;40" dur="4.8s" repeatCount="indefinite" begin="2.1s" calcMode="easeInOut"/>
+    </ellipse>
+  </g>
+  
+  <!-- Paper Ball 5 (front center) -->
+  <g>
+    <path fill="#FAFAFA" opacity="0.95" d="M780,760 L820,735 L860,750 L870,795 L835,825 L790,820 L770,785 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-22; 0,0" dur="5.7s" repeatCount="indefinite" begin="0.3s" calcMode="easeInOut"/>
+    </path>
+    <ellipse cx="815" cy="820" rx="44" ry="14" fill="#2B2620" opacity="0.2" filter="url(#b2)">
+      <animate attributeName="rx" values="44;36;44" dur="5.7s" repeatCount="indefinite" begin="0.3s" calcMode="easeInOut"/>
+    </ellipse>
+  </g>
+  
+  <!-- Typewriter -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="7s" repeatCount="indefinite" calcMode="easeInOut"/>
+    
+    <!-- Main Shadow -->
+    <ellipse cx="800" cy="710" rx="160" ry="35" fill="#2B2620" opacity="0.25" filter="url(#b1)">
+      <animate attributeName="rx" values="160;155;160" dur="7s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </ellipse>
+    
+    <!-- Body Depth (right side) -->
+    <path fill="#2B2620" opacity="0.9" d="M900,520 L960,480 L960,580 L900,620 Z"/>
+    
+    <!-- Body Top -->
+    <path fill="#2B2620" opacity="0.95" d="M680,520 L900,520 L960,480 L740,480 Z"/>
+    
+    <!-- Body Front -->
+    <rect x="680" y="520" width="220" height="100" rx="12" fill="#2B2620" opacity="1"/>
+    
+    <!-- Platen/Roller housing -->
+    <rect x="670" y="470" width="240" height="60" rx="8" fill="#8B6F47" opacity="0.85"/>
+    <rect x="670" y="485" width="240" height="30" fill="#8B6F47" opacity="0.7"/>
+    
+    <!-- Paper Sheet -->
+    <g>
+      <path fill="#FAFAFA" opacity="0.9" d="M740,480 L735,280 L865,290 L860,485 Z"/>
+      <!-- Typed text lines -->
+      <line x1="750" y1="320" x2="850" y2="325" stroke="#2B2620" stroke-width="4" opacity="0.7" stroke-linecap="round"/>
+      <line x1="750" y1="360" x2="855" y2="365" stroke="#2B2620" stroke-width="4" opacity="0.7" stroke-linecap="round"/>
+      <line x1="750" y1="400" x2="840" y2="405" stroke="#2B2620" stroke-width="4" opacity="0.7" stroke-linecap="round"/>
+      <!-- Unfinished line (creative block) -->
+      <line x1="750" y1="440" x2="790" y2="443" stroke="#2B2620" stroke-width="4" opacity="0.6" stroke-linecap="round"/>
+      
+      <!-- Paper tremble animation -->
+      <animateTransform attributeName="transform" type="rotate" values="-0.5 800 480; 0.5 800 480; -0.5 800 480" dur="0.3s" repeatCount="indefinite" begin="0s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,2; 0,0" dur="0.3s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Carriage Return Lever -->
+    <path fill="#8B6F47" opacity="0.8" d="M900,500 L980,460 L985,470 L905,510 Z"/>
+    
+    <!-- Key 1 -->
+    <g>
+      <circle cx="740" cy="570" r="14" fill="#FAFAFA" opacity="0.9"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,8; 0,0" keyTimes="0; 0.85; 0.92; 1" dur="3.2s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Key 2 -->
+    <g>
+      <circle cx="790" cy="580" r="14" fill="#FAFAFA" opacity="0.9"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,8; 0,0" keyTimes="0; 0.9; 0.95; 1" dur="4.1s" repeatCount="indefinite" begin="0.8s"/>
+    </g>
+    
+    <!-- Key 3 -->
+    <g>
+      <circle cx="840" cy="570" r="14" fill="#FAFAFA" opacity="0.9"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,8; 0,0" keyTimes="0; 0.88; 0.94; 1" dur="3.7s" repeatCount="indefinite" begin="1.6s"/>
+    </g>
+    
+    <!-- Key 4 (static) -->
+    <circle cx="715" cy="595" r="14" fill="#FAFAFA" opacity="0.85"/>
+    <circle cx="865" cy="595" r="14" fill="#FAFAFA" opacity="0.85"/>
+    <circle cx="790" cy="530" r="14" fill="#FAFAFA" opacity="0.85"/>
+    
+    <!-- Platen Knob Left -->
+    <circle cx="665" y="500" r="15" fill="#8B6F47" opacity="0.9"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 665 500; 10 665 500; 0 665 500" dur="8s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </g>
+  
+  <!-- Atmospheric overlay -->
+  <rect width="1600" height="900" fill="url(#none)" opacity="0">
+    <animate attributeName="opacity" values="0;0.02;0" dur="10s" repeatCount="indefinite"/>
+  </rect>
+</svg>

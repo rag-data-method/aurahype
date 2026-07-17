@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0221"/>
+      <stop offset="45%" stop-color="#3d1a65"/>
+      <stop offset="100%" stop-color="#ff4d8d"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="40%" stop-color="#ff4d8d"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <mask id="sunmask">
+      <rect width="1600" height="900" fill="#fff"/>
+      <rect x="620" y="360" width="360" height="12" fill="#000"/>
+      <rect x="620" y="400" width="360" height="14" fill="#000"/>
+      <rect x="620" y="445" width="360" height="16" fill="#000"/>
+      <rect x="620" y="495" width="360" height="18" fill="#000"/>
+      <rect x="620" y="550" width="360" height="20" fill="#000"/>
+    </mask>
+  </defs>
+  
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  
+  <g fill="#fff">
+    <circle cx="150" cy="120" r="2" opacity=".7">
+      <animate attributeName="opacity" values=".7;.2;.7" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="80" r="1.5" opacity=".5">
+      <animate attributeName="opacity" values=".5;1;.5" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="100" r="2" opacity=".6">
+      <animate attributeName="opacity" values=".6;.1;.6" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="180" r="1.5" opacity=".8">
+      <animate attributeName="opacity" values=".8;.3;.8" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="250" r="1" opacity=".4">
+      <animate attributeName="opacity" values=".4;.9;.4" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1450" cy="60" r="1" opacity=".5">
+      <animate attributeName="opacity" values=".5;1;.5" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <g transform="translate(800,450)">
+    <circle r="180" fill="url(#sun)" mask="url(#sunmask)" opacity=".95" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <g stroke="#00e5ff" stroke-width="1.2" fill="none" opacity=".75" filter="url(#glow)">
+    <animate attributeName="opacity" values=".75;.45;.75" dur="4s" repeatCount="indefinite"/>
+    <line x1="0" y1="900" x2="1600" y2="900"/>
+    <line x1="0" y1="820" x2="1600" y2="820"/>
+    <line x1="0" y1="760" x2="1600" y2="760"/>
+    <line x1="0" y1="710" x2="1600" y2="710"/>
+    <line x1="0" y1="670" x2="1600" y2="670"/>
+    <line x1="0" y1="635" x2="1600" y2="635"/>
+    <line x1="0" y1="605" x2="1600" y2="605"/>
+    <line x1="0" y1="580" x2="1600" y2="580"/>
+    <line x1="800" y1="500" x2="0" y2="900"/>
+    <line x1="800" y1="500" x2="200" y2="900"/>
+    <line x1="800" y1="500" x2="400" y2="900"/>
+    <line x1="800" y1="500" x2="600" y2="900"/>
+    <line x1="800" y1="500" x2="1000" y2="900"/>
+    <line x1="800" y1="500" x2="1200" y2="900"/>
+    <line x1="800" y1="500" x2="1400" y2="900"/>
+    <line x1="800" y1="500" x2="1600" y2="900"/>
+  </g>
+  
+  <g fill="none" stroke-width="2" filter="url(#glow)">
+    <path d="M300 520 L500 320 L700 520 Z" stroke="#ff4d8d">
+      <animate attributeName="stroke" values="#ff4d8d;#00e5ff;#ff4d8d" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M500 320 L600 420" stroke="#00e5ff" opacity=".7"/>
+    <path d="M500 320 L400 420" stroke="#00e5ff" opacity=".7"/>
+    <path d="M900 520 L1100 300 L1300 520 Z" stroke="#00e5ff">
+      <animate attributeName="stroke" values="#00e5ff;#ff4d8d;#00e5ff" dur="7s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1100 300 L1200 410" stroke="#ff4d8d" opacity=".6"/>
+    <path d="M1100 300 L1000 410" stroke="#ff4d8d" opacity=".6"/>
+  </g>
+  
+  <g fill="none" stroke="#ff4d8d" stroke-width="2" opacity=".9" filter="url(#glow)">
+    <path d="M700 900 L800 650 L900 900 Z">
+      <animate attributeName="stroke" values="#ff4d8d;#ffd700;#ff4d8d" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <line x1="800" y1="650" x2="800" y2="900" stroke="#00e5ff" opacity=".7"/>
+    <line x1="750" y1="775" x2="850" y2="775" stroke="#00e5ff" opacity=".5"/>
+  </g>
+</svg>

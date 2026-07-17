@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0e1f"/>
+      <stop offset="50%" stop-color="#1d1b4e"/>
+      <stop offset="100%" stop-color="#0f1020"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#3a7bd5"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f1724"/>
+      <stop offset="100%" stop-color="#1c2e46"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#c8ffe0"/>
+    </linearGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    .float{animation:float 6s ease-in-out infinite;transform-box:fill-box}
+    .float-slow{animation:float 8s ease-in-out infinite reverse;transform-box:fill-box}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+    .glow{animation:glow 3s ease-in-out infinite alternate}
+    @keyframes glow{from{opacity:.35}to{opacity:.8}}
+    .pulse{animation:pulse 2.4s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+    .check{animation:check 2.8s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}
+    @keyframes check{from{transform:scale(1)}to{transform:scale(1.1)}}
+    .line{animation:lineMove 26s linear infinite}
+    @keyframes lineMove{from{transform:translateX(0)}to{transform:translateX(-140px)}}
+  </style>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <g stroke="#00d2ff" stroke-width="2" opacity="0.12">
+    <line x1="0" y1="180" x2="1920" y2="860" class="line"/>
+    <line x1="0" y1="380" x2="1920" y2="1060" class="line" style="animation-duration:32s"/>
+    <line x1="-240" y1="0" x2="1200" y2="1080" class="line" style="animation-duration:20s"/>
+    <line x1="520" y1="0" x2="2260" y2="1080" class="line" style="animation-duration:28s"/>
+  </g>
+
+  <g fill="#00ff88" opacity="0.18">
+    <circle cx="240" cy="260" r="8" class="float-slow"/>
+    <circle cx="1680" cy="220" r="12" class="float"/>
+    <circle cx="1560" cy="840" r="10" class="float-slow"/>
+    <circle cx="260" cy="820" r="6" class="float"/>
+    <circle cx="1400" cy="560" r="5" class="float-slow"/>
+  </g>
+
+  <circle cx="960" cy="540" r="520" fill="url(#greenGlow)" opacity="0.12" class="glow"/>
+
+  <g class="float">
+    <rect x="780" y="320" width="360" height="520" rx="48" fill="url(#body)" stroke="#00eaff" stroke-width="3" filter="url(#neon)"/>
+    <rect x="795" y="380" width="10" height="400" rx="5" fill="#00eaff" opacity="0.6"/>
+    <circle cx="1090" cy="350" r="6" fill="#ffd700" class="pulse"/>
+
+    <rect x="820" y="360" width="280" height="180" rx="18" fill="url(#screen)" stroke="#00c6ff" stroke-width="2"/>
+    <g stroke="#00ff88" stroke-width="4" fill="none" stroke-linecap="round" class="pulse">
+      <path d="M930 460 Q960 420 990 460"/>
+      <path d="M915 475 Q960 405 1005 475"/>
+      <path d="M900 490 Q960 390 1020 490"/>
+    </g>
+
+    <g fill="#0d1b2a" stroke="#00c6ff" stroke-width="2">
+      <circle cx="850" cy="580" r="20"/>
+      <circle cx="920" cy="580" r="20"/>
+      <circle cx="990" cy="580" r="20"/>
+      <circle cx="850" cy="650" r="20"/>
+      <circle cx="920" cy="650" r="20"/>
+      <circle cx="990" cy="650" r="20"/>
+      <circle cx="850" cy="720" r="20"/>
+      <circle cx="920" cy="720" r="20"/>
+      <circle cx="990" cy="720" r="20"/>
+      <circle cx="850" cy="790" r="20"/>
+      <circle cx="920" cy="790" r="20"/>
+      <circle cx="990" cy="790" r="20" fill="#00ff88" stroke="#00ff88" filter="url(#neon)" class="glow"/>
+    </g>
+  </g>
+
+  <g class="float-slow">
+    <rect x="850" y="80" width="220" height="270" rx="20" fill="url(#paper)" filter="url(#neon)"/>
+    <circle cx="960" cy="210" r="55" fill="url(#greenGlow)" class="glow"/>
+    <path d="M920 215 l25 25 l55 -55" fill="none" stroke="#00ff88" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" filter="url(#strongGlow)" class="check"/>
+  </g>
+
+  <rect x="830" y="320" width="260" height="24" rx="6" fill="#060914" stroke="#00eaff" stroke-width="3"/>
+
+  <g stroke="#00ff88" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#neon)" class="pulse">
+    <path d="M920 280 Q960 240 1000 280"/>
+    <path d="M900 255 Q960 195 1020 255"/>
+    <path d="M880 230 Q960 150 1040 230"/>
+  </g>
+
+  <g fill="#00ff88" class="pulse">
+    <circle cx="890" cy="160" r="4"/>
+    <circle cx="1030" cy="160" r="4"/>
+    <circle cx="960" cy="120" r="4"/>
+  </g>
+</svg>

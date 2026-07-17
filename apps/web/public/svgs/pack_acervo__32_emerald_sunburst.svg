@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs>
+<radialGradient id="bg" cx="50%" cy="50%" r="80%">
+<stop offset="0%" stop-color="#064e3b"/>
+<stop offset="55%" stop-color="#022c22"/>
+<stop offset="100%" stop-color="#011412"/>
+</radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#7a5c12"/>
+<stop offset="35%" stop-color="#d4af37"/>
+<stop offset="65%" stop-color="#f2c94c"/>
+<stop offset="100%" stop-color="#b8860b"/>
+</linearGradient>
+<radialGradient id="core" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#fff8d6"/>
+<stop offset="45%" stop-color="#ffd700"/>
+<stop offset="100%" stop-color="#b8860b"/>
+</radialGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="18"/>
+</filter>
+<path id="ray1" d="M800,450 L797,-100 L803,-100 Z" fill="url(#gold)"/>
+<path id="ray2" d="M800,450 L792,-60 L808,-60 Z" fill="url(#gold)"/>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<g opacity="0.22">
+<use href="#ray1" transform="rotate(0 800 450)"/>
+<use href="#ray1" transform="rotate(15 800 450)"/>
+<use href="#ray1" transform="rotate(30 800 450)"/>
+<use href="#ray1" transform="rotate(45 800 450)"/>
+<use href="#ray1" transform="rotate(60 800 450)"/>
+<use href="#ray1" transform="rotate(75 800 450)"/>
+<use href="#ray1" transform="rotate(90 800 450)"/>
+<use href="#ray1" transform="rotate(105 800 450)"/>
+<use href="#ray1" transform="rotate(120 800 450)"/>
+<use href="#ray1" transform="rotate(135 800 450)"/>
+<use href="#ray1" transform="rotate(150 800 450)"/>
+<use href="#ray1" transform="rotate(165 800 450)"/>
+<use href="#ray1" transform="rotate(180 800 450)"/>
+<use href="#ray1" transform="rotate(195 800 450)"/>
+<use href="#ray1" transform="rotate(210 800 450)"/>
+<use href="#ray1" transform="rotate(225 800 450)"/>
+<use href="#ray1" transform="rotate(240 800 450)"/>
+<use href="#ray1" transform="rotate(255 800 450)"/>
+<use href="#ray1" transform="rotate(270 800 450)"/>
+<use href="#ray1" transform="rotate(285 800 450)"/>
+<use href="#ray1" transform="rotate(300 800 450)"/>
+<use href="#ray1" transform="rotate(315 800 450)"/>
+<use href="#ray1" transform="rotate(330 800 450)"/>
+<use href="#ray1" transform="rotate(345 800 450)"/>
+<animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="200s" repeatCount="indefinite"/>
+</g>
+<g opacity="0.32">
+<use href="#ray2" transform="rotate(7.5 800 450)"/>
+<use href="#ray2" transform="rotate(37.5 800 450)"/>
+<use href="#ray2" transform="rotate(67.5 800 450)"/>
+<use href="#ray2" transform="rotate(97.5 800 450)"/>
+<use href="#ray2" transform="rotate(127.5 800 450)"/>
+<use href="#ray2" transform="rotate(157.5 800 450)"/>
+<use href="#ray2" transform="rotate(187.5 800 450)"/>
+<use href="#ray2" transform="rotate(217.5 800 450)"/>
+<use href="#ray2" transform="rotate(247.5 800 450)"/>
+<use href="#ray2" transform="rotate(277.5 800 450)"/>
+<use href="#ray2" transform="rotate(307.5 800 450)"/>
+<use href="#ray2" transform="rotate(337.5 800 450)"/>
+<animateTransform attributeName="transform" type="rotate" from="360 800 450" to="0 800 450" dur="140s" repeatCount="indefinite"/>
+</g>
+<circle cx="800" cy="450" r="140" fill="url(#gold)" filter="url(#glow)" opacity="0.25">
+<animate attributeName="r" values="140;165;140" dur="10s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.25;0.4;0.25" dur="10s" repeatCount="indefinite"/>
+</circle>
+<circle cx="800" cy="450" r="60" fill="url(#core)">
+<animate attributeName="r" values="60;72;60" dur="5s" repeatCount="indefinite"/>
+</circle>
+<path d="M0,900 V720 Q800,340 1600,720 V900 Z" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.28">
+<animate attributeName="opacity" values="0.28;0.45;0.28" dur="9s" repeatCount="indefinite"/>
+</path>
+<path d="M0,900 V790 Q800,520 1600,790 V900 Z" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.2">
+<animate attributeName="opacity" values="0.2;0.35;0.2" dur="9s" repeatCount="indefinite"/>
+</path>
+<g transform="translate(0,900)">
+<path d="M0,0 V-120 H120 V-180 H240 V-240 H360 V-300 H520 L800,-360 L1080,-300 H1240 V-240 H1360 V-180 H1480 V-120 H1600 V0 Z" fill="url(#gold)" opacity="0.88">
+<animate attributeName="opacity" values="0.88;0.98;0.88" dur="12s" repeatCount="indefinite"/>
+</path>
+</g>
+</svg>

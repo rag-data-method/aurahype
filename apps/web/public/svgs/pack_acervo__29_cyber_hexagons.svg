@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#120624"/>
+      <stop offset="50%" stop-color="#241242"/>
+      <stop offset="100%" stop-color="#0d0318"/>
+    </linearGradient>
+    <radialGradient id="glowCyan" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowMagenta" cx="70%" cy="70%" r="70%">
+      <stop offset="0%" stop-color="#ff00cc" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ff00cc" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#05010a" stop-opacity="0.85"/>
+    </radialGradient>
+    <path id="hex" d="M30 0 L90 0 L120 52 L90 104 L30 104 L0 52 Z"/>
+    <pattern id="hexGrid" width="120" height="104" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <use href="#hex" stroke="#00f3ff" stroke-width="2">
+          <animate attributeName="stroke-opacity" values="0.25;0.9;0.25" dur="3.8s" repeatCount="indefinite"/>
+        </use>
+        <use href="#hex" x="60" y="52" stroke="#ff00cc" stroke-width="2">
+          <animate attributeName="stroke-opacity" values="0.2;0.75;0.2" dur="4.6s" begin="2.3s" repeatCount="indefinite"/>
+        </use>
+      </g>
+      <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="120 0" dur="30s" repeatCount="indefinite"/>
+    </pattern>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="350" cy="300" r="500" fill="url(#glowCyan)" filter="url(#blur)" opacity="0.5">
+    <animate attributeName="opacity" values="0.35;0.65;0.35" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="300;340;300" dur="14s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1250" cy="600" r="550" fill="url(#glowMagenta)" filter="url(#blur)" opacity="0.45">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="600;560;600" dur="16s" repeatCount="indefinite"/>
+  </circle>
+  <rect width="1600" height="900" fill="url(#hexGrid)"/>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+</svg>

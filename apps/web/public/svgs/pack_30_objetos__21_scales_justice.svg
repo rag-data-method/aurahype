@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="shadowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15"/>
+    </filter>
+    <filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B08D4B"/>
+      <stop offset="30%" stop-color="#C9A85C"/>
+      <stop offset="50%" stop-color="#E6D5A8"/>
+      <stop offset="70%" stop-color="#C9A85C"/>
+      <stop offset="100%" stop-color="#9A7D3D"/>
+      <animate attributeName="x1" values="0%;5%;0%" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="100%;95%;100%" dur="5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="goldVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E6D5A8"/>
+      <stop offset="40%" stop-color="#C9A85C"/>
+      <stop offset="100%" stop-color="#8F7340"/>
+    </linearGradient>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1F1B17"/>
+      <stop offset="50%" stop-color="#3D362E"/>
+      <stop offset="100%" stop-color="#2B2620"/>
+    </linearGradient>
+    <radialGradient id="panInside" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#6B5B3D"/>
+      <stop offset="60%" stop-color="#C9A85C"/>
+      <stop offset="100%" stop-color="#9A7D3D"/>
+    </radialGradient>
+    <radialGradient id="sparkleGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FAFAFA" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FAFAFA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <g transform="translate(800, 450)">
+    <animateTransform attributeName="transform" type="translate" values="800,450; 800,435; 800,450" dur="4s" repeatCount="indefinite" additive="replace"/>
+    
+    <ellipse cx="0" cy="280" rx="130" ry="25" fill="#2B2620" opacity="0.15" filter="url(#shadowBlur)">
+      <animate attributeName="rx" values="130;120;130" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.22;0.15" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <g transform="translate(0, 180)">
+      <path d="M -60,0 C -60,8 60,8 60,0 C 60,-6 -60,-6 -60,0" fill="#2B2620"/>
+      <rect x="-50" y="-100" width="100" height="100" fill="url(#darkGrad)"/>
+      <ellipse cx="0" cy="-100" rx="50" ry="10" fill="#3D362E"/>
+      <rect x="-12" y="-260" width="24" height="160" fill="url(#darkGrad)" rx="6"/>
+      <rect x="-6" y="-250" width="12" height="140" fill="url(#goldVertical)"/>
+    </g>
+    
+    <g transform="translate(0, -80)">
+      <animateTransform attributeName="transform" type="rotate" values="-3 0 0; 3 0 0; -3 0 0" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+      
+      <circle cx="0" cy="0" r="28" fill="url(#goldGrad)"/>
+      <circle cx="0" cy="0" r="20" fill="#2B2620" opacity="0.9"/>
+      <circle cx="0" cy="0" r="12" fill="url(#goldVertical)">
+        <animate attributeName="fill-opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <rect x="-230" y="-10" width="460" height="20" rx="10" fill="url(#goldGrad)"/>
+      <rect x="-230" y="-6" width="460" height="6" fill="#FAFAFA" opacity="0.7"/>
+      
+      <g transform="translate(-210, 10)">
+        <animateTransform attributeName="transform" type="rotate" values="2 0 0; -2 0 0; 2 0 0" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+        <line x1="0" y1="0" x2="0" y2="110" stroke="#2B2620" stroke-width="4" stroke-linecap="round"/>
+        <g transform="translate(0, 110)">
+          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-25; 0,0" dur="3.5s" repeatCount="indefinite"/>
+          <path d="M -45,0 C -45,30 -25,50 0,50 C 25,50 45,30 45,0 L 40,0 C 40,25 22,42 0,42 C -22,42 -40,25 -40,0 Z" fill="url(#panInside)" stroke="#C9A85C" stroke-width="2"/>
+          <path d="M -45,0 C -45,30 -25,50 0,50 C 25,50 45,30 45,0" fill="none" stroke="#FAFAFA" stroke-width="3" opacity="0.9"/>
+          <line x1="0" y1="0" x2="0" y2="-15" stroke="#2B2620" stroke-width="3"/>
+          <circle cx="0" cy="-8" r="4" fill="#C9A85C"/>
+        </g>
+      </g>
+      
+      <g transform="translate(210, 10)">
+        <animateTransform attributeName="transform" type="rotate" values="-2 0 0; 2 0 0; -2 0 0" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+        <line x1="0" y1="0" x2="0" y2="110" stroke="#2B2620" stroke-width="4" stroke-linecap="round"/>
+        <g transform="translate(0, 110)">
+          <animateTransform attributeName="transform" type="translate" values="0,-25; 0,0; 0,-25" dur="3.5s" repeatCount="indefinite"/>
+          <path d="M -45,0 C -45,30 -25,50 0,50 C 25,50 45,30 45,0 L 40,0 C 40,25 22,42 0,42 C -22,42 -40,25 -40,0 Z" fill="url(#panInside)" stroke="#C9A85C" stroke-width="2"/>
+          <path d="M -45,0 C -45,30 -25,50 0,50 C 25,50 45,30 45,0" fill="none" stroke="#FAFAFA" stroke-width="3" opacity="0.9"/>
+          <line x1="0" y1="0" x2="0" y2="-15" stroke="#2B2620" stroke-width="3"/>
+          <circle cx="0" cy="-8" r="4" fill="#C9A85C"/>
+        </g>
+      </g>
+    </g>
+    
+    <g filter="url(#glowBlur)">
+      <circle cx="-190" cy="40" r="5" fill="url(#sparkleGrad)">
+        <animate attributeName="opacity" values="0;1;0" dur="2.4s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="1;1.8;1" dur="2.4s" repeatCount="indefinite" additive="sum"/>
+      </circle>
+      <circle cx="190" cy="20" r="6" fill="url(#sparkleGrad)">
+        <animate attributeName="opacity" values="0;1;0" dur="3.2s" begin="0.8s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="1;2;1" dur="3.2s" begin="0.8s" repeatCount="indefinite" additive="sum"/>
+      </circle>
+      <circle cx="0" cy="-180" r="8" fill="url(#sparkleGrad)">
+        <animate attributeName="opacity" values="0;0.9;0" dur="4s" begin="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-140" cy="-80" r="3" fill="#FAFAFA">
+        <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="140" cy="-70" r="3" fill="#FAFAFA">
+        <animate attributeName="opacity" values="0.2;1;0.2" dur="2.3s" begin="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-100" cy="100" r="4" fill="#FAFAFA" opacity="0.6">
+        <animate attributeName="cy" values="100;90;100" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="100" cy="110" r="4" fill="#FAFAFA" opacity="0.6">
+        <animate attributeName="cy" values="110;100;110" dur="3s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</svg>

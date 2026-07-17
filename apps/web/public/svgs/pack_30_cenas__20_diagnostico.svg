@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+</filter>
+<filter id="softblur" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+</filter>
+<filter id="pulseblur" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+</filter>
+<linearGradient id="boardgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#FAFAFA"/>
+<stop offset="100%" stop-color="#E6E2D8"/>
+</linearGradient>
+<linearGradient id="clipgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#5BC5A8"/>
+<stop offset="50%" stop-color="#7DD3C0"/>
+<stop offset="100%" stop-color="#5BC5A8"/>
+<animate attributeName="x1" values="0%;30%;0%" dur="6s" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="watchgrad" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#FFFFFF"/>
+<stop offset="100%" stop-color="#F5F5F5"/>
+</linearGradient>
+</defs>
+<rect width="1600" height="900" fill="#F5F0E6"/>
+<g transform="translate(100,50)">
+<g id="clipboard-group">
+<animateTransform attributeName="transform" type="rotate" values="-1 800 450; 1 800 450; -1 800 450" dur="8s" repeatCount="indefinite"/>
+<ellipse cx="800" cy="780" rx="220" ry="25" fill="#000" opacity="0.08" filter="url(#dropshadow)"/>
+<rect x="600" y="150" width="400" height="620" rx="16" fill="url(#boardgrad)" opacity="0.95"/>
+<path d="M 1016 158 L 1024 166 L 1024 778 L 1016 770 Z" fill="#D9D5CC" opacity="0.6"/>
+<path d="M 608 770 L 600 778 L 1024 778 L 1016 770 Z" fill="#C9C5BC" opacity="0.5"/>
+<g id="clip">
+<rect x="725" y="120" width="150" height="60" rx="8" fill="url(#clipgrad)" opacity="0.9">
+<animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite"/>
+</rect>
+<circle cx="800" cy="150" r="10" fill="#C9A85C" opacity="0.9"/>
+<rect x="790" y="115" width="20" height="8" rx="2" fill="#C9A85C" opacity="0.8"/>
+</g>
+</g>
+<g id="papers-group" transform="translate(620,200)">
+<animateTransform attributeName="transform" type="translate" values="620,200; 620,203; 620,200" dur="5s" repeatCount="indefinite"/>
+<rect x="0" y="0" width="360" height="520" rx="4" fill="#FAFAFA" opacity="0.98"/>
+<line x1="40" y1="60" x2="320" y2="60" stroke="#E8E4DC" stroke-width="2"/>
+<line x1="40" y1="100" x2="320" y2="100" stroke="#E8E4DC" stroke-width="2"/>
+<line x1="40" y1="140" x2="320" y2="140" stroke="#E8E4DC" stroke-width="2"/>
+<line x1="40" y1="180" x2="200" y2="180" stroke="#E8E4DC" stroke-width="2"/>
+<rect x="40" y="30" width="80" height="16" rx="2" fill="#5BC5A8" opacity="0.2">
+<animate attributeName="opacity" values="0.2;0.3;0.2" dur="3s" repeatCount="indefinite"/>
+</rect>
+<g id="ecg" transform="translate(0,250)">
+<polyline points="40,0 80,0 90,-30 100,30 110,-40 120,40 130,0 200,0 210,-30 220,30 230,-40 240,40 250,0 320,0" fill="none" stroke="#5BC5A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+<animate attributeName="stroke-width" values="3;5;3" dur="1.2s" repeatCount="indefinite"/>
+</polyline>
+<polyline points="40,0 80,0 90,-30 100,30 110,-40 120,40 130,0 200,0 210,-30 220,30 230,-40 240,40 250,0 320,0" fill="none" stroke="#5BC5A8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.2" filter="url(#pulseblur)">
+<animate attributeName="stroke-width" values="8;16;8" dur="1.2s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.2;0.45;0.2" dur="1.2s" repeatCount="indefinite"/>
+</polyline>
+</g>
+</g>
+<g id="watch-group" transform="translate(900,320)">
+<ellipse cx="0" cy="45" rx="70" ry="18" fill="#000" opacity="0.12" filter="url(#dropshadow)">
+<animate attributeName="rx" values="70;65;70" dur="4s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.12;0.08;0.12" dur="4s" repeatCount="indefinite"/>
+</ellipse>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="4s" repeatCount="indefinite"/>
+<circle r="65" fill="#FAFAFA"/>
+<circle r="65" fill="url(#watchgrad)"/>
+<circle r="60" fill="none" stroke="#C9A85C" stroke-width="5" opacity="0.9"/>
+<g stroke="#BBB" stroke-width="2">
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(0)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(30)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(60)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(90)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(120)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(150)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(180)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(210)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(240)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(270)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(300)"/>
+<line x1="0" y1="-55" x2="0" y2="-48" transform="rotate(330)"/>
+</g>
+<line x1="0" y1="0" x2="0" y2="-35" stroke="#444" stroke-width="3" stroke-linecap="round">
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+</line>
+<line x1="0" y1="0" x2="25" y2="-15" stroke="#666" stroke-width="2.5" stroke-linecap="round">
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="360s" repeatCount="indefinite"/>
+</line>
+<line x1="0" y1="10" x2="0" y2="-45" stroke="#C9A85C" stroke-width="2" stroke-linecap="round">
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+</line>
+<circle r="4" fill="#C9A85C"/>
+<path d="M -30,-40 Q 0,-60 30,-40 Q 10,-20 -30,-40" fill="#FFF" opacity="0.3">
+<animate attributeName="d" values="M -30,-40 Q 0,-60 30,-40 Q 10,-20 -30,-40; M -35,-45 Q -5,-65 25,-35 Q 5,-15 -35,-45; M -30,-40 Q 0,-60 30,-40 Q 10,-20 -30,-40" dur="7s" repeatCount="indefinite"/>
+</path>
+<circle cx="45" cy="0" r="3" fill="#C9A85C" opacity="0.8">
+<animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+</circle>
+</g>
+</g>
+</g>
+</svg>

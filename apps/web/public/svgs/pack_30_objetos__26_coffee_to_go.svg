@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="cupBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5C3318" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#5C3318" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#4A2814" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="cupShade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D220F" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#5C3318" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="sleeveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B8984A" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#C9A85C" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#A08030" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="lidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAFAFA" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#E8E8E8" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur"/>
+      <feOffset in="blur" dx="0" dy="25" result="offsetBlur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.25"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="steamBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="ambientGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <ellipse cx="800" cy="720" rx="160" ry="35" fill="#5C3318" opacity="0.2" filter="url(#softShadow)">
+    <animate attributeName="rx" values="160;140;160" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="35;28;35" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.12;0.2" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <circle cx="800" cy="480" r="280" fill="#C9A85C" opacity="0.08" filter="url(#ambientGlow)">
+    <animate attributeName="r" values="280;300;280" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.08;0.12;0.08" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  
+  <g id="cup">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12; 0,0" dur="3.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="-3,800,480; 3,800,480; -3,800,480" dur="5s" repeatCount="indefinite" additive="sum"/>
+    
+    <path d="M 620,280 L 650,720 Q 800,740 950,720 L 980,280 Q 800,260 620,280 Z" fill="url(#cupBody)"/>
+    <path d="M 620,280 L 980,280 L 950,720 Q 800,740 650,720 Z" fill="url(#cupShade)" opacity="0.6"/>
+    
+    <path d="M 640,420 L 660,620 Q 800,640 940,620 L 960,420 Q 800,400 640,420 Z" fill="url(#sleeveGrad)"/>
+    
+    <g stroke="#5C3318" stroke-width="2.5" opacity="0.3" fill="none" stroke-linecap="round">
+      <line x1="680" y1="440" x2="690" y2="600"/>
+      <line x1="740" y1="445" x2="750" y2="605"/>
+      <line x1="800" y1="450" x2="800" y2="610"/>
+      <line x1="860" y1="445" x2="850" y2="605"/>
+      <line x1="920" y1="440" x2="910" y2="600"/>
+    </g>
+    
+    <path d="M 660,430 L 670,610" stroke="#FAFAFA" stroke-width="12" opacity="0" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;0.5;0" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 60,0; 0,0" dur="4s" repeatCount="indefinite"/>
+    </path>
+    
+    <ellipse cx="800" cy="280" rx="180" ry="40" fill="#D0D0D0"/>
+    <path d="M 620,280 L 640,230 Q 800,210 960,230 L 980,280 Q 800,320 620,280 Z" fill="url(#lidGrad)"/>
+    <ellipse cx="800" cy="230" rx="160" ry="28" fill="#FAFAFA" opacity="0.95"/>
+    <path d="M 620,280 Q 800,320 980,280" fill="none" stroke="#C0C0C0" stroke-width="3" opacity="0.4"/>
+    
+    <ellipse cx="860" cy="250" rx="25" ry="18" fill="#C9A85C" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <path d="M 850,250 L 870,250 M 860,240 L 860,260" stroke="#5C3318" stroke-width="3" opacity="0.8" stroke-linecap="round"/>
+    
+    <ellipse cx="750" cy="240" rx="50" ry="10" fill="#FAFAFA" opacity="0.7" transform="rotate(-5,750,240)"/>
+  </g>
+  
+  <g filter="url(#steamBlur)" opacity="0.8">
+    <path d="M 780,230 Q 750,170 770,110 Q 790,50 770,0" fill="none" stroke="#FAFAFA" stroke-width="10" stroke-linecap="round" opacity="0">
+      <animate attributeName="d" values="M 780,230 Q 750,170 770,110 Q 790,50 770,0; M 780,220 Q 810,160 790,100 Q 770,40 790,-10; M 780,230 Q 750,170 770,110 Q 790,50 770,0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 10,-30; 0,-60" dur="6s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 820,230 Q 860,170 830,110 Q 810,50 830,0" fill="none" stroke="#C9A85C" stroke-width="8" stroke-linecap="round" opacity="0">
+      <animate attributeName="d" values="M 820,230 Q 860,170 830,110 Q 810,50 830,0; M 820,220 Q 790,160 820,100 Q 850,40 820,-10; M 820,230 Q 860,170 830,110 Q 810,50 830,0" dur="5s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="5s" repeatCount="indefinite" begin="1.5s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,-25; 0,-50" dur="5s" repeatCount="indefinite" begin="1.5s"/>
+    </path>
+    
+    <path d="M 800,220 Q 820,160 800,100 Q 780,40 800,-20" fill="none" stroke="#FAFAFA" stroke-width="9" stroke-linecap="round" opacity="0">
+      <animate attributeName="d" values="M 800,220 Q 820,160 800,100 Q 780,40 800,-20; M 800,210 Q 780,150 800,90 Q 820,30 800,-30; M 800,220 Q 820,160 800,100 Q 780,40 800,-20" dur="7s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="0;0.85;0" dur="7s" repeatCount="indefinite" begin="0.5s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 5,-20; 0,-40" dur="7s" repeatCount="indefinite" begin="0.5s"/>
+    </path>
+  </g>
+  
+  <g fill="#C9A85C">
+    <circle cx="700" cy="500" r="5" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0s"/>
+      <animateTransform attributeName="transform" type="scale" values="0;1.5;0" dur="3s" repeatCount="indefinite" begin="0s" additive="sum"/>
+    </circle>
+    <circle cx="900" cy="480" r="4" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="0.7s"/>
+      <animateTransform attributeName="transform" type="scale" values="0;1.8;0" dur="4s" repeatCount="indefinite" begin="0.7s" additive="sum"/>
+    </circle>
+    <circle cx="800" cy="580" r="6" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" begin="1.2s"/>
+      <animateTransform attributeName="transform" type="scale" values="0;1.3;0" dur="3.5s" repeatCount="indefinite" begin="1.2s" additive="sum"/>
+    </circle>
+    <circle cx="750" cy="400" r="4" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" begin="2s"/>
+      <animateTransform attributeName="transform" type="scale" values="0;1.6;0" dur="5s" repeatCount="indefinite" begin="2s" additive="sum"/>
+    </circle>
+    <circle cx="850" cy="450" r="5" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="4.5s" repeatCount="indefinite" begin="1.5s"/>
+      <animateTransform attributeName="transform" type="scale" values="0;1.4;0" dur="4.5s" repeatCount="indefinite" begin="1.5s" additive="sum"/>
+    </circle>
+  </g>
+</svg>

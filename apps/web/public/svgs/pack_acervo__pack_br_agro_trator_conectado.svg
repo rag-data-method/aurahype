@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0f3d26"/>
+      <stop offset="100%" stop-color="#030d07"/>
+    </radialGradient>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="bigGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <style>
+    .spin{transform-origin:960px 540px;animation:spin 18s linear infinite;}
+    .spin-rev{transform-origin:960px 540px;animation:spin 24s linear infinite reverse;}
+    .pulse{animation:pulse 3s ease-in-out infinite;}
+    .float{animation:float 5s ease-in-out infinite;}
+    .float2{animation:float 6s ease-in-out infinite 1.5s;}
+    .dash{animation:dash 10s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    @keyframes pulse{0%,100%{opacity:.25;}50%{opacity:.95;}}
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+    @keyframes dash{to{stroke-dashoffset:-320;}}
+  </style>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  
+  <g stroke="#00ff88" stroke-width="1" opacity="0.12">
+    <line x1="0" y1="780" x2="1920" y2="780"/>
+    <line x1="0" y1="880" x2="1920" y2="880"/>
+    <line x1="0" y1="1000" x2="1920" y2="1000"/>
+    <line x1="960" y1="620" x2="260" y2="1080"/>
+    <line x1="960" y1="620" x2="600" y2="1080"/>
+    <line x1="960" y1="620" x2="1320" y2="1080"/>
+    <line x1="960" y1="620" x2="1660" y2="1080"/>
+  </g>
+  
+  <ellipse cx="960" cy="540" rx="440" ry="280" fill="#00f0ff" opacity="0.06" filter="url(#bigGlow)"/>
+  
+  <g fill="none" stroke="url(#neon)" stroke-width="2" stroke-linecap="round">
+    <circle cx="960" cy="540" r="360" stroke-dasharray="50 70" opacity="0.35" class="spin"/>
+    <circle cx="960" cy="540" r="290" stroke-dasharray="25 35" opacity="0.5" class="spin-rev"/>
+    <circle cx="960" cy="540" r="220" stroke-dasharray="120 80" opacity="0.7" class="spin"/>
+  </g>
+  
+  <g transform="translate(1350,250)" stroke="#00f0ff" stroke-width="5" fill="none" stroke-linecap="round" class="float">
+    <path d="M-55,35 Q0,-35 55,35" class="pulse"/>
+    <path d="M-38,18 Q0,-12 38,18" class="pulse" style="animation-delay:.4s"/>
+    <path d="M-20,5 Q0,-5 20,5" class="pulse" style="animation-delay:.8s"/>
+    <circle cx="0" cy="42" r="5" fill="#00f0ff" stroke="none"/>
+  </g>
+  
+  <g stroke="#00f0ff" stroke-width="2" fill="none">
+    <g transform="translate(380,320)" class="pulse">
+      <circle cx="0" cy="0" r="28"/>
+      <line x1="-42" y1="0" x2="-18" y2="0"/>
+      <line x1="18" y1="0" x2="42" y2="0"/>
+      <line x1="0" y1="-42" x2="0" y2="-18"/>
+      <line x1="0" y1="18" x2="0" y2="42"/>
+      <circle cx="0" cy="0" r="4" fill="#00f0ff" stroke="none"/>
+    </g>
+    <g transform="translate(1540,720)" class="pulse" style="animation-delay:1.2s">
+      <circle cx="0" cy="0" r="22"/>
+      <line x1="-34" y1="0" x2="-12" y2="0"/>
+      <line x1="12" y1="0" x2="34" y2="0"/>
+      <line x1="0" y1="-34" x2="0" y2="-12"/>
+      <line x1="0" y1="12" x2="0" y2="34"/>
+      <circle cx="0" cy="0" r="3" fill="#00f0ff" stroke="none"/>
+    </g>
+  </g>
+  
+  <g>
+    <circle cx="820" cy="620" r="95" fill="#081f13" stroke="#00ff88" stroke-width="5"/>
+    <circle cx="820" cy="620" r="52" fill="none" stroke="#00f0ff" stroke-width="2" stroke-dasharray="12 12" class="spin" style="transform-origin:820px 620px;animation-duration:12s"/>
+    
+    <circle cx="1120" cy="640" r="60" fill="#081f13" stroke="#00ff88" stroke-width="5"/>
+    <circle cx="1120" cy="640" r="32" fill="none" stroke="#00f0ff" stroke-width="2" stroke-dasharray="8 8" class="spin-rev" style="transform-origin:1120px 640px;animation-duration:9s"/>
+    
+    <path d="M740,540 L760,460 L900,440 L930,370 L1030,370 L1060,440 L1200,470 L1220,540 L1180,580 L980,580 L820,580 L740,540 Z" fill="#0d2e1a" stroke="#00f0ff" stroke-width="3"/>
+    
+    <path d="M940,390 L1020,390 L1045,440 L915,440 Z" fill="#00f0ff" opacity="0.22"/>
+    
+    <path d="M960,370 Q990,330 1020,370 Z" fill="#081f13" stroke="#00f0ff" stroke-width="2"/>
+    <circle cx="990" cy="350" r="5" fill="#00f0ff" class="pulse"/>
+    
+    <path d="M770,580 L1190,590" stroke="#00ff88" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  </g>
+  
+  <g fill="#00f0ff">
+    <circle cx="720" cy="420" r="4" class="float"/>
+    <circle cx="1280" cy="680" r="5" class="float2"/>
+    <circle cx="520" cy="720" r="3" class="float" style="animation-delay:2s"/>
+    <circle cx="1480" cy="380" r="4" class="float2" style="animation-delay:.8s"/>
+  </g>
+  
+  <path d="M560,540 L1360,540" stroke="#00f0ff" stroke-width="1" opacity="0.25" class="pulse"/>
+</svg>

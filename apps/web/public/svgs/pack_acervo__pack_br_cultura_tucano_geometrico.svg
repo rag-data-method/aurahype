@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1026"/>
+      <stop offset=".55" stop-color="#1a1145"/>
+      <stop offset="1" stop-color="#02040a"/>
+    </linearGradient>
+    <linearGradient id="bBase" x1="0" y1="0" x2="1" y2=".4">
+      <stop offset="0" stop-color="#ff5e2c"/>
+      <stop offset="1" stop-color="#ff9a3c"/>
+    </linearGradient>
+    <linearGradient id="bMid" x1="0" y1="0" x2="1" y2=".5">
+      <stop offset="0" stop-color="#ffd93d"/>
+      <stop offset="1" stop-color="#ff8c21"/>
+    </linearGradient>
+    <linearGradient id="bLow" x1="0" y1="0" x2="1" y2=".6">
+      <stop offset="0" stop-color="#ff6b35"/>
+      <stop offset="1" stop-color="#c73e1d"/>
+    </linearGradient>
+    <radialGradient id="eye" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#00f6ff"/>
+      <stop offset="1" stop-color="#008799"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    .f{animation:float 7s ease-in-out infinite}
+    .f2{animation:float 9s ease-in-out infinite reverse}
+    .s{animation:sway 8s ease-in-out infinite;transform-origin:50% 100%}
+    .p{animation:pulse 4s ease-in-out infinite}
+    .r{animation:spin 20s linear infinite;transform-origin:center}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+    @keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+    @keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
+    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+  </style>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <g opacity=".35" class="s">
+    <polygon points="-100,1080 180,520 460,1080" fill="#064e3b"/>
+    <polygon points="280,1080 560,480 840,1080" fill="#065f46"/>
+    <polygon points="1460,1080 1740,500 2020,1080" fill="#064e3b"/>
+    <polygon points="1120,1080 1400,460 1680,1080" fill="#065f46"/>
+  </g>
+  <g opacity=".2">
+    <circle cx="300" cy="200" r="120" fill="#4c1d95" filter="url(#glow)" class="p"/>
+    <circle cx="1600" cy="300" r="160" fill="#be185d" filter="url(#glow)" class="p" style="animation-delay:2s"/>
+  </g>
+  <g class="f" transform="translate(0,0)">
+    <g filter="url(#glow)">
+      <polygon points="940,390 960,360 1000,420 960,440" fill="url(#bBase)"/>
+      <polygon points="960,360 1100,380 1240,430 1000,420" fill="url(#bBase)"/>
+      <polygon points="1000,420 1240,430 1260,450 1020,470" fill="url(#bMid)"/>
+      <polygon points="1020,470 1260,450 1280,470 1240,490" fill="#ff4d2e"/>
+      <polygon points="940,500 960,440 1000,420 1020,470 1040,490" fill="url(#bLow)"/>
+      <polygon points="940,500 1040,490 1180,510 1080,530" fill="#c73e1d"/>
+      <polygon points="1180,510 1240,490 1280,470 1260,500" fill="#e11d48"/>
+    </g>
+    <polygon points="880,340 960,360 940,390 920,360" fill="#1a1a1a"/>
+    <polygon points="820,380 880,340 920,360 940,390 900,410 840,420" fill="#151515"/>
+    <polygon points="820,380 780,430 840,470 900,410 840,420" fill="#1f1f1f"/>
+    <polygon points="900,410 940,390 960,440 940,500 840,470" fill="#111"/>
+    <polygon points="840,470 940,500 900,580 820,530" fill="#0f0f0f"/>
+    <polygon points="820,530 900,580 880,650 800,600" fill="#1c1c1c"/>
+    <polygon points="800,600 880,650 900,720 820,700" fill="#141414"/>
+    <polygon points="880,650 980,680 980,750 900,720" fill="#0a0a0a"/>
+    <polygon points="760,500 820,380 840,470 820,530" fill="#161616"/>
+    <polygon points="760,500 820,530 820,700 760,620" fill="#111"/>
+    <polygon points="820,530 950,550 1020,620 880,650" fill="#1e1b4b"/>
+    <polygon points="880,650 1020,620 1040,700 900,720" fill="#16213e"/>
+    <polygon points="900,720 1040,700 1060,760 980,750" fill="#0f3460"/>
+    <polygon points="980,750 1060,760 1140,820 1020,800" fill="#0f0f0f"/>
+    <polygon points="1020,800 1140,820 1160,860 1060,840" fill="#7f1d1d"/>
+    <polygon points="900,410 930,410 925,440 895,440" fill="url(#eye)" class="p"/>
+    <polygon points="895,440 925,440 920,450 890,450" fill="#000"/>
+    <rect x="855" y="720" width="22" height="70" fill="#2d2d2d"/>
+    <rect x="915" y="730" width="22" height="60" fill="#2d2d2d"/>
+  </g>
+  <polygon points="580,790 1320,790 1340,820 560,820" fill="#3d2b1f"/>
+  <g opacity=".6" class="f2">
+    <polygon points="1300,820 1380,700 1460,820" fill="#047857"/>
+    <polygon points="1320,820 1400,740 1420,820" fill="#059669"/>
+  </g>
+  <g class="r" opacity=".15">
+    <polygon points="1600,180 1620,220 1660,220 1630,250 1640,290 1600,270 1560,290 1570,250 1540,220 1580,220" fill="#fbbf24"/>
+  </g>
+  <g opacity=".7">
+    <circle cx="400" cy="300" r="4" fill="#00f6ff" class="p"/>
+    <circle cx="1500" cy="200" r="5" fill="#ffd93d" class="p" style="animation-delay:1s"/>
+    <circle cx="1200" cy="150" r="3" fill="#ff5e2c" class="p" style="animation-delay:2s"/>
+    <circle cx="700" cy="250" r="4" fill="#ff5e2c" class="p" style="animation-delay:3s"/>
+  </g>
+</svg>

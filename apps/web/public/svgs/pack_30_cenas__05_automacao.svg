@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15"/>
+    </filter>
+    <filter id="sparkle-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    </filter>
+    <filter id="joint-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+    </filter>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D4147" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#565B63" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#3D4147" stop-opacity="0.95"/>
+    </linearGradient>
+    <radialGradient id="diamond-core" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="30%" stop-color="#A8D8EA" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#A8D8EA" stop-opacity="0.5"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A8D8EA" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#A8D8EA" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#A8D8EA" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#0F1828"/>
+  
+  <!-- Floor shadow -->
+  <ellipse cx="800" cy="780" rx="280" ry="50" fill="#000000" opacity="0.5" filter="url(#shadow-blur)">
+    <animate attributeName="rx" values="280;300;280" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.35;0.5" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Industrial Base -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,2; 0,0" dur="7s" repeatCount="indefinite"/>
+    <path d="M 720 750 L 880 750 L 900 800 L 700 800 Z" fill="#3D4147" opacity="0.9"/>
+    <rect x="760" y="710" width="80" height="40" fill="#3D4147" opacity="0.85" rx="4"/>
+    <rect x="775" y="720" width="50" height="20" fill="#A8D8EA" opacity="0.3" rx="2">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Lower Arm Group -->
+  <g transform="translate(800, 720)">
+    <animateTransform attributeName="transform" type="rotate" values="-8 800 720; 8 800 720; -8 800 720" dur="9s" repeatCount="indefinite" additive="sum"/>
+    
+    <!-- Hydraulic Piston -->
+    <rect x="-8" y="-140" width="16" height="140" fill="url(#metal)" rx="3"/>
+    <rect x="-12" y="-20" width="24" height="8" fill="#3D4147" opacity="0.9"/>
+    
+    <!-- Elbow Joint -->
+    <circle cx="0" cy="-140" r="22" fill="#3D4147" opacity="0.95"/>
+    <circle cx="0" cy="-140" r="10" fill="#A8D8EA" opacity="0.6" filter="url(#joint-glow)">
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="10;12;10" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Upper Arm -->
+    <g transform="translate(0, -140)">
+      <animateTransform attributeName="transform" type="rotate" values="15 0 -140; -20 0 -140; 15 0 -140" dur="8s" repeatCount="indefinite" additive="sum"/>
+      <rect x="-10" y="-130" width="20" height="130" fill="url(#metal)" rx="3"/>
+      
+      <!-- Joint Housing -->
+      <rect x="-14" y="-60" width="28" height="12" fill="#3D4147" opacity="0.9" rx="2"/>
+      
+      <!-- Wrist Joint -->
+      <g transform="translate(0, -130)">
+        <circle r="16" fill="#3D4147" opacity="0.95"/>
+        <circle r="7" fill="#A8D8EA" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Gripper Base -->
+        <rect x="-18" y="-20" width="36" height="20" fill="#3D4147" opacity="0.9" rx="3"/>
+        
+        <!-- Left Finger -->
+        <path d="M -15 -20 L -30 -50 L -22 -65 L -8 -35" fill="#3D4147" opacity="0.9">
+          <animate attributeName="d" values="M -15 -20 L -30 -50 L -22 -65 L -8 -35; M -15 -20 L -35 -45 L -27 -60 L -8 -35; M -15 -20 L -30 -50 L -22 -65 L -8 -35" dur="5s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Right Finger -->
+        <path d="M 15 -20 L 30 -50 L 22 -65 L 8 -35" fill="#3D4147" opacity="0.9">
+          <animate attributeName="d" values="M 15 -20 L 30 -50 L 22 -65 L 8 -35; M 15 -20 L 35 -45 L 27 -60 L 8 -35; M 15 -20 L 30 -50 L 22 -65 L 8 -35" dur="5s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Diamond -->
+        <g transform="translate(0, -55)">
+          <animateTransform attributeName="transform" type="rotate" values="0 0 -55; 120 0 -55; 360 0 -55; 480 0 -55" dur="15s" repeatCount="indefinite" additive="sum"/>
+          <animateTransform attributeName="transform" type="translate" values="0,-55; 0,-60; 0,-55" dur="4s" repeatCount="indefinite" additive="sum"/>
+          
+          <!-- Diamond Body -->
+          <path d="M 0 -30 L 22 0 L 0 42 L -22 0 Z" fill="url(#diamond-core)"/>
+          <!-- Facets -->
+          <path d="M 0 -30 L 22 0 L 0 0 L 0 -30" fill="#FFFFFF" opacity="0.7"/>
+          <path d="M 0 -30 L -22 0 L 0 0 L 0 -30" fill="#A8D8EA" opacity="0.5"/>
+          <path d="M 0 42 L 22 0 L 0 0 L 0 42" fill="#A8D8EA" opacity="0.4"/>
+          <path d="M 0 42 L -22 0 L 0 0 L 0 42" fill="#FFFFFF" opacity="0.3"/>
+          <path d="M 0 -30 L 0 42" stroke="#FFFFFF" stroke-width="0.5" opacity="0.6"/>
+          <path d="M -22 0 L 22 0" stroke="#A8D8EA" stroke-width="0.5" opacity="0.5"/>
+          
+          <!-- Sparkle 1 -->
+          <g transform="translate(0, -40)">
+            <path d="M 0 -12 L 2 -8 L 6 -6 L 2 -4 L 0 0 L -2 -4 L -6 -6 L -2 -8 Z" fill="#FFFFFF" filter="url(#sparkle-glow)">
+              <animate attributeName="opacity" values="0;1;0" dur="2.4s" repeatCount="indefinite"/>
+              <animateTransform attributeName="transform" type="scale" values="0;1.2;0" dur="2.4s" repeatCount="indefinite"/>
+            </path>
+          </g>
+          
+          <!-- Sparkle 2 -->
+          <g transform="translate(15, 10)">
+            <path d="M 0 -8 L 1.5 -5 L 4 -4 L 1.5 -3 L 0 0 L -1.5 -3 L -4 -4 L -1.5 -5 Z" fill="#A8D8EA" filter="url(#sparkle-glow)">
+              <animate attributeName="opacity" values="0;0.9;0" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+              <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+            </path>
+          </g>
+          
+          <!-- Sparkle 3 -->
+          <g transform="translate(-12, 20)">
+            <path d="M 0 -10 L 2 -6 L 5 -5 L 2 -4 L 0 0 L -2 -4 L -5 -5 L -2 -6 Z" fill="#FFFFFF" opacity="0.8" filter="url(#sparkle-glow)">
+              <animate attributeName="opacity" values="0;1;0" dur="3.2s" begin="1.2s" repeatCount="indefinite"/>
+            </path>
+          </g>
+        </g>
+        
+        <!-- Connection Beam -->
+        <rect x="-2" y="-80" width="4" height="25" fill="#A8D8EA" opacity="0.2">
+          <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Ambient Particles -->
+  <circle cx="600" cy="350" r="2" fill="#A8D8EA" opacity="0.5">
+    <animate attributeName="cy" values="350;330;350" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="1200" cy="450" r="3" fill="#FFFFFF" opacity="0.4">
+    <animate attributeName="cy" values="450;420;450" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="3;4;3" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="900" cy="250" r="1.5" fill="#A8D8EA" opacity="0.6">
+    <animate attributeName="cy" values="250;230;250" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="1100" cy="300" r="2" fill="#A8D8EA" opacity="0.3">
+    <animate attributeName="cy" values="300;280;300" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Light Sweep Effect -->
+  <rect x="-200" y="0" width="200" height="900" fill="url(#beam)" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" from="-200,0" to="1800,0" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Secondary Light Beam -->
+  <rect x="-200" y="0" width="100" height="900" fill="url(#beam)" opacity="0.2">
+    <animateTransform attributeName="transform" type="translate" from="-200,0" to="1800,0" dur="15s" begin="3s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Control Box Detail (Right side) -->
+  <g transform="translate(950, 720)">
+    <rect x="0" y="0" width="60" height="50" fill="#3D4147" opacity="0.85" rx="4"/>
+    <rect x="10" y="10" width="40" height="5" fill="#A8D8EA" opacity="0.5"/>
+    <rect x="10" y="20" width="30" height="5" fill="#A8D8EA" opacity="0.4"/>
+    <circle cx="50" cy="35" r="4" fill="#A8D8EA" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

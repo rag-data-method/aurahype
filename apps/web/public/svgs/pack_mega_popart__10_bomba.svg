@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- VINTAGE POP ART HALFTONE PATTERNS -->
+    <pattern id="halftone-small" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="3" fill="#000000"/>
+    </pattern>
+    <pattern id="halftone-med" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="6" fill="#000000"/>
+    </pattern>
+    <pattern id="halftone-large" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="16" cy="16" r="12" fill="#000000"/>
+    </pattern>
+    <pattern id="halftone-yellow" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4" fill="#FFD700"/>
+    </pattern>
+
+    <!-- HALFTONE GRADIENTS -->
+    <radialGradient id="grad-halftone" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- BOMB GRADIENTS -->
+    <linearGradient id="fuse-burn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#888888"/>
+      <stop offset="60%" stop-color="#333333"/>
+      <stop offset="100%" stop-color="#FF4500"/>
+    </linearGradient>
+
+    <linearGradient id="silver-cap" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#CCCCCC"/>
+      <stop offset="100%" stop-color="#888888"/>
+    </linearGradient>
+
+    <!-- OUTLINED GLOW FILTER -->
+    <filter id="pop-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FFFFFF" flood-opacity="0.9"/>
+    </filter>
+
+    <!-- COMIC STAR SHAPE -->
+    <path id="four-star" d="M 0,-18 Q 4,-4 18,0 Q 4,4 0,18 Q -4,4 -18,0 Q -4,-4 0,-18 Z" />
+    <path id="star-burst" d="M 0,-20 L 4,-6 L 20,-4 L 6,2 L 12,18 L 0,8 L -12,18 L -6,2 L -20,-4 L -4,-6 Z" />
+  </defs>
+
+  <!-- BACKGROUND: DYNAMIC POP ART COMPOSITION -->
+  <rect width="1600" height="900" fill="#00FFFF" />
+  
+  <!-- HALFTONE BACKGROUND SECTIONS -->
+  <rect x="0" y="0" width="400" height="900" fill="#FF0055" />
+  <rect x="1200" y="0" width="400" height="900" fill="#FF0055" />
+  <rect x="400" y="0" width="800" height="900" fill="url(#halftone-yellow)" opacity="0.9" />
+  
+  <!-- ANIMATED DIAGONAL STRIPES -->
+  <g id="bg-stripes">
+    <polygon points="-100,100 100,-100 160,-40 -40,160" fill="#FFD700">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,0" dur="5s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="-100,300 100,100 160,160 -40,360" fill="#FFFFFF">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,0" dur="5s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="-100,500 100,300 160,360 -40,560" fill="#000000">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,0" dur="5s" repeatCount="indefinite" />
+    </polygon>
+  </g>
+
+  <!-- BACKGROUND ACTION LINES (RADIATING FROM FUSE TIP) -->
+  <g stroke="#000000" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M 800,200 L 700,50">
+      <animate attributeName="stroke-dasharray" values="0,200; 200,0; 0,200" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="6;12;6" dur="0.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 800,200 L 900,50">
+      <animate attributeName="stroke-dasharray" values="0,200; 200,0; 0,200" dur="1.2s" repeatCount="indefinite" />
+    </path>
+    <path d="M 800,200 L 650,150">
+      <animate attributeName="stroke-dasharray" values="0,200; 200,0; 0,200" dur="0.8s" repeatCount="indefinite" />
+    </path>
+    <path d="M 800,200 L 950,150">
+      <animate attributeName="stroke-dasharray" values="0,200; 200,0; 0,200" dur="1.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- RADIAL HALFTONE BURST BEHIND BOMB -->
+  <circle cx="800" cy="500" r="350" fill="url(#grad-halftone)">
+    <animate attributeName="r" values="340;360;340" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- COMIC BOOK BURST SHAPE -->
+  <polygon points="800,50 850,150 950,120 900,220 1000,250 900,280 950,380 850,350 800,450 750,350 650,380 700,280 600,250 700,220 650,120 750,150" fill="#000000" stroke="#FFFFFF" stroke-width="8" stroke-linejoin="round">
+    <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="30s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="800,80 840,160 920,140 880,220 960,250 880,280 920,360 840,340 800,420 760,340 680,360 720,280 640,250 720,220 680,140 760,160" fill="#FFD700" stroke="#000000" stroke-width="5" stroke-linejoin="round">
+    <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="30s" repeatCount="indefinite" />
+  </polygon>
+
+  <!-- FLOATING HALFTONE DOTS -->
+  <g fill="#000000">
+    <circle cx="200" cy="100" r="15">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,20; 0,0" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1400" cy="800" r="20">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-30; 0,0" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="100" cy="600" r="10" fill="#FF0055">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,0; 0,0" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1500" cy="200" r="25" fill="#FFD700">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,0; 0,0" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- FUSE -->
+  <g>
+    <!-- Fuse Shadow -->
+    <path d="M 800,420 Q 780,300 800,200" fill="none" stroke="#000000" stroke-width="18" stroke-linecap="round" opacity="0.5"/>
+    
+    <!-- Main Fuse -->
+    <!-- Curving from the bomb body (800, 420) up and slightly right to the tip (800, 200) -->
+    <path id="fuse-path" d="M 800,420 Q 820,300 800,200" fill="none" stroke="#888888" stroke-width="14" stroke-linecap="round"/>
+    
+    <!-- Fuse Texture / Stripes -->
+    <path d="M 805,400 L 815,400 M 795,380 L 815,380 M 800,360 L 825,360 M 790,340 L 825,340 M 795,320 L 815,320 M 805,300 L 815,300 M 800,280 L 810,280 M 800,260 L 805,260 M 800,240 L 815,240" stroke="#333333" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Burning Tip Highlight -->
+    <circle cx="800" cy="200" r="8" fill="url(#fuse-burn)">
+      <animate attributeName="r" values="7;9;7" dur="0.2s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Fuse Cap -->
+    <polygon points="790,420 810,420 805,440 795,440" fill="url(#silver-cap)" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+    
+    <!-- Sparks Container -->
+    <g id="sparks">
+      <!-- SPARK 1 -->
+      <path d="M 800,200 Q 790,170 770,160" fill="none" stroke="#FF4500" stroke-width="5" stroke-linecap="round">
+        <animate attributeName="d" values="M 800,200 Q 790,170 770,160; M 800,200 Q 780,150 750,140; M 800,200 Q 790,170 770,160" dur="0.15s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="5;2;5" dur="0.1s" repeatCount="indefinite" />
+      </path>
+      <circle cx="770" cy="160" r="6" fill="#FFD700">
+         <animate attributeName="cy" values="160;120;160" dur="0.2s" repeatCount="indefinite" />
+         <animate attributeName="cx" values="770;750;770" dur="0.2s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- SPARK 2 -->
+      <path d="M 800,200 Q 810,170 830,160" fill="none" stroke="#FF4500" stroke-width="5" stroke-linecap="round">
+        <animate attributeName="d" values="M 800,200 Q 810,170 830,160; M 800,200 Q 820,150 850,140; M 800,200 Q 810,170 830,160" dur="0.18s" repeatCount="indefinite" />
+      </path>
+      <circle cx="830" cy="160" r="5" fill="#FFFFFF">
+         <animate attributeName="cy" values="160;110;160" dur="0.25s" repeatCount="indefinite" />
+         <animate attributeName="cx" values="830;860;830" dur="0.25s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- SPARK 3 -->
+      <path d="M 800,200 Q 795,170 790,150" fill="none" stroke="#FF0000" stroke-width="4" stroke-linecap="round">
+         <animate attributeName="d" values="M 800,200 Q 795,170 790,150; M 800,200 Q 785,160 780,130; M 800,200 Q 795,170 790,150" dur="0.12s" repeatCount="indefinite" />
+      </path>
+      <circle cx="790" cy="150" r="4" fill="#FFD700">
+         <animate attributeName="cy" values="150;100;150" dur="0.15s" repeatCount="indefinite" />
+      </circle>
+      
+      <!-- SPARK 4 (Looping) -->
+      <circle cx="800" cy="200" r="12" fill="none" stroke="#FFD700" stroke-width="3">
+        <animate attributeName="r" values="10;40;10" dur="0.3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0;1" dur="0.3s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+
+  <!-- COMIC ACTION LINES (Zzzzt) -->
+  <g stroke="#000000" stroke-width="6" stroke-linecap="round" fill="none">
+    <!-- Zigzag 1 -->
+    <path d="M 820,180 L 860,180 L 850,160 L 890,160 L 880,140 L 920,140">
+      <animate attributeName="stroke-dasharray" values="0,200; 200,0; 0,200" dur="0.6s" repeatCount="indefinite" />
+      <animate attributeName="stroke" values="#000000;#FF0055;#000000" dur="0.6s" repeatCount="indefinite" />
+    </path>
+    <!-- Zigzag 2 -->
+    <path d="M 780,220 L 740,220 L 750,240 L 710,240 L 720,260 L 680,260">
+      <animate attributeName="stroke-dasharray" values="0,200; 200,0; 0,200" dur="0.8s" repeatCount="indefinite" />
+      <animate attributeName="stroke" values="#000000;#FFD700;#000000" dur="0.8s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- EXPLOSION CLOUD / SMOKE PUFFS -->
+  <g fill="#FFFFFF" stroke="#000000" stroke-width="4">
+    <circle cx="880" cy="180" r="15">
+      <animate attributeName="r" values="15;30;15" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="840" cy="150" r="20">
+      <animate attributeName="r" values="20;35;20" dur="1.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="760" cy="140" r="12">
+      <animate attributeName="r" values="12;25;12" dur="0.8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- BOMB BODY -->
+  <g id="bomb-body">
+    <!-- Main Sphere -->
+    <circle cx="800" cy="550" r="200" fill="#000000" stroke="#000000" stroke-width="12" />
+    
+    <!-- Highlight Overlay (Glossy Comic Look) -->
+    <path d="M 680,450 A 140,140 0 0 1 920,450" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round" opacity="0.6" />
+    <ellipse cx="720" cy="480" rx="30" ry="15" fill="#FFFFFF" opacity="0.8" transform="rotate(-30 720 480)" />
+    
+    <!-- Halftone Shading Overlay -->
+    <circle cx="800" cy="550" r="200" fill="url(#halftone-med)" opacity="0.5" />
+    
+    <!-- Inner Thick Outline for Lichtenstein Boldness -->
+    <circle cx="800" cy="550" r="190" fill="none" stroke="#000000" stroke-width="8" />
+  </g>
+
+  <!-- FLOATING GRAPHIC ELEMENTS AROUND BOMB -->
+  <g stroke="#000000" stroke-width="4" stroke-linejoin="round">
+    <!-- 4-Point Star 1 -->
+    <use href="#four-star" transform="translate(600, 350) scale(1.5)" fill="#FFD700">
+      <animateTransform attributeName="transform" type="rotate" values="0 600 350; 360 600 350" dur="4s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite" />
+    </use>
+    
+    <!-- 4-Point Star 2 -->
+    <use href="#four-star" transform="translate(1000, 650) scale(1.2)" fill="#FF0055">
+      <animateTransform attributeName="transform" type="rotate" values="360 1000 650; 0 1000 650" dur="5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite" />
+    </use>
+    
+    <!-- 8-Point Star -->
+    <use href="#star-burst" transform="translate(1050, 400) scale(1.8)" fill="#00FFFF">
+      <animateTransform attributeName="transform" type="rotate" values="0 1050 400; 360 1050 400" dur="7s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" />
+    </use>
+    
+    <!-- 8-Point Star 2 -->
+    <use href="#star-burst" transform="translate(550, 700) scale(2)" fill="#FFFFFF">
+      <animateTransform attributeName="transform" type="rotate" values="360 550 700; 0 550 700" dur="6s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0.4;1" dur="1.8s" repeatCount="indefinite" />
+    </use>
+  </g>
+
+  <!-- FOREGROUND ACTION LINES (WOOSH) -->
+  <g stroke="#000000" stroke-width="8" stroke-linecap="round" fill="none">
+    <!-- Left Woosh -->
+    <path d="M 400,750 C 500,700 600,800 700,750">
+      <animate attributeName="stroke-dasharray" values="0,500; 500,0; 0,500" dur="2s" repeatCount="indefinite" />
+    </path>
+    <!-- Right Woosh -->
+    <path d="M 1200,150 C 1100,200 1000,100 900,150">
+      <animate attributeName="stroke-dasharray" values="0,500; 500,0; 0,500" dur="2.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- FOREGROUND HALFTONE DOT CLUSTERS -->
+  <g fill="#000000">
+    <circle cx="300" cy="800" r="40" opacity="0.3">
+      <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1300" cy="100" r="30" opacity="0.3">
+      <animate attributeName="r" values="30;40;30" dur="4s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- VINTAGE TEXT ACCENTS -->
+  <g font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" stroke="#000000" stroke-width="4" paint-order="stroke">
+    <text x="200" y="450" font-size="120" fill="#FFFFFF" transform="rotate(-15 200 450)">POW!</text>
+    <text x="1100" y="750" font-size="140" fill="#FFD700" transform="rotate(15 1100 750)">BOOM!</text>
+    <text x="850" y="150" font-size="80" fill="#FF0055">Zzzzt</text>
+  </g>
+
+  <script type="text/javascript">
+    <![CDATA[
+      // JavaScript is intentionally left empty to strictly adhere to the SMIL-only animation constraint.
+      // All motion is handled natively by SVG <animate> and <animateTransform> tags.
+    ]]>
+  </script>
+</svg>

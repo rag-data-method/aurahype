@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Vibrant Halftone Dot Patterns -->
+    <pattern id="halftone-sm" patternUnits="userSpaceOnUse" width="16" height="16">
+      <circle cx="8" cy="8" r="2.5" fill="#000"/>
+    </pattern>
+    <pattern id="halftone-md" patternUnits="userSpaceOnUse" width="24" height="24">
+      <circle cx="12" cy="12" r="5" fill="#000"/>
+    </pattern>
+    <pattern id="halftone-lg" patternUnits="userSpaceOnUse" width="32" height="32">
+      <circle cx="16" cy="16" r="8" fill="#000"/>
+    </pattern>
+    <pattern id="halftone-cyan" patternUnits="userSpaceOnUse" width="24" height="24">
+      <circle cx="12" cy="12" r="4.5" fill="#00E0FF"/>
+    </pattern>
+    <pattern id="halftone-magenta" patternUnits="userSpaceOnUse" width="20" height="20">
+      <circle cx="10" cy="10" r="3.5" fill="#FF00A0"/>
+    </pattern>
+
+    <!-- Gradients for Watermelon Rind -->
+    <linearGradient id="rindGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#39FF14"/>
+      <stop offset="50%" stop-color="#00CC00"/>
+      <stop offset="100%" stop-color="#008000"/>
+    </linearGradient>
+    <linearGradient id="pithGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EEEEEE"/>
+    </linearGradient>
+
+    <!-- Comic Action Star -->
+    <g id="action-star">
+      <path d="M0 -40 Q 10 -10 40 0 Q 10 10 0 40 Q -10 10 -40 0 Q -10 -10 0 -40 Z" fill="#FFFF00" stroke="#000" stroke-width="4"/>
+    </g>
+
+    <!-- Comic Action Ray -->
+    <path id="action-ray" d="M 0 0 L 60 -20 L 40 0 L 60 20 Z" fill="#00E0FF" stroke="#000" stroke-width="3"/>
+  </defs>
+
+  <!-- Background Base Color -->
+  <rect width="1600" height="900" fill="#FFFF00"/>
+
+  <!-- Background Halftone Dots (Cyan) -->
+  <rect width="1600" height="450" fill="url(#halftone-cyan)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0" y="450" width="1600" height="450" fill="url(#halftone-magenta)">
+    <animate attributeName="opacity" values="1;0.6;1" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Thick Diagonal Stripes in Background -->
+  <g stroke="#000" stroke-width="15" opacity="0.8">
+    <line x1="200" y1="-100" x2="900" y2="900"/>
+    <line x1="600" y1="-100" x2="1300" y2="900"/>
+    <line x1="1000" y1="-100" x2="1700" y2="900"/>
+  </g>
+
+  <!-- Floating Action Stars & Rays -->
+  <use href="#action-star" x="250" y="200" transform="scale(1.2)">
+    <animateTransform attributeName="transform" type="rotate" from="0 250 200" to="360 250 200" dur="6s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+  </use>
+  <use href="#action-star" x="1350" y="700" transform="scale(0.8)">
+    <animateTransform attributeName="transform" type="rotate" from="0 1350 700" to="-360 1350 700" dur="5s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+  </use>
+
+  <use href="#action-ray" x="150" y="750">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 50 -30; 0 0" dur="2.5s" repeatCount="indefinite"/>
+  </use>
+  <use href="#action-ray" x="1450" y="150">
+    <animateTransform attributeName="transform" type="translate" values="0 0; -40 40; 0 0" dur="3s" repeatCount="indefinite"/>
+  </use>
+
+  <!-- MAIN SUBJECT: Giant Watermelon Slice Group -->
+  <g id="watermelon-slice" transform="translate(800, 450)">
+    
+    <!-- Entire Group Breathing & Rotation -->
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="-5; 5; -5" dur="8s" repeatCount="indefinite" additive="sum"/>
+    
+    <!-- Offset to center the slice in the group -->
+    <g transform="translate(-350, -300)">
+      
+      <!-- Green Rind (Outer Skin) -->
+      <path d="M 350 50 C 150 50 50 200 50 450 L 650 450 C 650 200 550 50 350 50 Z" fill="url(#rindGrad)" stroke="#000" stroke-width="12"/>
+      <!-- Rind Highlight -->
+      <path d="M 120 430 Q 350 100 580 430" fill="none" stroke="#000" stroke-width="4" stroke-dasharray="20 15" opacity="0.5">
+        <animate attributeName="stroke-dashoffset" from="0" to="35" dur="1s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- White Pith (Inner Rind) -->
+      <path d="M 350 80 C 175 80 90 210 90 430 L 610 430 C 610 210 525 80 350 80 Z" fill="url(#pithGrad)" stroke="#000" stroke-width="10"/>
+
+      <!-- Red Flesh -->
+      <path d="M 350 110 C 200 110 130 230 130 410 L 570 410 C 570 230 500 110 350 110 Z" fill="#FF0033" stroke="#000" stroke-width="8"/>
+
+      <!-- Flesh Halftone Overlay for Texture -->
+      <path d="M 350 110 C 200 110 130 230 130 410 L 570 410 C 570 230 500 110 350 110 Z" fill="url(#halftone-md)" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- Glossy Highlight on Flesh -->
+      <path d="M 180 380 Q 250 200 350 150 Q 300 250 220 380 Z" fill="#FFF" opacity="0.6" stroke="none"/>
+
+      <!-- SEEDS GROUP -->
+      <g id="seeds" fill="#000" stroke="#FFF" stroke-width="2">
+        
+        <!-- Seed 1 -->
+        <g transform="translate(280, 250) rotate(-15)">
+          <ellipse cx="0" cy="0" rx="12" ry="22"/>
+          <animateTransform attributeName="transform" type="translate" values="280 250; 280 240; 280 250" dur="2.5s" repeatCount="indefinite"/>
+        </g>
+        
+        <!-- Seed 2 -->
+        <g transform="translate(420, 250) rotate(15)">
+          <ellipse cx="0" cy="0" rx="12" ry="22"/>
+          <animateTransform attributeName="transform" type="translate" values="420 250; 420 260; 420 250" dur="3s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- Seed 3 -->
+        <g transform="translate(350, 320) rotate(0)">
+          <ellipse cx="0" cy="0" rx="14" ry="26"/>
+          <animateTransform attributeName="transform" type="translate" values="350 320; 350 310; 350 320" dur="2s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- Seed 4 -->
+        <g transform="translate(230, 350) rotate(-25)">
+          <ellipse cx="0" cy="0" rx="11" ry="20"/>
+          <animateTransform attributeName="transform" type="translate" values="230 350; 230 360; 230 350" dur="3.5s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- Seed 5 -->
+        <g transform="translate(470, 350) rotate(25)">
+          <ellipse cx="0" cy="0" rx="11" ry="20"/>
+          <animateTransform attributeName="transform" type="translate" values="470 350; 470 340; 470 350" dur="2.8s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- Seed 6 -->
+        <g transform="translate(310, 380) rotate(-10)">
+          <ellipse cx="0" cy="0" rx="13" ry="24"/>
+        </g>
+
+        <!-- Seed 7 -->
+        <g transform="translate(390, 380) rotate(10)">
+          <ellipse cx="0" cy="0" rx="13" ry="24"/>
+        </g>
+
+        <!-- Seed 8 (Top Center) -->
+        <g transform="translate(350, 180) rotate(0)">
+          <ellipse cx="0" cy="0" rx="10" ry="18"/>
+          <animateTransform attributeName="transform" type="translate" values="350 180; 350 170; 350 180" dur="4s" repeatCount="indefinite"/>
+        </g>
+      </g>
+
+      <!-- Comic Speed Lines / Action Marks on Flesh -->
+      <g stroke="#000" stroke-width="6" stroke-linecap="round">
+        <line x1="200" y1="150" x2="250" y2="180">
+          <animate attributeName="x2" values="250;240;250" dur="0.5s" repeatCount="indefinite"/>
+        </line>
+        <line x1="500" y1="150" x2="450" y2="180">
+          <animate attributeName="x2" values="450;460;450" dur="0.6s" repeatCount="indefinite"/>
+        </line>
+        <line x1="150" y1="280" x2="210" y2="290">
+          <animate attributeName="x2" values="210;200;210" dur="0.4s" repeatCount="indefinite"/>
+        </line>
+        <line x1="550" y1="280" x2="490" y2="290">
+          <animate attributeName="x2" values="490;500;490" dur="0.7s" repeatCount="indefinite"/>
+        </line>
+      </g>
+
+      <!-- Drips / Juice -->
+      <path d="M 130 410 Q 130 500 150 550 Q 170 500 170 410" fill="#FF0033" stroke="#000" stroke-width="6">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 10; 0 0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 570 410 Q 570 480 550 520 Q 530 480 530 410" fill="#FF0033" stroke="#000" stroke-width="6">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 15; 0 0" dur="2.5s" repeatCount="indefinite"/>
+      </path>
+
+    </g>
+  </g>
+
+  <!-- Foreground Halftone Overlay (Adds Depth) -->
+  <rect x="-100" y="-100" width="400" height="400" fill="url(#halftone-sm)" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate" values="-100 -100; 0 0; -100 -100" dur="10s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="1300" y="600" width="400" height="400" fill="url(#halftone-lg)" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" values="1300 600; 1250 550; 1300 600" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Giant Comic Burst Text Background -->
+  <g transform="translate(800, 450)">
+    <circle r="380" fill="none" stroke="#000" stroke-width="15" stroke-dasharray="40 20">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="340" fill="none" stroke="#FFF" stroke-width="10" stroke-dasharray="60 30">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="25s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Floating Seed Particles (Scattered around) -->
+  <g fill="#000">
+    <ellipse cx="150" cy="150" rx="8" ry="14" transform="rotate(45 150 150)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 20 -20; 0 0" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+    <ellipse cx="1450" cy="800" rx="8" ry="14" transform="rotate(-30 1450 800)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -30 -10; 0 0" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+    <ellipse cx="100" cy="750" rx="6" ry="10" transform="rotate(60 100 750)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 10 30; 0 0" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+    <ellipse cx="1500" cy="100" rx="6" ry="10" transform="rotate(-60 1500 100)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -20 20; 0 0" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+  </g>
+
+  <!-- Color Flashing Overlay for Warhol Effect -->
+  <rect width="1600" height="900" fill="#FF00FF" opacity="0" style="mix-blend-mode: multiply;">
+    <animate attributeName="opacity" values="0;0.1;0" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <rect width="1600" height="900" fill="#00FFFF" opacity="0" style="mix-blend-mode: multiply;">
+    <animate attributeName="opacity" values="0;0.1;0" dur="7s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

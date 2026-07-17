@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="dropShadow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20"/>
+    </filter>
+    
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+
+    <radialGradient id="goldRadial" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#E8D5A0"/>
+      <stop offset="40%" stop-color="#C9A85C"/>
+      <stop offset="100%" stop-color="#8F7238"/>
+    </radialGradient>
+    
+    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4B76A"/>
+      <stop offset="50%" stop-color="#C9A85C"/>
+      <stop offset="100%" stop-color="#A68B4B"/>
+    </linearGradient>
+    
+    <linearGradient id="leatherGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4A3A1C"/>
+      <stop offset="20%" stop-color="#5D4A24"/>
+      <stop offset="50%" stop-color="#6B5530"/>
+      <stop offset="80%" stop-color="#5D4A24"/>
+      <stop offset="100%" stop-color="#4A3A1C"/>
+    </linearGradient>
+    
+    <linearGradient id="glassSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <ellipse cx="800" cy="580" rx="200" ry="60" fill="#000000" opacity="0.15" filter="url(#dropShadow)">
+    <animate attributeName="opacity" values="0.15;0.08;0.15" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="rx" values="200;180;200" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="ry" values="60;50;60" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+  
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-25; 0,0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+    
+    <g id="strap-top">
+      <path d="M 720 190 L 880 190 L 860 320 L 740 320 Z" fill="url(#leatherGrad)"/>
+      <path d="M 730 200 L 750 310" stroke="#C9A85C" stroke-width="3" stroke-dasharray="6,6" opacity="0.9" fill="none"/>
+      <path d="M 870 200 L 850 310" stroke="#C9A85C" stroke-width="3" stroke-dasharray="6,6" opacity="0.9" fill="none"/>
+    </g>
+    
+    <g id="strap-bottom">
+      <path d="M 740 580 L 860 580 L 880 710 L 720 710 Z" fill="url(#leatherGrad)"/>
+      <path d="M 750 590 L 730 700" stroke="#C9A85C" stroke-width="3" stroke-dasharray="6,6" opacity="0.9" fill="none"/>
+      <path d="M 850 590 L 870 700" stroke="#C9A85C" stroke-width="3" stroke-dasharray="6,6" opacity="0.9" fill="none"/>
+    </g>
+    
+    <circle cx="800" cy="450" r="265" fill="url(#goldLinear)" filter="url(#goldGlow)"/>
+    <circle cx="800" cy="450" r="250" fill="url(#goldRadial)"/>
+    
+    <rect x="1055" y="435" width="25" height="30" rx="4" fill="url(#goldLinear)">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <line x1="1062" y1="435" x2="1062" y2="465" stroke="#8F7238" stroke-width="1.5"/>
+    <line x1="1073" y1="435" x2="1073" y2="465" stroke="#8F7238" stroke-width="1.5"/>
+    
+    <circle cx="800" cy="450" r="230" fill="#FBF7EE" opacity="0.95"/>
+    
+    <g id="hour-markers" stroke="#C9A85C" stroke-linecap="round">
+      <line x1="800" y1="240" x2="800" y2="270" stroke-width="6"/>
+      <line x1="800" y1="660" x2="800" y2="630" stroke-width="6"/>
+      <line x1="590" y1="450" x2="620" y2="450" stroke-width="6"/>
+      <line x1="1010" y1="450" x2="980" y2="450" stroke-width="6"/>
+      
+      <line x1="905" y1="275" x2="926" y2="296" stroke-width="4"/>
+      <line x1="695" y1="275" x2="674" y2="296" stroke-width="4"/>
+      <line x1="905" y1="625" x2="926" y2="604" stroke-width="4"/>
+      <line x1="695" y1="625" x2="674" y2="604" stroke-width="4"/>
+      
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="5s" repeatCount="indefinite"/>
+    </g>
+    
+    <text x="800" y="350" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#5D4A24" letter-spacing="2" opacity="0.9">CHRONOS</text>
+    
+    <g transform="translate(800,450)">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="720s" repeatCount="indefinite"/>
+        <path d="M -8 10 L -5 -50 L 0 -65 L 5 -50 L 8 10 Z" fill="#5D4A24"/>
+        <rect x="-3" y="-55" width="6" height="55" fill="#C9A85C" rx="2"/>
+      </g>
+      
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+        <path d="M -6 15 L -4 -80 L 0 -95 L 4 -80 L 6 15 Z" fill="#5D4A24"/>
+        <rect x="-2" y="-85" width="4" height="85" fill="#C9A85C" rx="1"/>
+      </g>
+      
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+        <line x1="0" y1="25" x2="0" y2="-105" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="0" cy="-75" r="4" fill="#E63946" opacity="0.8"/>
+        <circle cx="0" cy="0" r="6" fill="#E63946"/>
+        <circle cx="0" cy="0" r="3" fill="#5D4A24"/>
+      </g>
+    </g>
+    
+    <path d="M 620 350 Q 800 300 980 350 Q 930 450 980 550 Q 800 600 620 550 Q 670 450 620 350" fill="url(#glassSheen)" opacity="0.5" style="mix-blend-mode: overlay;">
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="6s" repeatCount="indefinite"/>
+    </path>
+    
+    <g filter="url(#softBlur)">
+      <path d="M 980 300 L 990 320 L 980 340 L 970 320 Z" fill="#FFFFFF" opacity="0">
+        <animate attributeName="opacity" values="0;0.9;0" dur="3s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="1;1.8;1" dur="3s" repeatCount="indefinite" additive="sum"/>
+      </path>
+      
+      <path d="M 630 580 L 640 600 L 630 620 L 620 600 Z" fill="#FFFFFF" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="4s" begin="1.5s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="rotate" values="0;45;0" dur="4s" repeatCount="indefinite" additive="sum"/>
+      </path>
+      
+      <circle cx="850" cy="320" r="3" fill="#FFFFFF" opacity="0">
+        <animate attributeName="opacity" values="0;1;0" dur="5s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</svg>

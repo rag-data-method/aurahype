@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="25"/>
+      <feOffset dx="0" dy="40" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="keyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d352c"/>
+      <stop offset="100%" stop-color="#2b2620"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4d5a"/>
+      <stop offset="100%" stop-color="#e63946"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <ellipse cx="800" cy="680" rx="380" ry="90" fill="#2b2620" opacity="0.12" filter="url(#shadow)">
+    <animate attributeName="rx" values="380;360;380" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="90;85;90" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.12;0.08;0.12" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <g transform="translate(800,460)">
+    <animateTransform attributeName="transform" type="translate" values="800,460;800,440;800,460" dur="4s" repeatCount="indefinite"/>
+    
+    <g transform="translate(-320,-140)">
+      <rect x="-15" y="-15" width="670" height="310" rx="16" fill="none" stroke="#E63946" stroke-width="35" opacity="0.4" filter="url(#glow)">
+        <animate attributeName="stroke" values="#E63946;#C9A85C;#E63946" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="640" height="280" rx="12" fill="#2b2620"/>
+      <rect x="0" y="15" width="640" height="265" rx="12" fill="#1f1b16" opacity="0.6"/>
+      
+      <g id="key" transform="translate(40,30)">
+        <rect x="2" y="6" width="44" height="44" rx="5" fill="#1a1612"/>
+        <rect x="0" y="0" width="48" height="48" rx="5" fill="url(#keyGrad)"/>
+        <rect x="6" y="6" width="36" height="36" rx="3" fill="#463d32" opacity="0.4"/>
+      </g>
+      <use href="#key" x="60" y="0"/>
+      <use href="#key" x="120" y="0"/>
+      <use href="#key" x="180" y="0"/>
+      <use href="#key" x="240" y="0"/>
+      <use href="#key" x="300" y="0"/>
+      <use href="#key" x="360" y="0"/>
+      
+      <use href="#key" x="0" y="60"/>
+      <use href="#key" x="60" y="60"/>
+      <use href="#key" x="120" y="60"/>
+      <use href="#key" x="180" y="60"/>
+      
+      <g transform="translate(240,90)">
+        <rect x="2" y="8" width="104" height="44" rx="5" fill="#1a1612" opacity="0.8">
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,8;0,0" dur="2s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="0" y="0" width="108" height="48" rx="5" fill="url(#accentGrad)">
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,8;0,0" dur="2s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="8" y="8" width="92" height="32" rx="3" fill="#ff6b75" opacity="0.3">
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,8;0,0" dur="2s" repeatCount="indefinite"/>
+        </rect>
+        <circle cx="54" cy="24" r="40" fill="#E63946" opacity="0" filter="url(#glow)">
+          <animate attributeName="opacity" values="0;0.6;0" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,8;0,0" dur="2s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      
+      <use href="#key" x="360" y="60"/>
+      <use href="#key" x="420" y="60"/>
+      <use href="#key" x="480" y="60"/>
+      <use href="#key" x="540" y="60"/>
+      
+      <use href="#key" x="0" y="120"/>
+      <use href="#key" x="60" y="120"/>
+      <use href="#key" x="120" y="120"/>
+      <use href="#key" x="180" y="120"/>
+      <use href="#key" x="240" y="120"/>
+      <use href="#key" x="300" y="120"/>
+      <use href="#key" x="360" y="120"/>
+      <use href="#key" x="420" y="120"/>
+      <use href="#key" x="480" y="120"/>
+      <use href="#key" x="540" y="120"/>
+      
+      <g transform="translate(300,180)">
+        <rect x="2" y="8" width="284" height="44" rx="5" fill="#1a1612"/>
+        <rect x="0" y="0" width="288" height="48" rx="5" fill="#C9A85C"/>
+        <rect x="8" y="8" width="272" height="32" rx="3" fill="#dcc080" opacity="0.4">
+          <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+      
+      <g transform="translate(40,180)">
+        <rect x="2" y="8" width="44" height="44" rx="5" fill="#1a1612"/>
+        <rect x="0" y="0" width="48" height="48" rx="5" fill="#C9A85C"/>
+      </g>
+      <g transform="translate(100,180)">
+        <rect x="2" y="8" width="44" height="44" rx="5" fill="#1a1612"/>
+        <rect x="0" y="0" width="48" height="48" rx="5" fill="#C9A85C"/>
+      </g>
+      <g transform="translate(160,180)">
+        <rect x="2" y="8" width="44" height="44" rx="5" fill="#1a1612"/>
+        <rect x="0" y="0" width="48" height="48" rx="5" fill="#C9A85C"/>
+      </g>
+    </g>
+    
+    <circle cx="-200" cy="-80" r="5" fill="#C9A85C" opacity="0">
+      <animate attributeName="opacity" values="0;0.8;0" dur="3s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="-80;-130;-80" dur="3s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;6;2" dur="3s" begin="0s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="-100" r="4" fill="#E63946" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="-100;-140;-100" dur="4s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="-150" r="3" fill="#C9A85C" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0" dur="5s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="-150;-190;-150" dur="5s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-150" cy="50" r="6" fill="#E63946" opacity="0">
+      <animate attributeName="opacity" values="0;0.6;0" dur="3.5s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="50;10;50" dur="3.5s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <rect x="-100" y="-200" width="4" height="20" fill="#C9A85C" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,-30;0,0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="200" y="100" width="4" height="16" fill="#E63946" opacity="0.5">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,30;0,0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

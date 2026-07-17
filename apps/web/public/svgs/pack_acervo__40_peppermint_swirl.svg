@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="90%">
+      <stop offset="0%" stop-color="#fff5f8"/>
+      <stop offset="100%" stop-color="#ffc4d6"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="80%">
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ff9eb5" stop-opacity="0.35"/>
+    </radialGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#ff8fa3" flood-opacity="0.3"/>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <symbol id="peppermint" viewBox="-160 -160 320 320">
+      <circle cx="0" cy="0" r="150" fill="#fffdf7"/>
+      <path fill="#ff2d2d" d="M0,0L144.9,-38.8A150,150 0 0 1 144.9,38.8Z M0,0L106.1,106.1A150,150 0 0 1 38.8,144.9Z M0,0L-38.8,144.9A150,150 0 0 1 -106.1,106.1Z M0,0L-144.9,38.8A150,150 0 0 1 -144.9,-38.8Z M0,0L-106.1,-106.1A150,150 0 0 1 -38.8,-144.9Z M0,0L38.8,-144.9A150,150 0 0 1 106.1,-106.1Z"/>
+      <circle cx="0" cy="0" r="18" fill="#ff2d2d"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g transform="translate(820,450)" opacity="0.16" filter="url(#soft)">
+    <g transform="scale(4.6)">
+      <use href="#peppermint" x="-160" y="-160" width="320" height="320"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="56s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  <g transform="translate(400,480)" filter="url(#shadow)">
+    <g transform="scale(2.3)">
+      <use href="#peppermint" x="-160" y="-160" width="320" height="320"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  <g transform="translate(1220,300)" filter="url(#shadow)">
+    <g transform="scale(1.5)">
+      <use href="#peppermint" x="-160" y="-160" width="320" height="320"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="30s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  <g transform="translate(1180,720)" filter="url(#shadow)">
+    <g transform="scale(1.2)">
+      <use href="#peppermint" x="-160" y="-160" width="320" height="320"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  <g transform="translate(260,240)" opacity="0.9">
+    <g transform="scale(0.7)">
+      <use href="#peppermint" x="-160" y="-160" width="320" height="320"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="16s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  <g transform="translate(180,780)" opacity="0.85">
+    <g transform="scale(0.55)">
+      <use href="#peppermint" x="-160" y="-160" width="320" height="320"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  <circle cx="200" cy="150" r="10" fill="#ffffff" opacity="0.5">
+    <animate attributeName="cy" values="150;120;150" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1400" cy="200" r="14" fill="#ffffff" opacity="0.4">
+    <animate attributeName="cy" values="200;240;200" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.15;0.4" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1500" cy="750" r="12" fill="#ffffff" opacity="0.45">
+    <animate attributeName="cy" values="750;710;750" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.45;0.2;0.45" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="800" r="8" fill="#ffd1dc" opacity="0.6">
+    <animate attributeName="cy" values="800;830;800" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.25;0.6" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+</svg>

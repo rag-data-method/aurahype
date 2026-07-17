@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="20"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.169 0 0 0 0 0.373 0 0 0 0 0.486 0 0 0 0.3 0"/>
+    </filter>
+    <filter id="pageGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <linearGradient id="cover3D" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D7A9E" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#2B5F7C" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#1E4A63" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="pageShade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#E8E4DC" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="spineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2B5F7C" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3D7A9E" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <ellipse cx="800" cy="720" rx="280" ry="35" fill="#2B5F7C" opacity="0.12" filter="url(#softShadow)">
+    <animate attributeName="rx" values="280;260;280" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.12;0.08;0.12" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <g id="book">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="5s" repeatCount="indefinite" additive="sum"/>
+    
+    <path d="M 520 600 Q 520 580 540 580 L 790 580 L 800 620 L 540 620 Q 520 620 520 600 Z" fill="url(#spineGrad)"/>
+    <path d="M 1080 600 Q 1080 580 1060 580 L 810 580 L 800 620 L 1060 620 Q 1080 620 1080 600 Z" fill="url(#spineGrad)"/>
+    
+    <path d="M 540 580 Q 670 560 800 580 L 800 620 Q 670 600 540 620 Z" fill="#FAFAFA" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.85;0.9" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1060 580 Q 930 560 800 580 L 800 620 Q 930 600 1060 620 Z" fill="#FAFAFA" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.85;0.9" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+    
+    <g opacity="0.6">
+      <line x1="580" y1="590" x2="750" y2="590" stroke="#2B5F7C" stroke-width="2" stroke-linecap="round"/>
+      <line x1="580" y1="605" x2="740" y2="605" stroke="#2B5F7C" stroke-width="2" stroke-linecap="round"/>
+      <line x1="850" y1="590" x2="1020" y2="590" stroke="#2B5F7C" stroke-width="2" stroke-linecap="round"/>
+      <line x1="860" y1="605" x2="1020" y2="605" stroke="#2B5F7C" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+    <path d="M 550 585 Q 675 570 800 590 L 800 625 Q 675 605 550 615 Z" fill="url(#cover3D)" opacity="0.95"/>
+    <path d="M 1050 585 Q 925 570 800 590 L 800 625 Q 925 605 1050 615 Z" fill="url(#cover3D)" opacity="0.95"/>
+    
+    <g id="flyingPage1">
+      <animateMotion path="M 750,580 C 700,500 650,400 600,300 S 550,150 600,100" dur="6s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" keyTimes="0;0.1;0.8;1"/>
+      <path d="M 0,0 Q 40,-5 80,0 L 75,100 Q 40,95 5,100 Z" fill="url(#pageShade)" stroke="#C9A85C" stroke-width="1.5" opacity="0.9"/>
+      <path d="M 10,25 L 70,25 M 10,45 L 65,45 M 10,65 L 60,65" stroke="#2B5F7C" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+    </g>
+    
+    <g id="flyingPage2">
+      <animateMotion path="M 850,580 C 900,480 950,350 1000,250 S 1100,100 1150,80" dur="5s" repeatCount="indefinite" begin="1s" rotate="auto"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 15; -5" dur="5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="5s" repeatCount="indefinite" keyTimes="0;0.1;0.8;1"/>
+      <path d="M 0,0 Q 35,-8 70,0 L 65,90 Q 35,85 5,90 Z" fill="#FAFAFA" stroke="#E0E0E0" stroke-width="1"/>
+      <line x1="15" y1="30" x2="60" y2="30" stroke="#DDD" stroke-width="2"/>
+      <line x1="15" y1="50" x2="55" y2="50" stroke="#DDD" stroke-width="2"/>
+      <path d="M 70,0 L 70,90" stroke="#C9A85C" stroke-width="2" opacity="0.7"/>
+    </g>
+    
+    <g id="flyingPage3">
+      <animateMotion path="M 800,590 C 820,450 840,300 860,200 S 900,80 920,50" dur="4s" repeatCount="indefinite" begin="0.5s" rotate="auto"/>
+      <animateTransform attributeName="transform" type="scale" values="1;0.8;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.85;0" dur="4s" repeatCount="indefinite"/>
+      <path d="M 0,0 Q 30,-10 60,0 L 55,80 Q 30,75 5,80 Z" fill="#FAFAFA" opacity="0.9"/>
+      <line x1="10" y1="20" x2="50" y2="20" stroke="#2B5F7C" stroke-width="1" opacity="0.3"/>
+    </g>
+    
+    <g id="flyingPage4">
+      <animateMotion path="M 780,585 C 750,500 720,400 700,300 S 680,180 670,150" dur="7s" repeatCount="indefinite" begin="2s" rotate="auto"/>
+      <animate attributeName="opacity" values="0;0.8;0.8;0" dur="7s" repeatCount="indefinite" keyTimes="0;0.15;0.85;1"/>
+      <path d="M 0,0 Q 25,-5 50,0 L 48,70 Q 25,65 2,70 Z" fill="url(#pageShade)"/>
+    </g>
+    
+    <circle cx="0" cy="0" r="6" fill="#C9A85C" filter="url(#pageGlow)" opacity="0">
+      <animateMotion path="M 800,550 C 850,450 900,350 950,250" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="4;8;4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="0" cy="0" r="5" fill="#C9A85C" opacity="0">
+      <animateMotion path="M 750,560 C 700,480 650,380 620,280" dur="4s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="0" cy="0" r="4" fill="#FAFAFA" opacity="0">
+      <animateMotion path="M 850,560 C 900,460 950,360 980,260" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="0;0.9;0" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;6;2" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <path d="M 800 580 L 800 620" stroke="#C9A85C" stroke-width="3" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

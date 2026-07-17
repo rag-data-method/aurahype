@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="b1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#DCE2E8" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#DCE2E8" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7FB069"/>
+      <stop offset="100%" stop-color="#6B7E5B"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#F5F0E6"/>
+  
+  <ellipse cx="800" cy="680" rx="200" ry="60" fill="#6B7E5B" opacity="0.2" filter="url(#b1)">
+    <animate attributeName="rx" values="200;210;200" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.25;0.2" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <path d="M 650 650 Q 800 580 950 650 Q 800 720 650 650" fill="#3d3226"/>
+  
+  <g transform="translate(800,620) rotate(-20)">
+    <rect x="-50" y="0" width="100" height="80" rx="8" fill="#6B665E"/>
+    <path d="M -50 15 H 50 M -50 30 H 50 M -50 45 H 50 M -50 60 H 50" stroke="#4A453E" stroke-width="3"/>
+    <path d="M -50 80 Q 0 95 50 80" fill="none" stroke="#7A756E" stroke-width="4"/>
+  </g>
+  
+  <g transform="translate(800,580) rotate(-20)">
+    <path d="M -70 50 C -110 50 -130 0 -130 -50 C -130 -110 -70 -130 0 -130 C 70 -130 130 -110 130 -50 C 130 10 110 50 70 50 Q 40 55 20 40 L 0 55 L -20 35 Q -40 55 -70 50 Z" 
+          fill="url(#g1)" stroke="#DCE2E8" stroke-width="2" opacity="0.85">
+      <animate attributeName="opacity" values="0.85;0.95;0.85" dur="7s" repeatCount="indefinite"/>
+    </path>
+    <path d="M -80 40 L -60 10 L -50 50 M 100 -20 L 80 20 M 20 45 L 0 55 L -20 35" stroke="#DCE2E8" stroke-width="2" opacity="0.7" fill="none"/>
+    <path d="M -90 -40 Q -70 -90 -20 -100" stroke="#DCE2E8" stroke-width="8" stroke-linecap="round" opacity="0.4" filter="url(#b2)"/>
+    <path d="M -30 50 L -20 10 L -10 50 L 0 10 L 10 50" stroke="#8B7355" stroke-width="3" fill="none" opacity="0.5"/>
+  </g>
+  
+  <g transform="translate(800,600)">
+    <path d="M 0 20 Q 10 -30 5 -80" stroke="#6B7E5B" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.9">
+      <animate attributeName="d" values="M 0 20 Q 10 -30 5 -80; M 0 20 Q 0 -30 -5 -80; M 0 20 Q 10 -30 5 -80" dur="5s" repeatCount="indefinite"/>
+    </path>
+    
+    <g transform="translate(5,-60)">
+      <path d="M 0 0 Q -40 -10 -55 -50 Q -25 -35 0 0" fill="url(#g2)" opacity="0.9">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0; -8 0 0; 0 0 0" dur="4s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <g transform="translate(5,-70)">
+      <path d="M 0 0 Q 45 -5 60 -40 Q 30 -30 0 0" fill="#7FB069" opacity="0.85">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0; 6 0 0; 0 0 0" dur="5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <g transform="translate(5,-80)">
+      <path d="M 0 0 Q -5 -35 0 -70 Q 15 -40 0 0" fill="#7FB069" opacity="0.9">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0; -5 0 0; 0 0 0" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#7FB069;#8BC07A;#7FB069" dur="8s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <path d="M 5 -40 Q 25 -50 30 -70 Q 15 -55 5 -40" fill="#6B7E5B" opacity="0.85">
+      <animateTransform attributeName="transform" type="rotate" values="0 5 -40; 10 5 -40; 0 5 -40" dur="4.5s" repeatCount="indefinite"/>
+    </path>
+    
+    <circle cx="5" cy="-80" r="4" fill="#7FB069" opacity="0.9">
+      <animate attributeName="r" values="4;5;4" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="-80;-82;-80" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <g opacity="0.7">
+    <path d="M 730 640 L 750 610 L 770 630 Z" fill="#DCE2E8">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 900 630 L 920 660 L 940 640 Z" fill="#DCE2E8" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-3; 0,0" dur="4.2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 820 680 L 840 660 L 860 680 Z" fill="#DCE2E8" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <g fill="#DCE2E8">
+    <circle cx="760" cy="550" r="2" opacity="0">
+      <animate attributeName="cy" values="550;520;550" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="840" cy="570" r="1.5" opacity="0">
+      <animate attributeName="cy" values="570;540;570" dur="7s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="7s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="800" cy="500" r="2.5" opacity="0">
+      <animate attributeName="cy" values="500;470;500" dur="5s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="5s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+  </g>
+  
+  <ellipse cx="800" cy="660" rx="100" ry="25" fill="#6B7E5B" opacity="0.2" filter="url(#b1)">
+    <animate attributeName="rx" values="100;105;100" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+</svg>

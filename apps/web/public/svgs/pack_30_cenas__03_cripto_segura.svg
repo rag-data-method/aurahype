@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+    </filter>
+    <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="atmospheric" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+    </filter>
+    
+    <linearGradient id="goldSurface" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="40%" stop-color="#D4A017"/>
+      <stop offset="100%" stop-color="#B8860B"/>
+    </linearGradient>
+    
+    <linearGradient id="metalBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5A5E64"/>
+      <stop offset="50%" stop-color="#3D4147"/>
+      <stop offset="100%" stop-color="#2B2620"/>
+    </linearGradient>
+    
+    <radialGradient id="vaultInterior" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4A017" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#3D4147" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2B2620" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#F5F0E6"/>
+  
+  <g opacity="0.3" filter="url(#atmospheric)">
+    <circle cx="200" cy="150" r="80" fill="#D4A017">
+      <animate attributeName="cy" values="150;170;150" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <ellipse cx="900" cy="780" rx="220" ry="60" fill="#2B2620" opacity="0.15" filter="url(#softShadow)">
+    <animate attributeName="rx" values="220;240;220" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.1;0.15" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <ellipse cx="480" cy="820" rx="100" ry="30" fill="#2B2620" opacity="0.12" filter="url(#softShadow)">
+    <animate attributeName="rx" values="100;110;100" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <g transform="translate(680, 380)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="6s" repeatCount="indefinite"/>
+      
+      <path d="M-20 300 L320 300 L360 260 L20 260 Z" fill="#2B2620" opacity="0.3"/>
+      <path d="M0 0 L300 0 L300 300 L0 300 Z" fill="url(#metalBody)"/>
+      <path d="M0 0 L40 -40 L340 -40 L300 0 Z" fill="#4A4F56"/>
+      <path d="M300 0 L340 -40 L340 260 L300 300 Z" fill="#1F1C18"/>
+      
+      <circle cx="150" cy="150" r="115" fill="url(#vaultInterior)">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      
+      <circle cx="150" cy="150" r="115" fill="none" stroke="#D4A017" stroke-width="3" opacity="0.6">
+        <animate attributeName="stroke-opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      
+      <g transform="rotate(-20, 265, 150)">
+        <animateTransform attributeName="transform" type="rotate" values="-20,265,150;-15,265,150;-20,265,150" dur="7s" repeatCount="indefinite"/>
+        <circle cx="150" cy="150" r="105" fill="#3D4147" stroke="#5A5E64" stroke-width="2"/>
+        <circle cx="150" cy="150" r="95" fill="none" stroke="#2B2620" stroke-width="4"/>
+        <circle cx="150" cy="150" r="25" fill="#2B2620" stroke="#D4A017" stroke-width="3"/>
+        <rect x="140" y="60" width="20" height="180" rx="10" fill="#4A4F56"/>
+        <circle cx="150" cy="70" r="8" fill="#D4A017"/>
+        <circle cx="150" cy="230" r="8" fill="#D4A017"/>
+        <rect x="280" y="130" width="15" height="40" fill="#5A5E64"/>
+      </g>
+      
+      <rect x="280" y="20" width="40" height="60" rx="5" fill="#3D4147" stroke="#D4A017" stroke-width="2"/>
+      <circle cx="300" cy="35" r="4" fill="#D4A017" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <g transform="translate(420, 680)">
+    <animateTransform attributeName="transform" type="translate" values="420,680;420,670;420,680" dur="4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0,60,25;3,60,25;0,60,25" dur="8s" repeatCount="indefinite" additive="sum"/>
+    
+    <rect x="0" y="0" width="100" height="50" rx="8" fill="#3D4147"/>
+    <path d="M10 0 L15 -8 L105 -8 L100 0 Z" fill="#4A4F56"/>
+    <path d="M100 0 L105 -8 L105 42 L100 50 Z" fill="#2B2620"/>
+    
+    <rect x="100" y="15" width="25" height="20" fill="#C0C0C0"/>
+    <rect x="105" y="18" width="15" height="14" fill="#E0E0E0"/>
+    
+    <rect x="15" y="15" width="70" height="20" rx="4" fill="#2B2620"/>
+    <rect x="20" y="20" width="60" height="10" fill="#1a1a1a">
+      <animate attributeName="fill" values="#1a1a1a;#2a2a2a;#1a1a1a" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <circle cx="90" cy="25" r="3" fill="#D4A017">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <path d="M30 22 L35 28 L45 22" stroke="#D4A017" stroke-width="2" fill="none" opacity="0.7">
+      <animate attributeName="stroke-opacity" values="0.7;0.3;0.7" dur="4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <g transform="translate(880, 250)">
+    <animateTransform attributeName="transform" type="translate" 
+      values="880,250;880,320;880,250" 
+      dur="4s" 
+      repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite"/>
+      
+      <ellipse cx="0" cy="6" rx="55" ry="55" fill="#B8860B"/>
+      <rect x="-55" y="0" width="110" height="6" fill="#D4A017"/>
+      
+      <circle cx="0" cy="0" r="56" fill="url(#goldSurface)" stroke="#D4A017" stroke-width="2"/>
+      <circle cx="0" cy="0" r="48" fill="none" stroke="#B8860B" stroke-width="1" opacity="0.6"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#FFD700" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      
+      <path d="M-8,-18 L-8,-8 L-13,-8 L-13,8 L-8,8 L-8,18 L-3,18 L-3,8 L7,8 L7,18 L12,18 L12,8 L17,8 L17,-8 L12,-8 L12,-18 L7,-18 L7,-8 L-3,-8 L-3,-18 Z M-3,2 L7,2 L7,7 L-3,7 Z" fill="#2B2620"/>
+      
+      <g opacity="0.6">
+        <ellipse cx="-25" cy="-25" rx="12" ry="6" fill="#FFFFFF" transform="rotate(-45)" filter="url(#atmospheric)">
+          <animate attributeName="cx" values="-25;-20;-25" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+        </ellipse>
+      </g>
+    </g>
+    
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+  </g>
+  
+  <circle cx="850" cy="530" r="100" fill="#D4A017" opacity="0.1" filter="url(#innerGlow)">
+    <animate attributeName="opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="100;120;100" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <g opacity="0.4">
+    <circle cx="600" cy="300" r="2" fill="#D4A017" filter="url(#atmospheric)">
+      <animate attributeName="cy" values="300;280;300" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="600;610;600" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="400" r="3" fill="#D4A017" filter="url(#atmospheric)">
+      <animate attributeName="cy" values="400;390;400" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

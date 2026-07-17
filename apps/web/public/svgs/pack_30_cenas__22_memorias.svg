@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+    </filter>
+    <linearGradient id="camBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3d3832"/>
+      <stop offset="50%" stop-color="#2B2620"/>
+      <stop offset="100%" stop-color="#1f1c18"/>
+    </linearGradient>
+    <linearGradient id="goldLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b76a"/>
+      <stop offset="100%" stop-color="#C9A85C"/>
+    </linearGradient>
+  </defs>
+  
+  <rect fill="#F5F0E6" width="1600" height="900"/>
+  
+  <!-- Photo 5: Bottom scattered -->
+  <g transform="translate(620,720) rotate(22)">
+    <ellipse cx="0" cy="55" rx="55" ry="12" fill="#2B2620" opacity="0.15" filter="url(#shadowBlur)"/>
+    <rect x="-45" y="-60" width="90" height="110" fill="#FBF5F0" rx="2" opacity="0.9"/>
+    <rect x="-38" y="-52" width="76" height="76" fill="#C9A85C" opacity="0.5"/>
+    <path d="M-25-40 L-10-20 L15-45 L35-15" fill="none" stroke="#FBF5F0" stroke-width="2" opacity="0.7"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="6s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="22;24;22" dur="7s" repeatCount="indefinite" additive="sum"/>
+  </g>
+  
+  <!-- Photo 4: Left leaning -->
+  <g transform="translate(420,480) rotate(18)">
+    <ellipse cx="0" cy="50" rx="50" ry="10" fill="#2B2620" opacity="0.12" filter="url(#shadowBlur)"/>
+    <rect x="-40" y="-55" width="80" height="100" fill="#FBF5F0" rx="2"/>
+    <rect x="-34" y="-48" width="68" height="68" fill="#C9A85C" opacity="0.6"/>
+    <circle cx="-10" cy="-25" r="8" fill="#2B2620" opacity="0.3"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -3,2; 0,0" dur="5s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="4s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Photo 3: Top right -->
+  <g transform="translate(1080,380) rotate(-8)">
+    <ellipse cx="0" cy="48" rx="48" ry="11" fill="#2B2620" opacity="0.14" filter="url(#shadowBlur)"/>
+    <rect x="-42" y="-58" width="84" height="108" fill="#FBF5F0" rx="2"/>
+    <rect x="-36" y="-50" width="72" height="72" fill="#C9A85C" opacity="0.4"/>
+    <rect x="-20" y="-35" width="40" height="30" fill="#2B2620" opacity="0.2"/>
+    <animateTransform attributeName="transform" type="rotate" values="-8;-6;-8" dur="8s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0.75;0.9;0.75" dur="6s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Photo 2: Right middle -->
+  <g transform="translate(980,620) rotate(12)">
+    <ellipse cx="0" cy="52" rx="52" ry="13" fill="#2B2620" opacity="0.18" filter="url(#shadowBlur)"/>
+    <rect x="-44" y="-58" width="88" height="112" fill="#FBF5F0" rx="2"/>
+    <rect x="-38" y="-50" width="76" height="76" fill="#C9A85C" opacity="0.55"/>
+    <path d="M-30-10 Q-15-30 0-10 T30-20" fill="none" stroke="#2B2620" stroke-width="3" opacity="0.3"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="7s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="5s" repeatCount="indefinite" additive="sum"/>
+  </g>
+  
+  <!-- Photo 1: Under camera base -->
+  <g transform="translate(720,580) rotate(-15)">
+    <ellipse cx="0" cy="55" rx="58" ry="14" fill="#2B2620" opacity="0.25" filter="url(#shadowBlur)"/>
+    <rect x="-48" y="-62" width="96" height="118" fill="#FBF5F0" rx="2"/>
+    <rect x="-42" y="-54" width="84" height="84" fill="#C9A85C" opacity="0.7"/>
+    <circle cx="15" cy="-20" r="12" fill="#FBF5F0" opacity="0.6"/>
+    <animateTransform attributeName="transform" type="rotate" values="-15;-13;-15" dur="6s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0.9;0.7;0.9" dur="8s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Vintage Camera -->
+  <g transform="translate(800,450)">
+    <!-- Camera shadow -->
+    <ellipse cx="0" cy="55" rx="90" ry="20" fill="#2B2620" opacity="0.2" filter="url(#shadowBlur)">
+      <animate attributeName="rx" values="90;95;90" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.15;0.2" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Main body -->
+    <rect x="-70" y="-45" width="140" height="90" fill="url(#camBody)" rx="8"/>
+    <rect x="-70" y="-45" width="140" height="25" fill="url(#goldLeaf)" opacity="0.3" rx="8"/>
+    
+    <!-- Top plate details -->
+    <rect x="-50" y="-55" width="25" height="12" fill="#2B2620" rx="2"/>
+    <rect x="-15" y="-53" width="40" height="8" fill="#C9A85C" opacity="0.8"/>
+    <circle cx="50" cy="-50" r="6" fill="#C9A85C"/>
+    
+    <!-- Lens assembly -->
+    <circle cx="5" cy="5" r="28" fill="#1a1714"/>
+    <circle cx="5" cy="5" r="24" fill="url(#lensGrad)"/>
+    <circle cx="5" cy="5" r="20" fill="#0f0e0d"/>
+    
+    <!-- Lens reflection/glare -->
+    <path d="M-5-5 Q5-15 15-5 Q5 5-5-5" fill="#FBF5F0" opacity="0.8" filter="url(#softGlow)">
+      <animateTransform attributeName="transform" type="rotate" values="0 5 5; 360 5 5" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <ellipse cx="12" cy="0" rx="4" ry="6" fill="#FBF5F0" opacity="0.6" transform="rotate(-45 12 0)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -2,2; 0,0" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+    
+    <!-- Viewfinder -->
+    <rect x="-55" y="-25" width="25" height="18" fill="#2B2620" rx="2"/>
+    <rect x="-52" y="-22" width="19" height="12" fill="#1f1c18"/>
+    <rect x="-50" y="-20" width="15" height="8" fill="#3d3832" opacity="0.6"/>
+    
+    <!-- Shutter button -->
+    <circle cx="55" cy="-20" r="5" fill="#C9A85C"/>
+    
+    <!-- Floating animation -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="4s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="0;1;0" dur="6s" repeatCount="indefinite" additive="sum"/>
+  </g>
+  
+  <!-- Ambient dust/light specks -->
+  <circle cx="500" cy="300" r="2" fill="#C9A85C" opacity="0.4">
+    <animate attributeName="opacity" values="0;0.4;0" dur="8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-20; 0,0" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1200" cy="500" r="1.5" fill="#FBF5F0" opacity="0.5">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="7s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -15,-10; 0,0" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="900" cy="250" r="2.5" fill="#C9A85C" opacity="0.3">
+    <animate attributeName="opacity" values="0;0.5;0" dur="6s" repeatCount="indefinite"/>
+  </circle>
+</svg>

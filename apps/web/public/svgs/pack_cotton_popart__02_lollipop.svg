@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Pop Art Background Halftone Pattern (Red on Yellow) -->
+    <pattern id="halftone-bg" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#FFDD00"/>
+      <circle cx="8" cy="8" r="3.5" fill="#EF233C"/>
+    </pattern>
+    <!-- Cyan Halftone Dots -->
+    <pattern id="halftone-cyan" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#FFFFFF"/>
+      <circle cx="8" cy="8" r="3.5" fill="#00C2FF"/>
+    </pattern>
+    <!-- Magenta Halftone Dots -->
+    <pattern id="halftone-mag" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#FFFFFF"/>
+      <circle cx="8" cy="8" r="3.5" fill="#FF0055"/>
+    </pattern>
+    <!-- Yellow Halftone Dots -->
+    <pattern id="halftone-yellow" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#FFFFFF"/>
+      <circle cx="8" cy="8" r="3.5" fill="#FFDD00"/>
+    </pattern>
+    <!-- Black Halftone for shadows -->
+    <pattern id="halftone-black" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#FFFFFF"/>
+      <circle cx="6" cy="6" r="2" fill="#111111"/>
+    </pattern>
+
+    <!-- Clip paths for the Lollipop Head -->
+    <clipPath id="head-clip">
+      <circle cx="800" cy="380" r="250"/>
+    </clipPath>
+    <clipPath id="inner-head-clip">
+      <circle cx="800" cy="380" r="236"/>
+    </clipPath>
+
+    <!-- Thick Typography Definition for Titles -->
+    <path id="typo-s" d="M 10,80 Q 10,10 70,10 Q 130,10 130,60 Q 130,100 80,110 Q 50,115 50,130 Q 50,150 80,150 Q 110,150 120,120 L 140,130 Q 130,180 80,180 Q 20,180 20,130 Q 20,90 70,80 Q 100,75 100,60 Q 100,40 70,40 Q 40,40 30,70 Z"/>
+    <path id="typo-w" d="M 10,10 L 40,10 L 60,110 L 80,10 L 110,10 L 130,110 L 150,10 L 180,10 L 150,180 L 120,180 L 95,70 L 70,180 L 40,180 Z"/>
+    <path id="typo-i" d="M 10,10 L 50,10 L 50,180 L 10,180 Z"/>
+    <path id="typo-r" d="M 10,10 L 80,10 Q 140,10 140,70 Q 140,110 100,120 L 150,180 L 110,180 L 60,120 L 50,120 L 50,180 L 10,180 Z M 50,40 L 50,90 L 80,90 Q 100,90 100,65 Q 100,40 80,40 Z"/>
+    <path id="typo-l" d="M 10,10 L 50,10 L 50,150 L 130,150 L 130,180 L 10,180 Z"/>
+    <path id="typo-o" d="M 80,10 Q 160,10 160,95 Q 160,180 80,180 Q 0,180 0,95 Q 0,10 80,10 Z M 80,40 Q 40,40 40,95 Q 40,150 80,150 Q 120,150 120,95 Q 120,40 80,40 Z"/>
+    <path id="typo-p" d="M 10,10 L 80,10 Q 140,10 140,70 Q 140,130 80,130 L 50,130 L 50,180 L 10,180 Z M 50,40 L 50,100 L 80,100 Q 100,100 100,70 Q 100,40 80,40 Z"/>
+    <path id="typo-ex" d="M 20,0 L 60,0 L 50,120 L 30,120 Z M 25,140 L 55,140 L 60,180 L 20,180 Z"/>
+
+    <!-- Sparkle Path -->
+    <path id="sparkle" d="M 0,-20 L 3,-3 L 20,0 L 3,3 L 0,20 L -3,3 L -20,0 L -3,-3 Z"/>
+
+    <!-- Plastic Specular Gradient for the Stick -->
+    <linearGradient id="stick-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="25%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Layer 1: Background -->
+  <rect width="100%" height="100%" fill="#FFDD00"/>
+  <!-- Halftone Background Scale/Rotate Animation -->
+  <rect width="100%" height="100%" fill="url(#halftone-bg)">
+    <animateTransform attributeName="patternTransform" type="scale" values="1; 1.5; 1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 2: Massive Rotating Action Lines -->
+  <g stroke="#EF233C" stroke-width="12" stroke-linecap="round">
+    <path d="M 800,380 L 100,100">
+      <animate attributeName="stroke-dasharray" values="0, 2000; 2000, 0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 800,380 L 1500,100">
+      <animate attributeName="stroke-dasharray" values="0, 2000; 2000, 0" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 800,380 L 300,800">
+      <animate attributeName="stroke-dasharray" values="0, 2000; 2000, 0" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 800,380 L 1300,800">
+      <animate attributeName="stroke-dasharray" values="0, 2000; 2000, 0" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <!-- Zig-zag action lines -->
+    <path d="M 50,450 L 200,350 L 350,450 L 200,550 Z" fill="none" stroke-width="20">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1250,450 L 1400,350 L 1550,450 L 1400,550 Z" fill="none" stroke-width="20">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 3: Lollipop Stick Wrapper -->
+  <!-- Stick Drop Shadow -->
+  <rect x="810" y="550" width="30" height="300" fill="#000000" opacity="0.4"/>
+  <!-- Main Stick -->
+  <rect x="790" y="550" width="30" height="300" fill="#FFFFFF" stroke="#000000" stroke-width="6"/>
+  <rect x="792" y="550" width="12" height="300" fill="url(#stick-grad)"/>
+
+  <!-- Layer 4: Lollipop Head -->
+  <g>
+    <!-- Outer Thick Black Outline -->
+    <circle cx="800" cy="380" r="256" fill="#000000" stroke="#000000" stroke-width="12"/>
+    
+    <!-- Inner Color Ring (Magenta Halftone) -->
+    <circle cx="800" cy="380" r="250" fill="url(#halftone-mag)"/>
+
+    <!-- Main Spiral Clip Group -->
+    <g clip-path="url(#head-clip)">
+      <!-- The rotating spiral group -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0 800 380; 360 800 380" dur="8s" repeatCount="indefinite"/>
+        
+        <!-- Thick Black Spirals -->
+        <path d="M 800,380 m 0,0 a 12,12 0 1,0 24,0 a 24,24 0 1,0 -48,0 a 48,48 0 1,0 96,0 a 96,96 0 1,0 -192,0 a 192,192 0 1,0 384,0 a 384,384 0 1,0 -768,0 a 768,768 0 1,0 1536,0 a 1536,1536 0 1,0 -3072,0" fill="none" stroke="#000000" stroke-width="15"/>
+        
+        <!-- Neon Yellow Spirals (Offset for 3D effect) -->
+        <path d="M 790,370 m 0,0 a 12,12 0 1,0 24,0 a 24,24 0 1,0 -48,0 a 48,48 0 1,0 96,0 a 96,96 0 1,0 -192,0 a 192,192 0 1,0 384,0 a 384,384 0 1,0 -768,0 a 768,768 0 1,0 1536,0 a 1536,1536 0 1,0 -3072,0" fill="none" stroke="#CCFF00" stroke-width="8"/>
+        
+        <!-- White Highlight Spirals -->
+        <path d="M 795,375 m 0,0 a 12,12 0 1,0 24,0 a 24,24 0 1,0 -48,0 a 48,48 0 1,0 96,0 a 96,96 0 1,0 -192,0 a 192,192 0 1,0 384,0 a 384,384 0 1,0 -768,0 a 768,768 0 1,0 1536,0 a 1536,1536 0 1,0 -3072,0" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+      </g>
+    </g>
+    
+    <!-- Glossy Reflection (Static to contrast the motion) -->
+    <path d="M 650,250 Q 800,150 950,250 Q 800,220 650,250 Z" fill="#FFFFFF" opacity="0.6"/>
+    <path d="M 650,250 Q 800,220 950,250 Q 800,230 650,250 Z" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <!-- Layer 5: Comic Book Titles -->
+  <!-- "SWIRL" Title Top Right -->
+  <g transform="translate(1100, 50) rotate(15)">
+    <g fill="#00C2FF" stroke="#000000" stroke-width="15" stroke-linejoin="round">
+      <use href="#typo-s" transform="translate(0, 0) scale(0.8)"/>
+      <use href="#typo-w" transform="translate(140, 0) scale(0.8)"/>
+      <use href="#typo-i" transform="translate(300, 0) scale(0.8)"/>
+      <use href="#typo-r" transform="translate(360, 0) scale(0.8)"/>
+      <use href="#typo-l" transform="translate(530, 0) scale(0.8)"/>
+    </g>
+    <g fill="#FF0055">
+      <use href="#typo-s" transform="translate(0, 0) scale(0.8)"/>
+      <use href="#typo-w" transform="translate(140, 0) scale(0.8)"/>
+      <use href="#typo-i" transform="translate(300, 0) scale(0.8)"/>
+      <use href="#typo-r" transform="translate(360, 0) scale(0.8)"/>
+      <use href="#typo-l" transform="translate(530, 0) scale(0.8)"/>
+      <animate attributeName="fill" values="#FF0055;#FFDD00;#00C2FF;#FF0055" dur="3s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- "POP!" Title Bottom Left -->
+  <g transform="translate(50, 650) rotate(-15)">
+    <g fill="#FFDD00" stroke="#000000" stroke-width="15" stroke-linejoin="round">
+      <use href="#typo-p" transform="translate(0, 0) scale(1.2)"/>
+      <use href="#typo-o" transform="translate(200, 0) scale(1.2)"/>
+      <use href="#typo-p" transform="translate(400, 0) scale(1.2)"/>
+      <use href="#typo-ex" transform="translate(600, 0) scale(1.2)"/>
+    </g>
+    <g fill="#00C2FF">
+      <use href="#typo-p" transform="translate(0, 0) scale(1.2)"/>
+      <use href="#typo-o" transform="translate(200, 0) scale(1.2)"/>
+      <use href="#typo-p" transform="translate(400, 0) scale(1.2)"/>
+      <use href="#typo-ex" transform="translate(600, 0) scale(1.2)"/>
+      <animate attributeName="fill" values="#00C2FF;#FF0055;#FFDD00;#00C2FF" dur="4s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- Layer 6: Halftone Circular Decorations (Bubbles) -->
+  <g>
+    <circle cx="250" cy="250" r="80" fill="none" stroke="#EF233C" stroke-width="12"/>
+    <circle cx="250" cy="250" r="70" fill="url(#halftone-cyan)" stroke="#000000" stroke-width="6">
+      <animateTransform attributeName="transform" type="scale" values="1; 1.2; 1" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+  </g>
+
+  <g>
+    <circle cx="1350" cy="700" r="100" fill="none" stroke="#00C2FF" stroke-width="15"/>
+    <circle cx="1350" cy="700" r="90" fill="url(#halftone-yellow)" stroke="#000000" stroke-width="8">
+      <animateTransform attributeName="transform" type="scale" values="1; 0.8; 1" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+  </g>
+
+  <g>
+    <circle cx="200" cy="750" r="60" fill="none" stroke="#FFDD00" stroke-width="10"/>
+    <circle cx="200" cy="750" r="50" fill="url(#halftone-mag)" stroke="#000000" stroke-width="5">
+      <animateTransform attributeName="transform" type="scale" values="1; 1.3; 1" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+  </g>
+
+  <!-- Layer 7: Zig-Zag Action Lines Around the Lollipop -->
+  <g stroke="#000000" stroke-width="8" stroke-linecap="round">
+    <path d="M 530,250 L 560,280 L 590,250 L 620,280">
+      <animate attributeName="stroke-dasharray" values="0, 200; 200, 0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1120,450 L 1150,420 L 1180,450 L 1210,420">
+      <animate attributeName="stroke-dasharray" values="0, 200; 200, 0" dur="0.8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 560,600 L 590,630 L 620,600 L 650,630">
+      <animate attributeName="stroke-dasharray" values="0, 200; 200, 0" dur="1.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 8: Sparkles and Starbursts -->
+  <g>
+    <use href="#sparkle" transform="translate(450, 150) scale(1.5)" fill="#FFFFFF" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" values="0 450 150; 360 450 150" dur="5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" transform="translate(1250, 200) scale(2)" fill="#FFDD00" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" values="0 1250 200; -360 1250 200" dur="4s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" transform="translate(300, 500) scale(1.2)" fill="#00C2FF" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" values="0 300 500; 360 300 500" dur="6s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" transform="translate(1400, 500) scale(1.8)" fill="#FF0055" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" values="0 1400 500; -360 1400 500" dur="3s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" transform="translate(500, 750) scale(1.5)" fill="#FFDD00" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="scale" values="1; 1.5; 1" dur="2s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" transform="translate(1100, 750) scale(1.2)" fill="#FFFFFF" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="scale" values="1.5; 1; 1.5" dur="3s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Layer 9: Floating Comic Book Dots -->
+  <g>
+    <circle cx="150" cy="150" r="15" fill="#00C2FF" stroke="#000000" stroke-width="3">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,30; 0,0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1450" cy="350" r="20" fill="#FFDD00" stroke="#000000" stroke-width="3">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="850" r="25" fill="#FF0055" stroke="#000000" stroke-width="3">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-40; 0,0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="850" r="18" fill="#00C2FF" stroke="#000000" stroke-width="3">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,0; 0,0" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

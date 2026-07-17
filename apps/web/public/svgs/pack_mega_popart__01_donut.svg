@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Color Palette -->
+    <style>
+      .st0 { fill: #00FFFF; } /* Cyan */
+      .st1 { fill: #FF007F; } /* Neon Pink */
+      .st2 { fill: #FFFF00; } /* Primary Yellow */
+      .st3 { fill: #FFFFFF; } /* White */
+      .st4 { fill: #FF2400; } /* Bright Red */
+      .st5 { fill: #FF00FF; } /* Magenta */
+      .st6 { fill: #39FF14; } /* Neon Green */
+      .st7 { fill: #00BFFF; } /* Bright Blue */
+      .st8 { fill: #FFB800; } /* Golden Yellow */
+      .st9 { stroke: #000000; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .st10 { stroke: #000000; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; }
+      .st11 { stroke: #000000; stroke-width: 24; stroke-linecap: round; stroke-linejoin: round; }
+      .st12 { stroke: #000000; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+
+    <!-- Background Halftone Pattern -->
+    <pattern id="halftone" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" class="st0"/>
+      <circle cx="8" cy="8" r="6" fill="#000000"/>
+    </pattern>
+    
+    <!-- Secondary Halftone Pattern (High Contrast) -->
+    <pattern id="halftone-scaled" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" class="st0"/>
+      <circle cx="4" cy="4" r="3" fill="#000000"/>
+    </pattern>
+
+    <!-- Action Lines Mask -->
+    <clipPath id="donut-hole-clip">
+      <circle cx="800" cy="450" r="165"/>
+    </clipPath>
+
+    <!-- Drop Shadow Filter for Pop Depth -->
+    <filter id="pop-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="15" dy="15" stdDeviation="0" flood-color="#000000" flood-opacity="1"/>
+    </filter>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="8" dy="8" stdDeviation="4" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Base Background -->
+  <rect width="1600" height="900" fill="url(#halftone)"/>
+
+  <!-- Rotating Concentric Background Rings -->
+  <g opacity="0.3">
+    <circle cx="800" cy="450" r="380" fill="none" stroke="#000000" stroke-width="4" stroke-dasharray="20 30">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="450" r="450" fill="none" stroke="#000000" stroke-width="8" stroke-dasharray="60 40">
+      <animateTransform attributeName="transform" type="rotate" from="360 800 450" to="0 800 450" dur="18s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Background Action Lines (Behind Donut) -->
+  <g stroke="#000000" stroke-width="8" stroke-linecap="round">
+    <line x1="200" y1="200" x2="400" y2="300" opacity="0.6">
+      <animate attributeName="x2" values="400;420;400" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="300;310;300" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1400" y1="200" x2="1200" y2="300" opacity="0.6">
+      <animate attributeName="x2" values="1200;1180;1200" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="300;310;300" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="700" x2="380" y2="600" opacity="0.6">
+      <animate attributeName="x2" values="380;360;380" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1400" y1="700" x2="1220" y2="600" opacity="0.6">
+      <animate attributeName="x2" values="1220;1240;1220" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <!-- Starbursts -->
+    <path d="M 100 450 L 250 450" stroke-width="12">
+      <animate attributeName="stroke-width" values="12;20;12" dur="0.8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1500 450 L 1350 450" stroke-width="12">
+      <animate attributeName="stroke-width" values="12;20;12" dur="0.8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Donut Group with Global Animation -->
+  <g id="donut-group" transform-origin="800 450">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" values="1; 1.02; 1" dur="3s" additive="sum" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="-1 800 450; 1 800 450; -1 800 450" dur="6s" additive="sum" repeatCount="indefinite"/>
+
+    <!-- DONUT DOUGH (Base) -->
+    <!-- Outer Dough -->
+    <circle cx="800" cy="450" r="320" class="st8" filter="url(#pop-shadow)"/>
+    <circle cx="800" cy="450" r="320" fill="none" class="st11"/>
+    <!-- Inner Dough Cutout -->
+    <circle cx="800" cy="450" r="135" class="st0"/>
+    <circle cx="800" cy="450" r="135" fill="none" class="st11"/>
+
+    <!-- DOUGH TEXTURE (Halftone Overlay) -->
+    <circle cx="800" cy="450" r="320" fill="url(#halftone-scaled)" opacity="0.15" clip-path="url(#donut-hole-clip)"/>
+
+    <!-- FROSTING GROUP -->
+    <g>
+      <!-- Main Frosting Blob -->
+      <path d="M 480 450 C 480 273 627 130 800 130 C 973 130 1120 273 1120 450 C 1120 627 973 770 800 770 C 627 770 480 627 480 450 Z M 800 450 m -140 0 a 140 140 0 1 0 280 0 a 140 140 0 1 0 -280 0" class="st1" filter="url(#pop-shadow)"/>
+      
+      <!-- Frosting Halftone Pattern -->
+      <path d="M 480 450 C 480 273 627 130 800 130 C 973 130 1120 273 1120 450 C 1120 627 973 770 800 770 C 627 770 480 627 480 450 Z M 800 450 m -140 0 a 140 140 0 1 0 280 0 a 140 140 0 1 0 -280 0" fill="url(#halftone)" opacity="0.25"/>
+
+      <!-- Frosting Outline (Thick Black) -->
+      <path d="M 480 450 C 480 273 627 130 800 130 C 973 130 1120 273 1120 450 C 1120 627 973 770 800 770 C 627 770 480 627 480 450 Z M 800 450 m -140 0 a 140 140 0 1 0 280 0 a 140 140 0 1 0 -280 0" fill="none" class="st11"/>
+      
+      <!-- Inner Frosting Outline -->
+      <circle cx="800" cy="450" r="140" fill="none" class="st11"/>
+
+      <!-- Frosting Gloss / Highlight -->
+      <path d="M 650 200 C 700 160, 850 160, 950 220 C 880 190, 750 190, 650 200 Z" fill="#FFFFFF" opacity="0.6"/>
+      <path d="M 880 250 C 930 280, 970 350, 980 420 C 960 360, 930 300, 880 250 Z" fill="#FFFFFF" opacity="0.4"/>
+    </g>
+
+    <!-- SPRINKLES (Vibrant & Animated) -->
+    <g id="sprinkles-group">
+      <!-- Sprinkle 1: Yellow -->
+      <g transform="translate(680, 300) rotate(45)">
+        <rect x="-15" y="-5" width="30" height="10" rx="5" class="st2" filter="url(#soft-shadow)"/>
+        <rect x="-15" y="-5" width="30" height="10" rx="5" fill="none" class="st9"/>
+        <animateTransform attributeName="transform" type="rotate" values="45;50;45" dur="2s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 5,-5; 0,0" dur="2s" repeatCount="indefinite" additive="sum"/>
+      </g>
+
+      <!-- Sprinkle 2: Neon Green -->
+      <g transform="translate(900, 280) rotate(-30)">
+        <rect x="-20" y="-6" width="40" height="12" rx="6" class="st6" filter="url(#soft-shadow)"/>
+        <rect x="-20" y="-6" width="40" height="12" rx="6" fill="none" class="st9"/>
+        <animateTransform attributeName="transform" type="rotate" values="-30;-25;-30" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+      </g>
+
+      <!-- Sprinkle 3: Bright Red -->
+      <g transform="translate(1050, 380) rotate(15)">
+        <rect x="-12" y="-12" width="24" height="24" rx="4" class="st4" filter="url(#soft-shadow)"/>
+        <rect x="-12" y="-12" width="24" height="24" rx="4" fill="none" class="st9"/>
+        <animate attributeName="opacity" values="1;0.4;1" dur="1.2s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- Sprinkle 4: Bright Blue -->
+      <g transform="translate(950, 600) rotate(80)">
+        <rect x="-18" y="-5" width="36" height="10" rx="5" class="st7" filter="url(#soft-shadow)"/>
+        <rect x="-18" y="-5" width="36" height="10" rx="5" fill="none" class="st9"/>
+        <animateTransform attributeName="transform" type="rotate" values="80;85;80" dur="3s" repeatCount="indefinite" additive="sum"/>
+      </g>
+
+      <!-- Sprinkle 5: Magenta -->
+      <g transform="translate(600, 550) rotate(-60)">
+        <rect x="-16" y="-6" width="32" height="12" rx="6" class="st5" filter="url(#soft-shadow)"/>
+        <rect x="-16" y="-6" width="32" height="12" rx="6" fill="none" class="st9"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; -10,5; 0,0" dur="4s" repeatCount="indefinite" additive="sum"/>
+      </g>
+
+      <!-- Sprinkle 6: White (Sugar Crystal) -->
+      <g transform="translate(750, 700) rotate(10)">
+        <polygon points="0,-10 8,0 0,10 -8,0" class="st3" filter="url(#soft-shadow)"/>
+        <polygon points="0,-10 8,0 0,10 -8,0" fill="none" class="st9"/>
+        <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="2s" repeatCount="indefinite" additive="sum"/>
+      </g>
+
+      <!-- Sprinkle 7: Golden Yellow -->
+      <g transform="translate(1100, 500) rotate(-15)">
+        <rect x="-20" y="-7" width="40" height="14" rx="7" class="st8" filter="url(#soft-shadow)"/>
+        <rect x="-20" y="-7" width="40" height="14" rx="7" fill="none" class="st9"/>
+      </g>
+      
+      <!-- Sprinkle 8: Cyan -->
+      <g transform="translate(550, 400) rotate(70)">
+        <rect x="-14" y="-14" width="28" height="28" rx="14" class="st0" filter="url(#soft-shadow)"/>
+        <rect x="-14" y="-14" width="28" height="28" rx="14" fill="none" class="st9"/>
+        <animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- Sprinkle 9: Bright Red (Thin) -->
+      <g transform="translate(800, 200) rotate(120)">
+        <rect x="-25" y="-4" width="50" height="8" rx="4" class="st4" filter="url(#soft-shadow)"/>
+        <rect x="-25" y="-4" width="50" height="8" rx="4" fill="none" class="st9"/>
+      </g>
+
+      <!-- Sprinkle 10: Neon Green (Small) -->
+      <g transform="translate(850, 350) rotate(-40)">
+        <rect x="-10" y="-10" width="20" height="20" rx="4" class="st6" filter="url(#soft-shadow)"/>
+        <rect x="-10" y="-10" width="20" height="20" rx="4" fill="none" class="st9"/>
+        <animateTransform attributeName="transform" type="rotate" values="-40;-50;-40" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Foreground Action Lines (Bursting out) -->
+  <g stroke="#000000" stroke-linecap="round" opacity="0.8">
+    <path d="M 400 100 L 500 150" stroke-width="12">
+      <animate attributeName="d" values="M 400 100 L 500 150; M 380 80 L 520 160; M 400 100 L 500 150" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1200 100 L 1100 150" stroke-width="12">
+      <animate attributeName="d" values="M 1200 100 L 1100 150; M 1220 80 L 1080 160; M 1200 100 L 1100 150" dur="2.2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 400 800 L 500 750" stroke-width="12">
+      <animate attributeName="d" values="M 400 800 L 500 750; M 380 820 L 520 740; M 400 800 L 500 750" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1200 800 L 1100 750" stroke-width="12">
+      <animate attributeName="d" values="M 1200 800 L 1100 750; M 1220 820 L 1080 740; M 1200 800 L 1100 750" dur="2.1s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Comic Book "YUM!" Bubble -->
+  <g transform="translate(1200, 250) rotate(15)">
+    <path d="M 0,0 C -50,-20 -80,40 -40,70 C -60,110 -20,140 10,120 C 40,150 100,130 90,80 C 130,50 100,0 60,-10 C 50,-50 10,-40 0,0 Z" class="st3" filter="url(#pop-shadow)"/>
+    <path d="M 0,0 C -50,-20 -80,40 -40,70 C -60,110 -20,140 10,120 C 40,150 100,130 90,80 C 130,50 100,0 60,-10 C 50,-50 10,-40 0,0 Z" fill="none" class="st11"/>
+    
+    <!-- Text -->
+    <text x="25" y="85" font-family="'Impact', 'Arial Black', sans-serif" font-size="60" font-weight="900" fill="#FF007F" stroke="#000000" stroke-width="4" text-anchor="middle">YUM!</text>
+    
+    <!-- Bubble Pulse -->
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -5,-5; 0,0" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Floating Pop Art Stars (Animated) -->
+  <g>
+    <polygon points="150,150 165,190 205,190 175,215 185,255 150,230 115,255 125,215 95,190 135,190" class="st2" filter="url(#pop-shadow)">
+      <animateTransform attributeName="transform" type="rotate" values="0 150 200; 360 150 200" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="1;0.8;1" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+    </polygon>
+
+    <polygon points="1450,650 1465,690 1505,690 1475,715 1485,755 1450,730 1415,755 1425,715 1395,690 1435,690" class="st4" filter="url(#pop-shadow)">
+      <animateTransform attributeName="transform" type="rotate" values="0 1450 700; -360 1450 700" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </polygon>
+
+    <polygon points="1200,100 1210,125 1235,125 1215,140 1222,165 1200,150 1178,165 1185,140 1165,125 1190,125" class="st6" filter="url(#pop-shadow)">
+      <animateTransform attributeName="transform" type="rotate" values="0 1200 130; 360 1200 130" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Fast Motion / Speed Lines Overlay (Partial Opacity) -->
+  <g stroke="#000000" stroke-width="4" opacity="0.4" stroke-linecap="round">
+    <line x1="0" y1="100" x2="300" y2="100">
+      <animate attributeName="x2" values="300;400;300" dur="0.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="800" x2="250" y2="800">
+      <animate attributeName="x2" values="250;350;250" dur="0.7s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1600" y1="200" x2="1300" y2="200">
+      <animate attributeName="x2" values="1300;1200;1300" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1600" y1="700" x2="1350" y2="700">
+      <animate attributeName="x2" values="1350;1250;1350" dur="0.8s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Subtle Shimmer Overlay -->
+  <rect width="1600" height="900" fill="url(#halftone-scaled)" opacity="0.05" style="mix-blend-mode: overlay;">
+    <animate attributeName="opacity" values="0.05;0.1;0.05" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Javascript to add random sprinkles dynamically for extra density without manual markup bloat -->
+  <script type="text/javascript">
+    <![CDATA[
+      document.addEventListener("DOMContentLoaded", function() {
+        const svgNS = "http://www.w3.org/2000/svg";
+        const sprinkleGroup = document.getElementById('sprinkles-group');
+        const colors = ['#FFFF00', '#39FF14', '#FF2400', '#00BFFF', '#FF00FF', '#FFB800', '#FFFFFF'];
+        
+        // Add 15 random sprinkles
+        for (let i = 0; i < 15; i++) {
+          const g = document.createElementNS(svgNS, "g");
+          
+          // Random position within a circle approximating the frosting area
+          const angle = Math.random() * Math.PI * 2;
+          const dist = 160 + Math.random() * 280; 
+          const x = 800 + Math.cos(angle) * dist;
+          const y = 450 + Math.sin(angle) * dist;
+          
+          // Avoid the hole
+          if (Math.sqrt(Math.pow(x-800, 2) + Math.pow(y-450, 2)) < 160) continue;
+
+          const rotation = Math.random() * 360;
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          const isSquare = Math.random() > 0.5;
+          
+          g.setAttribute("transform", `translate(${x}, ${y}) rotate(${rotation})`);
+          
+          let shape;
+          if (isSquare) {
+            shape = document.createElementNS(svgNS, "rect");
+            const size = 8 + Math.random() * 12;
+            shape.setAttribute("x", -size/2);
+            shape.setAttribute("y", -size/2);
+            shape.setAttribute("width", size);
+            shape.setAttribute("height", size);
+            shape.setAttribute("rx", size/4);
+          } else {
+            shape = document.createElementNS(svgNS, "rect");
+            const w = 15 + Math.random() * 20;
+            const h = 5 + Math.random() * 5;
+            shape.setAttribute("x", -w/2);
+            shape.setAttribute("y", -h/2);
+            shape.setAttribute("width", w);
+            shape.setAttribute("height", h);
+            shape.setAttribute("rx", h/2);
+          }
+          
+          shape.setAttribute("fill", color);
+          shape.setAttribute("stroke", "#000000");
+          shape.setAttribute("stroke-width", "3");
+          
+          // Simple animation
+          const anim = document.createElementNS(svgNS, "animateTransform");
+          anim.setAttribute("attributeName", "transform");
+          anim.setAttribute("type", "rotate");
+          anim.setAttribute("values", `${rotation};${rotation+10};${rotation}`);
+          anim.setAttribute("dur", (2 + Math.random() * 3) + "s");
+          anim.setAttribute("repeatCount", "indefinite");
+          anim.setAttribute("additive", "sum");
+          g.appendChild(anim);
+          
+          g.appendChild(shape);
+          sprinkleGroup.appendChild(g);
+        }
+      });
+    ]]>
+  </script>
+</svg>

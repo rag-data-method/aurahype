@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="blur40" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="blur80" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="blur120" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="blur160" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="lens" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="4" dy="8" stdDeviation="18" flood-color="#0A0A0A" flood-opacity="0.25"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.02 0" in="noise" result="faint"/>
+      <feComposite in="faint" in2="SourceGraphic" operator="over"/>
+    </filter>
+    <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F5F5" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F5F5F5" stop-opacity="0"/>
+      <animate attributeName="x1" values="0;0.2;0" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0;0.2;0" dur="20s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#F5F5F5" stop-opacity="0"/>
+      <animate attributeName="y1" values="0;0.15;0" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="1;0.85;1" dur="16s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="grad3" cx="0.3" cy="0.7" r="0.8">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#F5F5F5" stop-opacity="0"/>
+      <animate attributeName="cx" values="0.3;0.35;0.3" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="0.7;0.65;0.7" dur="22s" repeatCount="indefinite"/>
+    </radialGradient>
+    <clipPath id="viewClip">
+      <rect width="1600" height="900"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#viewClip)">
+    <rect width="1600" height="900" fill="#FFFFFF"/>
+
+    <rect width="1600" height="900" fill="url(#grad3)" filter="url(#blur160)" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.95;0.8" dur="18s" repeatCount="indefinite"/>
+    </rect>
+
+    <rect width="1600" height="900" fill="#F5F5F5" filter="url(#grain)"/>
+
+    <rect x="-200" y="-200" width="2000" height="1300" fill="url(#grad1)" filter="url(#blur120)" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.7;0.5" dur="14s" repeatCount="indefinite"/>
+    </rect>
+
+    <rect x="-100" y="0" width="1800" height="900" fill="url(#grad2)" filter="url(#blur80)" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="12s" repeatCount="indefinite"/>
+    </rect>
+
+    <rect x="0" y="300" width="1600" height="600" fill="#F5F5F5" filter="url(#blur160)" opacity="0.25">
+      <animate attributeName="opacity" values="0.25;0.4;0.25" dur="15s" repeatCount="indefinite"/>
+    </rect>
+
+    <rect x="0" y="0" width="1600" height="400" fill="#FFFFFF" filter="url(#blur40)" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.45;0.3" dur="10s" repeatCount="indefinite"/>
+    </rect>
+
+    <g transform="translate(420, 450)">
+      <rect x="-700" y="-10" width="1400" height="140" fill="#0A0A0A" filter="url(#blur80)" opacity="0.08">
+        <animateTransform attributeName="transform" type="rotate" values="0;2;0;-2;0" dur="18s" repeatCount="indefinite" additive="sum"/>
+        <animate attributeName="opacity" values="0.08;0.14;0.08" dur="12s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <g transform="translate(420, 450)">
+      <rect x="-700" y="-6" width="1400" height="120" fill="#1A1A1A" filter="url(#blur40)" opacity="0.12">
+        <animateTransform attributeName="transform" type="rotate" values="0;2;0;-2;0" dur="18s" repeatCount="indefinite" additive="sum"/>
+        <animate attributeName="opacity" values="0.12;0.2;0.12" dur="10s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <g transform="translate(420, 450)">
+      <rect x="-700" y="-4" width="1400" height="112" fill="#888888" filter="url(#glow)" opacity="0.06">
+        <animateTransform attributeName="transform" type="rotate" values="0;2;0;-2;0" dur="18s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+    </g>
+
+    <g transform="translate(420, 450)">
+      <rect x="-700" y="-60" width="1400" height="120" fill="#1A1A1A" filter="url(#shadow)">
+        <animateTransform attributeName="transform" type="rotate" values="0;2;0;-2;0" dur="18s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+    </g>
+
+    <g transform="translate(420, 450)">
+      <rect x="-700" y="-60" width="1400" height="120" fill="#0A0A0A">
+        <animateTransform attributeName="transform" type="rotate" values="0;2;0;-2;0" dur="18s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+    </g>
+
+    <g transform="translate(420, 450)">
+      <rect x="-700" y="-58" width="1400" height="116" fill="#1A1A1A" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="rotate" values="0;2;0;-2;0" dur="18s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+    </g>
+
+    <g transform="translate(420, 450)">
+      <rect x="-700" y="-56" width="1400" height="112" fill="#0A0A0A" filter="url(#lens)">
+        <animateTransform attributeName="transform" type="rotate" values="0;2;0;-2;0" dur="18s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+    </g>
+
+    <g transform="translate(420, 450)">
+      <rect x="-698" y="-54" width="1396" height="108" fill="#1A1A1A">
+        <animateTransform attributeName="transform" type="rotate" values="0;2;0;-2;0" dur="18s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+    </g>
+
+    <circle cx="1260" cy="220" r="5" fill="#1A1A1A" opacity="0.7" filter="url(#lens)">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="5;6;5" dur="11s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="1260" cy="220" r="12" fill="#F5F5F5" filter="url(#blur40)" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.35;0.2" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="12;14;12" dur="11s" repeatCount="indefinite"/>
+    </circle>
+
+    <rect x="1180" y="680" width="18" height="18" fill="#1A1A1A" opacity="0.6" filter="url(#lens)">
+      <animate attributeName="opacity" values="0.6;0.8;0.6" dur="13s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1,-1; 0,0; -1,1; 0,0" dur="13s" repeatCount="indefinite"/>
+    </rect>
+
+    <rect x="1172" y="672" width="34" height="34" fill="#F5F5F5" filter="url(#blur40)" opacity="0.15">
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="13s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1,-1; 0,0; -1,1; 0,0" dur="13s" repeatCount="indefinite"/>
+    </rect>
+
+    <circle cx="210" cy="750" r="4" fill="#888888" opacity="0.5" filter="url(#lens)">
+      <animate attributeName="opacity" values="0.5;0.7;0.5" dur="9s" repeatCount="indefinite"/>
+    </circle>
+
+    <rect x="180" y="280" width="10" height="10" fill="#888888" opacity="0.4" filter="url(#lens)">
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="10s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;90;0" dur="10s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+
+    <rect x="0" y="0" width="1600" height="900" fill="url(#grad3)" opacity="0.3" filter="url(#blur80)" pointer-events="none">
+      <animate attributeName="opacity" values="0.3;0.45;0.3" dur="17s" repeatCount="indefinite"/>
+    </rect>
+
+    <rect x="0" y="0" width="1600" height="900" fill="#FFFFFF" opacity="0.05" filter="url(#grain)" pointer-events="none">
+      <animate attributeName="opacity" values="0.05;0.08;0.05" dur="8s" repeatCount="indefinite"/>
+    </rect>
+
+    <rect x="0" y="0" width="1600" height="200" fill="#FFFFFF" filter="url(#blur40)" opacity="0.4" pointer-events="none">
+      <animate attributeName="opacity" values="0.4;0.55;0.4" dur="14s" repeatCount="indefinite"/>
+    </rect>
+
+    <rect x="0" y="700" width="1600" height="200" fill="#F5F5F5" filter="url(#blur120)" opacity="0.25" pointer-events="none">
+      <animate attributeName="opacity" values="0.25;0.4;0.25" dur="16s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#EAE0C8" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#EAE0C8" stop-opacity="0.22"/>
+    </radialGradient>
+    <linearGradient id="ropeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EAE0C8" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#EAE0C8" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#EAE0C8" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="blur1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="blur3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <path id="loopA" fill="none" d="M420,660 C560,660 680,640 735,560 C755,530 775,530 795,555 C825,590 855,560 875,520 C895,490 915,490 935,520 C965,560 1020,640 1180,660"/>
+    <path id="loopB" fill="none" d="M1180,620 C1020,620 970,560 940,510 C920,480 900,480 880,510 C860,540 840,570 810,545 C780,520 760,520 740,550 C680,610 560,610 420,610"/>
+    <path id="tailLA" fill="none" d="M420,660 C410,720 415,780 430,830"/>
+    <path id="tailLB" fill="none" d="M420,610 C405,670 410,730 425,790"/>
+    <path id="tailRA" fill="none" d="M1180,660 C1190,720 1185,780 1170,830"/>
+    <path id="tailRB" fill="none" d="M1180,620 C1195,680 1190,740 1175,790"/>
+  </defs>
+
+  <rect width="1600" height="900" fill="#061421"/>
+  <rect width="1600" height="900" fill="url(#glow)" opacity="0.85"/>
+
+  <g id="waterBack" opacity="0.85">
+    <path fill="#112B3C" d="M0,520 Q200,500 400,520 T800,520 T1200,520 T1600,520 V900 H0 Z"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-30,0;0,0" dur="7s" repeatCount="indefinite"/>
+  </g>
+  <g id="waterMid" opacity="0.9">
+    <path fill="#112B3C" d="M0,560 Q200,540 400,560 T800,560 T1200,560 T1600,560 V900 H0 Z"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;25,0;0,0" dur="5s" repeatCount="indefinite"/>
+  </g>
+  <g id="waterFront" opacity="0.95">
+    <path fill="#112B3C" d="M0,600 Q200,580 400,600 T800,600 T1200,600 T1600,600 V900 H0 Z"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-15,0;0,0" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.95;0.85;0.95" dur="4s" repeatCount="indefinite"/>
+  </g>
+
+  <ellipse cx="800" cy="620" rx="160" ry="18" fill="#112B3C" opacity="0.8" filter="url(#blur2)">
+    <animate attributeName="rx" values="160;150;160" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="18;15;18" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.65;0.8" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <g id="cleat" transform="translate(0,0)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="6s" repeatCount="indefinite"/>
+    <path fill="#112B3C" opacity="0.9" d="M680,560 L920,560 L940,580 L940,610 L660,610 L660,580 Z"/>
+    <path fill="#EAE0C8" opacity="0.85" d="M680,560 L920,560 L900,570 L700,570 Z"/>
+    <path fill="#112B3C" opacity="0.9" d="M695,560 L745,560 L745,470 C745,450 695,450 695,470 Z"/>
+    <path fill="#EAE0C8" opacity="0.85" d="M695,470 C695,450 745,450 745,470 C745,485 695,485 695,470 Z"/>
+    <path fill="#112B3C" opacity="0.9" d="M855,560 L905,560 L905,470 C905,450 855,450 855,470 Z"/>
+    <path fill="#EAE0C8" opacity="0.85" d="M855,470 C855,450 905,450 905,470 C905,485 855,485 855,470 Z"/>
+    <path fill="none" stroke="#EAE0C8" stroke-width="3" opacity="0.85" d="M700,580 Q800,590 900,580 M710,600 Q800,610 890,600 M715,500 L715,550 M885,500 L885,550">
+      <animate attributeName="opacity" values="0.85;0.6;0.85" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g id="rope" transform="rotate(0,800,600)" stroke-linecap="round" stroke-linejoin="round">
+    <animateTransform attributeName="transform" type="rotate" values="0 800 600;1 800 600;0 800 600;-1 800 600;0 800 600" dur="8s" repeatCount="indefinite"/>
+    <g opacity="0.8" filter="url(#blur3)">
+      <use href="#loopA" transform="translate(6,6)" stroke="#112B3C" stroke-width="46"/>
+      <use href="#loopB" transform="translate(6,6)" stroke="#112B3C" stroke-width="46"/>
+      <use href="#tailLA" transform="translate(6,6)" stroke="#112B3C" stroke-width="44"/>
+      <use href="#tailLB" transform="translate(6,6)" stroke="#112B3C" stroke-width="44"/>
+      <use href="#tailRA" transform="translate(6,6)" stroke="#112B3C" stroke-width="44"/>
+      <use href="#tailRB" transform="translate(6,6)" stroke="#112B3C" stroke-width="44"/>
+    </g>
+    <use href="#loopA" stroke="url(#ropeGrad)" stroke-width="42"/>
+    <use href="#loopB" stroke="url(#ropeGrad)" stroke-width="42"/>
+    <g transform="rotate(0,420,660)">
+      <use href="#tailLA" stroke="url(#ropeGrad)" stroke-width="40"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 420 660;3 420 660;0 420 660;-2 420 660;0 420 660" dur="4s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(0,420,610)">
+      <use href="#tailLB" stroke="url(#ropeGrad)" stroke-width="40"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 420 610;-3 420 610;0 420 610;2 420 610;0 420 610" dur="4.5s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(0,1180,660)">
+      <use href="#tailRA" stroke="url(#ropeGrad)" stroke-width="40"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 1180 660;-3 1180 660;0 1180 660;2 1180 660;0 1180 660" dur="4.2s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(0,1180,620)">
+      <use href="#tailRB" stroke="url(#ropeGrad)" stroke-width="40"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 1180 620;3 1180 620;0 1180 620;-2 1180 620;0 1180 620" dur="4.7s" repeatCount="indefinite"/>
+    </g>
+    <g opacity="0.85">
+      <use href="#loopA" transform="translate(-3,-3)" stroke="#EAE0C8" stroke-width="12"/>
+      <use href="#loopB" transform="translate(-3,-3)" stroke="#EAE0C8" stroke-width="12"/>
+      <use href="#tailLA" transform="translate(-3,-3)" stroke="#EAE0C8" stroke-width="10"/>
+      <use href="#tailLB" transform="translate(-3,-3)" stroke="#EAE0C8" stroke-width="10"/>
+      <use href="#tailRA" transform="translate(-3,-3)" stroke="#EAE0C8" stroke-width="10"/>
+      <use href="#tailRB" transform="translate(-3,-3)" stroke="#EAE0C8" stroke-width="10"/>
+    </g>
+    <use href="#loopA" stroke="#8B0000" stroke-width="5" stroke-dasharray="30 45" opacity="0.85">
+      <animate attributeName="stroke-dashoffset" values="0;-75;0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0.7;0.85" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#loopB" stroke="#8B0000" stroke-width="5" stroke-dasharray="30 45" opacity="0.85">
+      <animate attributeName="stroke-dashoffset" values="0;75;0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0.7;0.85" dur="3.5s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <path fill="none" stroke="#EAE0C8" stroke-width="10" stroke-linecap="round" opacity="0.85" filter="url(#blur3)" d="M620,625 Q800,610 980,625">
+    <animateTransform attributeName="transform" type="translate" values="0,0;40,0;0,0" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.85;0.4;0.85" dur="4s" repeatCount="indefinite"/>
+  </path>
+
+  <g opacity="0.85">
+    <circle cx="430" cy="850" r="6" fill="#EAE0C8">
+      <animate attributeName="cy" values="850;800;850" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0;0.85" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1170" cy="840" r="5" fill="#EAE0C8">
+      <animate attributeName="cy" values="840;790;840" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0;0.85" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="860" r="7" fill="#EAE0C8">
+      <animate attributeName="cy" values="860;810;860" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0;0.85" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g opacity="0.8" filter="url(#blur3)">
+    <path fill="#112B3C" d="M0,0 Q15,-12 30,0 Q45,-12 60,0 Q45,8 30,2 Q15,8 0,0"/>
+    <animateMotion path="M-120,160 C400,140 1200,180 1720,160" dur="10s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" values="1 1;1 0.85;1 1" dur="0.7s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="10s" repeatCount="indefinite"/>
+  </g>
+</svg>

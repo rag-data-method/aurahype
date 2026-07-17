@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Halftone dot pattern -->
+    <pattern id="ht" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="2" fill="#000" opacity="0.25"/>
+    </pattern>
+    <!-- Color pop halftone -->
+    <pattern id="ht-pop" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="3" fill="#000" opacity="0.18"/>
+    </pattern>
+    <!-- Thick outline marker -->
+    <filter id="ink">
+      <feMorphology operator="dilate" radius="4" in="SourceAlpha" result="thicken"/>
+      <feFlood flood-color="#000" result="black"/>
+      <feComposite in="black" in2="thicken" operator="in" result="outline"/>
+      <feMerge>
+        <feMergeNode in="outline"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#F5E042" />
+  <rect width="1600" height="900" fill="url(#ht)" />
+
+  <!-- Decorative concentric circles (comic action) -->
+  <g transform="translate(0, 0)">
+    <circle cx="200" cy="200" r="150" fill="none" stroke="#000" stroke-width="8" stroke-dasharray="20 10"/>
+    <circle cx="200" cy="200" r="150" fill="none" stroke="#FF007F" stroke-width="4" stroke-dasharray="20 10" transform="rotate(0 200 200)">
+      <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1400" cy="700" r="200" fill="none" stroke="#000" stroke-width="8" stroke-dasharray="30 15"/>
+    <circle cx="1400" cy="700" r="200" fill="none" stroke="#00D2FF" stroke-width="4" stroke-dasharray="30 15" transform="rotate(0 1400 700)">
+      <animateTransform attributeName="transform" type="rotate" from="360 1400 700" to="0 1400 700" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Sunburst / Action Lines (Top Left) -->
+  <g transform="translate(250, 250)">
+    <g stroke="#FF007F" stroke-width="12" stroke-linecap="round">
+      <line x1="0" y1="-180" x2="0" y2="-280">
+        <animate attributeName="y1" values="-180;-220;-180" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="-280;-320;-280" dur="1.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="127" y1="-127" x2="198" y2="-198">
+        <animate attributeName="x1" values="127;157;127" dur="1.5s" repeatCount="indefinite" begin="0.1s"/>
+        <animate attributeName="y1" values="-127;-157;-127" dur="1.5s" repeatCount="indefinite" begin="0.1s"/>
+        <animate attributeName="x2" values="198;238;198" dur="1.5s" repeatCount="indefinite" begin="0.1s"/>
+        <animate attributeName="y2" values="-198;-238;-198" dur="1.5s" repeatCount="indefinite" begin="0.1s"/>
+      </line>
+      <line x1="180" y1="0" x2="280" y2="0">
+        <animate attributeName="x1" values="180;220;180" dur="1.5s" repeatCount="indefinite" begin="0.2s"/>
+        <animate attributeName="x2" values="280;320;280" dur="1.5s" repeatCount="indefinite" begin="0.2s"/>
+      </line>
+      <line x1="127" y1="127" x2="198" y2="198">
+        <animate attributeName="x1" values="127;157;127" dur="1.5s" repeatCount="indefinite" begin="0.3s"/>
+        <animate attributeName="y1" values="127;157;127" dur="1.5s" repeatCount="indefinite" begin="0.3s"/>
+        <animate attributeName="x2" values="198;238;198" dur="1.5s" repeatCount="indefinite" begin="0.3s"/>
+        <animate attributeName="y2" values="198;238;198" dur="1.5s" repeatCount="indefinite" begin="0.3s"/>
+      </line>
+      <line x1="0" y1="180" x2="0" y2="280">
+        <animate attributeName="y1" values="180;220;180" dur="1.5s" repeatCount="indefinite" begin="0.4s"/>
+        <animate attributeName="y2" values="280;320;280" dur="1.5s" repeatCount="indefinite" begin="0.4s"/>
+      </line>
+    </g>
+    <circle r="60" fill="#00D2FF" stroke="#000" stroke-width="6"/>
+    <circle r="60" fill="url(#ht-pop)"/>
+  </g>
+
+  <!-- Sunburst / Action Lines (Bottom Right) -->
+  <g transform="translate(1350, 650)">
+    <g stroke="#00D2FF" stroke-width="12" stroke-linecap="round">
+      <line x1="0" y1="-180" x2="0" y2="-280">
+        <animate attributeName="y1" values="-180;-220;-180" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="y2" values="-280;-320;-280" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+      </line>
+      <line x1="127" y1="-127" x2="198" y2="-198">
+        <animate attributeName="x1" values="127;157;127" dur="1.5s" repeatCount="indefinite" begin="0.6s"/>
+        <animate attributeName="y1" values="-127;-157;-127" dur="1.5s" repeatCount="indefinite" begin="0.6s"/>
+        <animate attributeName="x2" values="198;238;198" dur="1.5s" repeatCount="indefinite" begin="0.6s"/>
+        <animate attributeName="y2" values="-198;-238;-198" dur="1.5s" repeatCount="indefinite" begin="0.6s"/>
+      </line>
+      <line x1="180" y1="0" x2="280" y2="0">
+        <animate attributeName="x1" values="180;220;180" dur="1.5s" repeatCount="indefinite" begin="0.7s"/>
+        <animate attributeName="x2" values="280;320;280" dur="1.5s" repeatCount="indefinite" begin="0.7s"/>
+      </line>
+      <line x1="127" y1="127" x2="198" y2="198">
+        <animate attributeName="x1" values="127;157;127" dur="1.5s" repeatCount="indefinite" begin="0.8s"/>
+        <animate attributeName="y1" values="127;157;127" dur="1.5s" repeatCount="indefinite" begin="0.8s"/>
+        <animate attributeName="x2" values="198;238;198" dur="1.5s" repeatCount="indefinite" begin="0.8s"/>
+        <animate attributeName="y2" values="198;238;198" dur="1.5s" repeatCount="indefinite" begin="0.8s"/>
+      </line>
+      <line x1="0" y1="180" x2="0" y2="280">
+        <animate attributeName="y1" values="180;220;180" dur="1.5s" repeatCount="indefinite" begin="0.9s"/>
+        <animate attributeName="y2" values="280;320;280" dur="1.5s" repeatCount="indefinite" begin="0.9s"/>
+      </line>
+    </g>
+    <circle r="60" fill="#FF007F" stroke="#000" stroke-width="6"/>
+    <circle r="60" fill="url(#ht-pop)"/>
+  </g>
+
+  <!-- Floating Sparkles -->
+  <g fill="#FFF">
+    <path d="M 100 800 L 105 815 L 120 820 L 105 825 L 100 840 L 95 825 L 80 820 L 95 815 Z" stroke="#000" stroke-width="3">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 20 -40; 0 0" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 100 820" to="360 100 820" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    <path d="M 1500 100 L 1505 115 L 1520 120 L 1505 125 L 1500 140 L 1495 125 L 1480 120 L 1495 115 Z" stroke="#000" stroke-width="3">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -30 30; 0 0" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 1500 120" to="-360 1500 120" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </path>
+  </g>
+
+  <!-- Main Subject Group (Centered) -->
+  <g transform="translate(800, 520)">
+    
+    <!-- Shadow Base -->
+    <ellipse cx="0" cy="310" rx="140" ry="30" fill="#000" opacity="0.2">
+      <animate attributeName="rx" values="140; 130; 140" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2; 0.15; 0.2" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Floating Animation for the Entire Milkshake -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -20; 0 0" dur="3s" repeatCount="indefinite"/>
+
+      <!-- Back of Glass Rim -->
+      <ellipse cx="0" cy="-250" rx="110" ry="25" fill="#00D2FF" stroke="#000" stroke-width="8"/>
+      
+      <!-- Glass Straw -->
+      <g>
+        <path d="M 20 -250 L 60 -380 L 70 -380 L 30 -250 Z" fill="#FF007F" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M 60 -380 L 90 -380 L 90 -370 L 62 -370 Z" fill="#FFF" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+        <!-- Straw stripes -->
+        <path d="M 25 -280 L 30 -280 M 35 -310 L 40 -310 M 45 -340 L 50 -340" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+      </g>
+
+      <!-- Milkshake Liquid Body -->
+      <path d="M -110 -250 L -80 280 C -80 305, 80 305, 80 280 L 110 -250 Z" fill="#FFFBE6" stroke="#000" stroke-width="8"/>
+      <!-- Liquid Halftone Overlay -->
+      <path d="M -110 -250 L -80 280 C -80 305, 80 305, 80 280 L 110 -250 Z" fill="url(#ht)"/>
+      
+      <!-- Liquid Color Shift Animation -->
+      <path d="M -110 -250 L -80 280 C -80 305, 80 305, 80 280 L 110 -250 Z" fill="#00D2FF" opacity="0.3">
+        <animate attributeName="opacity" values="0.3; 0; 0.3" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <path d="M -110 -250 L -80 280 C -80 305, 80 305, 80 280 L 110 -250 Z" fill="#FF007F" opacity="0">
+        <animate attributeName="opacity" values="0; 0.3; 0" dur="4s" repeatCount="indefinite" begin="2s"/>
+      </path>
+
+      <!-- Glass Reflections (Thick lines) -->
+      <path d="M -60 -220 L -40 250" stroke="#FFF" stroke-width="12" stroke-linecap="round" opacity="0.9"/>
+      <path d="M -60 -220 L -40 250" stroke="#000" stroke-width="4" stroke-linecap="round" opacity="0.1"/>
+      
+      <path d="M 50 -220 L 60 150" stroke="#FFF" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+      <path d="M 50 -220 L 60 150" stroke="#000" stroke-width="3" stroke-linecap="round" opacity="0.1"/>
+
+      <!-- Front of Glass Rim -->
+      <path d="M -110 -250 A 110 25 0 0 0 110 -250" fill="none" stroke="#000" stroke-width="8"/>
+
+      <!-- Whipped Cream Pile (Multiple overlapping blobs) -->
+      <g transform="translate(0, -280)">
+        <!-- Base Cream Layer -->
+        <ellipse cx="0" cy="0" rx="100" ry="30" fill="#FFF" stroke="#000" stroke-width="6"/>
+        <ellipse cx="0" cy="0" rx="100" ry="30" fill="url(#ht-pop)" opacity="0.5"/>
+        
+        <!-- Middle Blob 1 -->
+        <g transform="translate(-40, -30)">
+          <ellipse cx="0" cy="0" rx="60" ry="40" fill="#FFF" stroke="#000" stroke-width="6"/>
+          <ellipse cx="0" cy="0" rx="60" ry="40" fill="url(#ht-pop)" opacity="0.5"/>
+          <animateTransform attributeName="transform" type="translate" values="-40 -30; -45 -25; -40 -30" dur="2s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- Middle Blob 2 -->
+        <g transform="translate(40, -25)">
+          <ellipse cx="0" cy="0" rx="65" ry="45" fill="#FFF" stroke="#000" stroke-width="6"/>
+          <ellipse cx="0" cy="0" rx="65" ry="45" fill="url(#ht-pop)" opacity="0.5"/>
+          <animateTransform attributeName="transform" type="translate" values="40 -25; 35 -30; 40 -25" dur="2.5s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- Top Blob -->
+        <g transform="translate(0, -60)">
+          <ellipse cx="0" cy="0" rx="70" ry="50" fill="#FFF" stroke="#000" stroke-width="6"/>
+          <ellipse cx="0" cy="0" rx="70" ry="50" fill="url(#ht-pop)" opacity="0.5"/>
+          <animateTransform attributeName="transform" type="translate" values="0 -60; 0 -65; 0 -60" dur="3s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- The Cherry -->
+        <g transform="translate(0, -110)">
+          <!-- Cherry Stem -->
+          <path d="M 0 0 Q 20 -40 40 -30" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+          <path d="M 0 0 Q 20 -40 40 -30" fill="none" stroke="#FF007F" stroke-width="2" stroke-linecap="round"/>
+          
+          <!-- Cherry Body -->
+          <circle cx="0" cy="0" r="35" fill="#FF007F" stroke="#000" stroke-width="6"/>
+          <!-- Cherry Highlight -->
+          <ellipse cx="-10" cy="-10" rx="10" ry="6" fill="#FFF" transform="rotate(-45 -10 -10)"/>
+          
+          <!-- Cherry Color Shift -->
+          <circle cx="0" cy="0" r="35" fill="#00D2FF" opacity="0">
+            <animate attributeName="opacity" values="0; 0.6; 0" dur="4s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- Wiggle Animation -->
+          <animateTransform attributeName="transform" type="rotate" values="-5 0 20; 5 0 20; -5 0 20" dur="1s" repeatCount="indefinite"/>
+        </g>
+      </g>
+
+      <!-- Comic Word Bubble -->
+      <g transform="translate(200, -350)">
+        <path d="M 0 0 L 150 0 L 150 100 L 50 100 L 0 150 L 20 100 L 0 100 Z" fill="#FFF" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+        <text x="75" y="65" font-family="Arial Black, Impact, sans-serif" font-size="36" text-anchor="middle" fill="#FF007F" stroke="#000" stroke-width="2">YUM!</text>
+        
+        <!-- Bubble Pop Animation -->
+        <animateTransform attributeName="transform" type="scale" values="1; 1.1; 1" dur="2s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="translate" values="200 -350; 200 -350" dur="2s" repeatCount="indefinite" additive="sum"/>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- Foreground Halftone Overlay for extra pop -->
+  <rect width="1600" height="900" fill="url(#ht)" opacity="0.15" pointer-events="none"/>
+  
+  <!-- Global Flashing Colors (Warhol Style) -->
+  <rect width="1600" height="900" fill="#FF007F" opacity="0" pointer-events="none">
+    <animate attributeName="opacity" values="0; 0.1; 0" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <rect width="1600" height="900" fill="#00D2FF" opacity="0" pointer-events="none">
+    <animate attributeName="opacity" values="0; 0.1; 0" dur="5s" repeatCount="indefinite" begin="2.5s"/>
+  </rect>
+
+</svg>

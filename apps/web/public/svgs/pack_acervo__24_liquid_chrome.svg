@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="b" cx="50%" cy="40%" r="90%">
+      <stop offset="0%" stop-color="#9aa0a8"/>
+      <stop offset="60%" stop-color="#5c626a"/>
+      <stop offset="100%" stop-color="#2e3238"/>
+    </radialGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse" gradientTransform="rotate(0 800 450)">
+      <stop offset="0%" stop-color="#e8eaed">
+        <animate attributeName="offset" values="0%;6%;0%" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="25%" stop-color="#b0b5bd"/>
+      <stop offset="45%" stop-color="#ffffff">
+        <animate attributeName="offset" values="45%;55%;45%" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="65%" stop-color="#7d848f"/>
+      <stop offset="100%" stop-color="#d1d5db">
+        <animate attributeName="offset" values="100%;94%;100%" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 800 450" to="360 800 450" dur="28s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="h" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="s">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#b)"/>
+  <g opacity=".85" filter="url(#s)">
+    <path fill="url(#c)" d="M-200,700 C100,550 500,850 900,700 S1600,550 1900,750 V1000 H-200 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0;40,-30;0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>
+    </path>
+  </g>
+  <path fill="url(#c)" d="M-200,820 C200,720 600,920 1000,820 S1700,680 1900,820 V950 H-200 Z">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-30,15;0,0" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>
+  </path>
+  <path fill="url(#c)" opacity=".6" d="M100,200 C400,100 800,300 1200,200 S1700,100 1800,250 V-100 H100 Z">
+    <animateTransform attributeName="transform" type="translate" values="0,0;20,25;0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>
+  </path>
+  <ellipse cx="500" cy="350" rx="350" ry="60" fill="url(#h)" opacity=".35" filter="url(#s)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;70,30;0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>
+  </ellipse>
+  <ellipse cx="1150" cy="750" rx="280" ry="50" fill="url(#h)" opacity=".25" filter="url(#s)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-50,-20;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>
+  </ellipse>
+</svg>

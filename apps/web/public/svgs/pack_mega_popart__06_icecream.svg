@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="w" width="50" height="50" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="50" height="50" fill="#FFB800"/>
+      <line x1="0" y1="0" x2="0" y2="50" stroke="#000" stroke-width="6"/>
+      <line x1="0" y1="0" x2="50" y2="0" stroke="#000" stroke-width="6"/>
+    </pattern>
+    <pattern id="d" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="2.5" fill="#000">
+        <animate attributeName="r" values="2;4;2" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+    </pattern>
+    <pattern id="dl" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="6" fill="#000" opacity="0.15"/>
+    </pattern>
+    <clipPath id="c1"><path d="M620,520Q620,380 800,380Q980,380 980,520Q980,620 800,620Q620,620 620,520Z"/></clipPath>
+    <clipPath id="c2"><path d="M640,400Q640,280 800,280Q960,280 960,400Q960,500 800,500Q640,500 640,400Z"/></clipPath>
+    <clipPath id="c3"><path d="M660,290Q660,170 800,170Q940,170 940,290Q940,390 800,390Q660,390 660,290Z"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#00FFFF"/>
+  <rect width="1600" height="900" fill="url(#dl)"/>
+  <rect width="1600" height="900" fill="#FF00FF" opacity="0">
+    <animate attributeName="opacity" values="0;0.7;0" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <rect width="1600" height="900" fill="#FFFF00" opacity="0">
+    <animate attributeName="opacity" values="0;0.7;0" dur="5s" repeatCount="indefinite" begin="2.5s"/>
+  </rect>
+
+  <!-- Spotlight disc -->
+  <circle cx="800" cy="520" r="420" fill="#FFF" stroke="#000" stroke-width="8"/>
+  <circle cx="800" cy="520" r="420" fill="url(#d)" opacity="0.25"/>
+
+  <!-- Starburst -->
+  <g transform="translate(800,520)">
+    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
+    <g>
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="3s" repeatCount="indefinite"/>
+      <line y1="-360" y2="-720" stroke="#000" stroke-width="18"/>
+      <line y1="-360" y2="-720" stroke="#000" stroke-width="18" transform="rotate(45)"/>
+      <line y1="-360" y2="-720" stroke="#000" stroke-width="18" transform="rotate(90)"/>
+      <line y1="-360" y2="-720" stroke="#000" stroke-width="18" transform="rotate(135)"/>
+      <line y1="-360" y2="-720" stroke="#000" stroke-width="18" transform="rotate(180)"/>
+      <line y1="-360" y2="-720" stroke="#000" stroke-width="18" transform="rotate(225)"/>
+      <line y1="-360" y2="-720" stroke="#000" stroke-width="18" transform="rotate(270)"/>
+      <line y1="-360" y2="-720" stroke="#000" stroke-width="18" transform="rotate(315)"/>
+    </g>
+  </g>
+
+  <!-- Cone Group -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="4s" repeatCount="indefinite"/>
+
+    <!-- Cone -->
+    <path d="M640,520L740,850Q800,880 860,850L960,520Q800,480 640,520Z" fill="url(#w)" stroke="#000" stroke-width="10">
+      <animate attributeName="stroke-width" values="10;14;10" dur="2s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Scoop 1 -->
+    <path d="M620,520Q620,380 800,380Q980,380 980,520Q980,620 800,620Q620,620 620,520Z" fill="#FF0040" stroke="#000" stroke-width="10">
+      <animate attributeName="fill" values="#FF0040;#FF2200;#FF0040" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="10;14;10" dur="2.2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M620,520Q620,380 800,380Q980,380 980,520Q980,620 800,620Q620,620 620,520Z" fill="url(#d)" clip-path="url(#c1)" opacity="0.35"/>
+
+    <!-- Scoop 2 -->
+    <path d="M640,400Q640,280 800,280Q960,280 960,400Q960,500 800,500Q640,500 640,400Z" fill="#00E5FF" stroke="#000" stroke-width="10">
+      <animate attributeName="fill" values="#00E5FF;#00FFFF;#00E5FF" dur="3.6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="10;14;10" dur="2.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M640,400Q640,280 800,280Q960,280 960,400Q960,500 800,500Q640,500 640,400Z" fill="url(#d)" clip-path="url(#c2)" opacity="0.35"/>
+
+    <!-- Scoop 3 -->
+    <path d="M660,290Q660,170 800,170Q940,170 940,290Q940,390 800,390Q660,390 660,290Z" fill="#FF00CC" stroke="#000" stroke-width="10">
+      <animate attributeName="fill" values="#FF00CC;#FF00FF;#FF00CC" dur="4.2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="10;14;10" dur="2.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M660,290Q660,170 800,170Q940,170 940,290Q940,390 800,390Q660,390 660,290Z" fill="url(#d)" clip-path="url(#c3)" opacity="0.35"/>
+
+    <!-- Drips -->
+    <g transform="translate(750,610)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,70; 0,0" dur="3.2s" repeatCount="indefinite" additive="sum"/>
+      <path d="M-16,0L-13,50Q-13,78 0,78Q13,78 13,50L16,0Z" fill="#39FF14" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(900,610)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,90; 0,0" dur="4s" repeatCount="indefinite" additive="sum"/>
+      <path d="M-16,0L-13,50Q-13,78 0,78Q13,78 13,50L16,0Z" fill="#FF9100" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(680,490)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,60; 0,0" dur="3.6s" repeatCount="indefinite" additive="sum"/>
+      <path d="M-14,0L-11,40Q-11,62 0,62Q11,62 11,40L14,0Z" fill="#FF00AA" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(930,480)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,80; 0,0" dur="4.4s" repeatCount="indefinite" additive="sum"/>
+      <path d="M-14,0L-11,40Q-11,62 0,62Q11,62 11,40L14,0Z" fill="#00FFFF" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(820,380)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,50; 0,0" dur="2.8s" repeatCount="indefinite" additive="sum"/>
+      <path d="M-12,0L-10,35Q-10,52 0,52Q10,52 10,35L12,0Z" fill="#FFF700" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Cherry -->
+    <g transform="translate(800,135)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,12; 0,0" dur="1.6s" repeatCount="indefinite" additive="sum"/>
+      <circle r="32" fill="#FF0000" stroke="#000" stroke-width="6"/>
+      <ellipse cx="-10" cy="-10" rx="6" ry="4" fill="#FFF" transform="rotate(-45)"/>
+      <path d="M0,-28 Q8,-55 22,-45" stroke="#000" stroke-width="5" fill="none" stroke-linecap="round">
+        <animate attributeName="d" values="M0,-28 Q8,-55 22,-45;M0,-28 Q-8,-58 -18,-48;M0,-28 Q8,-55 22,-45" dur="0.7s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Sprinkles -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="760,450; 760,430; 760,450" dur="2s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="3s" repeatCount="indefinite"/>
+        <rect x="-8" y="-3" width="16" height="6" rx="3" fill="#FFF" stroke="#000" stroke-width="2"/>
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="850,350; 850,370; 850,350" dur="2.4s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="4s" repeatCount="indefinite"/>
+        <rect x="-8" y="-3" width="16" height="6" rx="3" fill="#FFFF00" stroke="#000" stroke-width="2"/>
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="780,250; 780,230; 780,250" dur="1.8s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="5s" repeatCount="indefinite"/>
+        <rect x="-8" y="-3" width="16" height="6" rx="3" fill="#00FFFF" stroke="#000" stroke-width="2"/>
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="1100,400; 1100,380; 1100,400" dur="3s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="6s" repeatCount="indefinite"/>
+        <rect x="-8" y="-3" width="16" height="6" rx="3" fill="#FFF" stroke="#000" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(320,240) rotate(-10)">
+    <g>
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="1.5s" repeatCount="indefinite"/>
+      <text x="0" y="0" font-family="Impact,Arial Black,sans-serif" font-size="150" fill="#FFFF00" stroke="#000" stroke-width="10" text-anchor="middle">DRIP!</text>
+      <text x="0" y="0" font-family="Impact,Arial Black,sans-serif" font-size="150" fill="url(#d)" text-anchor="middle">DRIP!</text>
+    </g>
+  </g>
+
+  <!-- Flash overlay -->
+  <rect width="1600" height="900" fill="#FFF" opacity="0" pointer-events="none">
+    <animate attributeName="opacity" values="0;0.2;0" dur="6s" repeatCount="indefinite"/>
+  </rect>
+</svg>

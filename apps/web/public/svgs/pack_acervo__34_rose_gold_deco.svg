@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset=".5" stop-color="#FADADD"/>
+      <stop offset="1" stop-color="#F3E0E5"/>
+    </linearGradient>
+    <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E6B2B8"/>
+      <stop offset=".25" stop-color="#D4A373"/>
+      <stop offset=".5" stop-color="#F6E5E5"/>
+      <stop offset=".75" stop-color="#C9A09D"/>
+      <stop offset="1" stop-color="#E6B2B8"/>
+      <animate attributeName="x1" values="0;1;0" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;2;1" dur="12s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="v" cx=".5" cy=".5" r=".7">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#E8C4CA" stop-opacity=".3"/>
+    </radialGradient>
+    <linearGradient id="p1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE4E8"/>
+      <stop offset="1" stop-color="#F8C3CD"/>
+    </linearGradient>
+    <linearGradient id="p2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFF8E7"/>
+      <stop offset="1" stop-color="#FAD7A0"/>
+    </linearGradient>
+    <linearGradient id="p3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F3E5F5"/>
+      <stop offset="1" stop-color="#E1BEE7"/>
+    </linearGradient>
+    <linearGradient id="p4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E8F4FD"/>
+      <stop offset="1" stop-color="#C5E1F6"/>
+    </linearGradient>
+    <filter id="g">
+      <feGaussianBlur stdDeviation="2.5"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <g id="arch">
+      <path d="M0,900V650Q0,550 100,550T200,650V900" fill="url(#p1)" stroke="url(#rg)" stroke-width="3"/>
+      <path d="M50,900V700Q50,630 100,630T150,700V900" fill="url(#p3)" stroke="url(#rg)" stroke-width="2"/>
+    </g>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#v)"/>
+  <g transform="translate(800,450)">
+    <circle r="300" fill="none" stroke="url(#rg)" stroke-width="2" opacity=".7">
+      <animate attributeName="r" values="300;305;300" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="240" fill="none" stroke="url(#rg)" stroke-width="3"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="90s" repeatCount="indefinite"/>
+      <path d="M0,-240V-300M0,240V300M-240,0H-300M240,0H300M-170,-170L-212,-212M170,170L212,212M-170,170L-212,212M170,-170L212,-212" stroke="url(#rg)" stroke-width="2"/>
+    </g>
+    <g opacity=".85">
+      <path d="M0,-240Q90,-130 0,-50Q-90,-130 0,-240" fill="url(#p1)" stroke="url(#rg)" stroke-width="2"/>
+      <path d="M0,240Q90,130 0,50Q-90,130 0,240" fill="url(#p1)" stroke="url(#rg)" stroke-width="2"/>
+      <path d="M-240,0Q-130,90 -50,0Q-130,-90 -240,0" fill="url(#p3)" stroke="url(#rg)" stroke-width="2"/>
+      <path d="M240,0Q130,90 50,0Q130,-90 240,0" fill="url(#p3)" stroke="url(#rg)" stroke-width="2"/>
+      <path d="M-170,-170Q-90,-90 -50,-130Q-130,-50 -170,-170" fill="url(#p2)" stroke="url(#rg)" stroke-width="2"/>
+      <path d="M170,-170Q90,-90 50,-130Q130,-50 170,-170" fill="url(#p2)" stroke="url(#rg)" stroke-width="2"/>
+      <path d="M-170,170Q-90,90 -50,130Q-130,50 -170,170" fill="url(#p2)" stroke="url(#rg)" stroke-width="2"/>
+      <path d="M170,170Q90,90 50,130Q130,50 170,170" fill="url(#p2)" stroke="url(#rg)" stroke-width="2"/>
+    </g>
+    <circle r="70" fill="url(#p4)" stroke="url(#rg)" stroke-width="4" filter="url(#g)">
+      <animate attributeName="opacity" values=".8;1;.8" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="35" fill="none" stroke="url(#rg)" stroke-width="2"/>
+  </g>
+  <g opacity=".75">
+    <animate attributeName="opacity" values=".75;.55;.75" dur="7s" repeatCount="indefinite"/>
+    <use href="#arch" x="100"/>
+  </g>
+  <g opacity=".75">
+    <animate attributeName="opacity" values=".75;.55;.75" dur="7s" begin="3.5s" repeatCount="indefinite"/>
+    <use href="#arch" x="1300"/>
+  </g>
+  <g transform="translate(800,120)" opacity=".8">
+    <animateTransform attributeName="transform" type="translate" values="800,120;800,110;800,120" dur="6s" repeatCount="indefinite"/>
+    <path d="M-620,0H620L580,35H-580Z" fill="url(#p2)" stroke="url(#rg)" stroke-width="2"/>
+    <path d="M-120,0H120L100,35H-100Z" fill="url(#p1)" stroke="url(#rg)" stroke-width="2"/>
+  </g>
+  <g transform="translate(800,780)" opacity=".8">
+    <animateTransform attributeName="transform" type="translate" values="800,780;800,790;800,780" dur="6s" repeatCount="indefinite"/>
+    <path d="M-620,0H620L580,-35H-580Z" fill="url(#p2)" stroke="url(#rg)" stroke-width="2"/>
+    <path d="M-120,0H120L100,-35H-100Z" fill="url(#p1)" stroke="url(#rg)" stroke-width="2"/>
+  </g>
+  <g fill="url(#rg)" opacity=".5">
+    <circle cx="250" cy="250" r="3"><animate attributeName="cy" values="250;230;250" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;0;.5" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="1350" cy="280" r="4"><animate attributeName="cy" values="280;260;280" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;0;.5" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="450" cy="720" r="3"><animate attributeName="cy" values="720;700;720" dur="7s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;0;.5" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="1150" cy="680" r="4"><animate attributeName="cy" values="680;660;680" dur="5.5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;0;.5" dur="5.5s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>

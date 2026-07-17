@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#050510"/>
+<stop offset="0.6" stop-color="#1a0b2e"/>
+<stop offset="1" stop-color="#2d0f3d">
+<animate attributeName="stop-color" values="#2d0f3d;#3d154d;#2d0f3d" dur="10s" repeatCount="indefinite"/>
+</stop>
+</linearGradient>
+<linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffcc00"/>
+<stop offset="0.5" stop-color="#ff0066"/>
+<stop offset="1" stop-color="#9900ff"/>
+</linearGradient>
+<linearGradient id="gridGrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#00ffff" stop-opacity="0.9"/>
+<stop offset="1" stop-color="#ff00ff" stop-opacity="0.7"/>
+</linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="5" result="b">
+<animate attributeName="stdDeviation" values="5;8;5" dur="4s" repeatCount="indefinite"/>
+</feGaussianBlur>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<mask id="sunMask" maskUnits="userSpaceOnUse">
+<circle cx="800" cy="360" r="180" fill="#fff"/>
+<g fill="#000">
+<rect x="620" y="220" width="360" height="18"/>
+<rect x="620" y="260" width="360" height="18"/>
+<rect x="620" y="300" width="360" height="18"/>
+<rect x="620" y="340" width="360" height="18"/>
+<rect x="620" y="380" width="360" height="18"/>
+<rect x="620" y="420" width="360" height="18"/>
+<rect x="620" y="460" width="360" height="18"/>
+<rect x="620" y="500" width="360" height="18"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;0,40;0,0" dur="3s" repeatCount="indefinite"/>
+</g>
+</mask>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<g fill="#fff">
+<circle cx="150" cy="120" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.5s" repeatCount="indefinite"/></circle>
+<circle cx="320" cy="80" r="1" opacity="0.6"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.2s" repeatCount="indefinite"/></circle>
+<circle cx="480" cy="150" r="1.5" opacity="0.7"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.8s" repeatCount="indefinite"/></circle>
+<circle cx="650" cy="60" r="1" opacity="0.9"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite"/></circle>
+<circle cx="900" cy="110" r="1.5" opacity="0.7"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite"/></circle>
+<circle cx="1150" cy="50" r="1" opacity="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite"/></circle>
+<circle cx="1300" cy="140" r="1.5" opacity="0.6"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.8s" repeatCount="indefinite"/></circle>
+<circle cx="1450" cy="90" r="1" opacity="0.9"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.6s" repeatCount="indefinite"/></circle>
+<circle cx="100" cy="250" r="1" opacity="0.5"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/></circle>
+<circle cx="750" cy="200" r="1.5" opacity="0.7"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.4s" repeatCount="indefinite"/></circle>
+<circle cx="1380" cy="230" r="1" opacity="0.6"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.6s" repeatCount="indefinite"/></circle>
+<circle cx="1540" cy="180" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.9s" repeatCount="indefinite"/></circle>
+</g>
+<circle cx="800" cy="360" r="180" fill="url(#sunGrad)" mask="url(#sunMask)" filter="url(#glow)"/>
+<g stroke="url(#gridGrad)" stroke-width="2" fill="none" filter="url(#glow)" opacity="0.65" stroke-linecap="butt">
+<path stroke-dasharray="40 40" d="M800,520 L-200,900 M800,520 L0,900 M800,520 L200,900 M800,520 L400,900 M800,520 L600,900 M800,520 L800,900 M800,520 L1000,900 M800,520 L1200,900 M800,520 L1400,900 M800,520 L1600,900 M800,520 L1800,900">
+<animate attributeName="stroke-dashoffset" values="0;80;0" dur="2s" repeatCount="indefinite"/>
+</path>
+<path d="M0,520 H1600 M0,560 H1600 M0,590 H1600 M0,630 H1600 M0,690 H1600 M0,770 H1600" opacity="0.5"/>
+</g>
+<path d="M0,900 L0,720 L200,600 L400,750 L600,620 L900,780 L1200,640 L1400,720 L1600,680 L1600,900 Z" fill="#0d0418"/>
+<path d="M0,900 L0,700 L80,700 L80,620 L160,620 L160,680 L240,680 L240,580 L320,580 L320,660 L420,660 L420,540 L520,540 L520,650 L620,650 L620,560 L720,560 L720,670 L880,670 L880,550 L980,550 L980,640 L1100,640 L1100,570 L1200,570 L1200,660 L1300,660 L1300,600 L1400,600 L1400,690 L1500,690 L1500,650 L1600,650 L1600,900 Z" fill="#020105"/>
+<g fill="#00ffff" opacity="0.7">
+<rect x="90" y="630" width="6" height="10"/><rect x="250" y="600" width="6" height="10"/><rect x="430" y="560" width="6" height="10"/><rect x="630" y="580" width="6" height="10"/><rect x="900" y="570" width="6" height="10"/><rect x="1115" y="590" width="6" height="10"/><rect x="1320" y="620" width="6" height="10"/><rect x="1420" y="610" width="6" height="10"/>
+</g>
+<g fill="#ff00ff" opacity="0.6">
+<rect x="120" y="650" width="6" height="10"/><rect x="300" y="630" width="6" height="10"/><rect x="500" y="600" width="6" height="10"/><rect x="700" y="590" width="6" height="10"/><rect x="950" y="610" width="6" height="10"/><rect x="1230" y="640" width="6" height="10"/><rect x="1470" y="650" width="6" height="10"/>
+</g>
+</svg>

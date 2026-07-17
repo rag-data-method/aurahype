@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
+      <feOffset in="blur" dx="8" dy="12" result="offsetBlur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="deepShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dx="15" dy="25"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+    </filter>
+    
+    <filter id="steamBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5"/>
+    </filter>
+    
+    <linearGradient id="chairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B6F47" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8B6F47" stop-opacity="1"/>
+    </linearGradient>
+    
+    <linearGradient id="cushionGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="0.85"/>
+    </linearGradient>
+    
+    <linearGradient id="lightBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#F5EDDC" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#F5EDDC"/>
+  
+  <path d="M0,0 L500,0 L700,900 L0,900 Z" fill="url(#lightBeam)" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.65;0.5" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <ellipse cx="850" cy="730" rx="260" ry="55" fill="#8B6F47" opacity="0.15" filter="url(#deepShadow)">
+    <animate attributeName="rx" values="260;268;260" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.2;0.15" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <g id="armchair">
+    <path d="M660,660 L675,760 L690,760 L680,660 Z" fill="#8B6F47" opacity="0.85"/>
+    <path d="M940,660 L925,760 L910,760 L920,660 Z" fill="#8B6F47" opacity="0.85"/>
+    
+    <path d="M630,320 Q610,460 630,590 L870,590 Q890,460 870,320 Q840,300 750,290 Q660,300 630,320 Z" 
+          fill="url(#chairGrad)">
+      <animateTransform attributeName="transform" type="scale" values="1,1;1.008,1.008;1,1" 
+                        dur="7s" repeatCount="indefinite" additive="sum" transform-origin="750 455"/>
+    </path>
+    
+    <path d="M650,340 Q640,450 655,560 L845,560 Q860,450 850,340 Q750,330 650,340 Z" 
+          fill="url(#cushionGrad)" opacity="0.9"/>
+    
+    <path d="M630,560 L630,630 Q630,660 660,670 L840,670 Q870,660 870,630 L870,560 Z" 
+          fill="#8B6F47" opacity="0.95"/>
+    
+    <path d="M640,570 L860,570 Q865,570 865,580 L865,630 Q865,650 840,655 L660,655 Q635,650 635,630 L635,580 Q635,570 640,570 Z" 
+          fill="url(#cushionGrad)">
+      <animate attributeName="d" values="M640,570 L860,570 Q865,570 865,580 L865,630 Q865,650 840,655 L660,655 Q635,650 635,630 L635,580 Q635,570 640,570 Z;
+                                        M640,572 L860,572 Q865,572 865,582 L865,632 Q865,652 840,657 L660,657 Q635,652 635,632 L635,582 Q635,572 640,572 Z;
+                                        M640,570 L860,570 Q865,570 865,580 L865,630 Q865,650 840,655 L660,655 Q635,650 635,630 L635,580 Q635,570 640,570 Z" 
+               dur="5s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M660,670 L675,770 L690,770 L680,670 Z" fill="#8B6F47"/>
+    <path d="M840,670 L825,770 L810,770 L820,670 Z" fill="#8B6F47"/>
+    
+    <path d="M870,490 Q910,490 910,530 L910,590 Q910,610 870,610 L870,490 Z" 
+          fill="#8B6F47" opacity="0.95"/>
+    <ellipse cx="890" cy="500" rx="28" ry="12" fill="#FFFBEB" opacity="0.9"/>
+    
+    <path d="M630,490 Q590,490 590,530 L590,590 Q590,610 630,610 L630,490 Z" 
+          fill="#8B6F47" opacity="0.95"/>
+    <ellipse cx="610" cy="500" rx="28" ry="12" fill="#FFFBEB" opacity="0.9"/>
+  </g>
+  
+  <g id="notebook" transform="translate(710, 590) rotate(-8)">
+    <rect x="5" y="5" width="130" height="95" fill="#8B6F47" opacity="0.2" filter="url(#softShadow)"/>
+    
+    <path d="M0,15 L130,5 L130,85 L0,95 Z" fill="#5BC5A8" opacity="0.85"/>
+    <path d="M8,22 L122,16 L122,78 L8,88 Z" fill="#FFFBEB" opacity="0.9"/>
+    
+    <line x1="18" y1="32" x2="60" y2="29" stroke="#8B6F47" stroke-width="1" opacity="0.4"/>
+    <line x1="18" y1="42" x2="60" y2="39" stroke="#8B6F47" stroke-width="1" opacity="0.4"/>
+    <line x1="18" y1="52" x2="60" y2="49" stroke="#8B6F47" stroke-width="1" opacity="0.4"/>
+    <line x1="18" y1="62" x2="60" y2="59" stroke="#8B6F47" stroke-width="1" opacity="0.4"/>
+    <line x1="18" y1="72" x2="60" y2="69" stroke="#8B6F47" stroke-width="1" opacity="0.4"/>
+    
+    <line x1="70" y1="29" x2="112" y2="24" stroke="#8B6F47" stroke-width="1" opacity="0.4"/>
+    <line x1="70" y1="39" x2="112" y2="34" stroke="#8B6F47" stroke-width="1" opacity="0.4"/>
+    <line x1="70" y1="49" x2="112" y2="44" stroke="#8B6F47" stroke-width="1" opacity="0.4"/>
+    <line x1="70" y1="59" x2="112" y2="54" stroke="#8B6F47" stroke-width="1" opacity="0.4"/>
+    
+    <path d="M22,40 Q30,38 40,42 Q48,40 55,44" stroke="#8B6F47" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M22,50 Q35,48 48,52" stroke="#8B6F47" stroke-width="1.5" fill="none" opacity="0.6"/>
+    
+    <path d="M122,16 L130,12 L130,82 L122,78 Z" fill="#FFFBEB" opacity="0.9">
+      <animateTransform attributeName="transform" type="rotate" values="0 122 47; -3 122 47; 0 122 47" 
+                        dur="4s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M0,15 L8,22 L8,88 L0,95 Z" fill="#5BC5A8" opacity="0.9"/>
+  </g>
+  
+  <g id="pen" transform="translate(825, 608) rotate(12)">
+    <rect x="0" y="0" width="55" height="7" rx="3.5" fill="#5BC5A8" opacity="0.9"/>
+    <rect x="46" y="0" width="9" height="7" fill="#8B6F47" opacity="0.8"/>
+    <polygon points="55,3.5 62,0 62,7" fill="#8B6F47" opacity="0.7"/>
+    <animateTransform attributeName="transform" type="rotate" values="12;13;12" dur="3.5s" 
+                      repeatCount="indefinite" additive="sum"/>
+  </g>
+  
+  <g id="teacup" transform="translate(878, 475)">
+    <ellipse cx="22" cy="32" rx="20" ry="7" fill="#FFFBEB" opacity="0.9"/>
+    <ellipse cx="22" cy="30" rx="16" ry="5" fill="#F5EDDC" opacity="0.5"/>
+    <ellipse cx="22" cy="35" rx="13" ry="4" fill="#8B6F47" opacity="0.2" filter="url(#softShadow)"/>
+    
+    <path d="M8,8 Q8,32 22,32 Q36,32 36,8 Z" fill="#FFFBEB" opacity="0.95"/>
+    <ellipse cx="22" cy="8" rx="14" ry="4.5" fill="#F5EDDC"/>
+    
+    <ellipse cx="22" cy="10" rx="11" ry="3.5" fill="#5BC5A8" opacity="0.8">
+      <animate attributeName="rx" values="11;10.8;11" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.7;0.8" dur="2.5s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <path d="M36,12 Q43,12 43,18 Q43,24 36,24" fill="none" stroke="#FFFBEB" stroke-width="2.5" 
+          stroke-linecap="round" opacity="0.95"/>
+    
+    <g id="steam" filter="url(#steamBlur)">
+      <path d="M18,2 Q20,-8 18,-18 Q16,-28 18,-38" fill="none" stroke="#FFFBEB" stroke-width="2.5" 
+            stroke-linecap="round" opacity="0">
+        <animate attributeName="opacity" values="0;0.5;0" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="d" values="M18,2 Q20,-8 18,-18 Q16,-28 18,-38;
+                                           M18,2 Q16,-8 20,-18 Q18,-28 16,-38;
+                                           M18,2 Q20,-8 18,-18 Q16,-28 18,-38" dur="4s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12" dur="4s" 
+                          repeatCount="indefinite"/>
+      </path>
+      
+      <path d="M26,2 Q28,-6 26,-14 Q24,-22 26,-30" fill="none" stroke="#FFFBEB" stroke-width="2" 
+            stroke-linecap="round" opacity="0">
+        <animate attributeName="opacity" values="0;0.4;0" dur="5s" repeatCount="indefinite" begin="1.2s"/>
+        <animate attributeName="d" values="M26,2 Q28,-6 26,-14 Q24,-22 26,-30;
+                                           M26,2 Q24,-6 28,-14 Q26,-22 24,-30;
+                                           M26,2 Q28,-6 26,-14 Q24,-22 26,-30" dur="5s" repeatCount="indefinite" 
+                 begin="1.2s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10" dur="5s" 
+                          repeatCount="indefinite" begin="1.2s"/>
+      </path>
+      
+      <path d="M22,0 Q24,-5 22,-12 Q20,-19 22,-26" fill="none" stroke="#FFFBEB" stroke-width="1.8" 
+            stroke-linecap="round" opacity="0">
+        <animate attributeName="opacity" values="0;0.45;0" dur="3.5s" repeatCount="indefinite" begin="0.6s"/>
+        <animate attributeName="d" values="M22,0 Q24,-5 22,-12 Q20,-19 22,-26;
+                                           M22,0 Q20,-5 24,-12 Q22,-19 20,-26;
+                                           M22,0 Q24,-5 22,-12 Q20,-19 22,-26" dur="3.5s" repeatCount="indefinite" 
+                 begin="0.6s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8" dur="3.5s" 
+                          repeatCount="indefinite" begin="0.6s"/>
+      </path>
+    </g>
+    
+    <animateTransform attributeName="transform" type="translate" values="878,475; 878,473; 878,475" 
+                      dur="6s" repeatCount="indefinite"/>
+  </g>
+  
+  <circle cx="280" cy="220" r="2" fill="#FFFBEB" opacity="0.35">
+    <animate attributeName="cy" values="220;190;220" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.35;0;0.35" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="420" cy="380" r="1.8" fill="#FFFBEB" opacity="0.3">
+    <animate attributeName="cy" values="380;350;380" dur="9s" repeatCount="indefinite" begin="2.5s"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="9s" repeatCount="indefinite" begin="2.5s"/>
+  </circle>
+  
+  <circle cx="180" cy="550" r="2.2" fill="#FFFBEB" opacity="0.4">
+    <animate attributeName="cy" values="550;520;550" dur="7.5s" repeatCount="indefinite" begin="1.5s"/>
+    <animate attributeName="opacity" values="0.4;0;0.4" dur="7.5s" repeatCount="indefinite" begin="1.5s"/>
+  </circle>
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#lightBeam)" opacity="0.08" style="pointer-events: none;">
+    <animate attributeName="opacity" values="0.08;0.12;0.08" dur="10s" repeatCount="indefinite"/>
+  </rect>
+</svg>
