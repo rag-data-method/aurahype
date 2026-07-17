@@ -1,0 +1,150 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="background:#08080c">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#1a1435" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#0e0b1a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#050508" stop-opacity="1"/>
+    </radialGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="noise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="1" result="turbulence"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.03 0" in="turbulence" result="coloredNoise"/>
+    </filter>
+
+    <g id="orbit-path">
+      <ellipse cx="0" cy="0" rx="280" ry="60" fill="none" stroke="#7c3aed" stroke-width="0.5" stroke-opacity="0.15"/>
+    </g>
+
+    <g id="orbiter">
+      <circle r="2.5" fill="#7c3aed">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      </circle>
+      <circle r="6" fill="#7c3aed" opacity="0.15"/>
+    </g>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect width="100%" height="100%" filter="url(#noise)" opacity="0.8"/>
+
+  <g transform="translate(400,300)">
+    <circle r="1.5" fill="#e6e2f1" opacity="0.9"/>
+    <circle r="4" fill="#e6e2f1" opacity="0.2"/>
+    <circle r="12" fill="#7c3aed" opacity="0.06" filter="url(#glow)"/>
+  </g>
+
+  <g stroke="#e6e2f1" stroke-width="0.4" opacity="0.2">
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+  </g>
+
+  <g transform="translate(400,300)">
+    <use href="#orbit-path" transform="rotate(-42)"/>
+    <use href="#orbiter">
+      <animateMotion dur="12s" repeatCount="indefinite" rotate="auto-reverse" calcMode="linear">
+        <mpath href="#p1"/>
+      </animateMotion>
+    </use>
+
+    <use href="#orbit-path" transform="rotate(15)"/>
+    <use href="#orbiter">
+      <animateMotion dur="18s" repeatCount="indefinite" rotate="auto-reverse" begin="-5s" calcMode="linear">
+        <mpath href="#p2"/>
+      </animateMotion>
+    </use>
+
+    <use href="#orbit-path" transform="rotate(-72)"/>
+    <use href="#orbiter">
+      <animateMotion dur="24s" repeatCount="indefinite" rotate="auto-reverse" begin="-12s" calcMode="linear">
+        <mpath href="#p3"/>
+      </animateMotion>
+    </use>
+
+    <use href="#orbit-path" transform="rotate(35)"/>
+    <use href="#orbiter">
+      <animateMotion dur="16s" repeatCount="indefinite" rotate="auto-reverse" begin="-8s" calcMode="linear">
+        <mpath href="#p4"/>
+      </animateMotion>
+    </use>
+
+    <use href="#orbit-path" transform="rotate(-28)"/>
+    <use href="#orbiter">
+      <animateMotion dur="20s" repeatCount="indefinite" rotate="auto-reverse" begin="-15s" calcMode="linear">
+        <mpath href="#p5"/>
+      </animateMotion>
+    </use>
+
+    <use href="#orbit-path" transform="rotate(65)"/>
+    <use href="#orbiter">
+      <animateMotion dur="14s" repeatCount="indefinite" rotate="auto-reverse" begin="-3s" calcMode="linear">
+        <mpath href="#p6"/>
+      </animateMotion>
+    </use>
+
+    <use href="#orbit-path" transform="rotate(-55)"/>
+    <use href="#orbiter">
+      <animateMotion dur="22s" repeatCount="indefinite" rotate="auto-reverse" begin="-10s" calcMode="linear">
+        <mpath href="#p7"/>
+      </animateMotion>
+    </use>
+
+    <use href="#orbit-path" transform="rotate(82)"/>
+    <use href="#orbiter">
+      <animateMotion dur="26s" repeatCount="indefinite" rotate="auto-reverse" begin="-20s" calcMode="linear">
+        <mpath href="#p8"/>
+      </animateMotion>
+    </use>
+
+    <use href="#orbit-path" transform="rotate(-10)"/>
+    <use href="#orbiter">
+      <animateMotion dur="10s" repeatCount="indefinite" rotate="auto-reverse" begin="-1s" calcMode="linear">
+        <mpath href="#p9"/>
+      </animateMotion>
+    </use>
+  </g>
+
+  <g opacity="0.5">
+    <circle cx="120" cy="90" r="1" fill="#ffffff" opacity="0.6"/>
+    <circle cx="680" cy="150" r="1.2" fill="#ffffff" opacity="0.4"/>
+    <circle cx="750" cy="450" r="0.8" fill="#ffffff" opacity="0.7"/>
+    <circle cx="80" cy="520" r="1.5" fill="#e6e2f1" opacity="0.3"/>
+    <circle cx="250" cy="40" r="1" fill="#ffffff" opacity="0.5"/>
+    <circle cx="600" cy="580" r="1.2" fill="#7c3aed" opacity="0.4"/>
+    <circle cx="350" cy="560" r="0.9" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <g fill="#ffffff" opacity="0.15">
+    <circle cx="600" cy="200" r="0.6"/>
+    <circle cx="200" cy="400" r="0.8"/>
+    <circle cx="500" cy="100" r="0.5"/>
+    <circle cx="100" cy="250" r="0.7"/>
+    <circle cx="700" cy="350" r="0.6"/>
+  </g>
+
+  <defs>
+    <ellipse id="p1" cx="0" cy="0" rx="280" ry="60" transform="rotate(-42)"/>
+    <ellipse id="p2" cx="0" cy="0" rx="280" ry="60" transform="rotate(15)"/>
+    <ellipse id="p3" cx="0" cy="0" rx="280" ry="60" transform="rotate(-72)"/>
+    <ellipse id="p4" cx="0" cy="0" rx="280" ry="60" transform="rotate(35)"/>
+    <ellipse id="p5" cx="0" cy="0" rx="280" ry="60" transform="rotate(-28)"/>
+    <ellipse id="p6" cx="0" cy="0" rx="280" ry="60" transform="rotate(65)"/>
+    <ellipse id="p7" cx="0" cy="0" rx="280" ry="60" transform="rotate(-55)"/>
+    <ellipse id="p8" cx="0" cy="0" rx="280" ry="60" transform="rotate(82)"/>
+    <ellipse id="p9" cx="0" cy="0" rx="280" ry="60" transform="rotate(-10)"/>
+  </defs>
+</svg>

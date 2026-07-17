@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+    <defs>
+        <filter id="sticker-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
+            <feOffset in="blur" dx="10" dy="14" result="offsetBlur"/>
+            <feComponentTransfer in="offsetBlur" result="shadowAlpha">
+                <feFuncA type="linear" slope="0.35"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="shadowAlpha"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <radialGradient id="halftone-dot" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="currentColor"/>
+            <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+        </radialGradient>
+
+        <clipPath id="star-clip">
+            <path d="M 500,60 
+                     L 540,240 
+                     L 700,120 
+                     L 630,300 
+                     L 800,240 
+                     L 700,400 
+                     L 880,420 
+                     L 730,530 
+                     L 880,650 
+                     L 700,660 
+                     L 770,830 
+                     L 600,750 
+                     L 500,930 
+                     L 400,750 
+                     L 230,830 
+                     L 300,660 
+                     L 120,650 
+                     L 270,530 
+                     L 120,420 
+                     L 300,400 
+                     L 200,240 
+                     L 370,300 
+                     L 300,120 
+                     L 460,240 
+                     Z"/>
+        </clipPath>
+
+        <g id="halftone-cyan">
+            <circle cx="400" cy="350" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="420" cy="400" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="440" cy="350" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="460" cy="400" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="480" cy="350" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="500" cy="400" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="520" cy="350" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="540" cy="400" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="560" cy="350" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="580" cy="400" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="600" cy="350" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="380" cy="400" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="400" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="420" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="440" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="460" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="480" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="500" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="520" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="540" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="560" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="580" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="600" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="380" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="350" cy="350" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="630" cy="350" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="350" cy="400" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="630" cy="400" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="350" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="630" cy="450" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="320" cy="375" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+            <circle cx="660" cy="375" r="22" fill="url(#halftone-dot)" color="#00FFFF"/>
+        </g>
+
+        <g id="halftone-magenta">
+            <circle cx="350" cy="550" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="370" cy="600" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="390" cy="550" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="410" cy="600" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="430" cy="550" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="450" cy="600" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="470" cy="550" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="490" cy="600" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="510" cy="550" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="530" cy="600" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="550" cy="550" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="570" cy="600" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="590" cy="550" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="610" cy="600" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="630" cy="550" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="330" cy="600" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="350" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="370" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="390" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="410" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="430" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="450" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="470" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="490" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="510" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="530" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="550" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="570" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="590" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="610" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="630" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="330" cy="650" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="300" cy="575" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="680" cy="575" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="300" cy="625" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="680" cy="625" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="300" cy="675" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+            <circle cx="680" cy="675" r="22" fill="url(#halftone-dot)" color="#FF0090"/>
+        </g>
+
+        <g id="halftone-yellow">
+            <circle cx="450" cy="700" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="470" cy="750" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="490" cy="700" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="510" cy="750" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="530" cy="700" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="550" cy="750" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="430" cy="750" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="450" cy="800" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="470" cy="800" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="490" cy="800" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="510" cy="800" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="530" cy="800" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="550" cy="800" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="430" cy="800" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="400" cy="725" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="580" cy="725" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="400" cy="775" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="580" cy="775" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="400" cy="825" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+            <circle cx="580" cy="825" r="22" fill="url(#halftone-dot)" color="#FFD700"/>
+        </g>
+    </defs>
+
+    <g filter="url(#sticker-shadow)">
+        <path d="M 500,60 
+                 L 540,240 
+                 L 700,120 
+                 L 630,300 
+                 L 800,240 
+                 L 700,400 
+                 L 880,420 
+                 L 730,530 
+                 L 880,650 
+                 L 700,660 
+                 L 770,830 
+                 L 600,750 
+                 L 500,930 
+                 L 400,750 
+                 L 230,830 
+                 L 300,660 
+                 L 120,650 
+                 L 270,530 
+                 L 120,420 
+                 L 300,400 
+                 L 200,240 
+                 L 370,300 
+                 L 300,120 
+                 L 460,240 
+                 Z" 
+              fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linejoin="round"/>
+
+        <g clip-path="url(#star-clip)">
+            <rect x="0" y="0" width="1000" height="1000" fill="#FF0090"/>
+            
+            <polygon points="500,60 880,420 120,420" fill="#FFD700"/>
+            <polygon points="200,240 880,650 120,650" fill="#00FFFF"/>
+            
+            <use href="#halftone-cyan"/>
+            <use href="#halftone-magenta"/>
+            <use href="#halftone-yellow"/>
+            
+            <circle cx="500" cy="500" r="130" fill="#000000"/>
+            <circle cx="500" cy="500" r="105" fill="#FFD700"/>
+            <circle cx="500" cy="500" r="75" fill="#FF0090"/>
+            <circle cx="500" cy="500" r="45" fill="#FFFFFF"/>
+        </g>
+
+        <path d="M 500,60 
+                 L 540,240 
+                 L 700,120 
+                 L 630,300 
+                 L 800,240 
+                 L 700,400 
+                 L 880,420 
+                 L 730,530 
+                 L 880,650 
+                 L 700,660 
+                 L 770,830 
+                 L 600,750 
+                 L 500,930 
+                 L 400,750 
+                 L 230,830 
+                 L 300,660 
+                 L 120,650 
+                 L 270,530 
+                 L 120,420 
+                 L 300,400 
+                 L 200,240 
+                 L 370,300 
+                 L 300,120 
+                 L 460,240 
+                 Z" 
+              fill="none" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+    </g>
+</svg>

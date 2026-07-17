@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradients -->
+    <radialGradient id="beamGrad" cx="0.15" cy="0.65" r="1" fx="0.15" fy="0.65">
+      <stop offset="0%" stop-color="#F5E6C8" stop-opacity="0.7"/>
+      <stop offset="30%" stop-color="#8B7355" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="#2A2418" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0A0A08" stop-opacity="0"/>
+      <animate attributeName="fx" values="0.15;0.16;0.14;0.15" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="fy" values="0.65;0.66;0.64;0.65" dur="11s" repeatCount="indefinite"/>
+    </radialGradient>
+
+    <linearGradient id="vignette" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0A08" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#0A0A08" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0A0A08" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A2418"/>
+      <stop offset="100%" stop-color="#0A0A08"/>
+      <animate attributeName="x1" values="0;0.02;0;-0.01;0" dur="20s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="rimLight" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F5E6C8" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#8B7355" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="doorGlowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F5E6C8" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#8B7355" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0A0A08" stop-opacity="0"/>
+      <animate attributeName="x1" values="0;-0.05;0;0.05;0" dur="18s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="blur40">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+
+    <filter id="blur80">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+
+    <filter id="blur120">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+
+    <filter id="blur160">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip path for light beam -->
+    <clipPath id="beamClip">
+      <polygon points="140,760 20,0 1580,0 1220,760"/>
+    </clipPath>
+
+    <!-- Reusable particle path for motion -->
+    <path id="driftUp" d="M0,0 Q20,-50 -10,-100 T0,-200" fill="none"/>
+    <path id="driftRight" d="M0,0 Q30,20 60,0 T120,-10" fill="none"/>
+    <path id="driftDiag" d="M0,0 Q40,-30 80,-60 T160,-40" fill="none"/>
+  </defs>
+
+  <!-- 1. Full black base -->
+  <rect width="100%" height="100%" fill="#0A0A08"/>
+
+  <!-- 2. Distant ambient fog (blur160) -->
+  <rect x="0" y="0" width="1600" height="900" fill="#2A2418" opacity="0.3" filter="url(#blur160)">
+    <animate attributeName="opacity" values="0.3;0.35;0.28;0.3" dur="20s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 3. Far wall back plane -->
+  <rect x="500" y="200" width="600" height="500" fill="#0A0A08"/>
+
+  <!-- 4. Floor vanishing perspective lines -->
+  <g stroke="#2A2418" stroke-width="2" opacity="0.5">
+    <line x1="800" y1="700" x2="800" y2="900"/>
+    <line x1="700" y1="700" x2="400" y2="900"/>
+    <line x1="900" y1="700" x2="1200" y2="900"/>
+    <line x1="600" y1="700" x2="100" y2="900"/>
+    <line x1="1000" y1="700" x2="1500" y2="900"/>
+  </g>
+
+  <!-- 5. Ceiling vanishing perspective lines -->
+  <g stroke="#2A2418" stroke-width="1.5" opacity="0.4">
+    <line x1="800" y1="200" x2="800" y2="0"/>
+    <line x1="700" y1="200" x2="400" y2="0"/>
+    <line x1="900" y1="200" x2="1200" y2="0"/>
+    <line x1="600" y1="200" x2="100" y2="0"/>
+    <line x1="1000" y1="200" x2="1500" y2="0"/>
+  </g>
+
+  <!-- 6. Distant door silhouette (far end of hall) -->
+  <g transform="translate(780, 420)">
+    <!-- Door frame -->
+    <rect x="-20" y="-80" width="40" height="160" fill="#0A0A08" stroke="#2A2418" stroke-width="2"/>
+    <!-- Door slightly ajar -->
+    <polygon points="-20,-80 -20,80 -45,70 -45,-70" fill="#0A0A08" stroke="#2A2418" stroke-width="1"/>
+    <!-- Sliver of pale light from beyond -->
+    <polygon points="-22,-78 -22,78 -35,68 -35,-68" fill="url(#doorGlowGrad)" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.4;0.9;0.6;0.8" dur="6s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- Glowing threshold -->
+    <rect x="-24" y="-80" width="3" height="160" fill="#F5E6C8" opacity="0.6" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.6;0.3;0.7;0.5;0.6" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="width" values="3;5;2;4;3" dur="7s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- 7. Mid-depth wallpaper silhouettes (blur120) -->
+  <g clip-path="url(#beamClip)" filter="url(#blur120)" opacity="0.6">
+    <path d="M200,100 Q250,200 220,350 T280,550" stroke="#2A2418" stroke-width="40" fill="none"/>
+    <path d="M1400,80 Q1350,250 1380,400 T1320,600" stroke="#2A2418" stroke-width="50" fill="none"/>
+    <path d="M600,50 Q650,150 620,300" stroke="#2A2418" stroke-width="30" fill="none"/>
+    <path d="M1000,60 Q950,180 980,320" stroke="#2A2418" stroke-width="35" fill="none"/>
+    <!-- Peeling paper strips -->
+    <rect x="300" y="150" width="60" height="200" fill="#0A0A08" transform="rotate(5 330 250)"/>
+    <rect x="1200" y="200" width="80" height="250" fill="#0A0A08" transform="rotate(-8 1240 325)"/>
+  </g>
+
+  <!-- 8. Broken chandelier hanging center (mid-ground) -->
+  <g transform="translate(800, 0)">
+    <!-- Chain -->
+    <line x1="0" y1="0" x2="0" y2="180" stroke="#2A2418" stroke-width="4"/>
+    <!-- Body -->
+    <ellipse cx="0" cy="200" rx="30" ry="15" fill="#0A0A08" stroke="#2A2418" stroke-width="2"/>
+    <!-- Broken arms -->
+    <path d="M-30,200 L-80,240 M30,200 L90,230 M0,215 L10,280" stroke="#2A2418" stroke-width="3" fill="none"/>
+    <!-- Dangling crystal / glass shard -->
+    <polygon points="-80,240 -82,260 -78,260" fill="#8B7355" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" values="0 -80 240; 5 -80 240; -3 -80 240; 0 -80 240" dur="6s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="90,230 88,250 92,250" fill="#8B7355" opacity="0.4"/>
+    <!-- Subtle sway of whole fixture -->
+    <animateTransform attributeName="transform" type="rotate" values="0 0 0; 1 0 0; -0.5 0 0; 0 0 0" dur="10s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- 9. Walls and floor geometry (perspective corridor) -->
+  <g>
+    <!-- Left wall -->
+    <polygon points="0,0 500,200 500,700 0,900" fill="url(#wallGrad)"/>
+    <!-- Right wall -->
+    <polygon points="1600,0 1100,200 1100,700 1600,900" fill="url(#wallGrad)"/>
+    <!-- Ceiling -->
+    <polygon points="0,0 1600,0 1100,200 500,200" fill="#0A0A08"/>
+    <!-- Floor -->
+    <polygon points="0,900 1600,900 1100,700 500,700" fill="#0A0A08"/>
+    <!-- Right wall rim light from distant door -->
+    <polygon points="1600,0 1100,200 1100,700 1600,900" fill="url(#rimLight)" opacity="0.15" style="mix-blend-mode: screen;">
+      <animate attributeName="opacity" values="0.15;0.25;0.1;0.15" dur="12s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- 10. Wall skirting boards / paneling silhouettes -->
+  <g opacity="0.8">
+    <polygon points="0,750 500,600 500,700 0,900" fill="#0A0A08"/>
+    <polygon points="1600,750 1100,600 1100,700 1600,900" fill="#0A0A08"/>
+    <polygon points="0,100 500,200 500,250 0,200" fill="#0A0A08"/>
+    <polygon points="1600,100 1100,200 1100,250 1600,200" fill="#0A0A08"/>
+  </g>
+
+  <!-- 11. Mid-ground wall damage / peeling wallpaper detail (blur80) -->
+  <g filter="url(#blur80)" opacity="0.5">
+    <path d="M100,400 Q150,350 200,420 T300,380" stroke="#2A2418" stroke-width="20" fill="none"/>
+    <path d="M1400,500 Q1350,450 1300,520 T1200,480" stroke="#2A2418" stroke-width="25" fill="none"/>
+    <circle cx="250" cy="600" r="40" fill="#0A0A08"/>
+    <circle cx="1350" cy="300" r="50" fill="#0A0A08"/>
+  </g>
+
+  <!-- 12. Hero Subject: Silhouette holding flashlight -->
+  <g transform="translate(140, 760)">
+    <!-- Breathing animation -->
+    <animateTransform attributeName="transform" type="translate" values="140,760; 140,758; 140,762; 140,760" dur="6s" repeatCount="indefinite" additive="replace"/>
+    
+    <!-- Body/Trench coat -->
+    <path d="M-30,-180 
+             C-40,-160 -50,-120 -55,-80 
+             C-60,-40 -65,0 -70,40 
+             C-75,80 -80,120 -85,140 
+             L85,140 
+             C80,120 75,80 70,40 
+             C65,0 60,-40 55,-80 
+             C50,-120 40,-160 30,-180 
+             Z" fill="#0A0A08"/>
+    
+    <!-- Head silhouette -->
+    <ellipse cx="0" cy="-200" rx="22" ry="28" fill="#0A0A08"/>
+    
+    <!-- Shoulders -->
+    <path d="M-50,-160 Q0,-140 50,-160 L40,-130 Q0,-110 -40,-130 Z" fill="#0A0A08"/>
+    
+    <!-- Arm holding flashlight -->
+    <path d="M35,-150 Q60,-120 70,-90 L85,-85 L75,-70 L55,-80 Q45,-110 25,-135 Z" fill="#0A0A08"/>
+    
+    <!-- Flashlight object -->
+    <g transform="translate(80, -78) rotate(15)">
+      <rect x="0" y="-8" width="25" height="16" rx="3" fill="#0A0A08" stroke="#2A2418" stroke-width="1.5"/>
+      <ellipse cx="25" cy="0" rx="4" ry="8" fill="#F5E6C8" opacity="0.9" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.9;0.6;1.0;0.7;0.9" dur="0.4s" repeatCount="indefinite"/>
+        <animate attributeName="rx" values="4;5;3;4.5;4" dur="0.6s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- Flashlight lens flare / hotspot on the device itself -->
+      <circle cx="25" cy="0" r="6" fill="#F5E6C8" opacity="0.4" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.4;0.2;0.5;0.3;0.4" dur="0.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Rim light on left edge (warm light catching the silhouette) -->
+    <path d="M-30,-180 C-40,-160 -50,-120 -55,-80 C-60,-40 -65,0 -70,40 C-75,80 -80,120 -85,140" stroke="#F5E6C8" stroke-width="3" fill="none" opacity="0.6" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.6;0.4;0.7;0.5;0.6" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M-22,-228 C-30,-220 -35,-210 -35,-200" stroke="#F5E6C8" stroke-width="2" fill="none" opacity="0.5" filter="url(#glow)"/>
+  </g>
+
+  <!-- 13. Flashlight Beam Cone -->
+  <g>
+    <!-- Main volumetric beam -->
+    <polygon points="220,682 350,0 1600,0 1250,900" fill="url(#beamGrad)" style="mix-blend-mode: screen;">
+      <animate attributeName="opacity" values="0.7;0.5;0.8;0.6;0.75;0.55;0.7" dur="0.45s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Core bright center of beam -->
+    <polygon points="220,682 450,0 1300,0 1050,900" fill="#F5E6C8" opacity="0.08" style="mix-blend-mode: screen;">
+      <animate attributeName="opacity" values="0.08;0.04;0.1;0.06;0.08" dur="0.4s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Beam edge softening / bloom -->
+    <polygon points="220,682 300,0 1650,0 1300,900" fill="#8B7355" opacity="0.15" filter="url(#blur40)" style="mix-blend-mode: screen;">
+      <animate attributeName="opacity" values="0.15;0.08;0.18;0.12;0.15" dur="0.5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- 14. Chandelier catching light in beam -->
+  <g transform="translate(800, 200)" opacity="0.3" style="mix-blend-mode: screen;">
+    <circle cx="0" cy="0" r="40" fill="#F5E6C8" filter="url(#blur40)">
+      <animate attributeName="opacity" values="0.3;0.15;0.35;0.2;0.3" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 15. Dust Motes / Floating particles IN the beam -->
+  <g clip-path="url(#beamClip)" fill="#F5E6C8" opacity="0.7">
+    <!-- Particle 1 -->
+    <circle r="2" opacity="0.8">
+      <animateMotion dur="12s" repeatCount="indefinite" path="M 400 800 Q 500 600 600 400 T 800 100"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.9;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;3;1.5;2.5;2" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 2 -->
+    <circle r="1.5" opacity="0.6">
+      <animateMotion dur="18s" repeatCount="indefinite" path="M 600 850 Q 700 650 850 450 T 1100 200"/>
+      <animate attributeName="opacity" values="0.6;0.1;0.7;0.2;0.6" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 3 -->
+    <circle r="2.5" opacity="0.9">
+      <animateMotion dur="15s" repeatCount="indefinite" path="M 300 700 Q 450 500 650 300 T 950 50"/>
+      <animate attributeName="opacity" values="0.9;0.3;1.0;0.4;0.9" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2.5;1.5;3;2;2.5" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 4 -->
+    <circle r="1" opacity="0.5">
+      <animateMotion dur="20s" repeatCount="indefinite" path="M 500 900 Q 600 700 750 500 T 1000 250"/>
+      <animate attributeName="opacity" values="0.5;0;0.6;0.1;0.5" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 5 -->
+    <circle r="3" opacity="0.7">
+      <animateMotion dur="10s" repeatCount="indefinite" path="M 250 750 Q 400 550 600 350 T 900 100"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.8;0.3;0.7" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="3;2;3.5;2.5;3" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 6 -->
+    <circle r="1.5" opacity="0.6">
+      <animateMotion dur="14s" repeatCount="indefinite" path="M 700 800 Q 800 600 950 400 T 1200 150"/>
+      <animate attributeName="opacity" values="0.6;0.1;0.7;0.2;0.6" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 7 -->
+    <circle r="2" opacity="0.8">
+      <animateMotion dur="16s" repeatCount="indefinite" path="M 350 850 Q 500 650 700 450 T 1000 200"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.9;0.3;0.8" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 8 -->
+    <circle r="1" opacity="0.4">
+      <animateMotion dur="22s" repeatCount="indefinite" path="M 450 900 Q 550 700 700 500 T 950 250"/>
+    </circle>
+    <!-- Particle 9 -->
+    <circle r="2.5" opacity="0.7">
+      <animateMotion dur="11s" repeatCount="indefinite" path="M 550 820 Q 650 620 800 420 T 1050 170"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.8;0.3;0.7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 10 -->
+    <circle r="1.5" opacity="0.5">
+      <animateMotion dur="19s" repeatCount="indefinite" path="M 650 880 Q 750 680 900 480 T 1150 230"/>
+    </circle>
+  </g>
+
+  <!-- 16. Foreground floating ash / dust OUTSIDE beam -->
+  <g fill="#8B7355" opacity="0.4">
+    <circle r="2">
+      <animateMotion dur="25s" repeatCount="indefinite" href="#driftUp"/>
+      <animate attributeName="opacity" values="0.4;0;0.5;0.1;0.4" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.5" cx="200" cy="800">
+      <animateMotion dur="20s" repeatCount="indefinite" href="#driftDiag"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.5;0;0.4" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1" cx="1400" cy="600">
+      <animateMotion dur="22s" repeatCount="indefinite" href="#driftRight"/>
+    </circle>
+    <circle r="2.5" cx="100" cy="300">
+      <animateMotion dur="18s" repeatCount="indefinite" href="#driftUp"/>
+      <animate attributeName="opacity" values="0.3;0;0.4;0.1;0.3" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1" cx="1500" cy="200">
+      <animateMotion dur="28s" repeatCount="indefinite" href="#driftDiag"/>
+    </circle>
+    <circle r="1.5" cx="800" cy="900">
+      <animateMotion dur="15s" repeatCount="indefinite" href="#driftUp"/>
+      <animate attributeName="opacity" values="0.5;0.1;0.6;0.2;0.5" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" cx="300" cy="100">
+      <animateMotion dur="30s" repeatCount="indefinite" href="#driftRight"/>
+    </circle>
+    <circle r="1" cx="1200" cy="800">
+      <animateMotion dur="17s" repeatCount="indefinite" href="#driftUp"/>
+    </circle>
+    <circle r="1.5" cx="50" cy="500">
+      <animateMotion dur="24s" repeatCount="indefinite" href="#driftDiag"/>
+      <animate attributeName="opacity" values="0.4;0;0.5;0.1;0.4" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" cx="1550" cy="400">
+      <animateMotion dur="21s" repeatCount="indefinite" href="#driftUp"/>
+    </circle>
+    <circle r="1" cx="400" cy="50">
+      <animateMotion dur="26s" repeatCount="indefinite" href="#driftRight"/>
+    </circle>
+    <circle r="2.5" cx="1100" cy="100">
+      <animateMotion dur="19s" repeatCount="indefinite" href="#driftDiag"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.4;0;0.3" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 17. Floor dust / debris in beam light -->
+  <g clip-path="url(#beamClip)" fill="#F5E6C8" opacity="0.3">
+    <ellipse cx="600" cy="850" rx="80" ry="15" fill="#8B7355" filter="url(#blur40)">
+      <animate attributeName="opacity" values="0.3;0.15;0.35;0.2;0.3" dur="10s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="900" cy="800" rx="120" ry="20" fill="#2A2418" filter="url(#blur80)">
+      <animate attributeName="opacity" values="0.2;0.1;0.25;0.15;0.2" dur="14s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="400" cy="880" rx="60" ry="10" fill="#8B7355" filter="url(#blur40)">
+      <animate attributeName="opacity" values="0.25;0.1;0.3;0.15;0.25" dur="8s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- 18. Vignette overlay (top and bottom darkness) -->
+  <rect width="100%" height="100%" fill="url(#vignette)" style="pointer-events: none;"/>
+
+  <!-- 19. Film grain / noise overlay -->
+  <rect width="100%" height="100%" filter="url(#noise)" opacity="0.6" style="pointer-events: none; mix-blend-mode: overlay;">
+    <animate attributeName="opacity" values="0.6;0.5;0.65;0.55;0.6" dur="0.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 20. Foreground out-of-focus blur elements (blur40) creating depth -->
+  <g filter="url(#blur40)" opacity="0.5">
+    <!-- Large soft shape bottom right -->
+    <ellipse cx="1400" cy="850" rx="300" ry="100" fill="#0A0A08">
+      <animate attributeName="cx" values="1400;1380;1420;1400" dur="15s" repeatCount="indefinite"/>
+    </ellipse>
+    <!-- Large soft shape bottom left -->
+    <ellipse cx="100" cy="900" rx="250" ry="120" fill="#0A0A08"/>
+    <!-- Top edge softening -->
+    <rect x="0" y="0" width="1600" height="150" fill="#0A0A08" opacity="0.6"/>
+  </g>
+
+  <!-- 21. Occasional phantom shadow movement in the deep dark (right side) -->
+  <g opacity="0">
+    <path d="M1300,400 Q1350,350 1400,420 T1500,380" stroke="#0A0A08" stroke-width="60" fill="none" filter="url(#blur120)" opacity="0.4">
+      <animate attributeName="opacity" values="0;0;0.4;0;0" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="d" values="M1300,400 Q1350,350 1400,420 T1500,380; M1320,380 Q1370,330 1420,400 T1520,360; M1300,400 Q1350,350 1400,420 T1500,380" dur="15s" repeatCount="indefinite"/>
+    </path>
+    <animate attributeName="opacity" values="0;0;1;0;0" dur="15s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 22. Final darkness crush / bottom gradient for title safety -->
+  <linearGradient id="titleSafety" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0A0A08" stop-opacity="0"/>
+    <stop offset="60%" stop-color="#0A0A08" stop-opacity="0.3"/>
+    <stop offset="100%" stop-color="#0A0A08" stop-opacity="0.92"/>
+  </linearGradient>
+  <rect x="0" y="400" width="1600" height="500" fill="url(#titleSafety)" style="pointer-events: none;"/>
+
+</svg>

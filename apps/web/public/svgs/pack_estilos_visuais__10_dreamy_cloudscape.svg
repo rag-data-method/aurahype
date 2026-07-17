@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8d8ff"/>
+      <stop offset="45%" stop-color="#d9c2f0"/>
+      <stop offset="100%" stop-color="#ffcbb3"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff5e6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffd9b3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#e6f0ff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="cloud" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffe8e0" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <circle cx="1200" cy="220" r="90" fill="url(#sunGlow)">
+    <animate attributeName="r" values="85;96;85" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1200" cy="220" r="44" fill="#fff0d9" opacity="0.9">
+    <animate attributeName="r" values="42;48;42" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <g opacity="0.55" fill="#f0e6ff">
+    <ellipse cx="300" cy="290" rx="150" ry="58">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 32,0; 0,0" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="430" cy="312" rx="105" ry="46">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 32,0; 0,0" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="170" cy="320" rx="95" ry="42">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 32,0; 0,0" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g opacity="0.5" fill="#f5e6ff">
+    <ellipse cx="1320" cy="360" rx="170" ry="62">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -26,0; 0,0" dur="24s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1470" cy="382" rx="115" ry="50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -26,0; 0,0" dur="24s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="800,420; 800,390; 800,420" dur="8s" repeatCount="indefinite"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0; 4; 0; -4; 0" dur="14s" repeatCount="indefinite"/>
+      <polygon points="0,-92 80,0 0,92 -80,0" fill="url(#glass)" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.55"/>
+      <polygon points="0,-92 0,0 80,0" fill="#ffffff" opacity="0.22"/>
+      <polygon points="0,-92 0,0 -80,0" fill="#ffffff" opacity="0.12"/>
+      <polygon points="0,92 0,0 80,0" fill="#e6f0ff" opacity="0.18"/>
+      <polygon points="0,92 0,0 -80,0" fill="#ffffff" opacity="0.08"/>
+      <line x1="0" y1="-92" x2="0" y2="92" stroke="#ffffff" stroke-width="1" opacity="0.35"/>
+      <line x1="-80" y1="0" x2="80" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.35"/>
+    </g>
+  </g>
+
+  <g fill="url(#cloud)" filter="url(#blur)">
+    <ellipse cx="260" cy="760" rx="210" ry="72">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 42,0; 0,0" dur="18s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="450" cy="790" rx="155" ry="62">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 42,0; 0,0" dur="18s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="70" cy="800" rx="135" ry="56">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 42,0; 0,0" dur="18s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g fill="url(#cloud)" filter="url(#blur)">
+    <ellipse cx="1360" cy="730" rx="230" ry="78">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -36,0; 0,0" dur="22s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1570" cy="760" rx="165" ry="64">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -36,0; 0,0" dur="22s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1150" cy="780" rx="145" ry="60">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -36,0; 0,0" dur="22s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+</svg>

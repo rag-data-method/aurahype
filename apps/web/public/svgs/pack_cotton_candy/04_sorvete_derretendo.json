@@ -1,0 +1,24 @@
+{
+  "slug": "04_sorvete_derretendo",
+  "title": "Sorvete Derretendo",
+  "category": "cotton_candy",
+  "objects": "ice cream cone + pastel sprinkles + melting drops",
+  "colors": {
+    "primary": "#FFDAC1",
+    "secondary": "#B5EAD7",
+    "accent": "#FFB7B2",
+    "bg": "#FDF5E6"
+  },
+  "tags": [
+    "light",
+    "candy",
+    "icecream",
+    "sweet"
+  ],
+  "svgFile": "04_sorvete_derretendo.svg",
+  "sizeKB": 10.22,
+  "animations": 35,
+  "gradients": 8,
+  "generatedAt": "2026-06-19",
+  "model": "@cf/moonshotai/kimi-k2.7-code"
+}

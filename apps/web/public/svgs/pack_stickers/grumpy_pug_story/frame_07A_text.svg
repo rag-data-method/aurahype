@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sunburst {
+      transform-origin: 960px 540px;
+      animation: spin 20s linear infinite;
+    }
+    .drift-back {
+      animation: drift 8s ease-in-out infinite alternate;
+    }
+    .drift-front {
+      animation: drift-reverse 6s ease-in-out infinite alternate;
+    }
+    .panel {
+      transform-origin: 960px 540px;
+      animation: panel-beat 3s ease-in-out infinite;
+    }
+    .text-main {
+      transform-origin: 960px 540px;
+      animation: text-pop 1.5s ease-in-out infinite;
+    }
+    .text-shadow {
+      animation: flicker 0.25s steps(1) infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes drift {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-60px, -60px); }
+    }
+    @keyframes drift-reverse {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(60px, 60px); }
+    }
+    @keyframes panel-beat {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.03) rotate(0.5deg); }
+    }
+    @keyframes text-pop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    @keyframes flicker {
+      0%, 100% { transform: translate(6px, 6px); opacity: 1; }
+      50% { transform: translate(10px, 10px); opacity: 0.6; }
+    }
+  </style>
+  <defs>
+    <pattern id="dots-red" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <circle cx="25" cy="25" r="16" fill="#FF0099"/>
+    </pattern>
+    <pattern id="dots-blue" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="20" fill="#00E5FF"/>
+    </pattern>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1920" height="1080" fill="#0044FF"/>
+
+  <!-- Sunburst rays -->
+  <g class="sunburst">
+    <polygon points="960,540 2535.7,262.2 2535.7,817.8" fill="#FF0033"/>
+    <polygon points="960,540 2535.7,817.8 2345.6,1340" fill="#FFEA00"/>
+    <polygon points="960,540 2345.6,1340 1968.5,1765.6" fill="#FF0033"/>
+    <polygon points="960,540 1968.5,1765.6 1507.3,2043.2" fill="#FFEA00"/>
+    <polygon points="960,540 1507.3,2043.2 960,2140" fill="#FF0033"/>
+    <polygon points="960,540 960,2140 412.7,2043.2" fill="#FFEA00"/>
+    <polygon points="960,540 412.7,2043.2 -48.5,1765.6" fill="#FF0033"/>
+    <polygon points="960,540 -48.5,1765.6 -425.6,1340" fill="#FFEA00"/>
+    <polygon points="960,540 -425.6,1340 -615.7,817.8" fill="#FF0033"/>
+    <polygon points="960,540 -615.7,817.8 -615.7,262.2" fill="#FFEA00"/>
+    <polygon points="960,540 -615.7,262.2 -425.6,-260" fill="#FF0033"/>
+    <polygon points="960,540 -425.6,-260 -48.5,-685.6" fill="#FFEA00"/>
+    <polygon points="960,540 -48.5,-685.6 412.7,-963.2" fill="#FF0033"/>
+    <polygon points="960,540 412.7,-963.2 960,-1060" fill="#FFEA00"/>
+    <polygon points="960,540 960,-1060 1507.3,-963.2" fill="#FF0033"/>
+    <polygon points="960,540 1507.3,-963.2 1968.5,-685.6" fill="#FFEA00"/>
+    <polygon points="960,540 1968.5,-685.6 2345.6,-260" fill="#FF0033"/>
+    <polygon points="960,540 2345.6,-260 2535.7,262.2" fill="#FFEA00"/>
+  </g>
+
+  <!-- Halftone dot layers -->
+  <rect x="-200" y="-200" width="2400" height="1500" fill="url(#dots-red)" opacity="0.3" class="drift-back"/>
+  <rect x="-200" y="-200" width="2400" height="1500" fill="url(#dots-blue)" opacity="0.25" class="drift-front"/>
+
+  <!-- Central comic panel -->
+  <rect x="210" y="400" width="1500" height="280" rx="40" fill="#FFFF00" stroke="#000000" stroke-width="14" class="panel"/>
+
+  <!-- Massive intertitle text -->
+  <g class="text-main">
+    <g class="text-shadow">
+      <text x="960" y="540" text-anchor="middle" dominant-baseline="central" font-family="'Impact','Haettenschweiler','Arial Narrow Bold',sans-serif" font-size="150" font-weight="900" fill="#FF00CC">ROUBANDO AS CORES.</text>
+    </g>
+    <text x="960" y="540" text-anchor="middle" dominant-baseline="central" font-family="'Impact','Haettenschweiler','Arial Narrow Bold',sans-serif" font-size="150" font-weight="900" fill="none" stroke="#000000" stroke-width="16">ROUBANDO AS CORES.</text>
+    <text x="960" y="540" text-anchor="middle" dominant-baseline="central" font-family="'Impact','Haettenschweiler','Arial Narrow Bold',sans-serif" font-size="150" font-weight="900" fill="#FFFFFF">ROUBANDO AS CORES.</text>
+  </g>
+</svg>

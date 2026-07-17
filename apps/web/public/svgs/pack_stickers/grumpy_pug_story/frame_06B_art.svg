@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes flash {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    @keyframes glow {
+      0% { fill-opacity: 0.5; }
+      50% { fill-opacity: 1; fill: #ffffff; }
+      100% { fill-opacity: 0.5; }
+    }
+    @keyframes violent-shake {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      20% { transform: translate(-8px, 6px) rotate(-1.5deg); }
+      40% { transform: translate(8px, -6px) rotate(1.5deg); }
+      60% { transform: translate(-6px, -8px) rotate(-1deg); }
+      80% { transform: translate(6px, 8px) rotate(1deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+    @keyframes type {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-22px); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0.7; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes blur-fade {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.5; }
+    }
+
+    .speed-line {
+      stroke: #000000;
+      stroke-width: 20;
+      stroke-linecap: butt;
+      animation: flash 0.2s infinite;
+      opacity: 0;
+    }
+    .speed-line:nth-child(4n+1) { animation-duration: 0.12s; animation-delay: 0.02s; }
+    .speed-line:nth-child(4n+2) { animation-duration: 0.18s; animation-delay: 0.07s; }
+    .speed-line:nth-child(4n+3) { animation-duration: 0.14s; animation-delay: 0.12s; }
+    .speed-line:nth-child(4n+4) { animation-duration: 0.22s; animation-delay: 0.05s; }
+
+    .key-cyan { fill: #00FFFF; animation: glow 0.2s infinite; }
+    .key-mag { fill: #FF00FF; animation: glow 0.15s infinite; }
+    .key-lime { fill: #CCFF00; animation: glow 0.1s infinite; }
+    .key-yellow { fill: #FFFF00; animation: glow 0.18s infinite; }
+
+    #pug-group {
+      transform-origin: 960px 650px;
+      animation: violent-shake 0.2s infinite;
+    }
+
+    .paw-left { animation: type 0.08s infinite alternate; }
+    .paw-right { animation: type 0.08s infinite alternate-reverse; }
+
+    .anger {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pulse 0.35s infinite;
+    }
+
+    .halftone {
+      animation: float 2.5s infinite ease-in-out;
+    }
+
+    .impact {
+      stroke: #000000;
+      stroke-width: 12;
+      stroke-linecap: round;
+      animation: flash 0.15s infinite;
+      opacity: 0;
+    }
+
+    .paw-blur {
+      animation: blur-fade 0.1s infinite;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#FFEA00"/>
+
+  <!-- Pop disc behind pug -->
+  <circle cx="960" cy="500" r="460" fill="#FF0055" stroke="#000000" stroke-width="14"/>
+
+  <!-- Halftone clusters -->
+  <g class="halftone" transform="translate(1680, 200)">
+    <circle cx="0" cy="0" r="22" fill="#000"/>
+    <circle cx="55" cy="0" r="32" fill="#000"/>
+    <circle cx="110" cy="0" r="22" fill="#000"/>
+    <circle cx="28" cy="45" r="26" fill="#000"/>
+    <circle cx="82" cy="45" r="18" fill="#000"/>
+    <circle cx="0" cy="90" r="28" fill="#000"/>
+    <circle cx="55" cy="90" r="20" fill="#000"/>
+    <circle cx="110" cy="90" r="30" fill="#000"/>
+  </g>
+  <g class="halftone" transform="translate(240, 880)">
+    <circle cx="0" cy="0" r="28" fill="#000"/>
+    <circle cx="55" cy="0" r="18" fill="#000"/>
+    <circle cx="110" cy="0" r="24" fill="#000"/>
+    <circle cx="28" cy="45" r="32" fill="#000"/>
+    <circle cx="82" cy="45" r="22" fill="#000"/>
+    <circle cx="0" cy="90" r="20" fill="#000"/>
+    <circle cx="55" cy="90" r="26" fill="#000"/>
+    <circle cx="110" cy="90" r="18" fill="#000"/>
+  </g>
+
+  <!-- Speed lines radiating from behind pug -->
+  <g id="speed-lines">
+    <line x1="960" y1="500" x2="2260" y2="500" class="speed-line"/>
+    <line x1="960" y1="500" x2="2086" y2="1150" class="speed-line"/>
+    <line x1="960" y1="500" x2="1610" y2="1626" class="speed-line"/>
+    <line x1="960" y1="500" x2="960" y2="1800" class="speed-line"/>
+    <line x1="960" y1="500" x2="310" y2="1626" class="speed-line"/>
+    <line x1="960" y1="500" x2="-166" y2="1150" class="speed-line"/>
+    <line x1="960" y1="500" x2="-340" y2="500" class="speed-line"/>
+    <line x1="960" y1="500" x2="-166" y2="-150" class="speed-line"/>
+    <line x1="960" y1="500" x2="310" y2="-626" class="speed-line"/>
+    <line x1="960" y1="500" x2="960" y2="-800" class="speed-line"/>
+    <line x1="960" y1="500" x2="1610" y2="-626" class="speed-line"/>
+    <line x1="960" y1="500" x2="2086" y2="-150" class="speed-line"/>
+  </g>
+
+  <!-- Desk block -->
+  <rect x="0" y="840" width="1920" height="240" fill="#263238" stroke="#000000" stroke-width="14"/>
+
+  <!-- Keyboard -->
+  <g id="keyboard">
+    <rect x="560" y="860" width="800" height="200" rx="16" fill="#0a0a0a" stroke="#000000" stroke-width="12"/>
+    <!-- Row 1 -->
+    <rect x="580" y="875" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <rect x="650" y="875" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <rect x="720" y="875" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+    <rect x="790" y="875" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <rect x="860" y="875" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <rect x="930" y="875" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <rect x="1000" y="875" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+    <rect x="1070" y="875" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <rect x="1140" y="875" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <rect x="1210" y="875" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <!-- Row 2 -->
+    <rect x="580" y="920" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+    <rect x="650" y="920" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <rect x="720" y="920" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <rect x="790" y="920" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <rect x="860" y="920" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+    <rect x="930" y="920" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <rect x="1000" y="920" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <rect x="1070" y="920" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <rect x="1140" y="920" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+    <rect x="1210" y="920" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <!-- Row 3 -->
+    <rect x="580" y="965" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <rect x="650" y="965" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <rect x="720" y="965" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <rect x="790" y="965" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+    <rect x="860" y="965" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <rect x="930" y="965" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <rect x="1000" y="965" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <rect x="1070" y="965" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+    <rect x="1140" y="965" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <rect x="1210" y="965" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <!-- Row 4 -->
+    <rect x="580" y="1010" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <rect x="650" y="1010" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+    <rect x="720" y="1010" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <rect x="790" y="1010" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <rect x="860" y="1010" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <rect x="930" y="1010" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+    <rect x="1000" y="1010" width="60" height="36" rx="6" class="key-yellow" stroke="#000" stroke-width="4"/>
+    <rect x="1070" y="1010" width="60" height="36" rx="6" class="key-cyan" stroke="#000" stroke-width="4"/>
+    <rect x="1140" y="1010" width="60" height="36" rx="6" class="key-mag" stroke="#000" stroke-width="4"/>
+    <rect x="1210" y="1010" width="60" height="36" rx="6" class="key-lime" stroke="#000" stroke-width="4"/>
+  </g>
+
+  <!-- Impact lines around keyboard -->
+  <line x1="560" y1="860" x2="520" y2="820" class="impact"/>
+  <line x1="1360" y1="860" x2="1400" y2="820" class="impact"/>
+  <line x1="960" y1="1060" x2="960" y2="1110" class="impact"/>
+  <line x1="560" y1="1060" x2="520" y2="1100" class="impact"/>
+  <line x1="1360" y1="1060" x2="1400" y2="1100" class="impact"/>
+
+  <!-- Pug -->
+  <g id="pug-group">
+    <!-- Body -->
+    <path d="M860,600 Q960,560 1060,600 L1080,860 L840,860 Z" fill="#F5DEB3" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+    
+    <!-- Head -->
+    <path d="M830,480 C830,360 1090,360 1090,480 C1090,600 1030,640 960,640 C890,640 830,600 830,480" fill="#F5DEB3" stroke="#000000" stroke-width="14"/>
+    
+    <!-- Ears -->
+    <path d="M840,400 L800,530 L890,460 Z" fill="#212121" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M1080,400 L1120,530 L1030,460 Z" fill="#212121" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    
+    <!-- Face mask / muzzle -->
+    <path d="M860,490 Q960,460 1060,490 C1080,540 1060,600 960,610 C860,600 840,540 860,490" fill="#212121"/>
+    
+    <!-- Nose -->
+    <ellipse cx="960" cy="530" rx="38" ry="28" fill="#000000"/>
+    
+    <!-- Mouth (grumpy frown) -->
+    <path d="M925,575 Q960,545 995,575" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+    <path d="M940,595 Q960,575 980,595" fill="none" stroke="#000000" stroke-width="7" stroke-linecap="round"/>
+    
+    <!-- Eyes -->
+    <ellipse cx="910" cy="470" rx="32" ry="38" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+    <ellipse cx="1010" cy="470" rx="32" ry="38" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+    <circle cx="910" cy="480" r="14" fill="#000000"/>
+    <circle cx="1010" cy="480" r="14" fill="#000000"/>
+    
+    <!-- Angry brows -->
+    <line x1="875" y1="445" x2="935" y2="470" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+    <line x1="1045" y1="445" x2="985" y2="470" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- Wrinkles -->
+    <polyline points="905,425 925,445 945,425 965,445 985,425" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="920,405 935,415 950,405 965,415 980,405" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Paw blur trails -->
+    <rect x="850" y="845" width="85" height="70" rx="28" fill="#F5DEB3" class="paw-blur" style="animation-delay:0s"/>
+    <rect x="820" y="850" width="85" height="70" rx="28" fill="#F5DEB3" class="paw-blur" style="animation-delay:0.05s"/>
+    <rect x="1065" y="845" width="85" height="70" rx="28" fill="#F5DEB3" class="paw-blur" style="animation-delay:0.03s"/>
+    <rect x="1095" y="850" width="85" height="70" rx="28" fill="#F5DEB3" class="paw-blur" style="animation-delay:0.08s"/>
+    
+    <!-- Main Paws -->
+    <rect x="880" y="855" width="85" height="70" rx="28" fill="#F5DEB3" stroke="#000000" stroke-width="12" class="paw-left"/>
+    <rect x="1035" y="855" width="85" height="70" rx="28" fill="#F5DEB3" stroke="#000000" stroke-width="12" class="paw-right"/>
+  </g>
+
+  <!-- Anger marks -->
+  <g class="anger" transform="translate(820, 350)">
+    <line x1="-25" y1="-25" x2="25" y2="25" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+    <line x1="25" y1="-25" x2="-25" y2="25" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g class="anger" transform="translate(1100, 350)">
+    <line x1="-25" y1="-25" x2="25" y2="25" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+    <line x1="25" y1="-25" x2="-25" y2="25" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+  </g>
+</svg>

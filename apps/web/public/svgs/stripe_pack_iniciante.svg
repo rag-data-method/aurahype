@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <pattern id="halftone" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="5" fill="#FFF200"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#00D9FF"/>
+  <rect width="1200" height="630" fill="url(#halftone)" opacity="0.45"/>
+  <path d="M600,-105 L668.9,148.7 L897,18 L766.3,246.1 L1020,315 L766.3,383.9 L897,612 L668.9,481.3 L600,735 L531.1,481.3 L303,612 L433.7,383.9 L180,315 L433.7,246.1 L303,18 L531.1,148.7 Z" fill="#FFF200" stroke="#000" stroke-width="14" stroke-linejoin="round"/>
+  <text x="610" y="315" text-anchor="middle" dominant-baseline="central" font-family="Impact, sans-serif" font-size="180" fill="#FF0000" stroke="none">
+    <tspan x="610" dy="-100">PACK</tspan>
+    <tspan x="610" dy="210">INICIANTE</tspan>
+  </text>
+  <text x="600" y="315" text-anchor="middle" dominant-baseline="central" font-family="Impact, sans-serif" font-size="180" fill="#FF0099" stroke="#000" stroke-width="12" paint-order="stroke fill">
+    <tspan x="600" dy="-100">PACK</tspan>
+    <tspan x="600" dy="210">INICIANTE</tspan>
+  </text>
+</svg>

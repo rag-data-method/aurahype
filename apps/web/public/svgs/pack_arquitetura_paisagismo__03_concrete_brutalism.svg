@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.15  0 0 0 0 0.15  0 0 0 0 0.18  0 0 0 0.04 0" in="noise" result="coloredNoise"/>
+      <feBlend in="SourceGraphic" in2="coloredNoise" mode="multiply"/>
+    </filter>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="shadowBlur">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#E5E2DC"/>
+  
+  <rect x="0" y="200" width="1600" height="400" fill="#2B2E33" opacity="0.6" filter="url(#grain)">
+    <animate attributeName="opacity" values="0.6;0.65;0.6" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+  
+  <path d="M 400 200 L 500 240 L 500 640 L 400 600 Z" fill="#2B2E33" opacity="0.35" filter="url(#shadowBlur)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 80,20; 0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+  
+  <rect x="100" y="250" width="300" height="650" fill="#8B8680" opacity="0.8" filter="url(#grain)">
+    <animate attributeName="opacity" values="0.8;0.85;0.8" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+  
+  <path d="M 400 250 L 520 290 L 520 940 L 400 900 Z" fill="#2B2E33" opacity="0.45" filter="url(#shadowBlur)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 60,25; 0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+  
+  <rect x="350" y="450" width="900" height="180" fill="#8B8680" opacity="0.75" filter="url(#grain)">
+    <animate attributeName="y" values="450;445;450" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+  
+  <path d="M 1250 450 L 1380 490 L 1380 670 L 1250 630 Z" fill="#2B2E33" opacity="0.4" filter="url(#shadowBlur)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -40,15; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+  
+  <rect x="1100" y="150" width="350" height="750" fill="#2B2E33" opacity="0.7" filter="url(#grain)"/>
+  
+  <path d="M 1450 150 L 1550 190 L 1550 940 L 1450 900 Z" fill="#2B2E33" opacity="0.3" filter="url(#shadowBlur)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -70,10; 0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+  
+  <rect x="600" y="600" width="500" height="300" fill="#8B8680" opacity="0.85" filter="url(#grain)">
+    <animate attributeName="opacity" values="0.85;0.8;0.85" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+  
+  <path d="M 1100 600 L 1220 640 L 1220 940 L 1100 900 Z" fill="#2B2E33" opacity="0.5" filter="url(#shadowBlur)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 50,30; 0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+  
+  <rect x="0" y="540" width="1600" height="6" fill="#B89055" opacity="0.75">
+    <animate attributeName="opacity" values="0.75;0.85;0.75" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+  
+  <rect x="200" y="0" width="1200" height="900" fill="#8B8680" opacity="0.2" filter="url(#softBlur)">
+    <animate attributeName="opacity" values="0.2;0.28;0.2" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+  
+  <rect x="0" y="100" width="1600" height="600" fill="#2B2E33" opacity="0.15" filter="url(#softBlur)">
+    <animate attributeName="opacity" values="0.15;0.22;0.15" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+  
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)" opacity="0.3"/>
+</svg>

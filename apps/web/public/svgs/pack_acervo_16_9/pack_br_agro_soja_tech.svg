@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0b2e"/>
+      <stop offset="55%" stop-color="#0f1b3c"/>
+      <stop offset="100%" stop-color="#021c1c"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#00f5d4" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1a0b2e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#76ff03"/>
+      <stop offset="40%" stop-color="#00e676"/>
+      <stop offset="100%" stop-color="#00c853"/>
+    </linearGradient>
+    <linearGradient id="veinGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4"/>
+      <stop offset="50%" stop-color="#e0ffff"/>
+      <stop offset="100%" stop-color="#00f5d4"/>
+    </linearGradient>
+    <filter id="neon" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="b1"/>
+      <feGaussianBlur stdDeviation="14" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="hex" x="0" y="0" width="64" height="111" patternUnits="userSpaceOnUse">
+      <path d="M32 0 L64 16 L64 48 L32 64 L0 48 L0 16 Z" fill="none" stroke="#00f5d4" stroke-width="0.6" opacity="0.07"/>
+    </pattern>
+    <style>
+      .float{animation:float 6s ease-in-out infinite;}
+      .pulse{animation:pulse 3s ease-in-out infinite;}
+      .pulse-slow{animation:pulse 5s ease-in-out infinite;}
+      .flow{animation:flow 4s linear infinite;}
+      @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+      @keyframes pulse{0%,100%{opacity:0.55}50%{opacity:1}}
+      @keyframes flow{0%{stroke-dashoffset:120}100%{stroke-dashoffset:0}}
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+  <rect width="1920" height="1080" fill="url(#hex)"/>
+  <ellipse cx="960" cy="540" rx="720" ry="420" fill="url(#vignette)" class="pulse-slow"/>
+  <g class="float" transform-origin="960 540">
+    <path d="M960 600 L960 790" stroke="#00c853" stroke-width="22" stroke-linecap="round" opacity="0.9"/>
+    <path d="M960 600 C1080 545 1110 380 960 195 C810 380 840 545 960 600 Z" fill="url(#leafGrad)" opacity="0.96"/>
+    <path d="M960 600 C890 545 730 510 590 425 C675 520 815 575 960 600 Z" fill="url(#leafGrad)" opacity="0.96"/>
+    <path d="M960 600 C1030 545 1190 510 1330 425 C1245 520 1105 575 960 600 Z" fill="url(#leafGrad)" opacity="0.96"/>
+    <circle cx="960" cy="600" r="18" fill="#e0ffff" filter="url(#neon)" class="pulse"/>
+    <g filter="url(#neon)">
+      <line x1="960" y1="600" x2="960" y2="215" stroke="url(#veinGrad)" stroke-width="7" stroke-linecap="round"/>
+      <line x1="960" y1="600" x2="595" y2="425" stroke="url(#veinGrad)" stroke-width="6" stroke-linecap="round"/>
+      <line x1="960" y1="600" x2="1325" y2="425" stroke="url(#veinGrad)" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <g stroke="#00f5d4" stroke-width="3" stroke-linecap="round" opacity="0.85" filter="url(#softGlow)">
+      <line x1="960" y1="330" x2="880" y2="360"/>
+      <line x1="960" y1="330" x2="1040" y2="360"/>
+      <line x1="960" y1="430" x2="890" y2="460"/>
+      <line x1="960" y1="430" x2="1030" y2="460"/>
+      <line x1="960" y1="520" x2="900" y2="545"/>
+      <line x1="960" y1="520" x2="1020" y2="545"/>
+      <line x1="720" y1="495" x2="760" y2="455"/>
+      <line x1="720" y1="495" x2="680" y2="535"/>
+      <line x1="810" y1="535" x2="840" y2="500"/>
+      <line x1="810" y1="535" x2="775" y2="565"/>
+      <line x1="1200" y1="495" x2="1160" y2="455"/>
+      <line x1="1200" y1="495" x2="1240" y2="535"/>
+      <line x1="1110" y1="535" x2="1080" y2="500"/>
+      <line x1="1110" y1="535" x2="1145" y2="565"/>
+    </g>
+    <g fill="#e0ffff" filter="url(#neon)">
+      <circle cx="960" cy="330" r="7" class="pulse"/>
+      <circle cx="960" cy="430" r="6" class="pulse-slow"/>
+      <circle cx="960" cy="520" r="6" class="pulse"/>
+      <circle cx="720" cy="495" r="5" class="pulse-slow"/>
+      <circle cx="810" cy="535" r="5" class="pulse"/>
+      <circle cx="1200" cy="495" r="5" class="pulse"/>
+      <circle cx="1110" cy="535" r="5" class="pulse-slow"/>
+      <circle cx="880" cy="360" r="4" class="pulse"/>
+      <circle cx="1040" cy="360" r="4" class="pulse-slow"/>
+      <circle cx="890" cy="460" r="4" class="pulse-slow"/>
+      <circle cx="1030" cy="460" r="4" class="pulse"/>
+      <circle cx="900" cy="545" r="4" class="pulse-slow"/>
+      <circle cx="1020" cy="545" r="4" class="pulse"/>
+      <circle cx="680" cy="535" r="3" class="pulse"/>
+      <circle cx="775" cy="565" r="3" class="pulse-slow"/>
+      <circle cx="1240" cy="535" r="3" class="pulse-slow"/>
+      <circle cx="1145" cy="565" r="3" class="pulse"/>
+    </g>
+    <g stroke="#00f5d4" stroke-width="2" fill="none" opacity="0.6" filter="url(#softGlow)" class="pulse-slow">
+      <path d="M880 360 L880 300"/>
+      <path d="M1040 360 L1040 300"/>
+      <path d="M890 460 L840 440"/>
+      <path d="M1030 460 L1080 440"/>
+      <path d="M900 545 L860 580"/>
+      <path d="M1020 545 L1060 580"/>
+      <path d="M680 535 L640 560"/>
+      <path d="M775 565 L750 600"/>
+      <path d="M1240 535 L1280 560"/>
+      <path d="M1145 565 L1170 600"/>
+    </g>
+    <circle cx="880" cy="300" r="3" fill="#00f5d4" class="pulse"/>
+    <circle cx="1040" cy="300" r="3" fill="#00f5d4" class="pulse-slow"/>
+    <circle cx="840" cy="440" r="3" fill="#00f5d4" class="pulse-slow"/>
+    <circle cx="1080" cy="440" r="3" fill="#00f5d4" class="pulse"/>
+    <circle cx="860" cy="580" r="3" fill="#00f5d4" class="pulse"/>
+    <circle cx="1060" cy="580" r="3" fill="#00f5d4" class="pulse-slow"/>
+    <circle cx="640" cy="560" r="3" fill="#00f5d4" class="pulse"/>
+    <circle cx="750" cy="600" r="3" fill="#00f5d4" class="pulse-slow"/>
+    <circle cx="1280" cy="560" r="3" fill="#00f5d4" class="pulse-slow"/>
+    <circle cx="1170" cy="600" r="3" fill="#00f5d4" class="pulse"/>
+    <path d="M960 215 L960 600" stroke="#e0ffff" stroke-width="2" stroke-dasharray="20 15" opacity="0.35" class="flow" filter="url(#softGlow)"/>
+    <path d="M595 425 L960 600" stroke="#e0ffff" stroke-width="2" stroke-dasharray="20 15" opacity="0.35" class="flow" filter="url(#softGlow)"/>
+    <path d="M1325 425 L960 600" stroke="#e0ffff" stroke-width="2" stroke-dasharray="20 15" opacity="0.35" class="flow" filter="url(#softGlow)"/>
+  </g>
+  <g opacity="0.4" fill="#00f5d4" class="pulse-slow">
+    <circle cx="200" cy="180" r="3"/>
+    <circle cx="1700" cy="220" r="4"/>
+    <circle cx="150" cy="850" r="3"/>
+    <circle cx="1750" cy="800" r="4"/>
+    <circle cx="300" cy="900" r="2"/>
+    <circle cx="1600" cy="150" r="2"/>
+  </g>
+</svg>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Sky Gradients for Day to Dusk cycle -->
+    <linearGradient id="sky" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#FF9F73">
+        <animate attributeName="stop-color" values="#FF9F73;#E54B9C;#FF9F73" dur="20s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="40%" stop-color="#E54B9C">
+        <animate attributeName="stop-color" values="#E54B9C;#3D1A4F;#E54B9C" dur="20s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="75%" stop-color="#3D1A4F">
+        <animate attributeName="stop-color" values="#3D1A4F;#0F0A2E;#3D1A4F" dur="20s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#0F0A2E">
+        <animate attributeName="stop-color" values="#0F0A2E;#000000;#0F0A2E" dur="20s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <!-- Glow Gradients -->
+    <linearGradient id="horizonGlow" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#FF9F73" stop-opacity="0.8">
+        <animate attributeName="stop-color" values="#FF9F73;#E54B9C;#FF9F73" dur="20s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#FF9F73" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="rGlow" cx="1" cy="1" r="1">
+      <stop offset="0%" stop-color="#FF9F73" stop-opacity="0.9">
+        <animate attributeName="stop-color" values="#FF9F73;#E54B9C;#FF9F73" dur="20s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#E54B9C" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="b120"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="b90"><feGaussianBlur stdDeviation="90"/></filter>
+    <filter id="b60"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="b20"><feGaussianBlur stdDeviation="20"/></filter>
+
+    <!-- Dust particle definitions -->
+    <circle id="d" r="2.5" fill="#FF9F73" opacity="0.6">
+      <animate attributeName="opacity" values="0;0.8;0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+    </circle>
+  </defs>
+
+  <!-- 1. Base Sky -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- 2. Giant Sun Bleed (Atmospheric Base) -->
+  <circle cx="1600" cy="900" r="800" fill="url(#rGlow)" filter="url(#b120)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="16s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- 3. Deep Horizon Haze -->
+  <rect x="0" y="450" width="1600" height="450" fill="url(#horizonGlow)" filter="url(#b90)" opacity="0.5"/>
+
+  <!-- 4. Distant Atmosphere Bloom -->
+  <rect x="0" y="550" width="1600" height="350" fill="#FF9F73" filter="url(#b120)" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="18s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 5. Far Clouds (Silhouette) -->
+  <g opacity="0.15" fill="#0F0A2E" filter="url(#b60)">
+    <path d="M 0 600 Q 400 550 800 580 T 1600 550 V 900 H 0 Z">
+      <animateTransform attributeName="transform" type="translate" values="-100 0; 100 0; -100 0" dur="45s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 0 650 Q 500 600 1000 640 T 1600 600 V 900 H 0 Z">
+      <animateTransform attributeName="transform" type="translate" values="50 0; -150 0; 50 0" dur="35s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- 6. Mid-Cloud Atmosphere -->
+  <g opacity="0.2" fill="#E54B9C" filter="url(#b90)">
+    <ellipse cx="1200" cy="550" rx="600" ry="150">
+      <animateTransform attributeName="transform" type="translate" values="-80 0; 80 0; -80 0" dur="30s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- 7. Distant Mountain Range (Mid-ground) -->
+  <g transform="translate(0, 50)" opacity="0.9">
+    <path d="M -100 700 L 150 580 L 350 620 L 500 500 L 700 580 L 900 480 L 1100 540 L 1300 450 L 1700 650 V 900 H -100 Z" fill="#0F0A2E" filter="url(#b20)"/>
+    <path d="M -50 750 L 200 650 L 400 700 L 600 580 L 850 660 L 1050 560 L 1250 620 L 1450 520 L 1700 700 V 900 H -50 Z" fill="#150a30" filter="url(#b20)"/>
+  </g>
+
+  <!-- 8. Distant Mountain Haze Overlay -->
+  <rect x="0" y="550" width="1600" height="350" fill="url(#horizonGlow)" filter="url(#b60)" opacity="0.4"/>
+
+  <!-- 9. Foreground Terrain -->
+  <g>
+    <!-- Base dark earth -->
+    <path d="M 800 900 C 950 820 1150 800 1400 850 C 1500 870 1600 880 1600 900 Z" fill="#0F0A2E"/>
+    <!-- Terrain rim light -->
+    <path d="M 800 900 C 950 820 1150 800 1400 850 C 1500 870 1600 880 1600 900" fill="none" stroke="#E54B9C" stroke-width="4" filter="url(#b20)" opacity="0.6"/>
+  </g>
+
+  <!-- 10. The Lone Wanderer (Off-center right) -->
+  <g transform="translate(1280, 810)">
+    <!-- Soft back glow -->
+    <circle cx="-10" cy="-60" r="60" fill="url(#rGlow)" filter="url(#b60)" opacity="0.5">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Subject Group for Sway Animation -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 0 90; 0.5 0 90; 0 0 90" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+
+      <!-- Rim Light Silhouette -->
+      <path d="M -25 0 L -22 -35 C -22 -55 0 -60 15 -50 C 25 -40 25 -25 15 -15 L 22 0 L -25 0 Z" fill="#0F0A2E"/>
+      <!-- Head & hood -->
+      <path d="M -15 -25 C -15 -45 5 -50 15 -40 C 20 -30 15 -20 5 -15 L -15 -25 Z" fill="#0F0A2E"/>
+      <!-- Staff -->
+      <line x1="20" y1="-10" x2="12" y2="-85" stroke="#0F0A2E" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- RIM LIGHT STROKES -->
+      <!-- Body right edge -->
+      <path d="M 15 -50 C 25 -40 25 -25 15 -15 L 22 0" fill="none" stroke="#FF9F73" stroke-width="2" filter="url(#b20)" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="8s" repeatCount="indefinite"/>
+      </path>
+      <!-- Hood edge -->
+      <path d="M -15 -25 C -15 -45 5 -50 15 -40" fill="none" stroke="#FF9F73" stroke-width="2" filter="url(#b20)" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="6s" repeatCount="indefinite"/>
+      </path>
+      <!-- Staff glow -->
+      <line x1="20" y1="-10" x2="12" y2="-85" fill="none" stroke="#E54B9C" stroke-width="1" filter="url(#b20)" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.9;0.6" dur="10s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+
+  <!-- 11. Foreground Haze Layer -->
+  <rect x="0" y="700" width="1600" height="200" fill="#3D1A4F" filter="url(#b60)" opacity="0.2">
+    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="25s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 12. Floating Dust Particles (Foreground) -->
+  <g id="particles">
+    <use href="#d" x="200" y="750">
+      <animate attributeName="cy" values="750;730;750" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="200;240;200" dur="18s" repeatCount="indefinite"/>
+    </use>
+    <use href="#d" x="450" y="680">
+      <animate attributeName="cy" values="680;660;680" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="450;420;450" dur="15s" repeatCount="indefinite"/>
+    </use>
+    <use href="#d" x="800" y="800">
+      <animate attributeName="cy" values="800;820;800" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="800;850;800" dur="20s" repeatCount="indefinite"/>
+    </use>
+    <use href="#d" x="1100" y="720">
+      <animate attributeName="cy" values="720;700;720" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1100;1060;1100" dur="17s" repeatCount="indefinite"/>
+    </use>
+    <use href="#d" x="1400" y="650">
+      <animate attributeName="cy" values="650;630;650" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1400;1440;1400" dur="22s" repeatCount="indefinite"/>
+    </use>
+    <use href="#d" x="300" y="850">
+      <animate attributeName="cy" values="850;830;850" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="300;330;300" dur="14s" repeatCount="indefinite"/>
+    </use>
+    <use href="#d" x="600" y="780">
+      <animate attributeName="cy" values="780;760;780" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="600;560;600" dur="21s" repeatCount="indefinite"/>
+    </use>
+    <use href="#d" x="950" y="820">
+      <animate attributeName="cy" values="820;840;820" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="950;980;950" dur="16s" repeatCount="indefinite"/>
+    </use>
+    <use href="#d" x="1300" y="600">
+      <animate attributeName="cy" values="600;580;600" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1300;1260;1300" dur="19s" repeatCount="indefinite"/>
+    </use>
+    <use href="#d" x="100" y="700">
+      <animate attributeName="cy" values="700;680;700" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="100;130;100" dur="15s" repeatCount="indefinite"/>
+    </use>
+    
+    <!-- Additional smaller particles -->
+    <circle r="1.5" fill="#FF9F73" opacity="0.4">
+      <animate attributeName="cx" values="500;470;500" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="880;860;880" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.5" fill="#E54B9C" opacity="0.4">
+      <animate attributeName="cx" values="1200;1230;1200" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="750;730;750" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" fill="#FF9F73" opacity="0.5">
+      <animate attributeName="cx" values="700;730;700" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="650;670;650" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 13. Top Vignette (Atmospheric Depth) -->
+  <rect width="1600" height="900" fill="url(#sky)" opacity="0" style="mix-blend-mode: multiply; pointer-events: none;">
+    <animate attributeName="opacity" values="0;0.2;0" dur="20s" repeatCount="indefinite"/>
+  </rect>
+  <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+    <stop offset="60%" stop-color="#0F0A2E" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#0F0A2E" stop-opacity="0.7"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" opacity="0.8" style="pointer-events: none;"/>
+
+</svg>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="50%" stop-color="#12121f"/>
+      <stop offset="100%" stop-color="#0d0d18"/>
+    </linearGradient>
+    
+    <!-- Neon orange glow -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 0.4 0 0 0  0 0 0 0 0  0 0 0 1 0" result="orangeBlur"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="wideBlur"/>
+      <feMerge>
+        <feMergeNode in="wideBlur"/>
+        <feMergeNode in="orangeBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Intense glow -->
+    <filter id="intenseGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="15" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Metallic body gradient -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="60%">
+      <stop offset="0%" stop-color="#2a2a35"/>
+      <stop offset="25%" stop-color="#4a4a5a"/>
+      <stop offset="45%" stop-color="#6b6b7d"/>
+      <stop offset="55%" stop-color="#8a8a9e"/>
+      <stop offset="70%" stop-color="#4a4a5a"/>
+      <stop offset="100%" stop-color="#252530"/>
+    </linearGradient>
+    
+    <!-- Highlight gradient -->
+    <linearGradient id="highlightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Neon orange gradient -->
+    <linearGradient id="neonOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff4d00"/>
+      <stop offset="50%" stop-color="#ff7700"/>
+      <stop offset="100%" stop-color="#ff3300"/>
+    </linearGradient>
+    
+    <!-- Speed trail gradient -->
+    <linearGradient id="trailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6600" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#ff6600" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#ff8800" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffaa00" stop-opacity="1"/>
+    </linearGradient>
+    
+    <!-- Cyan accent gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00ffff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00ffff" stop-opacity="0.9"/>
+    </linearGradient>
+    
+    <!-- Stud gradient -->
+    <radialGradient id="studGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ff8800"/>
+      <stop offset="100%" stop-color="#cc3300"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle grid lines -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="200" x2="1920" y2="200"/>
+    <line x1="0" y1="400" x2="1920" y2="400"/>
+    <line x1="0" y1="600" x2="1920" y2="600"/>
+    <line x1="0" y1="800" x2="1920" y2="800"/>
+    <line x1="300" y1="0" x2="300" y2="1080"/>
+    <line x1="600" y1="0" x2="600" y2="1080"/>
+    <line x1="900" y1="0" x2="900" y2="1080"/>
+    <line x1="1200" y1="0" x2="1200" y2="1080"/>
+    <line x1="1500" y1="0" x2="1500" y2="1080"/>
+  </g>
+  
+  <!-- Speed trails (background layer) -->
+  <g filter="url(#neonGlow)" opacity="0.6">
+    <path d="M 200 540 Q 500 420 900 500 T 1600 480" fill="none" stroke="url(#trailGrad)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M 150 620 Q 450 520 850 580 T 1550 560" fill="none" stroke="url(#trailGrad)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 250 460 Q 520 360 880 440 T 1580 420" fill="none" stroke="url(#cyanGrad)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Main speed trails -->
+  <g filter="url(#intenseGlow)">
+    <path d="M 100 540 C 350 440 600 480 900 530 S 1400 500 1750 520" fill="none" stroke="url(#trailGrad)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M 80 600 C 320 520 580 560 880 590 S 1380 570 1720 580" fill="none" stroke="url(#trailGrad)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M 120 480 C 360 400 620 430 920 470 S 1420 450 1740 460" fill="none" stroke="url(#cyanGrad)" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Particle sparks -->
+  <g fill="#ff7700" filter="url(#neonGlow)">
+    <circle cx="280" cy="510" r="4"/>
+    <circle cx="340" cy="470" r="3"/>
+    <circle cx="420" cy="550" r="5"/>
+    <circle cx="520" cy="430" r="3"/>
+    <circle cx="680" cy="590" r="4"/>
+    <circle cx="750" cy="450" r="2"/>
+    <circle cx="1100" cy="520" r="3"/>
+    <circle cx="1300" cy="480" r="4"/>
+    <circle cx="1480" cy="560" r="3"/>
+  </g>
+  
+  <!-- Brazilian touch - subtle green/yellow accent particles -->
+  <g opacity="0.7">
+    <circle cx="300" cy="580" r="3" fill="#00ff88" filter="url(#neonGlow)"/>
+    <circle cx="380" cy="520" r="2" fill="#ffdd00" filter="url(#neonGlow)"/>
+    <circle cx="560" cy="610" r="3" fill="#00ff88" filter="url(#neonGlow)"/>
+    <circle cx="720" cy="500" r="2" fill="#ffdd00" filter="url(#neonGlow)"/>
+  </g>
+  
+  <!-- Soccer cleat group, centered and rotated -->
+  <g transform="translate(960, 540) rotate(-8)">
+    
+    <!-- Drop shadow -->
+    <ellipse cx="0" cy="95" rx="320" ry="35" fill="#000000" opacity="0.4" filter="url(#neonGlow)"/>
+    
+    <!-- Rear stud shadow -->
+    <ellipse cx="180" cy="105" rx="22" ry="8" fill="#000000" opacity="0.5"/>
+    <ellipse cx="-160" cy="105" rx="20" ry="8" fill="#000000" opacity="0.5"/>
+    <ellipse cx="0" cy="110" rx="24" ry="8" fill="#000000" opacity="0.5"/>
+    <ellipse cx="90" cy="108" rx="20" ry="7" fill="#000000" opacity="0.5"/>
+    <ellipse cx="-90" cy="108" rx="20" ry="7" fill="#000000" opacity="0.5"/>
+    
+    <!-- Cleat studs (bottom) -->
+    <g fill="url(#studGrad)">
+      <!-- Heel studs -->
+      <path d="M 160 80 L 170 105 L 200 105 L 205 80 Z"/>
+      <path d="M 205 75 L 215 100 L 245 100 L 245 75 Z"/>
+      <!-- Forefoot studs -->
+      <path d="M -180 85 L -175 110 L -145 110 L -140 85 Z"/>
+      <path d="M -130 88 L -125 113 L -95 113 L -90 88 Z"/>
+      <path d="M -60 90 L -55 115 L -25 115 L -20 90 Z"/>
+      <path d="M 20 88 L 25 113 L 55 113 L 60 88 Z"/>
+      <path d="M 90 85 L 95 110 L 125 110 L 130 85 Z"/>
+    </g>
+    
+    <!-- Sole plate -->
+    <path d="M -260 60 C -260 85 -200 95 -150 95 C -80 95 0 98 80 95 C 160 92 240 85 270 55 C 275 45 270 35 250 35 C 200 35 100 40 0 42 C -100 44 -200 40 -250 38 C -265 38 -262 50 -260 60 Z" fill="url(#neonOrange)"/>
+    
+    <!-- Sole edge highlight -->
+    <path d="M -255 50 C -200 52 -100 56 0 54 C 100 52 200 48 260 45" fill="none" stroke="#ffaa00" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+    
+    <!-- Main upper body -->
+    <path d="M -280 35 C -290 5 -270 -30 -230 -45 C -180 -65 -120 -70 -60 -68 C 0 -66 60 -55 120 -40 C 180 -25 240 -5 280 25 C 295 38 285 55 250 55 C 180 55 80 50 0 48 C -80 46 -180 48 -250 48 C -275 48 -285 45 -280 35 Z" fill="url(#metalGrad)"/>
+    
+    <!-- Toe box highlight -->
+    <path d="M -250 25 C -200 20 -120 18 -50 20 C 20 22 100 28 160 38" fill="none" stroke="url(#highlightGrad)" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+    
+    <!-- Ankle collar -->
+    <path d="M 160 -45 C 200 -35 245 -15 270 15 C 285 32 275 48 250 48 C 220 48 190 30 170 5 C 160 -10 155 -30 160 -45 Z" fill="#1a1a24"/>
+    <path d="M 175 -35 C 205 -25 235 -8 255 15 C 265 28 258 40 240 40" fill="none" stroke="#ff6600" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+    
+    <!-- Laces area -->
+    <path d="M -80 -55 C -40 -58 0 -55 40 -48 C 80 -42 120 -32 150 -20 L 140 -8 C 100 -22 50 -32 0 -36 C -50 -40 -100 -38 -140 -32 Z" fill="#15151d"/>
+    
+    <!-- Laces -->
+    <g stroke="#e0e0e8" stroke-width="5" stroke-linecap="round" fill="none">
+      <line x1="-100" y1="-45" x2="-80" y2="-35"/>
+      <line x1="-80" y1="-45" x2="-100" y2="-35"/>
+      <line x1="-60" y1="-43" x2="-40" y2="-33"/>
+      <line x1="-40" y1="-43" x2="-60" y2="-33"/>
+      <line x1="-20" y1="-40" x2="0" y2="-30"/>
+      <line x1="0" y1="-40" x2="-20" y2="-30"/>
+      <line x1="20" y1="-36" x2="40" y2="-26"/>
+      <line x1="40" y1="-36" x2="20" y2="-26"/>
+      <line x1="60" y1="-32" x2="80" y2="-22"/>
+      <line x1="80" y1="-32" x2="60" y2="-22"/>
+    </g>
+    
+    <!-- Neon accent stripe (main swoosh) -->
+    <path d="M -200 0 C -120 -5 -40 -8 40 0 C 120 8 180 25 230 45 L 220 55 C 160 35 90 18 0 12 C -90 6 -180 10 -240 18 Z" fill="url(#neonOrange)" filter="url(#neonGlow)"/>
+    
+    <!-- Secondary neon lines -->
+    <path d="M -220 -20 C -150 -28 -80 -30 0 -25 C 80 -20 150 -5 200 15" fill="none" stroke="#ff7700" stroke-width="4" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M -240 25 C -160 22 -80 22 0 26 C 80 30 150 38 210 50" fill="none" stroke="#ffaa00" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+    
+    <!-- Texture pattern on upper -->
+    <g fill="#ffffff" opacity="0.08">
+      <circle cx="-180" cy="-10" r="3"/>
+      <circle cx="-150" cy="-15" r="3"/>
+      <circle cx="-120" cy="-12" r="3"/>
+      <circle cx="-90" cy="-8" r="3"/>
+      <circle cx="-60" cy="-5" r="3"/>
+      <circle cx="-30" cy="-2" r="3"/>
+      <circle cx="0" cy="0" r="3"/>
+      <circle cx="30" cy="3" r="3"/>
+      <circle cx="60" cy="6" r="3"/>
+      <circle cx="90" cy="10" r="3"/>
+      <circle cx="120" cy="15" r="3"/>
+      <circle cx="150" cy="20" r="3"/>
+      <circle cx="180" cy="28" r="3"/>
+    </g>
+    
+    <!-- Heel counter -->
+    <path d="M -270 10 C -275 -10 -265 -30 -245 -38 C -235 -42 -225 -40 -220 -30 C -215 -15 -220 5 -225 25 C -230 40 -240 48 -255 48 C -268 48 -272 30 -270 10 Z" fill="#1f1f2a"/>
+    <path d="M -255 -25 C -260 -10 -258 10 -252 30 C -248 40 -242 42 -238 35" fill="none" stroke="#ff6600" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    
+    <!-- Brand mark / logo detail -->
+    <g transform="translate(200, -5) rotate(15)">
+      <path d="M 0 0 L 25 -8 L 15 5 L 35 0 L 10 12 L 20 8 L 0 15 Z" fill="#ff6600" filter="url(#neonGlow)"/>
+    </g>
+    
+    <!-- Glossy highlight overlay -->
+    <path d="M -260 25 C -160 20 -60 18 40 24 C 140 30 220 42 270 52" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.25"/>
+    
+  </g>
+  
+  <!-- Foreground speed streaks -->
+  <g filter="url(#neonGlow)" opacity="0.4">
+    <path d="M 400 650 Q 700 600 1000 630 T 1700 610" fill="none" stroke="#ff6600" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 350 380 Q 650 340 950 370 T 1650 350" fill="none" stroke="#00ffff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Corner vignette -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#vignette)" pointer-events="none"/>
+  
+</svg>

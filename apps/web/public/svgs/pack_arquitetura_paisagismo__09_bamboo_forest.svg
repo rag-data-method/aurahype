@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="atmosphericBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="45"/>
+    </filter>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="75"/>
+    </filter>
+    <filter id="paperGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="4" result="grain"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#E8E2D2"/>
+  
+  <g opacity="0.65">
+    <rect x="220" y="-100" width="14" height="1100" fill="#6B7E5B" filter="url(#atmosphericBlur)"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 6,0; 0,0" dur="14s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="8s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 220 450; 1.2 220 450; 0 220 450" dur="12s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </g>
+  
+  <g opacity="0.6">
+    <rect x="1340" y="-100" width="12" height="1100" fill="#6B7E5B" filter="url(#atmosphericBlur)"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -5,0; 0,0" dur="16s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animate attributeName="opacity" values="0.5;0.75;0.5" dur="9s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1340 450; -1 1340 450; 0 1340 450" dur="13s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </g>
+  
+  <g opacity="0.75" filter="url(#softGlow)">
+    <rect x="300" y="-100" width="60" height="1200" fill="#F5F0E6" transform="rotate(-20 300 -100)" opacity="0.8">
+      <animate attributeName="opacity" values="0.65;0.82;0.65" dur="15s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 10,30; 0,0" dur="18s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+    </rect>
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="10s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 25,60; 0,0" dur="20s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </g>
+  
+  <g opacity="0.8">
+    <rect x="350" y="-50" width="16" height="1000" fill="#6B7E5B"/>
+    <rect x="348" y="150" width="20" height="2" fill="#B89055" opacity="0.75"/>
+    <rect x="348" y="350" width="20" height="2" fill="#B89055" opacity="0.75"/>
+    <rect x="348" y="550" width="20" height="2" fill="#B89055" opacity="0.75"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,4; 0,0" dur="11s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="7s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 350 450; 1.5 350 450; 0 350 450" dur="11s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </g>
+  
+  <g opacity="0.75">
+    <rect x="580" y="-30" width="20" height="960" fill="#6B7E5B"/>
+    <rect x="576" y="200" width="28" height="3" fill="#B89055" opacity="0.7"/>
+    <rect x="576" y="500" width="28" height="3" fill="#B89055" opacity="0.7"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -6,2; 0,0" dur="13s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animate attributeName="opacity" values="0.65;0.85;0.65" dur="8s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 580 450; -1.2 580 450; 0 580 450" dur="14s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </g>
+  
+  <g opacity="0.78" filter="url(#softGlow)">
+    <rect x="800" y="-100" width="80" height="1200" fill="#F5F0E6" transform="rotate(-15 800 -100)" opacity="0.75">
+      <animate attributeName="opacity" values="0.7;0.85;0.7" dur="12s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,40; 0,0" dur="19s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+    </rect>
+    <animate attributeName="opacity" values="0.65;0.88;0.65" dur="9s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -20,50; 0,0" dur="21s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </g>
+  
+  <g opacity="0.82">
+    <rect x="1050" y="-60" width="24" height="1020" fill="#6B7E5B"/>
+    <rect x="1046" y="120" width="32" height="4" fill="#B89055" opacity="0.75"/>
+    <rect x="1046" y="400" width="32" height="4" fill="#B89055" opacity="0.75"/>
+    <rect x="1046" y="680" width="32" height="4" fill="#B89055" opacity="0.75"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 10,-3; 0,0" dur="10s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1050 450; 0.8 1050 450; 0 1050 450" dur="10s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+    <animate attributeName="opacity" values="0.75;0.9;0.75" dur="8s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </g>
+  
+  <g opacity="0.77">
+    <rect x="1250" y="-40" width="18" height="980" fill="#6B7E5B"/>
+    <rect x="1246" y="280" width="26" height="3" fill="#B89055" opacity="0.7"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -7,0; 0,0" dur="14s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animate attributeName="opacity" values="0.65;0.88;0.65" dur="10s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1250 450; -1.3 1250 450; 0 1250 450" dur="12s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </g>
+  
+  <g opacity="0.85">
+    <rect x="150" y="-20" width="22" height="940" fill="#6B7E5B"/>
+    <rect x="146" y="180" width="30" height="5" fill="#B89055" opacity="0.8"/>
+    <rect x="146" y="450" width="30" height="5" fill="#B89055" opacity="0.8"/>
+    <rect x="146" y="720" width="30" height="5" fill="#B89055" opacity="0.8"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 5,6; 0,0" dur="9s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animate attributeName="opacity" values="0.75;0.95;0.75" dur="6s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 150 450; 1.8 150 450; 0 150 450" dur="10s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </g>
+  
+  <g opacity="0.7" filter="url(#atmosphericBlur)">
+    <rect x="1450" y="-80" width="35" height="1100" fill="#6B7E5B"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -8,5; 0,0" dur="11s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="9s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1450 450; -0.7 1450 450; 0 1450 450" dur="15s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </g>
+  
+  <g opacity="0.8" filter="url(#softGlow)">
+    <rect x="1100" y="-100" width="100" height="1200" fill="#F5F0E6" transform="rotate(-25 1100 -100)" opacity="0.8">
+      <animate attributeName="opacity" values="0.72;0.84;0.72" dur="13s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 12,35; 0,0" dur="17s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+    </rect>
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="11s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,40; 0,0" dur="22s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </g>
+  
+  <g opacity="0.9" filter="url(#softGlow)">
+    <circle cx="400" cy="-50" r="3" fill="#F5F0E6" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0" dur="7s" begin="0s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,950" dur="12s" begin="0s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    </circle>
+    <circle cx="800" cy="-50" r="4" fill="#F5F0E6" opacity="0">
+      <animate attributeName="opacity" values="0;0.8;0" dur="9s" begin="3s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,950" dur="15s" begin="3s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    </circle>
+    <circle cx="1100" cy="-50" r="2.5" fill="#F5F0E6" opacity="0">
+      <animate attributeName="opacity" values="0;0.85;0" dur="8s" begin="1.5s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,950" dur="13s" begin="1.5s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    </circle>
+    <circle cx="580" cy="-50" r="3.5" fill="#F5F0E6" opacity="0">
+      <animate attributeName="opacity" values="0;0.75;0" dur="10s" begin="2s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,950" dur="11s" begin="2s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    </circle>
+    <circle cx="1250" cy="-50" r="3" fill="#F5F0E6" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0" dur="8s" begin="4s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 10,950" dur="14s" begin="4s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    </circle>
+  </g>
+  
+  <rect width="1600" height="900" fill="#E8E2D2" opacity="0.25" filter="url(#paperGrain)" style="mix-blend-mode: multiply">
+    <animate attributeName="opacity" values="0.2;0.32;0.2" dur="10s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </rect>
+</svg>

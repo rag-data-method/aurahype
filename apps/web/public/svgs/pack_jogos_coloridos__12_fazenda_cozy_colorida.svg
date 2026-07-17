@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="skyGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#FFD166"/>
+      <stop offset="50%" stop-color="#EF476F"/>
+      <stop offset="100%" stop-color="#118AB2"/>
+      <animate attributeName="cx" values="40%;60%;40%" dur="8s" repeatCount="indefinite"/>
+    </radialGradient>
+    
+    <radialGradient id="sunGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFBEB">
+        <animate attributeName="stop-color" values="#FFFBEB;#FFF0A0;#FFFBEB" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="60%" stop-color="#FFD166"/>
+      <stop offset="100%" stop-color="#EF476F"/>
+    </radialGradient>
+
+    <linearGradient id="cropPink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EF476F"/>
+      <stop offset="100%" stop-color="#FF88AA"/>
+    </linearGradient>
+
+    <linearGradient id="cropYellow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFD166"/>
+      <stop offset="100%" stop-color="#FFE699"/>
+    </linearGradient>
+
+    <linearGradient id="cropTeal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#06D6A0"/>
+      <stop offset="100%" stop-color="#4AFFE0"/>
+    </linearGradient>
+
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD166" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#EF476F" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="heavyGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="25" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+
+    <pattern id="checker" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+      <rect width="30" height="30" fill="#118AB2" fill-opacity="0.2"/>
+      <rect x="30" y="30" width="30" height="30" fill="#06D6A0" fill-opacity="0.2"/>
+    </pattern>
+    
+    <g id="sparkle">
+      <circle r="4" fill="#FFFFFF"/>
+      <path d="M 0,-10 L 2,-2 L 10,0 L 2,2 L 0,10 L -2,2 L -10,0 L -2,-2 Z" fill="#FFFFFF"/>
+    </g>
+
+    <g id="confetti-circ">
+      <circle r="8" fill="#FFFBEB"/>
+    </g>
+    <g id="confetti-rect">
+      <rect x="-8" y="-4" width="16" height="8" fill="#118AB2" rx="2"/>
+    </g>
+    <g id="confetti-tri">
+      <path d="M 0,-12 L 10,8 L -10,8 Z" fill="#EF476F"/>
+    </g>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#skyGrad)"/>
+  <rect width="100%" height="100%" fill="url(#checker)"/>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="0 800 450; 360 800 450" dur="60s" repeatCount="indefinite"/>
+    <path d="M 800,450 L 800,150 L 820,450 Z" fill="#FFD166" opacity="0.2"/>
+    <path d="M 800,450 L 1100,400 L 800,420 Z" fill="#EF476F" opacity="0.2"/>
+    <path d="M 800,450 L 1150,550 L 800,480 Z" fill="#06D6A0" opacity="0.2"/>
+    <path d="M 800,450 L 900,750 L 820,480 Z" fill="#118AB2" opacity="0.2"/>
+    <path d="M 800,450 L 500,500 L 780,480 Z" fill="#9D4EDD" opacity="0.2"/>
+    <path d="M 800,450 L 350,350 L 780,430 Z" fill="#FFD166" opacity="0.2"/>
+  </g>
+
+  <g opacity="0.6">
+    <chevron x="0" y="0" width="100%" height="100%">
+      <path d="M -100,0 L 50,900 L -200,900 Z" fill="#FFD166"/>
+      <path d="M 200,0 L 350,900 L 100,900 Z" fill="#06D6A0"/>
+      <path d="M 500,0 L 650,900 L 400,900 Z" fill="#EF476F"/>
+      <path d="M 800,0 L 950,900 L 700,900 Z" fill="#118AB2"/>
+      <path d="M 1100,0 L 1250,900 L 1000,900 Z" fill="#9D4EDD"/>
+      <path d="M 1400,0 L 1550,900 L 1300,900 Z" fill="#FFD166"/>
+    </chevron>
+    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="6s" repeatCount="indefinite"/>
+  </g>
+
+  <circle cx="1300" cy="150" r="350" fill="url(#sunGrad)" filter="url(#heavyGlow)">
+    <animate attributeName="r" values="340;360;340" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1300" cy="150" r="300" fill="#FFD166"/>
+  <circle cx="1250" cy="100" r="25" fill="#06D6A0"/>
+  <circle cx="1350" cy="100" r="25" fill="#FFD166"/>
+  <path d="M 1250,180 Q 1300,220 1350,180" fill="none" stroke="#EF476F" stroke-width="8" stroke-linecap="round"/>
+
+  <ellipse cx="250" cy="150" rx="80" ry="40" fill="#FFFFFF" opacity="0.9" filter="url(#softBlur)">
+    <animate attributeName="cx" values="250;300;250" dur="12s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="400" cy="100" rx="60" ry="30" fill="#FFFBEB" opacity="0.8" filter="url(#softBlur)">
+    <animate attributeName="cx" values="400;350;400" dur="15s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="600" cy="200" rx="70" ry="25" fill="#FFFFFF" opacity="0.7" filter="url(#softBlur)">
+    <animate attributeName="cx" values="600;650;600" dur="10s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <g id="crop-field">
+    <rect x="0" y="550" width="1000" height="350" fill="#06D6A0"/>
+    
+    <path d="M 0,550 L 100,0 L 150,0 L 50,550 Z" fill="url(#cropPink)" opacity="0.6"/>
+    <path d="M 120,550 L 220,0 L 270,0 L 170,550 Z" fill="url(#cropYellow)" opacity="0.6"/>
+    <path d="M 240,550 L 340,0 L 390,0 L 290,550 Z" fill="url(#cropTeal)" opacity="0.6"/>
+    <path d="M 360,550 L 460,0 L 510,0 L 410,550 Z" fill="url(#cropPink)" opacity="0.6"/>
+    <path d="M 480,550 L 580,0 L 630,0 L 530,550 Z" fill="url(#cropYellow)" opacity="0.6"/>
+    <path d="M 600,550 L 700,0 L 750,0 L 650,550 Z" fill="url(#cropTeal)" opacity="0.6"/>
+    <path d="M 720,550 L 820,0 L 870,0 L 770,550 Z" fill="url(#cropPink)" opacity="0.6"/>
+    <path d="M 840,550 L 940,0 L 990,0 L 890,550 Z" fill="url(#cropYellow)" opacity="0.6"/>
+    <path d="M 960,550 L 1060,0 L 1110,0 L 1010,550 Z" fill="url(#cropTeal)" opacity="0.6"/>
+
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="4s" repeatCount="indefinite"/>
+  </g>
+
+  <circle cx="800" cy="450" r="250" fill="#FFD166" opacity="0.3" filter="url(#glow)">
+    <animate attributeName="r" values="250;270;250" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <g id="hero-farmer" transform="translate(350, 480)">
+    <animateTransform attributeName="transform" type="translate" values="350,480; 350,460; 350,480" dur="3s" repeatCount="indefinite" additive="replace"/>
+    
+    <path d="M 0,0 Q 20,-5 40,0 L 35,60 L 5,60 Z" fill="#118AB2"/>
+    <rect x="5" y="40" width="30" height="30" fill="#118AB2"/>
+    
+    <circle cx="20" cy="-15" r="18" fill="#FFD166"/>
+    <path d="M -15,10 Q 10,-25 35,10 Z" fill="#EF476F"/>
+    
+    <path d="M -5,10 L -30,50" stroke="#113355" stroke-width="12" stroke-linecap="round"/>
+    <path d="M 45,10 L 70,50" stroke="#113355" stroke-width="12" stroke-linecap="round"/>
+    
+    <path d="M -5,60 L -15,120" stroke="#113355" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 45,60 L 55,120" stroke="#113355" stroke-width="14" stroke-linecap="round"/>
+    
+    <ellipse cx="15" cy="-30" rx="25" ry="8" fill="#06D6A0">
+      <animateTransform attributeName="transform" type="rotate" values="-10 15 -30; 10 15 -30; -10 15 -30" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="25" cy="-35" rx="20" ry="6" fill="#EF476F">
+      <animateTransform attributeName="transform" type="rotate" values="5 25 -35; -5 25 -35; 5 25 -35" dur="2.5s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <g transform="translate(70, 20)">
+      <path d="M 0,0 L 10,-15 L 20,0 Z" fill="#FFD166"/>
+      <rect x="5" y="-60" width="10" height="50" fill="#113355"/>
+      <path d="M -5,-60 L 25,-60 L 10,-90 Z" fill="#EF476F"/>
+      <ellipse cx="10" cy="-90" rx="12" ry="5" fill="#06D6A0"/>
+    </g>
+    
+    <circle cx="20" cy="80" r="15" fill="#06D6A0" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,-50" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g id="particles-back">
+    <g transform="translate(500, 200)">
+      <use href="#sparkle" transform="scale(1.5)">
+        <animateTransform attributeName="transform" type="scale" values="0;1.5;0" dur="4s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="rotate" values="0;180;360" dur="4s" repeatCount="indefinite" additive="sum"/>
+        <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+      </use>
+    </g>
+    <g transform="translate(1000, 600)">
+      <use href="#sparkle" transform="scale(2)">
+        <animateTransform attributeName="transform" type="scale" values="0;2;0" dur="5s" begin="1s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="rotate" values="0;-180;-360" dur="5s" begin="1s" repeatCount="indefinite" additive="sum"/>
+        <animate attributeName="opacity" values="0;1;0" dur="5s" begin="1s" repeatCount="indefinite"/>
+      </use>
+    </g>
+  </g>
+
+  <g id="geometric-shapes">
+    <circle cx="1100" cy="400" r="40" fill="#FFD166" opacity="0.8">
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#FFD166;#EF476F;#FFD166" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <rect x="500" y="700" width="60" height="60" fill="#06D6A0" transform-origin="530 730" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" values="0;90;180;270;360" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="rx" values="0;30;0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+
+    <polygon points="1400,700 1450,800 1350,800" fill="#EF476F" opacity="0.8">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="4s" repeatCount="indefinite"/>
+    </polygon>
+
+    <path d="M 100,600 L 130,650 L 100,700 L 70,650 Z" fill="#9D4EDD" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" values="0 100 650; 360 100 650" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g id="confetti-layer">
+    <use href="#confetti-circ" x="200" y="100">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 100,800" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0" dur="5s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#confetti-rect" x="1500" y="50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -400,900" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;-720" dur="6s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0" dur="6s" repeatCount="indefinite"/>
+    </use>
+
+    <use href="#confetti-tri" x="1200" y="200">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -200,700" dur="4s" begin="1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;540" dur="4s" begin="1s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+    </use>
+
+    <use href="#confetti-circ" x="800" y="0">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -50,900" dur="7s" begin="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="7s" begin="2s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0" dur="7s" begin="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#confetti-circ" x="1200" y="800">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 100,-900" dur="7s" begin="0.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="7s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0" dur="7s" begin="0.5s" repeatCount="indefinite"/>
+    </use>
+
+    <use href="#confetti-rect" x="300" y="900">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 200,-1000" dur="8s" begin="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;720" dur="8s" begin="3s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0" dur="8s" begin="3s" repeatCount="indefinite"/>
+    </use>
+
+    <use href="#confetti-tri" x="1400" y="900">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -300,-900" dur="6s" begin="1.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="6s" begin="1.5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0" dur="6s" begin="1.5s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <g id="foreground-sparkles">
+    <circle cx="100" cy="100" r="4" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="200" r="3" fill="#FFD166">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="800" r="5" fill="#06D6A0">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1300" cy="750" r="4" fill="#EF476F">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <use href="#sparkle" x="900" y="100" transform="scale(1.2)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" x="200" y="500" transform="scale(0.8)">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <path d="M 0,850 Q 400,820 800,870 T 1600,850 L 1600,900 L 0,900 Z" fill="#118AB2"/>
+  <path d="M 0,880 Q 500,860 1000,890 T 1600,880 L 1600,900 L 0,900 Z" fill="#06D6A0"/>
+
+</svg>

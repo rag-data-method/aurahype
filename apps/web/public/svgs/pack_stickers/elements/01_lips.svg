@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Drop Shadow for Sticker Depth -->
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="12" dy="18" stdDeviation="10" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Glossy Red Lip Gradient -->
+    <linearGradient id="lipRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF3366"/>
+      <stop offset="45%" stop-color="#E60026"/>
+      <stop offset="100%" stop-color="#990019"/>
+    </linearGradient>
+
+    <!-- Ben-Day Dots Pattern (Pop Art Shading) -->
+    <pattern id="benDay" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#FFFFFF"/>
+      <circle cx="6" cy="6" r="2.5" fill="#000000"/>
+    </pattern>
+
+    <!-- Clipping Paths to constrain the dots to specific shapes -->
+    <clipPath id="clipTongue">
+      <path d="M 480,490 Q 500,580 520,490 Z"/>
+    </clipPath>
+
+    <clipPath id="clipUpperLip">
+      <path d="M 250,350 C 300,250 400,260 500,320 C 600,260 700,250 750,350 C 650,400 550,420 500,420 C 450,420 350,400 250,350 Z"/>
+    </clipPath>
+    
+    <clipPath id="clipLowerLip">
+      <path d="M 500,420 C 550,420 650,400 750,350 C 780,450 680,580 500,600 C 320,580 220,450 250,350 C 350,400 450,420 500,420 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- DIE-CUT STICKER GROUP -->
+  <g filter="url(#shadow)">
+    
+    <!-- Thick White Sticker Edge (Die-Cut Border) -->
+    <path d="M 250,350 
+             C 300,250 400,260 500,320 
+             C 600,260 700,250 750,350 
+             C 780,450 680,580 500,600 
+             C 320,580 220,450 250,350 Z" 
+          fill="none" stroke="#FFFFFF" stroke-width="40" stroke-linejoin="round"/>
+
+    <!-- Main Lip Silhouette (White Base) -->
+    <path d="M 250,350 
+             C 300,250 400,260 500,320 
+             C 600,260 700,250 750,350 
+             C 780,450 680,580 500,600 
+             C 320,580 220,450 250,350 Z" 
+          fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+    <!-- INNER MOUTH / OPENING -->
+    <!-- Deep black opening behind the tongue -->
+    <path d="M 280,360 
+             C 350,390 450,410 500,410 
+             C 550,410 650,390 720,360 
+             C 700,450 600,560 500,560 
+             C 400,560 300,450 280,360 Z" 
+          fill="#1A0005" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+
+    <!-- TONGUE -->
+    <path d="M 420,440 
+             Q 500,580 580,440 
+             Q 500,480 420,440 Z" 
+          fill="#D90429" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+    
+    <!-- Tongue Ben-Day Dots for Shading -->
+    <rect x="400" y="420" width="200" height="200" fill="url(#benDay)" clip-path="url(#clipTongue)" opacity="0.6"/>
+    
+    <!-- Tongue Highlight -->
+    <path d="M 450,460 Q 500,520 550,460" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- UPPER LIP -->
+    <!-- The red fill of the upper lip -->
+    <path d="M 250,350 
+             C 300,250 400,260 500,320 
+             C 600,260 700,250 750,350 
+             C 650,400 550,420 500,420 
+             C 450,420 350,400 250,350 Z" 
+          fill="url(#lipRed)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+          
+    <!-- Upper Lip Ben-Day Dots (Pop Art Shading at the edges) -->
+    <rect x="0" y="0" width="1000" height="1000" fill="url(#benDay)" clip-path="url(#clipUpperLip)" opacity="0.7" style="mix-blend-mode: multiply;"/>
+
+    <!-- LOWER LIP -->
+    <!-- The red fill of the lower lip -->
+    <path d="M 500,420 
+             C 550,420 650,400 750,350 
+             C 780,450 680,580 500,600 
+             C 320,580 220,450 250,350 
+             C 350,400 450,420 500,420 Z" 
+          fill="url(#lipRed)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+    <!-- Lower Lip Ben-Day Dots -->
+    <rect x="0" y="0" width="1000" height="1000" fill="url(#benDay)" clip-path="url(#clipLowerLip)" opacity="0.7" style="mix-blend-mode: multiply;"/>
+
+    <!-- AGGRESSIVE GLOSSY HIGHLIGHTS -->
+    <!-- Upper Lip Highlight (The classic big white reflection) -->
+    <path d="M 330,310 Q 380,290 430,315 Q 380,340 330,310 Z" fill="#FFFFFF" opacity="0.95"/>
+    <path d="M 620,305 Q 670,285 710,320 Q 660,345 620,305 Z" fill="#FFFFFF" opacity="0.95"/>
+    
+    <!-- Lower Lip Highlight (Curved bottom reflection) -->
+    <path d="M 340,450 Q 400,510 460,480 L 450,465 Q 400,490 350,435 Z" fill="#FFFFFF" opacity="0.95"/>
+    <path d="M 660,450 Q 600,510 540,480 L 550,465 Q 600,490 650,435 Z" fill="#FFFFFF" opacity="0.95"/>
+
+    <!-- INNER LIP LINE (Separating upper and lower lip) -->
+    <path d="M 250,350 C 350,400 450,420 500,420 C 550,420 650,400 750,350" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+  </g>
+</svg>

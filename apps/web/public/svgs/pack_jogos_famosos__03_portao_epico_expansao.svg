@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <!-- Atmospheric Blur Filters -->
+        <filter id="b40" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="40"/></filter>
+        <filter id="b80" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="80"/></filter>
+        <filter id="b120" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="120"/></filter>
+        <filter id="b160" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="160"/></filter>
+        
+        <!-- Texture & Glow -->
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="25" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+
+        <filter id="grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" result="noise"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.8  0 0 0 0 0.8  0 0 0 0 0.8  0 0 0 0.04 0" in="noise" result="coloredNoise"/>
+            <feComposite operator="over" in="coloredNoise" in2="SourceGraphic"/>
+        </filter>
+
+        <!-- Sky Gradient -->
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1A0F2E">
+                <animate attributeName="offset" values="0%;5%;0%" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+            </stop>
+            <stop offset="100%" stop-color="#0A0518"/>
+            <animate attributeName="y1" values="0;0.05;0" dur="22s" repeatCount="indefinite"/>
+        </linearGradient>
+
+        <!-- Portal Core Gradient -->
+        <radialGradient id="portalCore" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F5C97A"><animate attributeName="stop-color" values="#F5C97A;#FFFFFF;#F5C97A" dur="8s" repeatCount="indefinite"/></stop>
+            <stop offset="25%" stop-color="#00E5C9"><animate attributeName="stop-color" values="#00E5C9;#6B4FBB;#00E5C9" dur="10s" repeatCount="indefinite"/></stop>
+            <stop offset="55%" stop-color="#6B4FBB"/>
+            <stop offset="100%" stop-color="#1A0F2E" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Magic Motes Gradient -->
+        <radialGradient id="moteGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="50%" stop-color="#F5C97A"/>
+            <stop offset="100%" stop-color="#00E5C9" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Ground Fog Gradient -->
+        <linearGradient id="fogGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1A0F2E" stop-opacity="0"/>
+            <stop offset="60%" stop-color="#1A0F2E" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#0A0518" stop-opacity="0.95"/>
+        </linearGradient>
+
+        <!-- Reusable Single Mote/Spark -->
+        <circle id="mote" r="2.5" fill="url(#moteGrad)"/>
+    </defs>
+
+    <!-- BACKGROUND LAYERS -->
+    
+    <!-- 01. Base Sky -->
+    <rect width="1600" height="900" fill="url(#skyGrad)"/>
+
+    <!-- 02. Distant Cosmos / Deep Atmosphere (Massive Blur) -->
+    <g opacity="0.6" filter="url(#b160)">
+        <circle cx="800" cy="350" r="600" fill="#1A0F2E">
+            <animate attributeName="r" values="600;620;600" dur="18s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="600" cy="500" r="400" fill="#6B4FBB" opacity="0.3">
+            <animate attributeName="cx" values="600;620;600" dur="20s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- 03. Distant Mountains (Far Background) -->
+    <g opacity="0.4" filter="url(#b120)">
+        <path d="M0,900 L0,550 L200,450 L400,520 L600,400 L900,480 L1200,380 L1600,500 L1600,900 Z" fill="#1A0F2E">
+            <animate attributeName="fill" values="#1A0F2E;#2A1F3E;#1A0F2E" dur="15s" repeatCount="indefinite"/>
+        </path>
+        <path d="M0,900 L0,600 L350,500 L650,420 L1000,550 L1300,460 L1600,580 L1600,900 Z" fill="#0A0518" opacity="0.8">
+             <animate attributeName="fill" values="#0A0518;#150A28;#0A0518" dur="18s" repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- 04. Mid Background Mountains (Through Portal Blur) -->
+    <g opacity="0.7" filter="url(#b80)">
+        <path d="M400,900 L550,600 L750,650 L950,550 L1150,680 L1300,900 Z" fill="#1A0F2E"/>
+    </g>
+
+    <!-- PORTAL SYSTEM (The massive 70% gate) -->
+    <g id="portal-system">
+        <!-- 05. Base Portal Glow -->
+        <circle cx="800" cy="380" r="400" fill="url(#portalCore)" opacity="0.8" filter="url(#b80)">
+            <animate attributeName="r" values="400;410;400" dur="4s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- 06. Inner Swirling Ring -->
+        <g transform="translate(800,380)">
+            <g>
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
+                <ellipse cx="0" cy="0" rx="350" ry="420" fill="none" stroke="#00E5C9" stroke-width="8" opacity="0.5" stroke-dasharray="150 100 250 50" filter="url(#b40)"/>
+                <ellipse cx="0" cy="0" rx="320" ry="480" fill="none" stroke="#6B4FBB" stroke-width="15" opacity="0.4" stroke-dasharray="400 200" filter="url(#b80)"/>
+            </g>
+        </g>
+
+        <!-- 07. Dynamic Energy Arcs -->
+        <g transform="translate(800,380)" filter="url(#glow)">
+            <path d="M-300,0 Q0,-200 300,0 Q0,200 -300,0" fill="none" stroke="#F5C97A" stroke-width="4" opacity="0.8">
+                <animate attributeName="stroke-dasharray" values="0 1200;1200 0" dur="6s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.8;0" dur="6s" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="rotate" from="0" to="180" dur="12s" repeatCount="indefinite"/>
+            </path>
+             <path d="M0,-300 Q200,0 0,300 Q-200,0 0,-300" fill="none" stroke="#00E5C9" stroke-width="6" opacity="0.6">
+                <animate attributeName="stroke-dasharray" values="0 1500;1500 0" dur="8s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="rotate" from="45" to="225" dur="16s" repeatCount="indefinite"/>
+            </path>
+        </g>
+
+        <!-- 08. Outer Concentric Rings -->
+        <g transform="translate(800,380)">
+            <g>
+                <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+                <circle cx="0" cy="0" r="450" fill="none" stroke="#6B4FBB" stroke-width="2" stroke-dasharray="20 40" opacity="0.6"/>
+                <circle cx="0" cy="0" r="480" fill="none" stroke="#F5C97A" stroke-width="1" stroke-dasharray="100 80" opacity="0.4"/>
+            </g>
+        </g>
+
+        <!-- 09. The Portal Arch / Frame Structure -->
+        <g filter="url(#glow)">
+            <path d="M 300,900 L 300,380 A 500,500 0 0,1 1300,380 L 1300,900" fill="none" stroke="#F5C97A" stroke-width="12" opacity="0.9"/>
+            <path d="M 280,900 L 280,380 A 520,520 0 0,1 1320,380 L 1320,900" fill="none" stroke="#00E5C9" stroke-width="4" opacity="0.7"/>
+            <!-- Glowing Runes on Arch -->
+            <g fill="#F5C97A" opacity="0.8">
+                <circle cx="300" cy="200" r="6"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle>
+                <circle cx="350" cy="120" r="5"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="5s" repeatCount="indefinite"/></circle>
+                <circle cx="450" cy="50" r="4"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></circle>
+                <circle cx="800" cy="-20" r="8"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="2s" repeatCount="indefinite"/></circle>
+                <circle cx="1150" cy="50" r="4"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="4.5s" repeatCount="indefinite"/></circle>
+                <circle cx="1250" cy="120" r="5"><animate attributeName="opacity" values="0.4;1;0.4" dur="3.5s" repeatCount="indefinite"/></circle>
+                <circle cx="1300" cy="200" r="6"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.8s" repeatCount="indefinite"/></circle>
+            </g>
+        </g>
+    </g>
+
+    <!-- ATMOSPHERIC PARTICLES (Being pulled inward) -->
+    <g id="particles">
+        <use href="#mote" x="200" y="800"><animate attributeName="opacity" values="0;1;0" dur="4s" begin="0s" repeatCount="indefinite"/><animateMotion path="M0,0 Q300,-200 600,-420" dur="4s" begin="0s" repeatCount="indefinite"/></use>
+        <use href="#mote" x="1400" y="850"><animate attributeName="opacity" values="0;1;0" dur="5s" begin="1s" repeatCount="indefinite"/><animateMotion path="M0,0 Q-300,-200 -600,-470" dur="5s" begin="1s" repeatCount="indefinite"/></use>
+        <use href="#mote" x="500" y="900"><animate attributeName="opacity" values="0;1;0" dur="6s" begin="2s" repeatCount="indefinite"/><animateMotion path="M0,0 Q150,-250 300,-520" dur="6s" begin="2s" repeatCount="indefinite"/></use>
+        <use href="#mote" x="1100" y="900"><animate attributeName="opacity" values="0;1;0" dur="4.5s" begin="0.5s" repeatCount="indefinite"/><animateMotion path="M0,0 Q-150,-250 -300,-520" dur="4.5s" begin="0.5s" repeatCount="indefinite"/></use>
+        <use href="#mote" x="800" y="950"><animate attributeName="opacity" values="0;1;0" dur="3.5s" begin="1.5s" repeatCount="indefinite"/><animateMotion path="M0,0 Q0,-300 0,-570" dur="3.5s" begin="1.5s" repeatCount="indefinite"/></use>
+        
+        <!-- Tiny spark trails -->
+        <circle r="1.5" fill="#F5C97A"><animate attributeName="opacity" values="0;1;0" dur="3s" begin="0.2s" repeatCount="indefinite"/><animateMotion path="M100,850 Q400,600 700,400" dur="3s" begin="0.2s" repeatCount="indefinite"/></circle>
+        <circle r="1.5" fill="#00E5C9"><animate attributeName="opacity" values="0;1;0" dur="4s" begin="1.2s" repeatCount="indefinite"/><animateMotion path="M1500,800 Q1200,600 900,400" dur="4s" begin="1.2s" repeatCount="indefinite"/></circle>
+        <circle r="1" fill="#FFFFFF"><animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.8s" repeatCount="indefinite"/><animateMotion path="M600,900 Q700,700 800,500" dur="2.5s" begin="0.8s" repeatCount="indefinite"/></circle>
+        <circle r="1" fill="#FFFFFF"><animate attributeName="opacity" values="0;1;0" dur="3.2s" begin="2.2s" repeatCount="indefinite"/><animateMotion path="M1000,900 Q900,700 800,500" dur="3.2s" begin="2.2s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- FOREGROUND TERRAIN -->
+    <g id="foreground">
+        <!-- 10. Cracked Stone Ground -->
+        <path d="M0,900 L1600,900 L1600,750 L0,800 Z" fill="#0F081C"/>
+        
+        <!-- 11. Gate Shadow on Ground -->
+        <ellipse cx="800" cy="820" rx="500" ry="40" fill="#1A0F2E" opacity="0.8" filter="url(#b40)">
+            <animate attributeName="rx" values="500;520;500" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;0.9;0.6" dur="5s" repeatCount="indefinite"/>
+        </ellipse>
+
+        <!-- 12. Stone Path Leading to Gate -->
+        <path d="M650,900 L750,800 L850,800 L950,900 Z" fill="#1A142E" opacity="0.9"/>
+        <path d="M680,900 L770,820 L830,820 L920,900 Z" fill="#241A3E" opacity="0.8"/>
+    </g>
+
+    <!-- HERO SUBJECTS (Party of 3, Off-Center, Right Two-Thirds) -->
+    <g id="party">
+        <!-- Global Party Breath / Sway animation -->
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-3; 0,0" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+
+        <!-- Group offset to bottom-center, but pushed slightly right to leave left space for title -->
+        <g transform="translate(860, 820)">
+            
+            <!-- 13. Left Adventurer (Shorter, Staff/Cloak) -->
+            <g transform="translate(-90, 10)">
+                <path d="M-15,0 L-15,-60 Q-25,-70 -35,-65 L-30,-55 Q-20,-60 -15,-50 L-20,-30 L-25,0 Z" fill="#0A0518"/> <!-- Cape -->
+                <path d="M-15,-50 L-10,-80 L-5,-50 L-8,-30 Z" fill="#0A0518"/> <!-- Body -->
+                <circle cx="-8" cy="-85" r="6" fill="#0A0518"/> <!-- Head -->
+                <line x1="-5" y1="-70" x2="10" y2="-110" stroke="#0A0518" stroke-width="3"/> <!-- Staff -->
+                <circle cx="10" cy="-110" r="4" fill="#F5C97A" filter="url(#glow)">
+                    <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                </circle> <!-- Staff Gem -->
+                <!-- Rim Light -->
+                <path d="M-15,0 L-15,-60 Q-25,-70 -35,-65" fill="none" stroke="#F5C97A" stroke-width="1.5" opacity="0.6" filter="url(#b40)"/>
+                <path d="M-5,-50 L-10,-80" fill="none" stroke="#00E5C9" stroke-width="1" opacity="0.5" filter="url(#b40)"/>
+            </g>
+
+            <!-- 14. Center Adventurer (Tallest, Heroic Stance, Cape) -->
+            <g transform="translate(0, 0)">
+                <!-- Main Silhouette -->
+                <path d="M-20,0 L-20,-70 Q-40,-80 -50,-75 L-40,-60 Q-25,-65 -20,-55 L-25,-30 L-25,0 Z" fill="#05020A"/> <!-- Cape Flow Left -->
+                <path d="M20,0 L20,-65 Q40,-75 50,-70 L40,-55 Q25,-60 20,-50 L25,-30 L25,0 Z" fill="#05020A"/> <!-- Cape Flow Right -->
+                <path d="M-15,-50 L-10,-95 L10,-95 L15,-50 L12,0 L-12,0 Z" fill="#05020A"/> <!-- Body -->
+                <circle cx="0" cy="-105" r="10" fill="#05020A"/> <!-- Head -->
+                <!-- Greatsword on Back -->
+                <line x1="-12" y1="-90" x2="-30" y2="-130" stroke="#05020A" stroke-width="5"/>
+                <!-- Rim Light - Strong Gold from Portal -->
+                <path d="M15,0 L15,-65 Q35,-75 45,-70" fill="none" stroke="#F5C97A" stroke-width="2" opacity="0.8" filter="url(#b40)"/>
+                <path d="M10,-95 L15,-50" fill="none" stroke="#F5C97A" stroke-width="1.5" opacity="0.7" filter="url(#b40)"/>
+                <path d="M-10,-95 L-15,-50" fill="none" stroke="#00E5C9" stroke-width="1" opacity="0.4" filter="url(#b40)"/>
+            </g>
+
+            <!-- 15. Right Adventurer (Medium Height, Hooded) -->
+            <g transform="translate(80, 15)">
+                <path d="M-12,0 L-12,-55 Q-20,-60 -25,-55 L-20,-45 Q-12,-50 -8,-40 L-10,-25 L-10,0 Z" fill="#0A0518"/> <!-- Cape -->
+                <path d="M-8,-40 L-5,-75 L5,-75 L8,-40 L6,0 L-6,0 Z" fill="#0A0518"/> <!-- Body -->
+                <path d="M-8,-75 L-10,-90 Q0,-100 10,-90 L8,-75 Z" fill="#0A0518"/> <!-- Hood -->
+                <!-- Dual Wield Daggers -->
+                <line x1="-6" y1="-60" x2="-25" y2="-80" stroke="#0A0518" stroke-width="2"/>
+                <line x1="6" y1="-60" x2="25" y2="-80" stroke="#0A0518" stroke-width="2"/>
+                <!-- Rim Light -->
+                <path d="M8,0 L8,-40 L5,-75" fill="none" stroke="#00E5C9" stroke-width="1" opacity="0.5" filter="url(#b40)"/>
+                <path d="M-8,-40 L-12,-55" fill="none" stroke="#F5C97A" stroke-width="1" opacity="0.6" filter="url(#b40)"/>
+            </g>
+        </g>
+    </g>
+
+    <!-- FOREGROUND ATMOSPHERE & FOG -->
+    <g id="foreground-atmosphere">
+        <!-- 16. Ground Mist Layer 1 -->
+        <rect x="0" y="750" width="1600" height="150" fill="url(#fogGrad)" opacity="0.8"/>
+        
+        <!-- 17. Floating Dust / Embers in Foreground -->
+        <g opacity="0.7">
+            <circle cx="300" cy="850" r="2" fill="#F5C97A"><animateMotion path="M0,0 Q50,-100 100,-50" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="12s" repeatCount="indefinite"/></circle>
+            <circle cx="1200" cy="880" r="3" fill="#00E5C9"><animateMotion path="M0,0 Q-80,-120 -150,-60" dur="15s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="15s" repeatCount="indefinite"/></circle>
+            <circle cx="600" cy="820" r="1.5" fill="#FFFFFF"><animateMotion path="M0,0 Q30,-80 60,-20" dur="10s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0" dur="10s" repeatCount="indefinite"/></circle>
+            <circle cx="1000" cy="830" r="2.5" fill="#6B4FBB"><animateMotion path="M0,0 Q-40,-90 -80,-30" dur="14s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0" dur="14s" repeatCount="indefinite"/></circle>
+        </g>
+
+        <!-- 18. Vignette for Cinematic Focus -->
+        <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+            <stop offset="60%" stop-color="#0A0518" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#0A0518" stop-opacity="0.85"/>
+        </radialGradient>
+        <rect width="1600" height="900" fill="url(#vignette)" style="mix-blend-mode: multiply;"/>
+    </g>
+
+    <!-- 19. Subtle Film Grain Overlay for Texture -->
+    <rect width="1600" height="900" fill="transparent" filter="url(#grain)" opacity="0.5" pointer-events="none"/>
+</svg>

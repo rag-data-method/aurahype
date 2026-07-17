@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#240046"/>
+      <stop offset="55%" stop-color="#5A189A"/>
+      <stop offset="100%" stop-color="#9D0208"/>
+    </linearGradient>
+    <linearGradient id="violetSwirl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7B2CBF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#C77DFF" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="berrySwirl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF006E" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#D00000" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="creamSwirl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF0F5" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFF0F5" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="bubbleGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FF4D6D" stop-opacity="0.25"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="55"/>
+    </filter>
+    <filter id="light" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <ellipse cx="800" cy="450" rx="760" ry="420" fill="url(#violetSwirl)" filter="url(#soft)" opacity="0.75">
+    <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="50s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <ellipse cx="850" cy="520" rx="680" ry="380" fill="url(#berrySwirl)" filter="url(#soft)" opacity="0.65">
+    <animateTransform attributeName="transform" type="rotate" from="360 850 520" to="0 850 520" dur="38s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <ellipse cx="400" cy="200" rx="500" ry="280" fill="url(#creamSwirl)" filter="url(#soft)" opacity="0.35">
+    <animateTransform attributeName="transform" type="translate" values="0,0;60,40;0,0" dur="10s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <path d="M-100,720 C250,620 650,820 950,660 S1750,560 1750,760 L1750,1000 L-100,1000 Z" fill="url(#creamSwirl)" filter="url(#light)" opacity="0.45">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-40;0,0" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.45;0.65;0.45" dur="6s" repeatCount="indefinite"/>
+  </path>
+
+  <g fill="url(#bubbleGrad)">
+    <circle cx="250" cy="980" r="22" opacity="0">
+      <animate attributeName="cy" values="980;60" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="13s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="1020" r="16" opacity="0">
+      <animate attributeName="cy" values="1020;40" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1150" cy="960" r="20" opacity="0">
+      <animate attributeName="cy" values="960;80" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1450" cy="1040" r="14" opacity="0">
+      <animate attributeName="cy" values="1040;100" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="1000" r="10" opacity="0">
+      <animate attributeName="cy" values="1000;120" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

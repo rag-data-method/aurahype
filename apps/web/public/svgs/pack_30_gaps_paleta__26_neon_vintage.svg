@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <!-- ATMOSPHERIC GRADIENTS -->
+    <radialGradient id="bgGlow" cx="75%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#3D2A1F">
+        <animate attributeName="stop-color" values="#3D2A1F;#4A3525;#3D2A1F" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="60%" stop-color="#1A1A1A">
+        <animate attributeName="stop-color" values="#1A1A1A;#1F1F1A;#1A1A1A" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#1A1A1A">
+        <animate attributeName="stop-color" values="#1A1A1A;#0F0F0F;#1A1A1A" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </radialGradient>
+
+    <linearGradient id="neonCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD27A">
+        <animate attributeName="stop-color" values="#FFD27A;#FFE0A0;#FFD27A" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#F5C97A">
+        <animate attributeName="stop-color" values="#F5C97A;#FFD27A;#F5C97A" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="neonGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD27A" stop-opacity="0.9">
+        <animate attributeName="offset" values="0%;15%;0%" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#8B5A2B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1A1A1A" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="hazeGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD27A" stop-opacity="0.35">
+        <animate attributeName="stop-opacity" values="0.35;0.25;0.35" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#1A1A1A" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="wallWash" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B5A2B" stop-opacity="0.15">
+        <animate attributeName="stop-opacity" values="0.15;0.08;0.15" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#1A1A1A" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- FILTERS -->
+    <filter id="glow40" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40">
+        <animate attributeName="stdDeviation" values="40;48;40" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </feGaussianBlur>
+    </filter>
+    
+    <filter id="glow80" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80">
+        <animate attributeName="stdDeviation" values="80;95;80" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </feGaussianBlur>
+    </filter>
+    
+    <filter id="glow120" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="120">
+        <animate attributeName="stdDeviation" values="120;135;120" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </feGaussianBlur>
+    </filter>
+    
+    <filter id="glow160" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="160">
+        <animate attributeName="stdDeviation" values="160;180;160" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </feGaussianBlur>
+    </filter>
+
+    <filter id="brickNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.15 0" in="noise" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic"/>
+    </filter>
+
+    <!-- GEOMETRY DEFINITIONS -->
+    <!-- Abstract Geometric Neon Shape -->
+    <g id="neonUnit">
+      <!-- Abstract Star / Compass Shape -->
+      <path d="M 0,-200 L 30,-60 L 180,-80 L 50,0 L 180,80 L 30,60 L 0,200 L -30,60 L -180,80 L -50,0 L -180,-80 L -30,-60 Z" fill="none" stroke="url(#neonCore)" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+      
+      <!-- Inner Geometric Core -->
+      <path d="M 0,-100 L 70,-30 L 40,80 L -40,80 L -70,-30 Z" fill="none" stroke="url(#neonCore)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+      
+      <!-- Connecting Lines -->
+      <line x1="0" y1="-100" x2="0" y2="-200" stroke="url(#neonCore)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="70" y1="-30" x2="180" y2="-80" stroke="url(#neonCore)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="40" y1="80" x2="180" y2="80" stroke="url(#neonCore)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="-40" y1="80" x2="-180" y2="80" stroke="url(#neonCore)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="-70" y1="-30" x2="-180" y2="-80" stroke="url(#neonCore)" stroke-width="4" stroke-linecap="round"/>
+
+      <!-- Center Burst -->
+      <circle cx="0" cy="0" r="15" fill="none" stroke="url(#neonCore)" stroke-width="4"/>
+    </g>
+
+    <g id="neonFills">
+      <path d="M 0,-200 L 30,-60 L 180,-80 L 50,0 L 180,80 L 30,60 L 0,200 L -30,60 L -180,80 L -50,0 L -180,-80 L -30,-60 Z" fill="none" stroke="#FFD27A" stroke-width="16" stroke-linejoin="round" stroke-linecap="round" opacity="0.3"/>
+      <path d="M 0,-100 L 70,-30 L 40,80 L -40,80 L -70,-30 Z" fill="none" stroke="#FFD27A" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" opacity="0.3"/>
+    </g>
+
+    <g id="mountingBrackets">
+      <rect x="-10" y="-220" width="20" height="20" fill="#1A1A1A"/>
+      <rect x="-10" y="200" width="20" height="20" fill="#1A1A1A"/>
+      <rect x="160" y="-90" width="20" height="20" fill="#1A1A1A"/>
+      <rect x="160" y="70" width="20" height="20" fill="#1A1A1A"/>
+      <rect x="-180" y="-90" width="20" height="20" fill="#1A1A1A"/>
+      <rect x="-180" y="70" width="20" height="20" fill="#1A1A1A"/>
+    </g>
+
+    <!-- DUST MOTION PATHS -->
+    <path id="dust1" d="M 900,800 C 950,700 850,600 1050,550 C 1250,500 1100,400 1200,300" fill="none"/>
+    <path id="dust2" d="M 1000,850 C 1100,750 950,650 1150,600 C 1350,550 1200,450 1300,350" fill="none"/>
+    <path id="dust3" d="M 1100,900 C 1200,800 1050,700 1250,650 C 1450,600 1300,500 1400,400" fill="none"/>
+    <path id="dust4" d="M 1050,820 C 1000,720 1150,620 1050,520 C 950,420 1100,320 1000,250" fill="none"/>
+    <path id="dust5" d="M 1250,880 C 1300,780 1150,680 1350,630 C 1550,580 1400,480 1450,380" fill="none"/>
+    <path id="dust6" d="M 950,870 C 900,770 1050,670 950,570 C 850,470 1000,370 900,300" fill="none"/>
+    <path id="dust7" d="M 850,780 C 950,680 800,580 1000,530 C 1200,480 1050,380 1150,280" fill="none"/>
+    <path id="dust8" d="M 1150,820 C 1100,720 1250,620 1150,520 C 1050,420 1200,320 1100,250" fill="none"/>
+
+    <!-- CLIPPING FOR WALL WASH -->
+    <clipPath id="wallClip">
+      <rect x="0" y="0" width="1600" height="900"/>
+    </clipPath>
+  </defs>
+
+  <!-- BACKGROUND LAYER -->
+  <rect width="1600" height="900" fill="url(#bgGlow)"/>
+
+  <!-- BASE BRICK WALL (Left Negative Space) -->
+  <rect x="0" y="0" width="800" height="900" fill="#1A1A1A"/>
+  
+  <!-- BRICK TEXTURE LEFT -->
+  <rect x="0" y="0" width="800" height="900" fill="#3D2A1F" opacity="0.15" filter="url(#brickNoise)">
+    <animate attributeName="opacity" values="0.15;0.2;0.15" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- BRICK WALL RIGHT (Subject Area) -->
+  <rect x="800" y="0" width="800" height="900" fill="#1A1A1A"/>
+  
+  <!-- BRICK TEXTURE RIGHT -->
+  <rect x="800" y="0" width="800" height="900" fill="#3D2A1F" opacity="0.25" filter="url(#brickNoise)">
+    <animate attributeName="opacity" values="0.25;0.3;0.25" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- SUBTLE VERTICAL BRICK LINES RIGHT -->
+  <g opacity="0.08" fill="none" stroke="#3D2A1F" stroke-width="2">
+    <line x1="860" y1="0" x2="850" y2="900">
+      <animate attributeName="x1" values="860;855;860" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="x2" values="850;845;850" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </line>
+    <line x1="930" y1="0" x2="940" y2="900">
+      <animate attributeName="x1" values="930;935;930" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="x2" values="940;935;940" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </line>
+    <line x1="1050" y1="0" x2="1040" y2="900">
+      <animate attributeName="x1" values="1050;1045;1050" dur="32s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="x2" values="1040;1045;1040" dur="32s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </line>
+    <line x1="1180" y1="0" x2="1190" y2="900">
+      <animate attributeName="x1" values="1180;1185;1180" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="x2" values="1190;1185;1190" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </line>
+    <line x1="1300" y1="0" x2="1290" y2="900">
+      <animate attributeName="x1" values="1300;1295;1300" dur="34s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="x2" values="1290;1295;1290" dur="34s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </line>
+    <line x1="1420" y1="0" x2="1430" y2="900">
+      <animate attributeName="x1" values="1420;1425;1420" dur="29s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="x2" values="1430;1425;1430" dur="29s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </line>
+    <line x1="1500" y1="0" x2="1490" y2="900">
+      <animate attributeName="x1" values="1500;1495;1500" dur="27s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="x2" values="1490;1495;1490" dur="27s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </line>
+  </g>
+
+  <!-- WALL WASH REFLECTIONS (Warm light on bricks) -->
+  <rect x="800" y="0" width="800" height="900" fill="url(#wallWash)" clip-path="url(#wallClip)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.4;0.6" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+  <ellipse cx="1100" cy="450" rx="350" ry="250" fill="url(#neonGlow)" opacity="0.4" filter="url(#glow160)">
+    <animate attributeName="rx" values="350;380;350" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="ry" values="250;270;250" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.4;0.25;0.4" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- SHADOW CAST BY THE SIGN -->
+  <ellipse cx="1120" cy="480" rx="200" ry="300" fill="#1A1A1A" opacity="0.5" filter="url(#glow80)">
+    <animate attributeName="cx" values="1120;1130;1120" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.5;0.6;0.5" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- NEON SIGN GROUP (Right Two-Thirds) -->
+  <g transform="translate(1100, 450)">
+    
+    <!-- GLOBAL BREATHING OF THE SIGN -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-3; 0,0" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="rotate" values="-1; 1; -1" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+
+      <!-- MOUNTING BRACKETS -->
+      <use href="#mountingBrackets" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.5;0.6" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </use>
+
+      <!-- OUTER GLOW LAYER 160 -->
+      <use href="#neonFills" filter="url(#glow160)" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.4;0.6" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </use>
+
+      <!-- OUTER GLOW LAYER 120 -->
+      <use href="#neonFills" filter="url(#glow120)" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;0.5;0.7" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </use>
+
+      <!-- MID GLOW LAYER 80 -->
+      <use href="#neonUnit" filter="url(#glow80)" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.6;0.8" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </use>
+
+      <!-- INNER GLOW LAYER 40 -->
+      <use href="#neonUnit" filter="url(#glow40)" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;0.75;0.9" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </use>
+
+      <!-- CORE NEON TUBE (Smooth Flicker) -->
+      <use href="#neonUnit" stroke-width="4">
+        <animate attributeName="opacity" values="1;0.85;1;0.9;1;0.95;1;0.8;1" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </use>
+      
+      <!-- HOTTEST CENTER CORE -->
+      <circle cx="0" cy="0" r="8" fill="#FFFFFF" opacity="0.8" filter="url(#glow40)">
+        <animate attributeName="r" values="8;9;8" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        <animate attributeName="opacity" values="0.8;0.6;0.8" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </circle>
+
+    </g>
+  </g>
+
+  <!-- ATMOSPHERIC HAZE LAYERS (Floating in front of neon) -->
+  <ellipse cx="1100" cy="450" rx="400" ry="300" fill="url(#hazeGrad)" filter="url(#glow120)" opacity="0.5" pointer-events="none">
+    <animate attributeName="cx" values="1100;1120;1100" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="450;430;450" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.5;0.35;0.5" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <ellipse cx="1050" cy="400" rx="250" ry="180" fill="url(#hazeGrad)" filter="url(#glow80)" opacity="0.3" pointer-events="none">
+    <animate attributeName="cx" values="1050;1030;1050" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="400;420;400" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.3;0.2;0.3" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- DUST MOTES (Drifting in warm light) -->
+  <g fill="#FFD27A" opacity="0.6" pointer-events="none">
+    <circle r="2" filter="url(#glow40)">
+      <animateMotion href="#dust1" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0;0.6;0.8;0" dur="20s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+    <circle r="1.5">
+      <animateMotion href="#dust2" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0;0.5;0.7;0" dur="22s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+    <circle r="3" filter="url(#glow40)">
+      <animateMotion href="#dust3" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0;0.4;0.6;0" dur="18s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+    <circle r="1">
+      <animateMotion href="#dust4" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0;0.7;0.5;0" dur="25s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+    <circle r="2.5" filter="url(#glow40)">
+      <animateMotion href="#dust5" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0;0.5;0.8;0" dur="24s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+    <circle r="1.8">
+      <animateMotion href="#dust6" dur="21s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0;0.6;0.4;0" dur="21s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+    <circle r="2.2" filter="url(#glow40)">
+      <animateMotion href="#dust7" dur="23s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0;0.5;0.7;0" dur="23s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+    <circle r="1.2">
+      <animateMotion href="#dust8" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0;0.8;0.5;0" dur="19s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+  </g>
+
+  <!-- SECONDARY DUST LAYER (Slower, deeper) -->
+  <g fill="#F5C97A" opacity="0.4" pointer-events="none">
+    <circle r="4" filter="url(#glow80)">
+      <animateMotion href="#dust2" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" begin="5s"/>
+      <animate attributeName="opacity" values="0;0.3;0.5;0" dur="28s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+    <circle r="3" filter="url(#glow80)">
+      <animateMotion href="#dust5" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" begin="10s"/>
+      <animate attributeName="opacity" values="0;0.4;0.3;0" dur="30s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+    <circle r="5" filter="url(#glow120)">
+      <animateMotion href="#dust1" dur="35s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" begin="2s"/>
+      <animate attributeName="opacity" values="0;0.2;0.4;0" dur="35s" repeatCount="indefinite" keyTimes="0;0.3;0.7;1"/>
+    </circle>
+  </g>
+
+  <!-- FOREGROUND VIGNETTE (Cinematic framing) -->
+  <rect width="1600" height="900" fill="url(#bgGlow)" opacity="0.3" pointer-events="none" style="mix-blend-mode: multiply;">
+    <animate attributeName="opacity" values="0.3;0.35;0.3" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- SOFT FOREGROUND HAZE DRIFTING -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#hazeGrad)" opacity="0.1" pointer-events="none">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-10; 0,0" dur="40s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+</svg>

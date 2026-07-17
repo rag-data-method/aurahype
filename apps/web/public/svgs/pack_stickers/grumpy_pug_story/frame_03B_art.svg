@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Pop Art Halftone Pattern -->
+    <pattern id="halftone" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="6" fill="#FFD700" />
+    </pattern>
+    
+    <!-- Inner Shadow for depth -->
+    <filter id="inset-shadow">
+      <feOffset dx="0" dy="8" />
+      <feGaussianBlur stdDeviation="4" result="offset-blur" />
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
+      <feFlood flood-color="black" flood-opacity="0.3" result="color" />
+      <feComposite operator="in" in="color" in2="inverse" result="shadow" />
+      <feComposite operator="over" in="shadow" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <style>
+    /* Global Scene Styles */
+    .scene-bg {
+      fill: url(#halftone);
+    }
+    
+    /* Animation for the background circle */
+    @keyframes bg-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    
+    .bg-circle {
+      animation: bg-pulse 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    /* Pug Breathing Animation */
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.015); }
+    }
+    
+    .pug-group {
+      animation: breathe 3s ease-in-out infinite;
+      transform-origin: 960px 600px;
+    }
+
+    /* Sunglasses Slide Down Animation */
+    @keyframes slide-down {
+      0% { transform: translateY(-300px); opacity: 0; }
+      60% { transform: translateY(15px); opacity: 1; }
+      80% { transform: translateY(-5px); }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    
+    .sunglasses {
+      animation: slide-down 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards;
+      opacity: 0; /* Starts hidden */
+      transform-origin: center;
+    }
+
+    /* Neon Glow Animation */
+    @keyframes neon-flash {
+      0%, 100% { fill: #00FFFF; filter: drop-shadow(0 0 20px #00FFFF) drop-shadow(0 0 40px #00FFFF); }
+      50% { fill: #FF00FF; filter: drop-shadow(0 0 20px #FF00FF) drop-shadow(0 0 40px #FF00FF); }
+    }
+
+    .neon-glow {
+      animation: neon-flash 2s infinite alternate;
+    }
+
+    /* Floating Geometric Elements */
+    @keyframes float-rotate {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+    
+    .floater {
+      animation: float-rotate 8s linear infinite;
+      transform-origin: center;
+    }
+
+    /* Spiked Collar Pulse */
+    @keyframes collar-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .collar-group {
+      animation: collar-pulse 1.5s ease-in-out infinite;
+      transform-origin: 960px 850px;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1920" height="1080" class="scene-bg" />
+  
+  <!-- Decorative Floating Geometric Elements -->
+  <g class="floater" style="animation-duration: 12s;">
+    <circle cx="200" cy="200" r="80" fill="#FF4500" stroke="black" stroke-width="8" />
+    <rect x="1600" y="800" width="120" height="120" fill="#00CED1" stroke="black" stroke-width="8" transform="rotate(15 1660 860)" />
+  </g>
+  
+  <g class="floater" style="animation-duration: 15s; animation-direction: reverse;">
+    <polygon points="300,900 380,1050 220,1050" fill="#FF1493" stroke="black" stroke-width="8" />
+    <circle cx="1600" cy="200" r="50" fill="#32CD32" stroke="black" stroke-width="8" />
+  </g>
+
+  <!-- Main Background Circle (Red Sun) -->
+  <circle cx="960" cy="540" r="450" fill="#FF3B30" stroke="black" stroke-width="12" class="bg-circle" />
+
+  <!-- THE PUG -->
+  <g class="pug-group">
+    <!-- Ears -->
+    <path d="M 700 450 Q 600 300 650 200 Q 750 250 780 400 Z" fill="#2C1A0B" stroke="black" stroke-width="10" />
+    <path d="M 1220 450 Q 1320 300 1270 200 Q 1170 250 1140 400 Z" fill="#2C1A0B" stroke="black" stroke-width="10" />
+
+    <!-- Head Base -->
+    <ellipse cx="960" cy="550" rx="280" ry="320" fill="#F5DEB3" stroke="black" stroke-width="12" />
+    
+    <!-- Face Mask (Darker beige) -->
+    <ellipse cx="960" cy="620" rx="160" ry="140" fill="#E6C288" stroke="black" stroke-width="10" />
+
+    <!-- Wrinkles -->
+    <path d="M 850 480 Q 960 520 1070 480" fill="none" stroke="black" stroke-width="8" stroke-linecap="round" />
+    <path d="M 880 520 Q 960 550 1040 520" fill="none" stroke="black" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Eyes (Background for Sunglasses) -->
+    <circle cx="880" cy="500" r="35" fill="white" stroke="black" stroke-width="6" />
+    <circle cx="1040" cy="500" r="35" fill="white" stroke="black" stroke-width="6" />
+    <!-- Pupils (Looking slightly up/annoyed) -->
+    <circle cx="890" cy="490" r="15" fill="black" />
+    <circle cx="1030" cy="490" r="15" fill="black" />
+
+    <!-- Nose -->
+    <ellipse cx="960" cy="680" rx="50" ry="35" fill="#1A1A1A" stroke="black" stroke-width="8" />
+    <ellipse cx="960" cy="675" rx="20" ry="10" fill="#4A4A4A" /> <!-- Highlight -->
+
+    <!-- Mouth (The Grumpy Frown) -->
+    <path d="M 880 740 Q 960 710 1040 740" fill="none" stroke="black" stroke-width="8" stroke-linecap="round" />
+    <!-- Jowls -->
+    <path d="M 850 720 Q 880 800 920 780" fill="none" stroke="black" stroke-width="8" stroke-linecap="round" />
+    <path d="M 1070 720 Q 1040 800 1000 780" fill="none" stroke="black" stroke-width="8" stroke-linecap="round" />
+
+    <!-- SPIKED COLLAR -->
+    <g class="collar-group">
+      <!-- Main Collar Band -->
+      <path d="M 780 820 Q 960 920 1140 820 L 1140 880 Q 960 980 780 880 Z" fill="#111111" stroke="black" stroke-width="8" />
+      
+      <!-- Spikes -->
+      <polygon points="800,850 820,820 840,850" fill="#C0C0C0" stroke="black" stroke-width="4" />
+      <polygon points="860,875 880,840 900,875" fill="#C0C0C0" stroke="black" stroke-width="4" />
+      <polygon points="920,890 940,850 960,890" fill="#C0C0C0" stroke="black" stroke-width="4" />
+      <polygon points="980,890 1000,850 1020,890" fill="#C0C0C0" stroke="black" stroke-width="4" />
+      <polygon points="1040,875 1060,840 1080,875" fill="#C0C0C0" stroke="black" stroke-width="4" />
+      <polygon points="1100,850 1120,820 1140,850" fill="#C0C0C0" stroke="black" stroke-width="4" />
+    </g>
+  </g>
+
+  <!-- RETRO SUNGLASSES (Animated Sliding Down) -->
+  <g class="sunglasses">
+    <!-- Left Lens -->
+    <path d="M 760 460 Q 760 560 880 560 Q 920 560 940 500 L 940 460 Q 880 460 760 460 Z" fill="#111111" stroke="black" stroke-width="8" />
+    <!-- Right Lens -->
+    <path d="M 1160 460 Q 1160 560 1040 560 Q 1000 560 980 500 L 980 460 Q 1040 460 1160 460 Z" fill="#111111" stroke="black" stroke-width="8" />
+    
+    <!-- Bridge -->
+    <path d="M 940 480 Q 960 450 980 480" fill="none" stroke="black" stroke-width="8" stroke-linecap="round" />
+    
+    <!-- Arms -->
+    <path d="M 760 480 L 680 460" fill="none" stroke="black" stroke-width="8" stroke-linecap="round" />
+    <path d="M 1160 480 L 1240 460" fill="none" stroke="black" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Neon Glow Reflections on Glasses -->
+    <path d="M 780 480 Q 780 520 860 520" fill="none" stroke="#00FFFF" stroke-width="6" class="neon-glow" stroke-linecap="round" opacity="0.8" />
+    <path d="M 1140 480 Q 1140 520 1060 520" fill="none" stroke="#FF00FF" stroke-width="6" class="neon-glow" stroke-linecap="round" opacity="0.8" />
+  </g>
+
+</svg>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#faf6f1"/>
+      <stop offset="1" stop-color="#f0ece6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- Black diagonal slab -->
+  <path d="M-50 850 L450 -50 H650 L150 850 Z" fill="#111">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,0; 0,0" dur="9s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Cyan circle -->
+  <circle cx="250" cy="250" r="130" fill="#00e5ff">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,35; 0,0" dur="7s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Magenta triangle -->
+  <polygon points="1320,120 1480,480 1160,480" fill="#ff0099">
+    <animateTransform attributeName="transform" type="rotate" from="0 1320 360" to="360 1320 360" dur="25s" repeatCount="indefinite"/>
+  </polygon>
+
+  <!-- Yellow square -->
+  <g transform="rotate(20 1020 690)">
+    <rect x="920" y="590" width="200" height="200" fill="#ffe600"/>
+    <animateTransform attributeName="transform" type="rotate" from="20 1020 690" to="380 1020 690" dur="18s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Cyan squiggle -->
+  <path d="M80 620 Q140 560 200 620 T320 620 T440 620 T560 620" fill="none" stroke="#00e5ff" stroke-width="22" stroke-linecap="round">
+    <animate attributeName="d" values="M80 620 Q140 560 200 620 T320 620 T440 620 T560 620;M80 620 Q140 680 200 620 T320 620 T440 620 T560 620;M80 620 Q140 560 200 620 T320 620 T440 620 T560 620" dur="5s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Magenta zigzag -->
+  <polyline points="620 180 680 280 740 180 800 280 860 180" fill="none" stroke="#ff0099" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-25; 0,0" dur="4s" repeatCount="indefinite"/>
+  </polyline>
+
+  <!-- Black dots cluster -->
+  <g fill="#111">
+    <circle cx="1250" cy="720" r="16"/>
+    <circle cx="1305" cy="720" r="16"/>
+    <circle cx="1360" cy="720" r="16"/>
+    <circle cx="1278" cy="770" r="16"/>
+    <circle cx="1333" cy="770" r="16"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,18; 0,0" dur="6s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Yellow zigzag -->
+  <polyline points="1120 520 1180 460 1240 520 1300 460 1360 520" fill="none" stroke="#ffe600" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <animate attributeName="stroke-width" values="18;26;18" dur="2.5s" repeatCount="indefinite"/>
+  </polyline>
+
+  <!-- Black circle -->
+  <circle cx="520" cy="420" r="45" fill="#111">
+    <animate attributeName="r" values="45;55;45" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Cyan cross -->
+  <path d="M720 120 H780 V60 H840 V120 H900 V180 H840 V240 H780 V180 H720 Z" fill="#00e5ff">
+    <animateTransform attributeName="transform" type="rotate" from="0 810 150" to="360 810 150" dur="14s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Magenta bracket -->
+  <path d="M340 780 H420 V820 H340 V860 H420 V900 H340 Z" fill="#ff0099">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="5s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Black grid -->
+  <g fill="#111">
+    <circle cx="1420" cy="160" r="9"/>
+    <circle cx="1455" cy="160" r="9"/>
+    <circle cx="1490" cy="160" r="9"/>
+    <circle cx="1420" cy="195" r="9"/>
+    <circle cx="1455" cy="195" r="9"/>
+    <circle cx="1490" cy="195" r="9"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 1455 178" to="360 1455 178" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Yellow arc -->
+  <path d="M60 320 A90 90 0 0 1 240 320" fill="none" stroke="#ffe600" stroke-width="22" stroke-linecap="round">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 35,0; 0,0" dur="8s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Cyan zigzag -->
+  <polyline points="1450 620 1510 570 1570 620 1630 570" fill="none" stroke="#00e5ff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -25,0; 0,0" dur="5s" repeatCount="indefinite"/>
+  </polyline>
+
+  <!-- Small yellow triangle -->
+  <polygon points="600,700 660,820 540,820" fill="#ffe600">
+    <animateTransform attributeName="transform" type="rotate" from="0 600 780" to="-360 600 780" dur="16s" repeatCount="indefinite"/>
+  </polygon>
+</svg>

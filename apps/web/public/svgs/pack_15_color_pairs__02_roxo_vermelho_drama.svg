@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Filters -->
+    <filter id="b40" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="b80" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="b120" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="b160" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="25" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grain -->
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="n"/>
+      <feColorMatrix type="saturate" values="0" result="g"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.08"/>
+      </feComponentTransfer>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D1A4F">
+        <animate attributeName="stop-color" values="#3D1A4F;#6B4FBB;#3D1A4F" dur="28s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#6B4FBB">
+        <animate attributeName="stop-color" values="#6B4FBB;#C73A85;#6B4FBB" dur="24s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#5C0F1E">
+        <animate attributeName="stop-color" values="#5C0F1E;#8B0F23;#5C0F1E" dur="30s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="g2" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#8B0F23">
+        <animate attributeName="stop-color" values="#8B0F23;#C73A85;#8B0F23" dur="26s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="60%" stop-color="#C73A85">
+        <animate attributeName="stop-color" values="#C73A85;#6B4FBB;#C73A85" dur="22s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#3D1A4F">
+        <animate attributeName="stop-color" values="#3D1A4F;#5C0F1E;#3D1A4F" dur="32s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+    </linearGradient>
+
+    <radialGradient id="g3" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#C73A85">
+        <animate attributeName="stop-color" values="#C73A85;#6B4FBB;#C73A85" dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#8B0F23">
+        <animate attributeName="stop-color" values="#8B0F23;#5C0F1E;#8B0F23" dur="25s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#3D1A4F">
+        <animate attributeName="stop-color" values="#3D1A4F;#6B4FBB;#3D1A4F" dur="28s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+    </radialGradient>
+
+    <linearGradient id="g4" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5C0F1E"/>
+      <stop offset="40%" stop-color="#C73A85">
+        <animate attributeName="stop-color" values="#C73A85;#8B0F23;#C73A85" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#6B4FBB"/>
+    </linearGradient>
+
+    <!-- Particle Paths -->
+    <path id="p1" d="M 200,100 Q 500,300 800,450 T 1400,800" fill="none"/>
+    <path id="p2" d="M 1500,200 Q 1000,400 600,500 T 100,850" fill="none"/>
+    <path id="p3" d="M 800,100 Q 900,400 700,600 T 800,900" fill="none"/>
+    <path id="p4" d="M 100,400 Q 400,200 800,450 T 1500,500" fill="none"/>
+    <path id="p5" d="M 400,800 Q 700,600 900,400 T 1200,100" fill="none"/>
+  </defs>
+
+  <!-- Base wash -->
+  <rect width="1600" height="900" fill="#3D1A4F"/>
+  
+  <!-- Deep background violet -->
+  <path fill="#3D1A4F" filter="url(#b160)" opacity="0.9" d="M -100,-100 L 900,-100 L 700,1000 L -100,1000 Z">
+    <animate attributeName="d" values="M -100,-100 L 900,-100 L 700,1000 L -100,1000 Z;M -100,-100 L 1000,-100 L 600,1000 L -100,1000 Z;M -100,-100 L 900,-100 L 700,1000 L -100,1000 Z" dur="25s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Deep background crimson -->
+  <path fill="#5C0F1E" filter="url(#b160)" opacity="0.85" d="M 1600,1000 L 500,1000 L 900,-100 L 1600,-100 Z">
+    <animate attributeName="d" values="M 1600,1000 L 500,1000 L 900,-100 L 1600,-100 Z;M 1600,1000 L 400,1000 L 1000,-100 L 1600,-100 Z;M 1600,1000 L 500,1000 L 900,-100 L 1600,-100 Z" dur="25s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Upper left violet cascade (layer 1) -->
+  <path fill="#6B4FBB" filter="url(#b120)" opacity="0.7" d="M -100,-100 C 200,100 400,50 500,300 C 600,550 300,700 100,900 L -100,900 Z">
+    <animate attributeName="d" values="M -100,-100 C 200,100 400,50 500,300 C 600,550 300,700 100,900 L -100,900 Z;M -100,-100 C 250,150 350,100 550,350 C 650,600 250,750 50,900 L -100,900 Z;M -100,-100 C 200,100 400,50 500,300 C 600,550 300,700 100,900 L -100,900 Z" dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" additive="sum"/>
+  </path>
+
+  <!-- Lower right crimson flow (layer 1) -->
+  <path fill="#8B0F23" filter="url(#b120)" opacity="0.7" d="M 1700,1000 C 1400,800 1200,850 1100,600 C 1000,350 1300,200 1500,0 L 1700,0 Z">
+    <animate attributeName="d" values="M 1700,1000 C 1400,800 1200,850 1100,600 C 1000,350 1300,200 1500,0 L 1700,0 Z;M 1700,1000 C 1350,750 1150,800 1050,550 C 950,300 1250,150 1450,0 L 1700,0 Z;M 1700,1000 C 1400,800 1200,850 1100,600 C 1000,350 1300,200 1500,0 L 1700,0 Z" dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;0.98;1" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" additive="sum"/>
+  </path>
+
+  <!-- Violet ribbon (layer 2) -->
+  <path fill="url(#g1)" filter="url(#b80)" opacity="0.8" d="M -100,200 C 150,150 350,250 450,400 C 550,550 400,750 200,1000 L -100,1000 Z">
+    <animate attributeName="d" values="M -100,200 C 150,150 350,250 450,400 C 550,550 400,750 200,1000 L -100,1000 Z;M -100,250 C 200,200 400,300 500,450 C 600,600 350,800 150,1000 L -100,1000 Z;M -100,200 C 150,150 350,250 450,400 C 550,550 400,750 200,1000 L -100,1000 Z" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-10; 0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Crimson ribbon (layer 2) -->
+  <path fill="url(#g2)" filter="url(#b80)" opacity="0.8" d="M 1700,700 C 1450,750 1250,650 1150,500 C 1050,350 1200,150 1400,-100 L 1700,-100 Z">
+    <animate attributeName="d" values="M 1700,700 C 1450,750 1250,650 1150,500 C 1050,350 1200,150 1400,-100 L 1700,-100 Z;M 1700,650 C 1400,700 1200,600 1100,450 C 1000,300 1150,100 1350,-100 L 1700,-100 Z;M 1700,700 C 1450,750 1250,650 1150,500 C 1050,350 1200,150 1400,-100 L 1700,-100 Z" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -20,10; 0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Central magenta transition zone (layer 3) -->
+  <ellipse cx="850" cy="450" rx="400" ry="300" fill="url(#g3)" filter="url(#b80)" opacity="0.85">
+    <animate attributeName="rx" values="400;420;400" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="ry" values="300;280;300" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </ellipse>
+
+  <!-- Violet atmospheric fog -->
+  <path fill="#6B4FBB" filter="url(#b120)" opacity="0.5" d="M -100,400 C 200,300 400,400 500,600 C 600,800 300,1000 -100,1000 Z">
+    <animate attributeName="d" values="M -100,400 C 200,300 400,400 500,600 C 600,800 300,1000 -100,1000 Z;M -100,450 C 250,350 450,450 550,650 C 650,850 350,1000 -100,1000 Z;M -100,400 C 200,300 400,400 500,600 C 600,800 300,1000 -100,1000 Z" dur="22s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 400 700; 3 400 700; 0 400 700" dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Crimson atmospheric fog -->
+  <path fill="#8B0F23" filter="url(#b120)" opacity="0.5" d="M 1700,500 C 1400,600 1200,500 1100,300 C 1000,100 1300,-100 1700,-100 Z">
+    <animate attributeName="d" values="M 1700,500 C 1400,600 1200,500 1100,300 C 1000,100 1300,-100 1700,-100 Z;M 1700,450 C 1350,550 1150,450 1050,250 C 950,50 1250,-100 1700,-100 Z;M 1700,500 C 1400,600 1200,500 1100,300 C 1000,100 1300,-100 1700,-100 Z" dur="22s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1200 200; -3 1200 200; 0 1200 200" dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Mid-ground violet swirl -->
+  <path fill="#3D1A4F" filter="url(#b80)" opacity="0.9" d="M 50,-50 C 300,100 500,200 600,450 C 700,700 400,850 150,950 L -100,950 L -100,-50 Z">
+    <animate attributeName="d" values="M 50,-50 C 300,100 500,200 600,450 C 700,700 400,850 150,950 L -100,950 L -100,-50 Z;M 100,-50 C 350,150 550,250 650,500 C 750,750 450,900 200,1000 L -100,1000 L -100,-50 Z;M 50,-50 C 300,100 500,200 600,450 C 700,700 400,850 150,950 L -100,950 L -100,-50 Z" dur="16s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Mid-ground crimson swirl -->
+  <path fill="#5C0F1E" filter="url(#b80)" opacity="0.9" d="M 1550,950 C 1300,800 1100,700 1000,450 C 900,200 1200,50 1450,-50 L 1700,-50 L 1700,950 Z">
+    <animate attributeName="d" values="M 1550,950 C 1300,800 1100,700 1000,450 C 900,200 1200,50 1450,-50 L 1700,-50 L 1700,950 Z;M 1500,950 C 1250,750 1050,650 950,400 C 850,150 1150,0 1400,-100 L 1700,-100 L 1700,950 Z;M 1550,950 C 1300,800 1100,700 1000,450 C 900,200 1200,50 1450,-50 L 1700,-50 L 1700,950 Z" dur="16s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;0.98;1" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Flowing violet ribbon (sharp) -->
+  <path fill="#6B4FBB" filter="url(#b40)" opacity="0.85" d="M -100,100 C 150,200 300,150 400,350 C 500,550 350,750 150,900 L -100,900 Z">
+    <animate attributeName="d" values="M -100,100 C 150,200 300,150 400,350 C 500,550 350,750 150,900 L -100,900 Z;M -100,150 C 200,250 350,200 450,400 C 550,600 400,800 200,950 L -100,950 Z;M -100,100 C 150,200 300,150 400,350 C 500,550 350,750 150,900 L -100,900 Z" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,20; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Flowing crimson ribbon (sharp) -->
+  <path fill="#8B0F23" filter="url(#b40)" opacity="0.85" d="M 1700,800 C 1450,700 1300,750 1200,550 C 1100,350 1250,150 1450,0 L 1700,0 Z">
+    <animate attributeName="d" values="M 1700,800 C 1450,700 1300,750 1200,550 C 1100,350 1250,150 1450,0 L 1700,0 Z;M 1700,750 C 1400,650 1250,700 1150,500 C 1050,300 1200,100 1400,-50 L 1700,-50 Z;M 1700,800 C 1450,700 1300,750 1200,550 C 1100,350 1250,150 1450,0 L 1700,0 Z" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -30,-20; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Central magenta glow core -->
+  <ellipse cx="800" cy="450" rx="250" ry="180" fill="#C73A85" filter="url(#glow)" opacity="0.9">
+    <animate attributeName="rx" values="250;270;250" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="ry" values="180;200;180" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </ellipse>
+
+  <!-- Violet foreground wave -->
+  <path fill="url(#g1)" opacity="0.75" d="M -100,600 C 100,550 250,650 350,750 C 450,850 300,950 100,1000 L -100,1000 Z">
+    <animate attributeName="d" values="M -100,600 C 100,550 250,650 350,750 C 450,850 300,950 100,1000 L -100,1000 Z;M -100,650 C 150,600 300,700 400,800 C 500,900 350,1000 150,1000 L -100,1000 Z;M -100,600 C 100,550 250,650 350,750 C 450,850 300,950 100,1000 L -100,1000 Z" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;0.98;1" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Crimson foreground wave -->
+  <path fill="url(#g2)" opacity="0.75" d="M 1700,300 C 1500,350 1350,250 1250,150 C 1150,50 1300,-50 1500,-100 L 1700,-100 Z">
+    <animate attributeName="d" values="M 1700,300 C 1500,350 1350,250 1250,150 C 1150,50 1300,-50 1500,-100 L 1700,-100 Z;M 1700,250 C 1450,300 1300,200 1200,100 C 1100,0 1250,-100 1450,-100 L 1700,-100 Z;M 1700,300 C 1500,350 1350,250 1250,150 C 1150,50 1300,-50 1500,-100 L 1700,-100 Z" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Overlapping magenta wine bleed -->
+  <path fill="url(#g4)" filter="url(#b40)" opacity="0.8" d="M 600,300 C 750,350 850,450 800,600 C 750,750 600,800 500,750 C 400,700 450,550 600,300 Z">
+    <animate attributeName="d" values="M 600,300 C 750,350 850,450 800,600 C 750,750 600,800 500,750 C 400,700 450,550 600,300 Z;M 650,350 C 800,400 900,500 850,650 C 800,800 650,850 550,800 C 450,750 500,600 650,350 Z;M 600,300 C 750,350 850,450 800,600 C 750,750 600,800 500,750 C 400,700 450,550 600,300 Z" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 650 550; 5 650 550; 0 650 550" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Dark violet foreground accent -->
+  <path fill="#3D1A4F" filter="url(#b40)" opacity="0.9" d="M -100,750 C 100,700 200,800 250,900 C 300,1000 150,1000 -100,1000 Z">
+    <animate attributeName="d" values="M -100,750 C 100,700 200,800 250,900 C 300,1000 150,1000 -100,1000 Z;M -100,800 C 150,750 250,850 300,950 C 350,1000 200,1000 -100,1000 Z;M -100,750 C 100,700 200,800 250,900 C 300,1000 150,1000 -100,1000 Z" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Dark crimson foreground accent -->
+  <path fill="#5C0F1E" filter="url(#b40)" opacity="0.9" d="M 1700,150 C 1500,200 1400,100 1350,0 C 1300,-100 1450,-100 1700,-100 Z">
+    <animate attributeName="d" values="M 1700,150 C 1500,200 1400,100 1350,0 C 1300,-100 1450,-100 1700,-100 Z;M 1700,100 C 1450,150 1350,50 1300,-50 C 1250,-100 1400,-100 1700,-100 Z;M 1700,150 C 1500,200 1400,100 1350,0 C 1300,-100 1450,-100 1700,-100 Z" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Soft violet mid blob -->
+  <ellipse cx="300" cy="400" rx="200" ry="250" fill="#6B4FBB" filter="url(#b80)" opacity="0.6">
+    <animate attributeName="cx" values="300;350;300" dur="16s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="cy" values="400;380;400" dur="16s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="rx" values="200;220;200" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="ry" values="250;230;250" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </ellipse>
+
+  <!-- Soft crimson mid blob -->
+  <ellipse cx="1300" cy="500" rx="180" ry="220" fill="#8B0F23" filter="url(#b80)" opacity="0.6">
+    <animate attributeName="cx" values="1300;1250;1300" dur="16s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="cy" values="500;520;500" dur="16s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="rx" values="180;200;180" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="ry" values="220;200;220" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </ellipse>
+
+  <!-- Violet upper sweep -->
+  <path fill="#3D1A4F" filter="url(#b120)" opacity="0.7" d="M -100,-100 C 300,-50 500,100 400,300 C 300,500 100,400 -100,500 Z">
+    <animate attributeName="d" values="M -100,-100 C 300,-50 500,100 400,300 C 300,500 100,400 -100,500 Z;M -100,-100 C 350,0 550,150 450,350 C 350,550 150,450 -100,550 Z;M -100,-100 C 300,-50 500,100 400,300 C 300,500 100,400 -100,500 Z" dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Crimson lower sweep -->
+  <path fill="#5C0F1E" filter="url(#b120)" opacity="0.7" d="M 1700,1000 C 1300,950 1100,800 1200,600 C 1300,400 1500,500 1700,400 Z">
+    <animate attributeName="d" values="M 1700,1000 C 1300,950 1100,800 1200,600 C 1300,400 1500,500 1700,400 Z;M 1700,1000 C 1250,900 1050,750 1150,550 C 1250,350 1450,450 1700,350 Z;M 1700,1000 C 1300,950 1100,800 1200,600 C 1300,400 1500,500 1700,400 Z" dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Central transition pulse -->
+  <ellipse cx="800" cy="450" rx="150" ry="100" fill="#C73A85" filter="url(#glow)" opacity="0.7">
+    <animate attributeName="rx" values="150;180;150" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="ry" values="100;120;100" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </ellipse>
+
+  <!-- Magenta bridge -->
+  <path fill="#C73A85" filter="url(#b40)" opacity="0.6" d="M 500,300 C 650,400 750,400 850,450 C 950,500 1050,500 1150,600 C 1050,550 950,550 850,500 C 750,450 650,450 500,300 Z">
+    <animate attributeName="d" values="M 500,300 C 650,400 750,400 850,450 C 950,500 1050,500 1150,600 C 1050,550 950,550 850,500 C 750,450 650,450 500,300 Z;M 550,350 C 700,450 800,450 900,500 C 1000,550 1100,550 1200,650 C 1100,600 1000,600 900,550 C 800,500 700,500 550,350 Z;M 500,300 C 650,400 750,400 850,450 C 950,500 1050,500 1150,600 C 1050,550 950,550 850,500 C 750,450 650,450 500,300 Z" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-10; 0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Particles -->
+  <g opacity="0.6">
+    <circle r="4" fill="#C73A85">
+      <animateMotion dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.55 1">
+        <mpath href="#p1"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle r="3" fill="#6B4FBB">
+      <animateMotion dur="22s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.55 1">
+        <mpath href="#p2"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle r="5" fill="#8B0F23">
+      <animateMotion dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.55 1">
+        <mpath href="#p3"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle r="3" fill="#C73A85">
+      <animateMotion dur="24s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.55 1">
+        <mpath href="#p4"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle r="4" fill="#6B4FBB">
+      <animateMotion dur="26s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.55 1">
+        <mpath href="#p5"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle r="2" fill="#C73A85">
+      <animateMotion dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.55 1">
+        <mpath href="#p1"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle r="3" fill="#8B0F23">
+      <animateMotion dur="19s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.55 1">
+        <mpath href="#p2"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle r="2" fill="#6B4FBB">
+      <animateMotion dur="21s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.55 1">
+        <mpath href="#p3"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+  </g>
+
+  <!-- Subtle grain overlay -->
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)" opacity="0.5" style="mix-blend-mode: overlay; pointer-events: none;"/>
+</svg>

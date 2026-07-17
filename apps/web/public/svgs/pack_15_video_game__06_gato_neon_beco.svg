@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- GRADIENTS -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A0F2E"/>
+      <stop offset="0.6" stop-color="#1A1133"/>
+      <stop offset="1" stop-color="#3D1A4F"/>
+      <animate attributeName="y1" values="0;0.05;0" dur="25s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="skyGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050714"/>
+      <stop offset="0.3" stop-color="#0A0F2E"/>
+      <stop offset="0.7" stop-color="#3D1A4F"/>
+      <stop offset="1" stop-color="#0A0F2E"/>
+      <animate attributeName="y1" values="0;-0.05;0" dur="30s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="neonPink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E54B9C"/>
+      <stop offset="1" stop-color="#3D1A4F"/>
+      <animate attributeName="x1" values="0;0.1;0" dur="15s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="neonCyan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="1" stop-color="#0A0F2E"/>
+      <animate attributeName="x1" values="0;-0.1;0" dur="18s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="1" y2="0.2">
+      <stop offset="0%" stop-color="#0A0F2E"/>
+      <stop offset="0.4" stop-color="#3D1A4F"/>
+      <stop offset="0.6" stop-color="#0A0F2E"/>
+      <stop offset="1" stop-color="#050714"/>
+    </linearGradient>
+    <linearGradient id="catRim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E54B9C"/>
+      <stop offset="0.5" stop-color="#00E5FF"/>
+      <stop offset="1" stop-color="#3D1A4F"/>
+      <animate attributeName="x1" values="0;0.2;0" dur="20s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- FILTERS -->
+    <filter id="blur40" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur80" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="blur120" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="blur160" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="160"/></filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0" in="noise" result="coloredNoise"/>
+      <feBlend mode="multiply" in="coloredNoise" in2="SourceGraphic"/>
+    </filter>
+
+    <!-- REUSABLES -->
+    <g id="star">
+      <circle cx="0" cy="0" r="1.5" fill="#ffffff"/>
+      <circle cx="0" cy="0" r="3" fill="#00E5FF" opacity="0.3"/>
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite"/>
+    </g>
+    <path id="rain" d="M0,0 l-2,15" stroke="#00E5FF" stroke-width="1" opacity="0.6"/>
+    <circle id="ember" cx="0" cy="0" r="1.5" fill="#E54B9C"/>
+    <path id="steam" d="M0,0 Q10,-20 0,-40 T0,-80" fill="none" stroke="#00E5FF" stroke-width="3" opacity="0.4"/>
+    <path id="cat" d="M1180,760 c5,0 10,-5 10,-15 c0,-10 -5,-15 -10,-15 c-5,0 -10,5 -10,15 c0,10 5,15 10,15 z M1185,750 l5,-20 l5,20 M1150,780 c-10,-15 -15,-35 -10,-50 c5,-15 20,-20 30,-20 c10,0 25,5 30,20 c5,15 0,35 -10,50 l-20,10 z M1150,780 l20,50 l30,-30 l20,30 l20,-50 M1100,830 l70,10 l30,-10 l30,10 l70,-10" fill="#0A0F2E" stroke="#E54B9C" stroke-width="2"/>
+  </defs>
+
+  <!-- 1. BASE SKY -->
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+
+  <!-- 2. DEEP ATMOSPHERE -->
+  <ellipse cx="800" cy="450" rx="1000" ry="600" fill="#3D1A4F" opacity="0.3" filter="url(#blur160)">
+    <animate attributeName="rx" values="1000;1050;1000" dur="20s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.4;0.3" dur="15s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 3. DISTANT NEBULA CLOUDS -->
+  <path d="M-200,0 Q400,200 1000,0 T2000,0 V-200 H-200 Z" fill="#E54B9C" opacity="0.1" filter="url(#blur120)">
+    <animate attributeName="d" values="M-200,0 Q400,200 1000,0 T2000,0 V-200 H-200 Z;M-200,0 Q500,150 1100,50 T2000,0 V-200 H-200 Z;M-200,0 Q400,200 1000,0 T2000,0 V-200 H-200 Z" dur="30s" repeatCount="indefinite"/>
+  </path>
+  <path d="M-200,100 Q300,300 900,100 T2000,100 V-200 H-200 Z" fill="#00E5FF" opacity="0.08" filter="url(#blur120)">
+    <animate attributeName="d" values="M-200,100 Q300,300 900,100 T2000,100 V-200 H-200 Z;M-200,100 Q400,250 1000,150 T2000,100 V-200 H-200 Z;M-200,100 Q300,300 900,100 T2000,100 V-200 H-200 Z" dur="25s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 4. STARS -->
+  <g opacity="0.8">
+    <use href="#star" x="200" y="150"/><use href="#star" x="400" y="100"/><use href="#star" x="600" y="200"/><use href="#star" x="800" y="120"/><use href="#star" x="1000" y="180"/><use href="#star" x="1200" y="250"/><use href="#star" x="1400" y="150"/><use href="#star" x="150" y="300"/><use href="#star" x="350" y="250"/><use href="#star" x="550" y="350"/><use href="#star" x="750" y="280"/><use href="#star" x="950" y="320"/><use href="#star" x="1150" y="280"/><use href="#star" x="1350" y="350"/>
+  </g>
+
+  <!-- 5. FAR CITY SILHOUETTE -->
+  <path d="M0,900 L0,550 L100,550 L120,500 L150,550 L200,450 L230,550 L300,520 L350,550 L450,400 L480,550 L550,480 L600,550 L700,350 L750,550 L850,420 L900,550 L1000,380 L1050,550 L1150,450 L1200,550 L1300,480 L1350,550 L1450,400 L1500,550 L1600,500 L1600,900 Z" fill="#050714" opacity="0.6" filter="url(#blur80)">
+    <animate attributeName="opacity" values="0.6;0.7;0.6" dur="20s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 6. MID CITY SILHOUETTE -->
+  <path d="M-50,900 L-50,600 L50,600 L80,520 L120,600 L180,480 L220,600 L300,550 L350,600 L450,450 L500,600 L600,500 L650,600 L750,400 L800,600 L900,480 L950,600 L1050,420 L1100,600 L1200,500 L1250,600 L1350,450 L1400,600 L1500,520 L1550,600 L1650,600 L1650,900 Z" fill="#0A0F2E" opacity="0.8" filter="url(#blur40)">
+    <animate attributeName="opacity" values="0.8;0.9;0.8" dur="18s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 7. DISTANT NEON SIGNS -->
+  <g filter="url(#glow)">
+    <rect x="450" y="380" width="8" height="120" fill="#E54B9C" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1050" y="420" width="6" height="80" fill="#00E5FF" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="150" y="450" width="10" height="60" fill="#E54B9C" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- 8. ALLEY FLOOR -->
+  <path d="M0,900 L750,550 L850,550 L1600,900 Z" fill="url(#floorGrad)" filter="url(#grain)"/>
+
+  <!-- 9. ALLEY PERSPECTIVE LINES -->
+  <g stroke="#00E5FF" stroke-width="1" opacity="0.15">
+    <line x1="800" y1="550" x2="0" y2="900"/>
+    <line x1="800" y1="550" x2="200" y2="900"/>
+    <line x1="800" y1="550" x2="400" y2="900"/>
+    <line x1="800" y1="550" x2="600" y2="900"/>
+    <line x1="800" y1="550" x2="800" y2="900"/>
+    <line x1="800" y1="550" x2="1000" y2="900"/>
+    <line x1="800" y1="550" x2="1200" y2="900"/>
+    <line x1="800" y1="550" x2="1400" y2="900"/>
+    <line x1="800" y1="550" x2="1600" y2="900"/>
+  </g>
+
+  <!-- 10. GROUND NEON REFLECTIONS -->
+  <g filter="url(#glow)">
+    <ellipse cx="400" cy="750" rx="150" ry="15" fill="#E54B9C" opacity="0.3">
+      <animate attributeName="rx" values="150;160;150" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1200" cy="800" rx="200" ry="20" fill="#00E5FF" opacity="0.25">
+      <animate attributeName="rx" values="200;210;200" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="800" cy="700" rx="100" ry="10" fill="#E54B9C" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.35;0.2" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- 11. WET PUDDLES -->
+  <g fill="#00E5FF" opacity="0.1" filter="url(#blur40)">
+    <ellipse cx="500" cy="780" rx="80" ry="10">
+      <animate attributeName="rx" values="80;85;80" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1100" cy="820" rx="120" ry="15">
+      <animate attributeName="rx" values="120;130;120" dur="7s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="800" cy="750" rx="60" ry="8">
+      <animate attributeName="rx" values="60;65;60" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- 12. LEFT BUILDING -->
+  <path d="M0,0 L750,550 L750,900 L0,900 Z" fill="#0A0F2E"/>
+  <path d="M0,0 L750,550 L750,900 L0,900 Z" fill="url(#neonPink)" opacity="0.05"/>
+  <g fill="#E54B9C" opacity="0.6" filter="url(#glow)">
+    <rect x="50" y="300" width="80" height="12"/>
+    <rect x="50" y="320" width="80" height="12"/>
+    <rect x="50" y="340" width="80" height="12"/>
+    <rect x="200" y="400" width="60" height="8"/>
+    <rect x="200" y="415" width="60" height="8"/>
+    <rect x="350" y="480" width="100" height="10"/>
+    <rect x="350" y="495" width="100" height="10"/>
+    <rect x="500" y="520" width="40" height="6"/>
+    <rect x="500" y="530" width="40" height="6"/>
+    <rect x="500" y="540" width="40" height="6"/>
+  </g>
+
+  <!-- 13. RIGHT BUILDING -->
+  <path d="M1600,0 L850,550 L850,900 L1600,900 Z" fill="#0A0F2E"/>
+  <path d="M1600,0 L850,550 L850,900 L1600,900 Z" fill="url(#neonCyan)" opacity="0.05"/>
+  <g fill="#00E5FF" opacity="0.6" filter="url(#glow)">
+    <rect x="1470" y="350" width="80" height="12"/>
+    <rect x="1470" y="370" width="80" height="12"/>
+    <rect x="1300" y="450" width="60" height="10"/>
+    <rect x="1300" y="465" width="60" height="10"/>
+    <rect x="1150" y="500" width="80" height="8"/>
+    <rect x="1150" y="512" width="80" height="8"/>
+    <rect x="1000" y="530" width="50" height="6"/>
+    <rect x="1000" y="540" width="50" height="6"/>
+    <rect x="1000" y="550" width="50" height="6"/>
+  </g>
+
+  <!-- 14. FOREGROUND NEON SIGNS -->
+  <g filter="url(#glowStrong)">
+    <rect x="80" y="450" width="120" height="20" fill="#E54B9C" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1400" y="500" width="100" height="15" fill="#00E5FF" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="300" y="600" width="80" height="12" fill="#E54B9C" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.8;0.6" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- 15. STEAM FROM VENTS -->
+  <use href="#steam" x="400" y="850" filter="url(#blur40)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -20,-100" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0;0.4" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#steam" x="1200" y="880" filter="url(#blur40)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-120" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="10s" repeatCount="indefinite"/>
+  </use>
+  <use href="#steam" x="800" y="820" filter="url(#blur40)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -10,-80" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0;0.2" dur="9s" repeatCount="indefinite"/>
+  </use>
+
+  <!-- 16. CAT HERO SUBJECT -->
+  <g transform="translate(0, 10)">
+    <animateTransform attributeName="transform" type="translate" values="0,10; 0,8; 0,10" dur="4s" repeatCount="indefinite"/>
+    
+    <!-- Cat Silhouette -->
+    <use href="#cat" fill="#0A0F2E" stroke="none"/>
+    
+    <!-- Rim Light -->
+    <use href="#cat" fill="none" stroke="url(#catRim)" stroke-width="3" filter="url(#glow)"/>
+    
+    <!-- Eye Glow -->
+    <circle cx="1185" cy="740" r="2" fill="#00E5FF" filter="url(#glow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Shadow -->
+    <ellipse cx="1180" cy="840" rx="60" ry="10" fill="#000000" opacity="0.5" filter="url(#blur40)">
+      <animate attributeName="rx" values="60;55;60" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- 17. RAIN -->
+  <g opacity="0.5">
+    <use href="#rain" x="200" y="0"><animateMotion path="M0,0 L0,1000" dur="0.8s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="400" y="-50"><animateMotion path="M0,0 L0,1000" dur="0.7s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="600" y="-100"><animateMotion path="M0,0 L0,1000" dur="0.9s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="800" y="-20"><animateMotion path="M0,0 L0,1000" dur="0.6s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="1000" y="-80"><animateMotion path="M0,0 L0,1000" dur="0.8s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="1200" y="-30"><animateMotion path="M0,0 L0,1000" dur="0.7s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="1400" y="-60"><animateMotion path="M0,0 L0,1000" dur="0.9s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="300" y="-120"><animateMotion path="M0,0 L0,1000" dur="0.6s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="500" y="-90"><animateMotion path="M0,0 L0,1000" dur="0.8s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="700" y="-40"><animateMotion path="M0,0 L0,1000" dur="0.7s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="900" y="-110"><animateMotion path="M0,0 L0,1000" dur="0.9s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="1100" y="-70"><animateMotion path="M0,0 L0,1000" dur="0.6s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="1300" y="-20"><animateMotion path="M0,0 L0,1000" dur="0.8s" repeatCount="indefinite"/></use>
+    <use href="#rain" x="1500" y="-100"><animateMotion path="M0,0 L0,1000" dur="0.7s" repeatCount="indefinite"/></use>
+  </g>
+
+  <!-- 18. EMBERS / PARTICLES -->
+  <g filter="url(#glow)">
+    <use href="#ember" x="500" y="800">
+      <animateMotion path="M0,0 Q20,-50 -10,-100" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="700" y="850">
+      <animateMotion path="M0,0 Q-15,-40 10,-90" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="10s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="900" y="820">
+      <animateMotion path="M0,0 Q25,-60 -15,-110" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="9s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="1100" y="780">
+      <animateMotion path="M0,0 Q-20,-50 15,-100" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="1300" y="800">
+      <animateMotion path="M0,0 Q10,-70 -20,-120" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="11s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="600" y="750">
+      <animateMotion path="M0,0 Q-25,-40 20,-80" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- 19. FOREGROUND FOG -->
+  <rect x="0" y="700" width="1600" height="200" fill="#0A0F2E" opacity="0.3" filter="url(#blur80)">
+    <animate attributeName="opacity" values="0.3;0.4;0.3" dur="15s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 20. FINAL VIGNETTE -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="60%" stop-color="transparent"/>
+    <stop offset="100%" stop-color="#050714"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+</svg>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    
+    <!-- Atmospheric Blurs for Depth -->
+    <filter id="b160" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="160"/></filter>
+    <filter id="b120" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="b90"  x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="90"/></filter>
+    <filter id="b60"  x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="b20"  x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="b8"   x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="b3"   x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+
+    <!-- Gradients -->
+    <radialGradient id="lanternGlow" cx="30%" cy="30%" r="70%">
+      <stop offset="0%"	stop-color="#FF9F73" stop-opacity="1">
+        <animate attributeName="stop-color" values="#FF9F73;#E07A4E;#FF9F73" dur="14s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="45%" stop-color="#FF9F73" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FF9F73" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0D8E8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#3D2A4F" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="rayGrad" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#E0D8E8" stop-opacity="0.15">
+        <animate attributeName="stop-opacity" values="0.15;0.25;0.15" dur="18s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#E0D8E8" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#3D2A4F">
+        <animate attributeName="stop-color" values="#3D2A4F;#4A3560;#3D2A4F" dur="25s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </radialGradient>
+
+    <!-- Glass Motif for Stained Window -->
+    <pattern id="glassPattern" width="100" height="140" patternUnits="userSpaceOnUse">
+      <rect width="100" height="140" fill="#2A1B3D" fill-opacity="0.85"/>
+      <path d="M 50 0 L 50 140 M 0 70 L 100 70 M 25 0 L 25 140 M 75 0 L 75 140 M 0 35 L 100 35 M 0 105 L 100 105" stroke="#E0D8E8" stroke-width="3" fill="none" stroke-opacity="0.4" />
+      <circle cx="50" cy="70" r="18" fill="#E0D8E8" fill-opacity="0.15" />
+    </pattern>
+
+    <!-- Particle Path Definitions -->
+    <path id="p1" d="M 0 900 C 400 600, 600 900, 800 400 S 1200 200, 1600 600" fill="none"/>
+    <path id="p2" d="M 200 900 C 500 500, 700 800, 1000 300 S 1300 100, 1600 400" fill="none"/>
+    <path id="p3" d="M -100 700 C 200 400, 400 600, 600 200 S 900 0, 1200 300" fill="none"/>
+    <path id="p4" d="M 100 950 C 400 650, 800 850, 1100 350 S 1400 150, 1700 450" fill="none"/>
+
+    <!-- Hero Silhouette Clipping Path -->
+    <clipPath id="heroClip">
+      <polygon points="1050,880 1180,880 1120,380 1100,380" />
+    </clipPath>
+
+  </defs>
+
+  <!-- Layer 1: Base Background Gradient -->
+  <rect width="1600" height="900" fill="url(#bgGrad)" />
+
+  <!-- Layer 2: Deep Vault Atmosphere -->
+  <rect x="0" y="0" width="1600" height="900" fill="#1A1A2E" opacity="0.4" filter="url(#b160)">
+    <animate attributeName="opacity" values="0.4;0.5;0.4" dur="20s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Layer 3: Distant Stained Glass Window -->
+  <g>
+    <path d="M 150 0 L 450 0 C 450 100, 150 100, 150 0 Z" fill="url(#glassPattern)" opacity="0.6" />
+    <path d="M 150 0 L 450 0 C 450 100, 150 100, 150 0 Z" fill="#E0D8E8" opacity="0.3" filter="url(#b60)" />
+  </g>
+
+  <!-- Layer 4: God Rays (Moonlight Beams) -->
+  <g opacity="0.7">
+    <polygon points="-100,0 300,0 1600,900 600,900" fill="url(#rayGrad)" filter="url(#b90)" />
+    <polygon points="200,0 500,0 1600,800 1200,900" fill="url(#rayGrad)" filter="url(#b120)" />
+    <polygon points="-50,200 100,200 1000,950 600,950" fill="url(#rayGrad)" filter="url(#b160)" />
+  </g>
+
+  <!-- Layer 5: Moon Light Source -->
+  <circle cx="300" cy="0" r="600" fill="url(#moonGrad)" opacity="0.3" filter="url(#b120)" />
+  <circle cx="300" cy="0" r="300" fill="#E0D8E8" opacity="0.15" filter="url(#b90)">
+    <animate attributeName="r" values="300;320;300" dur="15s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Layer 6: Far Cathedral Vaults (Top Left) -->
+  <path d="M 0 0 L 1600 0 L 1600 150 Q 1200 100, 800 200 Q 400 100, 0 200 Z" fill="#1A1A2E" opacity="0.8" filter="url(#b90)" />
+  
+  <!-- Layer 7: Distant Stone Columns (Left) -->
+  <g opacity="0.6" filter="url(#b60)">
+    <rect x="50" y="-100" width="80" height="1200" fill="#1A1A2E" />
+    <rect x="200" y="-100" width="120" height="1200" fill="#1A1A2E" />
+    <path d="M 50 -100 L 130 -200 L 210 -100 Z" fill="#1A1A2E" />
+    <path d="M 200 -100 L 320 -250 L 440 -100 Z" fill="#1A1A2E" />
+  </g>
+
+  <!-- Layer 8: Mid-ground Arches Receding -->
+  <g opacity="0.9">
+    <path d="M 800 900 L 800 500 A 300 300 0 0 1 1400 500 L 1400 900 Z" fill="#1A1A2E" filter="url(#b60)" />
+    <path d="M 700 900 L 700 400 A 400 400 0 0 1 1500 400 L 1500 900 Z" fill="#1A1A2E" filter="url(#b90)" />
+    <path d="M 600 900 L 600 300 A 500 500 0 0 1 1600 300 L 1600 900 Z" fill="#1A1A2E" filter="url(#b120)" />
+  </g>
+
+  <!-- Layer 9: Floor Shadows / Atmospheric Mist -->
+  <ellipse cx="1000" cy="850" rx="700" ry="150" fill="#1A1A2E" opacity="0.8" filter="url(#b160)" />
+
+  <!-- Layer 10: Hero Subject (Silhouette + Rim Light) -->
+  <g id="hero" transform="translate(0, 0)">
+    <!-- Breathing Animation -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,5; 0,0" dur="8s" repeatCount="indefinite" />
+
+    <!-- Main Body Silhouette -->
+    <path d="M 1100 880 
+             C 1100 850, 1080 700, 1090 600 
+             C 1080 500, 1070 450, 1060 400 
+             L 1060 370 
+             C 1060 340, 1090 340, 1090 370 
+             L 1090 400 
+             C 1100 450, 1120 500, 1130 600 
+             C 1140 700, 1150 850, 1150 880 
+             Z" 
+          fill="#0D0D1A" />
+          
+    <!-- Long Coat Details (Flowing) -->
+    <path d="M 1090 600 C 1050 650, 1020 800, 1030 880 L 1100 880 Z" fill="#0D0D1A" />
+    <path d="M 1130 600 C 1170 650, 1200 800, 1190 880 L 1120 880 Z" fill="#0D0D1A" />
+    
+    <!-- Raised Arm holding Lantern -->
+    <path d="M 1085 450 
+             C 1060 440, 1040 420, 1020 380 
+             L 1030 370 
+             C 1050 400, 1070 420, 1095 430 
+             Z" 
+          fill="#0D0D1A" />
+
+    <!-- Head / Hood Shape -->
+    <ellipse cx="1075" cy="355" rx="18" ry="22" fill="#0D0D1A" />
+    <path d="M 1060 370 C 1060 340, 1090 330, 1090 360 L 1090 370 Z" fill="#0D0D1A" />
+
+    <!-- Rim Light (Right side warm glow) -->
+    <path d="M 1100 880 
+             C 1100 850, 1080 700, 1090 600 
+             C 1080 500, 1070 450, 1060 400 
+             L 1060 370 
+             C 1060 340, 1090 340, 1090 370 
+             L 1090 400 
+             C 1100 450, 1120 500, 1130 600 
+             C 1140 700, 1150 850, 1150 880 
+             Z" 
+          fill="none" stroke="#FF9F73" stroke-width="4" opacity="0.6" filter="url(#b8)" />
+          
+    <!-- Rim Light on Coat Bottom -->
+    <path d="M 1030 880 L 1100 880" stroke="#FF9F73" stroke-width="3" opacity="0.4" filter="url(#b8)" />
+
+  </g>
+
+  <!-- Layer 11: The Lantern Object -->
+  <g id="lantern" transform="translate(0, 0)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,3; 0,0" dur="4s" repeatCount="indefinite" />
+    
+    <!-- Lantern Body -->
+    <rect x="1000" y="360" width="24" height="32" fill="#0D0D1A" />
+    <rect x="1004" y="364" width="16" height="24" fill="#FF9F73" opacity="0.9" />
+    
+    <!-- Lantern Handle/Top -->
+    <path d="M 1000 360 L 1012 350 L 1024 360" fill="none" stroke="#0D0D1A" stroke-width="3" />
+    <line x1="1008" y1="350" x2="1008" y2="345" stroke="#0D0D1A" stroke-width="2" />
+
+    <!-- Core Lantern Light -->
+    <circle cx="1012" cy="376" r="8" fill="#FF9F73" filter="url(#b3)" />
+  </g>
+
+  <!-- Layer 12: Massive Lantern Glow (Atmospheric) -->
+  <circle cx="1012" cy="376" r="250" fill="url(#lanternGlow)" opacity="0.6" filter="url(#b120)">
+    <animate attributeName="r" values="250;270;250" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;0.7;0.6" dur="5s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="1012" cy="376" r="80" fill="#FF9F73" opacity="0.2" filter="url(#b60)">
+    <animate attributeName="r" values="80;90;80" dur="5s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Layer 13: Foreground Cathedral Pillar (Left) -->
+  <rect x="-50" y="0" width="250" height="950" fill="#1A1A2E" filter="url(#b20)" opacity="0.95" />
+  <rect x="-50" y="0" width="250" height="950" fill="#0D0D1A" filter="url(#b8)" opacity="0.8" />
+  
+  <!-- Layer 14: Right Foreground Edge (Dark Frame) -->
+  <rect x="1300" y="0" width="350" height="950" fill="#1A1A2E" filter="url(#b90)" opacity="0.7" />
+  <rect x="1400" y="0" width="250" height="950" fill="#0D0D1A" filter="url(#b60)" opacity="0.8" />
+
+  <!-- Layer 15: Highlights on Foreground Pillars -->
+  <path d="M 200 0 L 200 900 L 150 900 L 150 0 Z" fill="#E0D8E8" opacity="0.1" filter="url(#b20)" />
+  <path d="M 1300 900 L 1300 0 L 1320 0 L 1320 900 Z" fill="#E0D8E8" opacity="0.1" filter="url(#b20)" />
+
+  <!-- Layer 16: Dust Particles (Cool) drifting in Moonlight -->
+  <g fill="#E0D8E8" opacity="0.6">
+    <circle r="2"><animateMotion dur="22s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+    <circle r="1.5"><animateMotion dur="26s" repeatCount="indefinite" begin="2s"><mpath href="#p2"/></animateMotion></circle>
+    <circle r="2.5"><animateMotion dur="20s" repeatCount="indefinite" begin="5s"><mpath href="#p3"/></animateMotion></circle>
+    <circle r="1"><animateMotion dur="28s" repeatCount="indefinite" begin="1s"><mpath href="#p4"/></animateMotion></circle>
+    <circle r="3"><animateMotion dur="24s" repeatCount="indefinite" begin="8s"><mpath href="#p1"/></animateMotion></circle>
+    <circle r="1.5"><animateMotion dur="30s" repeatCount="indefinite" begin="12s"><mpath href="#p2"/></animateMotion></circle>
+    <circle r="2"><animateMotion dur="18s" repeatCount="indefinite" begin="15s"><mpath href="#p3"/></animateMotion></circle>
+  </g>
+
+  <!-- Layer 17: Embers / Sparks (Warm) rising from Lantern -->
+  <g fill="#FF9F73" opacity="0.8">
+    <circle r="2"><animateMotion dur="10s" repeatCount="indefinite" path="M 1012 376 C 1000 300, 1020 200, 1012 100" /></circle>
+    <circle r="1.5"><animateMotion dur="12s" repeatCount="indefinite" begin="1s" path="M 1012 376 C 1030 300, 1010 200, 1030 150" /></circle>
+    <circle r="2.5"><animateMotion dur="9s" repeatCount="indefinite" begin="3s" path="M 1012 376 C 990 280, 1010 180, 1000 80" /></circle>
+    <circle r="1"><animateMotion dur="14s" repeatCount="indefinite" begin="5s" path="M 1012 376 C 1040 320, 1030 220, 1050 120" /></circle>
+    <circle r="3"><animateMotion dur="11s" repeatCount="indefinite" begin="7s" path="M 1012 376 C 1010 290, 1025 190, 1015 90" /></circle>
+    <circle r="1.5"><animateMotion dur="13s" repeatCount="indefinite" begin="9s" path="M 1012 376 C 980 310, 1000 210, 980 110" /></circle>
+  </g>
+
+  <!-- Layer 18: Floating Ash / Soot (Slow Drift) -->
+  <g fill="#3D2A4F" opacity="0.4">
+    <circle r="3"><animateMotion dur="35s" repeatCount="indefinite" path="M 0 500 Q 400 400, 800 600 T 1600 400" /></circle>
+    <circle r="4"><animateMotion dur="40s" repeatCount="indefinite" begin="10s" path="M 1600 300 Q 1200 500, 800 300 T 0 500" /></circle>
+    <circle r="2"><animateMotion dur="30s" repeatCount="indefinite" begin="5s" path="M 0 800 Q 500 700, 1000 900 T 1600 700" /></circle>
+  </g>
+
+  <!-- Layer 19: Top Vignette (Focus down) -->
+  <rect x="0" y="0" width="1600" height="300" fill="url(#bgGrad)" opacity="0.5" filter="url(#b160)" />
+
+  <!-- Layer 20: Bottom Mist / Fog -->
+  <rect x="0" y="700" width="1600" height="200" fill="#1A1A2E" opacity="0.4" filter="url(#b120)" />
+  <rect x="0" y="800" width="1600" height="100" fill="#1A1A2E" opacity="0.6" filter="url(#b90)" />
+
+  <!-- Layer 21: Final Light Bloom on Hero -->
+  <ellipse cx="1100" cy="650" rx="200" ry="300" fill="#FF9F73" opacity="0.05" filter="url(#b160)" />
+
+</svg>

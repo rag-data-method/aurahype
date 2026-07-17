@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Filters -->
+    <filter id="blur60" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="blur90" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="90"/>
+    </filter>
+    <filter id="blur120" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="blur20" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="blur4" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="stoneTex" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="4" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0.25 0" in="noise" result="darkNoise"/>
+      <feComposite operator="in" in="darkNoise" in2="SourceGraphic" result="maskedNoise"/>
+      <feBlend mode="multiply" in="maskedNoise" in2="SourceGraphic"/>
+    </filter>
+    <filter id="swordGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="b1"/>
+      <feGaussianBlur stdDeviation="6" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="godRayBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A1A2E">
+        <animate attributeName="stop-color" values="#1A1A2E;#2A1A2E;#1A1A2E" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="40%" stop-color="#1A1A2E">
+        <animate attributeName="stop-color" values="#1A1A2E;#3A2A3E;#1A1A2E" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="70%" stop-color="#6B4F3E">
+        <animate attributeName="stop-color" values="#6B4F3E;#7B5F4E;#6B4F3E" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#C9A574">
+        <animate attributeName="stop-color" values="#C9A574;#D9B584;#C9A574" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="rayGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5E8C8" stop-opacity="0.55">
+        <animate attributeName="stop-opacity" values="0.55;0.75;0.55" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#C9A574" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="stoneGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5E8C8"/>
+      <stop offset="30%" stop-color="#C9A574"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+
+    <linearGradient id="bladeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="40%" stop-color="#F5E8C8"/>
+      <stop offset="60%" stop-color="#C9A574"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+
+    <radialGradient id="dustGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5E8C8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F5E8C8" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="rimLight" cx="20%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#F5E8C8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#C9A574" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Reusable Shapes -->
+    <g id="swordShape">
+      <!-- Blade -->
+      <path d="M -4 0 L 4 0 L 3 -280 L 0 -320 L -3 -280 Z"/>
+      <!-- Fuller -->
+      <rect x="-0.8" y="-270" width="1.6" height="200" fill="#1A1A2E" opacity="0.6"/>
+      <!-- Crossguard -->
+      <rect x="-22" y="0" width="44" height="5" rx="1"/>
+      <rect x="-24" y="5" width="4" height="8"/>
+      <rect x="20" y="5" width="4" height="8"/>
+      <!-- Grip -->
+      <rect x="-3" y="13" width="6" height="45"/>
+      <!-- Pommel -->
+      <circle cx="0" cy="62" r="5"/>
+      <!-- Pommel Spike -->
+      <path d="M 0 67 L 0 75" stroke-width="1.5"/>
+    </g>
+
+    <circle id="p" r="2" fill="url(#dustGrad)">
+      <animate attributeName="r" values="1.5;3;1.5" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </circle>
+
+    <!-- God Ray Cone Path -->
+    <path id="rayPath" d="M -50 -100 L 300 1000 L -150 1000 Z"/>
+  </defs>
+
+  <!-- 1. Sky Base -->
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+
+  <!-- 2. Distant Stars / Dust -->
+  <g fill="#F5E8C8" opacity="0.3">
+    <circle cx="200" cy="150" r="1"><animate attributeName="opacity" values="0.1;0.6;0.1" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="450" cy="80" r="1.5"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="100" cy="300" r="1"><animate attributeName="opacity" values="0;0.5;0" dur="9s" repeatCount="indefinite"/></circle>
+    <circle cx="350" cy="220" r="0.8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="600" cy="50" r="1.2"><animate attributeName="opacity" values="0.1;0.6;0.1" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="50" cy="450" r="1"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="800" cy="180" r="1"><animate attributeName="opacity" values="0;0.6;0" dur="10s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- 3. Deep Clouds (Far Background) -->
+  <g opacity="0.4" filter="url(#blur120)">
+    <ellipse cx="400" cy="400" rx="500" ry="120" fill="#1A1A2E">
+      <animateTransform attributeName="transform" type="translate" values="-80 0; 80 0; -80 0" dur="50s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </ellipse>
+    <ellipse cx="900" cy="350" rx="400" ry="100" fill="#6B4F3E" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="50 0; -50 0; 50 0" dur="40s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+
+  <!-- 4. Mid Clouds -->
+  <g opacity="0.5" filter="url(#blur90)">
+    <ellipse cx="200" cy="600" rx="600" ry="150" fill="#6B4F3E">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 100 -20; 0 0" dur="35s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </ellipse>
+    <ellipse cx="1200" cy="500" rx="500" ry="130" fill="#1A1A2E" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -80 10; 0 0" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+
+  <!-- 5. Ground / Horizon Fog -->
+  <rect x="0" y="650" width="1600" height="250" fill="#1A1A2E" opacity="0.85" filter="url(#blur60)">
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="15s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 6. Ground Plane -->
+  <path d="M 0 750 Q 800 700 1600 780 L 1600 900 L 0 900 Z" fill="#1A1A2E"/>
+  <path d="M 0 750 Q 800 700 1600 780 L 1600 900 L 0 900 Z" fill="#6B4F3E" opacity="0.3" filter="url(#blur20)"/>
+
+  <!-- 7. God Rays (The warm light shaft) -->
+  <g transform="translate(1100, 380) rotate(-35)" opacity="0.6" filter="url(#godRayBlur)">
+    <use href="#rayPath" fill="url(#rayGrad)"/>
+    <use href="#rayPath" fill="url(#rayGrad)" transform="scale(0.8) rotate(5)" opacity="0.7"/>
+    <use href="#rayPath" fill="url(#rayGrad)" transform="scale(1.2) rotate(-3)" opacity="0.5"/>
+    <animateTransform attributeName="transform" type="translate" values="1100 380; 1100 370; 1100 380" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </g>
+
+  <!-- 8. Back Haze Layer (Behind Stone) -->
+  <ellipse cx="1100" cy="680" rx="250" ry="80" fill="#C9A574" opacity="0.25" filter="url(#blur90)">
+    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="12s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 9. Stone Pedestal Base -->
+  <g transform="translate(1100, 650)">
+    <!-- Shadow -->
+    <ellipse cx="0" cy="80" rx="140" ry="25" fill="#1A1A2E" opacity="0.8" filter="url(#blur20)"/>
+    
+    <!-- Main Stone Body -->
+    <path d="M -100 80 Q -110 0 -80 -60 Q 0 -80 80 -60 Q 110 0 100 80 Z" fill="url(#stoneGrad)" filter="url(#stoneTex)"/>
+    
+    <!-- Stone Top Surface -->
+    <ellipse cx="0" cy="-60" rx="80" ry="20" fill="#6B4F3E" opacity="0.6"/>
+    <ellipse cx="0" cy="-60" rx="80" ry="20" fill="none" stroke="#1A1A2E" stroke-width="2" opacity="0.4"/>
+
+    <!-- Stone Rim Light (Left side catching light) -->
+    <path d="M -80 -60 Q -110 0 -100 80" fill="none" stroke="#F5E8C8" stroke-width="4" opacity="0.5" filter="url(#blur4)"/>
+    <path d="M -75 -58 Q -100 0 -95 70" fill="none" stroke="#F5E8C8" stroke-width="1.5" opacity="0.8"/>
+  </g>
+
+  <!-- 10. Sword Silhouette (Main Subject) -->
+  <g transform="translate(1100, 590)">
+    <!-- Subtle Sway / Breath -->
+    <animateTransform attributeName="transform" type="rotate" values="-0.5 0 75; 0.5 0 75; -0.5 0 75" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" additive="sum"/>
+    
+    <!-- Main Sword Silhouette -->
+    <use href="#swordShape" fill="#1A1A2E"/>
+    
+    <!-- Blade Glint / Rim Light (Left Edge) -->
+    <path d="M 0 -320 L -3 -280 L -4 0" fill="none" stroke="#F5E8C8" stroke-width="1.5" opacity="0.9" filter="url(#blur4)"/>
+    <path d="M 0 -320 L -3 -280 L -4 0" fill="none" stroke="#F5E8C8" stroke-width="0.5" opacity="1"/>
+    
+    <!-- Secondary Glint on Guard Left -->
+    <line x1="-22" y1="0" x2="-24" y2="5" stroke="#C9A574" stroke-width="1" opacity="0.7"/>
+    
+    <!-- Ambient Glow around Sword -->
+    <use href="#swordShape" fill="#C9A574" opacity="0.15" filter="url(#swordGlow)"/>
+  </g>
+
+  <!-- 11. Mid-Ground Fog Layer (In front of stone base, behind foreground dust) -->
+  <ellipse cx="1100" cy="700" rx="300" ry="100" fill="#F5E8C8" opacity="0.1" filter="url(#blur60)">
+    <animate attributeName="opacity" values="0.08;0.15;0.08" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- 12. Foreground Dust Particles -->
+  <g opacity="0.6">
+    <use href="#p" x="300" y="200"><animate attributeName="cy" values="200;180;200" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/><animate attributeName="cx" values="300;320;300" dur="18s" repeatCount="indefinite"/></use>
+    <use href="#p" x="500" y="350"><animate attributeName="cy" values="350;330;350" dur="12s" repeatCount="indefinite"/><animate attributeName="cx" values="500;480;500" dur="16s" repeatCount="indefinite"/></use>
+    <use href="#p" x="800" y="150"><animate attributeName="cy" values="150;170;150" dur="15s" repeatCount="indefinite"/><animate attributeName="cx" values="800;830;800" dur="20s" repeatCount="indefinite"/></use>
+    <use href="#p" x="1000" y="400"><animate attributeName="cy" values="400;380;400" dur="11s" repeatCount="indefinite"/><animate attributeName="cx" values="1000;1020;1000" dur="14s" repeatCount="indefinite"/></use>
+    <use href="#p" x="1200" y="250"><animate attributeName="cy" values="250;230;250" dur="13s" repeatCount="indefinite"/><animate attributeName="cx" values="1200;1180;1200" dur="17s" repeatCount="indefinite"/></use>
+    <use href="#p" x="400" y="500"><animate attributeName="cy" values="500;480;500" dur="19s" repeatCount="indefinite"/><animate attributeName="cx" values="400;410;400" dur="22s" repeatCount="indefinite"/></use>
+    <use href="#p" x="700" y="600"><animate attributeName="cy" values="600;590;600" dur="10s" repeatCount="indefinite"/><animate attributeName="cx" values="700;690;700" dur="15s" repeatCount="indefinite"/></use>
+    <use href="#p" x="950" y="550"><animate attributeName="cy" values="550;540;550" dur="16s" repeatCount="indefinite"/><animate attributeName="cx" values="950;960;950" dur="21s" repeatCount="indefinite"/></use>
+    <use href="#p" x="200" y="650"><animate attributeName="cy" values="650;630;650" dur="14s" repeatCount="indefinite"/><animate attributeName="cx" values="200;220;200" dur="18s" repeatCount="indefinite"/></use>
+    <use href="#p" x="1300" y="700"><animate attributeName="cy" values="700;690;700" dur="12s" repeatCount="indefinite"/><animate attributeName="cx" values="1300;1320;1300" dur="16s" repeatCount="indefinite"/></use>
+    <use href="#p" x="600" y="750"><animate attributeName="cy" values="750;740;750" dur="11s" repeatCount="indefinite"/><animate attributeName="cx" values="600;590;600" dur="13s" repeatCount="indefinite"/></use>
+    <use href="#p" x="1100" y="800"><animate attributeName="cy" values="800;790;800" dur="17s" repeatCount="indefinite"/><animate attributeName="cx" values="1100;1120;1100" dur="19s" repeatCount="indefinite"/></use>
+    <use href="#p" x="150" y="400"><animate attributeName="cy" values="400;390;400" dur="10s" repeatCount="indefinite"/><animate attributeName="cx" values="150;160;150" dur="14s" repeatCount="indefinite"/></use>
+    <use href="#p" x="1400" y="300"><animate attributeName="cy" values="300;310;300" dur="13s" repeatCount="indefinite"/><animate attributeName="cx" values="1400;1380;1400" dur="17s" repeatCount="indefinite"/></use>
+    <use href="#p" x="850" y="250"><animate attributeName="cy" values="250;240;250" dur="15s" repeatCount="indefinite"/><animate attributeName="cx" values="850;860;850" dur="20s" repeatCount="indefinite"/></use>
+  </g>
+
+  <!-- 13. Foreground Light Bloom / Vignette -->
+  <ellipse cx="1100" cy="380" rx="400" ry="400" fill="url(#rimLight)" opacity="0.4" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- 14. Upper Left Title Space Glow (Subtle hint for text area) -->
+  <ellipse cx="300" cy="300" rx="500" ry="350" fill="#1A1A2E" opacity="0.3" filter="url(#blur120)"/>
+
+  <!-- 15. Near Foreground Haze (Bottom, very close to camera) -->
+  <rect x="0" y="750" width="1600" height="150" fill="#1A1A2E" opacity="0.6" filter="url(#blur60)">
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- 16. Subtle Light Flicker / Pulse on Sword Tip -->
+  <circle cx="1100" cy="270" r="15" fill="#F5E8C8" opacity="0" filter="url(#blur4)">
+    <animate attributeName="opacity" values="0;0.6;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+    <animate attributeName="r" values="10;25;10" dur="4s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+  <circle cx="1100" cy="270" r="5" fill="#F5E8C8" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+
+  <!-- 17. Right Side Deep Shadow (Atmospheric depth) -->
+  <rect x="1300" y="0" width="300" height="900" fill="#1A1A2E" opacity="0.5" filter="url(#blur90)"/>
+</svg>

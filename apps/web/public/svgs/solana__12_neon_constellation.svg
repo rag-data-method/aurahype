@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="hot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="20%" stop-color="#FF36F9"/>
+      <stop offset="55%" stop-color="#9945FF"/>
+      <stop offset="100%" stop-color="#5B21B6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="np" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#9945FF"/>
+      <stop offset="100%" stop-color="#5B21B6" stop-opacity="0.6"/>
+    </radialGradient>
+    <radialGradient id="nc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="45%" stop-color="#14F195"/>
+      <stop offset="100%" stop-color="#9945FF" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="nm" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="35%" stop-color="#FF36F9"/>
+      <stop offset="100%" stop-color="#5B21B6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9945FF"/>
+      <stop offset="50%" stop-color="#14F195"/>
+      <stop offset="100%" stop-color="#FF36F9"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="10s" repeatCount="indefinite" calcMode="easeInOut"/>
+      <animate attributeName="y2" values="100%;0%;100%" dur="12s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </linearGradient>
+    <linearGradient id="cp" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14F195"/>
+      <stop offset="50%" stop-color="#9945FF"/>
+      <stop offset="100%" stop-color="#FF36F9"/>
+      <animate attributeName="x1" values="100%;0%;100%" dur="11s" repeatCount="indefinite" calcMode="easeInOut"/>
+      <animate attributeName="y2" values="100%;0%;100%" dur="9s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </linearGradient>
+    <linearGradient id="ln" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9945FF" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#14F195" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FF36F9" stop-opacity="0.1"/>
+      <animate attributeName="x2" values="100%;0%;100%" dur="8s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </linearGradient>
+    <filter id="bloom"><feGaussianBlur in="SourceGraphic" stdDeviation="70"/></filter>
+    <filter id="glow"><feGaussianBlur in="SourceGraphic" stdDeviation="35"/></filter>
+    <filter id="soft"><feGaussianBlur in="SourceGraphic" stdDeviation="10"/></filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#000000"/>
+
+  <circle cx="800" cy="450" r="720" fill="#5B21B6" opacity="0.22" filter="url(#bloom)">
+    <animate attributeName="opacity" values="0.22;0.38;0.22" dur="10s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </circle>
+
+  <ellipse cx="260" cy="720" rx="320" ry="190" fill="#5B21B6" opacity="0.28" filter="url(#bloom)">
+    <animate attributeName="opacity" values="0.25;0.42;0.25" dur="9s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </ellipse>
+
+  <ellipse cx="420" cy="320" rx="460" ry="280" fill="url(#pc)" opacity="0.45" filter="url(#bloom)">
+    <animateTransform attributeName="transform" type="rotate" values="-12 800 450;8 800 450;-12 800 450" dur="16s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <animate attributeName="opacity" values="0.45;0.6;0.45" dur="8s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </ellipse>
+
+  <ellipse cx="1180" cy="580" rx="380" ry="240" fill="url(#cp)" opacity="0.35" filter="url(#glow)">
+    <animateTransform attributeName="transform" type="rotate" values="8 800 450;-8 800 450;8 800 450" dur="14s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <animate attributeName="opacity" values="0.35;0.5;0.35" dur="7s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </ellipse>
+
+  <g transform="translate(1200,250)">
+    <circle r="190" fill="url(#hot)" opacity="0.85" filter="url(#bloom)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.14;1" dur="6s" repeatCount="indefinite" calcMode="easeInOut"/>
+      <animate attributeName="opacity" values="0.75;0.9;0.75" dur="6s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </circle>
+  </g>
+
+  <g transform="rotate(0 800 450)">
+    <animateTransform attributeName="transform" type="rotate" values="0 800 450;360 800 450" dur="24s" repeatCount="indefinite" calcMode="linear"/>
+
+    <g opacity="0.22" filter="url(#soft)">
+      <animate attributeName="opacity" values="0.18;0.32;0.18" dur="8s" repeatCount="indefinite" calcMode="easeInOut"/>
+      <line x1="800" y1="220" x2="650" y2="360" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="800" y1="220" x2="950" y2="360" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="650" y1="360" x2="950" y2="360" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="650" y1="360" x2="560" y2="500" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="950" y1="360" x2="1040" y2="500" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="560" y1="500" x2="1040" y2="500" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="560" y1="500" x2="720" y2="650" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="1040" y1="500" x2="880" y2="650" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="720" y1="650" x2="880" y2="650" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="720" y1="650" x2="800" y2="780" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="880" y1="650" x2="800" y2="780" stroke="url(#ln)" stroke-width="2"/>
+      <line x1="800" y1="220" x2="800" y2="780" stroke="url(#ln)" stroke-width="2"/>
+    </g>
+
+    <g>
+      <circle cx="800" cy="220" r="14" fill="url(#np)">
+        <animate attributeName="r" values="14;17;14" dur="5s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+      <circle cx="650" cy="360" r="12" fill="url(#nc)">
+        <animate attributeName="opacity" values="0.7;0.95;0.7" dur="6s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+      <circle cx="950" cy="360" r="13" fill="url(#nm)">
+        <animate attributeName="r" values="13;15;13" dur="4s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+      <circle cx="560" cy="500" r="11" fill="url(#np)">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="7s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+      <circle cx="1040" cy="500" r="12" fill="url(#nc)">
+        <animate attributeName="r" values="12;14;12" dur="5s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+      <circle cx="720" cy="650" r="10" fill="url(#nm)">
+        <animate attributeName="opacity" values="0.7;0.9;0.7" dur="6s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+      <circle cx="880" cy="650" r="11" fill="url(#nc)">
+        <animate attributeName="opacity" values="0.75;0.95;0.75" dur="8s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+      <circle cx="800" cy="780" r="14" fill="url(#np)">
+        <animate attributeName="r" values="14;16;14" dur="6s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+
+      <circle cx="800" cy="220" r="4" fill="#FFFFFF" opacity="0.5">
+        <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+      <circle cx="560" cy="500" r="3" fill="#FFFFFF" opacity="0.5">
+        <animate attributeName="opacity" values="0.45;0.65;0.45" dur="5s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+      <circle cx="800" cy="780" r="4" fill="#FFFFFF" opacity="0.5">
+        <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4.5s" repeatCount="indefinite" calcMode="easeInOut"/>
+      </circle>
+    </g>
+  </g>
+
+  <circle cx="300" cy="750" r="120" fill="#14F195" opacity="0.15" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.1;0.25;0.1" dur="7s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </circle>
+
+  <circle cx="1300" cy="650" r="140" fill="#FF36F9" opacity="0.15" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.12;0.28;0.12" dur="5s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </circle>
+
+  <circle cx="1350" cy="200" r="60" fill="#14F195" opacity="0.22" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.15;0.3;0.15" dur="6s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </circle>
+
+  <circle cx="800" cy="450" r="5" fill="#FFFFFF" opacity="0.55" filter="url(#soft)">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </circle>
+</svg>

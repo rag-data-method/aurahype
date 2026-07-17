@@ -1,0 +1,8 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#ffffff"/>
+  <g transform="rotate(45, 400, 300)">
+    <path d="M -100,225 L 300,225 L 400,125 L 500,225 L 900,225" fill="none" stroke="#000000" stroke-width="60" stroke-linecap="butt" stroke-linejoin="miter">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,150; 0,0" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" keyTimes="0; 0.5; 1"/>
+    </path>
+  </g>
+</svg>

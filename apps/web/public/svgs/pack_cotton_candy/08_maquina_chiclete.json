@@ -1,0 +1,24 @@
+{
+  "slug": "08_maquina_chiclete",
+  "title": "Máquina de Chiclete",
+  "category": "cotton_candy",
+  "objects": "gumball machine + pastel gumballs + shiny coin",
+  "colors": {
+    "primary": "#FFB7B2",
+    "secondary": "#FFFFFF",
+    "accent": "#C7CEEA",
+    "bg": "#FDF5E6"
+  },
+  "tags": [
+    "light",
+    "candy",
+    "machine",
+    "gum"
+  ],
+  "svgFile": "08_maquina_chiclete.svg",
+  "sizeKB": 8,
+  "animations": 23,
+  "gradients": 10,
+  "generatedAt": "2026-06-19",
+  "model": "@cf/moonshotai/kimi-k2.7-code"
+}

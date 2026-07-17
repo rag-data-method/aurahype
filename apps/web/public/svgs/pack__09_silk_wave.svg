@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="bM" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+    <filter id="bH" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="75"/>
+    </filter>
+    <filter id="tx" x="0" y="0" width="100%" height="100%">
+      <feTurbulence baseFrequency="0.008" numOctaves="3" result="n"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.06 0" in="n" result="c"/>
+      <feBlend in="SourceGraphic" in2="c" mode="overlay"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FFF5EB"/>
+  
+  <path fill="#B85440" opacity="0.85" filter="url(#bH)" d="M-100,600 Q200,400 500,650 T1100,600 T1700,700 V900 H-100 Z">
+    <animate attributeName="d" values="M-100,600 Q200,400 500,650 T1100,600 T1700,700 V900 H-100 Z;M-100,650 Q400,350 700,700 T1300,550 T1700,650 V900 H-100 Z;M-100,600 Q200,400 500,650 T1100,600 T1700,700 V900 H-100 Z" dur="10s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="-50,0; 50,0; -50,0" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FF7F00" opacity="0.9" d="M-100,500 Q300,300 600,550 T1200,500 T1700,600 V900 H-100 Z">
+    <animate attributeName="d" values="M-100,500 Q300,300 600,550 T1200,500 T1700,600 V900 H-100 Z;M-100,550 Q400,250 700,600 T1300,450 T1700,550 V900 H-100 Z;M-100,500 Q300,300 600,550 T1200,500 T1700,600 V900 H-100 Z" dur="7s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FA8072" opacity="0.9" filter="url(#bM)" d="M-100,400 Q400,600 800,400 T1600,500 V900 H-100 Z">
+    <animate attributeName="d" values="M-100,400 Q400,600 800,400 T1600,500 V900 H-100 Z;M-100,450 Q500,550 900,450 T1600,400 V900 H-100 Z;M-100,400 Q400,600 800,400 T1600,500 V900 H-100 Z" dur="9s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,20; 0,-20; 0,20" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FFB088" opacity="0.8" d="M-100,300 Q300,500 700,300 T1500,400 V900 H-100 Z">
+    <animate attributeName="d" values="M-100,300 Q300,500 700,300 T1500,400 V900 H-100 Z;M-100,350 Q400,450 800,350 T1500,350 V900 H-100 Z;M-100,300 Q300,500 700,300 T1500,400 V900 H-100 Z" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#B85440" opacity="0.75" d="M-100,700 Q400,500 900,750 T1700,650 V900 H-100 Z">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,-30; 0,0" dur="5s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FA8072" opacity="0.85" d="M0,550 C300,450 600,650 900,550 S1500,600 1600,500 V900 H0 Z">
+    <animate attributeName="d" values="M0,550 C300,450 600,650 900,550 S1500,600 1600,500 V900 H0 Z;M0,600 C400,500 700,700 1000,600 S1500,550 1600,650 V900 H0 Z;M0,550 C300,450 600,650 900,550 S1500,600 1600,500 V900 H0 Z" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FF7F00" opacity="0.95" d="M-100,650 C200,550 500,750 800,650 S1400,700 1700,600 V900 H-100 Z">
+    <animateTransform attributeName="transform" type="scale" values="1,1; 1.1,1; 1,1" dur="4s" repeatCount="indefinite" additive="sum" origin="800 450"/>
+  </path>
+  
+  <path fill="#FFB088" opacity="0.7" filter="url(#bM)" d="M0,200 Q400,100 800,300 T1600,200 V900 H0 Z">
+    <animate attributeName="opacity" values="0.7;0.95;0.7" dur="5s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FA8072" opacity="0.6" filter="url(#bH)" d="M200,300 Q600,100 1000,400 T1800,300 V600 Q1400,500 1000,600 T200,500 Z">
+    <animateTransform attributeName="transform" type="translate" values="-100,50; 100,-50; -100,50" dur="7s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FF7F00" opacity="0.8" d="M0,750 Q400,650 800,800 T1600,700 V900 H0 Z">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-40; 0,0" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#B85440" opacity="0.9" filter="url(#bM)" d="M200,900 Q600,700 1000,850 T1800,800 V900 H200 Z">
+    <animateTransform attributeName="transform" type="translate" values="-100,0; 100,0; -100,0" dur="9s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FFB088" opacity="0.75" d="M-100,100 Q300,-50 700,150 T1500,100 V400 Q1100,300 700,400 T-100,300 Z">
+    <animate attributeName="d" values="M-100,100 Q300,-50 700,150 T1500,100 V400 Q1100,300 700,400 T-100,300 Z;M-100,150 Q400,50 800,200 T1500,150 V450 Q1000,350 600,450 T-100,350 Z;M-100,100 Q300,-50 700,150 T1500,100 V400 Q1100,300 700,400 T-100,300 Z" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FF7F00" opacity="0.85" d="M-100,350 Q200,450 500,350 T1100,400 T1700,300 V550 Q1300,650 900,550 T-100,600 Z">
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="5s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#B85440" opacity="0.8" filter="url(#bH)" d="M0,800 Q400,700 800,850 T1600,750 V900 H0 Z">
+    <animateTransform attributeName="transform" type="rotate" values="0 800 900; 2 800 900; 0 800 900" dur="10s" repeatCount="indefinite"/>
+  </path>
+  
+  <rect width="1600" height="900" fill="transparent" filter="url(#tx)" opacity="0.08" pointer-events="none"/>
+</svg>

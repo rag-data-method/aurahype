@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D8F948"/>
+      <stop offset="45%" stop-color="#A8E063"/>
+      <stop offset="100%" stop-color="#56AB2F"/>
+    </linearGradient>
+    <radialGradient id="bubble" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g fill="url(#bubble)">
+    <circle cx="180" cy="980" r="22"><animate attributeName="cy" values="980;-140" dur="12s" begin="-2s" repeatCount="indefinite"/><animate attributeName="cx" values="180;210;180;150;180" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="420" cy="1050" r="14"><animate attributeName="cy" values="1050;-120" dur="9s" begin="-5s" repeatCount="indefinite"/><animate attributeName="cx" values="420;450;420;390;420" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="650" cy="950" r="30"><animate attributeName="cy" values="950;-160" dur="15s" begin="-1s" repeatCount="indefinite"/><animate attributeName="cx" values="650;690;650;610;650" dur="9s" repeatCount="indefinite"/></circle>
+    <circle cx="880" cy="1080" r="18"><animate attributeName="cy" values="1080;-130" dur="10s" begin="-7s" repeatCount="indefinite"/><animate attributeName="cx" values="880;910;880;850;880" dur="5.5s" repeatCount="indefinite"/></circle>
+    <circle cx="1120" cy="990" r="26"><animate attributeName="cy" values="990;-150" dur="13s" begin="-3s" repeatCount="indefinite"/><animate attributeName="cx" values="1120;1160;1120;1080;1120" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="1360" cy="1020" r="16"><animate attributeName="cy" values="1020;-110" dur="8s" begin="-4s" repeatCount="indefinite"/><animate attributeName="cx" values="1360;1390;1360;1330;1360" dur="6.5s" repeatCount="indefinite"/></circle>
+    <circle cx="260" cy="1100" r="12"><animate attributeName="cy" values="1100;-100" dur="7s" begin="-6s" repeatCount="indefinite"/><animate attributeName="cx" values="260;285;260;235;260" dur="4.5s" repeatCount="indefinite"/></circle>
+    <circle cx="540" cy="980" r="20"><animate attributeName="cy" values="980;-140" dur="11s" begin="-8s" repeatCount="indefinite"/><animate attributeName="cx" values="540;570;540;510;540" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="760" cy="1040" r="28"><animate attributeName="cy" values="1040;-170" dur="14s" begin="-2.5s" repeatCount="indefinite"/><animate attributeName="cx" values="760;800;760;720;760" dur="8.5s" repeatCount="indefinite"/></circle>
+    <circle cx="990" cy="960" r="15"><animate attributeName="cy" values="960;-120" dur="9.5s" begin="-9s" repeatCount="indefinite"/><animate attributeName="cx" values="990;1020;990;960;990" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="1240" cy="1070" r="24"><animate attributeName="cy" values="1070;-150" dur="12.5s" begin="-5.5s" repeatCount="indefinite"/><animate attributeName="cx" values="1240;1280;1240;1200;1240" dur="7.5s" repeatCount="indefinite"/></circle>
+    <circle cx="1460" cy="940" r="10"><animate attributeName="cy" values="940;-90" dur="6.5s" begin="-1.5s" repeatCount="indefinite"/><animate attributeName="cx" values="1460;1480;1460;1440;1460" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="100" cy="1000" r="19"><animate attributeName="cy" values="1000;-130" dur="10.5s" begin="-7.5s" repeatCount="indefinite"/><animate attributeName="cx" values="100;130;100;70;100" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="320" cy="920" r="25"><animate attributeName="cy" values="920;-160" dur="13.5s" begin="-3.5s" repeatCount="indefinite"/><animate attributeName="cx" values="320;360;320;280;320" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="600" cy="1090" r="13"><animate attributeName="cy" values="1090;-110" dur="8.5s" begin="-10s" repeatCount="indefinite"/><animate attributeName="cx" values="600;625;600;575;600" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="820" cy="1010" r="21"><animate attributeName="cy" values="1010;-140" dur="11.5s" begin="-4.5s" repeatCount="indefinite"/><animate attributeName="cx" values="820;855;820;785;820" dur="6.8s" repeatCount="indefinite"/></circle>
+    <circle cx="1060" cy="1030" r="17"><animate attributeName="cy" values="1030;-120" dur="9s" begin="-6.5s" repeatCount="indefinite"/><animate attributeName="cx" values="1060;1090;1060;1030;1060" dur="5.8s" repeatCount="indefinite"/></circle>
+    <circle cx="1300" cy="980" r="23"><animate attributeName="cy" values="980;-150" dur="12s" begin="-8.5s" repeatCount="indefinite"/><animate attributeName="cx" values="1300;1340;1300;1260;1300" dur="7s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>

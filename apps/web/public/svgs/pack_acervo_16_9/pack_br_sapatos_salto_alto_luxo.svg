@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <radialGradient id="bgSpotlight" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#2a1a3a"/>
+      <stop offset="50%" stop-color="#140a1d"/>
+      <stop offset="100%" stop-color="#08040c"/>
+    </radialGradient>
+    <linearGradient id="glossBlack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="30%" stop-color="#0d0d0d"/>
+      <stop offset="60%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <linearGradient id="redSole" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b3001b"/>
+      <stop offset="50%" stop-color="#8a0015"/>
+      <stop offset="100%" stop-color="#5c000e"/>
+    </linearGradient>
+    <radialGradient id="toeGlow" cx="30%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="heelMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="50%" stop-color="#4a4a4a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="spotlightBlur">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgSpotlight)"/>
+  
+  <!-- Floor gradient -->
+  <rect y="700" width="1920" height="380" fill="url(#floorFade)" opacity="0.3">
+    <defs>
+      <linearGradient id="floorFade" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.1"/>
+        <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+      </linearGradient>
+    </defs>
+  </rect>
+
+  <!-- Spotlight cone -->
+  <ellipse cx="960" cy="720" rx="500" ry="120" fill="#ffffff" opacity="0.08" filter="url(#spotlightBlur)">
+    <animate attributeName="opacity" values="0.08;0.12;0.08" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Main shoe group -->
+  <g transform="translate(360, 180) scale(1.15)">
+    
+    <!-- Stiletto heel -->
+    <path d="M 520 520 Q 525 620 522 720 L 538 720 Q 540 620 545 520 Z" fill="url(#heelMetal)"/>
+    <path d="M 520 720 L 540 720 L 535 725 L 525 725 Z" fill="#8a0015"/>
+
+    <!-- Shoe sole (red) -->
+    <path d="M 180 460 Q 260 470 350 465 Q 440 460 520 500 L 545 520 Q 460 490 370 495 Q 270 500 180 490 Q 120 485 90 465 Q 110 450 180 460 Z" fill="url(#redSole)"/>
+
+    <!-- Inner lining red -->
+    <path d="M 180 460 Q 260 430 350 420 Q 430 410 505 455 Q 480 470 430 470 Q 350 475 270 480 Q 210 482 180 460 Z" fill="#a30018"/>
+
+    <!-- Glossy black upper -->
+    <path d="M 85 460 Q 75 445 95 430 Q 150 405 230 390 Q 320 375 400 380 Q 470 385 510 420 Q 535 440 540 470 Q 545 500 520 520 Q 460 490 370 495 Q 270 500 180 490 Q 110 485 85 460 Z" fill="url(#glossBlack)"/>
+
+    <!-- Toe box curve -->
+    <path d="M 85 460 Q 90 470 115 472 Q 140 474 155 465 Q 145 452 120 450 Q 95 448 85 460 Z" fill="#1a1a1a"/>
+
+    <!-- Heel counter -->
+    <path d="M 505 455 Q 520 465 525 485 Q 515 495 495 490 Q 485 475 505 455 Z" fill="#0a0a0a"/>
+
+    <!-- Glossy highlight on toe -->
+    <ellipse cx="160" cy="430" rx="45" ry="18" fill="url(#toeGlow)" transform="rotate(-15 160 430)">
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Side highlight curve -->
+    <path d="M 220 400 Q 320 385 420 395 Q 460 400 485 420" fill="none" stroke="#ffffff" stroke-width="3" stroke-opacity="0.25" stroke-linecap="round">
+      <animate attributeName="stroke-opacity" values="0.2;0.4;0.2" dur="5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Small sparkle -->
+    <circle cx="430" cy="405" r="4" fill="#ffffff" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Floating light particles -->
+  <circle cx="600" cy="300" r="3" fill="#ffffff" opacity="0.3">
+    <animate attributeName="cy" values="300;280;300" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1300" cy="250" r="2.5" fill="#ff6b8a" opacity="0.3">
+    <animate attributeName="cy" values="250;270;250" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="500" r="2" fill="#ffffff" opacity="0.2">
+    <animate attributeName="cy" values="500;485;500" dur="6s" repeatCount="indefinite"/>
+  </circle>
+</svg>

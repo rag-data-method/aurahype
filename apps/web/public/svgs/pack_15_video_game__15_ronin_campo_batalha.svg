@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Animated Sky Gradients -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1A2E">
+        <animate attributeName="stop-color" values="#1A1A2E;#241240;#1A1A2E" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="35%" stop-color="#3D1A4F">
+        <animate attributeName="stop-color" values="#3D1A4F;#4A225E;#3D1A4F" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="70%" stop-color="#C97864">
+        <animate attributeName="stop-color" values="#C97864;#E08A6B;#C97864" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#FF6B00">
+        <animate attributeName="stop-color" values="#FF6B00;#FF8A30;#FF6B00" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <animate attributeName="y2" values="1;0.95;1" dur="20s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="skyGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.4">
+        <animate attributeName="stop-opacity" values="0.4;0.6;0.4" dur="18s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#3D1A4F" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="50%" stop-color="#24122E"/>
+      <stop offset="100%" stop-color="#0D0D15"/>
+    </linearGradient>
+
+    <linearGradient id="rimLight" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#C97864" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="sunGlow" cx="70%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B00">
+        <animate attributeName="stop-color" values="#FF6B00;#FF9533;#FF6B00" dur="15s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#C97864" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#3D1A4F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters for Depth Atmosphere -->
+    <filter id="blur40"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur90"><feGaussianBlur stdDeviation="90"/></filter>
+    <filter id="blur120"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="blur160"><feGaussianBlur stdDeviation="160"/></filter>
+
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0" in="noise" result="coloredNoise"/>
+      <feBlend mode="multiply" in="coloredNoise" in2="SourceGraphic"/>
+    </filter>
+
+    <!-- Reusable Particles -->
+    <g id="ember">
+      <circle r="2.5" fill="#FF6B00">
+        <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="0;3;0" dur="4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <g id="dust">
+      <circle r="1.5" fill="#C97864" opacity="0.5">
+        <animate attributeName="opacity" values="0;0.8;0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <g id="spark">
+      <circle r="1" fill="#FF9533">
+        <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </defs>
+
+  <!-- Layer 1: Base Sky -->
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+
+  <!-- Layer 2: Distant Sun Glow -->
+  <rect width="1600" height="900" fill="url(#sunGlow)"/>
+
+  <!-- Layer 3: Atmospheric Clouds / Sky Haze (Very Blurred) -->
+  <g filter="url(#blur160)">
+    <path d="M -100,200 Q 400,100 900,250 T 1700,200 L 1700,800 L -100,800 Z" fill="#3D1A4F" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 100,0; 0,0" dur="45s" repeatCount="indefinite"/>
+    </path>
+    <path d="M -200,400 Q 600,300 1200,450 T 1800,350 L 1800,900 L -200,900 Z" fill="#C97864" opacity="0.4">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -150,0; 0,0" dur="55s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 4: Distant Fog Bank -->
+  <rect x="0" y="500" width="1600" height="400" fill="#1A1A2E" opacity="0.7" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.7;0.85;0.7" dur="20s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 5: Far Mountains / Horizon Silhouette -->
+  <g fill="#24122E" opacity="0.85">
+    <path d="M 0,650 L 200,580 L 350,620 L 500,550 L 650,590 L 850,520 L 1050,580 L 1200,540 L 1400,610 L 1600,560 L 1600,900 L 0,900 Z"/>
+  </g>
+
+  <!-- Layer 6: Distant Smoke Plumes -->
+  <g opacity="0.4" fill="#1A1A2E">
+    <path d="M 200,580 Q 220,500 180,450 T 220,350 T 180,250" filter="url(#blur90)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 30,-20; 0,0" dur="12s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1400,610 Q 1420,520 1380,450 T 1420,340 T 1380,240" filter="url(#blur120)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,-15; 0,0" dur="15s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 850,520 Q 870,450 830,380 T 870,280 T 830,190" filter="url(#blur90)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,-25; 0,0" dur="18s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 7: Misty Light Rays -->
+  <g opacity="0.15" fill="#FF6B00">
+    <polygon points="1100,-100 1250,-100 900,900 750,900">
+      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="10s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,-100 1000,-100 1100,900 950,900">
+      <animate attributeName="opacity" values="0.1;0.2;0.1" dur="14s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Layer 8: Mid-ground Battlefield Ground -->
+  <path d="M 0,700 Q 800,640 1600,720 L 1600,900 L 0,900 Z" fill="url(#groundGrad)"/>
+
+  <!-- Layer 9: Mid-ground Grass Silhouettes -->
+  <g fill="#0D0D15" opacity="0.9">
+    <path d="M 0,750 L 1600,750 L 1600,900 L 0,900 Z" filter="url(#blur40)"/>
+    <path d="M 100,750 Q 110,720 120,750 M 130,750 Q 140,730 150,750" stroke="#0D0D15" stroke-width="3" fill="none"/>
+    <path d="M 500,760 Q 510,720 520,760 M 530,760 Q 540,740 550,760" stroke="#0D0D15" stroke-width="2" fill="none"/>
+    <path d="M 900,740 Q 910,700 920,740 M 930,740 Q 940,710 950,740" stroke="#0D0D15" stroke-width="4" fill="none"/>
+    <path d="M 1300,755 Q 1310,725 1320,755 M 1330,755 Q 1340,735 1350,755" stroke="#0D0D15" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- Layer 10: Scattered Mid-field Broken Weapons -->
+  <g fill="#0D0D15">
+    <path d="M 400,760 L 410,660 L 415,660 L 405,760 Z"/>
+    <path d="M 600,780 L 595,690 L 600,690 L 605,780 Z"/>
+    <path d="M 1100,770 L 1105,680 L 1110,680 L 1105,770 Z"/>
+  </g>
+
+  <!-- Layer 11: Distant Footsteps Fading (The Story) -->
+  <g transform="translate(850, 720) scale(0.6)" fill="#1A1A2E" opacity="0.6">
+    <ellipse cx="0" cy="0" rx="15" ry="5">
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="8s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="60" cy="-5" rx="14" ry="4.5">
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="8.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="120" cy="-3" rx="13" ry="4">
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="9s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="175" cy="-8" rx="12" ry="3.5">
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="9.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="225" cy="-5" rx="11" ry="3">
+      <animate attributeName="opacity" values="0.2;0;0.2" dur="10s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="270" cy="-2" rx="10" ry="2.5">
+      <animate attributeName="opacity" values="0.1;0;0.1" dur="10.5s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Layer 12: Hero Subject (Ronin Silhouette) -->
+  <g id="hero">
+    <!-- Breathing/Subtle Sway Animation -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,2; 0,0" dur="5s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1150 780; 0.5 1150 780; 0 1150 780" dur="7s" repeatCount="indefinite" additive="sum"/>
+
+    <!-- Cape (Animated Wind) -->
+    <path d="M 1170,620 Q 1280,650 1340,630 Q 1320,680 1360,700 Q 1290,690 1330,750 Q 1250,740 1270,790 Q 1180,760 1190,700 Q 1150,680 1170,620" fill="#0D0D15">
+      <animateTransform attributeName="transform" type="skewX" values="0; 3; 0; -2; 0" dur="4s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 2,-3; 0,0; -1,2; 0,0" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </path>
+
+    <!-- Body Silhouette -->
+    <path d="M 1160,600 L 1130,650 L 1120,730 L 1110,770 L 1150,775 L 1160,740 L 1180,745 L 1190,785 L 1230,780 L 1210,730 L 1200,650 L 1180,600 Z" fill="#0D0D15"/>
+
+    <!-- Head & Obi -->
+    <path d="M 1160,600 L 1140,610 L 1145,630 L 1170,630 L 1175,610 Z" fill="#0D0D15"/>
+    <rect x="1115" y="695" width="75" height="12" fill="#0D0D15" rx="2"/>
+
+    <!-- Katana handle -->
+    <rect x="1180" y="620" width="8" height="60" fill="#0D0D15" transform="rotate(-20 1184 620)"/>
+
+    <!-- Rim Light (Right Edge Illumination) -->
+    <path d="M 1170,620 Q 1280,650 1340,630 Q 1320,680 1360,700 Q 1290,690 1330,750 Q 1250,740 1270,790 Q 1180,760 1190,700 Q 1150,680 1170,620" fill="none" stroke="url(#rimLight)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1160,600 L 1130,650 L 1120,730 L 1110,770 L 1150,775 L 1160,740 L 1180,745 L 1190,785 L 1230,780 L 1210,730 L 1200,650 L 1180,600 Z" fill="none" stroke="url(#rimLight)" stroke-width="2" opacity="0.8"/>
+    
+    <!-- Katana Rim Light -->
+    <rect x="1180" y="620" width="8" height="60" fill="none" stroke="url(#rimLight)" stroke-width="1.5" transform="rotate(-20 1184 620)" opacity="0.9"/>
+  </g>
+
+  <!-- Layer 13: Foreground Ground Plane -->
+  <path d="M 0,800 Q 800,750 1600,820 L 1600,900 L 0,900 Z" fill="#0D0D15"/>
+
+  <!-- Layer 14: Foreground Scattered Broken Spears & Banners -->
+  <g fill="#0D0D15">
+    <!-- Broken Spear 1 (Left) -->
+    <path d="M 150,900 L 160,760 L 165,760 L 155,900 Z"/>
+    <rect x="140" y="750" width="40" height="8" transform="rotate(-15 160 754)" fill="#0D0D15" opacity="0.8"/>
+    
+    <!-- Broken Spear 2 (Right) -->
+    <path d="M 1450,900 L 1440,780 L 1435,780 L 1445,900 Z"/>
+    <rect x="1430" y="770" width="30" height="6" transform="rotate(10 1445 773)" fill="#0D0D15" opacity="0.9"/>
+
+    <!-- Tattered Banner (Left) -->
+    <path d="M 300,900 L 310,720 L 315,720 L 305,900 Z"/>
+    <path d="M 312,730 C 350,725 380,740 370,760 C 360,770 330,765 312,755 Z"/>
+    
+    <!-- Tattered Banner (Right) -->
+    <path d="M 1350,900 L 1340,740 L 1335,740 L 1345,900 Z"/>
+    <path d="M 1338,750 C 1300,745 1270,760 1280,780 C 1290,790 1320,785 1338,775 Z"/>
+  </g>
+
+  <!-- Layer 15: Foreground Grass and Wind Animation -->
+  <g fill="#0D0D15" stroke="#0D0D15" stroke-width="2">
+    <path d="M 50,900 Q 60,840 70,900"/>
+    <path d="M 80,900 Q 75,850 90,900"/>
+    <path d="M 220,900 Q 230,830 240,900"/>
+    <path d="M 450,900 Q 460,860 470,900"/>
+    <path d="M 480,900 Q 475,840 490,900"/>
+    <path d="M 700,900 Q 710,850 720,900"/>
+    <path d="M 950,900 Q 940,830 960,900"/>
+    <path d="M 1100,900 Q 1110,860 1120,900"/>
+    <path d="M 1250,900 Q 1260,840 1270,900"/>
+    <path d="M 1500,900 Q 1490,850 1510,900"/>
+    <animateTransform attributeName="transform" type="skewX" values="0; 4; 0; -3; 0" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Layer 16: Floating Ember Particles (Drifting Upwards) -->
+  <g id="embers">
+    <use href="#ember" x="200" y="800">
+      <animateMotion path="M 0,0 Q 20,-100 -10,-200" dur="5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="500" y="850">
+      <animateMotion path="M 0,0 Q -30,-120 10,-250" dur="7s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="800" y="820">
+      <animateMotion path="M 0,0 Q 15,-150 -20,-280" dur="6s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="1100" y="780">
+      <animateMotion path="M 0,0 Q 40,-100 15,-220" dur="8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="1400" y="860">
+      <animateMotion path="M 0,0 Q -20,-130 5,-260" dur="4.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="350" y="750">
+      <animateMotion path="M 0,0 Q 25,-110 -15,-230" dur="6.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="650" y="900">
+      <animateMotion path="M 0,0 Q -10,-140 20,-270" dur="5.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="950" y="880">
+      <animateMotion path="M 0,0 Q 30,-160 -10,-290" dur="7.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ember" x="1250" y="820">
+      <animateMotion path="M 0,0 Q -25,-120 10,-240" dur="4s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Layer 17: Dust Motes Drifting Sideways -->
+  <g id="dustMotes">
+    <use href="#dust" x="100" y="700">
+      <animateMotion path="M 0,0 Q 100,-20 200,10" dur="12s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="400" y="600">
+      <animateMotion path="M 0,0 Q -80,-30 -150,5" dur="15s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="700" y="750">
+      <animateMotion path="M 0,0 Q 120,-10 250,20" dur="18s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1000" y="650">
+      <animateMotion path="M 0,0 Q -60,-25 -120,15" dur="14s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1300" y="700">
+      <animateMotion path="M 0,0 Q 90,-15 180,25" dur="16s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="250" y="800">
+      <animateMotion path="M 0,0 Q -100,-5 -200,30" dur="20s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1500" y="750">
+      <animateMotion path="M 0,0 Q 80,-20 160,10" dur="11s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="850" y="680">
+      <animateMotion path="M 0,0 Q -70,-20 -140,0" dur="13s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1150" y="620">
+      <animateMotion path="M 0,0 Q 50,-30 100,-10" dur="17s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="550" y="720">
+      <animateMotion path="M 0,0 Q -50,-10 -100,20" dur="19s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Layer 18: Foreground Sparks / Heavy Atmosphere -->
+  <g id="sparks">
+    <use href="#spark" x="300" y="850">
+      <animateMotion path="M 0,0 Q 10,-50 -5,-100" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="600" y="820">
+      <animateMotion path="M 0,0 Q -15,-60 5,-120" dur="4s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="900" y="880">
+      <animateMotion path="M 0,0 Q 20,-40 10,-90" dur="2.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1200" y="800">
+      <animateMotion path="M 0,0 Q -10,-70 0,-140" dur="5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="150" y="780">
+      <animateMotion path="M 0,0 Q 25,-55 -10,-110" dur="3.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="450" y="760">
+      <animateMotion path="M 0,0 Q -20,-45 15,-95" dur="4.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="750" y="840">
+      <animateMotion path="M 0,0 Q 5,-65 -15,-125" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1050" y="790">
+      <animateMotion path="M 0,0 Q -25,-50 5,-105" dur="5.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1350" y="860">
+      <animateMotion path="M 0,0 Q 15,-75 -5,-135" dur="4s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="50" y="820">
+      <animateMotion path="M 0,0 Q 30,-35 -5,-85" dur="2.8s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Layer 19: Vignette / Cover Art Framing -->
+  <defs>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.6"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+
+  <!-- Layer 20: Final Grain Overlay -->
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)" opacity="0.6" pointer-events="none"/>
+</svg>

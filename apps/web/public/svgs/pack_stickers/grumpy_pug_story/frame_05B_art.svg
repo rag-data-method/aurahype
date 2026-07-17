@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Aggressive Starburst for Explosion Background -->
+    <path id="starburst" d="M 0,-400 L 30,-120 L 120,-250 L 90,-100 L 280,-180 L 130,-60 L 380,-30 L 130,10 L 280,140 L 100,50 L 120,240 L 50,80 L -20,400 L -70,120 L -160,280 L -110,90 L -300,180 L -130,50 L -390,0 L -140,-20 L -290,-150 L -100,-60 L -130,-260 L -50,-90 Z" />
+  </defs>
+
+  <style>
+    /* Background and Scene Setup */
+    .scene-bg {
+      fill: #FF3333;
+    }
+
+    /* Background Explosion Rotations */
+    .burst-1 { transform-origin: 960px 540px; animation: spin-cw 12s linear infinite; }
+    .burst-2 { transform-origin: 960px 540px; animation: spin-ccw 15s linear infinite; }
+    .burst-3 { transform-origin: 960px 540px; animation: spin-cw 10s linear infinite; }
+    .burst-4 { transform-origin: 960px 540px; animation: spin-ccw 8s linear infinite; }
+
+    /* Pug Group Shake Animation */
+    .pug-group {
+      transform-origin: 960px 540px;
+      animation: shake-hard 0.4s ease-in-out infinite;
+    }
+
+    /* Action Lines / Speed Lines Animations */
+    .action-line {
+      animation: dash-drift 1.5s linear infinite;
+    }
+    .action-dot {
+      animation: float-bob 2s ease-in-out infinite;
+    }
+
+    /* Keyframes */
+    @keyframes spin-cw {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spin-ccw {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes shake-hard {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      20% { transform: translate(-8px, 4px) rotate(-1deg); }
+      40% { transform: translate(6px, -6px) rotate(1deg); }
+      60% { transform: translate(-4px, 2px) rotate(-0.5deg); }
+      80% { transform: translate(8px, -4px) rotate(0.5deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+    @keyframes dash-drift {
+      0% { stroke-dashoffset: 0; opacity: 1; }
+      100% { stroke-dashoffset: 200; opacity: 0; }
+    }
+    @keyframes float-bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+  </style>
+
+  <!-- Base Background -->
+  <rect class="scene-bg" width="1920" height="1080" />
+
+  <!-- Background Halftone Dots (Vintage Comic Style) -->
+  <g fill="#000000" opacity="0.15">
+    <circle cx="200" cy="200" r="40" />
+    <circle cx="400" cy="150" r="60" />
+    <circle cx="600" cy="300" r="30" />
+    <circle cx="1400" cy="200" r="50" />
+    <circle cx="1600" cy="400" r="70" />
+    <circle cx="1800" cy="100" r="45" />
+    <circle cx="100" cy="800" r="55" />
+    <circle cx="300" cy="900" r="35" />
+    <circle cx="1500" cy="850" r="65" />
+    <circle cx="1700" cy="950" r="40" />
+  </g>
+
+  <!-- Rotating Comic Explosion Background -->
+  <g transform="translate(960, 540)">
+    <!-- Large Yellow Starburst -->
+    <use href="#starburst" class="burst-1" fill="#FFFF00" stroke="#000000" stroke-width="8" transform="scale(1.6)" />
+    <!-- Red Starburst -->
+    <use href="#starburst" class="burst-2" fill="#FF0000" stroke="#000000" stroke-width="6" transform="scale(1.3) rotate(45)" />
+    <!-- Orange Starburst -->
+    <use href="#starburst" class="burst-3" fill="#FF8800" stroke="#000000" stroke-width="5" transform="scale(1.0) rotate(22)" />
+    <!-- White Starburst -->
+    <use href="#starburst" class="burst-4" fill="#FFFFFF" stroke="#000000" stroke-width="4" transform="scale(0.7) rotate(15)" />
+  </g>
+
+  <!-- Action Lines / Speed Lines (Motion towards Pug) -->
+  <g stroke="#000000" stroke-width="12" stroke-linecap="round">
+    <line x1="0" y1="100" x2="600" y2="300" class="action-line" stroke-dasharray="40 80" />
+    <line x1="1920" y1="200" x2="1320" y2="400" class="action-line" stroke-dasharray="60 100" />
+    <line x1="0" y1="900" x2="500" y2="700" class="action-line" stroke-dasharray="50 90" />
+    <line x1="1920" y1="1000" x2="1400" y2="800" class="action-line" stroke-dasharray="30 70" />
+  </g>
+
+  <!-- Floating Action Dots -->
+  <g fill="#000000">
+    <circle cx="200" cy="300" r="25" class="action-dot" style="animation-delay: 0s;" />
+    <circle cx="250" cy="350" r="15" class="action-dot" style="animation-delay: 0.2s;" />
+    <circle cx="1700" cy="250" r="30" class="action-dot" style="animation-delay: 0.5s;" />
+    <circle cx="1650" cy="300" r="20" class="action-dot" style="animation-delay: 0.7s;" />
+  </g>
+
+  <!-- The Grumpy Pug (Centered) -->
+  <g class="pug-group">
+    <!-- Pug Body -->
+    <path d="M 760 900 C 720 850, 700 700, 750 600 C 800 500, 1120 500, 1170 600 C 1220 700, 1200 850, 1160 900 Z" fill="#DEB887" stroke="#000000" stroke-width="14" stroke-linejoin="round" />
+    
+    <!-- Pug Chest Shadow -->
+    <path d="M 830 900 C 830 800, 850 700, 960 650 C 1070 700, 1090 800, 1090 900 Z" fill="#C19A6B" stroke="none" />
+
+    <!-- Collar -->
+    <path d="M 780 620 C 850 680, 1070 680, 1140 620 L 1150 680 C 1070 740, 850 740, 770 680 Z" fill="#FF0000" stroke="#000000" stroke-width="12" stroke-linejoin="round" />
+    <circle cx="960" cy="710" r="35" fill="#FFD700" stroke="#000000" stroke-width="10" />
+
+    <!-- Pug Head -->
+    <path d="M 780 350 C 700 400, 700 550, 780 600 C 850 640, 1070 640, 1140 600 C 1220 550, 1220 400, 1140 350 C 1070 300, 850 300, 780 350 Z" fill="#DEB887" stroke="#000000" stroke-width="14" stroke-linejoin="round" />
+
+    <!-- Pug Ears (Floppy, Angled Down) -->
+    <!-- Left Ear -->
+    <path d="M 760 380 C 650 420, 620 550, 680 600 C 720 620, 780 550, 790 480 Z" fill="#8B4513" stroke="#000000" stroke-width="12" stroke-linejoin="round" />
+    <!-- Right Ear -->
+    <path d="M 1160 380 C 1270 420, 1300 550, 1240 600 C 1200 620, 1140 550, 1130 480 Z" fill="#8B4513" stroke="#000000" stroke-width="12" stroke-linejoin="round" />
+
+    <!-- Pug Muzzle (Black Mask) -->
+    <path d="M 860 500 C 860 450, 1060 450, 1060 500 C 1060 580, 1000 620, 960 620 C 920 620, 860 580, 860 500 Z" fill="#1A1A1A" stroke="#000000" stroke-width="10" stroke-linejoin="round" />
+
+    <!-- Pug Nose -->
+    <ellipse cx="960" cy="480" rx="35" ry="25" fill="#000000" />
+    <ellipse cx="950" cy="475" rx="8" ry="4" fill="#FFFFFF" opacity="0.6" transform="rotate(-20 950 475)" />
+
+    <!-- Pug Mouth (Growling / Snarling) -->
+    <path d="M 910 560 Q 960 590 1010 560" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" />
+    <!-- Teeth -->
+    <path d="M 920 565 L 930 585 L 940 568 Z" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-linejoin="round" />
+    <path d="M 980 568 L 990 585 L 1000 565 Z" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-linejoin="round" />
+    <!-- Lower Lip Wrinkle -->
+    <path d="M 930 590 Q 960 610 990 590" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Pug Eyes (Angry, Half-lidded) -->
+    <!-- Left Eye -->
+    <ellipse cx="870" cy="400" rx="35" ry="40" fill="#FFFFFF" stroke="#000000" stroke-width="8" />
+    <circle cx="870" cy="405" r="12" fill="#000000" />
+    <!-- Right Eye -->
+    <ellipse cx="1050" cy="400" rx="35" ry="40" fill="#FFFFFF" stroke="#000000" stroke-width="8" />
+    <circle cx="1050" cy="405" r="12" fill="#000000" />
+
+    <!-- Eyebrows / Wrinkles (Furrowed to look angry) -->
+    <!-- Left Brow -->
+    <path d="M 820 370 Q 870 390 910 380" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round" />
+    <path d="M 830 340 Q 870 360 900 350" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+    <!-- Right Brow -->
+    <path d="M 1010 380 Q 1050 390 1100 370" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round" />
+    <path d="M 1020 350 Q 1050 360 1090 340" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Forehead Wrinkle -->
+    <path d="M 900 320 Q 960 340 1020 320" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+  </g>
+
+</svg>

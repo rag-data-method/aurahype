@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <radialGradient id="skyGrad" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#0A1530">
+        <animate attributeName="stop-color" values="#0A1530;#0F1A3A;#0A1530" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="60%" stop-color="#050A15"/>
+      <stop offset="100%" stop-color="#02050A"/>
+    </radialGradient>
+
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3D2A5F" stop-opacity="0.6">
+        <animate attributeName="stop-opacity" values="0.6;0.8;0.6" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#3D2A5F" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="planetGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#E54B9C"/>
+      <stop offset="60%" stop-color="#3D2A5F"/>
+      <stop offset="100%" stop-color="#0A1530"/>
+    </radialGradient>
+
+    <radialGradient id="giantGrad" cx="65%" cy="65%" r="65%">
+      <stop offset="0%" stop-color="#E54B9C" stop-opacity="0.9">
+        <animate attributeName="stop-color" values="#E54B9C;#F5C97A;#E54B9C" dur="20s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="40%" stop-color="#3D2A5F" stop-opacity="0.85"/>
+      <stop offset="80%" stop-color="#0A1530" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0A1530" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="heroRim" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#F5C97A" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#E54B9C" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0A1530" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5C97A" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#E54B9C" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#3D2A5F" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="b40"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="b80"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="b120"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="b160"><feGaussianBlur stdDeviation="160"/></filter>
+
+    <filter id="atmosphere">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <path id="star" d="M0,-2 L0.5,0 L0,2 L-0.5,0 Z"/>
+    <path id="diamond" d="M0,-1.5 L1.5,0 L0,1.5 L-1.5,0 Z"/>
+  </defs>
+
+  <rect width="1600" height="900" fill="#02050A"/>
+
+  <g id="deep-sky">
+    <rect x="0" y="0" width="1600" height="900" fill="url(#skyGrad)"/>
+  </g>
+
+  <g id="far-nebula" filter="url(#b160)" opacity="0.4">
+    <ellipse cx="800" cy="450" rx="900" ry="500" fill="#0A1530"/>
+    <ellipse cx="1200" cy="300" rx="600" ry="300" fill="#3D2A5F">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="18s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="400" cy="600" rx="500" ry="250" fill="#E54B9C" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.35;0.2" dur="22s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g id="far-stars" fill="#FFFFFF" opacity="0.8">
+    <use href="#star" x="200" y="150" transform="scale(2)"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite"/></use>
+    <use href="#star" x="450" y="80" transform="scale(1)"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="6s" repeatCount="indefinite" begin="1s"/></use>
+    <use href="#star" x="1200" y="200" transform="scale(2.5)"><animate attributeName="opacity" values="0.4;1;0.4" dur="5s" repeatCount="indefinite" begin="2s"/></use>
+    <use href="#star" x="1400" y="120" transform="scale(1.5)"><animate attributeName="opacity" values="0.1;0.8;0.1" dur="7s" repeatCount="indefinite"/></use>
+    <use href="#star" x="100" y="400" transform="scale(1)"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="8s" repeatCount="indefinite" begin="3s"/></use>
+    <use href="#star" x="1500" y="500" transform="scale(2)"><animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" begin="0.5s"/></use>
+    <circle cx="300" cy="250" r="1.5" fill="#F5C97A"><animate attributeName="opacity" values="0.2;1;0.2" dur="9s" repeatCount="indefinite"/></circle>
+    <circle cx="1100" cy="350" r="1" fill="#E54B9C"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="5s" repeatCount="indefinite" begin="4s"/></circle>
+    <circle cx="1300" cy="600" r="2" fill="#FFFFFF"><animate attributeName="opacity" values="0.1;0.8;0.1" dur="11s" repeatCount="indefinite"/></circle>
+    <circle cx="600" cy="100" r="1.5" fill="#F5C97A"><animate attributeName="opacity" values="0.4;1;0.4" dur="7s" repeatCount="indefinite" begin="2.5s"/></circle>
+  </g>
+
+  <g id="mid-nebula" filter="url(#b120)" opacity="0.5">
+    <ellipse cx="900" cy="200" rx="700" ry="350" fill="#3D2A5F"/>
+    <ellipse cx="500" cy="350" rx="400" ry="200" fill="#E54B9C" opacity="0.4">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="15s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g id="gas-giant" filter="url(#b40)">
+    <circle cx="450" cy="280" r="220" fill="url(#giantGrad)"/>
+    <ellipse cx="450" cy="280" rx="260" ry="70" fill="none" stroke="url(#ringGrad)" stroke-width="8" transform="rotate(-20 450 280)"/>
+    <ellipse cx="450" cy="280" rx="280" ry="80" fill="none" stroke="url(#ringGrad)" stroke-width="4" transform="rotate(-20 450 280)" opacity="0.6"/>
+    <circle cx="450" cy="280" r="230" fill="none" stroke="#F5C97A" stroke-width="2" opacity="0.3">
+      <animate attributeName="r" values="230;235;230" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g id="near-stars" fill="#FFFFFF">
+    <use href="#diamond" x="650" y="180" transform="scale(3)"><animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/></use>
+    <use href="#diamond" x="350" y="420" transform="scale(2)"><animate attributeName="opacity" values="0.3;1;0.3" dur="5s" repeatCount="indefinite" begin="1s"/></use>
+    <circle cx="800" cy="120" r="2" fill="#F5C97A"><animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="200" cy="300" r="1.5" fill="#E54B9C"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="6s" repeatCount="indefinite" begin="2s"/></circle>
+    <circle cx="1500" y="250" r="2.5" fill="#FFFFFF"><animate attributeName="opacity" values="0.3;1;0.3" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="950" cy="350" r="1" fill="#F5C97A"><animate attributeName="opacity" values="0.5;1;0.5" dur="3.5s" repeatCount="indefinite" begin="0.5s"/></circle>
+  </g>
+
+  <g id="asteroid" opacity="0.6">
+    <path d="M1600,400 Q1550,380 1500,410 Q1480,430 1520,450 Q1560,470 1600,440 Z" fill="#3D2A5F" filter="url(#b40)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-200,40;-400,80" dur="40s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0.6;0" dur="40s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g id="planet-glow" filter="url(#b120)">
+    <ellipse cx="1200" cy="800" rx="300" ry="200" fill="#E54B9C" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="10s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g id="planet-surface">
+    <circle cx="1200" cy="850" r="220" fill="url(#planetGrad)"/>
+    <path d="M 980 850 A 220 220 0 0 0 1420 850" fill="#0A1530" opacity="0.4"/>
+    <ellipse cx="1200" cy="630" rx="200" ry="25" fill="#F5C97A" opacity="0.6" filter="url(#b40)"/>
+    <circle cx="1200" cy="850" r="222" fill="none" stroke="#E54B9C" stroke-width="3" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g id="hero-subject">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-3;0,0" dur="5s" repeatCount="indefinite"/>
+    
+    <ellipse cx="1200" cy="628" rx="30" ry="5" fill="#0A1530" opacity="0.8"/>
+    
+    <path d="M 1185 628 L 1185 595 Q 1185 588 1192 588 L 1208 588 Q 1215 588 1215 595 L 1215 628 Z" fill="#E54B9C"/>
+    
+    <path d="M 1188 628 L 1188 610 M 1193 628 L 1193 610 M 1207 628 L 1207 610 M 1212 628 L 1212 610" stroke="#0A1530" stroke-width="1.5" opacity="0.5"/>
+    
+    <rect x="1182" y="588" width="36" height="8" rx="2" fill="#3D2A5F"/>
+    
+    <path d="M 1190 565 L 1190 550 L 1210 550 L 1210 565 Z" fill="#0A1530"/>
+    <circle cx="1200" cy="540" r="15" fill="#FFFFFF"/>
+    <path d="M 1185 540 A 15 15 0 0 1 1215 540 A 15 15 0 0 1 1185 540" fill="#E54B9C" opacity="0.3"/>
+    <path d="M 1195 532 Q 1205 528 1210 535" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+    
+    <ellipse cx="1200" cy="570" rx="20" ry="6" fill="#0A1530" opacity="0.6"/>
+    
+    <path d="M 1180 588 L 1170 605 M 1220 588 L 1230 605" stroke="#0A1530" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 1170 605 L 1165 615 M 1230 605 L 1235 615" stroke="#0A1530" stroke-width="3" stroke-linecap="round"/>
+    
+    <circle cx="1200" cy="540" r="17" stroke="#F5C97A" stroke-width="1.5" fill="none" opacity="0.8">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="540" r="21" stroke="#E54B9C" stroke-width="1" fill="none" opacity="0.4">
+      <animate attributeName="r" values="21;23;21" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g id="hero-rim-light" filter="url(#b80)">
+    <circle cx="1200" cy="630" r="60" fill="url(#heroRim)" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g id="planet-highlight">
+    <path d="M 1000 800 Q 1100 750 1200 750" stroke="#F5C97A" stroke-width="2" fill="none" opacity="0.5" filter="url(#b40)">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g id="total-particles">
+    <circle cx="0" cy="0" r="2" fill="#F5C97A" opacity="0.7">
+      <animateMotion path="M 800 900 Q 700 600 600 300 Q 500 100 400 0" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="1.5" fill="#E54B9C" opacity="0.6">
+      <animateMotion path="M 1000 900 Q 900 500 800 200 Q 700 50 600 0" dur="25s" repeatCount="indefinite" begin="3s"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="25s" repeatCount="indefinite" begin="3s"/>
+    </circle>
+    <circle cx="0" cy="0" r="1" fill="#FFFFFF" opacity="0.8">
+      <animateMotion path="M 500 900 Q 600 700 700 400 Q 800 200 900 0" dur="18s" repeatCount="indefinite" begin="5s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="18s" repeatCount="indefinite" begin="5s"/>
+    </circle>
+    <circle cx="0" cy="0" r="2.5" fill="#F5C97A" opacity="0.5">
+      <animateMotion path="M 300 900 Q 400 600 500 300 Q 600 100 700 0" dur="22s" repeatCount="indefinite" begin="7s"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="22s" repeatCount="indefinite" begin="7s"/>
+    </circle>
+    <circle cx="0" cy="0" r="1.5" fill="#E54B9C" opacity="0.7">
+      <animateMotion path="M 1300 900 Q 1200 600 1100 300 Q 1000 100 900 0" dur="28s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="28s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    <circle cx="0" cy="0" r="1" fill="#FFFFFF" opacity="0.6">
+      <animateMotion path="M 1500 900 Q 1400 700 1300 500 Q 1200 300 1100 0" dur="30s" repeatCount="indefinite" begin="10s"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="30s" repeatCount="indefinite" begin="10s"/>
+    </circle>
+    <circle cx="0" cy="0" r="2" fill="#F5C97A" opacity="0.4">
+      <animateMotion path="M 200 900 Q 300 700 400 500 Q 500 300 600 0" dur="24s" repeatCount="indefinite" begin="4s"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="24s" repeatCount="indefinite" begin="4s"/>
+    </circle>
+    <circle cx="0" cy="0" r="1.5" fill="#E54B9C" opacity="0.5">
+      <animateMotion path="M 1100 900 Q 1000 750 900 600 Q 800 450 700 0" dur="26s" repeatCount="indefinite" begin="6s"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="26s" repeatCount="indefinite" begin="6s"/>
+    </circle>
+    <circle cx="0" cy="0" r="1" fill="#FFFFFF" opacity="0.7">
+      <animateMotion path="M 700 900 Q 800 650 900 400 Q 1000 200 1100 0" dur="19s" repeatCount="indefinite" begin="8s"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="19s" repeatCount="indefinite" begin="8s"/>
+    </circle>
+    <circle cx="0" cy="0" r="2" fill="#F5C97A" opacity="0.6">
+      <animateMotion path="M 1400 900 Q 1300 600 1200 300 Q 1100 100 1000 0" dur="21s" repeatCount="indefinite" begin="12s"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="21s" repeatCount="indefinite" begin="12s"/>
+    </circle>
+    <circle cx="0" cy="0" r="1.5" fill="#E54B9C" opacity="0.8">
+      <animateMotion path="M 900 900 Q 1000 700 1100 500 Q 1200 300 1300 0" dur="23s" repeatCount="indefinite" begin="14s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="23s" repeatCount="indefinite" begin="14s"/>
+    </circle>
+    <circle cx="0" cy="0" r="1" fill="#FFFFFF" opacity="0.5">
+      <animateMotion path="M 400 900 Q 500 750 600 600 Q 700 450 800 0" dur="27s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="27s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="0" cy="0" r="2.5" fill="#F5C97A" opacity="0.4">
+      <animateMotion path="M 1200 900 Q 1100 650 1000 400 Q 900 200 800 0" dur="29s" repeatCount="indefinite" begin="9s"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="29s" repeatCount="indefinite" begin="9s"/>
+    </circle>
+    <circle cx="0" cy="0" r="1.5" fill="#E54B9C" opacity="0.6">
+      <animateMotion path="M 600 900 Q 700 700 800 500 Q 900 300 1000 0" dur="17s" repeatCount="indefinite" begin="11s"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="17s" repeatCount="indefinite" begin="11s"/>
+    </circle>
+    <circle cx="0" cy="0" r="1" fill="#FFFFFF" opacity="0.9">
+      <animateMotion path="M 1000 900 Q 900 750 800 600 Q 700 450 600 0" dur="31s" repeatCount="indefinite" begin="15s"/>
+      <animate attributeName="opacity" values="0;0.9;0" dur="31s" repeatCount="indefinite" begin="15s"/>
+    </circle>
+  </g>
+
+  <g id="foreground-mist" filter="url(#b160)" opacity="0.2">
+    <rect x="0" y="600" width="1600" height="300" fill="#3D2A5F">
+      <animate attributeName="opacity" values="0.1;0.3;0.1" dur="15s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <g id="title-space-glow" filter="url(#b120)">
+    <ellipse cx="800" cy="300" rx="400" ry="150" fill="#0A1530" opacity="0.3"/>
+  </g>
+</svg>

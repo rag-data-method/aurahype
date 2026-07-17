@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="blurHeavy" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="blurSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+    <filter id="concreteGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.55 0 0 0 0 0.53 0 0 0 0 0.50 0 0 0 0.05 0" in="noise"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <linearGradient id="lightShift" x1="0%" y1="0%" x2="100%" y2="30%">
+      <stop offset="0%" stop-color="#F5F0E6" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#F5F0E6" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#F5F0E6" stop-opacity="0.70"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Canvas -->
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <!-- Texture Layer -->
+  <rect width="1600" height="900" fill="#8B8680" opacity="0.6" filter="url(#concreteGrain)">
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="12s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </rect>
+  
+  <!-- Far Arch Structure (Secondary) -->
+  <path d="M 1100 800 L 1100 200 Q 1200 160 1300 200 L 1300 800" fill="none" stroke="#8B8680" stroke-width="24" opacity="0.7">
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="14s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Far Arch Cedar (Primary - shadowed) -->
+  <path d="M 1112 800 L 1112 210 Q 1200 175 1288 210 L 1288 800" fill="#B89055" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.85;0.7" dur="15s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Middle Arch Structure (Secondary) -->
+  <path d="M 700 850 L 700 150 Q 850 100 1000 150 L 1000 850" fill="none" stroke="#8B8680" stroke-width="40" opacity="0.75">
+    <animate attributeName="opacity" values="0.7;0.8;0.7" dur="10s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Middle Arch Cedar (Primary) -->
+  <path d="M 720 850 L 720 170 Q 850 125 980 170 L 980 850" fill="#B89055" opacity="0.8">
+    <animate attributeName="opacity" values="0.7;0.85;0.7" dur="13s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Near Arch Structure (Secondary) -->
+  <path d="M 200 900 L 200 100 Q 400 20 600 100 L 600 900" fill="none" stroke="#8B8680" stroke-width="60" opacity="0.8"/>
+  
+  <!-- Near Arch Cedar (Primary - main focus) -->
+  <path d="M 230 900 L 230 130 Q 400 60 570 130 L 570 900" fill="#B89055" opacity="0.85">
+    <animate attributeName="opacity" values="0.75;0.85;0.75" dur="11s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Diagonal Raking Shadow (Secondary) -->
+  <path d="M 230 900 L 570 900 L 750 900 L 100 900 Z" fill="#8B8680" opacity="0.6">
+    <animateTransform attributeName="transform" type="skewX" values="0;-8;0" dur="20s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <animate attributeName="opacity" values="0.6;0.75;0.6" dur="15s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Floor Shadow Extension -->
+  <rect x="0" y="850" width="1600" height="50" fill="#8B8680" opacity="0.7">
+    <animate attributeName="opacity" values="0.65;0.8;0.65" dur="18s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Dawn Light Beam 1 (Accent) -->
+  <path d="M -200 0 L 500 900 L 200 900 L -400 0 Z" fill="#F5F0E6" opacity="0.75" filter="url(#blurSoft)">
+    <animateTransform attributeName="transform" type="rotate" values="0 300 450; 5 300 450; 0 300 450" dur="20s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <animate attributeName="opacity" values="0.65;0.85;0.65" dur="12s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Dawn Light Beam 2 (Accent) -->
+  <path d="M 100 -100 L 800 900 L 600 900 L 0 -100 Z" fill="#F5F0E6" opacity="0.7" filter="url(#blurSoft)">
+    <animateTransform attributeName="transform" type="rotate" values="0 400 400; -3 400 400; 0 400 400" dur="16s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </path>
+  
+  <!-- Warm Halo Glow (Accent) -->
+  <circle cx="150" cy="50" r="400" fill="url(#lightShift)" filter="url(#blurHeavy)" opacity="0.7">
+    <animate attributeName="opacity" values="0.65;0.85;0.65" dur="15s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <animate attributeName="cy" values="50;30;50" dur="25s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Atmospheric Mist Layer (Accent) -->
+  <rect x="0" y="500" width="1600" height="400" fill="#F5F0E6" opacity="0.65" filter="url(#blurHeavy)">
+    <animate attributeName="y" values="500;480;500" dur="22s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <animate attributeName="opacity" values="0.65;0.75;0.65" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Highlight Edge on Near Arch (Accent) -->
+  <path d="M 230 130 Q 400 60 570 130" stroke="#F5F0E6" stroke-width="6" fill="none" opacity="0.85" stroke-linecap="round">
+    <animate attributeName="stroke-dasharray" values="0,600;600,0" dur="15s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <animate attributeName="opacity" values="0.65;0.85;0.65" dur="9s" repeatCount="indefinite"/>
+  </path>
+</svg>

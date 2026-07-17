@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Halftone Pattern -->
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="6" fill="#FF0000" />
+    </pattern>
+    
+    <!-- Halftone Overlay Mask -->
+    <mask id="halftone-mask">
+      <rect width="100%" height="100%" fill="url(#dots)" />
+    </mask>
+    
+    <!-- Sunburst Gradient -->
+    <radialGradient id="sunburst-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFEA00" />
+      <stop offset="100%" stop-color="#FF4500" />
+    </radialGradient>
+    
+    <!-- Text Drop Shadow Filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="15" dy="15" stdDeviation="5" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <style>
+    /* Base Styles */
+    .sunburst {
+      transform-origin: 960px 540px;
+      animation: spin 60s linear infinite;
+    }
+    
+    .halftone {
+      mask: url(#halftone-mask);
+      animation: pulse-halftone 4s ease-in-out infinite;
+    }
+    
+    .main-text {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      fill: #FFFF00;
+      stroke: #000000;
+      stroke-width: 8px;
+      filter: url(#shadow);
+      animation: text-zoom 2.5s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+    }
+    
+    .sub-text {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      fill: #FFFFFF;
+      stroke: #000000;
+      stroke-width: 6px;
+      filter: url(#shadow);
+      animation: text-shake 0.5s ease-in-out infinite alternate;
+    }
+
+    /* Keyframes */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse-halftone {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.05); }
+    }
+
+    @keyframes text-zoom {
+      0% { transform: scale(0.95); }
+      100% { transform: scale(1.05); }
+    }
+
+    @keyframes text-shake {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(3px, -3px); }
+      50% { transform: translate(-3px, 3px); }
+      75% { transform: translate(3px, 3px); }
+      100% { transform: translate(-3px, -3px); }
+    }
+  </style>
+
+  <!-- Background Base Color -->
+  <rect width="1920" height="1080" fill="#0000CD" />
+
+  <!-- Sunburst Graphic -->
+  <g class="sunburst">
+    <circle cx="960" cy="540" r="900" fill="url(#sunburst-grad)" />
+    <!-- Rays -->
+    <path d="M960,540 L960,-200 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L1400,-200 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L1800,200 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L2120,540 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L1800,900 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L1400,1280 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L960,1280 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L520,1280 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L120,900 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L-200,540 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L120,200 L1060,540 Z" fill="#FF0000" />
+    <path d="M960,540 L520,-200 L1060,540 Z" fill="#FF0000" />
+  </g>
+
+  <!-- Comic Halftone Overlay -->
+  <rect class="halftone" width="1920" height="1080" fill="#000000" />
+
+  <!-- High Contrast Vignette -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="60%" stop-color="#000000" stop-opacity="0" />
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.85" />
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#vignette)" pointer-events="none" />
+
+  <!-- Main Text Container -->
+  <g transform="translate(960, 540)">
+    <!-- Speech Bubble / Card Background -->
+    <path d="M -700,-280 L 700,-280 L 750,-230 L 700,-180 L 700,180 L 750,230 L 700,280 L -700,280 L -750,230 L -700,180 L -700,-180 L -750,-230 Z" 
+          fill="#FF0000" stroke="#000000" stroke-width="15" stroke-linejoin="round" />
+    
+    <!-- Inner Shadow for Depth -->
+    <path d="M -680,-260 L 680,-260 L 720,-220 L 680,-180 L 680,180 L 720,220 L 680,260 L -680,260 L -720,220 L -680,180 L -680,-180 L -720,-220 Z" 
+          fill="none" stroke="#000000" stroke-width="5" opacity="0.3" />
+
+    <!-- MASSIVE Main Text -->
+    <text class="main-text" text-anchor="middle" dominant-baseline="middle" font-size="180" dy="-20">
+      O CAFÉ
+    </text>
+    <text class="main-text" text-anchor="middle" dominant-baseline="middle" font-size="180" dy="140">
+      ESTÁ FRIO.
+    </text>
+
+    <!-- Sub Text / Sound Effect -->
+    <text class="sub-text" text-anchor="middle" dominant-baseline="middle" font-size="60" dy="240" letter-spacing="8">
+      (TRISTE MAS VERDADE)
+    </text>
+  </g>
+</svg>

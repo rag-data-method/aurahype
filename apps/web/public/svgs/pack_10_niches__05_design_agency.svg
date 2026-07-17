@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="45"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="75"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.6"/>
+  
+  <circle cx="350" cy="500" r="220" fill="#D4A017" opacity="0.9" filter="url(#halo)">
+    <animateTransform attributeName="transform" type="rotate" from="0 350 500" to="360 350 500" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  
+  <rect x="1050" y="150" width="350" height="450" fill="#2563EB" opacity="0.85">
+    <animateTransform attributeName="transform" type="rotate" from="0 1225 375" to="-360 1225 375" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  
+  <polygon points="1300,80 1500,280 1100,280" fill="#FF6B6B" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate" from="0 1300 280" to="360 1300 280" dur="7s" repeatCount="indefinite"/>
+  </polygon>
+  
+  <rect x="650" y="550" width="240" height="240" fill="#D4A017" opacity="0.95">
+    <animate attributeName="y" values="550;530;550" dur="4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 770 670" to="360 770 670" dur="9s" repeatCount="indefinite"/>
+  </rect>
+  
+  <circle cx="280" cy="750" r="100" fill="#2563EB" opacity="0.8" filter="url(#glow)">
+    <animate attributeName="r" values="100;130;100" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.9;0.8" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <rect x="1350" y="600" width="180" height="280" fill="#FF6B6B" opacity="0.85">
+    <animateTransform attributeName="transform" type="rotate" from="0 1440 740" to="360 1440 740" dur="10s" repeatCount="indefinite"/>
+  </rect>
+  
+  <polygon points="850,180 950,330 750,330" fill="#D4A017" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-30; 0,0" dur="6s" repeatCount="indefinite"/>
+  </polygon>
+  
+  <polygon points="150,50 350,50 250,850 50,850" fill="#2563EB" opacity="0.75">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 40,0; 0,0" dur="8s" repeatCount="indefinite"/>
+  </polygon>
+  
+  <circle cx="950" cy="350" r="120" fill="#FF6B6B" opacity="0.9" style="mix-blend-mode: multiply;">
+    <animate attributeName="opacity" values="0.9;0.7;0.9" dur="4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+  </circle>
+  
+  <rect x="1150" y="680" width="200" height="160" fill="#D4A017" opacity="0.8">
+    <animateTransform attributeName="transform" type="rotate" from="0 1250 760" to="-360 1250 760" dur="11s" repeatCount="indefinite"/>
+  </rect>
+  
+  <polygon points="450,80 550,230 350,230" fill="#2563EB" opacity="0.85">
+    <animateTransform attributeName="transform" type="rotate" from="0 450 180" to="360 450 180" dur="5s" repeatCount="indefinite"/>
+  </polygon>
+  
+  <rect x="80" y="420" width="380" height="90" fill="#FF6B6B" opacity="0.9">
+    <animate attributeName="x" values="80;140;80" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  
+  <circle cx="600" cy="200" r="60" fill="#D4A017" opacity="0.85" filter="url(#halo)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,40; 0,0" dur="7s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Dramatic dual-temperature gradient for background -->
+    <radialGradient id="bg-grad" cx="0%" cy="0%" r="120%">
+      <stop offset="0%" stop-color="#C8DCC0">
+        <animate attributeName="stop-color" values="#C8DCC0;#F8C8DC;#C8DCC0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="45%" stop-color="#8FA98F">
+        <animate attributeName="stop-color" values="#8FA98F;#5A8FA8;#8FA98F" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="85%" stop-color="#2D5A6B">
+        <animate attributeName="stop-color" values="#2D5A6B;#5A8FA8;#2D5A6B" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#2D5A6B"/>
+    </radialGradient>
+
+    <!-- Water surface reflection gradient -->
+    <linearGradient id="water-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5A8FA8" stop-opacity="0.3">
+        <animate attributeName="stop-opacity" values="0.3;0.5;0.3" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#2D5A6B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2D5A6B" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Mist overlay gradient -->
+    <linearGradient id="mist-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C8DCC0" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#F8C8DC" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#2D5A6B" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Warm rim light gradient for subject -->
+    <radialGradient id="rim-grad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#F8C8DC" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#C8DCC0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#5A8FA8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Lotus leaf radial gradient -->
+    <radialGradient id="leaf-grad" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#8FA98F"/>
+      <stop offset="70%" stop-color="#2D5A6B"/>
+      <stop offset="100%" stop-color="#2D5A6B"/>
+    </radialGradient>
+
+    <!-- ========================================== -->
+    <!-- MANDATORY BEAUTIFICATION FILTERS (3-5 blur)  -->
+    <!-- ========================================== -->
+    <filter id="b40">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="b80">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="b120">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="b160">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+
+    <!-- Glow Halo Filter for bright focal elements -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft drop shadow for subject -->
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="25" stdDeviation="25" flood-color="#2D5A6B" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Organic grain filter -->
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.05 0" in="noise" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="composite"/>
+      <feBlend mode="overlay" in="composite" in2="SourceGraphic"/>
+    </filter>
+
+    <!-- Soft atmosphere wrapper -->
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- BASE BACKGROUND LAYER (Depth 1)            -->
+  <!-- ========================================== -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- ========================================== -->
+  <!-- ATMOSPHERIC DEPTH LAYERS (40-50% negative space) -->
+  <!-- ========================================== -->
+
+  <!-- Deep atmospheric glow (blur 160) -->
+  <circle cx="200" cy="150" r="500" fill="#F8C8DC" opacity="0.4" filter="url(#b160)">
+    <animate attributeName="cx" values="200;250;200" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="150;120;150" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+
+  <!-- Cool atmospheric haze (blur 120) -->
+  <ellipse cx="400" cy="300" rx="600" ry="400" fill="#5A8FA8" opacity="0.3" filter="url(#b120)">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="16s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 50,-20; 0,0" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- Secondary warm haze (blur 80) -->
+  <rect x="0" y="0" width="900" height="900" fill="url(#mist-grad)" opacity="0.6" filter="url(#b80)">
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="14s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Mist overlay on left negative space (blur 40) -->
+  <rect x="-100" y="-100" width="700" height="1000" fill="#C8DCC0" opacity="0.5" filter="url(#b40)">
+    <animate attributeName="x" values="-100;-50;-100" dur="18s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ========================================== -->
+  <!-- WATER SURFACE LAYERS                       -->
+  <!-- ========================================== -->
+
+  <!-- Deep water base -->
+  <rect x="0" y="500" width="1600" height="400" fill="url(#water-grad)"/>
+
+  <!-- Subtle water reflection bands -->
+  <path d="M0,500 Q800,520 1600,500 V900 H0 Z" fill="#2D5A6B" opacity="0.4">
+    <animate attributeName="d" values="M0,500 Q800,520 1600,500 V900 H0 Z;M0,500 Q800,480 1600,500 V900 H0 Z;M0,500 Q800,520 1600,500 V900 H0 Z" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- ========================================== -->
+  <!-- CONCENTRIC RIPPLES (Animated)              -->
+  <!-- ========================================== -->
+
+  <g id="ripples" opacity="0.6" fill="none" stroke="#C8DCC0" stroke-width="1.5">
+    <ellipse cx="1050" cy="520" rx="50" ry="15" opacity="0">
+      <animate attributeName="rx" values="50;800" dur="12s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="ry" values="15;240" dur="12s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="opacity" values="0.6;0" dur="12s" repeatCount="indefinite" begin="0s"/>
+    </ellipse>
+    <ellipse cx="1050" cy="520" rx="50" ry="15" opacity="0">
+      <animate attributeName="rx" values="50;800" dur="12s" repeatCount="indefinite" begin="3s"/>
+      <animate attributeName="ry" values="15;240" dur="12s" repeatCount="indefinite" begin="3s"/>
+      <animate attributeName="opacity" values="0.6;0" dur="12s" repeatCount="indefinite" begin="3s"/>
+    </ellipse>
+    <ellipse cx="1050" cy="520" rx="50" ry="15" opacity="0">
+      <animate attributeName="rx" values="50;800" dur="12s" repeatCount="indefinite" begin="6s"/>
+      <animate attributeName="ry" values="15;240" dur="12s" repeatCount="indefinite" begin="6s"/>
+      <animate attributeName="opacity" values="0.6;0" dur="12s" repeatCount="indefinite" begin="6s"/>
+    </ellipse>
+    <ellipse cx="1050" cy="520" rx="50" ry="15" opacity="0">
+      <animate attributeName="rx" values="50;800" dur="12s" repeatCount="indefinite" begin="9s"/>
+      <animate attributeName="ry" values="15;240" dur="12s" repeatCount="indefinite" begin="9s"/>
+      <animate attributeName="opacity" values="0.6;0" dur="12s" repeatCount="indefinite" begin="9s"/>
+    </ellipse>
+  </g>
+
+  <!-- Additional subtle ripples with cool tone -->
+  <g opacity="0.3" fill="none" stroke="#5A8FA8" stroke-width="1">
+    <ellipse cx="1050" cy="520" rx="100" ry="30" opacity="0">
+      <animate attributeName="rx" values="100;600" dur="10s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="ry" values="30;180" dur="10s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0.4;0" dur="10s" repeatCount="indefinite" begin="1s"/>
+    </ellipse>
+    <ellipse cx="1050" cy="520" rx="100" ry="30" opacity="0">
+      <animate attributeName="rx" values="100;600" dur="10s" repeatCount="indefinite" begin="5s"/>
+      <animate attributeName="ry" values="30;180" dur="10s" repeatCount="indefinite" begin="5s"/>
+      <animate attributeName="opacity" values="0.4;0" dur="10s" repeatCount="indefinite" begin="5s"/>
+    </ellipse>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- FOCAL SUBJECT: VICTORIA REGIA & FROG       -->
+  <!-- Positioned in RIGHT TWO-THIRDS             -->
+  <!-- ========================================== -->
+
+  <!-- Subject Glow Halo (Rim Light) -->
+  <ellipse cx="1050" cy="520" rx="350" ry="120" fill="url(#rim-grad)" opacity="0.8" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </ellipse>
+
+  <!-- Soft Drop Shadow under the lily -->
+  <ellipse cx="1050" cy="540" rx="220" ry="70" fill="#2D5A6B" opacity="0.5" filter="url(#shadow)">
+    <animate attributeName="rx" values="220;230;220" dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="70;75;70" dur="15s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Floating animation container for the lily -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+
+    <!-- Main Victoria Regia Leaf (Oval/Pie-slice shape) -->
+    <path d="M 850,520 C 850,450 950,420 1050,420 C 1150,420 1250,450 1250,520 C 1250,570 1150,600 1050,600 C 950,600 850,570 850,520 Z" fill="url(#leaf-grad)" filter="url(#soft-glow)">
+      <animate attributeName="d" values="M 850,520 C 850,450 950,420 1050,420 C 1150,420 1250,450 1250,520 C 1250,570 1150,600 1050,600 C 950,600 850,570 850,520 Z;M 845,520 C 845,445 955,415 1055,415 C 1155,415 1255,445 1255,520 C 1255,575 1155,605 1055,605 C 955,605 845,575 845,520 Z;M 850,520 C 850,450 950,420 1050,420 C 1150,420 1250,450 1250,520 C 1250,570 1150,600 1050,600 C 950,600 850,570 850,520 Z" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+
+    <!-- The characteristic pie-slice notch/cut in the leaf -->
+    <path d="M 1050,420 L 1050,520 C 1080,500 1090,460 1050,420 Z" fill="#2D5A6B" opacity="0.8"/>
+
+    <!-- Veins / Structural lines on the leaf (Rim light effect) -->
+    <g stroke="#8FA98F" stroke-width="1.5" fill="none" opacity="0.5">
+      <path d="M 1050,520 Q 950,480 880,480">
+        <animate attributeName="d" values="M 1050,520 Q 950,480 880,480;M 1050,520 Q 950,475 875,475;M 1050,520 Q 950,480 880,480" dur="10s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 1050,520 Q 1150,480 1220,480">
+        <animate attributeName="d" values="M 1050,520 Q 1150,480 1220,480;M 1050,520 Q 1150,475 1225,475;M 1050,520 Q 1150,480 1220,480" dur="10s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 1050,520 Q 1000,560 920,560">
+        <animate attributeName="d" values="M 1050,520 Q 1000,560 920,560;M 1050,520 Q 1000,565 915,565;M 1050,520 Q 1000,560 920,560" dur="14s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 1050,520 Q 1100,560 1180,560">
+        <animate attributeName="d" values="M 1050,520 Q 1100,560 1180,560;M 1050,520 Q 1100,565 1185,565;M 1050,520 Q 1100,560 1180,560" dur="14s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 1050,520 L 1050,420"/>
+    </g>
+
+    <!-- Frogs Silhouette on the leaf rim -->
+    <g fill="#2D5A6B" opacity="0.95">
+      <!-- Frog body -->
+      <ellipse cx="1120" cy="480" rx="18" ry="12">
+        <animate attributeName="rx" values="18;19;18" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="ry" values="12;13;12" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- Frog head -->
+      <circle cx="1138" cy="475" r="8"/>
+      <!-- Legs -->
+      <path d="M 1110,485 Q 1100,495 1105,500" stroke="#2D5A6B" stroke-width="3" fill="none"/>
+      <path d="M 1130,488 Q 1135,500 1125,505" stroke="#2D5A6B" stroke-width="3" fill="none"/>
+    </g>
+
+    <!-- Frog Rim Light (warm glow) -->
+    <circle cx="1120" cy="480" r="25" fill="#F8C8DC" opacity="0.0" filter="url(#glow)">
+      <animate attributeName="opacity" values="0;0.4;0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="25;30;25" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- FOREGROUND MIST / ATMOSPHERE               -->
+  <!-- ========================================== -->
+
+  <!-- Warm mist drifting over the lower right -->
+  <ellipse cx="1200" cy="700" rx="500" ry="200" fill="#F8C8DC" opacity="0.2" filter="url(#b80)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -60,20; 0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="16s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Cool mist drifting over the lower left -->
+  <ellipse cx="300" cy="750" rx="400" ry="180" fill="#5A8FA8" opacity="0.25" filter="url(#b120)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 80,-30; 0,0" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- Upper left fog bank (covers negative space) -->
+  <rect x="-200" y="-100" width="800" height="500" fill="#C8DCC0" opacity="0.3" filter="url(#b160)">
+    <animate attributeName="opacity" values="0.3;0.45;0.3" dur="22s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 40,0; 0,0" dur="28s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Mid-ground haze layer -->
+  <rect x="0" y="200" width="1600" height="500" fill="url(#mist-grad)" opacity="0.2" filter="url(#b40)">
+    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="18s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ========================================== -->
+  <!-- LIGHT RAYS / DRAMATIC SINGLE SOURCE        -->
+  <!-- ========================================== -->
+
+  <g opacity="0.15" fill="#F8C8DC" filter="url(#b80)">
+    <polygon points="200,-100 350,-100 900,900 500,900">
+      <animate attributeName="points" values="200,-100 350,-100 900,900 500,900;250,-100 400,-100 950,900 550,900;200,-100 350,-100 900,900 500,900" dur="20s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="400,-100 500,-100 1200,900 900,900" opacity="0.5">
+      <animate attributeName="points" values="400,-100 500,-100 1200,900 900,900;450,-100 550,-100 1250,900 950,900;400,-100 500,-100 1200,900 900,900" dur="24s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- SMALL DECORATIVE ELEMENTS                  -->
+  <!-- ========================================== -->
+
+  <!-- Distant lily pads / dots -->
+  <g fill="#2D5A6B" opacity="0.4">
+    <ellipse cx="600" cy="650" rx="40" ry="12">
+      <animate attributeName="rx" values="40;42;40" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="14s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="750" cy="720" rx="25" ry="8" opacity="0.3">
+      <animate attributeName="rx" values="25;27;25" dur="12s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1300" cy="680" rx="55" ry="15" opacity="0.35">
+      <animate attributeName="rx" values="55;58;55" dur="16s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1450" cy="600" rx="30" ry="9" opacity="0.25">
+      <animate attributeName="rx" values="30;33;30" dur="18s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Fireflies / Dust motes -->
+  <g fill="#F8C8DC" filter="url(#soft-glow)">
+    <circle cx="900" cy="400" r="3" opacity="0.8">
+      <animate attributeName="opacity" values="0;0.8;0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="400;380;400" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="350" r="2" opacity="0.6">
+      <animate attributeName="opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="cx" values="1100;1120;1100" dur="8s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    <circle cx="800" cy="450" r="2.5" opacity="0.7">
+      <animate attributeName="opacity" values="0;0.7;0" dur="7s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="cy" values="450;430;450" dur="7s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="1250" cy="380" r="2" opacity="0.5">
+      <animate attributeName="opacity" values="0;0.5;0" dur="9s" repeatCount="indefinite" begin="3s"/>
+    </circle>
+    <circle cx="700" cy="300" r="3" opacity="0.4">
+      <animate attributeName="opacity" values="0;0.4;0" dur="10s" repeatCount="indefinite" begin="4s"/>
+    </circle>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- FINAL OVERLAY: ORGANIC GRAIN & VIGNETTE    -->
+  <!-- ========================================== -->
+
+  <!-- Soft vignette to focus viewer on subject -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+    <stop offset="50%" stop-color="#2D5A6B" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#2D5A6B" stop-opacity="0.5"/>
+  </radialGradient>
+  <rect width="100%" height="100%" fill="url(#vignette)" style="pointer-events:none;"/>
+
+  <!-- Final grain overlay for cohesive editorial texture -->
+  <rect width="100%" height="100%" fill="transparent" filter="url(#grain)" style="pointer-events:none;"/>
+
+</svg>

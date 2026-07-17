@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="b1" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="60"/>
+</filter>
+<filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="80"/>
+</filter>
+<filter id="n">
+<feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="5" result="t"/>
+<feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.2 0"/>
+</filter>
+</defs>
+
+<rect width="1600" height="900" fill="#EFE9E1"/>
+
+<circle cx="300" cy="400" r="350" fill="#B85440" opacity="0.75" filter="url(#b2)">
+<animate attributeName="r" values="350;400;350" dur="10s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.75;0.9;0.75" dur="8s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1300" cy="200" r="250" fill="#9A9A9A" opacity="0.6" filter="url(#b1)">
+<animateTransform attributeName="transform" type="translate" values="0 0; 40 30; 0 0" dur="12s" repeatCount="indefinite"/>
+</circle>
+
+<path d="M-50 150 L 700 80 L 720 160 L -30 230 Z" fill="#9A9A9A" opacity="0.85" filter="url(#b1)">
+<animateTransform attributeName="transform" type="translate" values="0 0; 60 0; 0 0" dur="10s" repeatCount="indefinite"/>
+</path>
+
+<path d="M100 900 L 100 500 L 500 450 L 500 900 Z" fill="#8B6F47" opacity="0.9">
+<animateTransform attributeName="transform" type="translate" values="0 0; 0 -50; 0 0" dur="9s" repeatCount="indefinite"/>
+</path>
+
+<path d="M250 900 V 400 A 140 140 0 0 1 530 400 V 900 Z" fill="#B85440" opacity="0.95">
+<animate attributeName="opacity" values="0.95;0.8;0.95" dur="6s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0 0; 30 0; 0 0" dur="7s" repeatCount="indefinite"/>
+</path>
+
+<path d="M700 900 V 380 A 210 210 0 0 1 1120 380 V 900 Z" fill="#8B6F47" opacity="0.85">
+<animate attributeName="opacity" values="0.85;0.95;0.85" dur="8s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0 0; -40 0; 0 0" dur="11s" repeatCount="indefinite"/>
+</path>
+
+<path d="M1250 900 V 480 A 130 130 0 0 1 1510 480 V 900 Z" fill="#9A9A9A" opacity="0.8">
+<animate attributeName="opacity" values="0.8;0.65;0.8" dur="5s" repeatCount="indefinite"/>
+</path>
+
+<path d="M-100 0 L 1700 0 L 1700 250 L 300 900 Z" fill="#EFE9E1" opacity="0.25">
+<animateTransform attributeName="transform" type="rotate" values="-8 800 450; 4 800 450; -8 800 450" dur="12s" repeatCount="indefinite"/>
+</path>
+
+<path d="M900 0 L 1600 0 L 1600 900 L 400 900 Z" fill="#8B6F47" opacity="0.75" filter="url(#b1)">
+<animateTransform attributeName="transform" type="skewX" values="0; -12; 0" dur="10s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.75;0.5;0.75" dur="8s" repeatCount="indefinite"/>
+</path>
+
+<rect x="680" y="120" width="24" height="800" fill="#B85440" opacity="0.85">
+<animateTransform attributeName="transform" type="translate" values="0 0; 120 0; 0 0" dur="6s" repeatCount="indefinite"/>
+</rect>
+
+<rect x="0" y="650" width="1600" height="6" fill="#9A9A9A" opacity="0.75">
+<animate attributeName="y" values="650;670;650" dur="7s" repeatCount="indefinite"/>
+</rect>
+
+<rect width="1600" height="900" fill="transparent" filter="url(#n)" opacity="0.35" style="pointer-events:none;mix-blend-mode:multiply"/>
+</svg>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#020408"/>
+      <stop offset="100%" stop-color="#0a1520"/>
+    </linearGradient>
+    <linearGradient id="horizon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00ff9d" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <filter id="glowStrong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <rect x="0" y="300" width="1600" height="3" fill="#00f0ff" opacity="0.5" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0" y="280" width="1600" height="80" fill="url(#horizon)" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <g stroke="#00f0ff" stroke-width="1" fill="none" opacity="0.2" filter="url(#glow)">
+    <path d="M0 900 L800 300 M200 900 L800 300 M400 900 L800 300 M600 900 L800 300 M800 900 L800 300 M1000 900 L800 300 M1200 900 L800 300 M1400 900 L800 300 M1600 900 L800 300 M0 350 H1600 M0 370 H1600 M0 390 H1600 M0 415 H1600 M0 445 H1600 M0 480 H1600 M0 520 H1600 M0 565 H1600 M0 615 H1600 M0 670 H1600 M0 730 H1600 M0 800 H1600"/>
+    <line x1="0" y1="350" x2="1600" y2="350" stroke="#00f0ff" stroke-width="2" opacity="0.8">
+      <animate attributeName="y1" values="350;900;350" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="350;900;350" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <g stroke="#00ff9d" stroke-width="1.5" fill="none" opacity="0.45" filter="url(#glow)">
+    <path d="M0 720 L160 640 L320 690 L480 600 L640 670 L800 590 L960 660 L1120 580 L1280 640 L1440 600 L1600 680 V900 H0 Z" fill="#00ff9d" fill-opacity="0.03">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 780 L200 730 L400 770 L600 720 L800 760 L1000 710 L1200 750 L1400 700 L1600 740" opacity="0.25"/>
+  </g>
+
+  <g fill="#00f0ff" filter="url(#glowStrong)">
+    <circle cx="160" cy="640" r="4">
+      <animate attributeName="r" values="3;6;3" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="480" cy="600" r="4">
+      <animate attributeName="r" values="3;6;3" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="590" r="4">
+      <animate attributeName="r" values="3;6;3" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1120" cy="580" r="4">
+      <animate attributeName="r" values="3;6;3" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1440" cy="600" r="4">
+      <animate attributeName="r" values="3;6;3" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g fill="#00ff9d" filter="url(#glow)">
+    <circle r="3">
+      <animateMotion path="M0 900 L800 300" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3">
+      <animateMotion path="M1600 900 L800 300" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3">
+      <animateMotion path="M400 900 L800 300" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3">
+      <animateMotion path="M1200 900 L800 300" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

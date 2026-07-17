@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<filter id="g1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="g2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="g3" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8FCF"><animate attributeName="stop-color" values="#FF8FCF;#FF3366;#FF8FCF" dur="5s" repeatCount="indefinite"/></stop><stop offset="1" stop-color="#8FE3FF"><animate attributeName="stop-color" values="#8FE3FF;#00F5D4;#8FE3FF" dur="5s" repeatCount="indefinite"/></stop></linearGradient>
+<radialGradient id="br" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFF07A"/><stop offset="1" stop-color="#FF8FCF" stop-opacity="0"/></radialGradient>
+<linearGradient id="gp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B3A8E"/><stop offset="1" stop-color="#FF8FCF"/></linearGradient>
+<linearGradient id="ry" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFF07A" stop-opacity="0.7"/><stop offset="1" stop-color="#FFF07A" stop-opacity="0"/></linearGradient>
+</defs>
+
+<rect width="1600" height="900" fill="url(#sky)"/>
+
+<g transform="translate(480,340)">
+<g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s" repeatCount="indefinite"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(0)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(30)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(60)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(90)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(120)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(150)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(180)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(210)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(240)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(270)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(300)"/>
+<line x1="0" y1="0" x2="900" y2="0" stroke="url(#ry)" stroke-width="50" stroke-linecap="round" opacity="0.35" transform="rotate(330)"/>
+</g>
+</g>
+
+<circle cx="480" cy="340" r="300" fill="url(#br)" opacity="0.6">
+<animate attributeName="r" values="280;340;280" dur="3s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="480" cy="340" r="180" fill="#FF8FCF" opacity="0.15" filter="url(#g2)"/>
+
+<g fill="#FFF07A" opacity="0.2">
+<circle cx="1000" cy="200" r="10"/><circle cx="1060" cy="260" r="6"/><circle cx="1140" cy="180" r="14"/><circle cx="1240" cy="320" r="5"/><circle cx="1320" cy="220" r="11"/><circle cx="1400" cy="280" r="7"/><circle cx="1480" cy="190" r="9"/><circle cx="1540" cy="260" r="12"/><circle cx="1020" cy="380" r="8"/><circle cx="1100" cy="460" r="4"/><circle cx="1180" cy="380" r="10"/><circle cx="1260" cy="450" r="6"/><circle cx="1340" cy="390" r="13"/><circle cx="1420" cy="480" r="5"/><circle cx="1500" cy="420" r="8"/><circle cx="1580" cy="350" r="11"/><circle cx="1040" cy="560" r="7"/><circle cx="1120" cy="620" r="9"/><circle cx="1200" cy="540" r="5"/><circle cx="1280" cy="600" r="12"/><circle cx="1360" cy="520" r="8"/><circle cx="1440" cy="580" r="6"/><circle cx="1520" cy="510" r="10"/><circle cx="1060" cy="720" r="9"/><circle cx="1140" cy="780" r="7"/><circle cx="1220" cy="700" r="11"/><circle cx="1300" cy="760" r="5"/><circle cx="1380" cy="680" r="8"/><circle cx="1460" cy="740" r="10"/><circle cx="1540" cy="660" r="6"/>
+</g>
+
+<ellipse cx="200" cy="150" rx="140" ry="45" fill="#FF8FCF" opacity="0.7" filter="url(#g1)"><animateTransform attributeName="transform" type="translate" values="0,0;40,0;0,0" dur="9s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="1350" cy="120" rx="160" ry="50" fill="#8FE3FF" opacity="0.6" filter="url(#g1)"><animateTransform attributeName="transform" type="translate" values="0,0;-50,0;0,0" dur="11s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="850" cy="200" rx="110" ry="35" fill="#FFF07A" opacity="0.4"/>
+
+<polygon points="0,-35 30,17 -30,17" fill="#00F5D4" transform="translate(920,320)"><animateTransform attributeName="transform" type="translate" values="920,320;940,300;920,320" dur="4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="7s" repeatCount="indefinite" additive="sum"/></polygon>
+<rect x="0" y="0" width="45" height="45" fill="#FF3366" transform="translate(1120,520)"><animateTransform attributeName="transform" type="translate" values="1120,520;1120,490;1120,520" dur="5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite" additive="sum"/></rect>
+<circle cx="0" cy="0" r="28" fill="#FFF07A" transform="translate(1320,380)"><animateTransform attributeName="transform" type="translate" values="1320,380;1300,400;1320,380" dur="6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" values="1;1.25;1" dur="3s" repeatCount="indefinite" additive="sum"/></circle>
+
+<g stroke="#00F5D4" stroke-width="16" opacity="0.15" stroke-linecap="round">
+<line x1="900" y1="0" x2="800" y2="100"/><line x1="1000" y1="0" x2="900" y2="100"/><line x1="1100" y1="0" x2="1000" y2="100"/><line x1="1200" y1="0" x2="1100" y2="100"/><line x1="1300" y1="0" x2="1200" y2="100"/><line x1="1400" y1="0" x2="1300" y2="100"/><line x1="1500" y1="0" x2="1400" y2="100"/><line x1="1600" y1="0" x2="1500" y2="100"/>
+<line x1="900" y1="150" x2="800" y2="250"/><line x1="1000" y1="150" x2="900" y2="250"/><line x1="1100" y1="150" x2="1000" y2="250"/><line x1="1200" y1="150" x2="1100" y2="250"/><line x1="1300" y1="150" x2="1200" y2="250"/><line x1="1400" y1="150" x2="1300" y2="250"/><line x1="1500" y1="150" x2="1400" y2="250"/><line x1="1600" y1="150" x2="1500" y2="250"/>
+<line x1="900" y1="300" x2="800" y2="400"/><line x1="1000" y1="300" x2="900" y2="400"/><line x1="1100" y1="300" x2="1000" y2="400"/><line x1="1200" y1="300" x2="1100" y2="400"/>
+</g>
+
+<g fill="#FFF" opacity="0.4">
+<polygon points="0,-6 2,-2 6,-2 3,1 4,5 0,3 -4,5 -3,1 -6,-2 -2,-2" transform="translate(980,220)"/>
+<polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,5 -5,8 -3,2 -8,-2 -2,-2" transform="translate(1080,340)"/>
+<polygon points="0,-5 1,-1 5,-1 2,1 3,5 0,3 -3,5 -2,1 -5,-1 -1,-1" transform="translate(1180,180)"/>
+<polygon points="0,-7 2,-2 7,-2 3,2 4,7 0,4 -4,7 -3,2 -7,-2 -2,-2" transform="translate(1280,280)"/>
+<polygon points="0,-6 2,-2 6,-2 3,1 4,5 0,3 -4,5 -3,1 -6,-2 -2,-2" transform="translate(1380,420)"/>
+<polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,5 -5,8 -3,2 -8,-2 -2,-2" transform="translate(1480,240)"/>
+</g>
+
+<g transform="translate(220,780)">
+<g><animateTransform attributeName="transform" type="translate" values="0,0;0,-18;0,0" dur="3s" repeatCount="indefinite"/>
+<path d="M0,0C0,-55 110,-55 110,0L110,35L0,35Z" fill="url(#gp)" filter="url(#g1)"/>
+<ellipse cx="55" cy="0" rx="55" ry="14" fill="#5B3A8E" opacity="0.3"/>
+<ellipse cx="38" cy="-18" rx="16" ry="9" fill="#FFF07A" opacity="0.7"/>
+</g>
+</g>
+
+<g transform="translate(640,620)">
+<g><animateTransform attributeName="transform" type="translate" values="0,0;0,14;0,0" dur="2.5s" repeatCount="indefinite"/>
+<path d="M0,0C0,-50 100,-50 100,0L100,30L0,30Z" fill="url(#gp)" filter="url(#g1)"/>
+<ellipse cx="50" cy="0" rx="50" ry="12" fill="#5B3A8E" opacity="0.3"/>
+<ellipse cx="34" cy="-16" rx="14" ry="7" fill="#FFF07A" opacity="0.7"/>
+</g>
+</g>
+
+<g>
+<circle r="8" fill="#FFF07A" filter="url(#g3)"><animateMotion path="M275,730Q480,180 690,570" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite"/></circle>
+<circle r="6" fill="#00F5D4" filter="url(#g3)"><animateMotion path="M275,730Q480,180 690,570" begin="0.3s" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" begin="0.3s" dur="1.8s" repeatCount="indefinite"/></circle>
+<circle r="9" fill="#FF8FCF" filter="url(#g3)"><animateMotion path="M275,730Q480,180 690,570" begin="0.6s" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" begin="0.6s" dur="1.8s" repeatCount="indefinite"/></circle>
+<circle r="5" fill="#FFF" filter="url(#g3)"><animateMotion path="M275,730Q480,180 690,570" begin="0.9s" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" begin="0.9s" dur="1.8s" repeatCount="indefinite"/></circle>
+<polygon points="0,-10 3,-3 10,-3 4,2 6,9 0,5 -6,9 -4,2 -10,-3 -3,-3" fill="#FFF07A" filter="url(#g3)"><animateMotion path="M275,730Q480,180 690,570" begin="1.2s" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" begin="1.2s" dur="1.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0" to="180" begin="1.2s" dur="1.8s" repeatCount="indefinite"/></polygon>
+</g>
+
+<g transform="translate(480,340)">
+<g>
+<animateTransform attributeName="transform" type="translate" values="0,0;0,-45;0,0" dur="1.3s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="-8;8;-8" dur="1.3s" repeatCount="indefinite" additive="sum"/>
+<animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="0.9s" repeatCount="indefinite" additive="sum"/>
+<g fill="#2D1B4E" stroke="#FFF07A" stroke-width="3">
+<circle cx="0" cy="-32" r="15"/><ellipse cx="0" cy="5" rx="13" ry="21"/><ellipse cx="-11" cy="24" rx="7" ry="15" transform="rotate(35 -11 24)"/><ellipse cx="15" cy="20" rx="7" ry="15" transform="rotate(-50 15 20)"/><ellipse cx="-18" cy="-2" rx="6" ry="14" transform="rotate(65 -18 -2)"/><ellipse cx="18" cy="-5" rx="6" ry="14" transform="rotate(-25 18 -5)"/><path d="M10,-22Q30,-28 52,-12Q42,-2 28,-8Z" fill="#FF3366" stroke="none"/>
+</g>
+</g>
+</g>
+
+<g stroke="#FFF" stroke-width="4" stroke-linecap="round" opacity="0.7" stroke-dasharray="30,50">
+<line x1="420" y1="360" x2="340" y2="370"><animate attributeName="stroke-dashoffset" values="0;80;0" dur="0.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0;0.7" dur="0.6s" repeatCount="indefinite"/></line>
+</g>
+
+<g>
+<rect x="0" y="0" width="12" height="12" fill="#FF3366"><animateTransform attributeName="transform" type="translate" values="-50,150;1700,850" dur="4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0" to="720" dur="4s" repeatCount="indefinite" additive="sum"/></rect>
+<circle cx="0" cy="0" r="9" fill="#00F5D4"><animateTransform attributeName="transform" type="translate" values="-50,350;1700,250" dur="6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite" additive="sum"/></circle>
+<rect x="0" y="0" width="10" height="10" fill="#FFF07A"><animateTransform attributeName="transform" type="translate" values="-50,550;1700,150" dur="5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0" to="-540" dur="5s" repeatCount="indefinite" additive="sum"/></rect>
+<polygon points="0,-10 8,5 -8,5" fill="#FF8FCF"><animateTransform attributeName="transform" type="translate" values="1700,150;-100,650" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="7s" repeatCount="indefinite" additive="sum"/></polygon>
+<rect x="0" y="0" width="8" height="14" fill="#5B3A8E"><animateTransform attributeName="transform" type="translate" values="-50,750;1700,450" dur="5.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5.5s" repeatCount="indefinite" additive="sum"/></rect>
+<circle cx="0" cy="0" r="7" fill="#FFF07A"><animateTransform attributeName="transform" type="translate" values="1700,850;-100,150" dur="4.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4.5s" repeatCount="indefinite" additive="sum"/></circle>
+</g>
+
+<g>
+<circle cx="250" cy="900" r="4" fill="#FFF"><animate attributeName="cy" values="900;-50" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="3s" repeatCount="indefinite"/></circle>
+<circle cx="550" cy="920" r="5" fill="#FFF07A"><animate attributeName="cy" values="920;-30" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="4s" repeatCount="indefinite"/></circle>
+<circle cx="850" cy="910" r="3" fill="#00F5D4"><animate attributeName="cy" values="910;-20" dur="3.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="3.5s" repeatCount="indefinite"/></circle>
+<circle cx="1250" cy="930" r="6" fill="#FF3366"><animate attributeName="cy" values="930;-40" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="5s" repeatCount="indefinite"/></circle>
+</g>
+
+<polygon points="0,-70 21,-21 70,0 21,21 0,70 -21,21 -70,0 -21,-21" fill="#FFF07A" opacity="0.25" transform="translate(1250,480)"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="25s" repeatCount="indefinite" additive="sum"/><animate attributeName="opacity" values="0.25;0.45;0.25" dur="4s" repeatCount="indefinite"/></polygon>
+
+<circle cx="1380" cy="280" r="50" fill="#FF8FCF" opacity="0.2"><animateTransform attributeName="transform" type="translate" values="0,0;0,35;0,0" dur="6s" repeatCount="indefinite"/></circle>
+<circle cx="1150" cy="680" r="70" fill="#8FE3FF" opacity="0.15"/>
+
+<g stroke="#FFF07A" stroke-width="5" opacity="0.2" stroke-linecap="round">
+<line x1="1000" y1="450" x2="1020" y2="450"/><line x1="1010" y1="440" x2="1010" y2="460"/>
+<line x1="1200" y1="350" x2="1220" y2="350"/><line x1="1210" y1="340" x2="1210" y2="360"/>
+<line x1="1400" y1="550" x2="1420" y2="550"/><line x1="1410" y1="540" x2="1410" y2="560"/>
+<line x1="1100" y1="650" x2="1120" y2="650"/><line x1="1110" y1="640" x2="1110" y2="660"/>
+<line x1="1500" y1="400" x2="1520" y2="400"/><line x1="1510" y1="390" x2="1510" y2="410"/>
+</g>
+
+</svg>

@@ -1,0 +1,107 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0e0b18" />
+      <stop offset="100%" stop-color="#050508" />
+    </radialGradient>
+
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <linearGradient id="grad" gradientUnits="userSpaceOnUse" x1="480" y1="480" x2="620" y2="320">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <path id="trace" d="M -20 400 C 100 440, 160 320, 260 340 C 360 360, 320 480, 440 460 C 560 440, 520 280, 640 300 C 760 320, 680 180, 820 220" fill="none" />
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)" />
+
+  <g opacity="0.4">
+    <circle cx="400" cy="300" r="250" fill="none" stroke="#7c3aed" stroke-width="0.5" />
+    <circle cx="400" cy="300" r="250" fill="none" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="4 18">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="120s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="400" cy="300" r="180" fill="none" stroke="#7c3aed" stroke-width="0.3" />
+    <circle cx="400" cy="300" r="180" fill="none" stroke="#3b82f6" stroke-width="0.3" stroke-dasharray="3 12">
+      <animateTransform attributeName="transform" type="rotate" from="360 400 300" to="0 400 300" dur="90s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="400" cy="300" r="110" fill="none" stroke="#ffffff" stroke-width="0.2" />
+    <circle cx="400" cy="300" r="110" fill="none" stroke="#7c3aed" stroke-width="0.2" stroke-dasharray="2 10">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="60s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="285" cy="170" r="1" fill="#ffffff" opacity="0.6" />
+    <circle cx="285" cy="170" r="4" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3" />
+
+    <circle cx="285" cy="430" r="1" fill="#ffffff" opacity="0.6" />
+    <circle cx="285" cy="430" r="4" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3" />
+
+    <circle cx="515" cy="430" r="1" fill="#ffffff" opacity="0.6" />
+    <circle cx="515" cy="430" r="4" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3" />
+
+    <circle cx="515" cy="170" r="1" fill="#ffffff" opacity="0.6" />
+    <circle cx="515" cy="170" r="4" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3" />
+
+    <path d="M 285 430 L 285 170" stroke="#ffffff" stroke-width="0.8" opacity="0.2" />
+    <path d="M 515 430 L 515 170" stroke="#ffffff" stroke-width="0.8" opacity="0.2" />
+    <path d="M 285 170 L 515 170" stroke="#ffffff" stroke-width="0.8" opacity="0.2" />
+    <path d="M 285 430 L 515 430" stroke="#ffffff" stroke-width="0.8" opacity="0.2" />
+
+    <path d="M 285 170 L 515 430" stroke="#ffffff" stroke-width="0.8" opacity="0.2" />
+    <path d="M 515 170 L 285 430" stroke="#ffffff" stroke-width="0.8" opacity="0.2" />
+
+    <line x1="400" y1="170" x2="400" y2="430" stroke="#ffffff" stroke-width="1" opacity="0.15" />
+    <line x1="285" y1="300" x2="515" y2="300" stroke="#ffffff" stroke-width="1" opacity="0.15" />
+
+    <circle cx="400" cy="300" r="8" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.25" />
+    <circle cx="400" cy="300" r="12" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.15" />
+  </g>
+
+  <circle cx="400" cy="300" r="2.5" fill="#ffffff" opacity="0.8" />
+
+  <g id="circuit">
+    <use href="#trace" stroke="#ffffff" stroke-width="1" opacity="0.15" />
+    <use href="#trace" stroke="#3b82f6" stroke-width="1.5" opacity="0.25" />
+    <use href="#trace" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2 6" />
+    <use href="#trace" stroke="url(#grad)" stroke-width="0.5" stroke-dasharray="2 6">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -20 0" dur="8s" repeatCount="indefinite" />
+    </use>
+
+    <g opacity="0.3">
+      <circle cx="100" cy="400" r="1" fill="#ffffff" />
+      <circle cx="260" cy="340" r="1" fill="#ffffff" />
+      <circle cx="440" cy="460" r="1" fill="#ffffff" />
+      <circle cx="640" cy="300" r="1" fill="#ffffff" />
+    </g>
+  </g>
+
+  <g id="et" opacity="0" filter="url(#glow)">
+    <circle cx="0" cy="0" r="6" fill="#7c3aed" opacity="0.9" />
+    <circle cx="0" cy="0" r="16" fill="none" stroke="#7c3aed" stroke-width="1.2" />
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#7c3aed" stroke-width="0.8" opacity="0.5" />
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.2" />
+    <animateMotion href="#et" dur="12s" repeatCount="indefinite" rotate="auto" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+      <mpath href="#trace" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0;0;1;0.8;1;0.8;0;0" keyTimes="0;0.45;0.52;0.7;0.85;0.95;0.98;1" dur="12s" repeatCount="indefinite" />
+  </g>
+
+  <g opacity="0.2">
+    <circle cx="100" cy="400" r="1" fill="none" stroke="#ffffff" stroke-width="0.5">
+      <animate attributeName="r" values="1;6;1" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="640" cy="300" r="1" fill="none" stroke="#ffffff" stroke-width="0.5">
+      <animate attributeName="r" values="1;6;1" dur="4s" begin="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="4s" begin="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

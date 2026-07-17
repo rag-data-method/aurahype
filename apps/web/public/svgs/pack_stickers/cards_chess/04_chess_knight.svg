@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Neon Gradients -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFFF"/>
+      <stop offset="100%" stop-color="#00B8D4"/>
+    </linearGradient>
+    
+    <linearGradient id="magentaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF00FF"/>
+      <stop offset="100%" stop-color="#D500F9"/>
+    </linearGradient>
+
+    <!-- Clip path for halftone dots -->
+    <clipPath id="stickerClip">
+      <path d="M 500 120 C 620 120, 720 180, 780 280 C 840 380, 840 500, 800 620 C 760 740, 680 820, 560 860 C 560 860, 580 920, 600 960 C 600 960, 400 960, 400 960 C 420 920, 440 860, 440 860 C 320 820, 240 740, 200 620 C 160 500, 160 380, 220 280 C 280 180, 380 120, 500 120 Z"/>
+    </clipPath>
+
+    <!-- Halftone Pattern -->
+    <pattern id="halftone" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <circle cx="12" cy="12" r="4" fill="#000000" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Sticker Drop Shadow (for presentation) -->
+  <path d="M 510 130 C 630 130, 730 190, 790 290 C 850 390, 850 510, 810 630 C 770 750, 690 830, 570 870 C 570 870, 590 930, 610 970 C 610 970, 410 970, 410 970 C 430 930, 450 870, 450 870 C 330 830, 250 750, 210 630 C 170 510, 170 390, 230 290 C 290 190, 390 130, 510 130 Z" fill="#000000" opacity="0.25" transform="translate(15, 25)"/>
+
+  <!-- Die-Cut White Border -->
+  <path d="M 500 120 C 620 120, 720 180, 780 280 C 840 380, 840 500, 800 620 C 760 740, 680 820, 560 860 C 560 860, 580 920, 600 960 C 600 960, 400 960, 400 960 C 420 920, 440 860, 440 860 C 320 820, 240 740, 200 620 C 160 500, 160 380, 220 280 C 280 180, 380 120, 500 120 Z" fill="#FFFFFF" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+
+  <!-- Base Fills (Cyan Base) -->
+  <path d="M 500 120 C 620 120, 720 180, 780 280 C 840 380, 840 500, 800 620 C 760 740, 680 820, 560 860 C 560 860, 580 920, 600 960 C 600 960, 400 960, 400 960 C 420 920, 440 860, 440 860 C 320 820, 240 740, 200 620 C 160 500, 160 380, 220 280 C 280 180, 380 120, 500 120 Z" fill="url(#cyanGrad)"/>
+
+  <!-- Halftone Overlay clipped to sticker shape -->
+  <rect x="0" y="0" width="1000" height="1000" fill="url(#halftone)" clip-path="url(#stickerClip)"/>
+
+  <!-- MAGENTA Background Accents (Pop Art Shapes behind the knight) -->
+  <!-- Large Magenta Circle -->
+  <circle cx="500" cy="450" r="220" fill="url(#magentaGrad)" stroke="#000000" stroke-width="12"/>
+  
+  <!-- Magenta Speed Lines / Action Background -->
+  <path d="M 500 230 L 500 150 M 680 320 L 750 260 M 720 530 L 810 560 M 560 670 L 590 760 M 400 650 L 350 730 M 320 480 L 230 500 M 340 330 L 270 270" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Magenta Starburst Accents -->
+  <path d="M 230 280 L 250 330 L 300 350 L 250 370 L 230 420 L 210 370 L 160 350 L 210 330 Z" fill="#FF00FF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 770 280 L 750 330 L 700 350 L 750 370 L 770 420 L 790 370 L 840 350 L 790 330 Z" fill="#FF00FF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+
+  <!-- CYAN Knight Silhouette -->
+  <path d="M 360 720 C 360 720, 340 580, 360 480 C 380 380, 420 300, 500 260 C 580 220, 660 240, 700 300 C 740 360, 740 440, 700 500 C 660 560, 580 580, 540 620 C 500 660, 480 720, 480 720 Z" fill="url(#cyanGrad)" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+
+  <!-- Knight Mane (Neon Cyan & Magenta Segments) -->
+  <!-- Segment 1 (Cyan base) -->
+  <path d="M 360 480 C 380 380, 420 300, 500 260 C 520 280, 500 320, 460 360 C 420 400, 380 440, 360 480 Z" fill="url(#cyanGrad)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+  
+  <!-- Segment 2 (Magenta) -->
+  <path d="M 360 480 C 380 440, 420 400, 460 360 C 480 380, 460 420, 420 460 C 400 480, 370 500, 360 480 Z" fill="url(#magentaGrad)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Segment 3 (Cyan) -->
+  <path d="M 420 460 C 460 420, 480 380, 460 360 C 500 320, 520 280, 500 260 C 540 240, 580 260, 600 300 C 580 340, 540 380, 500 420 C 460 460, 440 480, 420 460 Z" fill="url(#cyanGrad)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Segment 4 (Magenta) -->
+  <path d="M 500 420 C 540 380, 580 340, 600 300 C 630 320, 640 360, 620 400 C 600 440, 560 460, 520 480 C 500 480, 480 460, 500 420 Z" fill="url(#magentaGrad)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Segment 5 (Cyan) -->
+  <path d="M 520 480 C 560 460, 600 440, 620 400 C 650 420, 660 460, 640 500 C 620 540, 580 560, 540 580 C 520 560, 510 520, 520 480 Z" fill="url(#cyanGrad)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Segment 6 (Magenta) -->
+  <path d="M 540 580 C 580 560, 620 540, 640 500 C 660 520, 660 560, 640 600 C 620 640, 580 660, 540 660 C 520 640, 520 600, 540 580 Z" fill="url(#magentaGrad)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Segment 7 (Cyan) -->
+  <path d="M 540 660 C 580 660, 620 640, 640 600 C 650 620, 640 660, 620 680 C 600 700, 560 710, 540 700 C 530 690, 530 670, 540 660 Z" fill="url(#cyanGrad)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Knight Face Details -->
+  <!-- Snout -->
+  <path d="M 700 300 C 740 360, 740 440, 700 500 C 660 560, 580 580, 540 620 C 520 640, 520 680, 540 720 L 480 720 C 480 720, 500 660, 540 620 C 580 580, 660 560, 700 500 C 740 440, 740 360, 700 300 Z" fill="url(#cyanGrad)" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+  
+  <!-- Nostril -->
+  <ellipse cx="680" cy="470" rx="15" ry="25" fill="#000000" transform="rotate(-20 680 470)"/>
+
+  <!-- Eye (Pop Art Style) -->
+  <path d="M 580 360 C 600 340, 630 350, 640 380 C 650 410, 630 440, 600 430 C 570 420, 560 380, 580 360 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 590 370 C 600 360, 620 370, 620 390 C 620 410, 600 420, 590 410 C 580 400, 580 380, 590 370 Z" fill="#000000"/>
+
+  <!-- Mouth / Teeth Line -->
+  <path d="M 640 580 C 660 590, 680 600, 700 600" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 645 590 C 665 600, 685 610, 705 610" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Base Cylinder (Magenta) -->
+  <path d="M 340 720 C 340 720, 340 820, 500 820 C 660 820, 660 720, 660 720 Z" fill="url(#magentaGrad)" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+  
+  <!-- Base Shadow/Cutout -->
+  <path d="M 360 740 C 360 740, 360 800, 500 800 C 640 800, 640 740, 640 740 Z" fill="url(#cyanGrad)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Collar/Neck Ring (Magenta Stripe) -->
+  <path d="M 360 700 C 360 700, 500 740, 660 700 L 660 730 C 660 730, 500 770, 360 730 Z" fill="url(#magentaGrad)" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Action Lines / Speed Marks (Black) -->
+  <path d="M 280 500 L 180 520 M 300 550 L 200 580 M 320 600 L 220 640" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Pop Art Starbursts (Cyan) -->
+  <path d="M 350 250 L 360 280 L 390 290 L 360 300 L 350 330 L 340 300 L 310 290 L 340 280 Z" fill="#00FFFF" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M 650 200 L 660 230 L 690 240 L 660 250 L 650 280 L 640 250 L 610 240 L 640 230 Z" fill="#00FFFF" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- Glossy Highlight on Snout -->
+  <path d="M 680 340 C 700 360, 700 400, 680 420 C 660 400, 660 360, 680 340 Z" fill="#FFFFFF" opacity="0.6"/>
+
+</svg>

@@ -1,0 +1,338 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B845FF"/>
+      <stop offset="100%" stop-color="#FF29CA"/>
+    </linearGradient>
+    <linearGradient id="c2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#B845FF"/>
+    </linearGradient>
+    <linearGradient id="c3" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF007A"/>
+      <stop offset="100%" stop-color="#FFD700"/>
+    </linearGradient>
+    <radialGradient id="p1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="40%" stop-color="#FF29CA" />
+      <stop offset="100%" stop-color="#B845FF" />
+      <animate attributeName="cx" values="40%;60%;40%" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="40%;60%;40%" dur="3s" repeatCount="indefinite" />
+    </radialGradient>
+    <radialGradient id="p2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#FF007A" />
+    </radialGradient>
+    <radialGradient id="p3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FF29CA" />
+    </radialGradient>
+    <filter id="g1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b1" />
+      <feFlood flood-color="#FF007A" result="c1" />
+      <feComposite in="c1" in2="b1" operator="in" result="c2" />
+      <feMerge>
+        <feMergeNode in="c2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="g2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b2" />
+      <feFlood flood-color="#00E5FF" result="c3" />
+      <feComposite in="c3" in2="b2" operator="in" result="c4" />
+      <feGaussianBlur stdDeviation="12" in="SourceGraphic" result="b3" />
+      <feMerge>
+        <feMergeNode in="c4" />
+        <feMergeNode in="b3" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="g3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="g4" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="25" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <path id="h" d="M0,-30 C -15,-50 -45,-35 -30,-10 C -20,5 0,35 0,35 C 0,35 20,5 30,-10 C 45,-35 15,-50 0,-30 Z" />
+  </defs>
+
+  <rect width="100%" height="100%" fill="#1B0B2E" />
+
+  <g opacity="0.6">
+    <circle cx="400" cy="300" r="300" fill="url(#p1)" filter="url(#g4)">
+      <animate attributeName="r" values="280;320;280" dur="6s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="20s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="220" fill="url(#p2)" filter="url(#g4)" opacity="0.8">
+      <animate attributeName="r" values="200;240;200" dur="5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="360 400 300" to="0 400 300" dur="15s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="160" fill="url(#p3)" filter="url(#g4)">
+      <animate attributeName="r" values="150;170;150" dur="4s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="-360 400 300" dur="12s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <g stroke-linecap="round">
+    <circle cx="400" cy="300" r="0" fill="none" stroke="url(#c1)" stroke-width="6" filter="url(#g2)">
+      <animate attributeName="r" values="0;250" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="0" fill="none" stroke="url(#c2)" stroke-width="4" filter="url(#g2)">
+      <animate attributeName="r" values="0;350" dur="4s" begin="0.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0" dur="4s" begin="0.4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="0" fill="none" stroke="url(#c3)" stroke-width="8" filter="url(#g2)">
+      <animate attributeName="r" values="0;450" dur="4s" begin="0.8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;0" dur="4s" begin="0.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="0" fill="none" stroke="#FFFFFF" stroke-width="2" filter="url(#g1)">
+      <animate attributeName="r" values="0;550" dur="5s" begin="1.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.9;0" dur="5s" begin="1.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="0" fill="none" stroke="#FF007A" stroke-width="12" stroke-dasharray="20 30" filter="url(#g3)">
+      <animate attributeName="r" values="0;600" dur="5s" begin="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0" dur="5s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <g filter="url(#g3)">
+    <g stroke-width="4">
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#00E5FF">
+        <animate attributeName="x2" values="400;520;400;280;400" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;30;300;30;300" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0;1;0" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="1;6;1" dur="2.5s" repeatCount="indefinite" />
+      </line>
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#FF29CA">
+        <animate attributeName="x2" values="400;520;400;280;400" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;30;300;30;300" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0;1;0" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="1;6;1" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+      </line>
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#FFD700">
+        <animate attributeName="x2" values="400;520;400;280;400" dur="2.5s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;30;300;30;300" dur="2.5s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0;1;0" dur="2.5s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="1;6;1" dur="2.5s" begin="1s" repeatCount="indefinite" />
+      </line>
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#00E5FF">
+        <animate attributeName="x2" values="400;280;400;520;400" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;30;300;30;300" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0;1;0" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="1;6;1" dur="2.5s" repeatCount="indefinite" />
+      </line>
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#FF007A">
+        <animate attributeName="x2" values="400;280;400;520;400" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;30;300;30;300" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0;1;0" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="1;6;1" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+      </line>
+    </g>
+
+    <g stroke-width="3">
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#B845FF">
+        <animate attributeName="x2" values="400;580;400;220;400" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;100;300;100;300" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+      </line>
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#00FFEA">
+        <animate attributeName="x2" values="400;220;400;580;400" dur="3s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;100;300;100;300" dur="3s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1s" repeatCount="indefinite" />
+      </line>
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#FF007A">
+        <animate attributeName="x2" values="400;500;400;300;400" dur="3s" begin="2s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;150;300;150;300" dur="3s" begin="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0" dur="3s" begin="2s" repeatCount="indefinite" />
+      </line>
+    </g>
+
+    <g stroke-width="2" opacity="0.8">
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#FFD700">
+        <animateTransform attributeName="transform" type="rotate" from="45 400 300" to="405 400 300" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;-50" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite" />
+      </line>
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#FF29CA">
+        <animateTransform attributeName="transform" type="rotate" from="135 400 300" to="495 400 300" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;-50" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite" />
+      </line>
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#00E5FF">
+        <animateTransform attributeName="transform" type="rotate" from="225 400 300" to="585 400 300" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;-50" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite" />
+      </line>
+      <line x1="400" y1="300" x2="400" y2="600" stroke="#B845FF">
+        <animateTransform attributeName="transform" type="rotate" from="315 400 300" to="675 400 300" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;-50" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite" />
+      </line>
+    </g>
+  </g>
+
+  <g filter="url(#g3)">
+    <circle cx="400" cy="300" r="4" fill="#00E5FF">
+      <animate attributeName="cy" values="300;0" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="400;450" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="3" fill="#FF007A">
+      <animate attributeName="cy" values="300;50" dur="2s" begin="1s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="400;350" dur="2s" begin="1s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="2s" begin="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="5" fill="#FFD700">
+      <animate attributeName="cy" values="300;100" dur="4s" begin="0.5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="400;250" dur="4s" begin="0.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="4s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="3" fill="#FF29CA">
+      <animate attributeName="cy" values="300;200" dur="2.5s" begin="1.5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="400;550" dur="2.5s" begin="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="2.5s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="4" fill="#B845FF">
+      <animate attributeName="cy" values="300;0" dur="3.5s" begin="2s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="400;300" dur="3.5s" begin="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="3.5s" begin="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="300" r="3" fill="#00FFEA">
+      <animate attributeName="cy" values="300;80" dur="2.2s" begin="0.2s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="400;500" dur="2.2s" begin="0.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="2.2s" begin="0.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <g filter="url(#g3)">
+    <path d="M400,300 L400,0 M400,300 L800,300 M400,300 L400,600 M400,300 L0,300" stroke="#FFFFFF" stroke-width="4" opacity="0">
+      <animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="0;10;0" dur="2.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M400,300 L800,0 M400,300 L800,600 M400,300 L0,600 M400,300 L0,0" stroke="#FF007A" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0.6;0" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="0;8;0" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <g filter="url(#g2)">
+    <path d="M400,60 L385,125 L330,100 L365,145 L300,170 L365,195 L330,240 L385,215 L400,280 L415,215 L470,240 L435,195 L500,170 L435,145 L470,100 L415,125 Z" fill="url(#c1)" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="scale" values="0.1;1.5;1;0.1" keyTimes="0;0.3;0.8;1" dur="3s" repeatCount="indefinite" additive="sum" />
+      <animateTransform attributeName="transform" type="rotate" values="0 400 300;180 400 300;360 400 300" dur="6s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.8;1" dur="3s" repeatCount="indefinite" />
+    </path>
+    
+    <path d="M400,20 L380,115 L300,85 L350,150 L250,185 L350,220 L300,285 L380,255 L400,350 L420,255 L500,285 L450,220 L550,185 L450,150 L500,85 L420,115 Z" fill="none" stroke="url(#c2)" stroke-width="8" stroke-linejoin="round" stroke-dasharray="20 15">
+      <animateTransform attributeName="transform" type="scale" values="0.1;1.8;1.8;0.1" keyTimes="0;0.3;0.8;1" dur="3.5s" repeatCount="indefinite" additive="sum" />
+      <animateTransform attributeName="transform" type="rotate" values="0 400 300;-180 400 300;-360 400 300" dur="6s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.2;0.8;1" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dashoffset" values="0;70" dur="1s" repeatCount="indefinite" />
+    </path>
+
+    <path d="M400,0 L375,120 L280,80 L335,160 L220,200 L335,240 L280,320 L375,280 L400,400 L425,280 L520,320 L465,240 L580,200 L465,160 L520,80 L425,120 Z" fill="none" stroke="url(#c3)" stroke-width="5" stroke-linejoin="round" opacity="0.6">
+      <animateTransform attributeName="transform" type="scale" values="0.1;2;2;0.1" keyTimes="0;0.2;0.8;1" dur="4s" repeatCount="indefinite" additive="sum" />
+      <animateTransform attributeName="transform" type="rotate" values="0 400 300;360 400 300;720 400 300" dur="8s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0;0.6;0.6;0" keyTimes="0;0.2;0.8;1" dur="4s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <g transform="translate(400, 300)" filter="url(#g2)">
+    <use href="#h" fill="#FF007A" stroke="#FFFFFF" stroke-width="4">
+      <animateTransform attributeName="transform" type="scale" values="0.1;0.7;0.1" keyTimes="0;0.5;1" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.8;1" dur="4s" repeatCount="indefinite" />
+    </use>
+    <use href="#h" fill="#00E5FF" opacity="0.8">
+      <animateTransform attributeName="transform" type="scale" values="0.1;0.9;0.1" keyTimes="0;0.5;1" dur="4s" begin="0.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="4s" begin="0.2s" repeatCount="indefinite" />
+    </use>
+    <use href="#h" fill="#FFD700" opacity="0.6">
+      <animateTransform attributeName="transform" type="scale" values="0.1;1.1;0.1" keyTimes="0;0.5;1" dur="4s" begin="0.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.6;0" dur="4s" begin="0.4s" repeatCount="indefinite" />
+    </use>
+  </g>
+
+  <g filter="url(#g1)">
+    <circle cx="120" cy="100" r="4" fill="#00E5FF">
+      <animate attributeName="r" values="0;6;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="680" cy="150" r="5" fill="#FF007A">
+      <animate attributeName="r" values="0;8;0" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="500" r="6" fill="#FFD700">
+      <animate attributeName="r" values="0;10;0" dur="3s" begin="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="650" cy="480" r="4" fill="#FF29CA">
+      <animate attributeName="r" values="0;7;0" dur="2s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="100" cy="250" r="5" fill="#B845FF">
+      <animate attributeName="r" values="0;9;0" dur="2.8s" begin="0.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="720" cy="350" r="3" fill="#00FFEA">
+      <animate attributeName="r" values="0;5;0" dur="1.8s" begin="0.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="120" r="4" fill="#FF007A">
+      <animate attributeName="r" values="0;6;0" dur="2.2s" begin="1.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="550" cy="520" r="5" fill="#00E5FF">
+      <animate attributeName="r" values="0;8;0" dur="2.6s" begin="0.4s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <g stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.4" filter="url(#g1)">
+    <rect x="50" y="50" width="20" height="20">
+      <animateTransform attributeName="transform" type="rotate" from="0 60 60" to="360 60 60" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <rect x="730" y="80" width="15" height="15">
+      <animateTransform attributeName="transform" type="rotate" from="360 737 87" to="0 737 87" dur="3s" repeatCount="indefinite" />
+    </rect>
+    <rect x="150" y="520" width="25" height="25">
+      <animateTransform attributeName="transform" type="rotate" from="0 162 532" to="360 162 532" dur="5s" repeatCount="indefinite" />
+    </rect>
+    <rect x="600" y="420" width="18" height="18">
+      <animateTransform attributeName="transform" type="rotate" from="360 609 429" to="0 609 429" dur="3.5s" repeatCount="indefinite" />
+    </rect>
+    <rect x="80" y="400" width="12" height="12">
+      <animateTransform attributeName="transform" type="rotate" from="0 86 406" to="360 86 406" dur="2.5s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <g stroke-width="2" fill="none" filter="url(#g1)">
+    <path d="M 350,50 A 50,50 0 0,1 450,50" stroke="#00E5FF">
+      <animate attributeName="d" values="M 350,40 A 50,50 0 0,1 450,40;M 350,60 A 50,50 0 0,1 450,60;M 350,40 A 50,50 0 0,1 450,40" dur="1.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 360,570 A 40,40 0 0,1 440,570" stroke="#FF007A">
+      <animate attributeName="d" values="M 360,580 A 40,40 0 0,1 440,580;M 360,560 A 40,40 0 0,1 440,560;M 360,580 A 40,40 0 0,1 440,580" dur="1.2s" repeatCount="indefinite" />
+    </path>
+    <path d="M 40,250 A 40,40 0 0,1 40,350" stroke="#FFD700">
+      <animate attributeName="d" values="M 30,250 A 40,40 0 0,1 30,350;M 50,250 A 40,40 0 0,1 50,350;M 30,250 A 40,40 0 0,1 30,350" dur="1.8s" repeatCount="indefinite" />
+    </path>
+    <path d="M 760,260 A 40,40 0 0,1 760,340" stroke="#FF29CA">
+      <animate attributeName="d" values="M 770,260 A 40,40 0 0,1 770,340;M 750,260 A 40,40 0 0,1 750,340;M 770,260 A 40,40 0 0,1 770,340" dur="1.4s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <g filter="url(#g2)">
+    <text x="400" y="580" font-family="Arial Black, sans-serif" font-size="44" fill="url(#c1)" stroke="#FFFFFF" stroke-width="2" text-anchor="middle" letter-spacing="6">LIVE
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="font-size" values="44;48;44" dur="1.5s" repeatCount="indefinite" />
+    </text>
+  </g>
+
+  <g transform="translate(400, 300)">
+    <circle r="0" fill="#FFFFFF" filter="url(#g3)">
+      <animate attributeName="r" values="0;5;0" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

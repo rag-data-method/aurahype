@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#F2F2F2"/>
+  
+  <g fill="none" stroke="#0D0D0D" stroke-width="24" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M 37 37 L 763 37 M 37 49 L 763 49 M 37 63 L 763 63 M 37 78 L 763 78 M 37 97 L 763 97 M 37 117 L 763 117 M 37 138 L 763 138 M 37 154 L 763 154 M 37 168 L 763 168 M 37 178 L 763 178 M 37 188 L 763 188 M 37 197 L 763 197 M 37 206 L 763 206 M 37 215 L 763 215 M 37 224 L 763 224 M 37 233 L 763 233 M 37 242 L 763 242 M 37 251 L 763 251 M 37 260 L 763 260 M 37 269 L 763 269 M 37 278 L 763 278 M 37 287 L 763 287 M 37 296 L 763 296 M 37 305 L 763 305 M 37 314 L 763 314 M 37 323 L 763 323 M 37 332 L 763 332 M 37 341 L 763 341 M 37 350 L 763 350 M 37 359 L 763 359 M 37 368 L 763 368 M 37 377 L 763 377 M 37 386 L 763 386"/>
+    
+    <path d="M 46 415 L 754 415 M 46 427 L 754 427 M 46 441 L 754 441 M 46 456 L 754 456 M 46 475 L 754 475 M 46 495 L 754 495 M 46 516 L 754 516 M 46 532 L 754 532 M 46 546 L 754 546 M 46 556 L 754 556 M 46 566 L 754 566"/>
+    
+    <path d="M 37 415 L 37 386 M 763 415 L 763 386"/>
+    
+    <path d="M 46 37 L 46 386 M 65 37 L 65 386 M 85 37 L 85 386 M 107 37 L 107 386 M 127 37 L 127 386 M 146 37 L 146 386 M 162 37 L 162 386 M 176 37 L 176 386 M 186 37 L 186 386 M 196 37 L 196 386 M 205 37 L 205 386 M 214 37 L 214 386 M 223 37 L 223 386 M 232 37 L 232 386 M 241 37 L 241 386 M 250 37 L 250 386 M 259 37 L 259 386 M 268 37 L 268 386 M 277 37 L 277 386 M 286 37 L 286 386 M 295 37 L 295 386 M 304 37 L 304 386 M 313 37 L 313 386 M 322 37 L 322 386 M 331 37 L 331 386 M 340 37 L 340 386 M 349 37 L 349 386 M 358 37 L 358 386 M 367 37 L 367 386 M 376 37 L 376 386 M 385 37 L 385 386 M 394 37 L 394 386 M 403 37 L 403 386 M 412 37 L 412 386 M 421 37 L 421 386 M 430 37 L 430 386 M 439 37 L 439 386 M 448 37 L 448 386 M 457 37 L 457 386 M 466 37 L 466 386 M 475 37 L 475 386 M 484 37 L 484 386 M 493 37 L 493 386 M 502 37 L 502 386 M 511 37 L 511 386 M 520 37 L 520 386 M 529 37 L 529 386 M 538 37 L 538 386 M 547 37 L 547 386 M 556 37 L 556 386 M 565 37 L 565 386 M 574 37 L 574 386 M 583 37 L 583 386 M 592 37 L 592 386 M 601 37 L 601 386 M 610 37 L 610 386 M 619 37 L 619 386 M 628 37 L 628 386 M 637 37 L 637 386 M 646 37 L 646 386 M 655 37 L 655 386 M 664 37 L 664 386 M 673 37 L 673 386 M 682 37 L 682 386 M 691 37 L 691 386 M 700 37 L 700 386 M 709 37 L 709 386 M 718 37 L 718 386 M 727 37 L 727 386 M 736 37 L 736 386 M 745 37 L 745 386 M 754 37 L 754 386 M 763 37 L 763 386"/>
+    
+    <path d="M 55 415 L 55 563 M 74 415 L 74 563 M 95 415 L 95 563 M 117 415 L 117 563 M 137 415 L 137 563 M 156 415 L 156 563 M 172 415 L 172 563 M 186 415 L 186 563 M 196 415 L 196 563 M 206 415 L 206 563 M 215 415 L 215 563 M 224 415 L 224 563 M 233 415 L 233 563 M 242 415 L 242 563 M 251 415 L 251 563 M 260 415 L 260 563 M 269 415 L 269 563 M 278 415 L 278 563 M 287 415 L 287 563 M 296 415 L 296 563 M 305 415 L 305 563 M 314 415 L 314 563 M 323 415 L 323 563 M 332 415 L 332 563 M 341 415 L 341 563 M 350 415 L 350 563 M 359 415 L 359 563 M 368 415 L 368 563 M 377 415 L 377 563 M 386 415 L 386 563 M 395 415 L 395 563 M 404 415 L 404 563 M 413 415 L 413 563 M 422 415 L 422 563 M 431 415 L 431 563 M 440 415 L 440 563 M 449 415 L 449 563 M 458 415 L 458 563 M 467 415 L 467 563 M 476 415 L 476 563 M 485 415 L 485 563 M 494 415 L 494 563 M 503 415 L 503 563 M 512 415 L 512 563 M 521 415 L 521 563 M 530 415 L 530 563 M 539 415 L 539 563 M 548 415 L 548 563 M 557 415 L 557 563 M 566 415 L 566 563 M 575 415 L 575 563 M 584 415 L 584 563 M 593 415 L 593 563 M 602 415 L 602 563 M 611 415 L 611 563 M 620 415 L 620 563 M 629 415 L 629 563 M 638 415 L 638 563 M 647 415 L 647 563 M 656 415 L 656 563 M 665 415 L 665 563 M 674 415 L 674 563 M 683 415 L 683 563 M 692 415 L 692 563 M 701 415 L 701 563 M 710 415 L 710 563 M 719 415 L 719 563 M 728 415 L 728 563 M 737 415 L 737 563 M 746 415 L 746 563"/>
+    
+    <path d="M 37 65 L 763 65 M 37 71 L 763 71 M 37 77 L 763 77 M 37 83 L 763 83 M 37 89 L 763 89 M 37 95 L 763 95 M 37 101 L 763 101 M 37 107 L 763 107 M 37 113 L 763 113 M 37 119 L 763 119 M 37 125 L 763 125 M 37 131 L 763 131 M 37 137 L 763 137"/>
+    
+    <path d="M 46 429 L 754 429 M 46 435 L 754 435 M 46 441 L 754 441 M 46 447 L 754 447 M 46 453 L 754 453 M 46 459 L 754 459 M 46 465 L 754 465 M 46 471 L 754 471 M 46 477 L 754 477 M 46 483 L 754 483 M 46 489 L 754 489 M 46 495 L 754 495"/>
+  </g>
+
+  <g fill="none" stroke="#D90429" stroke-width="22" stroke-linejoin="miter" stroke-linecap="butt">
+    <path d="M 400 300 L 763 300">
+      <animate attributeName="x2" values="763;37;763" dur="1.6s" repeatCount="indefinite" calcMode="discrete"/>
+      <animate attributeName="stroke-width" values="22;44;22" dur="0.4s" repeatCount="indefinite" calcMode="discrete"/>
+    </path>
+    
+    <path d="M 400 300 L 37 300">
+      <animate attributeName="x2" values="37;763;37" dur="1.6s" repeatCount="indefinite" calcMode="discrete"/>
+    </path>
+    
+    <path d="M 400 300 L 400 37">
+      <animate attributeName="y2" values="37;563;37" dur="1.4s" repeatCount="indefinite" calcMode="discrete"/>
+      <animate attributeName="stroke-width" values="22;55;22" dur="0.3s" repeatCount="indefinite" calcMode="discrete"/>
+    </path>
+    
+    <path d="M 400 300 L 400 563">
+      <animate attributeName="y2" values="563;37;563" dur="1.4s" repeatCount="indefinite" calcMode="discrete"/>
+    </path>
+  </g>
+
+  <g stroke="#0D0D0D" stroke-width="24" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M 12 0 L 12 600 M 24 0 L 24 600 M 36 0 L 36 600 M 48 0 L 48 600 M 60 0 L 60 600 M 72 0 L 72 600 M 84 0 L 84 600 M 96 0 L 96 600 M 108 0 L 108 600 M 120 0 L 120 600 M 132 0 L 132 600 M 144 0 L 144 600 M 156 0 L 156 600 M 168 0 L 168 600 M 180 0 L 180 600 M 192 0 L 192 600 M 204 0 L 204 600 M 216 0 L 216 600 M 228 0 L 228 600 M 240 0 L 240 600 M 252 0 L 252 600 M 264 0 L 264 600 M 276 0 L 276 600 M 288 0 L 288 600 M 300 0 L 300 600 M 312 0 L 312 600 M 324 0 L 324 600 M 336 0 L 336 600 M 348 0 L 348 600 M 360 0 L 360 600 M 372 0 L 372 600 M 384 0 L 384 600 M 396 0 L 396 600 M 408 0 L 408 600 M 420 0 L 420 600 M 432 0 L 432 600 M 444 0 L 444 600 M 456 0 L 456 600 M 468 0 L 468 600 M 480 0 L 480 600 M 492 0 L 492 600 M 504 0 L 504 600 M 516 0 L 516 600 M 528 0 L 528 600 M 540 0 L 540 600 M 552 0 L 552 600 M 564 0 L 564 600 M 576 0 L 576 600 M 588 0 L 588 600 M 600 0 L 600 600 M 612 0 L 612 600 M 624 0 L 624 600 M 636 0 L 636 600 M 648 0 L 648 600 M 660 0 L 660 600 M 672 0 L 672 600 M 684 0 L 684 600 M 696 0 L 696 600 M 708 0 L 708 600 M 720 0 L 720 600 M 732 0 L 732 600 M 744 0 L 744 600 M 756 0 L 756 600 M 768 0 L 768 600 M 780 0 L 780 600 M 792 0 L 792 600 M 0 12 L 800 12 M 0 24 L 800 24 M 0 36 L 800 36 M 0 48 L 800 48 M 0 60 L 800 60 M 0 72 L 800 72 M 0 84 L 800 84 M 0 96 L 800 96 M 0 108 L 800 108 M 0 120 L 800 120 M 0 132 L 800 132 M 0 144 L 800 144 M 0 156 L 800 156 M 0 168 L 800 168 M 0 180 L 800 180 M 0 192 L 800 192 M 0 204 L 800 204 M 0 216 L 800 216 M 0 228 L 800 228 M 0 240 L 800 240 M 0 252 L 800 252 M 0 264 L 800 264 M 0 276 L 800 276 M 0 288 L 800 288 M 0 300 L 800 300 M 0 312 L 800 312 M 0 324 L 800 324 M 0 336 L 800 336 M 0 348 L 800 348 M 0 360 L 800 360 M 0 372 L 800 372 M 0 384 L 800 384 M 0 396 L 800 396 M 0 408 L 800 408 M 0 420 L 800 420 M 0 432 L 800 432 M 0 444 L 800 444 M 0 456 L 800 456 M 0 468 L 800 468 M 0 480 L 800 480 M 0 492 L 800 492 M 0 504 L 800 504 M 0 516 L 800 516 M 0 528 L 800 528 M 0 540 L 800 540 M 0 552 L 800 552 M 0 564 L 800 564 M 0 576 L 800 576 M 0 588 L 800 588">
+      <animate attributeName="stroke-dashoffset" values="0; 24; 0" dur="0.8s" repeatCount="indefinite" calcMode="discrete"/>
+    </path>
+  </g>
+
+  <g fill="none" stroke="#D90429" stroke-width="24" stroke-linejoin="miter" stroke-linecap="butt">
+    <rect x="0" y="0" width="800" height="600"/>
+    <rect x="24" y="0" width="752" height="600"/>
+    <rect x="48" y="0" width="704" height="600"/>
+    <rect x="72" y="0" width="656" height="600"/>
+    <rect x="0" y="24" width="800" height="552"/>
+    <rect x="0" y="48" width="800" height="504"/>
+    <rect x="0" y="72" width="800" height="456"/>
+    
+    <line x1="0" y1="300" x2="800" y2="300" stroke-width="44"/>
+    <line x1="400" y1="0" x2="400" y2="600" stroke-width="44"/>
+  </g>
+
+  <g fill="none" stroke="#0D0D0D" stroke-width="12" stroke-linejoin="miter" stroke-linecap="butt">
+    <path d="M 400 0 L 400 600 M 0 300 L 800 300"/>
+  </g>
+
+  <g transform="translate(400,300)">
+    <g stroke="#D90429" stroke-width="32" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 14; 1" dur="1.8s" repeatCount="indefinite" calcMode="discrete"/>
+        <animate attributeName="stroke" values="#D90429; #F2F2F2; #D90429" dur="0.9s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+      
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 12; 1" dur="1.6s" repeatCount="indefinite" calcMode="discrete"/>
+        <animateTransform attributeName="transform" type="rotate" values="0; 180; 0" dur="1.6s" repeatCount="indefinite" calcMode="discrete" additive="sum"/>
+      </path>
+    </g>
+
+    <g stroke="#0D0D0D" stroke-width="28" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 10; 1" dur="2.2s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+    </g>
+
+    <g stroke="#F2F2F2" stroke-width="24" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 8; 1" dur="1.2s" repeatCount="indefinite" calcMode="discrete"/>
+        <animate attributeName="stroke-dashoffset" values="0; 4; 8; 0" dur="0.4s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 6; 1" dur="1.4s" repeatCount="indefinite" calcMode="discrete"/>
+        <animateTransform attributeName="transform" type="rotate" values="0; -90; -180; -270; 0" dur="1.4s" repeatCount="indefinite" calcMode="discrete" additive="sum"/>
+        <animate attributeName="stroke-width" values="24; 12; 24" dur="0.7s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+    </g>
+
+    <g stroke="#D90429" stroke-width="20" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 5; 1" dur="2.8s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+    </g>
+
+    <g stroke="#0D0D0D" stroke-width="18" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 4; 1" dur="1.1s" repeatCount="indefinite" calcMode="discrete"/>
+        <animateTransform attributeName="transform" type="rotate" values="0; 45; 0" dur="1.1s" repeatCount="indefinite" calcMode="discrete" additive="sum"/>
+      </path>
+    </g>
+
+    <g stroke="#F2F2F2" stroke-width="16" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 3; 1" dur="0.8s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+    </g>
+
+    <g stroke="#D90429" stroke-width="14" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 2.5; 1" dur="1.5s" repeatCount="indefinite" calcMode="discrete"/>
+        <animate attributeName="stroke" values="#D90429; #0D0D0D; #D90429" dur="0.5s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+    </g>
+
+    <g stroke="#0D0D0D" stroke-width="12" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 2; 1" dur="0.6s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+    </g>
+
+    <g stroke="#F2F2F2" stroke-width="10" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 1.5; 1" dur="0.4s" repeatCount="indefinite" calcMode="discrete"/>
+        <animateTransform attributeName="transform" type="rotate" values="0; 360; 0" dur="0.4s" repeatCount="indefinite" calcMode="discrete" additive="sum"/>
+      </path>
+    </g>
+
+    <g stroke="#D90429" stroke-width="8" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+      <path d="M -0 -0 a 1 0.98 0 0 1 4 0 a 0.89 0.87 0 0 1 -3 0 a 0.79 0.77 0 0 1 2 0 a 0.69 0.67 0 0 1 -1 0 a 0.59 0.58 0 0 1 0 0 a 0.49 0.48 0 0 1 -0 0 a 0.39 0.38 0 0 1 0 0 a 0.29 0.28 0 0 1 -0 0 a 0.19 0.19 0 0 1 0 0 a 0.09 0.09 0 0 1 -0 0">
+        <animateTransform attributeName="transform" type="scale" values="1; 1.2; 1" dur="0.3s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+    </g>
+
+    <circle cx="0" cy="0" r="0" fill="#D90429" stroke="none">
+      <animate attributeName="r" values="0; 8; 4; 12; 0" dur="2s" repeatCount="indefinite" calcMode="discrete"/>
+    </circle>
+  </g>
+
+  <g stroke="#D90429" stroke-width="18" fill="none" stroke-linejoin="miter" stroke-linecap="butt" opacity="0.8">
+    <g transform="translate(400,300)">
+      <path d="M -800 -300 L 800 300">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 40 15; -40 -15; 0 0" dur="1.2s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+      <path d="M 800 -300 L -800 300">
+        <animateTransform attributeName="transform" type="translate" values="0 0; -40 15; 40 -15; 0 0" dur="1.4s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+      <path d="M 0 -300 L 0 300">
+        <animate attributeName="stroke-width" values="18; 36; 18" dur="0.8s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+      <path d="M -400 0 L 400 0">
+        <animate attributeName="stroke-width" values="18; 36; 18" dur="0.9s" repeatCount="indefinite" calcMode="discrete"/>
+      </path>
+    </g>
+  </g>
+</svg>

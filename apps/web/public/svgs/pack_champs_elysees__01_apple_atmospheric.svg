@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="gP" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#BAD8F8" stop-opacity="0.95">
+        <animate attributeName="stop-opacity" values="0.95;0.8;0.95" keyTimes="0;0.5;1" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        <animate attributeName="offset" values="0%;10%;0%" keyTimes="0;0.5;1" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="60%" stop-color="#BAD8F8" stop-opacity="0.42">
+        <animate attributeName="offset" values="60%;72%;60%" keyTimes="0;0.5;1" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#BAD8F8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gS" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#D4C5FF" stop-opacity="0.92">
+        <animate attributeName="stop-opacity" values="0.92;0.76;0.92" keyTimes="0;0.5;1" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        <animate attributeName="offset" values="0%;12%;0%" keyTimes="0;0.5;1" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="55%" stop-color="#D4C5FF" stop-opacity="0.38">
+        <animate attributeName="offset" values="55%;68%;55%" keyTimes="0;0.5;1" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#D4C5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gA" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFD4C2" stop-opacity="0.88">
+        <animate attributeName="stop-opacity" values="0.88;0.72;0.88" keyTimes="0;0.5;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        <animate attributeName="offset" values="0%;11%;0%" keyTimes="0;0.5;1" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="52%" stop-color="#FFD4C2" stop-opacity="0.34">
+        <animate attributeName="offset" values="52%;64%;52%" keyTimes="0;0.5;1" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#FFD4C2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gStreak" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BAD8F8" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#D4C5FF" stop-opacity="0.45">
+        <animate attributeName="stop-opacity" values="0.45;0.7;0.45" keyTimes="0;0.5;1" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#FFD4C2" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="b30"><feGaussianBlur stdDeviation="30"/></filter>
+    <filter id="b60"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="b90"><feGaussianBlur stdDeviation="90"/></filter>
+    <filter id="b120"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FBF8F4"/>
+  <rect width="1600" height="900" fill="#FBF8F4" filter="url(#grain)" opacity="0.45" style="mix-blend-mode:overlay"/>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="260,220;340,180;260,220" keyTimes="0;0.5;1" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="520" ry="380" fill="url(#gP)" filter="url(#b120)" opacity="0.85">
+      <animateTransform attributeName="transform" type="scale" values="1;1.08;1" keyTimes="0;0.5;1" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.85;0.7;0.85" keyTimes="0;0.5;1" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="1260,240;1180,290;1260,240" keyTimes="0;0.5;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="500" ry="420" fill="url(#gS)" filter="url(#b120)" opacity="0.8">
+      <animateTransform attributeName="transform" type="scale" values="1;1.07;1" keyTimes="0;0.5;1" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.8;0.65;0.8" keyTimes="0;0.5;1" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="880,740;960,780;880,740" keyTimes="0;0.5;1" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="580" ry="380" fill="url(#gA)" filter="url(#b120)" opacity="0.8">
+      <animateTransform attributeName="transform" type="scale" values="1;1.09;1" keyTimes="0;0.5;1" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.8;0.65;0.8" keyTimes="0;0.5;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="150,600;230,540;150,600" keyTimes="0;0.5;1" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="360" ry="260" fill="url(#gP)" filter="url(#b90)" opacity="0.85">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" keyTimes="0;0.5;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.85;0.7;0.85" keyTimes="0;0.5;1" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="1440,620;1370,670;1440,620" keyTimes="0;0.5;1" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="340" ry="280" fill="url(#gS)" filter="url(#b90)" opacity="0.8">
+      <animateTransform attributeName="transform" type="scale" values="1;1.08;1" keyTimes="0;0.5;1" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.8;0.65;0.8" keyTimes="0;0.5;1" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="780,440;840,390;780,440" keyTimes="0;0.5;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="320" ry="240" fill="url(#gA)" filter="url(#b90)" opacity="0.8">
+      <animateTransform attributeName="transform" type="scale" values="1;1.07;1" keyTimes="0;0.5;1" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.8;0.65;0.8" keyTimes="0;0.5;1" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="500,160;580,200;500,160" keyTimes="0;0.5;1" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="220" ry="160" fill="url(#gP)" filter="url(#b60)" opacity="0.85">
+      <animateTransform attributeName="transform" type="scale" values="1;1.12;1" keyTimes="0;0.5;1" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.85;0.7;0.85" keyTimes="0;0.5;1" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="1120,150;1050,120;1120,150" keyTimes="0;0.5;1" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="200" ry="150" fill="url(#gS)" filter="url(#b60)" opacity="0.8">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" keyTimes="0;0.5;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.8;0.65;0.8" keyTimes="0;0.5;1" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="300,800;380,750;300,800" keyTimes="0;0.5;1" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="210" ry="170" fill="url(#gA)" filter="url(#b60)" opacity="0.8">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" keyTimes="0;0.5;1" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.8;0.65;0.8" keyTimes="0;0.5;1" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <g opacity="0.35">
+    <animateTransform attributeName="transform" type="translate" values="760,300;840,300;760,300" keyTimes="0;0.5;1" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="opacity" values="0.35;0.55;0.35" keyTimes="0;0.5;1" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="720" ry="22" fill="url(#gStreak)" filter="url(#b60)"/>
+  </g>
+
+  <g opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" values="780,520;720,520;780,520" keyTimes="0;0.5;1" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="opacity" values="0.3;0.5;0.3" keyTimes="0;0.5;1" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="700" ry="20" fill="url(#gStreak)" filter="url(#b60)"/>
+  </g>
+
+  <g opacity="0.35">
+    <animateTransform attributeName="transform" type="translate" values="800,720;880,720;800,720" keyTimes="0;0.5;1" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="opacity" values="0.35;0.55;0.35" keyTimes="0;0.5;1" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <ellipse cx="0" cy="0" rx="740" ry="24" fill="url(#gStreak)" filter="url(#b60)"/>
+  </g>
+
+  <g transform="translate(800,450)">
+    <circle cx="0" cy="0" r="380" fill="none" stroke="#BAD8F8" stroke-width="2" filter="url(#b30)" opacity="0.22">
+      <animateTransform attributeName="transform" type="scale" values="1;1.12;1" keyTimes="0;0.5;1" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.22;0.12;0.22" keyTimes="0;0.5;1" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+  </g>
+
+  <g transform="translate(800,450)">
+    <circle cx="0" cy="0" r="520" fill="none" stroke="#D4C5FF" stroke-width="2" filter="url(#b30)" opacity="0.18">
+      <animateTransform attributeName="transform" type="scale" values="1;1.08;1" keyTimes="0;0.5;1" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.18;0.1;0.18" keyTimes="0;0.5;1" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+  </g>
+
+  <g filter="url(#b30)">
+    <circle cx="0" cy="0" r="4" fill="#BAD8F8" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="250,250;300,230;250,250" keyTimes="0;0.5;1" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.8;0.5;0.8" keyTimes="0;0.5;1" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="5" fill="#D4C5FF" opacity="0.75">
+      <animateTransform attributeName="transform" type="translate" values="1350,220;1290,260;1350,220" keyTimes="0;0.5;1" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.75;0.45;0.75" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="4" fill="#FFD4C2" opacity="0.78">
+      <animateTransform attributeName="transform" type="translate" values="900,820;960,850;900,820" keyTimes="0;0.5;1" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.78;0.5;0.78" keyTimes="0;0.5;1" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#BAD8F8" opacity="0.82">
+      <animateTransform attributeName="transform" type="translate" values="450,650;500,620;450,650" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.82;0.55;0.82" keyTimes="0;0.5;1" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="4" fill="#D4C5FF" opacity="0.72">
+      <animateTransform attributeName="transform" type="translate" values="1200,600;1140,640;1200,600" keyTimes="0;0.5;1" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.72;0.45;0.72" keyTimes="0;0.5;1" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#FFD4C2" opacity="0.76">
+      <animateTransform attributeName="transform" type="translate" values="700,300;760,330;700,300" keyTimes="0;0.5;1" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.76;0.5;0.76" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="5" fill="#BAD8F8" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="150,450;200,480;150,450" keyTimes="0;0.5;1" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.8;0.52;0.8" keyTimes="0;0.5;1" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#D4C5FF" opacity="0.74">
+      <animateTransform attributeName="transform" type="translate" values="1450,780;1390,740;1450,780" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.74;0.48;0.74" keyTimes="0;0.5;1" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="4" fill="#FFD4C2" opacity="0.78">
+      <animateTransform attributeName="transform" type="translate" values="550,480;620,500;550,480" keyTimes="0;0.5;1" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.78;0.5;0.78" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#BAD8F8" opacity="0.84">
+      <animateTransform attributeName="transform" type="translate" values="1050,380;990,410;1050,380" keyTimes="0;0.5;1" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.84;0.55;0.84" keyTimes="0;0.5;1" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="4" fill="#D4C5FF" opacity="0.76">
+      <animateTransform attributeName="transform" type="translate" values="300,150;360,180;300,150" keyTimes="0;0.5;1" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.76;0.48;0.76" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="5" fill="#FFD4C2" opacity="0.72">
+      <animateTransform attributeName="transform" type="translate" values="1300,480;1240,450;1300,480" keyTimes="0;0.5;1" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.72;0.45;0.72" keyTimes="0;0.5;1" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="4" fill="#BAD8F8" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="800,180;860,210;800,180" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.8;0.52;0.8" keyTimes="0;0.5;1" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="3" fill="#D4C5FF" opacity="0.78">
+      <animateTransform attributeName="transform" type="translate" values="600,750;660,720;600,750" keyTimes="0;0.5;1" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.78;0.5;0.78" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+  </g>
+</svg>

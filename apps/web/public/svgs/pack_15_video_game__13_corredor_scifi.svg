@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0A0F2E"/>
+      <stop offset="100%" stop-color="#161B3D"/>
+    </linearGradient>
+
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A0F2E" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#0A0F2E" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0A0F2E" stop-opacity="1"/>
+    </linearGradient>
+
+    <linearGradient id="doorGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFB07A" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#FF5E5E" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0A0F2E" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40" result="blur40"/>
+      <feMerge>
+        <feMergeNode in="blur40"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowMedium" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80" result="blur80"/>
+      <feMerge>
+        <feMergeNode in="blur80"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowWeak" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="120" result="blur120"/>
+      <feMerge>
+        <feMergeNode in="blur120"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowAmbient" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="160" result="blur160"/>
+      <feMerge>
+        <feMergeNode in="blur160"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Reusable Figure Silhouette -->
+    <path id="silhouette" d="M0,0 L4,0 L4,8 L6,8 L6,24 L-6,24 L-6,8 L-4,8 L-4,0 Z M-2,-12 L2,-12 L2,-6 L-2,-6 Z"/>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+
+  <!-- Perspective Grid & Corridors -->
+  <!-- Horizon Line / Vanishing Point Height: Approx 310px -->
+  
+  <!-- Wall Structure (Left Wall) -->
+  <polygon points="-100,900 -100,0 600,-100 600,900" fill="#1A2040" opacity="0.4"/>
+  
+  <!-- Ceiling Structure -->
+  <polygon points="-100,0 500,310 1100,310 1600,0 1600,-100 -100,-100" fill="#0D1130"/>
+  
+  <!-- Wall Structure (Right Wall) -->
+  <polygon points="1600,900 1600,0 1100,-100 1100,900" fill="#0D1030" opacity="0.6"/>
+
+  <!-- Floor Structure -->
+  <!-- Floor Perspective Trap: Far=500/310, Near Left=-100/900, Near Right=1600/900 -->
+  <polygon points="-100,900 500,310 1100,310 1600,900" fill="#080A20"/>
+  
+  <!-- Floor Reflection / Gloss (Subtle) -->
+  <polygon points="-100,900 500,310 1100,310 1600,900" fill="url(#floorGrad)"/>
+
+  <!-- Deep Perspective Lines (Fine details) -->
+  <g stroke="#3D2A5F" stroke-width="1" opacity="0.3">
+    <!-- Floor Grid Lines -->
+    <line x1="0" y1="900" x2="500" y2="310" stroke-dasharray="4 8"/>
+    <line x1="200" y1="900" x2="540" y2="310" stroke-dasharray="4 8"/>
+    <line x1="400" y1="900" x2="580" y2="310" stroke-dasharray="4 8"/>
+    <line x1="600" y1="900" x2="620" y2="310" stroke-dasharray="4 8"/>
+    <line x1="1400" y1="900" x2="980" y2="310" stroke-dasharray="4 8"/>
+    <line x1="1600" y1="900" x2="1100" y2="310" stroke-dasharray="4 8"/>
+    <!-- Ceiling Grid Lines -->
+    <line x1="0" y1="0" x2="500" y2="310"/>
+    <line x1="400" y1="0" x2="560" y2="310"/>
+    <line x1="800" y1="0" x2="700" y2="310"/>
+    <line x1="1200" y1="0" x2="900" y2="310"/>
+    <line x1="1600" y1="0" x2="1100" y2="310"/>
+  </g>
+
+  <!-- Receding Ceiling Beams -->
+  <g stroke="#3D2A5F" stroke-width="2" opacity="0.5">
+    <polygon points="400,0 440,0 520,310 480,310" fill="none"/>
+    <polygon points="700,0 740,0 660,310 620,310" fill="none"/>
+    <polygon points="1000,0 1040,0 880,310 840,310" fill="none"/>
+    <polygon points="1300,0 1340,0 1040,310 1000,310" fill="none"/>
+  </g>
+
+  <!-- Distant Doorway / Warm Glow Environment -->
+  <!-- Light bleeding from the far end (Asymmetric to the right) -->
+  <ellipse cx="700" cy="310" rx="500" ry="300" fill="#FFB07A" opacity="0.15" filter="url(#glowAmbient)">
+    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="8s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="700" cy="310" rx="300" ry="180" fill="#FF5E5E" opacity="0.2" filter="url(#glowWeak)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Distant Door Frame Object -->
+  <polygon points="600,310 800,310 800,200 600,200" fill="#0A0F2E"/>
+  <!-- Door Opening Inner Glow -->
+  <polygon points="610,310 790,310 790,210 610,210" fill="url(#doorGlow)" opacity="0.8"/>
+
+  <!-- Distant Silhouette Figure -->
+  <!-- Placed at the far end, tiny scale -->
+  <use href="#silhouette" x="680" y="310" fill="#05070F" opacity="1">
+    <animateTransform attributeName="transform" type="scale" values="0.8;1.1;0.8" additive="sum" dur="4s" repeatCount="indefinite"/>
+  </use>
+
+  <!-- Wall LED Strips (Cyan / Violet) -->
+  <!-- Left Wall Strips -->
+  <g filter="url(#glowStrong)">
+    <line x1="100" y1="350" x2="500" y2="310" stroke="#5EE5C9" stroke-width="4" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2;6;2" dur="3.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="80" y1="450" x2="530" y2="310" stroke="#E54B9C" stroke-width="6" opacity="0.5">
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="4.2s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="3;8;3" dur="4.2s" begin="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="120" y1="550" x2="560" y2="310" stroke="#5EE5C9" stroke-width="5" opacity="0.4">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.8s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2;7;2" dur="2.8s" begin="0.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="150" y1="650" x2="590" y2="310" stroke="#E54B9C" stroke-width="7" opacity="0.5">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="4;9;4" dur="5s" begin="2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Right Wall Strips -->
+  <g filter="url(#glowStrong)">
+    <line x1="1500" y1="350" x2="1100" y2="310" stroke="#E54B9C" stroke-width="4" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2;6;2" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1520" y1="450" x2="1070" y2="310" stroke="#5EE5C9" stroke-width="6" opacity="0.5">
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.8s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="3;8;3" dur="3.8s" begin="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1480" y1="550" x2="1040" y2="310" stroke="#E54B9C" stroke-width="5" opacity="0.4">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="4.5s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2;7;2" dur="4.5s" begin="0.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1450" y1="650" x2="1010" y2="310" stroke="#5EE5C9" stroke-width="7" opacity="0.5">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5.5s" begin="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="4;9;4" dur="5.5s" begin="2.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Ceiling LED Strips -->
+  <g filter="url(#glowMedium)">
+    <line x1="200" y1="0" x2="550" y2="310" stroke="#5EE5C9" stroke-width="3" opacity="0.5">
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="600" y1="0" x2="650" y2="310" stroke="#E54B9C" stroke-width="3" opacity="0.5">
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="4s" begin="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1000" y1="0" x2="750" y2="310" stroke="#5EE5C9" stroke-width="3" opacity="0.5">
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.8s" begin="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1400" y1="0" x2="950" y2="310" stroke="#E54B9C" stroke-width="3" opacity="0.5">
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="5s" begin="0.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Floor Reflections of LEDs -->
+  <g opacity="0.15" filter="url(#glowWeak)">
+    <!-- Reflections are vertically mirrored roughly around y=600, fading towards viewer -->
+    <line x1="100" y1="850" x2="500" y2="310" stroke="#5EE5C9" stroke-width="8">
+      <animate attributeName="opacity" values="0.05;0.25;0.05" dur="3.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="80" y1="750" x2="530" y2="310" stroke="#E54B9C" stroke-width="10">
+      <animate attributeName="opacity" values="0.05;0.25;0.05" dur="4.2s" begin="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1500" y1="850" x2="1100" y2="310" stroke="#E54B9C" stroke-width="8">
+      <animate attributeName="opacity" values="0.05;0.25;0.05" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1520" y1="750" x2="1070" y2="310" stroke="#5EE5C9" stroke-width="10">
+      <animate attributeName="opacity" values="0.05;0.25;0.05" dur="3.8s" begin="1.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Atmospheric Dust Particles -->
+  <g fill="#FFFFFF" opacity="0.4" filter="url(#glowStrong)">
+    <!-- Near Field Large Particles -->
+    <circle cx="200" cy="600" r="3" opacity="0.6">
+      <animate attributeName="cy" values="600;550;600" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="200;250;200" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="700" r="4" opacity="0.5">
+      <animate attributeName="cy" values="700;650;700" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1200;1150;1200" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Mid Field Particles -->
+    <circle cx="400" cy="500" r="2" opacity="0.4">
+      <animate attributeName="cy" values="500;480;500" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="400;420;400" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="450" r="2.5" opacity="0.3">
+      <animate attributeName="cy" values="450;470;450" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1000;980;1000" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.05;0.3" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="650" r="1.5" opacity="0.5">
+      <animate attributeName="cy" values="650;630;650" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="600;620;600" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="550" r="2" opacity="0.4">
+      <animate attributeName="cy" values="550;570;550" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1400;1380;1400" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Far Field Floating Particles (near doorway convergence) -->
+    <circle cx="650" cy="350" r="1" opacity="0.3">
+      <animate attributeName="cy" values="350;340;350" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="650;660;650" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="750" cy="380" r="1.2" opacity="0.2">
+      <animate attributeName="cy" values="380;370;380" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="750;740;750" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.05;0.2" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="680" cy="330" r="0.8" opacity="0.4">
+      <animate attributeName="cy" values="330;325;330" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="680;690;680" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Additional drifting particles -->
+    <circle cx="300" cy="450" r="1.5" opacity="0.3">
+      <animate attributeName="cy" values="450;420;450" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="300;350;300" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1300" cy="400" r="2" opacity="0.2">
+      <animate attributeName="cy" values="400;440;400" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1300;1250;1300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0;0.2" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="600" r="1" opacity="0.4">
+      <animate attributeName="cy" values="600;580;600" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="800;820;800" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="500" r="1.5" opacity="0.3">
+      <animate attributeName="cy" values="500;520;500" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="900;880;900" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="750" r="2.5" opacity="0.2">
+      <animate attributeName="cy" values="750;700;750" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="500;550;500" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0;0.2" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="800" r="3" opacity="0.15">
+      <animate attributeName="cy" values="800;850;800" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1100;1050;1100" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0;0.15" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Subtle Cinematic Vignette for focus -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.6"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+
+  <!-- Color Grading Overlay to unify palette -->
+  <rect width="1600" height="900" fill="#5EE5C9" opacity="0.03" style="mix-blend-mode: overlay;" pointer-events="none"/>
+  <rect width="1600" height="900" fill="#E54B9C" opacity="0.03" style="mix-blend-mode: overlay;" pointer-events="none"/>
+
+</svg>

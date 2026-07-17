@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bg-grad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="60%" stop-color="#0A0A12"/>
+      <stop offset="100%" stop-color="#0A0A12"/>
+    </radialGradient>
+
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#1A1A2E" stop-opacity="0.8">
+        <animate attributeName="stop-opacity" values="0.8;0.6;0.8" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#0A0A12" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Neon Glow Gradients -->
+    <linearGradient id="neon-bright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4081"/>
+      <stop offset="50%" stop-color="#FFB7B2"/>
+      <stop offset="100%" stop-color="#FF4081">
+        <animate attributeName="stop-color" values="#FF4081;#FFB7B2;#FF4081" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <radialGradient id="inner-lip" cx="40%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FF4081"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur1"/>
+      <feGaussianBlur stdDeviation="25" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow-intense" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="18" result="blur2"/>
+      <feGaussianBlur stdDeviation="40" result="blur3"/>
+      <feMerge>
+        <feMergeNode in="blur3"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow-bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur1"/>
+      <feGaussianBlur stdDeviation="15" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15"/>
+    </filter>
+
+    <!-- Wall Texture Pattern -->
+    <pattern id="wall-tex" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="40" stroke="#1A1A2E" stroke-width="0.5" opacity="0.4"/>
+      <line x1="0" y1="0" x2="40" y2="0" stroke="#1A1A2E" stroke-width="0.5" opacity="0.4"/>
+    </pattern>
+
+    <!-- Feather Definition -->
+    <g id="feather-shape">
+      <path d="M0,0 C-5,-20 -15,-40 -10,-60 C-5,-50 0,-30 0,0 Z" fill="#FFB7B2" opacity="0.9"/>
+      <path d="M0,0 C5,-20 15,-40 10,-60 C5,-50 0,-30 0,0 Z" fill="#FF4081" opacity="0.6"/>
+      <path d="M0,0 L0,-65" stroke="#FFB7B2" stroke-width="1"/>
+    </g>
+
+    <!-- Lips Path for Reuse -->
+    <path id="lips-outline" fill="none" stroke-linecap="round" stroke-linejoin="round"
+      d="M 550,380
+         C 550,320 650,280 800,260
+         C 950,280 1050,320 1050,380
+         C 1050,420 1000,440 950,450
+         L 800,490
+         L 650,450
+         C 600,440 550,420 550,380 Z"/>
+
+    <path id="lips-inner" fill="none" stroke-linecap="round" stroke-linejoin="round"
+      d="M 570,390
+         C 600,420 700,430 800,430
+         C 900,430 1000,420 1030,390
+         C 1000,410 900,400 800,400
+         C 700,400 600,410 570,390 Z"/>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="100%" height="100%" fill="#0A0A12"/>
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect width="100%" height="100%" fill="url(#wall-tex)"/>
+  <rect width="100%" height="100%" fill="url(#spotlight)"/>
+
+  <!-- Boudoir Scene Elements - Background Midground -->
+  
+  <!-- Velvet Curtain Left -->
+  <path d="M0,0 Q150,300 0,900 L-50,900 L-50,0 Z" fill="#1A1A2E" opacity="0.7">
+    <animate attributeName="d" values="M0,0 Q150,300 0,900 L-50,900 L-50,0 Z;M0,0 Q180,280 10,900 L-50,900 L-50,0 Z;M0,0 Q150,300 0,900 L-50,900 L-50,0 Z" dur="7s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Velvet Curtain Right -->
+  <path d="M1600,0 Q1450,300 1600,900 L1650,900 L1650,0 Z" fill="#1A1A2E" opacity="0.7">
+    <animate attributeName="d" values="M1600,0 Q1450,300 1600,900 L1650,900 L1650,0 Z;M1600,0 Q1420,280 1590,900 L1650,900 L1650,0 Z;M1600,0 Q1450,300 1600,900 L1650,900 L1650,0 Z" dur="7.5s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Neon Sign Mounting Plate -->
+  <g transform="translate(800, 260)">
+    <!-- Hanging Wire Left -->
+    <line x1="-200" y1="-260" x2="-220" y2="-100" stroke="#FF4081" stroke-width="2" opacity="0.5" filter="url(#glow-bloom)">
+      <animate attributeName="x2" values="-220;-215;-220" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <!-- Hanging Wire Right -->
+    <line x1="200" y1="-260" x2="220" y2="-100" stroke="#FF4081" stroke-width="2" opacity="0.5" filter="url(#glow-bloom)">
+      <animate attributeName="x2" values="220;215;220" dur="6s" repeatCount="indefinite"/>
+    </line>
+    <!-- Metallic Backplate -->
+    <path d="M-260,-20 L260,-20 L270,300 L-270,300 Z" fill="#0A0A12" stroke="#1A1A2E" stroke-width="4" filter="url(#shadow-blur)"/>
+    <path d="M-260,-20 L260,-20 L270,300 L-270,300 Z" fill="#1A1A2E" opacity="0.8"/>
+  </g>
+
+  <!-- Neon Sign Core -->
+  <g id="neon-sign-group">
+    <!-- Deep Ambient Glow behind the sign -->
+    <use href="#lips-outline" stroke="#FF4081" stroke-width="60" opacity="0.15" filter="url(#glow-intense)">
+      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="60;70;60" dur="5s" repeatCount="indefinite"/>
+    </use>
+
+    <!-- Medium Glow -->
+    <use href="#lips-outline" stroke="#FF4081" stroke-width="30" opacity="0.4" filter="url(#glow-soft)">
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="4s" repeatCount="indefinite"/>
+    </use>
+
+    <!-- Main Neon Tubes (Thick, Glassy) -->
+    <use href="#lips-outline" stroke="#0A0A12" stroke-width="14"/>
+    <use href="#lips-outline" stroke="#FF4081" stroke-width="10" filter="url(#glow-soft)"/>
+    <use href="#lips-outline" stroke="#FFB7B2" stroke-width="4" opacity="0.9"/>
+
+    <!-- Biting Teeth / Inner Mouth Neon -->
+    <use href="#lips-inner" stroke="#0A0A12" stroke-width="10"/>
+    <use href="#lips-inner" stroke="#FF4081" stroke-width="6" filter="url(#glow-bloom)">
+      <animate attributeName="stroke-opacity" values="1;0.7;1;0.9;1" dur="3s" repeatCount="indefinite" keyTimes="0;0.2;0.4;0.6;1"/>
+    </use>
+    <use href="#lips-inner" stroke="#FFB7B2" stroke-width="2" opacity="0.8"/>
+
+    <!-- Neon Highlight Reflection (Gives 3D glass feel) -->
+    <use href="#lips-outline" stroke="#FFFFFF" stroke-width="2" opacity="0.3" transform="translate(-2, -2)"/>
+    <use href="#lips-inner" stroke="#FFFFFF" stroke-width="1" opacity="0.3" transform="translate(-1, -1)"/>
+
+    <!-- Subtle Flicker Overlay for Main Outline -->
+    <use href="#lips-outline" stroke="#FFB7B2" stroke-width="10" opacity="0" filter="url(#glow-soft)">
+      <animate attributeName="opacity" values="0;0.8;0;0;0.5;0" dur="5.5s" repeatCount="indefinite" keyTimes="0;0.05;0.1;0.5;0.55;1"/>
+    </use>
+  </g>
+
+  <!-- Floating / Interacting Foreground Elements -->
+
+  <!-- Silk Ribbon Weaving Through the Scene -->
+  <g id="ribbons">
+    <!-- Ribbon 1 (Drapes over bottom right) -->
+    <path d="M1200,0 Q1300,300 1100,600 Q900,900 1000,950" fill="none" stroke="#FFB7B2" stroke-width="30" filter="url(#shadow-blur)" opacity="0.4"/>
+    <path d="M1200,0 Q1300,300 1100,600 Q900,900 1000,950" fill="none" stroke="url(#neon-bright)" stroke-width="20" stroke-linecap="round">
+      <animate attributeName="d" values="M1200,0 Q1300,300 1100,600 Q900,900 1000,950;M1200,0 Q1320,320 1120,620 Q920,920 1020,950;M1200,0 Q1300,300 1100,600 Q900,900 1000,950" dur="8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1200,0 Q1300,300 1100,600 Q900,900 1000,950" fill="none" stroke="#FF4081" stroke-width="6" opacity="0.8" transform="translate(2,2)">
+      <animate attributeName="d" values="M1200,0 Q1300,300 1100,600 Q900,900 1000,950;M1200,0 Q1320,320 1120,620 Q920,920 1020,950;M1200,0 Q1300,300 1100,600 Q900,900 1000,950" dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Ribbon 2 (Drapes over bottom left) -->
+    <path d="M400,0 Q300,400 500,700 Q700,950 600,1000" fill="none" stroke="#0A0A12" stroke-width="30" filter="url(#shadow-blur)" opacity="0.6"/>
+    <path d="M400,0 Q300,400 500,700 Q700,950 600,1000" fill="none" stroke="#FF4081" stroke-width="16" stroke-linecap="round">
+      <animate attributeName="d" values="M400,0 Q300,400 500,700 Q700,950 600,1000;M400,0 Q280,420 520,720 Q720,970 620,1000;M400,0 Q300,400 500,700 Q700,950 600,1000" dur="9s" repeatCount="indefinite"/>
+    </path>
+    <path d="M400,0 Q300,400 500,700 Q700,950 600,1000" fill="none" stroke="#FFB7B2" stroke-width="4" opacity="0.9" transform="translate(-1,-1)">
+      <animate attributeName="d" values="M400,0 Q300,400 500,700 Q700,950 600,1000;M400,0 Q280,420 520,720 Q720,970 620,1000;M400,0 Q300,400 500,700 Q700,950 600,1000" dur="9s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Feather Boas / Floating Feathers -->
+  <g id="feathers">
+    <!-- Feather 1 -->
+    <g transform="translate(1300, 200) rotate(15)">
+      <use href="#feather-shape" transform="scale(1.5)">
+        <animateTransform attributeName="transform" type="rotate" values="0;5;0;-3;0" dur="4s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="scale" values="1.5;1.55;1.5" dur="4s" repeatCount="indefinite" additive="sum"/>
+      </use>
+    </g>
+    <!-- Feather 2 -->
+    <g transform="translate(1500, 500) rotate(-20)">
+      <use href="#feather-shape" transform="scale(2)">
+        <animateTransform attributeName="transform" type="rotate" values="0;-5;0;3;0" dur="5s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="scale" values="2;1.9;2" dur="5s" repeatCount="indefinite" additive="sum"/>
+      </use>
+    </g>
+    <!-- Feather 3 -->
+    <g transform="translate(200, 400) rotate(45)">
+      <use href="#feather-shape" transform="scale(1.2)">
+        <animateTransform attributeName="transform" type="rotate" values="0;8;0;-8;0" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+      </use>
+    </g>
+    <!-- Feather 4 -->
+    <g transform="translate(100, 700) rotate(-10)">
+      <use href="#feather-shape" transform="scale(1.8)">
+        <animateTransform attributeName="transform" type="rotate" values="0;-4;0;4;0" dur="6s" repeatCount="indefinite" additive="sum"/>
+      </use>
+    </g>
+  </g>
+
+  <!-- Champagne Glass / Bubbling Liquid (Subtle Foreground Detail) -->
+  <g id="champagne-glass" transform="translate(1100, 550)">
+    <!-- Stem -->
+    <rect x="-5" y="100" width="10" height="80" fill="#FFB7B2" opacity="0.3"/>
+    <ellipse cx="0" cy="180" rx="30" ry="5" fill="#FF4081" opacity="0.2" filter="url(#shadow-blur)"/>
+    <!-- Bowl Back -->
+    <path d="M-40,0 L40,0 L30,100 L-30,100 Z" fill="url(#neon-bright)" opacity="0.1"/>
+    <!-- Liquid -->
+    <path d="M-35,30 Q0,25 35,30 L30,100 L-30,100 Z" fill="#FF4081" opacity="0.6">
+      <animate attributeName="d" values="M-35,30 Q0,25 35,30 L30,100 L-30,100 Z;M-35,32 Q0,27 35,32 L30,100 L-30,100 Z;M-35,30 Q0,25 35,30 L30,100 L-30,100 Z" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <!-- Bubbles -->
+    <circle cx="-10" cy="80" r="3" fill="#FFB7B2" opacity="0">
+      <animate attributeName="cy" values="90;20" dur="2s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    <circle cx="15" cy="85" r="2" fill="#FFB7B2" opacity="0">
+      <animate attributeName="cy" values="90;25" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="0" cy="95" r="4" fill="#FFB7B2" opacity="0">
+      <animate attributeName="cy" values="90;15" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="-20" cy="80" r="2.5" fill="#FFB7B2" opacity="0">
+      <animate attributeName="cy" values="90;30" dur="2.2s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <!-- Glass Front Highlight -->
+    <path d="M-40,0 Q-45,50 -30,100" fill="none" stroke="#FFB7B2" stroke-width="2" opacity="0.4"/>
+    <path d="M40,0 Q45,50 30,100" fill="none" stroke="#FFB7B2" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <!-- Ambient Glow / Lens Flare Particles -->
+  <g id="ambient-particles">
+    <circle cx="400" cy="300" r="2" fill="#FFB7B2" opacity="0.6" filter="url(#glow-bloom)">
+      <animate attributeName="cy" values="300;250;300" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="600" r="3" fill="#FF4081" opacity="0.4" filter="url(#glow-bloom)">
+      <animate attributeName="cy" values="600;550;600" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1300" cy="400" r="2.5" fill="#FFB7B2" opacity="0.5" filter="url(#glow-bloom)">
+      <animate attributeName="cy" values="400;350;400" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="150" r="1.5" fill="#FF4081" opacity="0.7" filter="url(#glow-bloom)">
+      <animate attributeName="cy" values="150;100;150" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Floor / Surface Shadows -->
+  <ellipse cx="800" cy="850" rx="500" ry="40" fill="#0A0A12" opacity="0.8" filter="url(#shadow-blur)">
+    <animate attributeName="rx" values="500;520;500" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+
+</svg>

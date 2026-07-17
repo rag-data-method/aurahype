@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="b1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+    </filter>
+    <filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="70" result="blur"/>
+    </filter>
+    <filter id="n" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0" in="noise" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="composite"/>
+    </filter>
+    <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0"/>
+    </radialGradient>
+    <path id="p1" d="M-100,450 Q400,200 800,450 T1700,450" fill="none"/>
+    <path id="p2" d="M-100,300 Q500,600 900,300 T1700,350" fill="none"/>
+    <path id="p3" d="M-100,600 Q600,300 1000,600 T1700,550" fill="none"/>
+    <path id="p4" d="M-100,150 Q300,400 700,150 T1700,200" fill="none"/>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#1E293B" opacity="0.95"/>
+  
+  <circle cx="400" cy="450" r="300" fill="url(#g1)" opacity="0.8">
+    <animate attributeName="r" values="300;350;300" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1200" cy="450" r="250" fill="url(#g2)" opacity="0.8">
+    <animate attributeName="r" values="250;300;250" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  
+  <g stroke="#94A3B8" stroke-width="1" opacity="0.7">
+    <line x1="0" y1="225" x2="1600" y2="225"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="0" y1="675" x2="1600" y2="675"/>
+    <line x1="400" y1="0" x2="400" y2="900"/>
+    <line x1="800" y1="0" x2="800" y2="900"/>
+    <line x1="1200" y1="0" x2="1200" y2="900"/>
+  </g>
+  
+  <path d="M-100,450 Q400,200 800,450 T1700,450" stroke="#4F46E5" stroke-width="40" fill="none" opacity="0.3" filter="url(#b2)"/>
+  <path d="M-100,300 Q500,600 900,300 T1700,350" stroke="#34D399" stroke-width="30" fill="none" opacity="0.25" filter="url(#b1)"/>
+  
+  <path d="M-100,450 Q400,200 800,450 T1700,450" stroke="#4F46E5" stroke-width="4" fill="none" opacity="0.9" stroke-dasharray="40 60">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M-100,300 Q500,600 900,300 T1700,350" stroke="#34D399" stroke-width="3" fill="none" opacity="0.9" stroke-dasharray="30 50">
+    <animate attributeName="stroke-dashoffset" from="800" to="0" dur="5s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M-100,600 Q600,300 1000,600 T1700,550" stroke="#4F46E5" stroke-width="3" fill="none" opacity="0.85" stroke-dasharray="20 40">
+    <animate attributeName="stroke-dashoffset" from="600" to="0" dur="7s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M-100,150 Q300,400 700,150 T1700,200" stroke="#94A3B8" stroke-width="2" fill="none" opacity="0.8" stroke-dasharray="15 35">
+    <animate attributeName="stroke-dashoffset" from="500" to="0" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <circle r="8" fill="#4F46E5" opacity="0.95">
+    <animateMotion dur="6s" repeatCount="indefinite">
+      <mpath href="#p1"/>
+    </animateMotion>
+  </circle>
+  
+  <circle r="6" fill="#34D399" opacity="0.9">
+    <animateMotion dur="5s" repeatCount="indefinite" begin="1s">
+      <mpath href="#p2"/>
+    </animateMotion>
+  </circle>
+  
+  <circle r="7" fill="#4F46E5" opacity="0.9">
+    <animateMotion dur="7s" repeatCount="indefinite" begin="2s">
+      <mpath href="#p3"/>
+    </animateMotion>
+  </circle>
+  
+  <circle r="5" fill="#94A3B8" opacity="0.85">
+    <animateMotion dur="4s" repeatCount="indefinite" begin="0.5s">
+      <mpath href="#p4"/>
+    </animateMotion>
+  </circle>
+  
+  <circle r="4" fill="#34D399" opacity="0.85">
+    <animateMotion dur="8s" repeatCount="indefinite" begin="3s">
+      <mpath href="#p1"/>
+    </animateMotion>
+  </circle>
+  
+  <circle r="10" fill="#4F46E5" opacity="0.6" filter="url(#b1)">
+    <animateMotion dur="6s" repeatCount="indefinite" begin="1.5s">
+      <mpath href="#p1"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle r="8" fill="#34D399" opacity="0.5" filter="url(#b1)">
+    <animateMotion dur="5s" repeatCount="indefinite" begin="2.5s">
+      <mpath href="#p2"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle r="6" fill="#4F46E5" opacity="0.7">
+    <animateMotion dur="6s" repeatCount="indefinite" begin="4s">
+      <mpath href="#p2"/>
+    </animateMotion>
+  </circle>
+  
+  <rect width="1600" height="900" fill="transparent" opacity="0.08" filter="url(#n)"/>
+  
+  <path d="M200,0 Q400,450 200,900" stroke="#4F46E5" stroke-width="2" fill="none" opacity="0.6">
+    <animate attributeName="d" values="M200,0 Q400,450 200,900;M200,0 Q600,450 200,900;M200,0 Q400,450 200,900" dur="9s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M1400,0 Q1200,450 1400,900" stroke="#34D399" stroke-width="2" fill="none" opacity="0.6">
+    <animate attributeName="d" values="M1400,0 Q1200,450 1400,900;M1400,0 Q1000,450 1400,900;M1400,0 Q1200,450 1400,900" dur="10s" repeatCount="indefinite"/>
+  </path>
+</svg>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#15021c"/>
+    </linearGradient>
+    <linearGradient id="lime" x1="0" y1="0" x2="1600" y2="0">
+      <stop offset="0%" stop-color="#1ed760"/>
+      <stop offset="100%" stop-color="#17a34a"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1600" y2="0">
+      <stop offset="0%" stop-color="#c140ff"/>
+      <stop offset="100%" stop-color="#7b00ff"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <circle cx="1300" cy="220" r="360" fill="#c140ff" opacity="0.14" filter="url(#glow)">
+    <animate attributeName="cy" values="220;280;220" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.14;0.2;0.14" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="300" cy="720" r="400" fill="#1ed760" opacity="0.11" filter="url(#glow)">
+    <animate attributeName="cy" values="720;660;720" dur="16s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.11;0.17;0.11" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <path fill="url(#purple)" opacity="0.9">
+    <animate attributeName="d"
+      values="M0,580 C320,480 520,680 800,580 S1280,480 1600,580 L1600,900 L0,900 Z;
+              M0,580 C320,680 520,480 800,580 S1280,680 1600,580 L1600,900 L0,900 Z;
+              M0,580 C320,480 520,680 800,580 S1280,480 1600,580 L1600,900 L0,900 Z"
+      dur="12s" repeatCount="indefinite"/>
+  </path>
+
+  <path fill="url(#lime)" opacity="0.92">
+    <animate attributeName="d"
+      values="M0,700 C360,620 560,780 800,700 S1240,620 1600,700 L1600,900 L0,900 Z;
+              M0,700 C360,780 560,620 800,700 S1240,780 1600,700 L1600,900 L0,900 Z;
+              M0,700 C360,620 560,780 800,700 S1240,620 1600,700 L1600,900 L0,900 Z"
+      dur="10s" repeatCount="indefinite"/>
+  </path>
+
+  <circle cx="800" cy="480" r="140" fill="url(#lime)" opacity="0.18" filter="url(#glow)">
+    <animate attributeName="r" values="140;165;140" dur="7s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="800" cy="480" r="90" fill="url(#purple)" opacity="0.3" filter="url(#glow)">
+    <animate attributeName="r" values="90;110;90" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="200" cy="200" r="8" fill="#1ed760" opacity="0.6">
+    <animate attributeName="cy" values="200;160;200" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="1400" cy="750" r="6" fill="#c140ff" opacity="0.5">
+    <animate attributeName="cy" values="750;710;750" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.15;0.5" dur="8s" repeatCount="indefinite"/>
+  </circle>
+</svg>

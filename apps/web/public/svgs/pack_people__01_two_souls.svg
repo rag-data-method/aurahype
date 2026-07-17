@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F4B89A" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#D08770" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#5C2E1F" stop-opacity="0.85"/>
+    </radialGradient>
+    <radialGradient id="amberGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E8A04F" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#D08770" stop-opacity="0.75"/>
+    </radialGradient>
+    <filter id="blurMid" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
+    </filter>
+    <filter id="blurHeavy" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="75"/>
+    </filter>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="turbulence">
+        <animate attributeName="baseFrequency" values="0.015;0.025;0.015" dur="10s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.36 0 0 0 0 0.18 0 0 0 0 0.12 0 0 0 0.08 0" in="turbulence" result="softNoise"/>
+      <feBlend in="softNoise" in2="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#F9EBD7"/>
+  
+  <ellipse cx="800" cy="450" rx="720" ry="420" fill="#5C2E1F" opacity="0.75" filter="url(#blurHeavy)">
+    <animate attributeName="rx" values="720;780;720" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="420;450;420" dur="7s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 300,0; 0,0" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <circle cx="400" cy="450" r="200" fill="#D08770" opacity="0.85" filter="url(#blurMid)">
+      <animate attributeName="r" values="200;230;200" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0.65;0.85" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="450" r="140" fill="url(#coreGrad)" opacity="0.9">
+      <animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+    <circle cx="400" cy="450" r="80" fill="#F4B89A" opacity="0.95">
+      <animate attributeName="r" values="80;90;80" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="450" r="40" fill="#E8A04F" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -300,0; 0,0" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <circle cx="1200" cy="450" r="200" fill="#D08770" opacity="0.85" filter="url(#blurMid)">
+      <animate attributeName="r" values="200;230;200" dur="4.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0.65;0.85" dur="4.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="450" r="140" fill="url(#coreGrad)" opacity="0.9">
+      <animateTransform attributeName="transform" type="scale" values="1;1.12;1" dur="3.8s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+    <circle cx="1200" cy="450" r="80" fill="#F4B89A" opacity="0.95">
+      <animate attributeName="r" values="80;88;80" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="450" r="40" fill="#E8A04F" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <path d="M 400,450 Q 800,300 1200,450" fill="none" stroke="#E8A04F" stroke-width="6" stroke-linecap="round" opacity="0" filter="url(#blurMid)">
+    <animate attributeName="opacity" values="0;0.95;0" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="2;14;2" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 400,450 Q 800,600 1200,450" fill="none" stroke="#F4B89A" stroke-width="3" stroke-linecap="round" opacity="0" filter="url(#blurMid)">
+    <animate attributeName="opacity" values="0;0.85;0" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite" begin="0.3s"/>
+  </path>
+  
+  <g opacity="0.8">
+    <circle cx="800" cy="450" r="6" fill="#E8A04F" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="450;380;450" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="450" r="10" fill="#F4B89A" opacity="0">
+      <animate attributeName="opacity" values="1;0;1" dur="5s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="r" values="10;20;10" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="450" r="5" fill="#D08770" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0" dur="6s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="cx" values="800;880;800" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <ellipse cx="800" cy="450" rx="320" ry="220" fill="#F4B89A" opacity="0.35" filter="url(#blurHeavy)">
+    <animate attributeName="opacity" values="0.35;0.55;0.35" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="320;380;320" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="220;260;220" dur="8s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <rect width="1600" height="900" fill="#5C2E1F" opacity="0.08" filter="url(#noise)" style="pointer-events:none;"/>
+</svg>

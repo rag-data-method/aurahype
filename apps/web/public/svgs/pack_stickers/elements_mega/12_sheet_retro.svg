@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Drop Shadow for the Die-Cut Effect -->
+    <filter id="sticker-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="12" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Halftone Pattern for Pop Art Background -->
+    <pattern id="halftone" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="1.5" fill="#FF00CC" opacity="0.35"/>
+    </pattern>
+
+    <!-- Neon Lightning Gradient -->
+    <linearGradient id="bolt-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFF00"/>
+      <stop offset="100%" stop-color="#00FFFF"/>
+    </linearGradient>
+
+    <!-- Transparent Perforation Pattern -->
+    <pattern id="perf" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect x="0" y="10" width="12" height="4" fill="#000000" opacity="0.2"/>
+      <rect x="12" y="10" width="12" height="4" fill="none"/>
+    </pattern>
+  </defs>
+
+  <!-- STICKER SHEET BASE (Die-Cut Shape) -->
+  <!-- Thick White Border + Drop Shadow simulating the physical sticker backing -->
+  <g filter="url(#sticker-shadow)">
+    <!-- Main Sticker Sheet Shape -->
+    <rect x="120" y="120" width="760" height="760" rx="25" ry="25"
+          fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+    
+    <!-- Inner Cyan Background -->
+    <rect x="136" y="136" width="728" height="728" rx="15" ry="15"
+          fill="#00FFFF" stroke="#000000" stroke-width="4"/>
+
+    <!-- Halftone Overlay -->
+    <rect x="136" y="136" width="728" height="728" rx="15" ry="15" fill="url(#halftone)"/>
+  </g>
+
+  <!-- PERFORATIONS (Separating individual stickers within the sheet) -->
+  <g stroke-linejoin="round">
+    <!-- Top Split -->
+    <line x1="136" y1="500" x2="864" y2="500" stroke="url(#perf)" stroke-width="4"/>
+    <line x1="136" y1="500" x2="864" y2="500" stroke="#000000" stroke-width="2" stroke-dasharray="8 8"/>
+    
+    <!-- Left Split -->
+    <line x1="500" y1="136" x2="500" y2="500" stroke="url(#perf)" stroke-width="4"/>
+    <line x1="500" y1="136" x2="500" y2="500" stroke="#000000" stroke-width="2" stroke-dasharray="8 8"/>
+
+    <!-- Right Split -->
+    <line x1="500" y1="500" x2="500" y2="864" stroke="url(#perf)" stroke-width="4"/>
+    <line x1="500" y1="500" x2="500" y2="864" stroke="#000000" stroke-width="2" stroke-dasharray="8 8"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- STICKER 1: LIGHTNING BOLT (Top Left)       -->
+  <!-- ========================================== -->
+  <g transform="translate(318, 318)">
+    <!-- Die-Cut White Border -->
+    <path d="M -40,-140 L 60,-20 L -20,-20 L 40,140 L -60,20 L 20,20 Z" 
+          fill="#FFFFFF" stroke="#000000" stroke-width="14" stroke-linejoin="round" transform="scale(1.2) translate(0, -5)"/>
+    <!-- Main Neon Bolt -->
+    <path d="M -40,-140 L 60,-20 L -20,-20 L 40,140 L -60,20 L 20,20 Z" 
+          fill="url(#bolt-grad)" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+    <!-- Inner Highlight -->
+    <path d="M -25,-100 L 35,-20 L -10,-20 L 25,100 L -35,20 L 10,20 Z" 
+          fill="#FFFFFF" opacity="0.6"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- STICKER 2: DIAMOND (Top Right)             -->
+  <!-- ========================================== -->
+  <g transform="translate(682, 318)">
+    <!-- Die-Cut White Border -->
+    <path d="M -80,-50 L 80,-50 L 110,20 L 0,130 L -110,20 Z" 
+          fill="#FFFFFF" stroke="#000000" stroke-width="14" stroke-linejoin="round" transform="scale(1.15)"/>
+    <!-- Main Diamond Body -->
+    <path d="M -80,-50 L 80,-50 L 110,20 L 0,130 L -110,20 Z" 
+          fill="#00FFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+    
+    <!-- Diamond Facets -->
+    <polygon points="-80,-50 0,-50 -110,20" fill="#00DDDD" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="80,-50 0,-50 110,20" fill="#00DDDD" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="0,-50 110,20 0,130" fill="#00BBBB" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="0,-50 -110,20 0,130" fill="#00BBBB" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+    
+    <!-- Sparkles -->
+    <path d="M -130,-90 L -120,-110 L -110,-90 L -90,-80 L -110,-70 L -120,-50 L -130,-70 L -150,-80 Z" fill="#FFFF00" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M 120,-100 L 130,-120 L 140,-100 L 160,-90 L 140,-80 L 130,-60 L 120,-80 L 100,-90 Z" fill="#FFFF00" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- STICKER 3: LIPSTICK (Bottom Left)          -->
+  <!-- ========================================== -->
+  <g transform="translate(318, 682)">
+    <!-- Die-Cut White Border -->
+    <path d="M -30,-160 L 30,-160 L 30,40 L 50,40 L 50,160 L -50,160 L -50,40 L -30,40 Z" 
+          fill="#FFFFFF" stroke="#000000" stroke-width="14" stroke-linejoin="round" transform="scale(1.15) translate(0, 5)"/>
+    
+    <!-- Lipstick Body -->
+    <rect x="-50" y="40" width="100" height="120" fill="#FF00CC" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+    <rect x="-50" y="40" width="100" height="40" fill="#C8009F" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+    
+    <!-- Gold Base -->
+    <rect x="-40" y="150" width="80" height="10" fill="#FFFF00" stroke="#000000" stroke-width="4"/>
+    
+    <!-- Inner Bullet -->
+    <path d="M -30,40 L -30,-80 L 0,-160 L 30,-80 L 30,40 Z" 
+          fill="#FF0066" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+    
+    <!-- Lipstick Highlights -->
+    <polygon points="-15,-120 -15,30 -5,30 -5,-100" fill="#FFFFFF" opacity="0.6"/>
+    <polygon points="-40,50 -40,130 -20,130 -20,50" fill="#FFFFFF" opacity="0.4"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- STICKER 4: CASSETTE TAPE (Bottom Right)    -->
+  <!-- ========================================== -->
+  <g transform="translate(682, 682)">
+    <!-- Die-Cut White Border -->
+    <rect x="-110" y="-70" width="220" height="140" rx="15" 
+          fill="#FFFFFF" stroke="#000000" stroke-width="14" stroke-linejoin="round" transform="scale(1.15)"/>
+    
+    <!-- Tape Body -->
+    <rect x="-110" y="-70" width="220" height="140" rx="15" 
+          fill="#FF00CC" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+    
+    <!-- Sticker Label -->
+    <rect x="-90" y="-50" width="180" height="60" rx="5" 
+          fill="#FFFF00" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+    
+    <!-- Center Window -->
+    <rect x="-50" y="-35" width="100" height="30" rx="5" fill="#FFFFFF" stroke="#000000" stroke-width="5"/>
+    
+    <!-- Left Reel -->
+    <circle cx="-35" cy="-20" r="16" fill="#FFFFFF" stroke="#000000" stroke-width="5"/>
+    <circle cx="-35" cy="-20" r="5" fill="#000000"/>
+    
+    <!-- Right Reel -->
+    <circle cx="35" cy="-20" r="10" fill="#FFFFFF" stroke="#000000" stroke-width="5"/>
+    <circle cx="35" cy="-20" r="3" fill="#000000"/>
+    
+    <!-- Tape Spool -->
+    <path d="M -19,-20 Q 0,-5 25,-20" fill="none" stroke="#000000" stroke-width="4"/>
+    
+    <!-- Bottom Screws -->
+    <circle cx="-90" cy="45" r="5" fill="#00FFFF" stroke="#000000" stroke-width="3"/>
+    <circle cx="90" cy="45" r="5" fill="#00FFFF" stroke="#000000" stroke-width="3"/>
+    
+    <!-- Side Holes -->
+    <circle cx="-110" cy="0" r="8" fill="#00FFFF" stroke="#000000" stroke-width="4"/>
+    <circle cx="110" cy="0" r="8" fill="#00FFFF" stroke="#000000" stroke-width="4"/>
+    
+    <!-- Bottom Trapezoid -->
+    <polygon points="-30,70 30,70 50,90 -50,90" fill="#00FFFF" stroke="#000000" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+
+</svg>

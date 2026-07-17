@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0218"/>
+      <stop offset="1" stop-color="#240b45"/>
+    </linearGradient>
+    <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#a855f7" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="up" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4c1d95"/>
+      <stop offset=".5" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="tongue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="sole" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="gl" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="sh" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="b"/>
+      <feOffset in="b" dx="0" dy="6" result="o"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope=".35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="o"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="160" height="160" patternUnits="userSpaceOnUse">
+      <path d="M0 0L160 160M160 0L0 160" stroke="#22d3ee" stroke-width="1" opacity=".12"/>
+    </pattern>
+    <style>
+      .fl{animation:fl 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+      @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
+      .bb{animation:bb 3.5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}
+      @keyframes bb{0%{transform:translateY(0)}100%{transform:translateY(-16px)}}
+      .gp{animation:gp 2.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+      @keyframes gp{0%,100%{opacity:.55}50%{opacity:1}}
+      .sp{animation:sp 14s linear infinite;transform-box:fill-box;transform-origin:center}
+      @keyframes sp{to{transform:rotate(360deg)}}
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  <ellipse cx="960" cy="540" rx="640" ry="360" fill="url(#rg)"/>
+  <g transform="translate(960,540)">
+    <g class="fl">
+      <g transform="translate(0,120)">
+        <g class="bb">
+          <path d="M-240 70v25q0 10 20 10h430q30 0 30-10v-25q0-10-30-10h-430q-20 0-20 10z" fill="url(#sole)" filter="url(#sh)"/>
+          <path d="M-220 100h420" stroke="url(#cyan)" stroke-width="4" stroke-linecap="round" filter="url(#gl)" class="gp"/>
+          <g fill="#0f172a">
+            <rect x="-200" y="102" width="30" height="6" rx="3"/>
+            <rect x="-150" y="102" width="30" height="6" rx="3"/>
+            <rect x="-100" y="102" width="30" height="6" rx="3"/>
+            <rect x="-50" y="102" width="30" height="6" rx="3"/>
+            <rect x="0" y="102" width="30" height="6" rx="3"/>
+            <rect x="50" y="102" width="30" height="6" rx="3"/>
+            <rect x="100" y="102" width="30" height="6" rx="3"/>
+            <rect x="150" y="102" width="30" height="6" rx="3"/>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(0,60)">
+        <g class="bb" style="animation-delay:-1s">
+          <path d="M-235 40v30h460v-30q0-10-25-10h-410q-25 0-25 10z" fill="#f8fafc" filter="url(#sh)"/>
+          <circle cx="140" cy="58" r="14" fill="url(#cyan)" filter="url(#gl)" class="gp"/>
+        </g>
+      </g>
+      <g>
+        <path d="M-230 40C-230-30-150-55-40-55H90C190-55 235-25 235 40V40H-230Z" fill="url(#up)" filter="url(#sh)"/>
+        <path d="M-230 40C-230-5-190 5-150 5L-120 40Z" fill="#0f172a" opacity=".85"/>
+        <path d="M-120 35L30 25C60 25 75 5 65-20L-40-15C-80-10-110 5-120 35Z" fill="#be185d"/>
+        <path d="M150 40L235 40C235 0 215-15 180-20L150 40Z" fill="#f43f5e"/>
+        <path d="M80-55C130-55 180-50 215-30L200-45C160-65 110-65 80-65Z" fill="#0f172a"/>
+        <path d="M-80 0Q0-30 120 0T220-30" fill="none" stroke="url(#cyan)" stroke-width="8" stroke-linecap="round" filter="url(#gl)" class="gp"/>
+        <g transform="translate(0,-30)">
+          <g class="bb" style="animation-delay:-2s">
+            <line x1="-100" y1="25" x2="-20" y2="20" stroke="#facc15" stroke-width="5" stroke-linecap="round" filter="url(#gl)" class="gp"/>
+            <line x1="-105" y1="15" x2="-15" y2="10" stroke="#facc15" stroke-width="5" stroke-linecap="round" filter="url(#gl)" class="gp"/>
+            <line x1="-110" y1="5" x2="-10" y2="0" stroke="#facc15" stroke-width="5" stroke-linecap="round" filter="url(#gl)" class="gp"/>
+            <line x1="-100" y1="-5" x2="-20" y2="-10" stroke="#facc15" stroke-width="5" stroke-linecap="round" filter="url(#gl)" class="gp"/>
+          </g>
+        </g>
+        <g transform="translate(0,-70)">
+          <g class="bb" style="animation-delay:-3s">
+            <path d="M-50-55L10-55L20-110Q-15-125-60-110Z" fill="url(#tongue)" filter="url(#sh)"/>
+            <rect x="-35" y="-105" width="30" height="8" rx="4" fill="#facc15" filter="url(#gl)" class="gp"/>
+          </g>
+        </g>
+        <g transform="translate(0,-60)">
+          <g class="bb" style="animation-delay:-1.5s">
+            <path d="M180-55H240L230-95H170Z" fill="#f43f5e" filter="url(#sh)"/>
+            <path d="M185-85H225" stroke="#facc15" stroke-width="4" stroke-linecap="round" filter="url(#gl)" class="gp"/>
+          </g>
+        </g>
+      </g>
+      <g class="sp">
+        <circle cx="260" cy="0" r="6" fill="#22d3ee"/>
+        <circle cx="-260" cy="0" r="6" fill="#facc15"/>
+        <circle cx="0" cy="190" r="6" fill="#f43f5e"/>
+        <circle cx="0" cy="-190" r="6" fill="#a855f7"/>
+        <circle cx="180" cy="140" r="4" fill="#22d3ee"/>
+        <circle cx="-180" cy="-140" r="4" fill="#facc15"/>
+        <circle cx="-180" cy="140" r="4" fill="#f43f5e"/>
+        <circle cx="180" cy="-140" r="4" fill="#a855f7"/>
+      </g>
+    </g>
+  </g>
+</svg>

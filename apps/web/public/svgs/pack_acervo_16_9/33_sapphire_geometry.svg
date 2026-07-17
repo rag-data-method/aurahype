@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#94a3b8"/>
+      <stop offset=".5" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#64748b"/>
+    </linearGradient>
+    <radialGradient id="gem" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#1d4ed8" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="g" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <path id="d" d="M0,-130 L130,0 L0,130 L-130,0 Z" fill="url(#gem)" stroke="url(#silver)" stroke-width="1.5"/>
+    <path id="c" d="M0,0 L75,75 L150,0" fill="none" stroke="url(#silver)" stroke-width="1.2"/>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="800" cy="450" r="420" fill="url(#gem)" opacity=".25">
+    <animate attributeName="opacity" values=".2;.4;.2" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;.4 0 .2 1"/>
+  </circle>
+  <g opacity=".2">
+    <path d="M350,50 L800,450 L1250,50 M350,850 L800,450 L1250,850" stroke="url(#silver)" stroke-width="1" fill="none"/>
+  </g>
+  <g filter="url(#g)">
+    <g transform="translate(800,450)">
+      <use href="#d" transform="scale(2.6)">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="180s" repeatCount="indefinite" additive="sum"/>
+        <animate attributeName="opacity" values=".3;.7;.3" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;.4 0 .2 1"/>
+      </use>
+      <use href="#d" transform="scale(1.9)">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="120s" repeatCount="indefinite" additive="sum"/>
+        <animate attributeName="opacity" values=".5;.9;.5" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;.4 0 .2 1"/>
+      </use>
+      <use href="#d" transform="scale(1.2)">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="80s" repeatCount="indefinite" additive="sum"/>
+        <animate attributeName="opacity" values=".6;1;.6" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;.4 0 .2 1"/>
+      </use>
+      <path d="M-260,0 H260 M0,-260 V260" stroke="url(#silver)" stroke-width=".6" opacity=".4">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="90" dur="40s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  <g transform="translate(0,160)" opacity=".55">
+    <animateTransform attributeName="transform" type="translate" values="0,0;24,0;0,0" dur="14s" repeatCount="indefinite" additive="sum"/>
+    <use href="#c" x="175" y="0"/>
+    <use href="#c" x="475" y="0"/>
+    <use href="#c" x="775" y="0"/>
+    <use href="#c" x="1075" y="0"/>
+    <use href="#c" x="1375" y="0"/>
+  </g>
+  <g transform="translate(0,740) scale(1,-1)" opacity=".55">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-24,0;0,0" dur="14s" repeatCount="indefinite" additive="sum"/>
+    <use href="#c" x="175" y="0"/>
+    <use href="#c" x="475" y="0"/>
+    <use href="#c" x="775" y="0"/>
+    <use href="#c" x="1075" y="0"/>
+    <use href="#c" x="1375" y="0"/>
+  </g>
+  <g opacity=".35">
+    <use href="#d" transform="translate(220,450) scale(.8)">
+      <animate attributeName="opacity" values=".3;.7;.3" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;.4 0 .2 1"/>
+    </use>
+    <use href="#d" transform="translate(1380,450) scale(.8)">
+      <animate attributeName="opacity" values=".7;.3;.7" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;.4 0 .2 1"/>
+    </use>
+  </g>
+  <g stroke="url(#silver)" stroke-width=".8" opacity=".25">
+    <path d="M100,0 V900 M1500,0 V900">
+      <animate attributeName="opacity" values=".15;.35;.15" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;.4 0 .2 1"/>
+    </path>
+  </g>
+</svg>

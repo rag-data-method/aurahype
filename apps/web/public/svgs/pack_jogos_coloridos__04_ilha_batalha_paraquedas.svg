@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+    <defs>
+        <radialGradient id="skyGrad" cx="50%" cy="50%" r="75%">
+            <stop offset="0%" stop-color="#FFF2F8"/>
+            <stop offset="40%" stop-color="#FFB3C6"/>
+            <stop offset="100%" stop-color="#38B6FF"/>
+            <animate attributeName="cx" values="50%;52%;48%;50%" dur="8s" repeatCount="indefinite"/>
+            <animate attributeName="cy" values="50%;48%;52%;50%" dur="10s" repeatCount="indefinite"/>
+        </radialGradient>
+
+        <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFE66D">
+                <animate attributeName="stop-color" values="#FFE66D;#FFFFFF;#FFE66D" dur="4s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="85%" stop-color="#FF6B9D">
+                <animate attributeName="stop-color" values="#FF6B9D;#FFE66D;#FF6B9D" dur="5s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.8)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+
+        <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="15"/>
+        </filter>
+
+        <filter id="blurLight" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4"/>
+        </filter>
+
+        <mask id="halftoneMask">
+            <rect width="1600" height="900" fill="white"/>
+            <pattern id="halftone" width="15" height="15" patternUnits="userSpaceOnUse">
+                <circle cx="7.5" cy="7.5" r="5" fill="black">
+                    <animate attributeName="r" values="5;2;5" dur="2s" repeatCount="indefinite"/>
+                </circle>
+            </pattern>
+            <rect width="1600" height="900" fill="url(#halftone)"/>
+        </mask>
+
+        <path id="confettiPath" d="M-8,-4 L8,-4 L8,4 L-8,4 Z"/>
+        <path id="sparkle" d="M0,-15 Q2,0 15,0 Q2,0 0,15 Q-2,0 -15,0 Q-2,0 0,-15 Z"/>
+    </defs>
+
+    <!-- Layer 1-3: Sky & Backdrop -->
+    <rect width="1600" height="900" fill="url(#skyGrad)"/>
+    
+    <g transform="translate(800, 450)">
+        <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="60s" repeatCount="indefinite"/>
+        <circle cx="0" cy="0" r="600" fill="url(#sunGrad)" opacity="0.4">
+            <animate attributeName="r" values="600;620;600" dur="8s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Diagonal Speed Lines -->
+        <g stroke="#FFFFFF" stroke-linecap="round" opacity="0.5">
+            <line x1="-800" y1="-600" x2="-600" y2="-800" stroke-width="3"/>
+            <line x1="-400" y1="-600" x2="-200" y2="-800" stroke-width="4"/>
+            <line x1="0" y1="-600" x2="200" y2="-800" stroke-width="3"/>
+            <line x1="400" y1="-600" x2="600" y2="-800" stroke-width="5"/>
+            <line x1="800" y1="-600" x2="1000" y2="-800" stroke-width="3"/>
+            <line x1="-600" y1="-400" x2="-400" y2="-600" stroke-width="4"/>
+            <line x1="-200" y1="-400" x2="0" y2="-600" stroke-width="3"/>
+            <line x1="200" y1="-400" x2="400" y2="-600" stroke-width="5"/>
+            <line x1="600" y1="-400" x2="800" y2="-600" stroke-width="4"/>
+            <line x1="1000" y1="-400" x2="1200" y2="-600" stroke-width="3"/>
+            <line x1="-800" y1="0" x2="-600" y2="-200" stroke-width="4"/>
+            <line x1="0" y1="0" x2="200" y2="-200" stroke-width="5"/>
+            <line x1="800" y1="0" x2="1000" y2="-200" stroke-width="4"/>
+        </g>
+    </g>
+
+    <!-- Layer 4-6: Decorative Geometric Shapes -->
+    <!-- Spinning Hexagon -->
+    <g transform="translate(200, 250)" opacity="0.8">
+        <polygon points="0,-90 78,-45 78,45 0,90 -78,45 -78,-45" fill="none" stroke="#FF6B9D" stroke-width="8">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" fill="#FFE66D" opacity="0.6">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="10s" repeatCount="indefinite"/>
+        </polygon>
+    </g>
+
+    <!-- Rotating Diamonds -->
+    <g transform="translate(1350, 150)">
+        <rect x="-50" y="-50" width="100" height="100" fill="#4ECDC4" transform="rotate(45)" opacity="0.7">
+            <animateTransform attributeName="transform" type="rotate" from="45" to="405" dur="7s" repeatCount="indefinite"/>
+            <animate attributeName="fill" values="#4ECDC4;#1A2A3D;#4ECDC4" dur="5s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="-30" y="-30" width="60" height="60" fill="#FF6B9D" transform="rotate(45)">
+            <animateTransform attributeName="transform" type="rotate" from="45" to="-315" dur="5s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+
+    <!-- Floating Chevron Cluster -->
+    <g transform="translate(420, 680)">
+        <polygon points="-40,0 0,-60 40,0" fill="none" stroke="#FFE66D" stroke-width="6" opacity="0.8">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="-40,40 0,-20 40,40" fill="none" stroke="#FFE66D" stroke-width="6" opacity="0.8">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="-40,80 0,20 40,80" fill="none" stroke="#FFE66D" stroke-width="6" opacity="0.8">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="3s" begin="1s" repeatCount="indefinite"/>
+        </polygon>
+    </g>
+
+    <!-- Layer 7: Giant Sunburst behind Hero -->
+    <g transform="translate(1100, 350)" opacity="0.9">
+        <g>
+            <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="3s" repeatCount="indefinite"/>
+            <polygon points="0,-400 50,-120 200,-280 120,-80 350,-80 120,0 350,120 120,80 200,280 50,120 0,400 -50,120 -200,280 -120,80 -350,120 -120,0 -350,-80 -120,-80 -200,-280 -50,-120" fill="#FFE66D"/>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+        </g>
+        <circle cx="0" cy="0" r="150" fill="#FFFFFF" filter="url(#blur)">
+            <animate attributeName="r" values="150;160;150" dur="2s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- Layer 8: Clouds/Glow Elements -->
+    <g transform="translate(900, 400)" opacity="0.6">
+        <ellipse cx="0" cy="0" rx="120" ry="40" fill="#FFFFFF" filter="url(#blur)">
+            <animate attributeName="rx" values="120;140;120" dur="6s" repeatCount="indefinite"/>
+            <animate attributeName="ry" values="40;50;40" dur="6s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="-100" cy="40" rx="80" ry="25" fill="#FFFFFF" filter="url(#blur)"/>
+        <ellipse cx="100" cy="-30" rx="100" ry="35" fill="#FFFFFF" filter="url(#blur)"/>
+    </g>
+
+    <!-- Layer 9-13: Candy Island Patchwork -->
+    <g transform="translate(0, 50)">
+        <g mask="url(#halftoneMask)">
+            <!-- Pink Desert Dune -->
+            <path d="M100,900 L350,680 L550,750 L700,850 L900,900 Z" fill="#FF6B9D">
+                <animate attributeName="fill" values="#FF6B9D;#FF4D88;#FF6B9D" dur="4s" repeatCount="indefinite"/>
+            </path>
+            
+            <!-- Teal Jungle Hills -->
+            <path d="M900,900 L1050,600 L1250,650 L1500,500 L1600,900 Z" fill="#4ECDC4">
+                <animate attributeName="fill" values="#4ECDC4;#3BE0D5;#4ECDC4" dur="5s" repeatCount="indefinite"/>
+            </path>
+
+            <!-- Yellow Plains -->
+            <path d="M1600,900 L1500,500 L1600,450 Z" fill="#FFE66D"/>
+            
+            <path d="M0,850 Q100,750 200,850 T400,850 T600,850 T900,850 T1200,850 T1600,850 V900 H0 Z" fill="#FFE66D">
+                <animate attributeName="d" values="M0,850 Q100,750 200,850 T400,850 T600,850 T900,850 T1200,850 T1600,850 V900 H0 Z; M0,830 Q100,730 200,830 T400,830 T600,830 T900,830 T1200,830 T1600,830 V900 H0 Z; M0,850 Q100,750 200,850 T400,850 T600,850 T900,850 T1200,850 T1600,850 V900 H0 Z" dur="4s" repeatCount="indefinite"/>
+            </path>
+            <path d="M0,880 Q200,800 400,880 T800,880 T1200,880 T1600,880 V900 H0 Z" fill="#FFFFFF" opacity="0.4"/>
+        </g>
+
+        <!-- Layer 14: Waves and Water -->
+        <g fill="#1A2A3D" opacity="0.6">
+            <path d="M0,910 Q200,880 400,910 T800,910 T1200,910 T1600,910 V900 H0 Z"/>
+            <path d="M0,920 Q200,890 400,920 T800,920 T1200,920 T1600,920 V900 H0 Z"/>
+            <path d="M0,930 Q200,900 400,930 T800,930 T1200,930 T1600,930 V900 H0 Z">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="3s" repeatCount="indefinite"/>
+            </path>
+        </g>
+
+        <!-- Layer 15: Island Details (Trees & Buildings) -->
+        <g fill="#1A2A3D">
+            <!-- Trees on Teal Island -->
+            <rect x="1100" y="570" width="15" height="40"/>
+            <circle cx="1107" cy="570" r="25"/>
+            <rect x="1150" y="620" width="12" height="30"/>
+            <circle cx="1156" cy="620" r="20"/>
+            <rect x="1200" y="590" width="18" height="50"/>
+            <circle cx="1209" cy="590" r="30"/>
+            <rect x="1320" y="520" width="15" height="40"/>
+            <circle cx="1327" cy="520" r="25"/>
+            <rect x="1400" y="580" width="20" height="60"/>
+            <circle cx="1410" cy="580" r="35"/>
+            
+            <!-- Buildings on Yellow/Teal Edge -->
+            <rect x="1040" y="660" width="30" height="60" fill="#FF6B9D"/>
+            <rect x="1075" y="640" width="25" height="80" fill="#4ECDC4"/>
+            <rect x="1105" y="680" width="20" height="40" fill="#FFE66D"/>
+            
+            <!-- Cactus & Rocks on Pink Desert -->
+            <path d="M200,800 L200,740 A10,10 0 0,1 220,740 L220,800 Z" fill="#1A2A3D"/>
+            <circle cx="210" cy="730" r="10" fill="#1A2A3D"/>
+            <path d="M210,770 Q230,760 230,740" fill="none" stroke="#1A2A3D" stroke-width="6" stroke-linecap="round"/>
+            <path d="M210,790 Q190,780 190,760" fill="none" stroke="#1A2A3D" stroke-width="6" stroke-linecap="round"/>
+            
+            <circle cx="300" cy="800" r="25" fill="#1A2A3D"/>
+            <circle cx="330" cy="810" r="15" fill="#1A2A3D"/>
+            <circle cx="450" cy="780" r="30" fill="#1A2A3D"/>
+        </g>
+    </g>
+
+    <!-- Layer 16: Speed Lines behind Hero -->
+    <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.6">
+        <line x1="1100" y1="0" x2="1100" y2="300">
+            <animate attributeName="y1" values="0;-50;0" dur="1s" repeatCount="indefinite"/>
+            <animate attributeName="y2" values="300;350;300" dur="1s" repeatCount="indefinite"/>
+        </line>
+        <line x1="1200" y1="0" x2="1200" y2="200" stroke-width="6">
+            <animate attributeName="y1" values="0;-50;0" dur="1.2s" repeatCount="indefinite"/>
+            <animate attributeName="y2" values="200;250;200" dur="1.2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="1000" y1="0" x2="1000" y2="250" stroke-width="3">
+            <animate attributeName="y1" values="0;-50;0" dur="0.8s" repeatCount="indefinite"/>
+            <animate attributeName="y2" values="250;300;250" dur="0.8s" repeatCount="indefinite"/>
+        </line>
+    </g>
+
+    <!-- Layer 17-18: HERO SUBJECT - Gliding Parachute -->
+    <g transform="translate(1100, 350)">
+        <!-- Bounce Motion -->
+        <animateTransform attributeName="transform" type="translate" values="1100,350; 1100,370; 1100,350" dur="3s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="3s" repeatCount="indefinite" additive="sum"/>
+
+        <!-- Parachute Canopy -->
+        <g>
+            <!-- Patchwork Arcs -->
+            <path d="M-160,0 A160,140 0 0,1 -53,-130 A160,140 0 0,1 53,-130 A160,140 0 0,1 160,0 L150,10 A150,130 0 0,0 50,-120 A150,130 0 0,0 -50,-120 A150,130 0 0,0 -150,10 Z" fill="#FF6B9D"/>
+            <path d="M-53,-130 A160,140 0 0,1 53,-130 L50,-120 A150,130 0 0,0 -50,-120 Z" fill="#4ECDC4"/>
+            <path d="M53,-130 A160,140 0 0,1 160,0 L150,10 A150,130 0 0,0 50,-120 Z" fill="#FFE66D"/>
+            <path d="M-160,0 A160,140 0 0,1 -53,-130 L-50,-120 A150,130 0 0,0 -150,10 Z" fill="#1A2A3D"/>
+
+            <!-- Canopy Outline & Swings -->
+            <path d="M-160,0 A160,140 0 0,1 160,0" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+            <!-- Swaying Animation on Canopy Top Level -->
+            <animateTransform attributeName="transform" type="rotate" values="-2 0 0; 2 0 0; -2 0 0" dur="4s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- Parachute Lines -->
+        <g stroke="#FFFFFF" stroke-width="5" stroke-linecap="round">
+            <line x1="-150" y1="10" x2="-40" y2="180"/>
+            <line x1="150" y1="10" x2="40" y2="180"/>
+            <line x1="-50" y1="-120" x2="-10" y2="180"/>
+            <line x1="50" y1="-120" x2="10" y2="180"/>
+        </g>
+
+        <!-- Silhouetted Skydiver Figure -->
+        <g fill="#1A2A3D">
+            <!-- Torso -->
+            <ellipse cx="0" cy="150" rx="20" ry="45"/>
+            <!-- Head -->
+            <circle cx="0" cy="105" r="18"/>
+            <!-- Backpack -->
+            <ellipse cx="-15" cy="140" rx="12" ry="35" fill="#FF6B9D"/>
+            
+            <!-- Legs (Dynamic Kick Pose) -->
+            <!-- Right Leg kicking forward -->
+            <path d="M10,185 L35,210 A12,12 0 0,1 20,225 L0,195 Z"/>
+            <!-- Left Leg extended back -->
+            <path d="M-10,185 L-40,220 A12,12 0 0,0 -25,235 L5,195 Z"/>
+            
+            <!-- Arms grasping ropes -->
+            <path d="M-15,130 L-25,170 L-10,180" fill="none" stroke="#1A2A3D" stroke-width="14" stroke-linecap="round"/>
+            <path d="M15,130 L25,170 L10,180" fill="none" stroke="#1A2A3D" stroke-width="14" stroke-linecap="round"/>
+            
+            <circle cx="-10" cy="180" r="7"/>
+            <circle cx="10" cy="180" r="7"/>
+        </g>
+
+        <!-- Hero Glow -->
+        <circle cx="0" cy="150" r="100" fill="url(#glow)" filter="url(#blur)">
+            <animate attributeName="r" values="100;120;100" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- Layer 19-21: Foreground Particles & Confetti -->
+    <g>
+        <!-- Group 1: Large Confetti -->
+        <use href="#confettiPath" transform="translate(200, 100) rotate(45)" fill="#FF6B9D">
+            <animateTransform attributeName="transform" type="translate" values="200,-50; 220,950" dur="4s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="2s" repeatCount="indefinite" additive="sum"/>
+        </use>
+        <use href="#confettiPath" transform="translate(500, 200) rotate(90)" fill="#FFE66D">
+            <animateTransform attributeName="transform" type="translate" values="500,-50; 480,950" dur="5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="rotate" values="45; 405" dur="3s" repeatCount="indefinite" additive="sum"/>
+        </use>
+        <use href="#confettiPath" transform="translate(800, 50) rotate(15)" fill="#4ECDC4">
+            <animateTransform attributeName="transform" type="translate" values="800,-50; 820,950" dur="3.5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="rotate" values="90; 450" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+        </use>
+        <use href="#confettiPath" transform="translate(1300, 150) rotate(120)" fill="#FF6B9D">
+            <animateTransform attributeName="transform" type="translate" values="1300,-50; 1280,950" dur="4.5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="rotate" values="180; 540" dur="3s" repeatCount="indefinite" additive="sum"/>
+        </use>
+        <use href="#confettiPath" transform="translate(1400, 300) rotate(30)" fill="#FFE66D">
+            <animateTransform attributeName="transform" type="translate" values="1400,-50; 1420,950" dur="3.8s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="rotate" values="270; 630" dur="2s" repeatCount="indefinite" additive="sum"/>
+        </use>
+        <use href="#confettiPath" transform="translate(100, 400) rotate(60)" fill="#4ECDC4">
+            <animateTransform attributeName="transform" type="translate" values="100,-50; 80,950" dur="5.5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="rotate" values="0; 720" dur="4s" repeatCount="indefinite" additive="sum"/>
+        </use>
+
+        <!-- Group 2: Small Diamonds / Stars -->
+        <polygon points="-10,0 0,-10 10,0 0,10" fill="#FFFFFF" transform="translate(300, 300)">
+            <animateTransform attributeName="transform" type="translate" values="300,300; 320,950" dur="6s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="scale" values="1;1.5;0.5;1" dur="2s" repeatCount="indefinite" additive="sum"/>
+        </polygon>
+        <polygon points="-10,0 0,-10 10,0 0,10" fill="#FFE66D" transform="translate(600, 100)">
+            <animateTransform attributeName="transform" type="translate" values="600,100; 580,950" dur="7s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="scale" values="1;0.5;1.5;1" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+        </polygon>
+        <polygon points="-10,0 0,-10 10,0 0,10" fill="#FF6B9D" transform="translate(900, 250)">
+            <animateTransform attributeName="transform" type="translate" values="900,250; 920,950" dur="5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="scale" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+        </polygon>
+        <polygon points="-10,0 0,-10 10,0 0,10" fill="#4ECDC4" transform="translate(1200, 50)">
+            <animateTransform attributeName="transform" type="translate" values="1200,50; 1180,950" dur="6.5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="scale" values="1.5;0.5;1.5" dur="3s" repeatCount="indefinite" additive="sum"/>
+        </polygon>
+
+        <!-- Group 3: Sparkles -->
+        <use href="#sparkle" transform="translate(450, 200) scale(0.6)" fill="#FFFFFF" filter="url(#blurLight)">
+            <animateTransform attributeName="transform" type="translate" values="450,200; 430,950" dur="8s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;1;0;1;0" dur="3s" repeatCount="indefinite"/>
+        </use>
+        <use href="#sparkle" transform="translate(750, 350) scale(1)" fill="#FFE66D" filter="url(#blurLight)">
+            <animateTransform attributeName="transform" type="translate" values="750,350; 770,950" dur="9s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0;1;0;1" dur="4s" repeatCount="indefinite"/>
+        </use>
+        <use href="#sparkle" transform="translate(1050, 150) scale(0.8)" fill="#FF6B9D" filter="url(#blurLight)">
+            <animateTransform attributeName="transform" type="translate" values="1050,150; 1030,950" dur="7s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+        </use>
+    </g>
+
+    <!-- Layer 22-23: Rim Light & Foreground Vignette -->
+    <!-- Bright Vignette to keep it joyful, not moody -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+        <stop offset="70%" stop-color="rgba(255,255,255,0)"/>
+        <stop offset="100%" stop-color="rgba(255,255,255,0.3)"/>
+    </radialGradient>
+    <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+
+    <!-- Layer 24: Title Space Placeholder Lines (Decorative energy) -->
+    <g stroke="#FFFFFF" stroke-width="4" opacity="0.6">
+        <line x1="100" y1="200" x2="400" y2="200" stroke-linecap="round">
+            <animate attributeName="x2" values="400;380;400" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="100" y1="220" x2="200" y2="220" stroke-linecap="round" opacity="0.4"/>
+        <rect x="150" y="650" width="60" height="60" fill="none" stroke="#4ECDC4" stroke-width="5" opacity="0.5" transform="rotate(15 180 680)">
+            <animateTransform attributeName="transform" type="rotate" values="15 180 680; -15 180 680; 15 180 680" dur="5s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+
+    <!-- Layer 25: Final Floating Accents -->
+    <g transform="translate(1400, 800)">
+        <circle cx="0" cy="0" r="40" fill="none" stroke="#FF6B9D" stroke-width="6" opacity="0.6">
+            <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="0" cy="0" r="25" fill="none" stroke="#4ECDC4" stroke-width="4" opacity="0.6">
+            <animate attributeName="r" values="25;35;25" dur="3s" begin="1s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+    <g transform="translate(250, 500)">
+        <polygon points="-25,-15 0,-30 25,-15 25,15 0,30 -25,15" fill="#FFE66D" opacity="0.7">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="4s" repeatCount="indefinite"/>
+        </polygon>
+    </g>
+</svg>

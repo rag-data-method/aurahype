@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Drop Shadow Filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
+      <feOffset dx="12" dy="18" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Pop Art Sunset Gradient (Clip path for lenses) -->
+    <linearGradient id="sunsetGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00FFFF"/>
+      <stop offset="30%" stop-color="#FFFF00"/>
+      <stop offset="60%" stop-color="#FF00FF"/>
+      <stop offset="100%" stop-color="#FF0000"/>
+    </linearGradient>
+
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFF00"/>
+      <stop offset="100%" stop-color="#FF9900"/>
+    </linearGradient>
+
+    <!-- Clip Paths for Reflections inside Lenses -->
+    <clipPath id="leftLensClip">
+      <path d="M 310,380 C 310,340 370,340 390,420 C 410,340 470,340 470,380 C 470,480 390,530 390,530 C 390,530 310,480 310,380 Z" />
+    </clipPath>
+
+    <clipPath id="rightLensClip">
+      <path d="M 530,380 C 530,340 590,340 610,420 C 630,340 690,340 690,380 C 690,480 610,530 610,530 C 610,530 530,480 530,380 Z" />
+    </clipPath>
+
+    <!-- Pop Art Halftone Pattern for Background -->
+    <pattern id="halftone" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="4" fill="#FF00FF" opacity="0.6"/>
+    </pattern>
+
+    <!-- Pop Art Stripes Pattern -->
+    <pattern id="stripes" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect x="0" y="0" width="15" height="30" fill="#000000"/>
+    </pattern>
+  </defs>
+
+  <!-- STICKER DROP SHADOW (Applies to the sticker group) -->
+  <g filter="url(#shadow)">
+    
+    <!-- WHITE DIE-CUT BORDER (Outer Shell) -->
+    <!-- Constructed by tracing a thick outline around the illustration -->
+    <path d="
+      M 500,220 
+      C 460,220 420,240 390,290 
+      C 360,240 320,220 280,220 
+      C 180,220 120,300 120,390 
+      C 120,510 250,620 390,710 
+      C 530,620 660,510 660,390 
+      C 660,300 600,220 500,220 Z 
+      M 280,340 
+      C 320,340 360,360 390,390 
+      C 420,360 460,340 500,340 
+      C 570,340 620,370 620,430 
+      C 620,550 390,650 390,650 
+      C 390,650 160,550 160,430 
+      C 160,370 210,340 280,340 Z
+      M 230,270 L 550,270 L 550,290 L 230,290 Z
+      M 270,190 L 510,190 L 510,210 L 270,210 Z
+      M 750,850 C 750,850 700,600 700,600
+      " 
+      fill="#FFFFFF" stroke="#FFFFFF" stroke-width="60" stroke-linejoin="round" stroke-linecap="round"/>
+    
+    <!-- Secondary White Rim to ensure perfect die-cut edge -->
+    <path d="
+      M 500,240 
+      C 460,240 420,260 390,310 
+      C 360,260 320,240 280,240 
+      C 190,240 140,310 140,390 
+      C 140,500 260,600 390,690 
+      C 520,600 640,500 640,390 
+      C 640,310 590,240 500,240 Z
+      M 280,360 
+      C 320,360 360,380 390,410 
+      C 420,380 460,360 500,360 
+      C 560,360 600,390 600,430 
+      C 600,540 390,630 390,630 
+      C 390,630 180,540 180,430 
+      C 180,390 220,360 280,360 Z
+      M 250,280 L 530,280 L 530,290 L 250,290 Z
+      M 290,200 L 490,200 L 490,210 L 290,210 Z
+      " 
+      fill="#FFFFFF"/>
+
+    <!-- ========================================== -->
+    <!-- MAIN ILLUSTRATION (Inside the White Border) -->
+    <!-- ========================================== -->
+    <g id="illustration">
+
+      <!-- Background Face/Chin Lines (Retro Pop Art portrait lines) -->
+      <path d="M 390,690 C 340,720 280,750 230,850" fill="none" stroke="#000000" stroke-width="18" stroke-linecap="round"/>
+      <path d="M 390,690 C 440,720 500,750 550,850" fill="none" stroke="#000000" stroke-width="18" stroke-linecap="round"/>
+      
+      <!-- Face Cheek Lines -->
+      <path d="M 250,600 Q 220,620 180,580" fill="none" stroke="#000000" stroke-width="14" stroke-linecap="round"/>
+      <path d="M 530,600 Q 560,620 600,580" fill="none" stroke="#000000" stroke-width="14" stroke-linecap="round"/>
+
+      <!-- SUNSET REFLECTION (Inside Glasses) -->
+      
+      <!-- Left Lens Reflection -->
+      <g clip-path="url(#leftLensClip)">
+        <!-- Sky -->
+        <rect x="300" y="330" width="180" height="210" fill="url(#sunsetGrad)"/>
+        <!-- Sun -->
+        <circle cx="390" cy="440" r="45" fill="url(#sunGrad)" stroke="#000000" stroke-width="8"/>
+        <!-- Sun Rays -->
+        <g stroke="#000000" stroke-width="6">
+          <line x1="390" y1="370" x2="390" y2="390"/>
+          <line x1="390" y1="490" x2="390" y2="510"/>
+          <line x1="320" y1="440" x2="340" y2="440"/>
+          <line x1="460" y1="440" x2="440" y2="440"/>
+          <line x1="340" y1="390" x2="355" y2="405"/>
+          <line x1="440" y1="390" x2="425" y2="405"/>
+          <line x1="340" y1="490" x2="355" y2="475"/>
+          <line x1="440" y1="490" x2="425" y2="475"/>
+        </g>
+        <!-- Pop Art Stripes Overlay -->
+        <rect x="300" y="460" width="180" height="80" fill="url(#stripes)" opacity="0.9"/>
+        <!-- Halftone Overlay -->
+        <rect x="300" y="330" width="180" height="210" fill="url(#halftone)" opacity="0.4"/>
+        <!-- Glossy Highlight -->
+        <path d="M 330,360 Q 350,340 370,360 Q 350,380 330,360 Z" fill="#FFFFFF" opacity="0.9"/>
+      </g>
+
+      <!-- Right Lens Reflection -->
+      <g clip-path="url(#rightLensClip)">
+        <!-- Sky -->
+        <rect x="520" y="330" width="180" height="210" fill="url(#sunsetGrad)"/>
+        <!-- Sun -->
+        <circle cx="610" cy="440" r="45" fill="url(#sunGrad)" stroke="#000000" stroke-width="8"/>
+        <!-- Sun Rays -->
+        <g stroke="#000000" stroke-width="6">
+          <line x1="610" y1="370" x2="610" y2="390"/>
+          <line x1="610" y1="490" x2="610" y2="510"/>
+          <line x1="540" y1="440" x2="560" y2="440"/>
+          <line x1="680" y1="440" x2="660" y2="440"/>
+          <line x1="560" y1="390" x2="575" y2="405"/>
+          <line x1="660" y1="390" x2="645" y2="405"/>
+          <line x1="560" y1="490" x2="575" y2="475"/>
+          <line x1="660" y1="490" x2="645" y2="475"/>
+        </g>
+        <!-- Pop Art Stripes Overlay -->
+        <rect x="520" y="460" width="180" height="80" fill="url(#stripes)" opacity="0.9"/>
+        <!-- Halftone Overlay -->
+        <rect x="520" y="330" width="180" height="210" fill="url(#halftone)" opacity="0.4"/>
+        <!-- Glossy Highlight -->
+        <path d="M 550,360 Q 570,340 590,360 Q 570,380 550,360 Z" fill="#FFFFFF" opacity="0.9"/>
+      </g>
+
+      <!-- GLASSES FRAME (Thick Black Pop Art Outline) -->
+      <!-- Left Frame -->
+      <path d="M 310,380 C 310,340 370,340 390,420 C 410,340 470,340 470,380 C 470,480 390,530 390,530 C 390,530 310,480 310,380 Z" 
+            fill="none" stroke="#000000" stroke-width="24" stroke-linejoin="round"/>
+      <!-- Right Frame -->
+      <path d="M 530,380 C 530,340 590,340 610,420 C 630,340 690,340 690,380 C 690,480 610,530 610,530 C 610,530 530,480 530,380 Z" 
+            fill="none" stroke="#000000" stroke-width="24" stroke-linejoin="round"/>
+      
+      <!-- Bridge -->
+      <path d="M 470,380 Q 500,360 530,380" fill="none" stroke="#000000" stroke-width="24" stroke-linecap="round"/>
+      
+      <!-- Arms/Temples -->
+      <path d="M 310,380 Q 230,360 150,280" fill="none" stroke="#000000" stroke-width="28" stroke-linecap="round"/>
+      <path d="M 690,380 Q 770,360 850,280" fill="none" stroke="#000000" stroke-width="28" stroke-linecap="round"/>
+
+      <!-- Inner Frame Highlights (Cyan & Magenta for Pop Art pop) -->
+      <path d="M 330,380 C 330,360 360,360 380,400 C 390,360 420,360 440,380 C 440,460 390,500 390,500 C 390,500 330,460 330,380 Z" 
+            fill="none" stroke="#00FFFF" stroke-width="8" stroke-linejoin="round" opacity="0.9"/>
+      <path d="M 550,380 C 550,360 580,360 600,400 C 610,360 640,360 660,380 C 660,460 610,500 610,500 C 610,500 550,460 550,380 Z" 
+            fill="none" stroke="#FF00FF" stroke-width="8" stroke-linejoin="round" opacity="0.9"/>
+
+      <!-- Retro Starbursts/Sparkles -->
+      <g fill="#FFFF00" stroke="#000000" stroke-width="6">
+        <path d="M 220,450 L 235,480 L 265,480 L 240,500 L 250,530 L 220,510 L 190,530 L 200,500 L 175,480 L 205,480 Z"/>
+        <path d="M 780,450 L 795,480 L 825,480 L 800,500 L 810,530 L 780,510 L 750,530 L 760,500 L 735,480 L 765,480 Z"/>
+      </g>
+
+      <!-- Retro Sunburst Background behind glasses -->
+      <g fill="none" stroke="#000000" stroke-width="18" stroke-linecap="round">
+        <path d="M 390,700 L 390,780"/>
+        <path d="M 260,620 L 210,680"/>
+        <path d="M 520,620 L 570,680"/>
+        <path d="M 180,510 L 120,540"/>
+        <path d="M 600,510 L 660,540"/>
+        <path d="M 140,390 L 80,390"/>
+        <path d="M 640,390 L 700,390"/>
+        <path d="M 180,270 L 120,240"/>
+        <path d="M 600,270 L 660,240"/>
+      </g>
+      
+      <!-- Thick Retro Eyebrows -->
+      <path d="M 280,300 Q 340,260 400,300" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round"/>
+      <path d="M 600,300 Q 540,260 480,300" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round"/>
+
+    </g> <!-- End Illustration -->
+
+  </g> <!-- End Shadow Group -->
+</svg>

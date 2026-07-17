@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset=".5" stop-color="#F0FFF9"/>
+      <stop offset="1" stop-color="#FFFBE6"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF6B81"/>
+      <stop offset="1" stop-color="#FF4D6D"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00E5B9"/>
+      <stop offset="1" stop-color="#00C897"/>
+    </linearGradient>
+    <linearGradient id="yellow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE566"/>
+      <stop offset="1" stop-color="#FFD93D"/>
+    </linearGradient>
+    <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="b"/>
+      <feOffset in="b" dx="0" dy="8" result="o"/>
+      <feComponentTransfer in="o" result="s">
+        <feFuncA type="linear" slope=".2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="s"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="frost" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <circle cx="200" cy="150" r="300" fill="#FFD93D" opacity=".08" filter="url(#frost)">
+    <animate attributeName="cy" values="150;180;150" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1400" cy="750" r="350" fill="#FF4D6D" opacity=".08" filter="url(#frost)">
+    <animate attributeName="cy" values="750;720;750" dur="14s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="800" cy="450" r="400" fill="#00C897" opacity=".06" filter="url(#frost)">
+    <animate attributeName="r" values="400;420;400" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-35;0,0" dur="8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 300 300" to="360 300 300" dur="30s" repeatCount="indefinite" additive="sum"/>
+    <circle cx="300" cy="300" r="90" fill="url(#red)" opacity=".55" stroke="#fff" stroke-width="2" stroke-opacity=".6" filter="url(#glass)"/>
+    <circle cx="330" cy="270" r="25" fill="#fff" opacity=".25" filter="url(#frost)"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;25,15;0,0" dur="9s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="-10 720 250;10 720 250;-10 720 250" dur="7s" repeatCount="indefinite" additive="sum"/>
+    <rect x="650" y="180" width="140" height="140" rx="40" fill="url(#green)" opacity=".5" stroke="#fff" stroke-width="2" stroke-opacity=".6" filter="url(#glass)"/>
+    <ellipse cx="700" cy="220" rx="30" ry="18" fill="#fff" opacity=".25" filter="url(#frost)"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,30;0,0" dur="10s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 1200 295" to="360 1200 295" dur="25s" repeatCount="indefinite" additive="sum"/>
+    <polygon points="1200,220 1265,257 1265,332 1200,369 1135,332 1135,257" fill="url(#yellow)" opacity=".55" stroke="#fff" stroke-width="2" stroke-opacity=".6" filter="url(#glass)"/>
+    <ellipse cx="1180" cy="270" rx="22" ry="14" fill="#fff" opacity=".25" filter="url(#frost)"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;30,-20;0,0" dur="7s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 450 650" to="-360 450 650" dur="20s" repeatCount="indefinite" additive="sum"/>
+    <circle cx="450" cy="650" r="70" fill="url(#yellow)" opacity=".5" stroke="#fff" stroke-width="2" stroke-opacity=".6" filter="url(#glass)"/>
+    <circle cx="475" cy="625" r="18" fill="#fff" opacity=".25" filter="url(#frost)"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-15,-25;0,0" dur="8.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="10 1005 635;-10 1005 635;10 1005 635" dur="6s" repeatCount="indefinite" additive="sum"/>
+    <rect x="950" y="580" width="110" height="110" rx="30" fill="url(#red)" opacity=".52" stroke="#fff" stroke-width="2" stroke-opacity=".6" filter="url(#glass)"/>
+    <ellipse cx="990" cy="610" rx="24" ry="15" fill="#fff" opacity=".25" filter="url(#frost)"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;15,-15;0,0" dur="6.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 1350 540" to="360 1350 540" dur="18s" repeatCount="indefinite" additive="sum"/>
+    <polygon points="1350,500 1385,520 1385,560 1350,580 1315,560 1315,520" fill="url(#green)" opacity=".55" stroke="#fff" stroke-width="2" stroke-opacity=".6" filter="url(#glass)"/>
+    <ellipse cx="1340" cy="525" rx="14" ry="9" fill="#fff" opacity=".25" filter="url(#frost)"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;20,15;0,0" dur="7.5s" repeatCount="indefinite"/>
+    <circle cx="150" cy="750" r="50" fill="url(#red)" opacity=".5" stroke="#fff" stroke-width="2" stroke-opacity=".6" filter="url(#glass)"/>
+    <circle cx="170" cy="735" r="14" fill="#fff" opacity=".25" filter="url(#frost)"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-10,20;0,0" dur="8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="-8 1290 190;8 1290 190;-8 1290 190" dur="5s" repeatCount="indefinite" additive="sum"/>
+    <rect x="1250" y="150" width="80" height="80" rx="22" fill="url(#yellow)" opacity=".5" stroke="#fff" stroke-width="2" stroke-opacity=".6" filter="url(#glass)"/>
+    <ellipse cx="1280" cy="170" rx="18" ry="11" fill="#fff" opacity=".25" filter="url(#frost)"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-25,-10;0,0" dur="9s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 750 750" to="360 750 750" dur="22s" repeatCount="indefinite" additive="sum"/>
+    <circle cx="750" cy="750" r="60" fill="url(#green)" opacity=".5" stroke="#fff" stroke-width="2" stroke-opacity=".6" filter="url(#glass)"/>
+    <circle cx="775" cy="730" r="16" fill="#fff" opacity=".25" filter="url(#frost)"/>
+  </g>
+</svg>

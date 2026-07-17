@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a1b35"/>
+      <stop offset="50%" stop-color="#6d3a52"/>
+      <stop offset="100%" stop-color="#c75e48"/>
+    </linearGradient>
+
+    <radialGradient id="p1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd6a5" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff8a66" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff8a66" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="p2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe59e" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#ffcc66" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffcc66" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="p3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f3d1ff" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#c285ff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#c285ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="p4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffbcbc" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffbcbc" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="bokehA" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    <filter id="bokehB" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="52"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <g filter="url(#bokehB)" opacity="0.85">
+    <circle cx="220" cy="220" r="260" fill="url(#p1)" opacity="0.45">
+      <animate attributeName="r" values="260;300;260" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0.55;0.35" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1380" cy="180" r="320" fill="url(#p2)" opacity="0.4">
+      <animate attributeName="r" values="320;360;320" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="820" cy="520" r="420" fill="url(#p3)" opacity="0.35">
+      <animate attributeName="r" values="420;470;420" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.45;0.25" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="340" cy="780" r="300" fill="url(#p4)" opacity="0.4">
+      <animate attributeName="r" values="300;340;300" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="11s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g filter="url(#bokehA)" opacity="0.9">
+    <circle cx="520" cy="320" r="180" fill="url(#p3)" opacity="0.4">
+      <animate attributeName="r" values="180;210;180" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1120" cy="360" r="200" fill="url(#p1)" opacity="0.45">
+      <animate attributeName="r" values="200;230;200" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0.55;0.35" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="160" cy="520" r="220" fill="url(#p2)" opacity="0.35">
+      <animate attributeName="r" values="220;250;220" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.45;0.25" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1460" cy="560" r="240" fill="url(#p3)" opacity="0.4">
+      <animate attributeName="r" values="240;270;240" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="920" cy="120" r="160" fill="url(#p4)" opacity="0.45">
+      <animate attributeName="r" values="160;190;160" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0.55;0.35" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="680" cy="820" r="190" fill="url(#p1)" opacity="0.4">
+      <animate attributeName="r" values="190;220;190" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1220" cy="680" r="210" fill="url(#p2)" opacity="0.45">
+      <animate attributeName="r" values="210;240;210" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0.55;0.35" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="120" r="140" fill="url(#p3)" opacity="0.35">
+      <animate attributeName="r" values="140;165;140" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.45;0.25" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1620" cy="320" r="260" fill="url(#p1)" opacity="0.3">
+      <animate attributeName="r" values="260;300;260" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="880" cy="920" r="180" fill="url(#p4)" opacity="0.4">
+      <animate attributeName="r" values="180;210;180" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

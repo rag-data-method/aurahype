@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FCE4EC"/>
+      <stop offset="100%" stop-color="#FFF8E1"/>
+    </linearGradient>
+
+    <!-- Soft Glow Filter -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Petal Template -->
+    <g id="petal">
+      <path d="M0 0 Q5 -8 10 0 Q5 8 0 0 Z" fill="#FFB7C5" opacity="0.9"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Subtle Background Orbs (Atmosphere) -->
+  <circle cx="100" cy="100" r="150" fill="#FFF0F5" opacity="0.5" filter="url(#softGlow)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 15,-10; 0,0" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="400" r="120" fill="#FFECB3" opacity="0.4" filter="url(#softGlow)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -10,15; 0,0" dur="15s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Branch Template (Defined for instancing if needed, but drawn explicitly here for varied flowers) -->
+  <defs>
+    <g id="branchWithPetals">
+      <path d="M 800 0 Q 650 20 500 120 T 250 250" fill="none" stroke="#8D6E63" stroke-width="1.5" stroke-linecap="round">
+        <animate attributeName="d" values="M 800 0 Q 650 20 500 120 T 250 250; M 800 0 Q 655 25 500 115 T 255 245; M 800 0 Q 650 20 500 120 T 250 250" dur="8s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Sub-branch 1 -->
+      <path d="M 500 120 Q 450 80 350 90" fill="none" stroke="#8D6E63" stroke-width="1" stroke-linecap="round"/>
+      <!-- Sub-branch 2 -->
+      <path d="M 400 170 Q 350 200 300 180" fill="none" stroke="#8D6E63" stroke-width="1" stroke-linecap="round"/>
+
+      <!-- Flowers on the branch (static, gentle sway) -->
+      <g filter="url(#softGlow)">
+        <!-- Flower 1 -->
+        <circle cx="250" cy="250" r="4" fill="#FFCDD2"/>
+        <circle cx="245" cy="248" r="3" fill="#E57373" opacity="0.6"/>
+        <circle cx="255" cy="248" r="3" fill="#E57373" opacity="0.6"/>
+        <circle cx="250" cy="255" r="3" fill="#E57373" opacity="0.6"/>
+        <circle cx="248" cy="252" r="2.5" fill="#FFF" opacity="0.8"/>
+        <circle cx="252" cy="252" r="2.5" fill="#FFF" opacity="0.8"/>
+        <animateTransform attributeName="transform" type="rotate" values="0 250 250; 5 250 250; 0 250 250" dur="6s" repeatCount="indefinite"/>
+
+        <!-- Flower 2 -->
+        <g transform="translate(350, 90)">
+          <circle r="5" fill="#FFCDD2"/>
+          <circle cx="-4" cy="-2" r="3.5" fill="#E57373" opacity="0.6"/>
+          <circle cx="4" cy="-2" r="3.5" fill="#E57373" opacity="0.6"/>
+          <circle cy="5" r="3.5" fill="#E57373" opacity="0.6"/>
+          <circle cx="-3" cy="2" r="3" fill="#FFF" opacity="0.8"/>
+          <circle cx="3" cy="2" r="3" fill="#FFF" opacity="0.8"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 0 0; -4 0 0; 0 0 0" dur="7s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- Flower 3 -->
+        <g transform="translate(300, 180)">
+          <circle r="4.5" fill="#FFCDD2"/>
+          <circle cx="-3.5" cy="-1.5" r="3" fill="#E57373" opacity="0.6"/>
+          <circle cx="3.5" cy="-1.5" r="3" fill="#E57373" opacity="0.6"/>
+          <circle cy="4.5" r="3" fill="#E57373" opacity="0.6"/>
+          <circle cx="-2" cy="1.5" r="2.5" fill="#FFF" opacity="0.8"/>
+          <circle cx="2" cy="1.5" r="2.5" fill="#FFF" opacity="0.8"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 0 0; 3 0 0; 0 0 0" dur="5s" repeatCount="indefinite"/>
+        </g>
+        
+        <!-- Additional Buds -->
+        <circle cx="600" cy="60" r="2" fill="#FFCDD2"/>
+        <circle cx="550" cy="100" r="2.5" fill="#FFCDD2"/>
+        <circle cx="450" cy="140" r="2" fill="#FFCDD2"/>
+        <circle cx="320" cy="200" r="2" fill="#FFCDD2"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- Render Branch -->
+  <use href="#branchWithPetals"/>
+
+  <!-- Falling Petals Group -->
+  <g filter="url(#softGlow)">
+    
+    <!-- Petal 1: Starts top left, drifts right -->
+    <use href="#petal" width="20" height="20">
+      <animateTransform attributeName="transform" type="translate" 
+        values="120,-20; 250,150; 400,300; 520,450" 
+        dur="7s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0 10 10; 90 10 10; 180 10 10; 270 10 10" 
+        dur="7s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </use>
+
+    <!-- Petal 2: Starts top center-left, drifts left then right -->
+    <use href="#petal" width="20" height="20" x="-10" y="30">
+      <animateTransform attributeName="transform" type="translate" 
+        values="250,-20; 150,100; 300,250; 200,500" 
+        dur="9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0 10 10; -45 10 10; 45 10 10; -90 10 10" 
+        dur="9s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </use>
+
+    <!-- Petal 3: Starts mid-left, drifts right -->
+    <use href="#petal" width="20" height="20" x="20" y="50">
+      <animateTransform attributeName="transform" type="translate" 
+        values="50,80; 180,220; 350,380; 600,550" 
+        dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0 10 10; 120 10 10; 240 10 10; 360 10 10" 
+        dur="8s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </use>
+
+    <!-- Petal 4: Starts top right, drifts left -->
+    <use href="#petal" width="20" height="20" x="50" y="-20">
+      <animateTransform attributeName="transform" type="translate" 
+        values="500,-20; 400,150; 250,300; 100,480" 
+        dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0 10 10; -90 10 10; -180 10 10; -270 10 10" 
+        dur="6s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </use>
+
+    <!-- Petal 5: Starts mid-right, drifts down with sway -->
+    <use href="#petal" width="20" height="20" x="-30" y="40">
+      <animateTransform attributeName="transform" type="translate" 
+        values="650,50; 580,180; 620,350; 500,520" 
+        dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0 10 10; 60 10 10; 120 10 10; 180 10 10" 
+        dur="10s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </use>
+    
+    <!-- Petal 6: Starts near branch, drifts down diagonally -->
+    <use href="#petal" width="20" height="20" x="10" y="10">
+      <animateTransform attributeName="transform" type="translate" 
+        values="300,180; 320,320; 400,450; 450,580" 
+        dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0 10 10; 45 10 10; 90 10 10; 135 10 10" 
+        dur="8s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.33;0.66;1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </use>
+  </g>
+
+  <!-- Foreground Element: A subtle translucent mug for the "coffee" vibe -->
+  <g transform="translate(600, 480)" opacity="0.7">
+    <path d="M0 0 Q25 -10 50 0 L45 60 Q25 70 5 60 Z" fill="none" stroke="#FFF" stroke-width="1.5"/>
+    <path d="M45 15 Q65 15 65 35 Q65 50 45 50" fill="none" stroke="#FFF" stroke-width="1.5"/>
+    <!-- Steam lines -->
+    <path d="M15 -15 Q20 -25 15 -35" fill="none" stroke="#FFF" stroke-width="1" opacity="0.5">
+      <animate attributeName="d" values="M15 -15 Q20 -25 15 -35; M15 -20 Q10 -30 15 -40; M15 -15 Q20 -25 15 -35" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M35 -15 Q30 -25 35 -35" fill="none" stroke="#FFF" stroke-width="1" opacity="0.5">
+      <animate attributeName="d" values="M35 -15 Q30 -25 35 -35; M35 -20 Q40 -30 35 -40; M35 -15 Q30 -25 35 -35" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

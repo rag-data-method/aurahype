@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A0A1F">
+        <animate attributeName="stop-color" values="#1A0A1F;#3D0E1F;#1A0A1F" dur="22s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="40%" stop-color="#3D0E1F">
+        <animate attributeName="stop-color" values="#3D0E1F;#E54B5A;#3D0E1F" dur="18s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="70%" stop-color="#E54B5A">
+        <animate attributeName="stop-color" values="#E54B5A;#FF6B00;#E54B5A" dur="16s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#FF6B00">
+        <animate attributeName="stop-color" values="#FF6B00;#E54B5A;#FF6B00" dur="20s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <!-- Sun Glow -->
+    <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B00" stop-opacity="1" />
+      <stop offset="50%" stop-color="#E54B5A" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#E54B5A" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Smoke Trail Gradient -->
+    <linearGradient id="smokeGrad" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#E54B5A" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#3D0E1F" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Blur Filters -->
+    <filter id="f120" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="120" />
+    </filter>
+    <filter id="f90" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="90" />
+    </filter>
+    <filter id="f60" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60" />
+    </filter>
+    <filter id="f20" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" />
+    </filter>
+
+    <!-- Dragon Silhouette Path -->
+    <path id="dragonPath" d="M 100,60 Q 140,50 180,75 Q 220,95 260,110 Q 290,125 330,120 L 380,95 Q 400,80 420,110 Q 430,150 395,180 Q 370,200 340,190 Q 300,170 270,150 Q 240,130 220,135 Q 190,140 160,130 Q 130,120 110,135 Q 90,150 80,180 Q 75,210 100,230 Q 125,250 160,240 Q 200,225 230,230 Q 260,235 290,250 Q 320,265 350,260 Q 380,250 400,230 Q 420,205 440,220 Q 450,240 430,260 Q 410,280 380,285 Q 340,290 300,270 Q 260,250 220,255 Q 180,260 150,245 Q 120,230 100,250 Q 80,270 95,300 Q 110,330 150,320 Q 180,310 210,330 Q 240,350 280,340 Q 310,330 330,355 Q 350,380 320,400 Q 290,420 250,410 Q 210,395 180,370 Q 150,345 120,360 Q 95,375 105,410 Q 115,440 150,430 Q 180,420 200,450 Q 230,480 270,460 Q 300,445 320,475 Q 340,500 310,520 Q 280,540 240,525 Q 200,505 170,480 Q 140,455 110,470 Q 85,480 90,520 Q 95,550 130,540 Q 160,530 180,560 Q 200,590 170,610 Q 140,630 100,610 Q 70,590 50,560 Q 30,530 10,550 L 0,530 Q 20,500 40,470 Q 60,440 50,410 Q 40,380 20,360 Q 0,340 20,320 Q 40,300 50,270 Q 60,240 40,220 Q 20,200 35,180 Q 50,160 70,140 Q 90,120 85,100 Q 80,80 100,60 Z" />
+
+    <!-- Wing Path Base (Right Wing) -->
+    <path id="wingR" d="M 0,0 Q 30,-40 80,-60 Q 140,-80 180,-40 Q 210,-10 190,40 Q 170,80 130,100 Q 90,120 50,90 Q 10,60 0,0 Z" />
+
+    <!-- Reusable Particles -->
+    <g id="pt1">
+      <circle r="1.5" fill="#FF6B00" opacity="0.6" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="4s" repeatCount="indefinite" />
+    </g>
+    <g id="pt2">
+      <circle r="2" fill="#E54B5A" opacity="0.5" />
+      <animate attributeName="opacity" values="0;0.7;0" dur="5s" repeatCount="indefinite" />
+    </g>
+    <g id="pt3">
+      <circle r="1" fill="#FF6B00" opacity="0.7" />
+      <animate attributeName="opacity" values="0;0.9;0" dur="3s" repeatCount="indefinite" />
+    </g>
+    <g id="pt4">
+      <circle r="2.5" fill="#E54B5A" opacity="0.4" />
+      <animate attributeName="opacity" values="0;0.6;0" dur="6s" repeatCount="indefinite" />
+    </g>
+  </defs>
+
+  <!-- 1. Background Sky -->
+  <rect width="1600" height="900" fill="url(#skyGrad)" />
+
+  <!-- 2. Distant Haze Layer (Deep Purple) -->
+  <rect x="0" y="250" width="1600" height="650" fill="#1A0A1F" opacity="0.4" filter="url(#f120)">
+    <animate attributeName="opacity" values="0.4;0.5;0.4" dur="15s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- 3. Far Atmospheric Clouds (Reddish) -->
+  <g filter="url(#f90)" opacity="0.5">
+    <path d="M -100,500 Q 200,400 500,550 T 1200,450 T 1800,500 L 1800,900 L -100,900 Z" fill="#E54B5A">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -80,20; 0,0" dur="30s" repeatCount="indefinite" />
+    </path>
+    <path d="M -200,600 Q 300,500 700,650 T 1400,550 T 1900,600 L 1900,900 L -200,900 Z" fill="#FF6B00" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 60,-30; 0,0" dur="25s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- 4. The Sun (Behind Dragon) -->
+  <circle cx="1150" cy="450" r="350" fill="url(#sunGrad)" opacity="0.8">
+    <animate attributeName="r" values="340;360;340" dur="12s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.8;0.95;0.8" dur="10s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1150" cy="450" r="180" fill="#FF6B00" opacity="0.4" filter="url(#f60)">
+    <animate attributeName="r" values="170;190;170" dur="8s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 5. Smoke Trail (Behind Dragon) -->
+  <g opacity="0.7">
+    <ellipse cx="850" cy="480" rx="250" ry="60" fill="url(#smokeGrad)" filter="url(#f60)" transform="rotate(-10, 850, 480)">
+      <animate attributeName="rx" values="240;260;240" dur="7s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,0; -40,10; 0,0" dur="12s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="650" cy="520" rx="300" ry="80" fill="url(#smokeGrad)" filter="url(#f90)" opacity="0.5" transform="rotate(-15, 650, 520)">
+      <animate attributeName="rx" values="280;320;280" dur="9s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="400" cy="560" rx="350" ry="100" fill="url(#smokeGrad)" filter="url(#f120)" opacity="0.3" transform="rotate(-20, 400, 560)" />
+  </g>
+
+  <!-- 6. Distant Mountains (Silhouettes) -->
+  <g fill="#1A0A1F" opacity="0.9">
+    <path d="M 0,900 L 0,680 L 80,620 L 150,650 L 220,580 L 350,700 L 450,620 L 600,720 L 750,650 L 900,750 L 1050,680 L 1200,780 L 1350,700 L 1450,750 L 1600,680 L 1600,900 Z">
+      <animate attributeName="opacity" values="0.9;0.95;0.9" dur="20s" repeatCount="indefinite" />
+    </path>
+    <!-- Closer Mountain Ridge -->
+    <path d="M 0,900 L 0,780 L 120,720 L 250,800 L 380,740 L 550,820 L 700,760 L 850,840 L 1000,780 L 1150,860 L 1300,800 L 1450,870 L 1600,790 L 1600,900 Z" fill="#3D0E1F" opacity="0.85" />
+  </g>
+
+  <!-- 7. Mid-Distance Atmospheric Clouds (Warm) -->
+  <g filter="url(#f60)" opacity="0.6">
+    <path d="M -100,300 Q 200,200 500,350 T 1200,250 T 1800,300 L 1800,600 L -100,600 Z" fill="#FF6B00">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 100,-20; 0,0" dur="35s" repeatCount="indefinite" />
+    </path>
+    <path d="M -200,400 Q 300,300 700,450 T 1400,350 T 1900,400 L 1900,700 L -200,700 Z" fill="#E54B5A" opacity="0.7">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -60,30; 0,0" dur="28s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- 8. DRAGON SILHOUETTE (Focal Subject - Upper Right) -->
+  <g transform="translate(1100, 250) scale(1.8)">
+    <!-- Gentle Bobbing/Sway Animation -->
+    <animateTransform attributeName="transform" type="translate" values="1100,250; 1090,260; 1100,250" dur="10s" repeatCount="indefinite" additive="sum" />
+    
+    <!-- Dragon Body & Head Silhouette -->
+    <use href="#dragonPath" fill="#1A0A1F" />
+
+    <!-- Rim Light (Right Wing) -->
+    <g opacity="0.85">
+      <use href="#wingR" fill="#FF6B00" transform="translate(180, 75) rotate(15)" filter="url(#f20)">
+        <animateTransform attributeName="transform" type="rotate" values="15,180,75; -5,180,75; 15,180,75" dur="6s" repeatCount="indefinite" additive="sum" />
+      </use>
+      <use href="#wingR" fill="#E54B5A" transform="translate(180, 75) rotate(15) scale(0.9)">
+        <animateTransform attributeName="transform" type="rotate" values="15,180,75; -5,180,75; 15,180,75" dur="6s" repeatCount="indefinite" additive="sum" />
+      </use>
+    </g>
+
+    <!-- Rim Light (Left Wing - Mirrored) -->
+    <g opacity="0.7">
+      <use href="#wingR" fill="#FF6B00" transform="translate(180, 75) scale(-1, 1) rotate(25)" filter="url(#f20)">
+        <animateTransform attributeName="transform" type="rotate" values="-25,180,75; 5,180,75; -25,180,75" dur="6s" repeatCount="indefinite" additive="sum" />
+      </use>
+      <use href="#wingR" fill="#E54B5A" transform="translate(180, 75) scale(-1, 1) rotate(25) scale(0.85)">
+        <animateTransform attributeName="transform" type="rotate" values="-25,180,75; 5,180,75; -25,180,75" dur="6s" repeatCount="indefinite" additive="sum" />
+      </use>
+    </g>
+  </g>
+
+  <!-- 9. Foreground Atmospheric Haze (Purple) -->
+  <rect x="0" y="0" width="1600" height="900" fill="#1A0A1F" opacity="0.15" filter="url(#f120)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="18s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- 10. Drifting Dust/Ember Particles -->
+  <!-- Group 1 -->
+  <g>
+    <use href="#pt1" x="200" y="200">
+      <animate attributeName="cy" values="200;150;200" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="200;250;200" dur="12s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt2" x="450" y="350">
+      <animate attributeName="cy" values="350;300;350" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="450;500;450" dur="14s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt3" x="800" y="150">
+      <animate attributeName="cy" values="150;100;150" dur="9s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="800;850;800" dur="11s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt4" x="1200" y="400">
+      <animate attributeName="cy" values="400;350;400" dur="13s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1200;1150;1200" dur="15s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt1" x="1500" y="250">
+      <animate attributeName="cy" values="250;200;250" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1500;1550;1500" dur="10s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt2" x="100" y="600">
+      <animate attributeName="cy" values="600;550;600" dur="11s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="100;150;100" dur="16s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt3" x="600" y="700">
+      <animate attributeName="cy" values="700;650;700" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="600;650;600" dur="13s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt4" x="1100" y="750">
+      <animate attributeName="cy" values="750;700;750" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1100;1050;1100" dur="14s" repeatCount="indefinite" />
+    </use>
+  </g>
+
+  <!-- Group 2 (Slower, larger particles) -->
+  <g opacity="0.6">
+    <use href="#pt1" x="300" y="500">
+      <animate attributeName="cy" values="500;400;500" dur="18s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="300;400;300" dur="22s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt3" x="900" y="300">
+      <animate attributeName="cy" values="300;200;300" dur="20s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="900;1000;900" dur="25s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt2" x="1400" y="600">
+      <animate attributeName="cy" values="600;500;600" dur="16s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1400;1300;1400" dur="19s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt4" x="50" y="800">
+      <animate attributeName="cy" values="800;700;800" dur="21s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="50;150;50" dur="24s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt1" x="700" y="100">
+      <animate attributeName="cy" values="100;50;100" dur="14s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="700;750;700" dur="17s" repeatCount="indefinite" />
+    </use>
+  </g>
+
+  <!-- Group 3 (Fire embers near dragon trail) -->
+  <g opacity="0.8">
+    <use href="#pt1" x="950" y="450">
+      <animate attributeName="cy" values="450;420;450" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="950;900;950" dur="5s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt2" x="850" y="480">
+      <animate attributeName="cy" values="480;450;480" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="850;800;850" dur="6s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt3" x="750" y="500">
+      <animate attributeName="cy" values="500;470;500" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="750;700;750" dur="4s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt4" x="1050" y="420">
+      <animate attributeName="cy" values="420;390;420" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1050;1000;1050" dur="7s" repeatCount="indefinite" />
+    </use>
+    <use href="#pt1" x="650" y="520">
+      <animate attributeName="cy" values="520;490;520" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="650;600;650" dur="8s" repeatCount="indefinite" />
+    </use>
+  </g>
+
+  <!-- 11. Foreground Clouds (Warm, closer) -->
+  <g filter="url(#f20)" opacity="0.4">
+    <path d="M -100,700 Q 200,650 500,750 T 1200,680 T 1800,720 L 1800,900 L -100,900 Z" fill="#FF6B00">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -120,10; 0,0" dur="45s" repeatCount="indefinite" />
+    </path>
+    <path d="M -200,800 Q 300,740 700,820 T 1400,760 T 1900,810 L 1900,900 L -200,900 Z" fill="#E54B5A" opacity="0.5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 80,-20; 0,0" dur="38s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- 12. Final Vignette / Edge Darkening -->
+  <rect width="1600" height="900" fill="none">
+    <animate attributeName="opacity" values="0;0" dur="1s" />
+  </rect>
+  <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+    <stop offset="60%" stop-color="#1A0A1F" stop-opacity="0" />
+    <stop offset="100%" stop-color="#1A0A1F" stop-opacity="0.6" />
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none" />
+
+</svg>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Layered Depth Blurs -->
+    <filter id="b60" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="b90" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="90"/>
+    </filter>
+    <filter id="b120" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="b160" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+
+    <!-- Atmospheric Grain -->
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feColorMatrix type="saturate" values="0" result="desat"/>
+      <feComponentTransfer result="alpha">
+        <feFuncA type="linear" slope="0.08"/>
+      </feComponentTransfer>
+      <feBlend mode="overlay" in="SourceGraphic" in2="alpha"/>
+    </filter>
+
+    <!-- Sky Gradient -->
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080A20"/>
+      <stop offset="25%" stop-color="#1E1A3D"/>
+      <stop offset="55%" stop-color="#2D1F4D"/>
+      <stop offset="80%" stop-color="#0A2E1F"/>
+      <stop offset="100%" stop-color="#061A12"/>
+      <animate attributeName="y1" values="0%;2%;0%" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="100%;98%;100%" dur="22s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- Tower Beam Gradient -->
+    <linearGradient id="beam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00E5C9" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00E5C9" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Hero Rim Light Glow -->
+    <radialGradient id="heroGlow" cx="60%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#00E5C9" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#00E5C9" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00E5C9" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Crystal Pulse -->
+    <radialGradient id="crystal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#00E5C9" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00E5C9" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Particle Path for Drift -->
+    <path id="driftPath" d="M -50,900 C 200,800 400,600 800,400 C 1200,200 1400,100 1650,50" fill="none"/>
+
+    <!-- Hero Breath Clip -->
+    <clipPath id="heroClip">
+      <rect x="450" y="350" width="160" height="300"/>
+    </clipPath>
+  </defs>
+
+  <!-- Layer 1: Sky Background -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- Layer 2: Deep Space Dusk Blobs -->
+  <g opacity="0.4" filter="url(#b160)">
+    <ellipse cx="400" cy="250" rx="300" ry="150" fill="#2D1F4D">
+      <animate attributeName="cx" values="400;420;400" dur="25s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1100" cy="180" rx="400" ry="200" fill="#1E1A3D">
+      <animate attributeName="cx" values="1100;1080;1100" dur="28s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="800" cy="400" rx="500" ry="100" fill="#0A2E1F" opacity="0.5"/>
+  </g>
+
+  <!-- Layer 3: Distant Far Mountain Silhouette -->
+  <path d="M 0,600 L 200,450 L 500,550 L 800,400 L 1100,520 L 1400,380 L 1600,500 L 1600,900 L 0,900 Z" fill="#0A1A15" opacity="0.6" filter="url(#b120)">
+    <animate attributeName="opacity" values="0.6;0.7;0.6" dur="18s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Layer 4: Mid Jungle Mass (Back) -->
+  <g opacity="0.8" filter="url(#b90)">
+    <!-- Left Mass -->
+    <path d="M -100,900 L 50,350 C 150,300 250,400 350,350 C 400,200 500,250 600,400 L 650,900 Z" fill="#0D3525"/>
+    <!-- Right Mass -->
+    <path d="M 1700,900 L 1550,300 C 1450,250 1350,350 1250,300 C 1200,150 1100,200 1000,350 L 950,900 Z" fill="#0D3525"/>
+    <!-- Floating mid leaves -->
+    <circle cx="250" cy="450" r="80" fill="#0F3D2B" opacity="0.7"/>
+    <circle cx="1350" cy="400" r="100" fill="#0F3D2B" opacity="0.7"/>
+  </g>
+
+  <!-- Layer 5: Atmospheric Fog Mid -->
+  <ellipse cx="800" cy="700" rx="900" ry="200" fill="#0A2E1F" opacity="0.3" filter="url(#b120)">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="20s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Layer 6: Front Jungle Foliage (Far Edges) -->
+  <g opacity="0.9" filter="url(#b60)">
+    <path d="M -50,900 L 0,200 C 100,150 200,300 300,250 C 350,100 450,150 550,300 L 600,900 Z" fill="#1A3D2E"/>
+    <path d="M 1650,900 L 1600,180 C 1500,130 1400,280 1300,230 C 1250,80 1150,130 1050,280 L 1000,900 Z" fill="#1A3D2E"/>
+    <!-- Giant Canopy Arches -->
+    <path d="M -100,0 C 200,150 400,50 600,200 C 500,100 300,0 -100,0 Z" fill="#0A261C"/>
+    <path d="M 1700,0 C 1400,150 1200,50 1000,200 C 1100,100 1300,0 1700,0 Z" fill="#0A261C"/>
+  </g>
+
+  <!-- Layer 7: Ground / Lane Floor -->
+  <path d="M 0,900 L 1600,900 L 1600,750 C 1400,730 1200,710 1000,700 C 800,690 600,710 400,720 C 200,730 0,750 0,750 Z" fill="#061A12"/>
+  <path d="M 0,900 L 1600,900 L 1600,780 C 1400,760 1200,740 1000,730 C 800,720 600,740 400,750 C 200,760 0,780 0,780 Z" fill="#0A2E1F" opacity="0.6"/>
+
+  <!-- Layer 8: Lane Floor Glow Reflection -->
+  <ellipse cx="1250" cy="760" rx="150" ry="30" fill="#00E5C9" opacity="0.15" filter="url(#b60)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Layer 9: Crystal Tower Structure Base -->
+  <g id="towerGroup" transform="translate(1250, 480)">
+    <!-- Main Pillar -->
+    <path d="M -40,300 L -30,-100 L 0,-180 L 30,-100 L 40,300 Z" fill="#0A2E1F" stroke="#00E5C9" stroke-width="2" opacity="0.8"/>
+    <!-- Floating Crystal Ring -->
+    <ellipse cx="0" cy="-50" rx="60" ry="15" fill="none" stroke="#00E5C9" stroke-width="3" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" values="0;15;0;-15;0" dur="8s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="0" cy="-50" rx="45" ry="10" fill="none" stroke="#00E5C9" stroke-width="2" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" values="0;-20;0;20;0" dur="12s" repeatCount="indefinite"/>
+    </ellipse>
+    <!-- Core Crystal -->
+    <polygon points="0,-220 -25,-100 0,20 25,-100" fill="url(#crystal)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- Energy Beam -->
+    <path d="M -15,-220 L -60,-600 L 60,-600 L 15,-220 Z" fill="url(#beam)">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <!-- Pulse Shockwaves -->
+    <circle cx="0" cy="-100" r="10" fill="none" stroke="#00E5C9" stroke-width="2" opacity="0">
+      <animate attributeName="r" values="10;120" dur="4s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="opacity" values="0.8;0" dur="4s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    <circle cx="0" cy="-100" r="10" fill="none" stroke="#00E5C9" stroke-width="1.5" opacity="0">
+      <animate attributeName="r" values="10;120" dur="4s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="0.8;0" dur="4s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+  </g>
+
+  <!-- Layer 10: Secondary Jungle Overhang (Framing) -->
+  <g opacity="0.95">
+    <path d="M -50,900 C 100,600 300,500 500,700 C 550,750 600,900 600,900 L -50,900 Z" fill="#0A261C"/>
+    <path d="M 1650,900 C 1500,600 1300,500 1100,700 C 1050,750 1000,900 1000,900 L 1650,900 Z" fill="#0A261C"/>
+  </g>
+
+  <!-- Layer 11: Hero Subject Silhouette (Center-Left) -->
+  <g id="hero" transform="translate(530, 480)" clip-path="url(#heroClip)">
+    <!-- Hero Rim Light Glow Behind -->
+    <ellipse cx="0" cy="-60" rx="100" ry="150" fill="url(#heroGlow)" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.8;0.6" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Hero Body (Simplified Armor Silhouette) -->
+    <path d="M -25,180 L -15,60 L -30,20 L -20,-30 L -35,-70 L 0,-100 L 35,-70 L 20,-30 L 30,20 L 15,60 L 25,180 Z" fill="#040A08"/>
+    
+    <!-- Hero Head -->
+    <circle cx="0" cy="-105" r="18" fill="#040A08"/>
+    
+    <!-- Hero Weapon (Spear/Staff) -->
+    <path d="M 20,-30 L 80,-180" stroke="#040A08" stroke-width="8" stroke-linecap="round"/>
+    <!-- Weapon blade tip glow -->
+    <circle cx="80" cy="-180" r="6" fill="#F5C97A">
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Hero Breath / Sway Animation -->
+    <animateTransform attributeName="transform" type="translate" values="530,480; 530,478; 530,480" dur="5s" repeatCount="indefinite" additive="replace"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 530 660; 1 530 660; 0 530 660; -1 530 660; 0 530 660" dur="6s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Layer 12: Minion Silhouettes Trailing -->
+  <g id="minions" opacity="0.7">
+    <!-- Minion 1 -->
+    <g transform="translate(420, 520)">
+      <path d="M -10,40 L -5,10 L -12,-5 L -5,-25 L 0,-35 L 5,-25 L 12,-5 L 5,10 L 10,40 Z" fill="#040A08"/>
+      <circle cx="0" cy="-40" r="8" fill="#040A08"/>
+      <animateTransform attributeName="transform" type="translate" values="420,520; 420,518; 420,520" dur="4s" repeatCount="indefinite" additive="replace"/>
+    </g>
+    <!-- Minion 2 -->
+    <g transform="translate(360, 540)">
+      <path d="M -8,35 L -4,8 L -10,-4 L -4,-20 L 0,-30 L 4,-20 L 10,-4 L 4,8 L 8,35 Z" fill="#040A08"/>
+      <circle cx="0" cy="-35" r="7" fill="#040A08"/>
+      <animateTransform attributeName="transform" type="translate" values="360,540; 360,538; 360,540" dur="4.5s" repeatCount="indefinite" additive="replace"/>
+    </g>
+    <!-- Minion 3 -->
+    <g transform="translate(300, 560)">
+      <path d="M -9,38 L -4,9 L -11,-4 L -4,-22 L 0,-32 L 4,-22 L 11,-4 L 4,9 L 9,38 Z" fill="#040A08"/>
+      <circle cx="0" cy="-37" r="7" fill="#040A08"/>
+      <animateTransform attributeName="transform" type="translate" values="300,560; 300,558; 300,560" dur="5s" repeatCount="indefinite" additive="replace"/>
+    </g>
+  </g>
+
+  <!-- Layer 13: Foreground Jungle Leaves (Extreme Close-up Framing) -->
+  <g opacity="0.85">
+    <!-- Top Left Cluster -->
+    <path d="M -50,-50 C 100,50 250,-50 400,100 C 300,50 150,150 -50,200 Z" fill="#061E14"/>
+    <!-- Top Right Cluster -->
+    <path d="M 1650,-50 C 1500,50 1350,-50 1200,100 C 1300,50 1450,150 1650,200 Z" fill="#061E14"/>
+    <!-- Bottom Left Vine -->
+    <path d="M -50,950 C 150,800 300,850 450,950 Z" fill="#040F0A"/>
+    <!-- Bottom Right Vine -->
+    <path d="M 1650,950 C 1450,800 1300,850 1150,950 Z" fill="#040F0A"/>
+  </g>
+
+  <!-- Layer 14: Massive Foreground Fog (Atmospheric Depth) -->
+  <rect x="0" y="500" width="1600" height="400" fill="#0A2E1F" opacity="0.2" filter="url(#b90)">
+    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="15s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 15: Fireflies / Warm Particles Drifting -->
+  <g id="fireflies">
+    <!-- Firefly 1 -->
+    <circle r="3" fill="#F5C97A">
+      <animateMotion dur="18s" repeatCount="indefinite" path="M 200,800 Q 400,600 600,400 T 1000,200"/>
+      <animate attributeName="opacity" values="0;1;0.5;1;0" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Firefly 2 -->
+    <circle r="2.5" fill="#F5C97A">
+      <animateMotion dur="22s" repeatCount="indefinite" path="M 150,750 Q 350,550 700,350 T 1200,150"/>
+      <animate attributeName="opacity" values="0;0.8;0.3;0.8;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Firefly 3 -->
+    <circle r="3.5" fill="#F5C97A">
+      <animateMotion dur="25s" repeatCount="indefinite" path="M 300,850 Q 500,650 800,450 T 1300,250"/>
+      <animate attributeName="opacity" values="0;1;0;1;0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="1.5;3.5;1.5" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Firefly 4 -->
+    <circle r="2" fill="#F5C97A">
+      <animateMotion dur="20s" repeatCount="indefinite" path="M 500,900 Q 700,700 900,500 T 1400,300"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Firefly 5 -->
+    <circle r="3" fill="#F5C97A">
+      <animateMotion dur="24s" repeatCount="indefinite" path="M 100,700 Q 300,500 600,300 T 1100,100"/>
+      <animate attributeName="opacity" values="0;1;0.5;1;0" dur="5.5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Firefly 6 -->
+    <circle r="2.5" fill="#F5C97A">
+      <animateMotion dur="19s" repeatCount="indefinite" path="M 50,800 Q 250,600 500,400 T 900,200"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Firefly 7 -->
+    <circle r="2" fill="#F5C97A">
+      <animateMotion dur="21s" repeatCount="indefinite" path="M 400,850 Q 600,650 900,450 T 1400,250"/>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Firefly 8 -->
+    <circle r="3" fill="#F5C97A">
+      <animateMotion dur="23s" repeatCount="indefinite" path="M 250,950 Q 450,750 750,550 T 1250,350"/>
+      <animate attributeName="opacity" values="0;0.7;0.3;0.7;0" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;4;2" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 16: Cool Energy Particles (Tower Emission) -->
+  <g id="energyParticles">
+    <!-- Particle 1 -->
+    <circle r="2" fill="#00E5C9">
+      <animateMotion dur="10s" repeatCount="indefinite" path="M 1250,480 C 1150,400 1050,300 950,200"/>
+      <animate attributeName="opacity" values="1;0" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;0.5" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 2 -->
+    <circle r="1.5" fill="#00E5C9">
+      <animateMotion dur="12s" repeatCount="indefinite" path="M 1250,480 C 1200,350 1100,250 1000,150"/>
+      <animate attributeName="opacity" values="1;0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 3 -->
+    <circle r="2.5" fill="#00E5C9">
+      <animateMotion dur="8s" repeatCount="indefinite" path="M 1250,480 C 1300,400 1350,300 1400,200"/>
+      <animate attributeName="opacity" values="1;0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2.5;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 4 -->
+    <circle r="1.5" fill="#00E5C9">
+      <animateMotion dur="11s" repeatCount="indefinite" path="M 1250,480 C 1180,420 1080,380 980,300"/>
+      <animate attributeName="opacity" values="1;0" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 5 -->
+    <circle r="2" fill="#00E5C9">
+      <animateMotion dur="9s" repeatCount="indefinite" path="M 1250,480 C 1280,400 1320,320 1380,240"/>
+      <animate attributeName="opacity" values="1;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 6 -->
+    <circle r="1" fill="#00E5C9">
+      <animateMotion dur="13s" repeatCount="indefinite" path="M 1250,480 C 1220,350 1180,250 1140,150"/>
+      <animate attributeName="opacity" values="1;0" dur="13s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 7 -->
+    <circle r="2" fill="#00E5C9">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M 1250,480 C 1320,420 1380,360 1450,280"/>
+      <animate attributeName="opacity" values="1;0" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Particle 8 -->
+    <circle r="1.5" fill="#00E5C9">
+      <animateMotion dur="14s" repeatCount="indefinite" path="M 1250,480 C 1150,450 1050,400 950,350"/>
+      <animate attributeName="opacity" values="1;0" dur="14s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 17: Dust Motes (Ambient Atmosphere) -->
+  <g id="dust" opacity="0.5">
+    <!-- Dust 1 -->
+    <circle r="1.5" fill="#F5C97A">
+      <animateMotion dur="25s" repeatCount="indefinite" path="M 0,600 Q 400,400 800,300 T 1600,200"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Dust 2 -->
+    <circle r="1" fill="#F5C97A">
+      <animateMotion dur="28s" repeatCount="indefinite" path="M 100,700 Q 500,500 900,400 T 1600,300"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Dust 3 -->
+    <circle r="1.5" fill="#F5C97A">
+      <animateMotion dur="22s" repeatCount="indefinite" path="M 200,800 Q 600,600 1000,500 T 1600,400"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Dust 4 -->
+    <circle r="1" fill="#F5C97A">
+      <animateMotion dur="30s" repeatCount="indefinite" path="M 50,500 Q 350,350 650,250 T 1200,150"/>
+      <animate attributeName="opacity" values="0;0.3;0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 18: Tower Light Flare Overlay -->
+  <circle cx="1250" cy="300" r="250" fill="url(#crystal)" opacity="0.3" pointer-events="none" filter="url(#b60)">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Layer 19: Final Grain & Vignette -->
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)" pointer-events="none"/>
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="50%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.7"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+
+</svg>

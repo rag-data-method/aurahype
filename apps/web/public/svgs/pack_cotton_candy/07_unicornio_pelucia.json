@@ -1,0 +1,24 @@
+{
+  "slug": "07_unicornio_pelucia",
+  "title": "Unicórnio de Pelúcia",
+  "category": "cotton_candy",
+  "objects": "plush unicorn + pastel rainbow arc + star wand",
+  "colors": {
+    "primary": "#C7CEEA",
+    "secondary": "#FFB7B2",
+    "accent": "#E2F0CB",
+    "bg": "#FFFFFF"
+  },
+  "tags": [
+    "light",
+    "candy",
+    "toy",
+    "magic"
+  ],
+  "svgFile": "07_unicornio_pelucia.svg",
+  "sizeKB": 9.5,
+  "animations": 26,
+  "gradients": 4,
+  "generatedAt": "2026-06-19",
+  "model": "@cf/moonshotai/kimi-k2.7-code"
+}

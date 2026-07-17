@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Physical drop shadow for the die-cut sticker -->
+    <filter id="sticker-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
+      <feOffset in="blur" dx="0" dy="14" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadowAlpha">
+        <feFuncA type="linear" slope="0.45"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadowAlpha"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip path to keep pop art bursts strictly inside the white border -->
+    <clipPath id="sticker-clip">
+      <path d="M 500 130 
+               C 640 130, 740 180, 790 260 
+               C 840 340, 860 440, 850 540 
+               C 840 640, 800 740, 720 800 
+               C 640 860, 560 880, 500 880 
+               C 420 880, 320 850, 250 780 
+               C 180 710, 140 600, 140 480 
+               C 140 360, 180 250, 260 190 
+               C 340 130, 420 130, 500 130 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Sticker Drop Shadow -->
+  <ellipse cx="500" cy="890" rx="380" ry="60" fill="#000000" opacity="0.25" filter="url(#sticker-shadow)"/>
+
+  <!-- Sticker Thick White Die-Cut Border (base) -->
+  <path d="M 500 130 
+           C 640 130, 740 180, 790 260 
+           C 840 340, 860 440, 850 540 
+           C 840 640, 800 740, 720 800 
+           C 640 860, 560 880, 500 880 
+           C 420 880, 320 850, 250 780 
+           C 180 710, 140 600, 140 480 
+           C 140 360, 180 250, 260 190 
+           C 340 130, 420 130, 500 130 Z" 
+        fill="#FFFFFF" stroke="#FFFFFF" stroke-width="55" stroke-linejoin="round"/>
+
+  <!-- Sticker Thick White Die-Cut Border (outline for perfect vector edge) -->
+  <path d="M 500 130 
+           C 640 130, 740 180, 790 260 
+           C 840 340, 860 440, 850 540 
+           C 840 640, 800 740, 720 800 
+           C 640 860, 560 880, 500 880 
+           C 420 880, 320 850, 250 780 
+           C 180 710, 140 600, 140 480 
+           C 140 360, 180 250, 260 190 
+           C 340 130, 420 130, 500 130 Z" 
+        fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- Main Illustration Group -->
+  <g clip-path="url(#sticker-clip)">
+    
+    <!-- Background Pop Art Bursts -->
+    <g id="bg-bursts">
+      <path d="M 500 500 L 160 160 L 500 500 L 840 160 L 500 500 L 160 840 L 500 500 L 840 840 Z" fill="#FF0090" stroke="none"/>
+      <path d="M 500 500 L 500 140 L 500 500 L 860 500 L 500 500 L 500 860 L 500 500 L 140 500 Z" fill="#00E5FF" stroke="none"/>
+      <path d="M 500 500 L 300 200 L 500 500 L 700 200 L 500 500 L 800 500 L 500 500 L 700 800 L 500 500 L 300 800 L 500 500 L 200 500 Z" fill="#FFE600" stroke="none"/>
+      <path d="M 500 500 L 380 180 L 500 500 L 620 180 L 500 500 L 820 500 L 500 500 L 620 820 L 500 500 L 380 820 L 500 500 L 180 500 Z" fill="#FF0090" stroke="none"/>
+      <circle cx="500" cy="500" r="260" fill="#00E5FF"/>
+      <circle cx="500" cy="500" r="210" fill="#FFE600"/>
+      <circle cx="500" cy="500" r="160" fill="#FF0090"/>
+    </g>
+
+    <!-- HALFTONE DOTS -->
+    <g id="halftone">
+      <!-- Cyan dots -->
+      <circle cx="200" cy="200" r="18" fill="#00E5FF"/>
+      <circle cx="270" cy="200" r="18" fill="#00E5FF"/>
+      <circle cx="200" cy="270" r="18" fill="#00E5FF"/>
+      <circle cx="270" cy="270" r="18" fill="#00E5FF"/>
+      <circle cx="230" cy="235" r="18" fill="#00E5FF"/>
+      
+      <circle cx="730" cy="200" r="18" fill="#00E5FF"/>
+      <circle cx="800" cy="200" r="18" fill="#00E5FF"/>
+      <circle cx="730" cy="270" r="18" fill="#00E5FF"/>
+      <circle cx="800" cy="270" r="18" fill="#00E5FF"/>
+      <circle cx="765" cy="235" r="18" fill="#00E5FF"/>
+
+      <circle cx="200" cy="730" r="18" fill="#00E5FF"/>
+      <circle cx="270" cy="730" r="18" fill="#00E5FF"/>
+      <circle cx="200" cy="800" r="18" fill="#00E5FF"/>
+      <circle cx="270" cy="800" r="18" fill="#00E5FF"/>
+      <circle cx="230" cy="765" r="18" fill="#00E5FF"/>
+
+      <circle cx="730" cy="730" r="18" fill="#00E5FF"/>
+      <circle cx="800" cy="730" r="18" fill="#00E5FF"/>
+      <circle cx="730" cy="800" r="18" fill="#00E5FF"/>
+      <circle cx="800" cy="800" r="18" fill="#00E5FF"/>
+      <circle cx="765" cy="765" r="18" fill="#00E5FF"/>
+
+      <!-- Yellow dots -->
+      <circle cx="320" cy="150" r="14" fill="#FFE600"/>
+      <circle cx="380" cy="150" r="14" fill="#FFE600"/>
+      <circle cx="440" cy="150" r="14" fill="#FFE600"/>
+      <circle cx="560" cy="150" r="14" fill="#FFE600"/>
+      <circle cx="620" cy="150" r="14" fill="#FFE600"/>
+      <circle cx="680" cy="150" r="14" fill="#FFE600"/>
+
+      <circle cx="150" cy="320" r="14" fill="#FFE600"/>
+      <circle cx="150" cy="380" r="14" fill="#FFE600"/>
+      <circle cx="150" cy="440" r="14" fill="#FFE600"/>
+      <circle cx="150" cy="560" r="14" fill="#FFE600"/>
+      <circle cx="150" cy="620" r="14" fill="#FFE600"/>
+      <circle cx="150" cy="680" r="14" fill="#FFE600"/>
+
+      <circle cx="850" cy="320" r="14" fill="#FFE600"/>
+      <circle cx="850" cy="380" r="14" fill="#FFE600"/>
+      <circle cx="850" cy="440" r="14" fill="#FFE600"/>
+      <circle cx="850" cy="560" r="14" fill="#FFE600"/>
+      <circle cx="850" cy="620" r="14" fill="#FFE600"/>
+      <circle cx="850" cy="680" r="14" fill="#FFE600"/>
+
+      <circle cx="320" cy="850" r="14" fill="#FFE600"/>
+      <circle cx="380" cy="850" r="14" fill="#FFE600"/>
+      <circle cx="440" cy="850" r="14" fill="#FFE600"/>
+      <circle cx="560" cy="850" r="14" fill="#FFE600"/>
+      <circle cx="620" cy="850" r="14" fill="#FFE600"/>
+      <circle cx="680" cy="850" r="14" fill="#FFE600"/>
+    </g>
+
+    <!-- BURGER OUTLINE SHADOW (Offset for retro depth) -->
+    <g transform="translate(8, 12)" fill="#000000" opacity="0.3">
+      <!-- Bottom Bun Shadow -->
+      <path d="M 300 700 L 700 700 C 700 800, 620 820, 500 820 C 380 820, 300 800, 300 700 Z"/>
+      <!-- Patty Shadow -->
+      <path d="M 270 620 L 730 620 C 750 620, 760 640, 760 660 C 760 680, 750 700, 730 700 L 270 700 C 250 700, 240 680, 240 660 C 240 640, 250 620, 270 620 Z"/>
+      <!-- Cheese Shadow -->
+      <path d="M 260 560 L 740 560 L 700 660 L 630 600 L 560 680 L 500 600 L 440 680 L 370 600 L 300 660 L 260 560 Z"/>
+      <!-- Tomato Shadow -->
+      <path d="M 280 500 L 720 500 C 740 500, 750 520, 750 540 C 750 560, 740 580, 720 580 L 280 580 C 260 580, 250 560, 250 540 C 250 520, 260 500, 280 500 Z"/>
+      <!-- Lettuce Shadow -->
+      <path d="M 250 440 C 270 440, 290 420, 320 440 C 350 460, 380 420, 420 440 C 460 460, 500 420, 540 440 C 580 460, 620 420, 660 440 C 700 460, 730 420, 750 440 L 750 500 C 730 480, 700 520, 660 500 C 620 480, 580 520, 540 500 C 500 480, 460 520, 420 500 C 380 480, 350 520, 320 500 C 290 480, 270 520, 250 500 Z"/>
+      <!-- Top Bun Shadow -->
+      <path d="M 500 180 C 680 180, 760 320, 760 440 L 240 440 C 240 320, 320 180, 500 180 Z"/>
+    </g>
+
+    <!-- BURGER ILLUSTRATION -->
+    <!-- Bottom Bun -->
+    <path d="M 300 700 L 700 700 C 700 800, 620 820, 500 820 C 380 820, 300 800, 300 700 Z" fill="#F5A623" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M 320 700 C 320 760, 400 780, 500 780 C 600 780, 680 760, 680 700" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Beef Patty -->
+    <path d="M 270 620 L 730 620 C 750 620, 760 640, 760 660 C 760 680, 750 700, 730 700 L 270 700 C 250 700, 240 680, 240 660 C 240 640, 250 620, 270 620 Z" fill="#8B4513" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M 270 640 L 730 640" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 270 660 L 730 660" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 270 680 L 730 680" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Melted Cheese -->
+    <path d="M 260 560 L 740 560 L 700 660 L 630 600 L 560 680 L 500 600 L 440 680 L 370 600 L 300 660 L 260 560 Z" fill="#FFE600" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+    <!-- Cheese holes -->
+    <circle cx="450" cy="590" r="12" fill="#000000" opacity="0.8"/>
+    <circle cx="550" cy="590" r="10" fill="#000000" opacity="0.8"/>
+    <circle cx="380" cy="570" r="8" fill="#000000" opacity="0.8"/>
+
+    <!-- Tomato -->
+    <path d="M 280 500 L 720 500 C 740 500, 750 520, 750 540 C 750 560, 740 580, 720 580 L 280 580 C 260 580, 250 560, 250 540 C 250 520, 260 500, 280 500 Z" fill="#FF0000" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M 320 500 L 320 580 M 380 500 L 380 580 M 440 500 L 440 580 M 500 500 L 500 580 M 560 500 L 560 580 M 620 500 L 620 580 M 680 500 L 680 580" fill="none" stroke="#000000" stroke-width="5"/>
+
+    <!-- Lettuce -->
+    <path d="M 250 440 C 270 440, 290 420, 320 440 C 350 460, 380 420, 420 440 C 460 460, 500 420, 540 440 C 580 460, 620 420, 660 440 C 700 460, 730 420, 750 440 L 750 500 C 730 480, 700 520, 660 500 C 620 480, 580 520, 540 500 C 500 480, 460 520, 420 500 C 380 480, 350 520, 320 500 C 290 480, 270 520, 250 500 Z" fill="#7ED321" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M 320 440 L 320 500 M 420 440 L 420 500 M 540 440 L 540 500 M 660 440 L 660 500" fill="none" stroke="#000000" stroke-width="5"/>
+
+    <!-- Top Bun -->
+    <path d="M 500 180 C 680 180, 760 320, 760 440 L 240 440 C 240 320, 320 180, 500 180 Z" fill="#F5A623" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M 280 440 C 280 340, 360 240, 500 240 C 640 240, 720 340, 720 440" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Sesame Seeds -->
+    <g fill="#FFE600" stroke="#000000" stroke-width="5" stroke-linecap="round">
+      <ellipse cx="500" cy="280" rx="10" ry="6" transform="rotate(-15 500 280)"/>
+      <ellipse cx="420" cy="310" rx="10" ry="6" transform="rotate(20 420 310)"/>
+      <ellipse cx="580" cy="310" rx="10" ry="6" transform="rotate(-25 580 310)"/>
+      <ellipse cx="360" cy="360" rx="10" ry="6" transform="rotate(10 360 360)"/>
+      <ellipse cx="640" cy="360" rx="10" ry="6" transform="rotate(-10 640 360)"/>
+      <ellipse cx="450" cy="390" rx="10" ry="6" transform="rotate(-30 450 390)"/>
+      <ellipse cx="550" cy="390" rx="10" ry="6" transform="rotate(15 550 390)"/>
+      <ellipse cx="500" cy="340" rx="10" ry="6" transform="rotate(5 500 340)"/>
+      <ellipse cx="320" cy="410" rx="10" ry="6" transform="rotate(40 320 410)"/>
+      <ellipse cx="680" cy="410" rx="10" ry="6" transform="rotate(-40 680 410)"/>
+    </g>
+
+    <!-- Retro Text "YUM" -->
+    <g transform="translate(0, 0)">
+      <!-- Y -->
+      <path d="M 160 340 L 200 400 L 240 340" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="200" y1="400" x2="200" y2="460" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+      <!-- Fill for Y -->
+      <path d="M 160 340 L 200 400 L 240 340 L 210 340 L 200 355 L 190 340 Z" fill="#FF0090"/>
+      <line x1="200" y1="400" x2="200" y2="460" stroke="#FF0090" stroke-width="8" stroke-linecap="round"/>
+
+      <!-- U -->
+      <path d="M 260 340 L 260 440 C 260 470, 300 470, 300 440 L 300 340" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Fill for U -->
+      <path d="M 260 340 L 260 440 C 260 470, 300 470, 300 440 L 300 340 L 280 340 L 280 440 C 280 450, 290 450, 290 440 L 290 340 Z" fill="#00E5FF"/>
+
+      <!-- M -->
+      <path d="M 320 340 L 320 460 L 360 400 L 400 460 L 400 340" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Fill for M -->
+      <path d="M 320 340 L 320 460 L 340 430 L 340 340 Z M 380 340 L 380 430 L 400 460 L 400 340 Z" fill="#FFE600"/>
+    </g>
+
+  </g>
+</svg>

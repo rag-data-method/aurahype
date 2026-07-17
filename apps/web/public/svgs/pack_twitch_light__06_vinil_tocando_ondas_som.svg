@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="faintGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.5" />
+    </filter>
+  </defs>
+
+  <g id="background-elements">
+    <circle cx="150" cy="150" r="120" fill="url(#grad1)" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="650" cy="450" r="180" fill="url(#grad2)" opacity="0.3" />
+    
+    <path d="M 0 100 Q 400 0 800 80" stroke="#F2EBE5" stroke-width="1" opacity="0.6" />
+    <path d="M 0 500 Q 400 600 800 520" stroke="#E5E0F2" stroke-width="1" opacity="0.6" />
+
+    <circle cx="100" cy="500" r="30" fill="url(#grad3)" opacity="0.5" />
+    <circle cx="700" cy="100" r="40" fill="url(#grad4)" opacity="0.4" />
+  </g>
+
+  <g id="sound-waves">
+    <circle cx="400" cy="300" r="140" stroke="#E5E0F2" stroke-width="1" opacity="0" filter="url(#softGlow)" fill="none">
+      <animate id="wave1" attributeName="r" values="140;300" dur="6s" begin="0s;wave1.end+2s" />
+      <animate attributeName="opacity" values="0;0.6;0" dur="6s" begin="0s;wave1.end+2s" />
+      <animate attributeName="stroke-width" values="2;0.5" dur="6s" begin="0s;wave1.end+2s" />
+    </circle>
+    <circle cx="400" cy="300" r="140" stroke="#F2C6DE" stroke-width="1" opacity="0" filter="url(#softGlow)" fill="none">
+      <animate id="wave2" attributeName="r" values="140;300" dur="6s" begin="1.5s;wave2.end+2s" />
+      <animate attributeName="opacity" values="0;0.6;0" dur="6s" begin="1.5s;wave2.end+2s" />
+      <animate attributeName="stroke-width" values="2;0.5" dur="6s" begin="1.5s;wave2.end+2s" />
+    </circle>
+    <circle cx="400" cy="300" r="140" stroke="#C6DAF2" stroke-width="1" opacity="0" filter="url(#softGlow)" fill="none">
+      <animate id="wave3" attributeName="r" values="140;300" dur="6s" begin="3s;wave3.end+2s" />
+      <animate attributeName="opacity" values="0;0.6;0" dur="6s" begin="3s;wave3.end+2s" />
+      <animate attributeName="stroke-width" values="2;0.5" dur="6s" begin="3s;wave3.end+2s" />
+    </circle>
+    <circle cx="400" cy="300" r="140" stroke="#F2EBE5" stroke-width="1" opacity="0" filter="url(#softGlow)" fill="none">
+      <animate id="wave4" attributeName="r" values="140;300" dur="6s" begin="4.5s;wave4.end+2s" />
+      <animate attributeName="opacity" values="0;0.6;0" dur="6s" begin="4.5s;wave4.end+2s" />
+      <animate attributeName="stroke-width" values="2;0.5" dur="6s" begin="4.5s;wave4.end+2s" />
+    </circle>
+  </g>
+
+  <g id="vinyl-record" transform="translate(400, 300)">
+    <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="20s" repeatCount="indefinite" additive="sum" />
+
+    <circle cx="0" cy="0" r="140" fill="url(#vinylBase)" />
+    <circle cx="0" cy="0" r="140" stroke="#D1C4E9" stroke-width="1" opacity="0.3" fill="none" />
+    <circle cx="0" cy="0" r="138" stroke="#F2EBE5" stroke-width="1" opacity="0.15" fill="none" />
+    <circle cx="0" cy="0" r="135" stroke="#C6DAF2" stroke-width="1" opacity="0.2" fill="none" />
+    <circle cx="0" cy="0" r="130" stroke="#F2C6DE" stroke-width="1" opacity="0.25" fill="none" />
+    <circle cx="0" cy="0" r="125" stroke="#E5E0F2" stroke-width="1" opacity="0.3" fill="none" />
+    <circle cx="0" cy="0" r="120" stroke="#D1C4E9" stroke-width="1" opacity="0.2" fill="none" />
+    <circle cx="0" cy="0" r="115" stroke="#C6DAF2" stroke-width="1" opacity="0.25" fill="none" />
+    <circle cx="0" cy="0" r="110" stroke="#F2C6DE" stroke-width="1" opacity="0.3" fill="none" />
+    <circle cx="0" cy="0" r="105" stroke="#F2EBE5" stroke-width="1" opacity="0.2" fill="none" />
+    <circle cx="0" cy="0" r="100" stroke="#E5E0F2" stroke-width="1" opacity="0.3" fill="none" />
+    <circle cx="0" cy="0" r="95" stroke="#F2C6DE" stroke-width="1" opacity="0.25" fill="none" />
+    <circle cx="0" cy="0" r="90" stroke="#C6DAF2" stroke-width="1" opacity="0.2" fill="none" />
+    <circle cx="0" cy="0" r="85" stroke="#D1C4E9" stroke-width="1" opacity="0.15" fill="none" />
+    <circle cx="0" cy="0" r="80" stroke="#F2EBE5" stroke-width="1" opacity="0.3" fill="none" />
+    <circle cx="0" cy="0" r="75" stroke="#F2C6DE" stroke-width="1" opacity="0.2" fill="none" />
+    <circle cx="0" cy="0" r="70" stroke="#E5E0F2" stroke-width="1" opacity="0.25" fill="none" />
+    <circle cx="0" cy="0" r="65" stroke="#C6DAF2" stroke-width="1" opacity="0.3" fill="none" />
+    <circle cx="0" cy="0" r="60" stroke="#F2C6DE" stroke-width="1" opacity="0.2" fill="none" />
+    <circle cx="0" cy="0" r="55" stroke="#D1C4E9" stroke-width="1" opacity="0.15" fill="none" />
+
+    <circle cx="0" cy="0" r="45" fill="url(#labelOuter)" filter="url(#softGlow)" />
+    <circle cx="0" cy="0" r="45" stroke="#E53935" stroke-width="1" opacity="0.4" fill="none">
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="42" fill="url(#labelInner)" />
+    <circle cx="0" cy="0" r="42" stroke="#FFFFFF" stroke-width="1" opacity="0.5" fill="none" />
+
+    <g id="label-text-outer" filter="url(#faintGlow)">
+      <path id="textPath1" d="M -38,0 A 38,38 0 1,1 38,0 A 38,38 0 1,1 -38,0" fill="none" />
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="7" font-weight="300" letter-spacing="2" opacity="0.7">
+        <textPath href="#textPath1" startOffset="0%">
+          <animate attributeName="startOffset" from="0%" to="100%" dur="40s" repeatCount="indefinite" />
+          MORNING VIBES - LO-FI - MORNING VIBES - LO-FI - MORNING VIBES - LO-FI - 
+        </textPath>
+      </text>
+    </g>
+    
+    <g id="label-text-inner" filter="url(#faintGlow)">
+      <path id="textPath2" d="M -28,0 A 28,28 0 1,0 28,0 A 28,28 0 1,0 -28,0" fill="none" />
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="6" font-weight="300" letter-spacing="2" opacity="0.7">
+        <textPath href="#textPath2" startOffset="0%">
+          <animate attributeName="startOffset" from="100%" to="0%" dur="40s" repeatCount="indefinite" />
+          PASTEL MORNING - PASTEL MORNING - PASTEL MORNING - 
+        </textPath>
+      </text>
+    </g>
+
+    <circle cx="0" cy="0" r="6" fill="url(#hole)" stroke="#FFFFFF" stroke-width="1" opacity="0.6" />
+
+    <path d="M 0 -140 A 140 140 0 0 1 80 -120" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.1" />
+  </g>
+
+  <g id="center-glow">
+    <circle cx="400" cy="300" r="45" fill="url(#grad5)" opacity="0.2" filter="url(#softGlow)">
+      <animate attributeName="r" values="45;50;45" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2;0.3;0.2" dur="6s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <defs>
+    <linearGradient id="vinylBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8F5F2" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#E5DED8" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#D1C4E9" stop-opacity="0.9" />
+    </linearGradient>
+    <radialGradient id="labelOuter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2C6DE" />
+      <stop offset="70%" stop-color="#E5A3C9" />
+      <stop offset="100%" stop-color="#D689B8" />
+    </radialGradient>
+    <radialGradient id="labelInner" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2EBE5" />
+      <stop offset="100%" stop-color="#E5DED8" />
+    </radialGradient>
+    <radialGradient id="hole" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3A3A3A" />
+      <stop offset="100%" stop-color="#1A1A1A" />
+    </radialGradient>
+
+    <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2C6DE" />
+      <stop offset="100%" stop-color="#F2C6DE" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="grad2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C6DAF2" />
+      <stop offset="100%" stop-color="#C6DAF2" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="grad3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2EBE5" />
+      <stop offset="100%" stop-color="#F2EBE5" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="grad4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E5E0F2" />
+      <stop offset="100%" stop-color="#E5E0F2" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="grad5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2C6DE" />
+      <stop offset="100%" stop-color="#F2C6DE" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>

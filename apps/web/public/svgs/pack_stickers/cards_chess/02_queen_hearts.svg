@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Halftone Dot Pattern (Pop Art Essential) -->
+    <pattern id="halftone" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="4" fill="#C62828" opacity="0.6"/>
+      <circle cx="0" cy="0" r="2" fill="#C62828" opacity="0.6"/>
+      <circle cx="16" cy="0" r="2" fill="#C62828" opacity="0.6"/>
+      <circle cx="0" cy="16" r="2" fill="#C62828" opacity="0.6"/>
+      <circle cx="16" cy="16" r="2" fill="#C62828" opacity="0.6"/>
+    </pattern>
+
+    <!-- Halftone Blue Pattern -->
+    <pattern id="halftone-blue" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="4" fill="#1565C0" opacity="0.8"/>
+      <circle cx="0" cy="0" r="2" fill="#1565C0" opacity="0.8"/>
+      <circle cx="16" cy="0" r="2" fill="#1565C0" opacity="0.8"/>
+      <circle cx="0" cy="16" r="2" fill="#1565C0" opacity="0.8"/>
+      <circle cx="16" cy="16" r="2" fill="#1565C0" opacity="0.8"/>
+    </pattern>
+
+    <!-- Gold Gradient for Crown -->
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFEB3B"/>
+      <stop offset="50%" stop-color="#FFC107"/>
+      <stop offset="100%" stop-color="#FF9800"/>
+    </linearGradient>
+
+    <!-- Lip Gradient -->
+    <linearGradient id="lipRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF1744"/>
+      <stop offset="100%" stop-color="#D50000"/>
+    </linearGradient>
+
+    <!-- Speech Bubble Tail Path -->
+    <path id="bubbleTail" d="M 0,0 L 20,-10 L 10,10 Z" fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- STICKER DIE-CUT BORDER (Thick White)       -->
+  <!-- ========================================== -->
+  <circle cx="500" cy="500" r="480" fill="none" stroke="#FFFFFF" stroke-width="32"/>
+
+  <!-- ========================================== -->
+  <!-- MAIN STICKER CIRCLE BACKGROUND             -->
+  <!-- ========================================== -->
+  <circle cx="500" cy="500" r="480" fill="#FCE4EC" stroke="#000000" stroke-width="12"/>
+
+  <!-- ========================================== -->
+  <!-- BACKGROUND HALFTONES & DECORATIONS         -->
+  <!-- ========================================== -->
+  <!-- Top Left Halftone Burst -->
+  <circle cx="200" cy="200" r="180" fill="url(#halftone)"/>
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#000000" stroke-width="8"/>
+  
+  <!-- Bottom Right Halftone Burst -->
+  <circle cx="800" cy="800" r="180" fill="url(#halftone-blue)"/>
+  <circle cx="800" cy="800" r="180" fill="none" stroke="#000000" stroke-width="8"/>
+
+  <!-- ========================================== -->
+  <!-- ROYAL BANNER / SCROLL BACKGROUND           -->
+  <!-- ========================================== -->
+  <path d="M 150,850 Q 500,950 850,850 L 850,750 Q 500,850 150,750 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+  <path d="M 150,750 Q 500,850 850,750" fill="none" stroke="#000000" stroke-width="4"/>
+  
+  <!-- ========================================== -->
+  <!-- THE QUEEN CHARACTER                        -->
+  <!-- ========================================== -->
+  <g id="Queen">
+    
+    <!-- Hair (Back) -->
+    <path d="M 300,400 Q 250,600 280,750 Q 320,800 400,780 L 600,780 Q 680,800 720,750 Q 750,600 700,400 Z" fill="#212121" stroke="#000000" stroke-width="8"/>
+
+    <!-- Dress / Robes -->
+    <path d="M 350,700 Q 300,900 200,920 L 800,920 Q 700,900 650,700 Z" fill="#D32F2F" stroke="#000000" stroke-width="8"/>
+    <!-- Dress Collar -->
+    <path d="M 350,700 Q 500,850 650,700 L 650,650 Q 500,800 350,650 Z" fill="#FFFFFF" stroke="#000000" stroke-width="6"/>
+    <!-- Dress Trim -->
+    <path d="M 250,880 L 750,880" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-dasharray="20,10"/>
+    <path d="M 250,880 L 750,880" fill="none" stroke="#000000" stroke-width="12" stroke-dasharray="20,10" stroke-dashoffset="10"/>
+
+    <!-- Neck -->
+    <path d="M 420,550 L 420,650 Q 500,680 580,650 L 580,550 Z" fill="#FFCCBC" stroke="#000000" stroke-width="6"/>
+
+    <!-- Face Base -->
+    <path d="M 320,350 Q 300,550 400,650 Q 500,720 600,650 Q 700,550 680,350 Q 500,300 320,350 Z" fill="#FFCCBC" stroke="#000000" stroke-width="8"/>
+
+    <!-- Cheek Blush (Halftone) -->
+    <ellipse cx="380" cy="520" rx="40" ry="25" fill="url(#halftone)"/>
+    <ellipse cx="620" cy="520" rx="40" ry="25" fill="url(#halftone)"/>
+
+    <!-- Eyes (Lichtenstein Style) -->
+    <!-- Left Eye -->
+    <g transform="translate(380, 450)">
+      <path d="M -40,-20 Q 0,-40 40,-20 Q 0,0 -40,-20 Z" fill="#FFFFFF" stroke="#000000" stroke-width="5"/>
+      <circle cx="0" cy="-25" r="8" fill="#000000"/>
+      <!-- Eye Lash -->
+      <path d="M -40,-20 L -50,-35 M 40,-20 L 50,-35" stroke="#000000" stroke-width="5" stroke-linecap="round"/>
+      <!-- Dramatic Eyelid Shadow -->
+      <path d="M -40,-20 Q 0,-10 40,-20" fill="none" stroke="#000000" stroke-width="4"/>
+    </g>
+    <!-- Right Eye -->
+    <g transform="translate(620, 450)">
+      <path d="M -40,-20 Q 0,-40 40,-20 Q 0,0 -40,-20 Z" fill="#FFFFFF" stroke="#000000" stroke-width="5"/>
+      <circle cx="0" cy="-25" r="8" fill="#000000"/>
+      <path d="M -40,-20 L -50,-35 M 40,-20 L 50,-35" stroke="#000000" stroke-width="5" stroke-linecap="round"/>
+      <path d="M -40,-20 Q 0,-10 40,-20" fill="none" stroke="#000000" stroke-width="4"/>
+    </g>
+
+    <!-- Eyebrows -->
+    <path d="M 340,400 Q 380,380 420,410" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 580,410 Q 620,380 660,400" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M 500,480 L 480,530 L 520,530 Z" fill="#E6A088" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- The Bright Red Lips -->
+    <g id="lips">
+      <!-- Upper Lip -->
+      <path d="M 420,580 Q 500,550 580,580 Q 500,600 420,580 Z" fill="url(#lipRed)" stroke="#000000" stroke-width="5"/>
+      <!-- Lower Lip -->
+      <path d="M 430,580 Q 500,640 570,580 Q 500,600 430,580 Z" fill="url(#lipRed)" stroke="#000000" stroke-width="5"/>
+      <!-- Lip Highlight -->
+      <path d="M 450,575 Q 500,565 550,575" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.6"/>
+    </g>
+
+    <!-- Hair (Front/Bangs) -->
+    <path d="M 320,350 Q 500,250 680,350 Q 650,200 500,180 Q 350,200 320,350 Z" fill="#212121" stroke="#000000" stroke-width="8"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- GEOMETRIC CROWN                            -->
+  <!-- ========================================== -->
+  <g id="Crown" transform="translate(0, -30)">
+    <!-- Crown Base Band -->
+    <path d="M 350,320 L 650,320 L 630,200 L 500,120 L 370,200 Z" fill="url(#gold)" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+    
+    <!-- Inner Crown Detail -->
+    <path d="M 380,300 L 620,300 L 600,220 L 500,160 L 400,220 Z" fill="#FFC107" stroke="#000000" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- Crown Spikes (Geometric/Pop Art) -->
+    <!-- Left Spike -->
+    <polygon points="370,200 300,120 400,180" fill="#FFEB3B" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+    <!-- Right Spike -->
+    <polygon points="630,200 700,120 600,180" fill="#FFEB3B" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+    <!-- Center Spike -->
+    <polygon points="500,120 500,40 550,140" fill="#FFEB3B" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+    <polygon points="500,120 500,40 450,140" fill="#FF9800" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+
+    <!-- Jewels on Crown -->
+    <circle cx="500" cy="220" r="25" fill="#D32F2F" stroke="#000000" stroke-width="4"/>
+    <circle cx="500" cy="220" r="10" fill="#FFFFFF" opacity="0.6"/>
+    
+    <circle cx="420" cy="260" r="15" fill="#1565C0" stroke="#000000" stroke-width="4"/>
+    <circle cx="580" cy="260" r="15" fill="#1565C0" stroke="#000000" stroke-width="4"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- PLAYING CARD SYMBOLS (Hearts)              -->
+  <!-- ========================================== -->
+  <!-- Top Left Heart -->
+  <g transform="translate(220, 220) scale(1.5)">
+    <path d="M 0,-15 Q -20,-40 -40,-15 Q -60,10 0,50 Q 60,10 40,-15 Q 20,-40 0,-15 Z" fill="#D32F2F" stroke="#000000" stroke-width="4"/>
+  </g>
+  
+  <!-- Bottom Right Heart (Inverted) -->
+  <g transform="translate(780, 780) scale(1.5) rotate(180)">
+    <path d="M 0,-15 Q -20,-40 -40,-15 Q -60,10 0,50 Q 60,10 40,-15 Q 20,-40 0,-15 Z" fill="#D32F2F" stroke="#000000" stroke-width="4"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- COMIC SPEECH BUBBLE                        -->
+  <!-- ========================================== -->
+  <g id="SpeechBubble" transform="translate(750, 280)">
+    <!-- Bubble Body -->
+    <ellipse cx="0" cy="0" rx="140" ry="90" fill="#FFFFFF" stroke="#000000" stroke-width="6"/>
+    <!-- Bubble Tail (Point to Queen) -->
+    <path d="M -80,60 L -140,140 L -30,80 Z" fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+    <!-- Text -->
+    <text x="0" y="-15" font-family="Impact, Arial Black, sans-serif" font-size="32" font-weight="900" text-anchor="middle" fill="#000000" letter-spacing="2">OFF WITH</text>
+    <text x="0" y="20" font-family="Impact, Arial Black, sans-serif" font-size="32" font-weight="900" text-anchor="middle" fill="#000000" letter-spacing="2">THEIR HEADS!</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- BOLD ACTION LINES                          -->
+  <!-- ========================================== -->
+  <g stroke="#000000" stroke-width="8" stroke-linecap="round">
+    <path d="M 120,500 L 180,500"/>
+    <path d="M 140,450 L 190,470"/>
+    <path d="M 140,550 L 190,530"/>
+    
+    <path d="M 880,500 L 820,500"/>
+    <path d="M 860,450 L 810,470"/>
+    <path d="M 860,550 L 810,530"/>
+  </g>
+
+</svg>

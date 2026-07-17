@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Halftone Dot Pattern -->
+    <pattern id="halftone" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+      <circle cx="12" cy="12" r="10" fill="#111"/>
+      <animateTransform attributeName="patternTransform" type="scale" values="1;1.2;1" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </pattern>
+
+    <!-- Diagonal Stripe Pattern (Lichtenstein style) -->
+    <pattern id="stripes" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="20" fill="#FFD700"/>
+      <rect x="10" width="10" height="20" fill="#111"/>
+    </pattern>
+
+    <!-- Action Lines Pattern -->
+    <pattern id="action" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M0,20 L30,20" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      <path d="M35,10 L40,10" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      <path d="M35,30 L40,30" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      <animateTransform attributeName="patternTransform" type="translate" values="0,0; -40,0" dur="0.5s" repeatCount="indefinite"/>
+    </pattern>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="15" dy="15" stdDeviation="0" flood-color="#000" flood-opacity="1"/>
+    </filter>
+
+    <!-- Glossy Red Gradient (Subtle for base, but we will cover with flat colors) -->
+    <linearGradient id="cherryRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1A1A"/>
+      <stop offset="100%" stop-color="#CC0000"/>
+    </linearGradient>
+
+    <!-- Starburst Shape -->
+    <path id="star" d="M0,-40 L10,-10 L40,0 L10,10 L0,40 L-10,10 L-40,0 L-10,-10 Z" fill="#FFD700" stroke="#111" stroke-width="4"/>
+  </defs>
+
+  <!-- BACKGROUND: Cyan with Halftone Overlay -->
+  <rect width="1600" height="900" fill="#00E5FF"/>
+  <rect width="1600" height="900" fill="url(#halftone)" opacity="0.2">
+    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- COMIC ACTION LINES (Background) -->
+  <g opacity="0.8">
+    <rect x="0" y="0" width="200" height="900" fill="url(#action)"/>
+    <rect x="1400" y="0" width="200" height="900" fill="url(#action)"/>
+    <rect x="200" y="0" width="1200" height="100" fill="url(#action)"/>
+    <rect x="200" y="800" width="1200" height="100" fill="url(#action)"/>
+  </g>
+
+  <!-- FLOATING HALFTONE DOTS -->
+  <g fill="#111">
+    <circle cx="200" cy="200" r="30">
+      <animate attributeName="r" values="30;40;30" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="200;180;200" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="700" r="50">
+      <animate attributeName="r" values="50;60;50" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="700;720;700" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="750" r="20">
+      <animate attributeName="r" values="20;30;20" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="300;320;300" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1300" cy="150" r="40">
+      <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1300;1280;1300" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- MAIN SUBJECT: CHERRIES -->
+  <g transform="translate(800, 500) scale(1.2)" filter="url(#shadow)">
+    
+    <!-- STEM -->
+    <!-- Thick black outline for stem -->
+    <path d="M-40,-180 Q-20,-250 60,-280 Q140,-310 180,-250" 
+          stroke="#111" stroke-width="24" fill="none" stroke-linecap="round"/>
+    <!-- Green fill for stem -->
+    <path d="M-40,-180 Q-20,-250 60,-280 Q140,-310 180,-250" 
+          stroke="#32CD32" stroke-width="16" fill="none" stroke-linecap="round"/>
+    
+    <!-- LEFT CHERRY -->
+    <g transform="translate(-100, 0)">
+      <!-- Base Cherry Shape -->
+      <circle cx="0" cy="0" r="130" fill="#FF0000" stroke="#111" stroke-width="12"/>
+      <!-- Halftone Overlay for Shadow -->
+      <circle cx="0" cy="0" r="130" fill="url(#halftone)" opacity="0.3"/>
+      
+      <!-- Comic Book Gloss (Solid White Shapes) -->
+      <!-- Large sweeping highlight -->
+      <path d="M-60,-60 Q-20,-110 40,-80 Q10,-40 -60,-60 Z" fill="#FFF" stroke="#111" stroke-width="4"/>
+      <!-- Small sharp highlight -->
+      <ellipse cx="50" cy="-50" rx="15" ry="25" fill="#FFF" stroke="#111" stroke-width="3" transform="rotate(-30 50 -50)"/>
+      
+      <!-- Inner Shadow / Halftone for Depth -->
+      <path d="M-90,60 Q0,130 90,60 Q50,100 -90,60 Z" fill="url(#halftone)" opacity="0.5"/>
+    </g>
+
+    <!-- RIGHT CHERRY -->
+    <g transform="translate(100, 20)">
+      <!-- Base Cherry Shape -->
+      <circle cx="0" cy="0" r="140" fill="#FF0000" stroke="#111" stroke-width="12"/>
+      <!-- Halftone Overlay for Shadow -->
+      <circle cx="0" cy="0" r="140" fill="url(#halftone)" opacity="0.3"/>
+      
+      <!-- Comic Book Gloss (Solid White Shapes) -->
+      <!-- Large sweeping highlight -->
+      <path d="M-50,-70 Q-10,-120 50,-90 Q20,-50 -50,-70 Z" fill="#FFF" stroke="#111" stroke-width="4"/>
+      <!-- Small sharp highlight -->
+      <ellipse cx="60" cy="-60" rx="18" ry="28" fill="#FFF" stroke="#111" stroke-width="3" transform="rotate(-30 60 -60)"/>
+      
+      <!-- Inner Shadow / Halftone for Depth -->
+      <path d="M-100,70 Q0,140 100,70 Q60,110 -100,70 Z" fill="url(#halftone)" opacity="0.5"/>
+    </g>
+
+    <!-- CONNECTOR STEMS (Where stem meets cherry) -->
+    <path d="M-40,-180 Q-90,-140 -100,-100" stroke="#111" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M-40,-180 Q-90,-140 -100,-100" stroke="#32CD32" stroke-width="8" fill="none" stroke-linecap="round"/>
+    
+    <path d="M-40,-180 Q20,-160 100,-100" stroke="#111" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M-40,-180 Q20,-160 100,-100" stroke="#32CD32" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  </g>
+
+  <!-- FOREGROUND COMIC ELEMENTS -->
+  
+  <!-- Floating Starbursts -->
+  <g transform="translate(300, 300)">
+    <use href="#star" transform="scale(1.5)">
+      <animateTransform attributeName="transform" type="rotate" values="0;20;0" dur="2s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="scale" values="1.5;1.8;1.5" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <g transform="translate(1300, 600)">
+    <use href="#star" transform="scale(2)">
+      <animateTransform attributeName="transform" type="rotate" values="0;-30;0" dur="3s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="scale" values="2;2.3;2" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- Comic Burst Text Background -->
+  <g transform="translate(800, 150)">
+    <ellipse cx="0" cy="0" rx="200" ry="60" fill="#FFD700" stroke="#111" stroke-width="8"/>
+    <text x="0" y="20" font-family="Arial Black, Impact, sans-serif" font-size="60" text-anchor="middle" fill="#111" stroke="#FFF" stroke-width="2">POP!</text>
+    <animateTransform attributeName="transform" type="translate" values="800,150; 800,130; 800,150" dur="2s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Diagonal Stripes Accents -->
+  <rect x="0" y="850" width="1600" height="50" fill="url(#stripes)"/>
+  <rect x="0" y="0" width="1600" height="50" fill="url(#stripes)"/>
+
+  <!-- Additional animated dots for energy -->
+  <circle cx="500" cy="500" r="15" fill="#FFD700" stroke="#111" stroke-width="3">
+    <animate attributeName="r" values="15;25;15" dur="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="400" r="20" fill="#00E5FF" stroke="#111" stroke-width="3">
+    <animate attributeName="r" values="20;30;20" dur="1.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.5;1" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Color Swap Animation for Background (Warhol style switching) -->
+  <rect width="1600" height="900" fill="#FFD700" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.4;0.5;0.6;1" dur="8s" repeatCount="indefinite"/>
+  </rect>
+  <rect width="1600" height="900" fill="#FF00FF" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.7;0.8;0.9;1" dur="8s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

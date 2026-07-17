@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Skin Gradients -->
+    <linearGradient id="gradSkin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8C9A0">
+        <animate attributeName="stop-color" values="#E8C9A0;#E2C09A;#E8C9A0" dur="14s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#A87C5C">
+        <animate attributeName="stop-color" values="#A87C5C;#9E7555;#A87C5C" dur="14s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="gradSkinWarm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8C9A0"/>
+      <stop offset="40%" stop-color="#D4AB82"/>
+      <stop offset="100%" stop-color="#8B5E3C"/>
+    </linearGradient>
+
+    <!-- Keyboard Key Gradient -->
+    <linearGradient id="gradKey" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3E3E3E"/>
+      <stop offset="100%" stop-color="#1C1C1C"/>
+    </linearGradient>
+
+    <!-- Lighting/Atmosphere Gradients -->
+    <radialGradient id="gradLamp" cx="82%" cy="15%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6">
+        <animate attributeName="stop-opacity" values="0.6;0.5;0.6" dur="9s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="60%" stop-color="#E8C9A0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8B6F47" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="gradVignette" cx="50%" cy="50%" r="75%">
+      <stop offset="40%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1A1005" stop-opacity="0.85"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="blurHard" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    
+    <filter id="blurMedium" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    
+    <filter id="blurSoft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    
+    <filter id="blurSmear" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <filter id="deskTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.004 0.015" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.25 0" in="noise" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="composite"/>
+      <feBlend mode="multiply" in="composite" in2="SourceGraphic"/>
+    </filter>
+
+    <filter id="skinTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="2" result="noise"/>
+      <feComposite operator="in" in="noise" in2="SourceAlpha" result="alphaNoise"/>
+      <feColorMatrix type="matrix" values="0.3 0 0 0 0  0 0.3 0 0 0  0 0 0.3 0 0  0 0 0 0.08 0"/>
+      <feBlend mode="multiply" in2="SourceGraphic"/>
+    </filter>
+
+    <!-- Finger Definitions -->
+    <g id="left-fingers">
+      <path d="M 0,-30 C 15,-30 25,-15 25,10 C 25,35 15,40 0,40 C -15,40 -20,35 -20,10 C -20,-15 -10,-30 0,-30 Z" fill="url(#gradSkin)"/>
+      <path d="M 0,-30 C 15,-30 25,-15 25,10 C 25,35 15,40 0,40 C -15,40 -20,35 -20,10 C -20,-15 -10,-30 0,-30 Z" fill="none" stroke="#6B4F3E" stroke-width="1.5" opacity="0.4"/>
+      <ellipse cx="0" cy="20" rx="16" ry="18" fill="url(#gradSkinWarm)" opacity="0.85"/>
+      <path d="M -10,12 Q 0,15 10,12" fill="none" stroke="#6B4F3E" stroke-width="1" opacity="0.4"/>
+    </g>
+
+    <g id="right-fingers">
+      <path d="M 0,-30 C -15,-30 -25,-15 -25,10 C -25,35 -15,40 0,40 C 15,40 20,35 20,10 C 20,-15 10,-30 0,-30 Z" fill="url(#gradSkin)"/>
+      <path d="M 0,-30 C -15,-30 -25,-15 -25,10 C -25,35 -15,40 0,40 C 15,40 20,35 20,10 C 20,-15 10,-30 0,-30 Z" fill="none" stroke="#6B4F3E" stroke-width="1.5" opacity="0.4"/>
+      <ellipse cx="0" cy="20" rx="16" ry="18" fill="url(#gradSkinWarm)" opacity="0.85"/>
+      <path d="M -10,12 Q 0,15 10,12" fill="none" stroke="#6B4F3E" stroke-width="1" opacity="0.4"/>
+    </g>
+  </defs>
+
+  <!-- Layer 01: Base Wood Desk -->
+  <rect width="1600" height="900" fill="#8B6F47"/>
+  <rect width="1600" height="900" fill="#8B6F47" filter="url(#deskTexture)"/>
+
+  <!-- Layer 02: Soft Wood Grain Sweep -->
+  <path d="M -100,200 Q 800,150 1700,300" fill="none" stroke="#6B5436" stroke-width="80" opacity="0.3" filter="url(#blurHard)"/>
+  <path d="M -100,600 Q 800,550 1700,700" fill="none" stroke="#6B5436" stroke-width="120" opacity="0.2" filter="url(#blurHard)"/>
+
+  <!-- Layer 03: Deep Atmosphere (Atmospheric Blur) -->
+  <rect width="1600" height="900" fill="#4A3820" opacity="0.6" filter="url(#blurHard)"/>
+  <rect width="1600" height="900" fill="url(#gradVignette)"/>
+
+  <!-- Layer 04: Warm Lamp Glow -->
+  <rect width="1600" height="900" fill="url(#gradLamp)"/>
+
+  <!-- Layer 05: Keyboard Base -->
+  <rect x="380" y="250" width="840" height="500" rx="28" fill="#2A2A2A"/>
+  <rect x="380" y="250" width="840" height="500" rx="28" fill="url(#gradLamp)" opacity="0.05"/>
+
+  <!-- Layer 06: Keyboard Bezel/Depth Shadow -->
+  <rect x="390" y="260" width="820" height="480" rx="20" fill="none" stroke="#151515" stroke-width="4"/>
+  <rect x="385" y="255" width="830" height="490" rx="24" fill="none" stroke="#1C1C1C" stroke-width="2" opacity="0.5"/>
+  <path d="M 390,260 L 1210,260 L 1200,270 L 400,270 Z" fill="#FFFFFF" opacity="0.04"/>
+
+  <!-- Layer 07: Key Matrix (Rows 1-4) -->
+  <g id="keys">
+    <!-- Row 1 -->
+    <g id="key-row1">
+      <rect x="410" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 410,290 L 458,290 L 455,293 L 413,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 410,338 L 458,338 L 455,335 L 413,335 Z" fill="#000000" opacity="0.3"/>
+      <path d="M 413,293 L 413,335 L 416,332 L 416,296 Z" fill="#FFFFFF" opacity="0.03"/>
+      
+      <rect x="468" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 468,290 L 516,290 L 513,293 L 471,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 468,338 L 516,338 L 513,335 L 471,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="526" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 526,290 L 574,290 L 571,293 L 529,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 526,338 L 574,338 L 571,335 L 529,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="584" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 584,290 L 632,290 L 629,293 L 587,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 584,338 L 632,338 L 629,335 L 587,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="642" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 642,290 L 690,290 L 687,293 L 645,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 642,338 L 690,338 L 687,335 L 645,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="700" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 700,290 L 748,290 L 745,293 L 703,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 700,338 L 748,338 L 745,335 L 703,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="758" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 758,290 L 806,290 L 803,293 L 761,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 758,338 L 806,338 L 803,335 L 761,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="816" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 816,290 L 864,290 L 861,293 L 819,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 816,338 L 864,338 L 861,335 L 819,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="874" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 874,290 L 922,290 L 919,293 L 877,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 874,338 L 922,338 L 919,335 L 877,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="932" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 932,290 L 980,290 L 977,293 L 935,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 932,338 L 980,338 L 977,335 L 935,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="990" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 990,290 L 1038,290 L 1035,293 L 993,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 990,338 L 1038,338 L 1035,335 L 993,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="1048" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 1048,290 L 1096,290 L 1093,293 L 1051,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 1048,338 L 1096,338 L 1093,335 L 1051,335 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="1106" y="290" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 1106,290 L 1154,290 L 1151,293 L 1109,293 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 1106,338 L 1154,338 L 1151,335 L 1109,335 Z" fill="#000000" opacity="0.3"/>
+    </g>
+
+    <!-- Row 2 -->
+    <g id="key-row2">
+      <rect x="440" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 440,348 L 488,348 L 485,351 L 443,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 440,396 L 488,396 L 485,393 L 443,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="498" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 498,348 L 546,348 L 543,351 L 501,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 498,396 L 546,396 L 543,393 L 501,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="556" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 556,348 L 604,348 L 601,351 L 559,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 556,396 L 604,396 L 601,393 L 559,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="614" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 614,348 L 662,348 L 659,351 L 617,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 614,396 L 662,396 L 659,393 L 617,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="672" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 672,348 L 720,348 L 717,351 L 675,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 672,396 L 720,396 L 717,393 L 675,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="730" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 730,348 L 778,348 L 775,351 L 733,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 730,396 L 778,396 L 775,393 L 733,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="788" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 788,348 L 836,348 L 833,351 L 791,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 788,396 L 836,396 L 833,393 L 791,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="846" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 846,348 L 894,348 L 891,351 L 849,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 846,396 L 894,396 L 891,393 L 849,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="904" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 904,348 L 952,348 L 949,351 L 907,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 904,396 L 952,396 L 949,393 L 907,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="962" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 962,348 L 1010,348 L 1007,351 L 965,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 962,396 L 1010,396 L 1007,393 L 965,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="1020" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 1020,348 L 1068,348 L 1065,351 L 1023,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 1020,396 L 1068,396 L 1065,393 L 1023,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="1078" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 1078,348 L 1126,348 L 1123,351 L 1081,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 1078,396 L 1126,396 L 1123,393 L 1081,393 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="1136" y="348" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 1136,348 L 1184,348 L 1181,351 L 1139,351 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 1136,396 L 1184,396 L 1181,393 L 1139,393 Z" fill="#000000" opacity="0.3"/>
+    </g>
+
+    <!-- Row 3 -->
+    <g id="key-row3">
+      <rect x="470" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 470,406 L 518,406 L 515,409 L 473,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 470,454 L 518,454 L 515,451 L 473,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="528" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 528,406 L 576,406 L 573,409 L 531,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 528,454 L 576,454 L 573,451 L 531,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="586" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 586,406 L 634,406 L 631,409 L 589,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 586,454 L 634,454 L 631,451 L 589,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="644" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 644,406 L 692,406 L 689,409 L 647,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 644,454 L 692,454 L 689,451 L 647,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="702" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 702,406 L 750,406 L 747,409 L 705,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 702,454 L 750,454 L 747,451 L 705,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="760" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 760,406 L 808,406 L 805,409 L 763,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 760,454 L 808,454 L 805,451 L 763,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="818" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 818,406 L 866,406 L 863,409 L 821,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 818,454 L 866,454 L 863,451 L 821,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="876" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 876,406 L 924,406 L 921,409 L 879,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 876,454 L 924,454 L 921,451 L 879,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="934" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 934,406 L 982,406 L 979,409 L 937,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 934,454 L 982,454 L 979,451 L 937,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="992" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 992,406 L 1040,406 L 1037,409 L 995,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 992,454 L 1040,454 L 1037,451 L 995,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="1050" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 1050,406 L 1098,406 L 1095,409 L 1053,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 1050,454 L 1098,454 L 1095,451 L 1053,451 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="1108" y="406" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 1108,406 L 1156,406 L 1153,409 L 1111,409 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 1108,454 L 1156,454 L 1153,451 L 1111,451 Z" fill="#000000" opacity="0.3"/>
+    </g>
+
+    <!-- Row 4 -->
+    <g id="key-row4">
+      <rect x="500" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 500,464 L 548,464 L 545,467 L 503,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 500,512 L 548,512 L 545,509 L 503,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="558" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 558,464 L 606,464 L 603,467 L 561,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 558,512 L 606,512 L 603,509 L 561,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="616" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 616,464 L 664,464 L 661,467 L 619,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 616,512 L 664,512 L 661,509 L 619,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="674" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 674,464 L 722,464 L 719,467 L 677,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 674,512 L 722,512 L 719,509 L 677,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="732" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 732,464 L 780,464 L 777,467 L 735,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 732,512 L 780,512 L 777,509 L 735,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="790" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 790,464 L 838,464 L 835,467 L 793,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 790,512 L 838,512 L 835,509 L 793,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="848" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 848,464 L 896,464 L 893,467 L 851,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 848,512 L 896,512 L 893,509 L 851,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="906" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 906,464 L 954,464 L 951,467 L 909,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 906,512 L 954,512 L 951,509 L 909,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="964" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 964,464 L 1012,464 L 1009,467 L 967,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 964,512 L 1012,512 L 1009,509 L 967,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="1022" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 1022,464 L 1070,464 L 1067,467 L 1025,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 1022,512 L 1070,512 L 1067,509 L 1025,509 Z" fill="#000000" opacity="0.3"/>
+      
+      <rect x="1080" y="464" width="48" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 1080,464 L 1128,464 L 1125,467 L 1083,467 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 1080,512 L 1128,512 L 1125,509 L 1083,509 Z" fill="#000000" opacity="0.3"/>
+    </g>
+
+    <!-- Row 5 (Spacebar) -->
+    <g id="key-spacebar">
+      <rect x="610" y="522" width="340" height="48" rx="4" fill="url(#gradKey)"/>
+      <path d="M 610,522 L 950,522 L 947,525 L 613,525 Z" fill="#FFFFFF" opacity="0.05"/>
+      <path d="M 610,570 L 950,570 L 947,567 L 613,567 Z" fill="#000000" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Layer 08: Keyboard Key Glow / Speculars -->
+  <circle cx="970" cy="280" r="40" fill="#FFFFFF" opacity="0.25" filter="url(#blurSoft)"/>
+
+  <!-- Layer 09: Deep Wrist Shadows (Keyboard Base) -->
+  <ellipse cx="600" cy="600" rx="180" ry="60" fill="#000000" opacity="0.65" filter="url(#blurMedium)"/>
+  <ellipse cx="900" cy="600" rx="180" ry="60" fill="#000000" opacity="0.65" filter="url(#blurMedium)"/>
+
+  <!-- Layer 10: Left Wrist -->
+  <g id="left-wrist">
+    <path d="M 350,700 Q 380,580 550,550 Q 600,545 650,580 Q 670,620 640,720 Q 530,800 350,700 Z" fill="url(#gradSkin)"/>
+    <path d="M 350,700 Q 380,580 550,550 Q 600,545 650,580 Q 670,620 640,720 Q 530,800 350,700 Z" filter="url(#skinTexture)" opacity="0.7"/>
+    <path d="M 450,620 Q 520,600 580,630" fill="none" stroke="#6B4F3E" stroke-width="3" opacity="0.4" filter="url(#blurSmear)"/>
+    <path d="M 430,650 Q 490,640 550,660" fill="none" stroke="#6B4F3E" stroke-width="2" opacity="0.3" filter="url(#blurSmear)"/>
+    <path d="M 370,680 Q 440,670 520,690" fill="none" stroke="#6B4F3E" stroke-width="2" opacity="0.2" filter="url(#blurSmear)"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -6,4; 0,0" dur="11s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="-1 500 700; 1 500 700; -1 500 700" dur="15s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Layer 11: Left Palm / Base of Fingers -->
+  <path d="M 420,620 Q 550,520 630,610 Q 570,650 420,620 Z" fill="url(#gradSkinWarm)" opacity="0.8" filter="url(#blurSmear)"/>
+
+  <!-- Layer 12: Right Wrist -->
+  <g id="right-wrist">
+    <path d="M 1250,700 Q 1220,580 1050,550 Q 1000,545 950,580 Q 930,620 960,720 Q 1070,800 1250,700 Z" fill="url(#gradSkin)"/>
+    <path d="M 1250,700 Q 1220,580 1050,550 Q 1000,545 950,580 Q 930,620 960,720 Q 1070,800 1250,700 Z" filter="url(#skinTexture)" opacity="0.7"/>
+    <path d="M 1150,620 Q 1080,600 1020,630" fill="none" stroke="#6B4F3E" stroke-width="3" opacity="0.4" filter="url(#blurSmear)"/>
+    <path d="M 1170,650 Q 1110,640 1050,660" fill="none" stroke="#6B4F3E" stroke-width="2" opacity="0.3" filter="url(#blurSmear)"/>
+    <path d="M 1230,680 Q 1160,670 1080,690" fill="none" stroke="#6B4F3E" stroke-width="2" opacity="0.2" filter="url(#blurSmear)"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 6,4; 0,0" dur="12s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="1 1100 700; -1 1100 700; 1 1100 700" dur="16s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Layer 13: Right Palm / Base of Fingers -->
+  <path d="M 1180,620 Q 1050,520 970,610 Q 1030,650 1180,620 Z" fill="url(#gradSkinWarm)" opacity="0.8" filter="url(#blurSmear)"/>
+
+  <!-- Layer 14: Left Hand Fingers -->
+  <g id="left-hand-fingers">
+    <!-- Pinky (Left) -->
+    <g id="lf-pinky">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,12; 0,0" dur="13s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 650 600; -2 650 600; 0 650 600" dur="13s" repeatCount="indefinite" additive="sum"/>
+      <use href="#left-fingers" x="650" y="540" transform="rotate(22 650 540)"/>
+    </g>
+
+    <!-- Ring -->
+    <g id="lf-ring">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,18; 0,0" dur="9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 610 560; 1 610 560; 0 610 560" dur="9s" repeatCount="indefinite" additive="sum"/>
+      <use href="#left-fingers" x="610" y="500" transform="rotate(12 610 500)"/>
+    </g>
+
+    <!-- Middle -->
+    <g id="lf-middle">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,14; 0,0" dur="16s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 570 560; -1 570 560; 0 570 560" dur="16s" repeatCount="indefinite" additive="sum"/>
+      <use href="#left-fingers" x="570" y="500" transform="rotate(4 570 500)"/>
+    </g>
+
+    <!-- Index -->
+    <g id="lf-index">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,20; 0,0" dur="11s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 530 560; 2 530 560; 0 530 560" dur="11s" repeatCount="indefinite" additive="sum"/>
+      <use href="#left-fingers" x="530" y="500" transform="rotate(-4 530 500)"/>
+    </g>
+
+    <!-- Thumb (Left, curving under/in) -->
+    <g id="lf-thumb">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 5,15; 0,0" dur="14s" repeatCount="indefinite"/>
+      <path d="M 700,680 C 680,620 600,580 540,620 C 500,650 460,680 520,680 C 600,680 680,720 700,680 Z" fill="url(#gradSkinWarm)" filter="url(#skinTexture)" opacity="0.9"/>
+      <path d="M 700,680 C 680,620 600,580 540,620 C 500,650 460,680 520,680 C 600,680 680,720 700,680 Z" fill="none" stroke="#6B4F3E" stroke-width="2" opacity="0.3"/>
+      <path d="M 580,620 Q 610,625 640,640" fill="none" stroke="#6B4F3E" stroke-width="1.5" opacity="0.4"/>
+    </g>
+  </g>
+
+  <!-- Layer 15: Right Hand Fingers -->
+  <g id="right-hand-fingers">
+    <!-- Pinky (Right) -->
+    <g id="rf-pinky">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,16; 0,0" dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 950 600; 2 950 600; 0 950 600" dur="8s" repeatCount="indefinite" additive="sum"/>
+      <use href="#right-fingers" x="950" y="540" transform="rotate(-22 950 540)"/>
+    </g>
+
+    <!-- Ring -->
+    <g id="rf-ring">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,10; 0,0" dur="17s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 990 560; -1 990 560; 0 990 560" dur="17s" repeatCount="indefinite" additive="sum"/>
+      <use href="#right-fingers" x="990" y="500" transform="rotate(-12 990 500)"/>
+    </g>
+
+    <!-- Middle -->
+    <g id="rf-middle">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,22; 0,0" dur="10s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 1030 560; 1 1030 560; 0 1030 560" dur="10s" repeatCount="indefinite" additive="sum"/>
+      <use href="#right-fingers" x="1030" y="500" transform="rotate(-4 1030 500)"/>
+    </g>
+
+    <!-- Index -->
+    <g id="rf-index">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,12; 0,0" dur="12s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 1070 560; -2 1070 560; 0 1070 560" dur="12s" repeatCount="indefinite" additive="sum"/>
+      <use href="#right-fingers" x="1070" y="500" transform="rotate(4 1070 500)"/>
+    </g>
+
+    <!-- Thumb (Right, curving under/in) -->
+    <g id="rf-thumb">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -5,15; 0,0" dur="15s" repeatCount="indefinite"/>
+      <path d="M 900,680 C 920,620 1000,580 1060,620 C 1100,650 1140,680 1080,680 C 1000,680 920,720 900,680 Z" fill="url(#gradSkinWarm)" filter="url(#skinTexture)" opacity="0.9"/>
+      <path d="M 900,680 C 920,620 1000,580 1060,620 C 1100,650 1140,680 1080,680 C 1000,680 920,720 900,680 Z" fill="none" stroke="#6B4F3E" stroke-width="2" opacity="0.3"/>
+      <path d="M 1020,620 Q 990,625 960,640" fill="none" stroke="#6B4F3E" stroke-width="1.5" opacity="0.4"/>
+    </g>
+  </g>
+
+  <!-- Layer 16: Finger Contact Shadows (Soft & Hard) -->
+  <g id="finger-shadows">
+    <ellipse cx="650" cy="595" rx="18" ry="12" fill="#000000" opacity="0.4" filter="url(#blurSmear)"/>
+    <ellipse cx="610" cy="565" rx="18" ry="12" fill="#000000" opacity="0.5" filter="url(#blurSmear)"/>
+    <ellipse cx="570" cy="565" rx="18" ry="12" fill="#000000" opacity="0.45" filter="url(#blurSmear)"/>
+    <ellipse cx="530" cy="565" rx="18" ry="12" fill="#000000" opacity="0.55" filter="url(#blurSmear)"/>
+    
+    <ellipse cx="950" cy="595" rx="18" ry="12" fill="#000000" opacity="0.4" filter="url(#blurSmear)"/>
+    <ellipse cx="990" cy="565" rx="18" ry="12" fill="#000000" opacity="0.45" filter="url(#blurSmear)"/>
+    <ellipse cx="1030" cy="565" rx="18" ry="12" fill="#000000" opacity="0.5" filter="url(#blurSmear)"/>
+    <ellipse cx="1070" cy="565" rx="18" ry="12" fill="#000000" opacity="0.55" filter="url(#blurSmear)"/>
+  </g>
+
+  <!-- Layer 17: Ambient Bokeh / Dust Motes -->
+  <g id="bokeh">
+    <circle cx="1200" cy="300" r="60" fill="#FFFFFF" opacity="0.15" filter="url(#blurHard)">
+      <animate attributeName="cx" values="1200; 1210; 1200" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="300; 290; 300" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="150" r="40" fill="#FFFFFF" opacity="0.1" filter="url(#blurMedium)">
+      <animate attributeName="cx" values="900; 910; 900" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="150; 160; 150" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="400" r="80" fill="#FFFFFF" opacity="0.08" filter="url(#blurHard)">
+      <animate attributeName="cx" values="500; 490; 500" dur="24s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="400; 390; 400" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.08;0.15;0.08" dur="21s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Dust Motes -->
+    <circle cx="1320" cy="280" r="1.5" fill="#FFFFFF" opacity="0.6">
+      <animate attributeName="cy" values="280; 230; 280" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="25s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1160" cy="350" r="1" fill="#FFFFFF" opacity="0.4">
+      <animate attributeName="cy" values="350; 300; 350" dur="32s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="32s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1280" cy="180" r="2" fill="#FFFFFF" opacity="0.5">
+      <animate attributeName="cy" values="180; 130; 180" dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="28s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1110" cy="220" r="1.2" fill="#FFFFFF" opacity="0.7">
+      <animate attributeName="cy" values="220; 170; 220" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="19s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 18: Cinematic Vignette / Top-Right Light Leak -->
+  <path d="M 1600,0 L 1600,500 Q 1300,300 1000,0 Z" fill="#FFD700" opacity="0.04" filter="url(#blurHard)"/>
+  <path d="M 1600,0 L 1600,300 Q 1400,150 1100,0 Z" fill="#FFFFFF" opacity="0.06" filter="url(#blurMedium)"/>
+
+  <!-- Layer 19: Screen Ambient Glow (Bottom Edge) -->
+  <rect x="0" y="800" width="1600" height="100" fill="#8B6F47" opacity="0.5" filter="url(#blurHard)"/>
+  <ellipse cx="800" cy="860" rx="600" ry="40" fill="#E8C9A0" opacity="0.15" filter="url(#blurMedium)"/>
+</svg>

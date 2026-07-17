@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Vibrant Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#FF6B9D"/>
+      <stop offset="100%" stop-color="#FFC75F"/>
+      <animate attributeName="x1" from="0" to="100" dur="12s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- Ground Gradient -->
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+      <animate attributeName="x2" from="0" to="100" dur="15s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- Sunburst Pattern -->
+    <pattern id="sunburst" width="200" height="200" patternUnits="userSpaceOnUse" patternTransform="rotate(0, 100, 100)">
+      <rect width="200" height="200" fill="#FFF1F2" opacity="0.5"/>
+      <path d="M100,0 L120,80 L200,100 L120,120 L100,200 L80,120 L0,100 L80,80 Z" fill="#FBCFE8" opacity="0.6"/>
+      <ellipse cx="100" cy="100" rx="30" ry="30" fill="#FCE7F3"/>
+      <animateTransform attributeName="patternTransform" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite"/>
+    </pattern>
+
+    <!-- Halftone Dots Pattern -->
+    <pattern id="halftone" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="12" fill="#F472B6" opacity="0.4"/>
+      <circle cx="0" cy="0" r="8" fill="#4ADE80" opacity="0.4"/>
+      <circle cx="40" cy="0" r="6" fill="#FBBF24" opacity="0.4"/>
+      <circle cx="0" cy="40" r="6" fill="#FBBF24" opacity="0.4"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="40 40" dur="3s" repeatCount="indefinite"/>
+    </pattern>
+
+    <!-- Radiant Glow Filters -->
+    <filter id="glowPink" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowYellow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowTeal" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Tower / Cannon / Projectile Shared Assets -->
+    <g id="candyCane">
+      <rect x="-10" y="0" width="20" height="80" rx="10" fill="#FF6B9D"/>
+      <path d="M-10,10 Q0,20 10,10 Q0,30 -10,40 Q0,50 10,60 Q0,70 -10,80" fill="none" stroke="#FFF" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    
+    <g id="lollipop">
+      <circle cx="0" cy="-35" r="35" fill="#4ECDC4"/>
+      <circle cx="0" cy="-35" r="25" fill="none" stroke="#FFF" stroke-width="6" stroke-dasharray="12 6"/>
+      <rect x="-8" y="0" width="16" height="70" fill="#FFF" rx="8"/>
+      <line x1="0" y1="0" x2="0" y2="70" stroke="#E2E8F0" stroke-width="2"/>
+    </g>
+
+    <g id="cupcake">
+      <path d="M-40,40 L-30,0 Q0,-10 30,0 L40,40 Z" fill="#FFC75F"/>
+      <path d="M-40,40 L30,40" fill="none" stroke="#EAB308" stroke-width="3" stroke-dasharray="10 5"/>
+      <path d="M-10,-10 Q0,-30 10,-10" fill="#FF6B9D"/>
+      <circle cx="0" cy="-15" r="8" fill="#4ECDC4"/>
+    </g>
+    
+    <g id="donut">
+      <circle cx="0" cy="-40" r="40" fill="#A78BFA" stroke="#C4B5FD" stroke-width="8"/>
+      <circle cx="0" cy="-40" r="14" fill="#2D3047"/>
+      <rect x="-6" y="0" width="12" height="50" fill="#FFF" rx="6"/>
+    </g>
+
+    <!-- Creeps (Enemies) -->
+    <g id="creep1">
+      <circle cx="0" cy="-15" r="15" fill="#F87171"/>
+      <path d="M-15,-5 A15,15 0 0,1 15,-5 L15,5 L-15,5 Z" fill="#FCA5A5"/>
+      <circle cx="-5" cy="-20" r="3" fill="#FFF"/>
+      <circle cx="5" cy="-20" r="3" fill="#FFF"/>
+    </g>
+
+    <g id="creep2">
+      <path d="M-20,0 L0,-35 L20,0 Z" fill="#34D399"/>
+      <circle cx="-8" cy="-20" r="3" fill="#FFF"/>
+      <circle cx="8" cy="-20" r="3" fill="#FFF"/>
+    </g>
+
+    <g id="creep3">
+      <rect x="-15" y="-30" width="30" height="30" rx="5" fill="#60A5FA"/>
+      <circle cx="-5" cy="-20" r="3" fill="#FFF"/>
+      <circle cx="5" cy="-20" r="3" fill="#FFF"/>
+      <rect x="-15" y="0" width="30" height="5" fill="#2563EB"/>
+    </g>
+
+    <!-- Single Projectiles -->
+    <circle id="ball" r="6" fill="#F472B6" filter="url(#glowPink)"/>
+    <g id="dart">
+      <polygon points="-6,8 0,-12 6,8" fill="#FBBF24"/>
+      <polygon points="-2,8 0,16 2,8" fill="#FCD34D"/>
+    </g>
+    <circle id="star" r="12" fill="#34D399" filter="url(#glowTeal)"/>
+
+    <!-- Animated Halftone Background Blob -->
+    <g id="bgBlob">
+      <circle cx="800" cy="450" r="400" fill="url(#halftone)" opacity="0.8"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="60s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.5;0.8" dur="8s" repeatCount="indefinite"/>
+    </g>
+  </defs>
+
+  <!-- 1. Background Sky -->
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+  
+  <!-- 2. Sunburst / Geometric Background Element -->
+  <rect width="1600" height="900" fill="url(#sunburst)" opacity="0.6"/>
+  
+  <!-- 3. Animated Background Blobs -->
+  <use href="#bgBlob"/>
+  
+  <!-- 4. Floating Clouds (Abstract) -->
+  <g opacity="0.7">
+    <path d="M100,150 Q150,100 200,150 T300,150" fill="none" stroke="#FFF" stroke-width="20" stroke-linecap="round"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,0; 0,0" dur="10s" repeatCount="indefinite"/>
+  </g>
+  <g opacity="0.5">
+    <path d="M1200,250 Q1250,200 1300,250 T1400,250" fill="none" stroke="#FDE047" stroke-width="15" stroke-linecap="round"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -20,10; 0,0" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 5. Winding Ground / Path Base -->
+  <path d="M0,900 L0,700 C200,700 400,600 600,650 C800,700 1000,550 1200,600 C1400,650 1600,500 1600,500 L1600,900 Z" fill="url(#groundGrad)"/>
+  <path d="M0,750 C200,750 400,650 600,700 C800,750 1000,600 1200,650 C1400,700 1600,550 1600,550" fill="none" stroke="#FFF" stroke-width="12" stroke-linecap="round" stroke-dasharray="20 30" opacity="0.4">
+    <animate attributeName="stroke-dashoffset" from="0" to="1000" dur="10s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 6. Background Mountains (Candy Hills) -->
+  <g transform="translate(0, -50)">
+    <path d="M1100,600 Q1300,450 1500,600 T1700,600" fill="#4ADE80" opacity="0.8"/>
+    <path d="M1250,500 Q1350,400 1450,500" fill="none" stroke="#FFF" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,10; 0,0" dur="7s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 7. Hero Subject: The Winding Tower Defense Path & Towers -->
+  <g id="heroSubject">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="4s" repeatCount="indefinite"/>
+    
+    <!-- The Path -->
+    <path d="M -100,780 C 200,780 400,680 600,730 C 800,780 1000,630 1200,680 C 1400,730 1700,580 1700,580" fill="none" stroke="#FFF" stroke-width="40" stroke-linecap="round" opacity="0.9"/>
+    <path d="M -100,780 C 200,780 400,680 600,730 C 800,780 1000,630 1200,680 C 1400,730 1700,580 1700,580" fill="none" stroke="#FDE68A" stroke-width="24" stroke-linecap="round"/>
+    <path d="M -100,780 C 200,780 400,680 600,730 C 800,780 1000,630 1200,680 C 1400,730 1700,580 1700,580" fill="none" stroke="#FFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="15 25">
+      <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="3s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Tower 1: Candy Cane -->
+    <g transform="translate(450, 690)">
+       <use href="#candyCane" transform="scale(1.5)"/>
+       <!-- Firing -->
+       <g transform="translate(0, -80)">
+          <circle r="20" fill="#FFF" filter="url(#glowYellow)">
+            <animate attributeName="r" values="20;30;20" dur="1.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+       </g>
+    </g>
+
+    <!-- Tower 2: Lollipop -->
+    <g transform="translate(650, 710)">
+       <use href="#lollipop" transform="scale(1.2)"/>
+       <animateTransform attributeName="transform" type="rotate" values="0 650 710; 5 650 710; 0 650 710" dur="4s" repeatCount="indefinite"/>
+       <g transform="translate(0, -70)">
+          <use href="#ball" />
+          <animateTransform attributeName="transform" type="translate" values="0,-70; 150,50; 0,-70" dur="2s" repeatCount="indefinite"/>
+       </g>
+    </g>
+
+    <!-- Tower 3: Cupcake -->
+    <g transform="translate(1050, 630)">
+       <use href="#cupcake" transform="scale(1.4)"/>
+       <g transform="translate(0, -40)">
+          <use href="#star" />
+          <animateTransform attributeName="transform" type="translate" values="0,-40; 120,120; 0,-40" dur="2.5s" repeatCount="indefinite"/>
+       </g>
+    </g>
+
+    <!-- Tower 4: Donut -->
+    <g transform="translate(1350, 650)">
+       <use href="#donut" transform="scale(1.3)"/>
+       <animateTransform attributeName="transform" type="scale" values="1.3;1.3;1.35;1.3" dur="1s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Creeps Marching -->
+    <g transform="translate(550, 740)">
+      <use href="#creep1" transform="scale(1.2)"/>
+      <animateTransform attributeName="transform" type="translate" values="550,740; 1350,630; 550,740" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(500, 735)">
+      <use href="#creep2" transform="scale(1.1)"/>
+      <animateTransform attributeName="transform" type="translate" values="500,735; 1300,625; 500,735" dur="12s" begin="1s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(600, 745)">
+      <use href="#creep3" transform="scale(1.3)"/>
+      <animateTransform attributeName="transform" type="translate" values="600,745; 1400,635; 600,745" dur="12s" begin="0.5s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(800, 755)">
+      <use href="#creep1" transform="scale(0.9)"/>
+      <animateTransform attributeName="transform" type="translate" values="800,755; 1600,645; 800,755" dur="14s" begin="2s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(850, 760)">
+      <use href="#creep2" transform="scale(1.0)"/>
+      <animateTransform attributeName="transform" type="translate" values="850,760; 1650,650; 850,760" dur="14s" begin="2.5s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Projectile Trails -->
+    <g opacity="0.8" filter="url(#glowTeal)">
+      <path d="M 450,610 C 500,600 550,730 550,740" fill="none" stroke="#4ECDC4" stroke-width="8" stroke-linecap="round" stroke-dasharray="20 30">
+        <animate attributeName="stroke-dashoffset" from="0" to="100" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 650,640 C 700,650 750,730 800,755" fill="none" stroke="#FFC75F" stroke-width="8" stroke-linecap="round" stroke-dasharray="20 30">
+        <animate attributeName="stroke-dashoffset" from="0" to="100" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 1050,590 C 1100,600 1150,650 1350,630" fill="none" stroke="#FF6B9D" stroke-width="8" stroke-linecap="round" stroke-dasharray="20 30">
+        <animate attributeName="stroke-dashoffset" from="0" to="100" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Impact Bursts -->
+    <g transform="translate(550, 740)">
+      <circle r="0" fill="#FFF" filter="url(#glowYellow)">
+        <animate attributeName="r" values="0;40;0" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <g>
+        <polygon points="0,-40 5,-10 40,0 5,10 0,40 -5,10 -40,0 -5,-10" fill="#FFF">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="180" dur="1.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+        </polygon>
+      </g>
+    </g>
+  </g>
+
+  <!-- 8. Foreground Geometric Elements (Abstract Candy / Confetti) -->
+  <g id="confettiLayer">
+    <!-- Spinning Star -->
+    <g transform="translate(300, 200)">
+      <polygon points="0,-50 15,-15 50,0 15,15 0,50 -15,15 -50,0 -15,-15" fill="#F472B6">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite"/>
+      </polygon>
+      <animateTransform attributeName="transform" type="translate" values="300,200; 300,180; 300,200" dur="3s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Floating Square -->
+    <g transform="translate(1200, 150)">
+      <rect x="-30" y="-30" width="60" height="60" fill="#34D399" rx="10">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="7s" repeatCount="indefinite"/>
+      </rect>
+      <animateTransform attributeName="transform" type="translate" values="1200,150; 1200,170; 1200,150" dur="4s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Bouncing Circle -->
+    <g transform="translate(1500, 300)">
+      <circle r="40" fill="#FBBF24" filter="url(#glowYellow)">
+        <animate attributeName="r" values="40;50;40" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <animateTransform attributeName="transform" type="translate" values="1500,300; 1480,300; 1500,300" dur="3s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Cross / Plus -->
+    <g transform="translate(100, 600)">
+      <path d="M-15,-5 L15,-5 L15,5 L-15,5 Z M-5,-15 L5,-15 L5,15 L-5,15 Z" fill="#A78BFA">
+        <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Zig Zag -->
+    <g transform="translate(200, 400)">
+      <polyline points="-30,0 -10,-20 10,0 30,-20" fill="none" stroke="#FF6B9D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+        <animate attributeName="stroke-dasharray" values="0 100; 100 0" dur="4s" repeatCount="indefinite"/>
+      </polyline>
+    </g>
+  </g>
+
+  <!-- 9. Foreground Particles (Continuous Motion) -->
+  <g id="particles">
+    <circle cx="200" cy="100" r="8" fill="#FFF">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 800,600; 1600,1200" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="200" r="6" fill="#FF6B9D">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -600,400; -1200,800" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="300" y="50" width="12" height="12" fill="#FFC75F" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 200,400; 400,800" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="900" cy="50" r="10" fill="#4ECDC4">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,300; -200,600" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="1300" y="50" width="10" height="10" fill="#FFF" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -500,200; -1000,400" dur="9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="9s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0" dur="9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- 10. Giant Foreground Mascot Silhouette (Flat Color, Off-Center) -->
+  <!-- Placed on the right, simplified, leaving left negative space -->
+  <g transform="translate(1250, 800)" opacity="1">
+    <g id="heroMascot">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="3s" repeatCount="indefinite" additive="sum"/>
+      
+      <!-- Body (Soft Cloud Shape) -->
+      <path d="M-120,0 C-140,-50 -100,-120 0,-130 C100,-120 140,-50 120,0 Z" fill="#FF6B9D"/>
+      
+      <!-- Head -->
+      <circle cx="0" cy="-150" r="70" fill="#FFF"/>
+      
+      <!-- Eye (Winking / Oval) -->
+      <ellipse cx="-20" cy="-150" rx="15" ry="20" fill="#2D3047"/>
+      <circle cx="-15" cy="-155" r="5" fill="#FFF"/>
+      <path d="M10,-160 Q30,-170 50,-160" fill="none" stroke="#2D3047" stroke-width="8" stroke-linecap="round"/>
+      
+      <!-- Crown / Hat -->
+      <path d="M-50,-210 L-30,-250 L-10,-220 L10,-260 L30,-220 L50,-240 L60,-190 Z" fill="#FFC75F"/>
+      <circle cx="10" cy="-260" r="8" fill="#F472B6"/>
+      
+      <!-- Arms -->
+      <path d="M-110,-60 C-160,-40 -180,-10 -160,20" fill="none" stroke="#FF6B9D" stroke-width="25" stroke-linecap="round"/>
+      <path d="M110,-60 C160,-40 180,-10 160,20" fill="none" stroke="#FF6B9D" stroke-width="25" stroke-linecap="round"/>
+      
+      <!-- Feet -->
+      <ellipse cx="-40" cy="10" rx="30" ry="20" fill="#FFC75F"/>
+      <ellipse cx="40" cy="10" rx="30" ry="20" fill="#FFC75F"/>
+    </g>
+  </g>
+
+  <!-- 11. Final Foreground Sparkles & Glows -->
+  <g filter="url(#glowYellow)">
+    <circle cx="1200" cy="600" r="15" fill="#FFF">
+      <animate attributeName="r" values="15;5;15" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g filter="url(#glowTeal)">
+    <circle cx="400" cy="500" r="10" fill="#4ECDC4">
+      <animate attributeName="r" values="10;20;10" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g filter="url(#glowPink)">
+    <circle cx="1000" cy="200" r="8" fill="#FF6B9D">
+      <animate attributeName="r" values="8;15;8" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+</svg>

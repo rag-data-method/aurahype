@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Drop Shadow Filter -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
+      <feOffset in="blur" dx="8" dy="12" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadow">
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Halftone Dot Pattern -->
+    <pattern id="halftone" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="3.5" fill="#FFD700"/>
+    </pattern>
+
+    <!-- Background Halftone Pattern (Larger dots) -->
+    <pattern id="halftoneLarge" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="6" fill="#FFD700"/>
+    </pattern>
+
+    <!-- Clipping Paths for Halftone Application -->
+    <clipPath id="clip-bg">
+      <ellipse cx="500" cy="520" rx="420" ry="420"/>
+    </clipPath>
+
+    <clipPath id="clip-shadow">
+      <path d="M 250 400 C 250 350, 300 300, 350 320 C 380 200, 450 200, 480 300 C 520 250, 600 250, 620 320 C 670 300, 730 350, 700 400 C 750 420, 780 500, 720 550 C 750 600, 700 650, 650 620 C 620 700, 550 750, 500 750 C 450 750, 380 700, 350 620 C 300 650, 250 600, 280 550 C 220 500, 250 420, 250 400 Z"/>
+    </clipPath>
+
+    <clipPath id="clip-body">
+      <path d="M 330 800 L 330 550 C 330 450, 350 420, 400 420 L 450 420 L 450 700 C 450 780, 470 800, 500 800 Z"/>
+    </clipPath>
+
+    <clipPath id="clip-bite">
+      <path d="M 450 420 L 600 420 C 750 420, 780 500, 760 550 C 740 600, 650 650, 550 650 L 450 650 Z"/>
+    </clipPath>
+
+    <clipPath id="clip-tongue">
+      <path d="M 520 550 C 520 550, 500 600, 560 620 C 620 640, 650 600, 620 550 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Sticker Drop Shadow & White Die-Cut Border -->
+  <g filter="url(#dropShadow)">
+    <!-- Thick White Die-Cut Border -->
+    <ellipse cx="500" cy="520" rx="430" ry="430" fill="#FFFFFF" stroke="none"/>
+    
+    <!-- Inner Sticker Base -->
+    <ellipse cx="500" cy="520" rx="420" ry="420" fill="#FFD700"/>
+  </g>
+
+  <!-- Halftone Background Layer -->
+  <ellipse cx="500" cy="520" rx="420" ry="420" fill="url(#halftoneLarge)" opacity="0.3"/>
+
+  <!-- Background Starburst -->
+  <g transform="translate(500, 520) rotate(15)">
+    <circle cx="0" cy="0" r="400" fill="#FFD700" opacity="0.6"/>
+    <g stroke="#FFFFFF" stroke-width="40" stroke-linecap="butt">
+      <line x1="0" y1="-400" x2="0" y2="-150" />
+      <line x1="141" y1="-382" x2="53" y2="-143" />
+      <line x1="282" y1="-282" x2="106" y2="-106" />
+      <line x1="382" y1="-141" x2="143" y2="-53" />
+      <line x1="400" y1="0" x2="150" y2="0" />
+      <line x1="382" y1="141" x2="143" y2="53" />
+      <line x1="282" y1="282" x2="106" y2="106" />
+      <line x1="141" y1="382" x2="53" y2="143" />
+      <line x1="0" y1="400" x2="0" y2="150" />
+      <line x1="-141" y1="382" x2="-53" y2="143" />
+      <line x1="-282" y1="282" x2="-106" y2="106" />
+      <line x1="-382" y1="141" x2="-143" y2="53" />
+      <line x1="-400" y1="0" x2="-150" y2="0" />
+      <line x1="-382" y1="-141" x2="-143" y2="-53" />
+      <line x1="-282" y1="-282" x2="-106" y2="-106" />
+      <line x1="-141" y1="-382" x2="-53" y2="-143" />
+    </g>
+  </g>
+
+  <!-- Main Sticker Base (Covers center of starburst) -->
+  <ellipse cx="500" cy="520" rx="420" ry="420" fill="#FFD700"/>
+
+  <!-- HATCHING PATTERN ON BACKGROUND -->
+  <g clip-path="url(#clip-bg)" stroke="#000000" stroke-width="4" stroke-linecap="round">
+    <line x1="0" y1="0" x2="200" y2="200"/>
+    <line x1="0" y1="50" x2="150" y2="200"/>
+    <line x1="0" y1="100" x2="100" y2="200"/>
+    <line x1="0" y1="150" x2="50" y2="200"/>
+    <line x1="50" y1="0" x2="250" y2="200"/>
+    <line x1="100" y1="0" x2="300" y2="200"/>
+    <line x1="150" y1="0" x2="350" y2="200"/>
+    <line x1="200" y1="0" x2="400" y2="200"/>
+    <line x1="250" y1="0" x2="450" y2="200"/>
+    <line x1="300" y1="0" x2="500" y2="200"/>
+    <line x1="350" y1="0" x2="550" y2="200"/>
+    <line x1="400" y1="0" x2="600" y2="200"/>
+    <line x1="450" y1="0" x2="650" y2="200"/>
+    <line x1="500" y1="0" x2="700" y2="200"/>
+    <line x1="550" y1="0" x2="750" y2="200"/>
+    <line x1="600" y1="0" x2="800" y2="200"/>
+    <line x1="650" y1="0" x2="850" y2="200"/>
+    <line x1="700" y1="0" x2="900" y2="200"/>
+    <line x1="750" y1="0" x2="950" y2="200"/>
+    <line x1="800" y1="0" x2="1000" y2="200"/>
+    <line x1="850" y1="0" x2="1000" y2="150"/>
+    <line x1="900" y1="0" x2="1000" y2="100"/>
+    <line x1="950" y1="0" x2="1000" y2="50"/>
+
+    <line x1="0" y1="200" x2="200" y2="400"/>
+    <line x1="0" y1="250" x2="150" y2="400"/>
+    <line x1="0" y1="300" x2="100" y2="400"/>
+    <line x1="0" y1="350" x2="50" y2="400"/>
+    <line x1="50" y1="200" x2="250" y2="400"/>
+    <line x1="100" y1="200" x2="300" y2="400"/>
+    <line x1="150" y1="200" x2="350" y2="400"/>
+    <line x1="200" y1="200" x2="400" y2="400"/>
+    <line x1="250" y1="200" x2="450" y2="400"/>
+    <line x1="300" y1="200" x2="500" y2="400"/>
+    <line x1="350" y1="200" x2="550" y2="400"/>
+    <line x1="400" y1="200" x2="600" y2="400"/>
+    <line x1="450" y1="200" x2="650" y2="400"/>
+    <line x1="500" y1="200" x2="700" y2="400"/>
+    <line x1="550" y1="200" x2="750" y2="400"/>
+    <line x1="600" y1="200" x2="800" y2="400"/>
+    <line x1="650" y1="200" x2="850" y2="400"/>
+    <line x1="700" y1="200" x2="900" y2="400"/>
+    <line x1="750" y1="200" x2="950" y2="400"/>
+    <line x1="800" y1="200" x2="1000" y2="400"/>
+    <line x1="850" y1="200" x2="1000" y2="350"/>
+    <line x1="900" y1="200" x2="1000" y2="300"/>
+    <line x1="950" y1="200" x2="1000" y2="250"/>
+
+    <line x1="0" y1="400" x2="200" y2="600"/>
+    <line x1="0" y1="450" x2="150" y2="600"/>
+    <line x1="0" y1="500" x2="100" y2="600"/>
+    <line x1="0" y1="550" x2="50" y2="600"/>
+    <line x1="50" y1="400" x2="250" y2="600"/>
+    <line x1="100" y1="400" x2="300" y2="600"/>
+    <line x1="150" y1="400" x2="350" y2="600"/>
+    <line x1="200" y1="400" x2="400" y2="600"/>
+    <line x1="250" y1="400" x2="450" y2="600"/>
+    <line x1="300" y1="400" x2="500" y2="600"/>
+    <line x1="350" y1="400" x2="550" y2="600"/>
+    <line x1="400" y1="400" x2="600" y2="600"/>
+    <line x1="450" y1="400" x2="650" y2="600"/>
+    <line x1="500" y1="400" x2="700" y2="600"/>
+    <line x1="550" y1="400" x2="750" y2="600"/>
+    <line x1="600" y1="400" x2="800" y2="600"/>
+    <line x1="650" y1="400" x2="850" y2="600"/>
+    <line x1="700" y1="400" x2="900" y2="600"/>
+    <line x1="750" y1="400" x2="950" y2="600"/>
+    <line x1="800" y1="400" x2="1000" y2="600"/>
+    <line x1="850" y1="400" x2="1000" y2="550"/>
+    <line x1="900" y1="400" x2="1000" y2="500"/>
+    <line x1="950" y1="400" x2="1000" y2="450"/>
+
+    <line x1="0" y1="600" x2="200" y2="800"/>
+    <line x1="0" y1="650" x2="150" y2="800"/>
+    <line x1="0" y1="700" x2="100" y2="800"/>
+    <line x1="0" y1="750" x2="50" y2="800"/>
+    <line x1="50" y1="600" x2="250" y2="800"/>
+    <line x1="100" y1="600" x2="300" y2="800"/>
+    <line x1="150" y1="600" x2="350" y2="800"/>
+    <line x1="200" y1="600" x2="400" y2="800"/>
+    <line x1="250" y1="600" x2="450" y2="800"/>
+    <line x1="300" y1="600" x2="500" y2="800"/>
+    <line x1="350" y1="600" x2="550" y2="800"/>
+    <line x1="400" y1="600" x2="600" y2="800"/>
+    <line x1="450" y1="600" x2="650" y2="800"/>
+    <line x1="500" y1="600" x2="700" y2="800"/>
+    <line x1="550" y1="600" x2="750" y2="800"/>
+    <line x1="600" y1="600" x2="800" y2="800"/>
+    <line x1="650" y1="600" x2="850" y2="800"/>
+    <line x1="700" y1="600" x2="900" y2="800"/>
+    <line x1="750" y1="600" x2="950" y2="800"/>
+    <line x1="800" y1="600" x2="1000" y2="800"/>
+    <line x1="850" y1="600" x2="1000" y2="750"/>
+    <line x1="900" y1="600" x2="1000" y2="700"/>
+    <line x1="950" y1="600" x2="1000" y2="650"/>
+
+    <line x1="0" y1="800" x2="200" y2="1000"/>
+    <line x1="0" y1="850" x2="150" y2="1000"/>
+    <line x1="0" y1="900" x2="100" y2="1000"/>
+    <line x1="0" y1="950" x2="50" y2="1000"/>
+    <line x1="50" y1="800" x2="250" y2="1000"/>
+    <line x1="100" y1="800" x2="300" y2="1000"/>
+    <line x1="150" y1="800" x2="350" y2="1000"/>
+    <line x1="200" y1="800" x2="400" y2="1000"/>
+    <line x1="250" y1="800" x2="450" y2="1000"/>
+    <line x1="300" y1="800" x2="500" y2="1000"/>
+    <line x1="350" y1="800" x2="550" y2="1000"/>
+    <line x1="400" y1="800" x2="600" y2="1000"/>
+    <line x1="450" y1="800" x2="650" y2="1000"/>
+    <line x1="500" y1="800" x2="700" y2="1000"/>
+    <line x1="550" y1="800" x2="750" y2="1000"/>
+    <line x1="600" y1="800" x2="800" y2="1000"/>
+    <line x1="650" y1="800" x2="850" y2="1000"/>
+    <line x1="700" y1="800" x2="900" y2="1000"/>
+    <line x1="750" y1="800" x2="950" y2="1000"/>
+    <line x1="800" y1="800" x2="1000" y2="1000"/>
+    <line x1="850" y1="800" x2="1000" y2="950"/>
+    <line x1="900" y1="800" x2="1000" y2="900"/>
+    <line x1="950" y1="800" x2="1000" y2="850"/>
+  </g>
+
+  <!-- Background Speed Lines -->
+  <g stroke="#000000" stroke-width="10" stroke-linecap="round">
+    <line x1="100" y1="100" x2="250" y2="220"/>
+    <line x1="150" y1="50" x2="300" y2="170"/>
+    <line x1="850" y1="150" x2="700" y2="270"/>
+    <line x1="900" y1="100" x2="750" y2="220"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round">
+    <line x1="100" y1="100" x2="250" y2="220"/>
+    <line x1="150" y1="50" x2="300" y2="170"/>
+    <line x1="850" y1="150" x2="700" y2="270"/>
+    <line x1="900" y1="100" x2="750" y2="220"/>
+  </g>
+
+  <!-- Halftone Shadow on Jaw and Back of Head -->
+  <g clip-path="url(#clip-shadow)">
+    <rect x="0" y="0" width="1000" height="1000" fill="url(#halftone)"/>
+  </g>
+
+  <!-- Body Base -->
+  <path d="M 330 800 L 330 550 C 330 450, 350 420, 400 420 L 450 420 L 450 700 C 450 780, 470 800, 500 800 Z" fill="#E62E2D" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+
+  <!-- Body Halftone Shadow -->
+  <g clip-path="url(#clip-body)">
+    <rect x="0" y="0" width="1000" height="1000" fill="url(#halftone)"/>
+  </g>
+
+  <!-- Breathing Lines on Body -->
+  <g stroke="#000000" stroke-width="8" stroke-linecap="round">
+    <path d="M 360 600 L 410 600"/>
+    <path d="M 370 630 L 420 630"/>
+    <path d="M 380 660 L 430 660"/>
+  </g>
+
+  <!-- Bite Action Base -->
+  <path d="M 450 420 L 600 420 C 750 420, 780 500, 760 550 C 740 600, 650 650, 550 650 L 450 650 Z" fill="#E62E2D" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+
+  <!-- Bite Halftone Shadow -->
+  <g clip-path="url(#clip-bite)">
+    <rect x="0" y="0" width="1000" height="1000" fill="url(#halftone)"/>
+  </g>
+
+  <!-- Lower Teeth -->
+  <path d="M 460 640 L 480 580 L 500 640 L 520 580 L 540 640 L 560 580 L 580 640 L 600 580 L 620 640 L 640 580 L 660 640 L 680 580 L 700 640" fill="#FFFFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 470 650 L 490 650 M 510 650 L 530 650 M 550 650 L 570 650 M 590 650 L 610 650 M 630 650 L 650 650 M 670 650 L 690 650" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Tongue -->
+  <path d="M 520 550 C 520 550, 500 600, 560 620 C 620 640, 650 600, 620 550 Z" fill="#FF007F" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M 540 560 C 560 570, 580 580, 600 570" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Upper Teeth -->
+  <path d="M 480 430 L 500 490 L 520 430 L 540 490 L 560 430 L 580 490 L 600 430 L 620 490 L 640 430" fill="#FFFFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 490 430 L 510 430 M 530 430 L 550 430 M 570 430 L 590 430 M 610 430 L 630 430" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Jaw Spike (Left) -->
+  <path d="M 430 600 L 360 610 L 430 630" fill="#E62E2D" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Eye Base -->
+  <path d="M 450 420 C 550 420, 600 480, 600 530 C 600 580, 550 610, 500 610 C 450 610, 400 580, 400 530 C 400 480, 350 420, 450 420 Z" fill="#FFFFFF" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+
+  <!-- Eye Details -->
+  <circle cx="520" cy="530" r="18" fill="#000000"/>
+  <circle cx="530" cy="520" r="5" fill="#FFFFFF"/>
+
+  <!-- Brow / Wrinkle -->
+  <path d="M 420 450 C 450 430, 480 430, 500 440" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Nose Action Base -->
+  <path d="M 250 400 C 250 350, 300 300, 350 320 C 380 200, 450 200, 480 300 C 520 250, 600 250, 620 320 C 670 300, 730 350, 700 400 C 750 420, 780 500, 720 550 C 750 600, 700 650, 650 620 C 620 700, 550 750, 500 750 C 450 750, 380 700, 350 620 C 300 650, 250 600, 280 550 C 220 500, 250 420, 250 400 Z" fill="#E62E2D" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+
+  <!-- Nose Shadow Halftone -->
+  <g clip-path="url(#clip-shadow)">
+    <rect x="0" y="0" width="1000" height="1000" fill="url(#halftone)"/>
+  </g>
+
+  <!-- Nose Details -->
+  <path d="M 300 450 C 320 520, 380 550, 450 550 C 520 550, 580 520, 620 450" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="380" cy="400" r="10" fill="#000000"/>
+  <circle cx="620" cy="400" r="10" fill="#000000"/>
+
+  <!-- Collar -->
+  <path d="M 450 700 C 450 780, 470 800, 500 800 C 530 800, 550 780, 550 700" fill="#00BFFF" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M 470 730 L 530 730 M 465 760 L 535 760" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Spiked Collar Spikes -->
+  <path d="M 445 710 L 415 730 L 445 750" fill="#00BFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 460 770 L 435 800 L 475 800" fill="#00BFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 500 780 L 500 830" fill="#00BFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 540 770 L 525 800 L 565 800" fill="#00BFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 555 710 L 585 730 L 555 750" fill="#00BFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+
+  <!-- Left Ear -->
+  <path d="M 300 450 C 250 380, 200 420, 180 520 C 160 620, 220 650, 280 600 Z" fill="#E62E2D" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M 260 480 C 240 520, 230 560, 250 580" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Right Ear -->
+  <path d="M 700 450 C 750 380, 800 420, 820 520 C 840 620, 780 650, 720 600 Z" fill="#E62E2D" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M 740 480 C 760 520, 770 560, 750 580" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Hat Brim -->
+  <path d="M 200 350 C 200 300, 800 300, 800 350 C 800 400, 200 400, 200 350 Z" fill="#1A1A1A" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M 220 330 C 350 310, 650 310, 780 330" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Hat Dome -->
+  <path d="M 350 330 C 350 100, 650 100, 650 330 Z" fill="#1A1A1A" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+
+  <!-- Hat Band -->
+  <path d="M 350 330 C 450 310, 550 310, 650 330" fill="none" stroke="#00BFFF" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Hat Highlights -->
+  <path d="M 420 180 C 450 140, 550 140, 580 180" fill="none" stroke="#444444" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="570" cy="240" rx="20" ry="10" transform="rotate(-30 570 240)" fill="#444444"/>
+
+  <!-- Text Action Burst -->
+  <path d="M 800 550 C 850 520, 900 550, 950 520 C 980 500, 1000 550, 970 600 C 980 650, 920 700, 850 680 C 800 720, 750 680, 780 630 C 750 600, 780 550, 800 550 Z" fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+  <text x="850" y="640" font-family="'Arial Black', Impact, sans-serif" font-size="110" font-weight="900" fill="#00BFFF" stroke="#000000" stroke-width="6" text-anchor="middle" dominant-baseline="middle" transform="rotate(-15 850 620)">RUFF!</text>
+
+  <!-- Hatching Pattern on Action Burst -->
+  <g clip-path="url(#clip-bite)" stroke="#000000" stroke-width="4" stroke-linecap="round" opacity="0.5">
+    <line x1="450" y1="420" x2="600" y2="650"/>
+    <line x1="500" y1="420" x2="650" y2="650"/>
+    <line x1="550" y1="420" x2="700" y2="650"/>
+  </g>
+
+</svg>

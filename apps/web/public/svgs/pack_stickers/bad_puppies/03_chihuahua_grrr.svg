@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Drop Shadow Filter for the Physical Sticker Feel -->
+    <filter id="sticker-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="12" dy="18" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Halftone Pattern for Background Fill -->
+    <pattern id="halftone" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="3" fill="#000000"/>
+    </pattern>
+
+    <!-- Bold 3D Text Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffe600"/>
+    </linearGradient>
+  </defs>
+
+  <!-- STICKER GROUP: White border acts as the die-cut edge, shadow gives physical depth -->
+  <g filter="url(#sticker-shadow)">
+    
+    <!-- DIE-CUT WHITE BORDER (The Physical Sticker Edge) -->
+    <path fill="#ffffff" stroke="#000000" stroke-width="4" stroke-linejoin="round"
+      d="M 500 75 
+         L 575 205 L 720 165 
+         L 710 315 L 860 370 
+         L 785 495 L 910 610 
+         L 780 700 L 835 840 
+         L 690 800 L 600 915 
+         L 500 825 L 400 915 
+         L 310 800 L 165 840 
+         L 220 700 L 90 610 
+         L 215 495 L 140 370 
+         L 290 315 L 280 165 
+         L 425 205 Z" />
+
+    <!-- BACKGROUND: Comic Halftone Pattern inside sticker -->
+    <path fill="url(#halftone)" stroke="none"
+      d="M 500 90 
+         L 568 210 L 706 175 
+         L 696 315 L 840 370 
+         L 770 490 L 890 600 
+         L 770 690 L 820 820 
+         L 685 785 L 595 895 
+         L 500 810 L 405 895 
+         L 315 785 L 180 820 
+         L 230 690 L 110 600 
+         L 230 490 L 160 370 
+         L 304 315 L 294 175 
+         L 432 210 Z" opacity="0.15" />
+
+    <!-- ========================================== -->
+    <!-- MAIN ILLUSTRATION (Thick Black Outlines)   -->
+    <!-- ========================================== -->
+
+    <!-- Comic Burst Background (Red & Yellow) -->
+    <g stroke="#000000" stroke-width="12" stroke-linejoin="round">
+      <!-- Main Red Burst -->
+      <path fill="#FF0033" d="M 500 140 L 555 250 L 670 200 L 640 320 L 780 350 L 690 440 L 820 520 L 690 590 L 780 690 L 640 710 L 670 830 L 555 770 L 500 880 L 445 770 L 330 830 L 360 710 L 220 690 L 310 590 L 180 520 L 310 440 L 220 350 L 360 320 L 330 200 L 445 250 Z" />
+      <!-- Secondary Yellow Burst -->
+      <path fill="#FFD700" d="M 500 200 L 540 280 L 630 250 L 590 340 L 700 370 L 620 430 L 720 500 L 620 560 L 700 630 L 590 660 L 630 750 L 540 720 L 500 800 L 460 720 L 370 750 L 410 660 L 300 630 L 380 560 L 280 500 L 380 430 L 300 370 L 410 340 L 370 250 L 460 280 Z" />
+    </g>
+
+    <!-- Speed/Motion Lines (Adds Fierceness) -->
+    <g stroke="#000000" stroke-width="10" stroke-linecap="round">
+      <line x1="750" y1="250" x2="850" y2="180" />
+      <line x1="780" y1="300" x2="900" y2="280" />
+      <line x1="250" y1="250" x2="150" y2="180" />
+      <line x1="220" y1="300" x2="100" y2="280" />
+      <line x1="200" y1="750" x2="120" y2="850" />
+      <line x1="800" y1="750" x2="880" y2="850" />
+    </g>
+
+    <!-- ========================================== -->
+    <!-- FIERCE CHIHUAHUA                           -->
+    <!-- ========================================== -->
+    <g stroke="#000000" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+      
+      <!-- Chest / Body Fluff -->
+      <path fill="#EEEEEE" d="M 410 620 Q 500 680 590 620 C 620 750, 380 750, 410 620 Z" />
+
+      <!-- Left Ear (Back) -->
+      <path fill="#8B4513" d="M 330 380 C 280 250, 240 200, 290 180 C 340 160, 380 280, 400 350 Z" />
+      <path fill="#FF99CC" d="M 330 260 C 310 230, 300 210, 310 205 C 320 200, 330 220, 340 250 Z" />
+
+      <!-- Right Ear (Back) -->
+      <path fill="#8B4513" d="M 670 380 C 720 250, 760 200, 710 180 C 660 160, 620 280, 600 350 Z" />
+      <path fill="#FF99CC" d="M 670 260 C 690 230, 700 210, 690 205 C 680 200, 670 220, 660 250 Z" />
+
+      <!-- Main Head Shape -->
+      <path fill="#8B4513" d="M 350 350 C 350 220, 650 220, 650 350 C 650 500, 350 500, 350 350 Z" />
+
+      <!-- White Blaze on Forehead -->
+      <path fill="#FFFFFF" d="M 460 230 C 500 210, 540 230, 540 350 C 540 420, 460 420, 460 350 Z" />
+
+      <!-- Left Eye (Fierce Squint) -->
+      <path fill="#FFFFFF" d="M 380 340 C 410 320, 440 340, 440 370 C 440 400, 380 400, 380 340 Z" />
+      <circle cx="410" cy="360" r="8" fill="#000000" />
+      <!-- Angry Eyebrow -->
+      <path fill="none" stroke="#000000" stroke-width="16" d="M 370 330 L 450 350" />
+      
+      <!-- Right Eye (Fierce Squint) -->
+      <path fill="#FFFFFF" d="M 620 340 C 590 320, 560 340, 560 370 C 560 400, 620 400, 620 340 Z" />
+      <circle cx="590" cy="360" r="8" fill="#000000" />
+      <!-- Angry Eyebrow -->
+      <path fill="none" stroke="#000000" stroke-width="16" d="M 630 330 L 550 350" />
+
+      <!-- Snout Area -->
+      <path fill="#FFCC99" d="M 450 400 C 450 380, 550 380, 550 400 C 550 450, 450 450, 450 400 Z" />
+      <ellipse cx="500" cy="390" rx="25" ry="15" fill="#000000" />
+      
+      <!-- Jowls / Mouth Area -->
+      <path fill="#FFCC99" d="M 430 430 Q 500 410 570 430 C 590 480, 520 520, 500 520 C 480 520, 410 480, 430 430 Z" />
+
+      <!-- Teeth (Upper - Fangs) -->
+      <path fill="#FFFFFF" d="M 460 450 L 475 480 L 490 450 Z" />
+      <path fill="#FFFFFF" d="M 510 450 L 525 480 L 540 450 Z" />
+      <!-- Teeth (Lower - Crooked) -->
+      <path fill="#FFFFFF" d="M 470 500 L 485 485 L 500 505 Z" />
+      <path fill="#FFFFFF" d="M 500 505 L 515 485 L 530 500 Z" />
+
+      <!-- Tongue -->
+      <path fill="#FF0033" d="M 480 510 C 490 560, 510 560, 520 510 Z" />
+
+      <!-- Wrinkles / Folds -->
+      <path fill="none" d="M 360 380 Q 380 390 370 410" />
+      <path fill="none" d="M 640 380 Q 620 390 630 410" />
+      <path fill="none" d="M 480 360 Q 500 370 520 360" />
+
+    </g>
+
+    <!-- ========================================== -->
+    <!-- MAIN TEXT: GRRR!                           -->
+    <!-- ========================================== -->
+    <g transform="translate(500, 750)">
+      <!-- Text Outline Shadow (Creates 3D Pop Art Depth) -->
+      <text x="0" y="0" text-anchor="middle" dominant-baseline="central" 
+            font-family="'Impact', 'Arial Black', sans-serif" font-size="160" font-weight="900"
+            fill="#000000" stroke="#000000" stroke-width="24" stroke-linejoin="round">
+        GRRR!
+      </text>
+      <!-- Text Main Fill -->
+      <text x="0" y="0" text-anchor="middle" dominant-baseline="central" 
+            font-family="'Impact', 'Arial Black', sans-serif" font-size="160" font-weight="900"
+            fill="url(#textGrad)" stroke="#000000" stroke-width="12" stroke-linejoin="round">
+        GRRR!
+      </text>
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <filter id="ds" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="8" dy="10" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offsetblur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowCyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowPink" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowLime" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a2a35"/>
+      <stop offset="45%" stop-color="#4e4e60"/>
+      <stop offset="100%" stop-color="#161620"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sticker base with die-cut white border and drop shadow -->
+  <g filter="url(#ds)">
+    <path d="M220,240 H660 L780,360 V760 Q780,780 760,780 H240 Q220,780 220,760 Z"
+          fill="#0a0014"
+          stroke="#ffffff"
+          stroke-width="40"
+          stroke-linejoin="round"
+          paint-order="stroke"/>
+  </g>
+
+  <!-- Neon rim inside the border -->
+  <path d="M220,240 H660 L780,360 V760 Q780,780 760,780 H240 Q220,780 220,760 Z"
+        fill="none"
+        stroke="#00ffff"
+        stroke-width="2"
+        opacity="0.85"
+        filter="url(#glowCyan)"/>
+
+  <!-- Metallic shutter -->
+  <path d="M420,245 H580 L590,360 H410 Z"
+        fill="url(#metal)"
+        stroke="#00ffff"
+        stroke-width="2"
+        filter="url(#glowCyan)"/>
+  <path d="M460,300 H540 V320 H460 Z"
+        fill="#050011"
+        stroke="#ff00cc"
+        stroke-width="2"
+        filter="url(#glowPink)"/>
+
+  <!-- Label area -->
+  <rect x="280" y="400" width="440" height="300" rx="10"
+        fill="#120024"
+        stroke="#ff00cc"
+        stroke-width="3"
+        filter="url(#glowPink)"/>
+
+  <!-- Label grid -->
+  <path d="M280,460 H720 M280,500 H720 M280,540 H720 M280,580 H720 M280,620 H720 M280,660 H720"
+        stroke="#00ffff"
+        stroke-width="1"
+        opacity="0.25"/>
+
+  <!-- Text -->
+  <text x="500" y="485" text-anchor="middle"
+        font-family="monospace" font-size="72" font-weight="bold"
+        fill="#00ffea" filter="url(#glowCyan)">HACK</text>
+
+  <text x="500" y="535" text-anchor="middle"
+        font-family="monospace" font-size="28" font-weight="bold"
+        fill="#ff00cc" filter="url(#glowPink)">SYS_BREACH.EXE</text>
+
+  <text x="500" y="600" text-anchor="middle"
+        font-family="monospace" font-size="30" font-weight="bold"
+        fill="#a3ff00" filter="url(#glowLime)">0xDEAD.BEEF</text>
+
+  <text x="500" y="650" text-anchor="middle"
+        font-family="monospace" font-size="20"
+        fill="#00ffff" filter="url(#glowCyan)">SECTOR: 00 / WRITE: ON</text>
+
+  <!-- Skull icon -->
+  <g transform="translate(660,525)">
+    <circle r="26" fill="#080014" stroke="#ff00cc" stroke-width="2" filter="url(#glowPink)"/>
+    <rect x="-14" y="-10" width="10" height="12" fill="#00ffea" filter="url(#glowCyan)"/>
+    <rect x="4" y="-10" width="10" height="12" fill="#00ffea" filter="url(#glowCyan)"/>
+    <path d="M-4,2 L0,10 L4,2 Z" fill="#a3ff00" filter="url(#glowLime)"/>
+    <path d="M-10,16 H10" stroke="#ff00cc" stroke-width="2"/>
+  </g>
+
+  <!-- Circuit traces -->
+  <g fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M260,420 V300 H320 V250" stroke="#00ffff" filter="url(#glowCyan)"/>
+    <path d="M740,420 V300 H680 V250" stroke="#ff00cc" filter="url(#glowPink)"/>
+    <path d="M260,680 H350 V620 H430" stroke="#ff00cc" filter="url(#glowPink)"/>
+    <path d="M740,680 H650 V620 H570" stroke="#00ffff" filter="url(#glowCyan)"/>
+  </g>
+
+  <!-- Circuit nodes -->
+  <circle cx="260" cy="420" r="6" fill="#00ffff" filter="url(#glowCyan)"/>
+  <circle cx="320" cy="250" r="5" fill="#00ffff" filter="url(#glowCyan)"/>
+  <circle cx="740" cy="420" r="6" fill="#ff00cc" filter="url(#glowPink)"/>
+  <circle cx="680" cy="250" r="5" fill="#ff00cc" filter="url(#glowPink)"/>
+  <circle cx="260" cy="680" r="5" fill="#ff00cc" filter="url(#glowPink)"/>
+  <circle cx="430" cy="620" r="4" fill="#ff00cc" filter="url(#glowPink)"/>
+  <circle cx="740" cy="680" r="5" fill="#00ffff" filter="url(#glowCyan)"/>
+  <circle cx="570" cy="620" r="4" fill="#00ffff" filter="url(#glowCyan)"/>
+
+  <!-- Write-protect notch -->
+  <rect x="680" y="730" width="50" height="25" rx="3"
+        fill="#050011" stroke="#ff00cc" stroke-width="2" filter="url(#glowPink)"/>
+
+  <!-- Corner accents -->
+  <path d="M240,760 L270,760 M240,760 L240,730" stroke="#00ffff" stroke-width="3" filter="url(#glowCyan)"/>
+  <path d="M760,760 L730,760 M760,760 L760,730" stroke="#ff00cc" stroke-width="3" filter="url(#glowPink)"/>
+</svg>

@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0A0014">
+        <animate attributeName="stop-color" values="#0A0014;#1A0033;#0A0014" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="centerFlare" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="20%" stop-color="#FF9955" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FF0055" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FF0055" stop-opacity="0"/>
+    </radialGradient>
+    
+    <filter id="heavyGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+    </filter>
+    <filter id="blurEdges" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+    </filter>
+    
+    <!-- Glitch displacement filters -->
+    <filter id="glitchRed" x="-20%" y="-20%" width="140%" height="140%">
+      <feOffset dx="-6" dy="2" result="redShift"/>
+      <feColorMatrix type="matrix" in="redShift" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="red"/>
+      <feOffset dx="6" dy="-2" result="blueShift"/>
+      <feColorMatrix type="matrix" in="blueShift" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="blue"/>
+      <feMerge>
+        <feMergeNode in="red"/>
+        <feMergeNode in="blue"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glitchCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feOffset dx="-4" dy="1" result="redShift2"/>
+      <feColorMatrix type="matrix" in="redShift2" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="red2"/>
+      <feOffset dx="4" dy="-1" result="blueShift2"/>
+      <feColorMatrix type="matrix" in="blueShift2" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="blue2"/>
+      <feMerge>
+        <feMergeNode in="red2"/>
+        <feMergeNode in="blue2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Paths for banded waves -->
+    <path id="pathBase1" d="M 0,150 C 200,100 600,200 800,150 C 900,125 1000,225 1200,150" />
+    <path id="pathBase2" d="M 0,450 C 200,500 600,400 800,450 C 900,475 1000,375 1200,450" />
+    <path id="waveGlitch" d="M 0,300 C 400,200 400,400 800,300 C 1200,200 1200,400 1600,300" />
+    
+    <!-- Base shape for thick block glitch -->
+    <polygon id="glitchChunk" points="0,-30 160,-25 145,25 -10,20 -15,-5" />
+    
+    <!-- Masks for dynamic cropping -->
+    <mask id="centerReveal">
+      <rect x="0" y="0" width="800" height="600" fill="#000000">
+        <animate attributeName="fill" values="#000000;#FFFFFF;#000000" dur="4s" repeatCount="indefinite" calcMode="constant"/>
+      </rect>
+      <circle cx="400" cy="300" r="220" fill="#FFFFFF">
+        <animate attributeName="r" values="0;350;0" dur="6s" repeatCount="indefinite" />
+      </circle>
+    </mask>
+    <mask id="topMask">
+      <rect x="0" y="0" width="800" height="250" fill="#FFFFFF" />
+    </mask>
+    <mask id="bottomMask">
+      <rect x="0" y="350" width="800" height="250" fill="#FFFFFF" />
+    </mask>
+    <mask id="centerSlice">
+      <rect x="0" y="250" width="800" height="100" fill="#FFFFFF" />
+    </mask>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGlow)" />
+
+  <!-- Abstract Center Stream Elements -->
+  <g id="centerPulse">
+    <circle cx="400" cy="300" r="40" fill="url(#centerFlare)" opacity="0.8">
+      <animate attributeName="r" values="1;120;1" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <path d="M 320,220 L 480,220 L 480,380 L 320,380 Z" fill="none" stroke="#39FF14" stroke-width="3" filter="url(#heavyGlow)">
+      <animate attributeName="d" values="M 320,220 L 480,220 L 480,380 L 320,380 Z; M 300,200 L 500,240 L 460,400 L 340,360 Z; M 320,220 L 480,220 L 480,380 L 320,380 Z" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 360,260 L 400,200 L 440,260 L 400,320 Z" fill="#FF0055" opacity="0.9" filter="url(#softGlow)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.3;0.8;1" dur="5s" repeatCount="indefinite" additive="sum" />
+      <animateTransform attributeName="transform" type="rotate" from="0 400 260" to="360 400 260" dur="10s" repeatCount="indefinite" additive="sum" />
+    </path>
+  </g>
+
+  <!-- TOP GLITCH WAVES (Horizontal scanlines expanding/shrinking) -->
+  <g mask="url(#topMask)" filter="url(#glitchRed)">
+    <use href="#pathBase1" fill="none" stroke="#FF3333" stroke-width="80">
+      <animate attributeName="stroke-width" values="80;140;80" dur="2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="-400,0;0,0" dur="5s" repeatCount="indefinite" />
+    </use>
+    <use href="#pathBase1" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="20 40 10 60">
+      <animateTransform attributeName="transform" type="translate" values="-400,0;0,0" dur="5s" repeatCount="indefinite" />
+    </use>
+
+    <use href="#pathBase1" fill="none" stroke="#FF3333" stroke-width="40" transform="translate(0, 60)">
+      <animate attributeName="stroke-width" values="40;90;40" dur="3s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,60;-400,60" dur="6s" repeatCount="indefinite" />
+    </use>
+    <use href="#pathBase1" fill="none" stroke="#39FF14" stroke-width="60" transform="translate(0, 80)">
+      <animate attributeName="stroke-width" values="60;100;60" dur="4s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,80;400,80" dur="7s" repeatCount="indefinite" />
+    </use>
+    
+    <!-- Zig Zag Lines -->
+    <polyline points="-50,110 50,140 150,110 250,160 350,100 450,150 550,110 650,140 750,100 850,150" fill="none" stroke="#FFFFFF" stroke-width="5">
+      <animateTransform attributeName="transform" type="translate" values="-100,0;100,0" dur="1.5s" repeatCount="indefinite" />
+    </polyline>
+
+    <!-- Confetti / Sparkles -->
+    <g>
+      <circle cx="100" cy="50" r="8" fill="#FF0055" filter="url(#softGlow)">
+        <animate attributeName="cy" values="50;150;50" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="cx" values="100;120;100" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="700" cy="90" r="6" fill="#00FFFF" filter="url(#softGlow)">
+        <animate attributeName="cy" values="90;180;90" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="cx" values="700;680;700" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <rect x="300" y="40" width="15" height="15" fill="#FFFF00" transform="rotate(45 307 47)">
+        <animate attributeName="y" values="40;120;40" dur="3s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" from="0 307 47" to="360 307 47" dur="3s" repeatCount="indefinite" additive="sum" />
+      </rect>
+      <rect x="650" y="20" width="20" height="8" fill="#FF8C00">
+        <animate attributeName="x" values="650;600;650" dur="4s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" from="0 660 24" to="360 660 24" dur="2s" repeatCount="indefinite" additive="sum" />
+      </rect>
+    </g>
+  </g>
+
+  <!-- BOTTOM GLITCH WAVES -->
+  <g mask="url(#bottomMask)" filter="url(#glitchCyan)">
+    <use href="#pathBase2" fill="none" stroke="#00FFFF" stroke-width="100">
+      <animate attributeName="stroke-width" values="100;160;100" dur="3s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,0;-400,0" dur="6s" repeatCount="indefinite" />
+    </use>
+    <use href="#pathBase2" fill="none" stroke="#000000" stroke-width="6" stroke-dasharray="30 50 90 20" transform="translate(0, 15)">
+      <animateTransform attributeName="transform" type="translate" values="0,15;200,15" dur="2s" repeatCount="indefinite" />
+    </use>
+
+    <use href="#pathBase2" fill="none" stroke="#00FFFF" stroke-width="50" transform="translate(0, -60)">
+      <animate attributeName="stroke-width" values="50;90;50" dur="4s" repeatCount="indefinite" />
+    </use>
+    <use href="#pathBase2" fill="none" stroke="#9933FF" stroke-width="70" transform="translate(0, -40)">
+      <animate attributeName="stroke-width" values="70;110;70" dur="5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,-40;400,-40" dur="8s" repeatCount="indefinite" />
+    </use>
+    
+    <polyline points="-50,490 50,460 150,490 250,440 350,500 450,450 550,490 650,460 750,500 850,450" fill="none" stroke="#FFFFFF" stroke-width="5">
+      <animateTransform attributeName="transform" type="translate" values="100,0;-100,0" dur="1.2s" repeatCount="indefinite" />
+    </polyline>
+
+    <g>
+      <circle cx="200" cy="520" r="10" fill="#39FF14" filter="url(#softGlow)">
+        <animate attributeName="cy" values="520;420;520" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="600" cy="550" r="7" fill="#FF0055" filter="url(#softGlow)">
+        <animate attributeName="cy" values="550;480;550" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+      <rect x="450" y="560" width="12" height="12" fill="#00FFFF" transform="rotate(15 456 566)">
+        <animateTransform attributeName="transform" type="rotate" from="15 456 566" to="375 456 566" dur="4s" repeatCount="indefinite" additive="sum" />
+      </rect>
+    </g>
+  </g>
+
+  <!-- CENTER GAP (Extreme Glitch Zone) -->
+  <g mask="url(#centerSlice)">
+    <!-- Glowing Blocks Masking -->
+    <mask id="glowBlockMask1">
+      <use href="#glitchChunk" fill="#FFFFFF" transform="translate(200, 270)">
+        <animateTransform attributeName="transform" type="translate" values="200,270;250,290;200,270" dur="0.3s" repeatCount="indefinite" />
+      </use>
+    </mask>
+    <mask id="glowBlockMask2">
+      <use href="#glitchChunk" fill="#FFFFFF" transform="translate(450, 320) rotate(15) scale(0.8)">
+        <animateTransform attributeName="transform" type="translate" values="450,320;400,300;450,320" dur="0.5s" repeatCount="indefinite" additive="sum" />
+      </use>
+    </mask>
+    
+    <!-- Vertical Glitch Core Paths (The "Data" lines) -->
+    <path d="M 0,270 L 800,270" stroke="#FF0055" stroke-width="15" filter="url(#softGlow)">
+      <animate attributeName="stroke-width" values="15;40;15" dur="0.1s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,0;50,0;0,0" dur="0.2s" repeatCount="indefinite" />
+    </path>
+    <path d="M 0,330 L 800,330" stroke="#00FFFF" stroke-width="20" filter="url(#softGlow)">
+      <animate attributeName="stroke-width" values="20;50;20" dur="0.15s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,0;-30,0;0,0" dur="0.3s" repeatCount="indefinite" />
+    </path>
+
+    <!-- The Moving Glitch Wave -->
+    <use href="#waveGlitch" fill="none" stroke="#9933FF" stroke-width="80" filter="url(#heavyGlow)">
+      <animateTransform attributeName="transform" type="translate" values="-800,0;0,0" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="80;120;80" dur="2s" repeatCount="indefinite" />
+    </use>
+    <use href="#waveGlitch" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="50 20 100 30" transform="translate(-400, 0)">
+      <animateTransform attributeName="transform" type="translate" values="-400,0;400,0" dur="3s" repeatCount="indefinite" />
+    </use>
+
+    <!-- Jagged Data Columns -->
+    <path d="M 100,250 L 120,260 L 100,270 L 120,280 L 100,290 L 120,300 L 100,310 L 120,320 L 100,330 L 120,340 L 100,350" fill="none" stroke="#39FF14" stroke-width="6" filter="url(#blurEdges)">
+      <animate attributeName="stroke" values="#39FF14;#FFFF00;#39FF14" dur="0.2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,0;20,0;0,0" dur="0.4s" repeatCount="indefinite" />
+    </path>
+    <path d="M 680,350 L 660,340 L 680,330 L 660,320 L 680,310 L 660,300 L 680,290 L 660,280 L 680,270 L 660,260 L 680,250" fill="none" stroke="#FF8C00" stroke-width="6" filter="url(#blurEdges)">
+      <animate attributeName="stroke" values="#FF8C00;#FF0055;#FF8C00" dur="0.3s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,0;-20,0;0,0" dur="0.5s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Glitch Blocks Shifting -->
+    <use href="#glitchChunk" fill="#FF0055" filter="url(#heavyGlow)" transform="translate(200, 270)">
+      <animate attributeName="opacity" values="1;0;1" dur="0.1s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="200,270;250,290;200,270" dur="0.3s" repeatCount="indefinite" />
+    </use>
+    
+    <use href="#glitchChunk" fill="#00FFFF" filter="url(#heavyGlow)" transform="translate(450, 320) rotate(15) scale(0.8)">
+      <animate attributeName="opacity" values="0;1;0" dur="0.2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="450,320;400,300;450,320" dur="0.5s" repeatCount="indefinite" additive="sum" />
+    </use>
+    
+    <!-- Center Scatter Confetti -->
+    <g>
+      <circle cx="380" cy="280" r="5" fill="#FF0055"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;-50,-20;0,0" dur="0.8s" repeatCount="indefinite" />
+    </g>
+    <g>
+      <circle cx="420" cy="320" r="4" fill="#00FFFF"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;60,30;0,0" dur="1s" repeatCount="indefinite" />
+    </g>
+
+    <!-- Strobe Lines -->
+    <g opacity="0.6">
+      <rect x="0" y="250" width="800" height="5" fill="#FFFFFF">
+        <animate attributeName="width" values="800;0;800" dur="0.5s" repeatCount="indefinite" />
+        <animate attributeName="x" values="0;800;0" dur="0.5s" repeatCount="indefinite" />
+      </rect>
+      <rect x="0" y="340" width="800" height="5" fill="#FFFFFF">
+        <animate attributeName="width" values="0;800;0" dur="0.7s" repeatCount="indefinite" />
+        <animate attributeName="x" values="800;0;800" dur="0.7s" repeatCount="indefinite" />
+      </rect>
+    </g>
+  </g>
+  
+  <!-- Final Digital Overlay (scanlines) -->
+  <g opacity="0.15">
+    <line x1="0" y1="20" x2="800" y2="20" stroke="#FFFFFF" stroke-width="1" />
+    <line x1="0" y1="40" x2="800" y2="40" stroke="#FFFFFF" stroke-width="1" />
+    <line x1="0" y1="60" x2="800" y2="60" stroke="#FFFFFF" stroke-width="1" />
+    <line x1="0" y1="80" x2="800" y2="80" stroke="#FFFFFF" stroke-width="2" />
+    <line x1="0" y1="580" x2="800" y2="580" stroke="#FFFFFF" stroke-width="1" />
+    <line x1="0" y1="560" x2="800" y2="560" stroke="#FFFFFF" stroke-width="1" />
+    <line x1="0" y1="540" x2="800" y2="540" stroke="#FFFFFF" stroke-width="1" />
+    <line x1="0" y1="520" x2="800" y2="520" stroke="#FFFFFF" stroke-width="2" />
+  </g>
+</svg>

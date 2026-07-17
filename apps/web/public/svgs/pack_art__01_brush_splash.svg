@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<filter id="blurMid" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="30" result="b">
+<animate attributeName="stdDeviation" values="30;12;30" dur="8s" repeatCount="indefinite" calcMode="easeInOut"/>
+</feGaussianBlur>
+</filter>
+<filter id="blurHeavy" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="70" result="b">
+<animate attributeName="stdDeviation" values="70;55;70" dur="7s" repeatCount="indefinite" calcMode="easeInOut"/>
+</feGaussianBlur>
+</filter>
+<filter id="grain">
+<feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="5" result="n"/>
+<feColorMatrix in="n" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.08 0" result="c"/>
+<feComposite in="c" in2="SourceGraphic" operator="in"/>
+</filter>
+</defs>
+<rect fill="#FFFBEB" width="1600" height="900"/>
+<rect fill="#1C1917" opacity="0.25" y="820" width="1600" height="80">
+<animate attributeName="opacity" values="0.25;0.35;0.25" dur="9s" repeatCount="indefinite"/>
+</rect>
+<path fill="#D4A017" filter="url(#blurHeavy)" opacity="0.8" d="M 400 600 Q 600 200 1000 600 T 1600 500 L 1600 900 L 0 900 Z">
+<animateTransform attributeName="transform" type="scale" values="0.9;1.05;0.9" dur="6s" repeatCount="indefinite" additive="sum" calcMode="easeInOut"/>
+</path>
+<ellipse fill="#2563EB" filter="url(#blurMid)" opacity="0.7" cx="850" cy="450" rx="400" ry="200">
+<animate attributeName="opacity" values="0.7;0.9;0.7" dur="5s" repeatCount="indefinite"/>
+</ellipse>
+<path stroke="#2563EB" stroke-width="160" fill="none" stroke-linecap="round" opacity="0.95" d="M -50 800 C 300 100 700 100 1650 400" stroke-dasharray="2000" stroke-dashoffset="2000">
+<animate attributeName="stroke-dashoffset" values="2000;0" dur="4s" repeatCount="indefinite" calcMode="easeOut"/>
+</path>
+<path stroke="#D4A017" stroke-width="140" fill="none" stroke-linecap="round" opacity="0.9" d="M -30 550 C 450 900 1100 900 1630 480" stroke-dasharray="1800" stroke-dashoffset="1800">
+<animate attributeName="stroke-dashoffset" values="1800;0" dur="5s" begin="0.5s" repeatCount="indefinite" calcMode="easeOut"/>
+</path>
+<g transform="translate(1000,550)">
+<animateTransform attributeName="transform" type="scale" values="0;1.2;1;1" keyTimes="0;0.15;0.3;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+<animate attributeName="opacity" values="0;0.9;0.85;0.85" keyTimes="0;0.15;0.3;1" dur="4s" repeatCount="indefinite"/>
+<path fill="#DC2626" d="M 0 -80 L 40 -20 L 100 -40 L 60 20 L 90 80 L 0 50 L -90 90 L -60 10 L -100 -50 L -40 -20 Z" opacity="0.9"/>
+</g>
+<path stroke="#DC2626" stroke-width="24" fill="none" stroke-linecap="round" d="M 1000 600 L 1000 880" stroke-dasharray="300" stroke-dashoffset="300" opacity="0.8">
+<animate attributeName="stroke-dashoffset" values="300;0" dur="3s" begin="1.5s" repeatCount="indefinite" calcMode="easeIn"/>
+</path>
+<path stroke="#1C1917" stroke-width="5" fill="none" d="M 100 200 L 300 400 L 200 500" opacity="0">
+<animate attributeName="opacity" values="0;0.8;0" dur="8s" repeatCount="indefinite"/>
+</path>
+<path stroke="#1C1917" stroke-width="8" fill="none" d="M 1400 100 L 1200 300 L 1350 450" opacity="0">
+<animate attributeName="opacity" values="0;0.9;0" dur="7s" begin="1s" repeatCount="indefinite"/>
+</path>
+<g stroke="#1C1917" stroke-width="2" opacity="0.6">
+<line x1="180" y1="780" x2="180" y2="820">
+<animateTransform attributeName="transform" type="translate" values="0,0; 3,0; 0,0" dur="0.2s" repeatCount="indefinite"/>
+</line>
+<line x1="200" y1="760" x2="200" y2="800">
+<animateTransform attributeName="transform" type="translate" values="0,0; -2,0; 0,0" dur="0.25s" repeatCount="indefinite"/>
+</line>
+<line x1="220" y1="770" x2="220" y2="810">
+<animateTransform attributeName="transform" type="translate" values="0,0; 4,0; 0,0" dur="0.22s" repeatCount="indefinite"/>
+</line>
+</g>
+<rect width="1600" height="900" fill="#FFFBEB" filter="url(#grain)" opacity="0.06" style="mix-blend-mode:multiply">
+<animate attributeName="opacity" values="0.06;0.1;0.06" dur="10s" repeatCount="indefinite"/>
+</rect>
+</svg>

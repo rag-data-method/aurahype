@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>\n<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#141428"/>
+      <stop offset="55%" stop-color="#0b0b18"/>
+      <stop offset="100%" stop-color="#05050c"/>
+    </radialGradient>
+    <linearGradient id="terminalBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a3e"/>
+      <stop offset="50%" stop-color="#1a1a2a"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d18"/>
+      <stop offset="100%" stop-color="#05050c"/>
+    </linearGradient>
+    <linearGradient id="receiptGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ff88"/>
+      <stop offset="60%" stop-color="#00d468"/>
+      <stop offset="100%" stop-color="#00aa55"/>
+    </linearGradient>
+    <linearGradient id="receiptBack" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00cc66"/>
+      <stop offset="50%" stop-color="#00ff88"/>
+      <stop offset="100%" stop-color="#00cc66"/>
+    </linearGradient>
+    <filter id="neonGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="receiptGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadowBlur">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+
+  <!-- Ambient neon grid floor -->
+  <g opacity="0.12">
+    <path d="M0 850 L1920 850" stroke="#00ff88" stroke-width="1"/>
+    <path d="M960 850 L400 1080" stroke="#00ff88" stroke-width="1"/>
+    <path d="M960 850 L1520 1080" stroke="#00ff88" stroke-width="1"/>
+    <path d="M960 850 L760 1080" stroke="#00ff88" stroke-width="1"/>
+    <path d="M960 850 L1160 1080" stroke="#00ff88" stroke-width="1"/>
+  </g>
+
+  <!-- Floor glow reflection -->
+  <ellipse cx="960" cy="880" rx="220" ry="35" fill="#00ff88" opacity="0.15" filter="url(#shadowBlur)"/>
+
+  <!-- Wireless signal arcs behind -->
+  <g opacity="0.25" fill="none" stroke="#00ff88" stroke-width="3" stroke-linecap="round" filter="url(#softGlow)">
+    <path d="M760 520 Q700 460 760 400"/>
+    <path d="M1160 520 Q1220 460 1160 400"/>
+    <path d="M720 500 Q650 420 720 340"/>
+    <path d="M1200 500 Q1270 420 1200 340"/>
+  </g>
+
+  <!-- Receipt shadow -->
+  <path d="M860 320 L1060 320 L1080 180 L840 180 Z" fill="#000" opacity="0.25" filter="url(#shadowBlur)"/>
+
+  <!-- Receipt back layer (glow halo) -->
+  <path d="M855 330 L1065 330 L1085 170 L835 170 Z" fill="#00ff88" opacity="0.3" filter="url(#receiptGlow)"/>
+
+  <!-- Main receipt -->
+  <path d="M860 330 L1060 330 L1080 170 L840 170 Z" fill="url(#receiptGrad)" filter="url(#softGlow)"/>
+  <path d="M860 330 L1060 330 L1080 170 L840 170 Z" fill="none" stroke="#80ffbb" stroke-width="2" opacity="0.6"/>
+
+  <!-- Receipt texture lines -->
+  <g opacity="0.35">
+    <rect x="880" y="200" width="140" height="4" rx="2" fill="#004d26"/>
+    <rect x="880" y="220" width="120" height="4" rx="2" fill="#004d26"/>
+    <rect x="880" y="240" width="150" height="4" rx="2" fill="#004d26"/>
+    <rect x="880" y="260" width="100" height="4" rx="2" fill="#004d26"/>
+    <rect x="880" y="280" width="130" height="4" rx="2" fill="#004d26"/>
+  </g>
+
+  <!-- Receipt R$ symbol -->
+  <text x="890" y="315" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#004d26" opacity="0.5">R$</text>
+
+  <!-- Receipt checkmark circle -->
+  <circle cx="960" cy="235" r="38" fill="#004d26" opacity="0.12"/>
+  <circle cx="960" cy="235" r="32" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.9" filter="url(#softGlow)"/>
+  <path d="M945 235 L955 248 L978 220" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)"/>
+
+  <!-- Terminal body -->
+  <g transform="translate(860, 480)">
+    <!-- Main shape -->
+    <rect x="0" y="0" width="200" height="280" rx="28" fill="url(#terminalBody)"/>
+    <path d="M0 40 Q0 0 40 0 L160 0 Q200 0 200 40 L200 240 Q200 280 160 280 L40 280 Q0 280 0 240 Z" fill="url(#terminalBody)"/>
+    
+    <!-- Bevel highlight -->
+    <path d="M20 10 L180 10 Q190 10 190 20 L190 260 Q190 270 180 270 L20 270 Q10 270 10 260 L10 20 Q10 10 20 10 Z" fill="none" stroke="#3a3a55" stroke-width="1.5" opacity="0.6"/>
+    
+    <!-- Side neon strip -->
+    <rect x="12" y="60" width="6" height="160" rx="3" fill="#00ff88" filter="url(#neonGlow)" opacity="0.9"/>
+    <rect x="182" y="60" width="6" height="160" rx="3" fill="#00ff88" filter="url(#neonGlow)" opacity="0.9"/>
+
+    <!-- Screen -->
+    <rect x="25" y="25" width="150" height="110" rx="14" fill="url(#screenGrad)" stroke="#222233" stroke-width="2"/>
+    
+    <!-- Screen glow -->
+    <rect x="35" y="35" width="130" height="90" rx="10" fill="#00ff88" opacity="0.05" filter="url(#softGlow)"/>
+    
+    <!-- Screen checkmark -->
+    <circle cx="100" cy="80" r="24" fill="none" stroke="#00ff88" stroke-width="3.5" filter="url(#neonGlow)" opacity="0.95"/>
+    <path d="M88 80 L96 90 L115 68" fill="none" stroke="#00ff88" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)"/>
+    
+    <!-- Screen text lines -->
+    <rect x="60" y="115" width="80" height="4" rx="2" fill="#00ff88" opacity="0.4"/>
+    <rect x="75" y="125" width="50" height="3" rx="1.5" fill="#00ff88" opacity="0.25"/>
+
+    <!-- Keypad area -->
+    <g transform="translate(35, 155)">
+      <!-- Button grid -->
+      <circle cx="20" cy="20" r="14" fill="#262636" stroke="#333344" stroke-width="1"/>
+      <circle cx="65" cy="20" r="14" fill="#262636" stroke="#333344" stroke-width="1"/>
+      <circle cx="110" cy="20" r="14" fill="#262636" stroke="#333344" stroke-width="1"/>
+      
+      <circle cx="20" cy="58" r="14" fill="#262636" stroke="#333344" stroke-width="1"/>
+      <circle cx="65" cy="58" r="14" fill="#262636" stroke="#333344" stroke-width="1"/>
+      <circle cx="110" cy="58" r="14" fill="#262636" stroke="#333344" stroke-width="1"/>
+      
+      <circle cx="20" cy="96" r="14" fill="#262636" stroke="#333344" stroke-width="1"/>
+      <circle cx="65" cy="96" r="14" fill="#262636" stroke="#333344" stroke-width="1"/>
+      <circle cx="110" cy="96" r="14" fill="#262636" stroke="#333344" stroke-width="1"/>
+      
+      <!-- Number hints -->
+      <text x="17" y="25" font-family="Arial, sans-serif" font-size="10" fill="#666677">1</text>
+      <text x="62" y="25" font-family="Arial, sans-serif" font-size="10" fill="#666677">2</text>
+      <text x="107" y="25" font-family="Arial, sans-serif" font-size="10" fill="#666677">3</text>
+      <text x="17" y="63" font-family="Arial, sans-serif" font-size="10" fill="#666677">4</text>
+      <text x="62" y="63" font-family="Arial, sans-serif" font-size="10" fill="#666677">5</text>
+      <text x="107" y="63" font-family="Arial, sans-serif" font-size="10" fill="#666677">6</text>
+      <text x="17" y="101" font-family="Arial, sans-serif" font-size="10" fill="#666677">7</text>
+      <text x="62" y="101" font-family="Arial, sans-serif" font-size="10" fill="#666677">8</text>
+      <text x="107" y="101" font-family="Arial, sans-serif" font-size="10" fill="#666677">9</text>
+    </g>
+
+    <!-- Green action button -->
+    <circle cx="167" cy="240" r="16" fill="#00ff88" filter="url(#neonGlow)" opacity="0.95"/>
+    <path d="M160 240 L165 246 L175 234" fill="none" stroke="#0a0a14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Top slot -->
+  <rect x="875" y="475" width="170" height="14" rx="7" fill="#11111f" stroke="#333344" stroke-width="1"/>
+  <rect x="885" y="478" width="150" height="8" rx="4" fill="#000" opacity="0.6"/>
+
+  <!-- Floating neon particles -->
+  <circle cx="760" cy="350" r="4" fill="#00ff88" filter="url(#softGlow)" opacity="0.8"/>
+  <circle cx="1160" cy="380" r="3" fill="#00ff88" filter="url(#softGlow)" opacity="0.6"/>
+  <circle cx="720" cy="450" r="2.5" fill="#00ff88" filter="url(#softGlow)" opacity="0.7"/>
+  <circle cx="1200" cy="300" r="3.5" fill="#00ff88" filter="url(#softGlow)" opacity="0.5"/>
+  <circle cx="800" cy="280" r="2" fill="#00ff88" filter="url(#softGlow)" opacity="0.6"/>
+  <circle cx="1120" cy="260" r="2.5" fill="#00ff88" filter="url(#softGlow)" opacity="0.7"/>
+
+  <!-- Large ambient green glow behind terminal -->
+  <ellipse cx="960" cy="620" rx="180" ry="220" fill="#00ff88" opacity="0.06" filter="url(#shadowBlur)"/>
+
+  <!-- Success text accent -->
+  <text x="960" y="850" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#00ff88" letter-spacing="6" opacity="0.85" filter="url(#softGlow)">PAGAMENTO APROVADO</text>
+</svg>

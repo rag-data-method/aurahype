@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9F73"/>
+      <stop offset="45%" stop-color="#E54B9C" id="skyStop1">
+        <animate attributeName="offset" values="45%;48%;45%" dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="80%" stop-color="#6B4FBB" id="skyStop2">
+        <animate attributeName="offset" values="80%;76%;80%" dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+
+    <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF9F73" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#E54B9C" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#6B4FBB" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6B4FBB" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="rimLight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFB07A" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#E54B9C" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E54B9C" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="atmosphericBlur">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="mediumBlur">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="rimBlur">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="turbTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.005 0.015" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+
+    <!-- Hair Clip Paths -->
+    <clipPath id="hairClip1">
+      <path d="M 1200 80 C 1250 90, 1320 160, 1350 280 C 1370 360, 1390 440, 1420 520 L 1280 540 C 1220 400, 1200 240, 1200 80 Z"/>
+    </clipPath>
+    <clipPath id="hairClip2">
+      <path d="M 1190 120 C 1240 140, 1290 220, 1310 340 C 1330 420, 1320 520, 1350 620 L 1150 600 C 1170 450, 1160 280, 1190 120 Z"/>
+    </clipPath>
+    <clipPath id="hairClip3">
+      <path d="M 1150 250 C 1200 280, 1240 350, 1260 450 C 1270 530, 1250 630, 1280 720 L 1060 700 C 1090 560, 1100 380, 1150 250 Z"/>
+    </clipPath>
+    <clipPath id="hairClip4">
+      <path d="M 1080 400 C 1120 430, 1150 500, 1160 600 C 1170 680, 1150 760, 1170 850 L 980 830 C 960 700, 1000 520, 1080 400 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Layer 1: Deep Background Base -->
+  <rect width="1600" height="900" fill="#1A1A2E"/>
+
+  <!-- Layer 2: Sky Gradient -->
+  <rect width="1600" height="900" fill="url(#skyGrad)">
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="14s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 3: Atmospheric Haze -->
+  <rect x="-100" y="-100" width="1800" height="1100" fill="#E54B9C" opacity="0.15" filter="url(#atmosphericBlur)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="18s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,-20; 0,0" dur="22s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 4: Sun Primary -->
+  <circle cx="600" cy="450" r="380" fill="url(#sunGrad)">
+    <animate attributeName="r" values="380;395;380" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Layer 5: Sun Atmospheric Glow -->
+  <circle cx="600" cy="450" r="600" fill="#FF9F73" opacity="0.12" filter="url(#atmosphericBlur)">
+    <animate attributeName="opacity" values="0.12;0.18;0.12" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="600;620;600" dur="14s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Layer 6: Back Clouds -->
+  <g opacity="0.4" filter="url(#mediumBlur)">
+    <ellipse cx="400" cy="350" rx="300" ry="80" fill="#E54B9C">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 40,10; 0,0" dur="28s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="900" cy="200" rx="250" ry="60" fill="#FF9F73" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,5; 0,0" dur="24s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Layer 7: Mid-ground Haze Clouds -->
+  <g opacity="0.25" filter="url(#softBlur)">
+    <ellipse cx="200" cy="600" rx="400" ry="120" fill="#6B4FBB">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,-15; 0,0" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1100" cy="750" rx="350" ry="90" fill="#E54B9C">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,10; 0,0" dur="26s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Layer 8: Floating Dust Motes -->
+  <g fill="#FF9F73" opacity="0.5">
+    <circle cx="300" cy="250" r="3" filter="url(#softBlur)">
+      <animate attributeName="cy" values="250;230;250" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="300;320;300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="550" r="5" filter="url(#softBlur)">
+      <animate attributeName="cy" values="550;570;550" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="450;430;450" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="300" r="4" filter="url(#softBlur)">
+      <animate attributeName="cy" values="300;290;300" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="800;810;800" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.15;0.5" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="700" r="6" filter="url(#softBlur)">
+      <animate attributeName="cy" values="700;720;700" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="150;170;150" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="950" cy="100" r="2" filter="url(#softBlur)">
+      <animate attributeName="cy" values="100;90;100" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="950;940;950" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 9: Background Hair Wisps (Blurred, atmospheric) -->
+  <g fill="#1A1A2E" opacity="0.6" filter="url(#mediumBlur)">
+    <path d="M 1220 150 Q 1350 180 1380 320 Q 1400 450 1360 550" stroke="#1A1A2E" stroke-width="40" fill="none" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" values="-2 1220 150; 3 1220 150; -2 1220 150" dur="12s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1160 350 Q 1280 400 1320 550 Q 1340 680 1290 780" stroke="#1A1A2E" stroke-width="50" fill="none" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" values="1 1160 350; -4 1160 350; 1 1160 350" dur="15s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 10: Profile Silhouette Base (Neck, Shoulders, Face) -->
+  <g id="bodyGroup">
+    <path d="M 1285 380 
+             C 1285 310, 1220 260, 1160 260 
+             C 1110 260, 1080 290, 1070 330 
+             C 1060 350, 1040 360, 1030 380 
+             C 1040 400, 1060 420, 1070 440 
+             C 1080 480, 1100 520, 1140 540 
+             L 1140 600 
+             C 1100 620, 1050 650, 1000 680 
+             C 950 710, 930 750, 920 800 
+             L 920 900 
+             L 1600 900 
+             L 1600 700 
+             C 1600 620, 1520 560, 1450 540 
+             C 1400 520, 1350 500, 1320 480 
+             C 1300 450, 1290 420, 1285 380 Z" fill="#1A1A2E"/>
+  </g>
+
+  <!-- Layer 11: Chest Area (Breathing Target) -->
+  <g id="chestGroup">
+    <path d="M 1140 600 C 1100 620, 1050 650, 1000 680 C 950 710, 930 750, 920 800 L 1250 800 C 1280 720, 1300 650, 1320 580 C 1280 580, 1220 600, 1140 600 Z" fill="#1A1A2E"/>
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.015 1.01; 1 1" dur="6s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0; -8 -4; 0 0" dur="6s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </g>
+
+  <!-- Layer 12: Main Hair Cluster 1 (Behind ear, top) -->
+  <g>
+    <path d="M 1200 80 C 1250 90, 1320 160, 1350 280 C 1370 360, 1390 440, 1420 520 L 1280 540 C 1220 400, 1200 240, 1200 80 Z" fill="#1A1A2E" clip-path="url(#hairClip1)">
+      <animateTransform attributeName="transform" type="rotate" values="-3 1200 80; 4 1200 80; -3 1200 80" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+    <!-- Inner texture lines -->
+    <path d="M 1220 120 Q 1280 200 1300 350" stroke="#2A2A3E" stroke-width="4" fill="none" opacity="0.5" clip-path="url(#hairClip1)">
+      <animateTransform attributeName="transform" type="rotate" values="-3 1200 80; 4 1200 80; -3 1200 80" dur="9s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 13: Main Hair Cluster 2 (Mid-back) -->
+  <g>
+    <path d="M 1190 120 C 1240 140, 1290 220, 1310 340 C 1330 420, 1320 520, 1350 620 L 1150 600 C 1170 450, 1160 280, 1190 120 Z" fill="#151525" clip-path="url(#hairClip2)">
+      <animateTransform attributeName="transform" type="rotate" values="2 1190 120; -5 1190 120; 2 1190 120" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+    <path d="M 1210 180 Q 1260 280 1270 450" stroke="#2A2A3E" stroke-width="5" fill="none" opacity="0.4" clip-path="url(#hairClip2)">
+      <animateTransform attributeName="transform" type="rotate" values="2 1190 120; -5 1190 120; 2 1190 120" dur="11s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 14: Main Hair Cluster 3 (Lower back) -->
+  <g>
+    <path d="M 1150 250 C 1200 280, 1240 350, 1260 450 C 1270 530, 1250 630, 1280 720 L 1060 700 C 1090 560, 1100 380, 1150 250 Z" fill="#1A1A2E" clip-path="url(#hairClip3)">
+      <animateTransform attributeName="transform" type="rotate" values="-4 1150 250; 3 1150 250; -4 1150 250" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+    <path d="M 1170 300 Q 1210 400 1220 580" stroke="#2A2A3E" stroke-width="6" fill="none" opacity="0.4" clip-path="url(#hairClip3)">
+      <animateTransform attributeName="transform" type="rotate" values="-4 1150 250; 3 1150 250; -4 1150 250" dur="13s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 15: Main Hair Cluster 4 (Bottom cascade) -->
+  <g>
+    <path d="M 1080 400 C 1120 430, 1150 500, 1160 600 C 1170 680, 1150 760, 1170 850 L 980 830 C 960 700, 1000 520, 1080 400 Z" fill="#151525" clip-path="url(#hairClip4)">
+      <animateTransform attributeName="transform" type="rotate" values="3 1080 400; -6 1080 400; 3 1080 400" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+    <path d="M 1100 450 Q 1120 550 1120 720" stroke="#2A2A3E" stroke-width="7" fill="none" opacity="0.3" clip-path="url(#hairClip4)">
+      <animateTransform attributeName="transform" type="rotate" values="3 1080 400; -6 1080 400; 3 1080 400" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 16: Front Hair Wisps (Highly detailed, blowing across face/shoulder) -->
+  <g fill="none" stroke="#1A1A2E" stroke-linecap="round">
+    <!-- Wisp 1 -->
+    <path d="M 1160 260 Q 1120 350 1140 450 Q 1160 550 1100 620" stroke-width="12" filter="url(#turbTexture)">
+      <animate attributeName="d" values="M 1160 260 Q 1120 350 1140 450 Q 1160 550 1100 620; M 1160 260 Q 1130 340 1150 460 Q 1170 560 1120 630; M 1160 260 Q 1120 350 1140 450 Q 1160 550 1100 620" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+    <!-- Wisp 2 -->
+    <path d="M 1190 200 Q 1160 300 1180 420 Q 1200 520 1150 580" stroke-width="9" filter="url(#turbTexture)">
+      <animate attributeName="d" values="M 1190 200 Q 1160 300 1180 420 Q 1200 520 1150 580; M 1190 200 Q 1170 290 1190 430 Q 1210 530 1170 590; M 1190 200 Q 1160 300 1180 420 Q 1200 520 1150 580" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+    <!-- Wisp 3 -->
+    <path d="M 1220 150 Q 1210 250 1240 380 Q 1260 480 1220 550" stroke-width="6" opacity="0.8">
+      <animate attributeName="d" values="M 1220 150 Q 1210 250 1240 380 Q 1260 480 1220 550; M 1220 150 Q 1220 240 1250 390 Q 1270 490 1240 560; M 1220 150 Q 1210 250 1240 380 Q 1260 480 1220 550" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+    <!-- Wisp 4 (Foreground, very fine) -->
+    <path d="M 1240 120 Q 1260 220 1300 350 Q 1320 450 1290 520" stroke-width="4" opacity="0.7">
+      <animate attributeName="d" values="M 1240 120 Q 1260 220 1300 350 Q 1320 450 1290 520; M 1240 120 Q 1270 210 1310 360 Q 1330 460 1310 530; M 1240 120 Q 1260 220 1300 350 Q 1320 450 1290 520" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Layer 17: Flying Loose Strands (Detaching and floating) -->
+  <g fill="none" stroke="#1A1A2E" stroke-linecap="round">
+    <path d="M 1300 400 Q 1280 500 1250 600" stroke-width="3" opacity="0.6">
+      <animate attributeName="d" values="M 1300 400 Q 1280 500 1250 600; M 1300 400 Q 1290 510 1260 610; M 1300 400 Q 1280 500 1250 600" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1260 280 Q 1240 380 1210 480" stroke-width="2" opacity="0.5">
+      <animate attributeName="d" values="M 1260 280 Q 1240 380 1210 480; M 1260 280 Q 1250 390 1220 490; M 1260 280 Q 1240 380 1210 480" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1120 500 Q 1090 580 1060 660" stroke-width="4" opacity="0.7">
+      <animate attributeName="d" values="M 1120 500 Q 1090 580 1060 660; M 1120 500 Q 1100 590 1070 670; M 1120 500 Q 1090 580 1060 660" dur="7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 18: Warm Rim Light on Silhouette Edge -->
+  <g fill="none" stroke="url(#rimLight)" stroke-linecap="round" filter="url(#rimBlur)">
+    <!-- Forehead and nose highlight -->
+    <path d="M 1070 330 C 1060 350, 1040 360, 1030 380 C 1040 400, 1060 420, 1070 440" stroke-width="6" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <!-- Jawline highlight -->
+    <path d="M 1070 440 C 1080 480, 1100 520, 1140 540" stroke-width="5" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.3;0.6" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <!-- Shoulder highlight -->
+    <path d="M 1140 600 C 1100 620, 1050 650, 1000 680" stroke-width="8" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="7s" repeatCount="indefinite"/>
+    </path>
+    <!-- Hair edge highlights -->
+    <path d="M 1160 260 C 1110 260, 1080 290, 1070 330" stroke-width="4" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1200 80 C 1250 90, 1320 160, 1350 280" stroke-width="3" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 19: Soft Rim Glow Layer -->
+  <g fill="none" stroke="#FFB07A" stroke-linecap="round" filter="url(#softBlur)" opacity="0.3">
+    <path d="M 1060 320 C 1050 340, 1030 350, 1020 370 C 1030 390, 1050 410, 1060 430 C 1070 470, 1090 510, 1130 530" stroke-width="14">
+      <animate attributeName="opacity" values="0.3;0.15;0.3" dur="9s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1130 590 C 1090 610, 1040 640, 990 670" stroke-width="18">
+      <animate attributeName="opacity" values="0.25;0.1;0.25" dur="11s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 20: Subtle Light Leak / Lens Flare -->
+  <ellipse cx="1050" cy="500" rx="150" ry="400" fill="#FF9F73" opacity="0.04" filter="url(#atmosphericBlur)" transform="rotate(-30 1050 500)">
+    <animate attributeName="opacity" values="0.04;0.08;0.04" dur="15s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="-30 1050 500; -25 1050 500; -30 1050 500" dur="20s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Layer 21: Minimal Face Suggestion (Shadow only, no detail) -->
+  <path d="M 1065 335 C 1055 355, 1045 365, 1040 375 C 1045 390, 1055 405, 1065 415" fill="none" stroke="#0A0A1E" stroke-width="2" opacity="0.4" filter="url(#softBlur)">
+    <animate attributeName="opacity" values="0.4;0.2;0.4" dur="10s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Layer 22: Vignette Overlay for Cinematic Depth -->
+  <rect width="1600" height="900" fill="url(#vignetteGrad)" pointer-events="none"/>
+  <defs>
+    <radialGradient id="vignetteGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="50%" stop-color="#1A1A2E" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1A1A2E" stop-opacity="0.6"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Layer 23: Final Atmospheric Drift (Top corner haze) -->
+  <rect x="1200" y="-100" width="600" height="500" fill="#6B4FBB" opacity="0.08" filter="url(#atmosphericBlur)">
+    <animate attributeName="opacity" values="0.08;0.15;0.08" dur="18s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -40,20; 0,0" dur="25s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 24: Bottom Warm Glow drift -->
+  <rect x="-100" y="700" width="800" height="300" fill="#FF9F73" opacity="0.06" filter="url(#mediumBlur)">
+    <animate attributeName="opacity" values="0.06;0.12;0.06" dur="14s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,-10; 0,0" dur="20s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 25: Subtle Head Sway (Composite motion for entire upper silhouette) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="0 1285 600; 0.5 1285 600; 0 1285 600" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    <!-- Empty group to anchor the animation, affecting children via additive inheritance if placed, 
+         but since SVG 1.1 animateTransform on <g> affects its coordinate system, 
+         we ensure the body is visually inside this scope by wrapping the relevant parts above 
+         or using an additional overlay. To keep structure clean, we rely on the breathing chest 
+         and hair movements to convey life. This layer is a subtle global shift. -->
+    <!-- Applying a subtle shadow shift -->
+    <ellipse cx="1100" cy="850" rx="300" ry="40" fill="#1A1A2E" opacity="0.15" filter="url(#softBlur)">
+      <animate attributeName="rx" values="300;320;300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1100;1105;1100" dur="12s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+</svg>

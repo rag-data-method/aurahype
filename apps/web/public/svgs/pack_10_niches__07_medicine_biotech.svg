@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40"/>
+    </filter>
+    <filter id="deepBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="75"/>
+    </filter>
+    <filter id="noiseTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.05 0"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  
+  <rect width="1600" height="900" fill="#A8D8EA" opacity="0.04" filter="url(#noiseTexture)"/>
+  
+  <circle cx="300" cy="200" r="180" fill="#A8D8EA" opacity="0.15" filter="url(#deepBlur)">
+    <animate attributeName="cy" values="200;250;200" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="1300" cy="700" r="200" fill="#5BC5A8" opacity="0.12" filter="url(#deepBlur)">
+    <animate attributeName="cx" values="1300;1250;1300" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.12;0.2;0.12" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <g transform="translate(800, 450)">
+    <path d="M-200,-300 Q0,-150 -200,0 T-200,300" fill="none" stroke="#6FB3D2" stroke-width="50" opacity="0.4" filter="url(#deepBlur)">
+      <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="20s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M200,-300 Q0,-150 200,0 T200,300" fill="none" stroke="#A8D8EA" stroke-width="50" opacity="0.35" filter="url(#deepBlur)">
+      <animateTransform attributeName="transform" type="rotate" values="0 0 0;-360 0 0" dur="20s" repeatCount="indefinite"/>
+    </path>
+    
+    <g opacity="0.6">
+      <line x1="-150" y1="-200" x2="150" y2="-200" stroke="#5BC5A8" stroke-width="8" opacity="0.8" filter="url(#softGlow)">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 -200;360 0 -200" dur="20s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="5s" begin="0s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-150" y1="-100" x2="150" y2="-100" stroke="#5BC5A8" stroke-width="8" opacity="0.8" filter="url(#softGlow)">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 -100;360 0 -100" dur="20s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="5s" begin="1.6s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-150" y1="0" x2="150" y2="0" stroke="#5BC5A8" stroke-width="8" opacity="0.8" filter="url(#softGlow)">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="20s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="5s" begin="3.2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-150" y1="100" x2="150" y2="100" stroke="#5BC5A8" stroke-width="8" opacity="0.8" filter="url(#softGlow)">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 100;360 0 100" dur="20s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="5s" begin="4.8s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-150" y1="200" x2="150" y2="200" stroke="#5BC5A8" stroke-width="8" opacity="0.8" filter="url(#softGlow)">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 200;360 0 200" dur="20s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="5s" begin="6.4s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <path d="M-200,-300 Q0,-150 -200,0 T-200,300" fill="none" stroke="#A8D8EA" stroke-width="22" opacity="0.9" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="20s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M200,-300 Q0,-150 200,0 T200,300" fill="none" stroke="#5BC5A8" stroke-width="22" opacity="0.85" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" values="0 0 0;-360 0 0" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0.6;0.85" dur="7s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M-200,-300 Q0,-150 -200,0" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.5" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="20s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <g>
+    <circle r="12" fill="#6FB3D2" opacity="0.8" filter="url(#softGlow)">
+      <animateMotion path="M200,150 Q400,50 600,150 T1000,100" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="8" fill="#5BC5A8" opacity="0.95">
+      <animateMotion path="M1400,800 Q1200,600 1000,700 T600,750" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="15" fill="#A8D8EA" opacity="0.8" filter="url(#softGlow)">
+      <animateMotion path="M800,50 Q1000,250 800,450 T800,850" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="15;20;15" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="6" fill="#6FB3D2" opacity="0.85">
+      <animateMotion path="M150,600 Q350,500 550,600 T950,550" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="10" fill="#5BC5A8" opacity="0.75" filter="url(#softGlow)">
+      <animateMotion path="M1450,400 Q1250,500 1050,400 T650,450" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.75;0.4;0.75" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="5" fill="#A8D8EA" opacity="0.9">
+      <animateMotion path="M400,850 Q600,750 800,850 T1200,800" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="9" fill="#6FB3D2" opacity="0.9">
+      <animateMotion path="M1200,200 Q1000,300 800,200 T400,250" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.5;0.9" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <ellipse cx="800" cy="450" rx="400" ry="200" fill="#A8D8EA" opacity="0.08" filter="url(#deepBlur)">
+    <animate attributeName="rx" values="400;450;400" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="200;250;200" dur="12s" repeatCount="indefinite"/>
+  </ellipse>
+</svg>

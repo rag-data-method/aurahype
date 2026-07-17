@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- GRADIENTS -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D1A2F">
+        <animate attributeName="stop-color" values="#3D1A2F;#2A0F1F;#3D1A2F" dur="18s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="60%" stop-color="#C73A85">
+        <animate attributeName="stop-color" values="#C73A85;#E54B9C;#C73A85" dur="22s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#F2A6C8">
+        <animate attributeName="stop-color" values="#F2A6C8;#E54B9C;#F2A6C8" dur="20s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <radialGradient id="glowGrad" cx="30%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#F2A6C8" />
+      <stop offset="50%" stop-color="#E54B9C" />
+      <stop offset="100%" stop-color="#3D1A2F" />
+    </radialGradient>
+
+    <radialGradient id="dropGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#F2A6C8" />
+      <stop offset="60%" stop-color="#E54B9C" />
+      <stop offset="100%" stop-color="#C73A85" />
+    </radialGradient>
+
+    <radialGradient id="highlightGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="wandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D1A2F" />
+      <stop offset="50%" stop-color="#C73A85" />
+      <stop offset="100%" stop-color="#E54B9C" />
+    </linearGradient>
+
+    <!-- FILTERS: 3-5 feGaussianBlur mandatory, plus glow/shadow -->
+    <filter id="blur40" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+
+    <filter id="blur80" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="80" />
+    </filter>
+
+    <filter id="blur120" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="120" />
+    </filter>
+
+    <filter id="blur160" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="160" />
+    </filter>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="25" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="bloom" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="40" result="b1" />
+      <feGaussianBlur stdDeviation="80" result="b2" />
+      <feMerge>
+        <feMergeNode in="b2" />
+        <feMergeNode in="b1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="15" dy="25" stdDeviation="20" flood-color="#3D1A2F" flood-opacity="0.6" />
+    </filter>
+
+    <filter id="dropGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="15" result="blur1" />
+      <feGaussianBlur stdDeviation="35" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="sparkleGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="composite" />
+      <feBlend mode="overlay" in="composite" in2="SourceGraphic" />
+    </filter>
+
+    <clipPath id="dropClip">
+      <ellipse cx="1100" cy="580" rx="26" ry="48" />
+    </clipPath>
+  </defs>
+
+  <!-- LAYER 1: Deep Background -->
+  <rect width="1600" height="900" fill="url(#bgGrad)" />
+  
+  <!-- LAYER 2: Deep Atmospheric Fog (blur160) -->
+  <ellipse cx="300" cy="450" rx="500" ry="700" fill="#3D1A2F" opacity="0.75" filter="url(#blur160)">
+    <animate attributeName="cx" values="300;340;300" dur="20s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.75;0.6;0.75" dur="15s" repeatCount="indefinite" />
+  </ellipse>
+  
+  <!-- LAYER 3: Back Fog (blur120) -->
+  <ellipse cx="1200" cy="350" rx="600" ry="500" fill="#C73A85" opacity="0.35" filter="url(#blur120)">
+    <animate attributeName="cy" values="350;320;350" dur="18s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.35;0.5;0.35" dur="12s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- LAYER 4: Mid Fog (blur80) -->
+  <ellipse cx="950" cy="650" rx="700" ry="450" fill="#E54B9C" opacity="0.25" filter="url(#blur80)">
+    <animate attributeName="cx" values="950;1000;950" dur="22s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- LAYER 5: Near Fog (blur40) -->
+  <ellipse cx="600" cy="250" rx="400" ry="300" fill="#F2A6C8" opacity="0.15" filter="url(#blur40)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="10s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- LAYER 6: Cool Rim Glow behind subject -->
+  <ellipse cx="1120" cy="480" rx="180" ry="280" fill="#F2A6C8" opacity="0.2" filter="url(#bloom)">
+    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="8s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- LAYER 7: Main Ambient Light Pool -->
+  <ellipse cx="1100" cy="500" rx="300" ry="400" fill="url(#glowGrad)" opacity="0.3" filter="url(#blur80)" />
+
+  <!-- LAYER 8: Wand Shaft Core Shadow -->
+  <path d="M 1050,-100 L 1045,600 L 1065,600 L 1060,-100 Z" fill="#3D1A2F" opacity="0.9" filter="url(#blur40)" />
+
+  <!-- LAYER 9: Wand Shaft Base -->
+  <path d="M 1045,-100 L 1040,580 L 1068,580 L 1063,-100 Z" fill="url(#wandGrad)" opacity="0.85" filter="url(#softShadow)" />
+
+  <!-- LAYER 10: Wand Rim Light Left -->
+  <path d="M 1045,-100 L 1042,580" stroke="#F2A6C8" stroke-width="4" fill="none" opacity="0.8" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="6s" repeatCount="indefinite" />
+  </path>
+
+  <!-- LAYER 11: Wand Rim Light Right -->
+  <path d="M 1063,-100 L 1066,580" stroke="#E54B9C" stroke-width="2" fill="none" opacity="0.5" filter="url(#glow)" />
+
+  <!-- LAYER 12: Wand Tip Taper -->
+  <path d="M 1040,580 Q 1045,610 1054,620 L 1060,620 L 1068,580 Z" fill="#C73A85" opacity="0.9" />
+
+  <!-- LAYER 13: Drop Cast Shadow on wand -->
+  <ellipse cx="1058" cy="625" rx="18" ry="8" fill="#3D1A2F" opacity="0.6" filter="url(#blur40)">
+    <animate attributeName="rx" values="18;20;18" dur="7s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- LAYER 14: Gloss Drop Base -->
+  <g filter="url(#dropGlow)">
+    <ellipse cx="1100" cy="580" rx="26" ry="48" fill="url(#dropGrad)" opacity="0.95">
+      <animate attributeName="rx" values="26;27.5;26" dur="9s" repeatCount="indefinite" />
+      <animate attributeName="ry" values="48;50;48" dur="11s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="580;582;580" dur="10s" repeatCount="indefinite" />
+    </ellipse>
+  </g>
+
+  <!-- LAYER 15: Drop Internal Dark Depth -->
+  <ellipse cx="1100" cy="610" rx="14" ry="22" fill="#3D1A2F" opacity="0.35" filter="url(#blur40)" clip-path="url(#dropClip)">
+    <animate attributeName="opacity" values="0.35;0.25;0.35" dur="8s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- LAYER 16: Drop Bright Rim Light (Left) -->
+  <path d="M 1080,545 Q 1075,580 1085,620" stroke="#F2A6C8" stroke-width="3" fill="none" opacity="0.7" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.5;0.85;0.5" dur="5s" repeatCount="indefinite" />
+  </path>
+
+  <!-- LAYER 17: Drop Bright Rim Light (Right) -->
+  <path d="M 1120,545 Q 1125,580 1115,620" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.4" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="7s" repeatCount="indefinite" />
+  </path>
+
+  <!-- LAYER 18: Main Drop Studio Highlight (The dramatic reflection) -->
+  <ellipse cx="1092" cy="555" rx="6" ry="14" fill="url(#highlightGrad)" opacity="0.95" filter="url(#sparkleGlow)">
+    <animate attributeName="opacity" values="0.7;1;0.7;0.9;0.7" dur="4s" repeatCount="indefinite" />
+    <animate attributeName="rx" values="6;8;6" dur="6s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- LAYER 19: Secondary Highlight -->
+  <ellipse cx="1112" cy="590" rx="3" ry="6" fill="#FFFFFF" opacity="0.6" filter="url(#sparkleGlow)">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5.5s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- LAYER 20: Drop Bottom Reflection Bounce -->
+  <ellipse cx="1100" cy="618" rx="10" ry="4" fill="#F2A6C8" opacity="0.5" filter="url(#blur40)">
+    <animate attributeName="opacity" values="0.4;0.6;0.4" dur="8s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- LAYER 21: Floating Sparkle Particles -->
+  <g id="sparkles" fill="#FFFFFF" filter="url(#sparkleGlow)">
+    <!-- Particle 1 -->
+    <g transform="translate(1020, 400)">
+      <circle r="2.5" opacity="0.8">
+        <animate attributeName="opacity" values="0;0.8;0" dur="6s" begin="0s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;3;0" dur="6s" begin="0s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; -15,-30; 0,0" dur="12s" begin="0s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 2 -->
+    <g transform="translate(1150, 320)">
+      <circle r="1.8" opacity="0.6">
+        <animate attributeName="opacity" values="0;0.6;0" dur="8s" begin="1.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;2.5;0" dur="8s" begin="1.5s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 20,-20; 0,0" dur="15s" begin="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 3 -->
+    <g transform="translate(980, 520)">
+      <circle r="2" opacity="0.7">
+        <animate attributeName="opacity" values="0;0.7;0" dur="7s" begin="3s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;2.8;0" dur="7s" begin="3s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 10,25; 0,0" dur="14s" begin="3s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 4 -->
+    <g transform="translate(1200, 450)">
+      <circle r="3" opacity="0.9">
+        <animate attributeName="opacity" values="0;0.9;0" dur="5s" begin="0.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;3.5;0" dur="5s" begin="0.5s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; -25,15; 0,0" dur="18s" begin="0.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 5 -->
+    <g transform="translate(1080, 280)">
+      <circle r="1.5" opacity="0.5">
+        <animate attributeName="opacity" values="0;0.5;0" dur="9s" begin="2.2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;2;0" dur="9s" begin="2.2s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 8,-15; 0,0" dur="11s" begin="2.2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 6 -->
+    <g transform="translate(1250, 580)">
+      <circle r="2.2" opacity="0.75">
+        <animate attributeName="opacity" values="0;0.75;0" dur="10s" begin="4s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;3;0" dur="10s" begin="4s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; -10,20; 0,0" dur="16s" begin="4s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 7 -->
+    <g transform="translate(950, 350)">
+      <circle r="1.2" opacity="0.4">
+        <animate attributeName="opacity" values="0;0.4;0" dur="12s" begin="5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;1.8;0" dur="12s" begin="5s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 12,-8; 0,0" dur="20s" begin="5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 8 -->
+    <g transform="translate(1180, 680)">
+      <circle r="2.8" opacity="0.85">
+        <animate attributeName="opacity" values="0;0.85;0" dur="6.5s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;3.5;0" dur="6.5s" begin="1s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; -18,-25; 0,0" dur="13s" begin="1s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 9 -->
+    <g transform="translate(900, 480)">
+      <circle r="2" opacity="0.65">
+        <animate attributeName="opacity" values="0;0.65;0" dur="7.5s" begin="3.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;2.5;0" dur="7.5s" begin="3.5s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 20,10; 0,0" dur="17s" begin="3.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 10 -->
+    <g transform="translate(1130, 220)">
+      <circle r="1.6" opacity="0.55">
+        <animate attributeName="opacity" values="0;0.55;0" dur="11s" begin="6s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;2.2;0" dur="11s" begin="6s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; -5,-20; 0,0" dur="19s" begin="6s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 11 -->
+    <g transform="translate(1060, 720)">
+      <circle r="2.5" opacity="0.7">
+        <animate attributeName="opacity" values="0;0.7;0" dur="8s" begin="2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;3;0" dur="8s" begin="2s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 15,-10; 0,0" dur="14s" begin="2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 12 -->
+    <g transform="translate(1280, 380)">
+      <circle r="1.4" opacity="0.5">
+        <animate attributeName="opacity" values="0;0.5;0" dur="13s" begin="7s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;2;0" dur="13s" begin="7s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; -12,18; 0,0" dur="21s" begin="7s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 13 -->
+    <g transform="translate(1040, 500)">
+      <circle r="1.8" opacity="0.6">
+        <animate attributeName="opacity" values="0;0.6;0" dur="9s" begin="4.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;2.5;0" dur="9s" begin="4.5s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; -8,15; 0,0" dur="16s" begin="4.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 14 -->
+    <g transform="translate(1220, 520)">
+      <circle r="2.2" opacity="0.8">
+        <animate attributeName="opacity" values="0;0.8;0" dur="5.5s" begin="1.2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;3;0" dur="5.5s" begin="1.2s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 10,-22; 0,0" dur="12s" begin="1.2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Particle 15 -->
+    <g transform="translate(980, 620)">
+      <circle r="1.6" opacity="0.45">
+        <animate attributeName="opacity" values="0;0.45;0" dur="10s" begin="5.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="0;2.2;0" dur="10s" begin="5.5s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 18,8; 0,0" dur="18s" begin="5.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+
+  <!-- LAYER 22: Foreground Atmospheric Haze Overlay -->
+  <rect x="0" y="0" width="1600" height="900" fill="#3D1A2F" opacity="0.08" filter="url(#blur80)">
+    <animate attributeName="opacity" values="0.08;0.15;0.08" dur="14s" repeatCount="indefinite" />
+  </rect>
+  <rect x="0" y="0" width="1600" height="900" fill="#F2A6C8" opacity="0.03" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.03;0.08;0.03" dur="16s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- LAYER 23: Edge Vignette for Cinematic Feel -->
+  <rect width="1600" height="900" fill="none" stroke="#3D1A2F" stroke-width="180" opacity="0.5" filter="url(#blur160)" />
+
+  <!-- LAYER 24: Subtle Grain Texture Overlay -->
+  <rect width="1600" height="900" fill="#FFFFFF" opacity="0.04" filter="url(#grain)" />
+
+  <!-- LAYER 25: Final Bloom Pass on Subject Area -->
+  <ellipse cx="1100" cy="580" rx="100" ry="150" fill="#FFFFFF" opacity="0.06" filter="url(#bloom)">
+    <animate attributeName="opacity" values="0.04;0.08;0.04" dur="10s" repeatCount="indefinite" />
+  </ellipse>
+</svg>

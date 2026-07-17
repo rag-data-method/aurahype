@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="b1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="80"/></filter>
+<filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="50"/></filter>
+<filter id="t"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/></filter>
+</defs>
+<rect width="1600" height="900" fill="#F5EFE3"/>
+<circle cx="300" cy="300" r="400" fill="#4A7C3A" opacity="0.2" filter="url(#b1)"><animate attributeName="cx" values="300;500;300" dur="12s" repeatCount="indefinite"/><animate attributeName="cy" values="300;250;300" dur="10s" repeatCount="indefinite"/></circle>
+<circle cx="1300" cy="700" r="350" fill="#7FB069" opacity="0.18" filter="url(#b2)"><animate attributeName="cx" values="1300;1200;1300" dur="11s" repeatCount="indefinite"/></circle>
+<g fill="none" stroke-width="14" stroke-linecap="round">
+<path stroke="#4A7C3A" opacity="0.9" d="M-100,180 Q400,120 800,180 T1700,160"><animateTransform attributeName="transform" type="translate" values="0,0;60,0;0,0" dur="10s" repeatCount="indefinite"/></path>
+<path stroke="#7FB069" opacity="0.85" d="M-100,320 Q400,260 800,320 T1700,300"><animateTransform attributeName="transform" type="translate" values="0,0;-40,0;0,0" dur="8s" repeatCount="indefinite"/></path>
+<path stroke="#C9D86A" opacity="0.8" d="M-100,460 Q400,400 800,460 T1700,440"><animateTransform attributeName="transform" type="translate" values="0,0;50,0;0,0" dur="9s" repeatCount="indefinite"/></path>
+<path stroke="#4A7C3A" opacity="0.9" d="M-100,600 Q400,540 800,600 T1700,580"><animateTransform attributeName="transform" type="translate" values="0,0;-30,0;0,0" dur="11s" repeatCount="indefinite"/></path>
+<path stroke="#7FB069" opacity="0.85" d="M-100,740 Q400,680 800,740 T1700,720"><animateTransform attributeName="transform" type="translate" values="0,0;70,0;0,0" dur="7s" repeatCount="indefinite"/></path>
+<path stroke="#C9D86A" opacity="0.75" d="M-100,880 Q400,820 800,880 T1700,860"><animateTransform attributeName="transform" type="translate" values="0,0;-20,0;0,0" dur="12s" repeatCount="indefinite"/></path>
+</g>
+<g opacity="0.9">
+<path fill="#7FB069" d="M200,400 Q230,340 260,400 Q230,460 200,400 Z M230,340 L230,460" stroke="#7FB069" stroke-width="2"><animateTransform attributeName="transform" type="rotate" values="0 230 400;10 230 400;0 230 400" dur="6s" repeatCount="indefinite"/><animateMotion path="M0,0 Q100,-30 200,0" dur="13s" repeatCount="indefinite"/></path>
+<path fill="#C9D86A" d="M900,250 Q940,190 980,250 Q940,310 900,250 Z M940,190 L940,310" stroke="#C9D86A" stroke-width="2"><animateTransform attributeName="transform" type="rotate" values="0 940 250;-12 940 250;0 940 250" dur="7s" repeatCount="indefinite"/><animateMotion path="M0,0 Q-150,50 -300,0" dur="11s" repeatCount="indefinite"/></path>
+<path fill="#4A7C3A" d="M1300,500 Q1340,450 1380,500 Q1340,550 1300,500 Z M1340,450 L1340,550" opacity="0.85" stroke="#4A7C3A" stroke-width="2"><animateTransform attributeName="transform" type="rotate" values="0 1340 500;8 1340 500;0 1340 500" dur="5s" repeatCount="indefinite"/><animateMotion path="M0,0 Q-100,80 -200,0" dur="10s" repeatCount="indefinite"/></path>
+<path fill="#7FB069" d="M600,750 Q640,700 680,750 Q640,800 600,750 Z M640,700 L640,800" opacity="0.8" stroke="#7FB069" stroke-width="2"><animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,-20;0,0" dur="8s" repeatCount="indefinite" additive="sum"/></path>
+</g>
+<circle cx="400" cy="200" r="18" fill="#C9D86A" opacity="0.8"><animate attributeName="cy" values="200;170;200" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;1;0.8" dur="5s" repeatCount="indefinite"/></circle>
+<circle cx="1200" cy="800" r="22" fill="#4A7C3A" opacity="0.9"><animate attributeName="cy" values="800;770;800" dur="6s" repeatCount="indefinite"/></circle>
+<rect width="1600" height="900" fill="transparent" filter="url(#t)"/>
+</svg>

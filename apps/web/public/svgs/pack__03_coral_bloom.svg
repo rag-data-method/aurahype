@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur-mid" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35" result="blur"/>
+    </filter>
+    <filter id="blur-strong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="75" result="blur"/>
+    </filter>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FFF5EB"/>
+  
+  <path fill="#B85440" opacity="0.75" filter="url(#blur-strong)" d="M200,450 C180,320 320,180 480,220 C640,260 620,520 460,620 C300,720 140,620 200,450 Z">
+    <animateTransform attributeName="transform" type="scale" values="1;1.18;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+    <animateTransform attributeName="transform" type="rotate" values="-8 400 425; 8 400 425; -8 400 425" dur="10s" repeatCount="indefinite" additive="sum"/>
+  </path>
+  
+  <path fill="#B85440" opacity="0.8" filter="url(#blur-mid)" d="M-80,280 C40,120 320,80 440,240 C560,400 320,640 80,580 C-160,520 -200,440 -80,280 Z">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 40,-30; 0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.12;1" dur="7s" repeatCount="indefinite" additive="sum"/>
+  </path>
+  
+  <path fill="#FF7F00" opacity="0.9" d="M1180,180 C1340,80 1520,180 1560,340 C1600,500 1420,680 1260,620 C1100,560 1060,380 1180,180 Z">
+    <animateTransform attributeName="transform" type="rotate" values="-6 1400 400; 6 1400 400; -6 1400 400" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FA8072" opacity="0.95" d="M280,480 C340,320 560,280 680,440 C800,600 620,820 400,760 C180,700 220,640 280,480 Z">
+    <animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -25,15; 0,0" dur="8s" repeatCount="indefinite" additive="sum"/>
+  </path>
+  
+  <path fill="#FFB088" opacity="0.85" d="M480,180 C640,80 880,130 940,290 C1000,450 820,580 640,520 C460,460 360,340 480,180 Z">
+    <animateTransform attributeName="transform" type="rotate" values="0 720 350; 12 720 350; 0 720 350" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="5s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FF7F00" opacity="0.92" d="M680,380 C800,220 1040,220 1160,380 C1280,540 1100,780 860,720 C620,660 560,540 680,380 Z">
+    <animateTransform attributeName="transform" type="scale" values="0.95;1.1;0.95" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-40; 0,0" dur="7s" repeatCount="indefinite" additive="sum"/>
+  </path>
+  
+  <path fill="#FA8072" opacity="0.95" d="M880,580 C1000,460 1240,520 1300,680 C1360,840 1140,960 940,900 C740,840 760,700 880,580 Z">
+    <animateTransform attributeName="transform" type="rotate" values="6 1120 750; -6 1120 750; 6 1120 750" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#B85440" opacity="0.7" filter="url(#blur-mid)" d="M1080,80 C1240,30 1420,140 1360,300 C1300,460 1080,420 1020,300 C960,180 960,130 1080,80 Z">
+    <animateTransform attributeName="transform" type="scale" values="1;1.25;1" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FFB088" opacity="0.88" d="M80,80 C240,-20 480,30 420,200 C360,370 120,420 0,320 C-120,220 -80,180 80,80 Z">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,25; 0,0" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.88;0.98;0.88" dur="4s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FA8072" opacity="0.9" d="M360,720 C520,620 780,680 840,860 C900,1040 680,1160 480,1100 C280,1040 200,920 360,720 Z">
+    <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="5s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FF7F00" opacity="0.9" d="M580,20 C760,-90 980,-20 1040,160 C1100,340 920,460 720,400 C520,340 420,200 580,20 Z">
+    <animateTransform attributeName="transform" type="rotate" values="-5 820 250; 5 820 250; -5 820 250" dur="7s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#FFB088" opacity="0.9" d="M1280,380 C1460,280 1640,380 1640,560 C1640,740 1420,800 1240,680 C1060,560 1120,480 1280,380 Z">
+    <animateTransform attributeName="transform" type="scale" values="0.9;1.08;0.9" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+  
+  <path fill="#B85440" opacity="0.85" filter="url(#blur-strong)" d="M580,760 C800,660 1040,720 1100,920 C1160,1120 920,1240 700,1180 C480,1120 400,960 580,760 Z">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -15,20; 0,0" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <rect width="1600" height="900" fill="transparent" filter="url(#noise)" opacity="0.1" style="pointer-events:none"/>
+</svg>

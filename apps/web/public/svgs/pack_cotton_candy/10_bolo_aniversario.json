@@ -1,0 +1,24 @@
+{
+  "slug": "10_bolo_aniversario",
+  "title": "Bolo de Aniversário",
+  "category": "cotton_candy",
+  "objects": "tiered cake + frosting swirls + burning candle",
+  "colors": {
+    "primary": "#E2F0CB",
+    "secondary": "#FFB7B2",
+    "accent": "#FFDAC1",
+    "bg": "#FFFFFF"
+  },
+  "tags": [
+    "light",
+    "candy",
+    "cake",
+    "celebration"
+  ],
+  "svgFile": "10_bolo_aniversario.svg",
+  "sizeKB": 8.38,
+  "animations": 31,
+  "gradients": 8,
+  "generatedAt": "2026-06-19",
+  "model": "@cf/moonshotai/kimi-k2.7-code"
+}

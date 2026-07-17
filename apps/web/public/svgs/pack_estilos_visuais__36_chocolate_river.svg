@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A1B15"/>
+      <stop offset="100%" stop-color="#4E342E"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#3E2723" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1A100C" stop-opacity="0.55"/>
+    </radialGradient>
+    <linearGradient id="cocoa" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3E2723"/>
+      <stop offset="100%" stop-color="#281815"/>
+    </linearGradient>
+    <linearGradient id="milk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6D4C41"/>
+      <stop offset="100%" stop-color="#4E342E"/>
+    </linearGradient>
+    <linearGradient id="caramel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A1887F"/>
+      <stop offset="100%" stop-color="#6D4C41"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+
+  <path fill="url(#cocoa)" d="M-100,480 C300,420 700,540 1100,480 S1900,420 2300,480 V950 H-100 Z">
+    <animateTransform attributeName="transform" type="translate" values="-40 8;40 -8;-40 8" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <path fill="url(#milk)" d="M-100,580 C350,530 750,630 1150,580 S1950,530 2350,580 V950 H-100 Z" opacity="0.95">
+    <animateTransform attributeName="transform" type="translate" values="35 -6;-35 6;35 -6" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <path fill="url(#caramel)" d="M-100,680 C400,640 800,720 1200,680 S2000,640 2400,680 V950 H-100 Z" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="-25 5;25 -5;-25 5" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <path fill="url(#sheen)" d="M-100,500 C300,460 700,540 1100,500 S1900,460 2300,500 V520 Q1900,480 1100,520 Q300,480 -100,520 Z">
+    <animateTransform attributeName="transform" type="translate" values="-60 0;60 0;-60 0" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+</svg>

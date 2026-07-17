@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05010d"/>
+      <stop offset="50%" stop-color="#1a0b2e"/>
+      <stop offset="100%" stop-color="#05010d"/>
+    </linearGradient>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9900ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#9900ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1a4a"/>
+      <stop offset="100%" stop-color="#0d0221"/>
+    </linearGradient>
+    <linearGradient id="nailGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ff00cc"/>
+      <stop offset="50%" stop-color="#ff66ff"/>
+      <stop offset="100%" stop-color="#9900ff"/>
+    </linearGradient>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="35" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <style>
+    .float { animation: float 8s ease-in-out infinite; }
+    .pulse { animation: pulse 4s ease-in-out infinite; }
+    .drift { animation: drift 14s ease-in-out infinite; }
+    .drift-slow { animation: drift 18s ease-in-out infinite reverse; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.75; }
+      50% { opacity: 1; }
+    }
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(25px, -35px); }
+    }
+  </style>
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+  <circle cx="960" cy="540" r="500" fill="url(#bgGlow)" filter="url(#strongGlow)" class="pulse"/>
+  <g opacity="0.25" filter="url(#neonGlow)">
+    <line x1="0" y1="1080" x2="960" y2="540" stroke="#ff00cc" stroke-width="3"/>
+    <line x1="1920" y1="1080" x2="960" y2="540" stroke="#00ffff" stroke-width="3"/>
+    <line x1="0" y1="0" x2="960" y2="540" stroke="#9900ff" stroke-width="2"/>
+    <line x1="1920" y1="0" x2="960" y2="540" stroke="#ff66ff" stroke-width="2"/>
+  </g>
+  <g class="float" transform-origin="960 900">
+    <path d="M900 1080 C860 980,840 880,860 800 C880 740,920 720,960 720 C1000 720,1040 740,1060 800 C1080 880,1060 980,1020 1080 Z" fill="url(#skinGrad)" stroke="#ff00cc" stroke-width="2" filter="url(#neonGlow)"/>
+    <path d="M880 780 C840 720,780 660,740 600 C720 580,740 560,770 560 C800 560,830 600,850 660 C870 720,890 760,880 780 Z" fill="url(#skinGrad)" stroke="#ff00cc" stroke-width="2" filter="url(#neonGlow)"/>
+    <path d="M930 760 C910 680,880 600,870 520 C865 500,885 490,905 500 C925 510,940 590,950 670 C955 720,950 760,930 760 Z" fill="url(#skinGrad)" stroke="#ff00cc" stroke-width="2" filter="url(#neonGlow)"/>
+    <path d="M960 760 C955 680,950 580,950 500 C950 480,970 480,970 500 C970 580,965 680,960 760 Z" fill="url(#skinGrad)" stroke="#ff00cc" stroke-width="2" filter="url(#neonGlow)"/>
+    <path d="M990 760 C1010 680,1040 600,1050 520 C1055 500,1035 490,1015 500 C995 510,980 590,970 670 C965 720,970 760,990 760 Z" fill="url(#skinGrad)" stroke="#ff00cc" stroke-width="2" filter="url(#neonGlow)"/>
+    <path d="M1030 780 C1080 720,1140 660,1200 620 C1220 600,1230 620,1210 640 C1180 670,1120 720,1080 780 C1060 800,1040 790,1030 780 Z" fill="url(#skinGrad)" stroke="#ff00cc" stroke-width="2" filter="url(#neonGlow)"/>
+    <g class="pulse">
+      <path d="M720 600 C715 540,730 480,740 460 C750 480,765 540,760 600 Z" fill="url(#nailGrad)" stroke="#ff99ff" stroke-width="1.5" filter="url(#neonGlow)"/>
+      <path d="M860 520 C855 450,870 390,880 370 C890 390,905 450,900 520 Z" fill="url(#nailGrad)" stroke="#ff99ff" stroke-width="1.5" filter="url(#neonGlow)"/>
+      <path d="M940 500 C935 420,950 360,960 340 C970 360,985 420,980 500 Z" fill="url(#nailGrad)" stroke="#ff99ff" stroke-width="1.5" filter="url(#neonGlow)"/>
+      <path d="M1000 520 C995 450,1010 390,1020 370 C1030 390,1045 450,1040 520 Z" fill="url(#nailGrad)" stroke="#ff99ff" stroke-width="1.5" filter="url(#neonGlow)"/>
+      <path d="M1180 620 C1175 540,1190 480,1200 460 C1210 480,1225 540,1220 620 Z" fill="url(#nailGrad)" stroke="#ff99ff" stroke-width="1.5" filter="url(#neonGlow)"/>
+      <ellipse cx="740" cy="530" rx="4" ry="28" fill="#ffffff" opacity="0.45" transform="rotate(-5 740 530)"/>
+      <ellipse cx="880" cy="450" rx="5" ry="32" fill="#ffffff" opacity="0.45" transform="rotate(-3 880 450)"/>
+      <ellipse cx="960" cy="420" rx="5" ry="36" fill="#ffffff" opacity="0.5"/>
+      <ellipse cx="1020" cy="450" rx="5" ry="32" fill="#ffffff" opacity="0.45" transform="rotate(3 1020 450)"/>
+      <ellipse cx="1200" cy="540" rx="4" ry="28" fill="#ffffff" opacity="0.45" transform="rotate(5 1200 540)"/>
+    </g>
+  </g>
+  <g fill="#ff00cc" filter="url(#neonGlow)">
+    <circle cx="300" cy="200" r="4" opacity="0.6" class="drift"/>
+    <circle cx="1600" cy="300" r="5" opacity="0.5" class="drift-slow"/>
+    <circle cx="450" cy="850" r="3" opacity="0.7" class="drift-slow"/>
+    <circle cx="1500" cy="800" r="4" opacity="0.6" class="drift"/>
+    <circle cx="200" cy="500" r="3" opacity="0.5" class="drift"/>
+    <circle cx="1700" cy="600" r="5" opacity="0.4" class="drift-slow"/>
+  </g>
+</svg>

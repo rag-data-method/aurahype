@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- GRADIENTS -->
+    <radialGradient id="skyGrad" cx="0%" cy="0%" r="120%">
+      <stop offset="0%" stop-color="#D4A574">
+        <animate attributeName="stop-color" values="#D4A574;#C97864;#D4A574" dur="18s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="45%" stop-color="#C97864">
+        <animate attributeName="stop-color" values="#C97864;#8B0F23;#C97864" dur="22s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="75%" stop-color="#5C2D2A"/>
+      <stop offset="100%" stop-color="#3D0E1F"/>
+    </radialGradient>
+
+    <linearGradient id="vineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5C2D2A"/>
+      <stop offset="50%" stop-color="#3D0E1F"/>
+      <stop offset="100%" stop-color="#3D0E1F"/>
+    </linearGradient>
+
+    <!-- FILTERS -->
+    <filter id="blurL1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="blurL2" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="blurL3" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="blurL4" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+    <filter id="dropShdw" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="15" dy="25" stdDeviation="20" flood-color="#3D0E1F" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.04"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND LAYERS -->
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+  
+  <!-- Atmospheric Depth Bokeh -->
+  <g filter="url(#blurL4)" opacity="0.6">
+    <circle cx="300" cy="400" r="250" fill="#C97864">
+      <animate attributeName="cy" values="400;380;400" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="600" r="350" fill="#8B0F23">
+      <animate attributeName="cx" values="600;620;600" dur="25s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g filter="url(#blurL3)" opacity="0.4">
+    <circle cx="100" cy="200" r="300" fill="#D4A574"/>
+    <circle cx="450" cy="750" r="400" fill="#3D0E1F"/>
+  </g>
+  <g filter="url(#blurL2)" opacity="0.5">
+    <circle cx="350" cy="450" r="180" fill="#C97864">
+      <animate attributeName="r" values="180;200;180" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="300" r="250" fill="#5C2D2A"/>
+  </g>
+
+  <!-- Haze Rects -->
+  <rect x="0" y="0" width="1000" height="900" fill="#D4A574" opacity="0.15" filter="url(#blurL1)"/>
+  <rect x="0" y="600" width="1600" height="300" fill="#3D0E1F" opacity="0.4" filter="url(#blurL2)"/>
+
+  <!-- VINE TRUNK / BRANCHES (Background Silhouette) -->
+  <g opacity="0.45" filter="url(#blurL1)">
+    <path d="M1450 950 L1400 800 L1100 700 L900 600 L700 450 L500 250" stroke="#3D0E1F" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <path d="M1100 700 L1150 550 L1050 400 L850 200" stroke="#3D0E1F" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M900 600 L1000 500 L950 300" stroke="#3D0E1F" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- INTERMEDIATE BLUR LAYER -->
+  <rect x="0" y="0" width="1600" height="900" fill="#5C2D2A" opacity="0.08" filter="url(#blurL2)"/>
+
+  <!-- MAIN VINE STRUCTURE -->
+  <g filter="url(#dropShdw)">
+    <!-- Main Branch -->
+    <path d="M1550 900 Q1450 800 1350 750 Q1200 680 1000 600 Q850 520 720 380 Q600 250 450 50" stroke="url(#vineGrad)" stroke-width="14" fill="none" stroke-linecap="round">
+      <animate attributeName="stroke-width" values="14;15;14" dur="10s" repeatCount="indefinite"/>
+    </path>
+    <!-- Secondary Branches -->
+    <path d="M1350 750 Q1250 650 1150 550 Q1050 420 950 280" stroke="url(#vineGrad)" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M1000 600 Q1050 480 980 350" stroke="url(#vineGrad)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M720 380 Q650 280 580 150" stroke="url(#vineGrad)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <!-- Tendrils -->
+    <path d="M1150 550 Q1180 500 1130 450 T1150 350" stroke="#C97864" stroke-width="3" fill="none" opacity="0.6"/>
+    <path d="M980 350 Q1020 300 950 250 T970 150" stroke="#C97864" stroke-width="2.5" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- LEAF CLUSTER 1 (Top Left of Vine, Cinematic Backlighting) -->
+  <g filter="url(#glow)">
+    <!-- Leaf 1 -->
+    <g transform="translate(420, 80) rotate(-25)">
+      <path d="M0 0 C-40 -60 -100 -40 -120 -10 C-140 20 -100 60 -60 80 C-20 100 20 80 0 0 Z" fill="#C97864" opacity="0.9">
+        <animateTransform attributeName="transform" type="rotate" values="-5;5;-5" dur="11s" repeatCount="indefinite" additive="sum"/>
+      </path>
+      <path d="M0 0 C30 -50 90 -30 110 0 C130 30 90 70 50 90 C10 110 -30 90 0 0 Z" fill="#8B0F23" opacity="0.85">
+        <animateTransform attributeName="transform" type="rotate" values="3;-3;3" dur="9s" repeatCount="indefinite" additive="sum"/>
+      </path>
+    </g>
+    <!-- Leaf 2 -->
+    <g transform="translate(350, 180) rotate(-60)">
+      <path d="M0 0 C-30 -50 -80 -30 -100 0 C-120 30 -80 60 -40 70 C-10 80 20 60 0 0 Z" fill="#5C2D2A" opacity="0.85"/>
+      <path d="M0 0 C20 -40 70 -20 90 10 C110 40 70 70 30 80 C0 90 -30 70 0 0 Z" fill="#3D0E1F" opacity="0.9"/>
+      <animateTransform attributeName="transform" type="translate" values="350 180;340 190;350 180" dur="14s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="-60;-55;-60" dur="14s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    <!-- Leaf 3 -->
+    <g transform="translate(580, 160) rotate(20)">
+      <path d="M0 0 C-50 -40 -110 -20 -130 20 C-150 60 -100 100 -50 110 C0 120 40 80 0 0 Z" fill="#C97864" opacity="0.6"/>
+      <path d="M0 0 C40 -50 100 -30 120 10 C140 50 90 90 40 100 C-10 110 -50 70 0 0 Z" fill="#D4A574" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="rotate" values="20;28;20" dur="16s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- LEAF CLUSTER 2 (Mid Top, Rim Light) -->
+  <g filter="url(#glow)">
+    <g transform="translate(950, 280) rotate(-10)">
+      <path d="M0 0 C-60 -80 -140 -50 -160 -10 C-180 40 -120 90 -60 100 C0 110 50 70 0 0 Z" fill="#8B0F23" opacity="0.95">
+        <animate attributeName="opacity" values="0.95;0.8;0.95" dur="10s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0 0 C50 -70 130 -40 150 0 C170 50 110 100 50 110 C-10 120 -60 80 0 0 Z" fill="#C97864" opacity="0.8"/>
+      <path d="M0 0 Q-80 -20 -160 -10" stroke="#D4A574" stroke-width="3" fill="none">
+        <animate attributeName="stroke-width" values="3;5;3" dur="8s" repeatCount="indefinite"/>
+      </path>
+      <animateTransform attributeName="transform" type="rotate" values="-10;-5;-10" dur="12s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- LEAF CLUSTER 3 (Mid Right, Heavy Silhouette) -->
+  <g filter="url(#dropShdw)">
+    <g transform="translate(1150, 570) rotate(15)">
+      <path d="M0 0 C-70 -90 -160 -60 -180 -10 C-200 50 -130 110 -60 120 C10 130 70 80 0 0 Z" fill="#3D0E1F" opacity="0.9"/>
+      <path d="M0 0 C60 -80 150 -50 170 0 C190 60 120 120 50 130 C-20 140 -80 90 0 0 Z" fill="#5C2D2A" opacity="0.85">
+        <animateTransform attributeName="transform" type="rotate" values="0;5;0" dur="13s" repeatCount="indefinite"/>
+      </path>
+      <animateTransform attributeName="transform" type="rotate" values="15;22;15" dur="15s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(980, 360) rotate(-45)">
+      <path d="M0 0 C-40 -60 -100 -40 -120 0 C-140 40 -90 80 -40 90 C10 100 50 60 0 0 Z" fill="#3D0E1F" opacity="0.95">
+        <animateTransform attributeName="transform" type="rotate" values="0;-8;0" dur="11s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0 0 C30 -50 90 -30 110 10 C130 50 80 90 30 100 C-20 110 -60 70 0 0 Z" fill="#5C2D2A" opacity="0.8"/>
+      <animateTransform attributeName="transform" type="translate" values="980 360;970 365;980 360" dur="18s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="-45;-40;-45" dur="18s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+
+  <!-- LEAF CLUSTER 4 (Bottom Right, Fading into Atmosphere) -->
+  <g opacity="0.7" filter="url(#blurL1)">
+    <g transform="translate(1250, 680) rotate(30)">
+      <path d="M0 0 C-80 -100 -180 -70 -200 -20 C-220 50 -140 120 -60 130 C20 140 90 90 0 0 Z" fill="#5C2D2A"/>
+      <path d="M0 0 C70 -90 170 -60 190 -10 C210 60 130 130 50 140 C-30 150 -100 100 0 0 Z" fill="#3D0E1F"/>
+      <animateTransform attributeName="transform" type="rotate" values="30;25;30" dur="20s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- GRAPES CLUSTER (Focal Point, Bottom Right) -->
+  <g filter="url(#dropShdw)">
+    <!-- Connecting Stem -->
+    <path d="M1180 600 Q1200 650 1250 700" stroke="#3D0E1F" stroke-width="6" fill="none"/>
+    <path d="M1250 700 Q1270 660 1320 640" stroke="#3D0E1F" stroke-width="5" fill="none"/>
+    <path d="M1250 700 Q1230 740 1280 760" stroke="#3D0E1F" stroke-width="5" fill="none"/>
+
+    <!-- Bottom Row Grapes -->
+    <g transform="translate(1200, 780)">
+      <circle cx="0" cy="0" r="18" fill="#3D0E1F"/>
+      <circle cx="0" cy="0" r="18" fill="url(#skyGrad)" opacity="0.15"/>
+      <path d="M-10 -5 Q-5 -15 5 -10" stroke="#D4A574" stroke-width="2" fill="none" opacity="0.6"/>
+      <animateTransform attributeName="transform" type="translate" values="1200 780;1195 785;1200 780" dur="9s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(1245, 810)">
+      <circle cx="0" cy="0" r="22" fill="#3D0E1F"/>
+      <circle cx="0" cy="0" r="22" fill="url(#skyGrad)" opacity="0.1"/>
+      <path d="M-12 -8 Q-6 -18 6 -12" stroke="#D4A574" stroke-width="2.5" fill="none" opacity="0.7"/>
+      <animateTransform attributeName="transform" type="translate" values="1245 810;1250 805;1245 810" dur="11s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(1295, 785)">
+      <circle cx="0" cy="0" r="19" fill="#3D0E1F"/>
+      <path d="M-10 -6 Q-4 -14 4 -10" stroke="#C97864" stroke-width="2" fill="none" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="translate" values="1295 785;1290 790;1295 785" dur="10s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(1320, 735)">
+      <circle cx="0" cy="0" r="16" fill="#3D0E1F"/>
+      <animateTransform attributeName="transform" type="translate" values="1320 735;1325 740;1320 735" dur="12s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Middle Row Grapes -->
+    <g transform="translate(1220, 725)">
+      <circle cx="0" cy="0" r="24" fill="#3D0E1F"/>
+      <circle cx="0" cy="0" r="24" fill="url(#skyGrad)" opacity="0.2"/>
+      <path d="M-14 -10 Q-8 -22 8 -16" stroke="#D4A574" stroke-width="3" fill="none" opacity="0.8"/>
+      <animate attributeName="opacity" values="1;0.9;1" dur="14s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="1220 725;1215 720;1220 725" dur="13s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(1270, 740)">
+      <circle cx="0" cy="0" r="26" fill="#3D0E1F"/>
+      <circle cx="0" cy="0" r="26" fill="url(#skyGrad)" opacity="0.15"/>
+      <path d="M-15 -12 Q-8 -24 8 -18" stroke="#D4A574" stroke-width="3" fill="none" opacity="0.9"/>
+      <animateTransform attributeName="transform" type="translate" values="1270 740;1275 735;1270 740" dur="15s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(1310, 695)">
+      <circle cx="0" cy="0" r="20" fill="#3D0E1F"/>
+      <path d="M-10 -8 Q-4 -16 4 -12" stroke="#C97864" stroke-width="2" fill="none" opacity="0.6"/>
+      <animateTransform attributeName="transform" type="translate" values="1310 695;1305 700;1310 695" dur="11s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Top Row Grapes -->
+    <g transform="translate(1240, 665)">
+      <circle cx="0" cy="0" r="23" fill="#3D0E1F"/>
+      <circle cx="0" cy="0" r="23" fill="url(#skyGrad)" opacity="0.25"/>
+      <path d="M-13 -9 Q-7 -20 7 -15" stroke="#D4A574" stroke-width="3" fill="none" opacity="0.9">
+        <animate attributeName="stroke-width" values="3;5;3" dur="8s" repeatCount="indefinite"/>
+      </path>
+      <animateTransform attributeName="transform" type="translate" values="1240 665;1235 670;1240 665" dur="10s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(1280, 650)">
+      <circle cx="0" cy="0" r="21" fill="#3D0E1F"/>
+      <path d="M-11 -8 Q-5 -16 5 -12" stroke="#D4A574" stroke-width="2.5" fill="none" opacity="0.7"/>
+      <animateTransform attributeName="transform" type="translate" values="1280 650;1285 655;1280 650" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(1260, 620)">
+      <circle cx="0" cy="0" r="18" fill="#3D0E1F"/>
+      <path d="M-9 -7 Q-4 -14 4 -10" stroke="#C97864" stroke-width="2" fill="none" opacity="0.6"/>
+      <animateTransform attributeName="transform" type="translate" values="1260 620;1255 625;1260 620" dur="9s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- The Apex Grape -->
+    <g transform="translate(1235, 590)">
+      <circle cx="0" cy="0" r="14" fill="#5C2D2A"/>
+      <circle cx="0" cy="0" r="14" fill="url(#skyGrad)" opacity="0.3"/>
+      <path d="M-7 -5 Q-3 -12 3 -8" stroke="#D4A574" stroke-width="2" fill="none" opacity="0.8"/>
+      <animateTransform attributeName="transform" type="translate" values="1235 590;1232 588;1235 590" dur="7s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- FOREGROUND LEAVES (Framing the bottom right, slightly blurred) -->
+  <g filter="url(#blurL1)" opacity="0.8">
+    <g transform="translate(1400, 850) rotate(-30)">
+      <path d="M0 0 C-100 -120 -220 -80 -250 -20 C-280 60 -180 140 -80 160 C20 180 120 110 0 0 Z" fill="#3D0E1F"/>
+      <path d="M0 0 C90 -110 210 -70 240 -10 C270 70 170 150 70 170 C-30 190 -130 120 0 0 Z" fill="#5C2D2A"/>
+      <animateTransform attributeName="transform" type="rotate" values="-30;-35;-30" dur="17s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(1000, 880) rotate(10)">
+      <path d="M0 0 C-80 -100 -180 -60 -200 0 C-220 60 -130 120 -50 130 C30 140 100 90 0 0 Z" fill="#3D0E1F"/>
+      <animateTransform attributeName="transform" type="rotate" values="10;15;10" dur="14s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- SHIMMER / DUST MOTES (Catching the upper-left light) -->
+  <g filter="url(#glow)">
+    <circle cx="200" cy="300" r="2" fill="#D4A574" opacity="0.8">
+      <animate attributeName="cy" values="300;250;300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="150" r="3" fill="#D4A574" opacity="0.6">
+      <animate attributeName="cy" values="150;100;150" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="450;500;450" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="500" r="1.5" fill="#C97864" opacity="0.7">
+      <animate attributeName="cy" values="500;450;500" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="600" r="2.5" fill="#D4A574" opacity="0.5">
+      <animate attributeName="cy" values="600;550;600" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="250" r="2" fill="#C97864" opacity="0.6">
+      <animate attributeName="cx" values="600;650;600" dur="14s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- FOREGROUND FOLIAGE SILHOUETTE (Extreme bottom edge, framing) -->
+  <g filter="url(#blurL1)">
+    <path d="M0 900 L0 850 Q200 820 400 860 Q600 900 800 880 Q1000 860 1200 890 Q1400 920 1600 850 L1600 900 Z" fill="#3D0E1F" opacity="0.9">
+      <animate attributeName="d" values="M0 900 L0 850 Q200 820 400 860 Q600 900 800 880 Q1000 860 1200 890 Q1400 920 1600 850 L1600 900 Z;M0 900 L0 840 Q200 830 400 870 Q600 910 800 890 Q1000 870 1200 900 Q1400 930 1600 860 L1600 900 Z;M0 900 L0 850 Q200 820 400 860 Q600 900 800 880 Q1000 860 1200 890 Q1400 920 1600 850 L1600 900 Z" dur="25s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1600 900 L1600 880 Q1450 850 1300 870 Q1150 890 1000 860 Q850 830 700 850 Q550 870 400 840 Q250 810 100 820 L0 830 L0 900 Z" fill="#3D0E1F" opacity="0.7"/>
+  </g>
+
+  <!-- FILM GRAIN OVERLAY -->
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)" opacity="0.6" style="mix-blend-mode: overlay;"/>
+
+</svg>

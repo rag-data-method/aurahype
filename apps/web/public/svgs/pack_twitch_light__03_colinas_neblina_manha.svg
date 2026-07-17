@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dbeafe" />
+      <stop offset="40%" stop-color="#fce7f3" />
+      <stop offset="70%" stop-color="#fef3c7" />
+      <stop offset="100%" stop-color="#fff7ed" />
+    </linearGradient>
+    
+    <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="50%" stop-color="#fef3c7" />
+      <stop offset="100%" stop-color="#fde68a" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="fogGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="fogGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0" />
+      <stop offset="50%" stop-color="#e0f2fe" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#e0f2fe" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.7" />
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="mistBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="15" />
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#skyGrad)" />
+
+  <!-- Sun -->
+  <g transform="translate(0, 20)">
+    <circle cx="400" cy="450" r="180" fill="url(#sunGrad)" opacity="0.6" filter="url(#softGlow)">
+      <animate attributeName="cy" values="450; 380" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1" />
+      <animate attributeName="opacity" values="0.6; 0.8; 0.6" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="450" r="60" fill="#ffffff" opacity="0.9" filter="url(#softGlow)">
+      <animate attributeName="cy" values="450; 380" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1" />
+    </circle>
+  </g>
+
+  <!-- Distant Distant Birds (Faint) -->
+  <g stroke="#fed7aa" stroke-width="1.5" fill="none" opacity="0.4">
+    <path d="M 250 280 Q 255 275 260 280 Q 265 275 270 280">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -20 -5" dur="20s" repeatCount="indefinite" />
+    </path>
+    <path d="M 290 265 Q 295 260 300 265 Q 305 260 310 265">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -15 -10" dur="22s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Farthest Mountain Layer -->
+  <path d="M -50 600 L -50 380 Q 150 240 320 360 Q 480 460 650 300 Q 700 260 750 320 Q 800 380 850 450 L 850 600 Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1">
+    <animateTransform attributeName="transform" type="translate" values="-5 0; 5 0; -5 0" dur="12s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Mist Layer 1 (Between mountains) -->
+  <rect x="0" y="360" width="800" height="100" fill="url(#fogGrad1)" filter="url(#mistBlur)" opacity="0.4">
+    <animate attributeName="y" values="360; 340; 360" dur="10s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4; 0.6; 0.4" dur="14s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Mid-Distant Mountain Layer -->
+  <path d="M -50 600 L -50 440 Q 120 340 280 420 Q 420 490 580 360 Q 680 290 750 380 Q 800 440 850 380 L 850 600 Z" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1.5">
+    <animateTransform attributeName="transform" type="translate" values="5 0; -5 0; 5 0" dur="10s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Mist Layer 2 (Between mid and main hills) -->
+  <rect x="0" y="400" width="800" height="120" fill="url(#fogGrad2)" filter="url(#mistBlur)" opacity="0.5">
+    <animate attributeName="y" values="400; 390; 400" dur="12s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5; 0.7; 0.5" dur="16s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Mid-Close Hill Layer -->
+  <path d="M -50 600 L -50 480 Q 100 390 250 480 Q 400 560 580 440 Q 650 390 700 460 Q 780 540 850 480 L 850 600 Z" fill="#fbcfe8" stroke="#f9a8d4" stroke-width="1.5">
+    <animateTransform attributeName="transform" type="translate" values="-8 0; 8 0; -8 0" dur="8s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Mist Layer 3 (Between main and foreground) -->
+  <rect x="0" y="480" width="800" height="80" fill="url(#fogGrad1)" filter="url(#mistBlur)" opacity="0.6">
+    <animate attributeName="y" values="480; 470; 480" dur="9s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6; 0.8; 0.6" dur="11s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Foreground Hill Layer -->
+  <path d="M -50 600 L -50 520 Q 60 450 200 540 Q 350 620 500 510 Q 620 430 750 550 Q 800 590 850 530 L 850 600 Z" fill="#fde68a" stroke="#fbbf24" stroke-width="1.5">
+    <animateTransform attributeName="transform" type="translate" values="10 0; -10 0; 10 0" dur="14s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Foreground Mist Veil (Very subtle) -->
+  <rect x="0" y="540" width="800" height="60" fill="url(#fogGrad2)" filter="url(#mistBlur)" opacity="0.7">
+    <animate attributeName="y" values="540; 530; 540" dur="7s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.7; 0.9; 0.7" dur="13s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Cute Lo-Fi Bird Silhouette (Slower, more contemplative) -->
+  <g stroke="#94a3b8" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6">
+    <path d="M 580 160 Q 595 130 610 160">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 10 -5; 0 0" dur="4s" repeatCount="indefinite" />
+    </path>
+  </g>
+</svg>

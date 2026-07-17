@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#020205"/>
+      <stop offset="45%" stop-color="#080818"/>
+      <stop offset="100%" stop-color="#030308"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.65"/>
+    </radialGradient>
+    <linearGradient id="horizon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0a0a30" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#252580" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0a0a30" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#c4c4e8"/>
+      <stop offset="100%" stop-color="#55557a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="horizonGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <ellipse cx="960" cy="235" rx="960" ry="95" fill="url(#horizon)" filter="url(#horizonGlow)" class="horizon-pulse"/>
+  <path d="M960,200 L0,1080" stroke="#fff" stroke-width="3" stroke-opacity="0.1" filter="url(#glow)"/>
+  <path d="M960,200 L1920,1080" stroke="#fff" stroke-width="3" stroke-opacity="0.1" filter="url(#glow)"/>
+
+  <g class="wave-glow" filter="url(#glow)" fill="none" stroke="url(#silver)" stroke-linecap="round">
+    <path stroke-width="68" d="M200,900 C295,940 485,860 580,900 C675,860 865,940 960,900 C1055,940 1245,860 1340,900 C1435,860 1625,940 1720,900"/>
+    <path stroke-width="54" d="M305,800 C387,834 551,766 632.5,800 C714.5,766 878.5,834 960,800 C1042,834 1206,766 1287.5,800 C1369.5,766 1533.5,834 1615,800"/>
+    <path stroke-width="42" d="M414,700 C482,728 619,672 687,700 C755,672 892,728 960,700 C1028,728 1165,672 1233,700 C1301,672 1438,728 1506,700"/>
+    <path stroke-width="32" d="M502,620 C559,644 674,596 731,620 C788,596 903,644 960,620 C1017,644 1132,596 1189,620 C1246,596 1361,644 1418,620"/>
+    <path stroke-width="24" d="M567,560 C616,580 715,540 763.5,560 C812.5,540 911.5,580 960,560 C1009,580 1108,540 1156.5,560 C1205.5,540 1304.5,580 1353,560"/>
+    <path stroke-width="18" d="M622,510 C664,528 749,492 791,510 C833,492 918,528 960,510 C1002,528 1087,492 1129,510 C1171,492 1256,528 1298,510"/>
+    <path stroke-width="13" d="M665,470 C702,485 776,455 812.5,470 C849.5,455 923.5,485 960,470 C997,485 1071,455 1107.5,470 C1144.5,455 1218.5,485 1255,470"/>
+    <path stroke-width="9" d="M698,440 C731,453 796,427 829,440 C862,427 927,453 960,440 C993,453 1058,427 1091,440 C1124,427 1189,453 1222,440"/>
+  </g>
+
+  <rect width="1920" height="1080" fill="url(#vignette)" pointer-events="none"/>
+
+  <style>
+    .wave-glow { animation: pulse 5s ease-in-out infinite; }
+    .horizon-pulse { animation: horizonPulse 7s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:0.72} 50%{opacity:1} }
+    @keyframes horizonPulse { 0%,100%{opacity:0.32} 50%{opacity:0.62} }
+  </style>
+</svg>

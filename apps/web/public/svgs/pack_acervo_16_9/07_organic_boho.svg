@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F5E6D3"/>
+      <stop offset=".55" stop-color="#EBD9C3"/>
+      <stop offset="1" stop-color="#D4846A"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E09579"/>
+      <stop offset="1" stop-color="#C06C5A"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A3AD7F"/>
+      <stop offset="1" stop-color="#6B7A4F"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAF0E6"/>
+      <stop offset="1" stop-color="#DFC9B0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <g opacity=".85">
+    <path fill="url(#g1)" d="M1280,0 C1160,280 1360,620 1600,820 L1600,0 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0;40,25;0,0" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <path fill="url(#g2)" d="M0,120 C320,180 560,480 420,900 L0,900 Z" opacity=".75">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-30,40;0,0" dur="18s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g opacity=".9">
+    <ellipse cx="1180" cy="280" rx="200" ry="130" fill="url(#g3)" transform="rotate(-12 1180 280)">
+      <animateTransform attributeName="transform" type="rotate" values="-12 1180 280;-8 1180 280;-12 1180 280" dur="12s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="320" cy="680" rx="240" ry="150" fill="#C06C5A" opacity=".45" transform="rotate(18 320 680)">
+      <animateTransform attributeName="transform" type="rotate" values="18 320 680;22 320 680;18 320 680" dur="16s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g fill="#8B956D" opacity=".7">
+    <path d="M880,720 Q950,620 1080,590 Q1010,690 880,720 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0;18,-12;0,0" dur="9s" repeatCount="indefinite"/>
+    </path>
+    <path d="M980,760 Q1060,660 1200,640 Q1120,740 980,760 Z" opacity=".85">
+      <animateTransform attributeName="transform" type="translate" values="0,0;12,-18;0,0" dur="10s" repeatCount="indefinite"/>
+    </path>
+    <path d="M820,780 Q870,710 960,700 Q910,770 820,780 Z" opacity=".55">
+      <animateTransform attributeName="transform" type="translate" values="0,0;15,-10;0,0" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g opacity=".8">
+    <circle cx="1120" cy="220" r="14" fill="#D4846A"/>
+    <circle cx="1280" cy="380" r="9" fill="#6B7A4F"/>
+    <circle cx="1060" cy="430" r="16" fill="#C06C5A"/>
+    <circle cx="1440" cy="520" r="11" fill="#A3AD7F"/>
+    <circle cx="1320" cy="160" r="7" fill="#EBD9C3"/>
+    <circle cx="1200" cy="340" r="10" fill="#E09579"/>
+    <circle cx="1480" cy="320" r="8" fill="#D4846A"/>
+    <circle cx="220" cy="320" r="16" fill="#C06C5A"/>
+    <circle cx="380" cy="480" r="11" fill="#A3AD7F"/>
+    <circle cx="120" cy="620" r="9" fill="#E09579"/>
+    <circle cx="520" cy="560" r="13" fill="#D4846A"/>
+    <circle cx="280" cy="780" r="10" fill="#6B7A4F"/>
+    <circle cx="430" cy="230" r="8" fill="#C06C5A"/>
+    <circle cx="80" cy="470" r="6" fill="#A3AD7F"/>
+    <circle cx="620" cy="360" r="14" fill="#E09579"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-8,12;0,0" dur="11s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".8;.65;.8" dur="7s" repeatCount="indefinite"/>
+  </g>
+</svg>

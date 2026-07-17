@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF9A3D"/>
+      <stop offset="50%" stop-color="#FFD23F"/>
+      <stop offset="100%" stop-color="#FF6B6B"/>
+    </linearGradient>
+    <radialGradient id="go" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF8C42"/>
+      <stop offset="100%" stop-color="#FF8C42" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gy" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF176"/>
+      <stop offset="100%" stop-color="#FFD23F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF8A80"/>
+      <stop offset="100%" stop-color="#FF6B6B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.8">
+    <circle cx="350" cy="350" r="300" fill="url(#go)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.12;1" dur="10s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;40 -40;0 0" dur="14s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+    <circle cx="1250" cy="280" r="350" fill="url(#gy)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="12s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-50 30;0 0" dur="16s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+    <circle cx="800" cy="550" r="380" fill="url(#gc)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="11s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;30 40;0 0" dur="15s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+  </g>
+  <g opacity="0.7">
+    <path fill="#FF8C42" d="M100 750 Q300 600 550 720 T1000 680 T1500 760 V900 H100 Z">
+      <animate attributeName="d" values="M100 750 Q300 600 550 720 T1000 680 T1500 760 V900 H100 Z;M80 770 Q320 580 580 740 T1020 660 T1520 780 V900 H80 Z;M100 750 Q300 600 550 720 T1000 680 T1500 760 V900 H100 Z" dur="8s" repeatCount="indefinite"/>
+    </path>
+    <path fill="#FFD23F" d="M0 800 Q250 700 500 780 T1100 720 T1600 800 V900 H0 Z">
+      <animate attributeName="d" values="M0 800 Q250 700 500 780 T1100 720 T1600 800 V900 H0 Z;M0 820 Q270 680 520 800 T1120 700 T1600 820 V900 H0 Z;M0 800 Q250 700 500 780 T1100 720 T1600 800 V900 H0 Z" dur="10s" repeatCount="indefinite"/>
+    </path>
+    <path fill="#FF6B6B" d="M400 780 Q650 650 900 760 T1400 700 T1600 790 V900 H400 Z">
+      <animate attributeName="d" values="M400 780 Q650 650 900 760 T1400 700 T1600 790 V900 H400 Z;M420 800 Q670 630 920 780 T1420 680 T1600 810 V900 H420 Z;M400 780 Q650 650 900 760 T1400 700 T1600 790 V900 H400 Z" dur="9s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g fill="#FFF">
+    <circle cx="250" cy="820" r="14" opacity="0.7">
+      <animate attributeName="cy" values="820;120;820" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="860" r="10" opacity="0.6">
+      <animate attributeName="cy" values="860;160;860" dur="10s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="10s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="650" cy="840" r="18" opacity="0.8">
+      <animate attributeName="cy" values="840;140;840" dur="7s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    <circle cx="850" cy="880" r="12" opacity="0.65">
+      <animate attributeName="cy" values="880;180;880" dur="9s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="0;0.65;0" dur="9s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="1050" cy="830" r="16" opacity="0.75">
+      <animate attributeName="cy" values="830;130;830" dur="6s" repeatCount="indefinite" begin="3s"/>
+      <animate attributeName="opacity" values="0;0.75;0" dur="6s" repeatCount="indefinite" begin="3s"/>
+    </circle>
+    <circle cx="1250" cy="870" r="11" opacity="0.6">
+      <animate attributeName="cy" values="870;170;870" dur="11s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="11s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <circle cx="1450" cy="850" r="13" opacity="0.7">
+      <animate attributeName="cy" values="850;150;850" dur="8.5s" repeatCount="indefinite" begin="2.5s"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="8.5s" repeatCount="indefinite" begin="2.5s"/>
+    </circle>
+  </g>
+  <g fill="#FFF" opacity="0.95">
+    <circle cx="380" cy="420" r="8">
+      <animate attributeName="cy" values="420;60;420" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="380;360;380" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="780" cy="380" r="6">
+      <animate attributeName="cy" values="380;80;380" dur="5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="cx" values="780;800;780" dur="5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="1180" cy="430" r="9">
+      <animate attributeName="cy" values="430;70;430" dur="4.5s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="cx" values="1180;1150;1180" dur="4.5s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+</svg>

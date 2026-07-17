@@ -1,0 +1,24 @@
+{
+  "slug": "05_carrossel_magico",
+  "title": "Carrossel Mágico",
+  "category": "cotton_candy",
+  "objects": "carousel horse + golden pole + flowing ribbon",
+  "colors": {
+    "primary": "#FFB7B2",
+    "secondary": "#E2F0CB",
+    "accent": "#C7CEEA",
+    "bg": "#FFFFFF"
+  },
+  "tags": [
+    "light",
+    "candy",
+    "carousel",
+    "horse"
+  ],
+  "svgFile": "05_carrossel_magico.svg",
+  "sizeKB": 9.08,
+  "animations": 20,
+  "gradients": 6,
+  "generatedAt": "2026-06-19",
+  "model": "@cf/moonshotai/kimi-k2.7-code"
+}

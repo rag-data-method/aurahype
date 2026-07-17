@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050508"/>
+      <stop offset="100%" stop-color="#0d0a1a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#bg)"/>
+  
+  <g transform="translate(400,300)" fill="none" stroke="#7c3aed" stroke-width="0.75" stroke-linecap="round" opacity="0.9">
+    
+    <circle r="10" opacity="0">
+      <animate attributeName="r" values="8;280;320" dur="10s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0" dur="10s" begin="0s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="10" opacity="0">
+      <animate attributeName="r" values="8;280;320" dur="10s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0" dur="10s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="10" opacity="0">
+      <animate attributeName="r" values="8;280;320" dur="10s" begin="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0" dur="10s" begin="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="10" opacity="0">
+      <animate attributeName="r" values="8;280;320" dur="10s" begin="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0" dur="10s" begin="6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="10" opacity="0">
+      <animate attributeName="r" values="8;280;320" dur="10s" begin="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0" dur="10s" begin="8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="10" opacity="0" stroke="#a78bfa" stroke-width="0.5">
+      <animate attributeName="r" values="8;240;280" dur="10s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0" dur="10s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="10" opacity="0" stroke="#a78bfa" stroke-width="0.5">
+      <animate attributeName="r" values="8;240;280" dur="10s" begin="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0" dur="10s" begin="3s" repeatCount="indefinite"/>
+    </circle>
+    
+  </g>
+  
+  <circle cx="400" cy="300" r="2" fill="#7c3aed" filter="url(#glow)" opacity="0.8">
+    <animate attributeName="r" values="1.5;3;1.5" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>

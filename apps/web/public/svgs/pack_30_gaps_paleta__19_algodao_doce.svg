@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradient Definitions -->
+    <radialGradient id="bgGrad" cx="0.15" cy="0.2" r="0.9">
+      <stop offset="0%" stop-color="#F8C8DC">
+        <animate attributeName="stop-color" values="#F8C8DC;#FFD4E0;#F8C8DC" dur="20s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="45%" stop-color="#E54B9C">
+        <animate attributeName="stop-color" values="#E54B9C;#F2A6C8;#E54B9C" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#FBF7EE"/>
+    </radialGradient>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD4E0"/>
+      <stop offset="50%" stop-color="#F2A6C8"/>
+      <stop offset="100%" stop-color="#E54B9C"/>
+    </linearGradient>
+    <linearGradient id="fiberGrad" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#FBF7EE"/>
+      <stop offset="100%" stop-color="#F8C8DC"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD4E0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#F8C8DC" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FBF7EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hazeGrad" cx="0.3" cy="0.4" r="0.7">
+      <stop offset="0%" stop-color="#F8C8DC" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#E54B9C" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="blur40">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="blur80">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="blur120">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="blur160">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+    <filter id="glowSoft">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowHalo">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="10" dy="20" stdDeviation="20" flood-color="#E54B9C" flood-opacity="0.3"/>
+    </filter>
+    <filter id="turbulenceGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="softEdge">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background / Deep Atmosphere -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+
+  <!-- Deep Haze Layer -->
+  <circle cx="1100" cy="450" r="450" fill="url(#hazeGrad)" filter="url(#blur160)" opacity="0.6">
+    <animate attributeName="cx" values="1100;1120;1080;1100" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="450;470;450" dur="22s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Blur160 Background Atmosphere -->
+  <rect x="600" y="100" width="1000" height="700" fill="#F8C8DC" filter="url(#blur160)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.5;0.4" dur="15s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="700" y="0" width="800" height="900" fill="#E54B9C" filter="url(#blur160)" opacity="0.2">
+    <animate attributeName="opacity" values="0.2;0.3;0.2" dur="20s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Blur120 Mid Atmosphere -->
+  <circle cx="1000" cy="400" r="300" fill="#FFD4E0" filter="url(#blur120)" opacity="0.5">
+    <animate attributeName="cx" values="1000;1020;980;1000" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="400;380;420;400" dur="16s" repeatCount="indefinite"/>
+  </circle>
+  <ellipse cx="1200" cy="600" rx="250" ry="150" fill="#F2A6C8" filter="url(#blur120)" opacity="0.4">
+    <animate attributeName="rx" values="250;270;250" dur="12s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Blur80 Soft Glow -->
+  <circle cx="1150" cy="380" r="200" fill="url(#glowGrad)" filter="url(#blur80)" opacity="0.7">
+    <animate attributeName="r" values="200;220;200" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0.8;0.7" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Atmospheric Cotton Candy Smoke/Background Wisps -->
+  <path d="M 950 250 Q 1050 100 1150 200 Q 1250 300 1350 150 Q 1450 250 1380 350 Q 1300 450 1400 500 Q 1500 550 1450 650 Q 1350 750 1250 650 Q 1150 550 1050 650 Q 950 550 1000 450 Q 850 350 950 250 Z" fill="#F2A6C8" filter="url(#blur80)" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 15,-10; -10,15; 0,0" dur="20s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 900 300 Q 1000 200 1100 280 Q 1200 360 1300 250 Q 1400 340 1350 450 Q 1300 560 1400 600 Q 1450 650 1380 720 Q 1280 780 1180 700 Q 1080 620 980 700 Q 880 620 920 520 Q 820 420 900 300 Z" fill="#F8C8DC" filter="url(#blur80)" opacity="0.25">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -12,18; 8,-12; 0,0" dur="24s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Background Floaties -->
+  <g opacity="0.6">
+    <ellipse cx="800" cy="200" rx="12" ry="6" fill="#FBF7EE" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 30,-50; 0,0" dur="18s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 200; 360 800 200" dur="45s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+    <ellipse cx="650" cy="450" rx="8" ry="4" fill="#FFD4E0" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -40,20; 0,0" dur="22s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 650 450; 360 650 450" dur="35s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+    <ellipse cx="900" cy="750" rx="15" ry="7" fill="#F2A6C8" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,-60; 0,0" dur="16s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="550" cy="300" rx="10" ry="5" fill="#FBF7EE" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,30; 0,0" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="750" cy="600" rx="6" ry="3" fill="#FFD4E0" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,-40; 0,0" dur="14s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Main Cotton Candy Core Glow -->
+  <circle cx="1150" cy="380" r="160" fill="#FFD4E0" filter="url(#blur40)" opacity="0.8">
+    <animate attributeName="r" values="160;170;155;160" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1150" cy="380" r="120" fill="#F8C8DC" filter="url(#glowHalo)" opacity="0.9">
+    <animate attributeName="r" values="120;125;120" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Cotton Candy Structure Layers (Simplified Silhouette/Rim Light) -->
+  <!-- Base Core (Dense) -->
+  <path d="M 1080 180 C 1200 120, 1320 160, 1380 240 C 1440 320, 1440 440, 1380 520 C 1320 600, 1220 640, 1120 620 C 1040 600, 980 520, 960 440 C 940 360, 980 240, 1080 180 Z" fill="url(#coreGrad)" filter="url(#dropShadow)" opacity="0.95">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 5,-3; -3,5; 0,0" dur="15s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Mid Core (Lighter) -->
+  <path d="M 1120 220 C 1220 170, 1320 200, 1360 270 C 1400 340, 1400 430, 1360 490 C 1320 550, 1240 580, 1160 560 C 1100 540, 1060 480, 1050 410 C 1040 340, 1060 260, 1120 220 Z" fill="#F2A6C8" filter="url(#glowSoft)" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -4,6; 6,-4; 0,0" dur="18s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Bright Rim Core -->
+  <path d="M 1160 260 C 1240 220, 1320 250, 1340 310 C 1360 370, 1350 430, 1320 470 C 1290 510, 1220 530, 1160 510 C 1110 490, 1080 440, 1080 380 C 1080 320, 1110 280, 1160 260 Z" fill="#FFD4E0" filter="url(#glowSoft)" opacity="0.85">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 3,5; -5,-3; 0,0" dur="12s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Wisp Layer 1 (Backlit Fibers) -->
+  <path d="M 1050 300 Q 980 250 950 180 Q 1020 220 1080 250 Q 1150 150 1220 120 Q 1180 180 1140 240 Q 1250 200 1320 250 Q 1260 280 1200 320 Q 1350 350 1400 420 Q 1340 400 1280 380 Q 1380 480 1350 560 Q 1300 500 1240 450 Q 1280 580 1220 650 Q 1180 580 1150 500 Q 1100 620 1020 650 Q 1060 580 1080 500 Q 980 550 940 480 Q 1000 470 1050 420 Q 920 400 880 320 Q 960 340 1020 360 Q 950 280 920 200 Z" fill="url(#fiberGrad)" filter="url(#glowHalo)" opacity="0.7">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,-5; -6,8; 0,0" dur="14s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1150 380; 2 1150 380; -1 1150 380; 0 1150 380" dur="20s" repeatCount="indefinite" additive="sum"/>
+  </path>
+
+  <!-- Wisp Layer 2 (Drifting Strands) -->
+  <path d="M 1180 160 Q 1280 80 1380 120 Q 1300 160 1240 200 Q 1400 220 1450 300 Q 1360 280 1300 260 Q 1420 380 1380 480 Q 1320 400 1260 340 Q 1320 500 1280 600 Q 1220 520 1180 440 Q 1140 580 1060 620 Q 1100 540 1130 460 Q 1000 480 940 400 Q 1040 420 1100 400 Q 950 320 900 240 Q 1000 280 1060 320 Q 950 200 920 120 Z" fill="#FBF7EE" filter="url(#glowSoft)" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -5,8; 7,-4; 0,0" dur="16s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1150 380; -1 1150 380; 2 1150 380; 0 1150 380" dur="22s" repeatCount="indefinite" additive="sum"/>
+  </path>
+
+  <!-- Wisp Layer 3 (Fine Strands) -->
+  <path d="M 1220 200 Q 1320 140 1400 180 Q 1340 220 1280 260 Q 1420 300 1460 380 Q 1380 350 1320 320 Q 1400 450 1360 540 Q 1300 460 1250 390 Q 1280 550 1240 640 Q 1180 560 1140 480 Q 1100 600 1030 630 Q 1070 550 1100 470 Q 980 500 930 420 Q 1020 450 1080 430 Q 950 350 910 270 Q 1000 310 1060 350 Z" fill="#F8C8DC" filter="url(#softEdge)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 4,-6; -8,5; 0,0" dur="19s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1150 380; 1 1150 380; -2 1150 380; 0 1150 380" dur="25s" repeatCount="indefinite" additive="sum"/>
+  </path>
+
+  <!-- Wisp Layer 4 (Dramatic Backlight Strand) -->
+  <path d="M 1100 400 Q 1020 320 980 240 Q 1080 300 1140 360 Q 1060 280 1040 180 Q 1120 260 1180 340 Q 1140 220 1180 100 Q 1220 200 1250 300 Q 1300 200 1360 120 Q 1340 220 1300 320 Q 1400 280 1460 340 Q 1380 360 1320 400 Q 1420 460 1440 540 Q 1360 500 1300 460 Q 1340 580 1320 680 Q 1260 600 1220 520 Q 1200 620 1160 720 Q 1140 620 1120 520 Q 1060 600 980 640 Q 1020 560 1060 480 Q 960 520 880 480 Q 960 460 1020 440 Z" fill="#FFD4E0" filter="url(#glowHalo)" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -6,4; 5,-7; 0,0" dur="21s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Blur40 Subject Atmosphere Wrap -->
+  <ellipse cx="1150" cy="380" rx="200" ry="220" fill="#F2A6C8" filter="url(#blur40)" opacity="0.5">
+    <animate attributeName="rx" values="200;210;200" dur="11s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="220;230;220" dur="13s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- The Stick -->
+  <rect x="1135" y="580" width="12" height="350" rx="6" fill="#FBF7EE" filter="url(#dropShadow)" opacity="0.95">
+    <animateTransform attributeName="transform" type="rotate" values="0 1141 580; 1 1141 580; -1 1141 580; 0 1141 580" dur="18s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="1138" y="580" width="4" height="350" rx="2" fill="#FFD4E0" opacity="0.6"/>
+
+  <!-- Rim Light on Stick -->
+  <rect x="1138" y="580" width="2" height="350" fill="#FBF7EE" filter="url(#glowSoft)" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.6;0.8" dur="8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Foreground Floaties -->
+  <g opacity="0.8">
+    <ellipse cx="1250" cy="280" rx="6" ry="3" fill="#FBF7EE" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,40; 0,0" dur="15s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1050" cy="520" rx="10" ry="5" fill="#FFD4E0" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 30,-20; 0,0" dur="17s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1320" cy="450" rx="7" ry="4" fill="#F8C8DC" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,-35; 0,0" dur="12s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1180" cy="180" rx="5" ry="8" fill="#FBF7EE" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 25,15; 0,0" dur="19s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="980" cy="380" rx="8" ry="4" fill="#FFD4E0" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -40,-20; 0,0" dur="14s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1280" cy="550" rx="5" ry="2" fill="#F2A6C8" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 10,-30; 0,0" dur="16s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1120" cy="280" rx="4" ry="6" fill="#FBF7EE" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,20; 0,0" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1380" cy="350" rx="9" ry="4" fill="#F8C8DC" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,25; 0,0" dur="18s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1000" cy="480" rx="6" ry="3" fill="#FFD4E0" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,10; 0,0" dur="13s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1220" cy="150" rx="7" ry="5" fill="#FBF7EE" filter="url(#softEdge)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,-20; 0,0" dur="22s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Additional Atmospheric Overlays -->
+  <rect x="0" y="0" width="1600" height="900" fill="#FBF7EE" filter="url(#turbulenceGrain)" opacity="0.15" style="mix-blend-mode: overlay;"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#glowGrad)" filter="url(#blur40)" opacity="0.2"/>
+  <rect x="0" y="0" width="1600" height="900" fill="#F8C8DC" filter="url(#blur120)" opacity="0.15"/>
+
+  <!-- Final Light Flare (Backlight) -->
+  <circle cx="1150" cy="380" r="100" fill="#FBF7EE" filter="url(#blur40)" opacity="0.4">
+    <animate attributeName="r" values="100;110;100" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.5;0.4" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Vignette -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="60%" stop-color="transparent"/>
+    <stop offset="100%" stop-color="#E54B9C" stop-opacity="0.3"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+</svg>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <pattern id="halftone" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="6" fill="#000" opacity="0.15"/>
+    </pattern>
+    <clipPath id="screenClip">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    @keyframes bgShift {
+      0% { fill: #FFD800; }
+      33% { fill: #FF0055; }
+      66% { fill: #00CCFF; }
+      100% { fill: #FFD800; }
+    }
+    @keyframes sunburstSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes pugFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes armThrow {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-15deg); }
+    }
+    @keyframes splashExpand {
+      0% { transform: scale(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+      100% { transform: scale(2.5) rotate(360deg); opacity: 0; }
+    }
+    @keyframes dripFall {
+      0% { transform: translateY(-100px); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(1200px); opacity: 0; }
+    }
+    @keyframes colorFlash {
+      0% { fill: #FF0055; }
+      25% { fill: #00CCFF; }
+      50% { fill: #FFD800; }
+      75% { fill: #00FF66; }
+      100% { fill: #FF0055; }
+    }
+    @keyframes colorFlashStroke {
+      0% { stroke: #FF0055; }
+      25% { stroke: #00CCFF; }
+      50% { stroke: #FFD800; }
+      75% { stroke: #00FF66; }
+      100% { stroke: #FF0055; }
+    }
+    @keyframes bucketShake {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(-5px, -10px) rotate(-5deg); }
+      50% { transform: translate(5px, -20px) rotate(5deg); }
+      75% { transform: translate(-5px, -10px) rotate(-5deg); }
+    }
+    @keyframes starPop {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0); opacity: 0; }
+    }
+
+    .bg-rect { animation: bgShift 4s infinite linear; }
+    .sunburst-group { transform-origin: 960px 540px; animation: sunburstSpin 20s infinite linear; }
+    .pug-group { animation: pugFloat 3s infinite ease-in-out; }
+    .arm-group { transform-origin: 580px 680px; animation: armThrow 1.5s infinite ease-in-out; }
+    .bucket-group { animation: bucketShake 0.8s infinite ease-in-out; }
+    .splash-1 { transform-origin: 1150px 550px; animation: splashExpand 1.2s infinite ease-out; }
+    .splash-2 { transform-origin: 1200px 500px; animation: splashExpand 1.4s infinite ease-out 0.2s; }
+    .splash-3 { transform-origin: 1100px 600px; animation: splashExpand 1.0s infinite ease-out 0.4s; }
+    .drip-1 { animation: dripFall 2s infinite linear; }
+    .drip-2 { animation: dripFall 2.5s infinite linear 0.5s; }
+    .drip-3 { animation: dripFall 1.8s infinite linear 1.0s; }
+    .flash-fill { animation: colorFlash 0.5s infinite linear; }
+    .flash-stroke { animation: colorFlashStroke 0.5s infinite linear; }
+    .star-1 { transform-origin: 200px 200px; animation: starPop 2s infinite ease-in-out; }
+    .star-2 { transform-origin: 1700px 300px; animation: starPop 2.5s infinite ease-in-out 0.5s; }
+    .star-3 { transform-origin: 1500px 800px; animation: starPop 1.8s infinite ease-in-out 1.0s; }
+    .star-4 { transform-origin: 300px 800px; animation: starPop 2.2s infinite ease-in-out 0.8s; }
+  </style>
+
+  <rect width="1920" height="1080" class="bg-rect"/>
+
+  <g clip-path="url(#screenClip)">
+    <g class="sunburst-group">
+      <path d="M960,540 L-200,-200 L-100,-200 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L200,-200 L300,-200 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L600,-200 L700,-200 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L1000,-200 L1100,-200 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L1400,-200 L1500,-200 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L1800,-200 L1900,-200 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L2200,-200 L2300,-200 Z" fill="#000" opacity="0.05"/>
+      
+      <path d="M960,540 L-200,200 L-200,300 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L-200,600 L-200,700 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L-200,1000 L-200,1100 Z" fill="#000" opacity="0.05"/>
+      
+      <path d="M960,540 L2120,200 L2220,200 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L2120,600 L2220,600 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L2120,1000 L2220,1000 Z" fill="#000" opacity="0.05"/>
+      
+      <path d="M960,540 L-200,1280 L-200,1380 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L200,1280 L300,1280 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L600,1280 L700,1280 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L1000,1280 L1100,1280 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L1400,1280 L1500,1280 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L1800,1280 L1900,1280 Z" fill="#000" opacity="0.05"/>
+      <path d="M960,540 L2200,1280 L2300,1280 Z" fill="#000" opacity="0.05"/>
+    </g>
+  </g>
+
+  <rect width="1920" height="1080" fill="url(#halftone)"/>
+
+  <g class="pug-group">
+    <ellipse cx="480" cy="850" rx="380" ry="120" fill="#000" opacity="0.2"/>
+    
+    <path d="M 350 900 L 350 1080 M 550 900 L 550 1080 M 480 900 L 480 1080" stroke="#000" stroke-width="12" fill="none"/>
+    <ellipse cx="480" cy="900" rx="140" ry="40" fill="#E8A882"/>
+    <ellipse cx="480" cy="900" rx="140" ry="40" fill="none" stroke="#000" stroke-width="8"/>
+    
+    <path d="M 340 800 L 250 1080 L 380 1080 L 420 850 Z" fill="#F5CBA7"/>
+    <path d="M 340 800 L 250 1080 L 380 1080 L 420 850 Z" fill="none" stroke="#000" stroke-width="10"/>
+    <path d="M 620 800 L 710 1080 L 580 1080 L 540 850 Z" fill="#F5CBA7"/>
+    <path d="M 620 800 L 710 1080 L 580 1080 L 540 850 Z" fill="none" stroke="#000" stroke-width="10"/>
+    
+    <path d="M 480 400 C 280 400, 200 550, 200 750 C 200 950, 300 1050, 480 1050 C 660 1050, 760 950, 760 750 C 760 550, 680 400, 480 400 Z" fill="#F5CBA7"/>
+    <path d="M 480 400 C 280 400, 200 550, 200 750 C 200 950, 300 1050, 480 1050 C 660 1050, 760 950, 760 750 C 760 550, 680 400, 480 400 Z" fill="none" stroke="#000" stroke-width="12"/>
+    
+    <path d="M 360 780 C 360 880, 420 920, 480 920 C 540 920, 600 880, 600 780" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    
+    <path d="M 420 850 L 420 920 L 480 900 L 540 920 L 540 850" fill="#000"/>
+    
+    <path d="M 340 780 C 340 720, 380 680, 420 680 C 460 680, 480 720, 480 780" fill="#F5CBA7"/>
+    <path d="M 340 780 C 340 720, 380 680, 420 680 C 460 680, 480 720, 480 780" fill="none" stroke="#000" stroke-width="10"/>
+    <path d="M 620 780 C 620 720, 580 680, 540 680 C 500 680, 480 720, 480 780" fill="#F5CBA7"/>
+    <path d="M 620 780 C 620 720, 580 680, 540 680 C 500 680, 480 720, 480 780" fill="none" stroke="#000" stroke-width="10"/>
+    
+    <ellipse cx="380" cy="620" rx="50" ry="65" fill="#FFF" transform="rotate(-15 380 620)"/>
+    <ellipse cx="380" cy="620" rx="50" ry="65" fill="none" stroke="#000" stroke-width="8" transform="rotate(-15 380 620)"/>
+    <ellipse cx="580" cy="620" rx="50" ry="65" fill="#FFF" transform="rotate(15 580 620)"/>
+    <ellipse cx="580" cy="620" rx="50" ry="65" fill="none" stroke="#000" stroke-width="8" transform="rotate(15 580 620)"/>
+    
+    <ellipse cx="390" cy="620" rx="25" ry="35" fill="#000" transform="rotate(-15 390 620)"/>
+    <circle cx="400" cy="605" r="8" fill="#FFF"/>
+    <ellipse cx="570" cy="620" rx="25" ry="35" fill="#000" transform="rotate(15 570 620)"/>
+    <circle cx="560" cy="605" r="8" fill="#FFF"/>
+    
+    <ellipse cx="480" cy="650" rx="45" ry="30" fill="#000"/>
+    <ellipse cx="470" cy="640" rx="12" ry="8" fill="#FFF"/>
+    
+    <path d="M 280 550 C 320 500, 380 520, 420 580" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    <path d="M 680 550 C 640 500, 580 520, 540 580" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    
+    <path d="M 300 480 C 350 450, 420 480, 460 540" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+    <path d="M 660 480 C 610 450, 540 480, 500 540" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+    
+    <path d="M 220 600 C 180 580, 160 620, 180 660 C 200 700, 240 680, 260 640" fill="#4A3025"/>
+    <path d="M 220 600 C 180 580, 160 620, 180 660 C 200 700, 240 680, 260 640" fill="none" stroke="#000" stroke-width="8"/>
+    <path d="M 740 600 C 780 580, 800 620, 780 660 C 760 700, 720 680, 700 640" fill="#4A3025"/>
+    <path d="M 740 600 C 780 580, 800 620, 780 660 C 760 700, 720 680, 700 640" fill="none" stroke="#000" stroke-width="8"/>
+    
+    <path d="M 480 1050 L 460 1080 L 500 1080 Z" fill="#000"/>
+  </g>
+
+  <g class="arm-group">
+    <path d="M 580 680 C 650 650, 720 600, 750 550 C 780 500, 760 450, 720 440 C 680 430, 640 480, 620 520 C 600 560, 580 620, 560 660 Z" fill="#F5CBA7"/>
+    <path d="M 580 680 C 650 650, 720 600, 750 550 C 780 500, 760 450, 720 440 C 680 430, 640 480, 620 520 C 600 560, 580 620, 560 660 Z" fill="none" stroke="#000" stroke-width="12"/>
+    
+    <ellipse cx="720" cy="440" rx="45" ry="55" fill="#F5CBA7" transform="rotate(-30 720 440)"/>
+    <ellipse cx="720" cy="440" rx="45" ry="55" fill="none" stroke="#000" stroke-width="10" transform="rotate(-30 720 440)"/>
+    
+    <path d="M 700 400 L 730 390 L 750 420 L 720 430 Z" fill="#000"/>
+    <path d="M 720 430 L 750 420 L 770 450 L 740 460 Z" fill="#000"/>
+    <path d="M 740 460 L 770 450 L 790 480 L 760 490 Z" fill="#000"/>
+    
+    <g class="bucket-group">
+      <path d="M 690 360 L 810 360 L 790 500 L 710 500 Z" fill="#00CCFF"/>
+      <path d="M 690 360 L 810 360 L 790 500 L 710 500 Z" fill="none" stroke="#000" stroke-width="10"/>
+      
+      <ellipse cx="750" cy="360" rx="70" ry="20" fill="#0099CC"/>
+      <ellipse cx="750" cy="360" rx="70" ry="20" fill="none" stroke="#000" stroke-width="10"/>
+      
+      <ellipse cx="750" cy="360" rx="50" ry="12" fill="#000" opacity="0.3"/>
+      
+      <path d="M 690 360 Q 670 320 650 340" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+      <path d="M 810 360 Q 830 320 850 340" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+      
+      <path d="M 740 370 L 760 370 L 750 490 Z" fill="#FFF" opacity="0.4"/>
+      
+      <path d="M 720 350 Q 750 320 780 350 Q 750 380 720 350" fill="#00FF66" class="flash-fill"/>
+      <path d="M 720 350 Q 750 320 780 350 Q 750 380 720 350" fill="none" stroke="#000" stroke-width="6"/>
+      
+      <path d="M 710 380 Q 730 360 750 380 Q 730 400 710 380" fill="#FFD800" class="flash-fill" style="animation-delay: 0.1s"/>
+      <path d="M 710 380 Q 730 360 750 380 Q 730 400 710 380" fill="none" stroke="#000" stroke-width="5"/>
+      
+      <path d="M 760 370 Q 780 350 800 370 Q 780 390 760 370" fill="#FF0055" class="flash-fill" style="animation-delay: 0.2s"/>
+      <path d="M 760 370 Q 780 350 800 370 Q 780 390 760 370" fill="none" stroke="#000" stroke-width="5"/>
+    </g>
+  </g>
+
+  <g class="splash-1">
+    <path d="M 1150 550 C 1100 500, 1050 450, 1100 400 C 1150 350, 1200 400, 1250 450 C 1300 500, 1250 550, 1200 600 C 1150 650, 1100 600, 1150 550 Z" fill="#FF0055" class="flash-fill"/>
+    <path d="M 1150 550 C 1100 500, 1050 450, 1100 400 C 1150 350, 1200 400, 1250 450 C 1300 500, 1250 550, 1200 600 C 1150 650, 1100 600, 1150 550 Z" fill="none" stroke="#000" stroke-width="8" class="flash-stroke"/>
+    
+    <circle cx="1050" cy="450" r="25" fill="#00CCFF" class="flash-fill" style="animation-delay: 0.1s"/>
+    <circle cx="1050" cy="450" r="25" fill="none" stroke="#000" stroke-width="6" class="flash-stroke" style="animation-delay: 0.1s"/>
+    
+    <circle cx="1250" cy="400" r="35" fill="#FFD800" class="flash-fill" style="animation-delay: 0.2s"/>
+    <circle cx="1250" cy="400" r="35" fill="none" stroke="#000" stroke-width="6" class="flash-stroke" style="animation-delay: 0.2s"/>
+    
+    <path d="M 1300 550 Q 1350 500 1400 550 Q 1350 600 1300 550" fill="#00FF66" class="flash-fill" style="animation-delay: 0.3s"/>
+    <path d="M 1300 550 Q 1350 500 1400 550 Q 1350 600 1300 550" fill="none" stroke="#000" stroke-width="6" class="flash-stroke" style="animation-delay: 0.3s"/>
+    
+    <circle cx="1100" cy="650" r="20" fill="#FF0055" class="flash-fill" style="animation-delay: 0.4s"/>
+    <circle cx="1100" cy="650" r="20" fill="none" stroke="#000" stroke-width="5" class="flash-stroke" style="animation-delay: 0.4s"/>
+  </g>
+
+  <g class="splash-2">
+    <path d="M 1200 500 C 1150 450, 1100 400, 1150 350 C 1200 300, 1250 350, 1300 400 C 1350 450, 1300 500, 1250 550 C 1200 600, 1150 550, 1200 500 Z" fill="#00CCFF" class="flash-fill" style="animation-delay: 0.2s"/>
+    <path d="M 1200 500 C 1150 450, 1100 400, 1150 350 C 1200 300, 1250 350, 1300 400 C 1350 450, 1300 500, 1250 550 C 1200 600, 1150 550, 1200 500 Z" fill="none" stroke="#000" stroke-width="8" class="flash-stroke" style="animation-delay: 0.2s"/>
+    
+    <circle cx="1350" cy="450" r="30" fill="#FFD800" class="flash-fill" style="animation-delay: 0.3s"/>
+    <circle cx="1350" cy="450" r="30" fill="none" stroke="#000" stroke-width="6" class="flash-stroke" style="animation-delay: 0.3s"/>
+    
+    <path d="M 1100 350 Q 1050 300 1000 350 Q 1050 400 1100 350" fill="#FF0055" class="flash-fill" style="animation-delay: 0.4s"/>
+    <path d="M 1100 350 Q 1050 300 1000 350 Q 1050 400 1100 350" fill="none" stroke="#000" stroke-width="6" class="flash-stroke" style="animation-delay: 0.4s"/>
+    
+    <circle cx="1250" cy="600" r="25" fill="#00FF66" class="flash-fill" style="animation-delay: 0.5s"/>
+    <circle cx="1250" cy="600" r="25" fill="none" stroke="#000" stroke-width="5" class="flash-stroke" style="animation-delay: 0.5s"/>
+  </g>
+
+  <g class="splash-3">
+    <path d="M 1100 600 C 1050 550, 1000 500, 1050 450 C 1100 400, 1150 450, 1200 500 C 1250 550, 1200 600, 1150 650 C 1100 700, 1050 650, 1100 600 Z" fill="#FFD800" class="flash-fill" style="animation-delay: 0.4s"/>
+    <path d="M 1100 600 C 1050 550, 1000 500, 1050 450 C 1100 400, 1150 450, 1200 500 C 1250 550, 1200 600, 1150 650 C 1100 700, 1050 650, 1100 600 Z" fill="none" stroke="#000" stroke-width="8" class="flash-stroke" style="animation-delay: 0.4s"/>
+    
+    <circle cx="1000" cy="550" r="35" fill="#FF0055" class="flash-fill" style="animation-delay: 0.5s"/>
+    <circle cx="1000" cy="550" r="35" fill="none" stroke="#000" stroke-width="6" class="flash-stroke" style="animation-delay: 0.5s"/>
+    
+    <path d="M 1200 650 Q 1250 600 1300 650 Q 1250 700 1200 650" fill="#00CCFF" class="flash-fill" style="animation-delay: 0.6s"/>
+    <path d="M 1200 650 Q 1250 600 1300 650 Q 1250 700 1200 650" fill="none" stroke="#000" stroke-width="6" class="flash-stroke" style="animation-delay: 0.6s"/>
+    
+    <circle cx="1150" cy="450" r="20" fill="#00FF66" class="flash-fill" style="animation-delay: 0.7s"/>
+    <circle cx="1150" cy="450" r="20" fill="none" stroke="#000" stroke-width="5" class="flash-stroke" style="animation-delay: 0.7s"/>
+  </g>
+
+  <g class="drip-1">
+    <path d="M 1200 400 Q 1210 450 1200 500 Q 1190 450 1200 400" fill="#FF0055" class="flash-fill"/>
+    <path d="M 1200 400 Q 1210 450 1200 500 Q 1190 450 1200 400" fill="none" stroke="#000" stroke-width="4" class="flash-stroke"/>
+  </g>
+  
+  <g class="drip-2">
+    <path d="M 1300 500 Q 1310 550 1300 600 Q 1290 550 1300 500" fill="#00CCFF" class="flash-fill" style="animation-delay: 0.1s"/>
+    <path d="M 1300 500 Q 1310 550 1300 600 Q 1290 550 1300 500" fill="none" stroke="#000" stroke-width="4" class="flash-stroke" style="animation-delay: 0.1s"/>
+  </g>
+  
+  <g class="drip-3">
+    <path d="M 1100 550 Q 1110 600 1100 650 Q 1090 600 1100 550" fill="#FFD800" class="flash-fill" style="animation-delay: 0.2s"/>
+    <path d="M 1100 550 Q 1110 600 1100 650 Q 1090 600 1100 550" fill="none" stroke="#000" stroke-width="4" class="flash-stroke" style="animation-delay: 0.2s"/>
+  </g>
+
+  <g class="star-1">
+    <path d="M 200 200 L 220 160 L 240 200 L 280 200 L 250 230 L 260 270 L 220 250 L 180 270 L 190 230 L 160 200 Z" fill="#FFD800" stroke="#000" stroke-width="6"/>
+  </g>
+  
+  <g class="star-2">
+    <path d="M 1700 300 L 1720 260 L 1740 300 L 1780 300 L 1750 330 L 1760 370 L 1720 350 L 1680 370 L 1690 330 L 1660 300 Z" fill="#FF0055" stroke="#000" stroke-width="6"/>
+  </g>
+  
+  <g class="star-3">
+    <path d="M 1500 800 L 1520 760 L 1540 800 L 1580 800 L 1550 830 L 1560 870 L 1520 850 L 1480 870 L 1490 830 L 1460 800 Z" fill="#00CCFF" stroke="#000" stroke-width="6"/>
+  </g>
+  
+  <g class="star-4">
+    <path d="M 300 800 L 320 760 L 340 800 L 380 800 L 350 830 L 360 870 L 320 850 L 280 870 L 290 830 L 260 800 Z" fill="#00FF66" stroke="#000" stroke-width="6"/>
+  </g>
+
+  <path d="M 900 100 L 1020 100 L 960 220 Z" fill="#FF0055" stroke="#000" stroke-width="8"/>
+  <path d="M 900 980 L 1020 980 L 960 860 Z" fill="#00CCFF" stroke="#000" stroke-width="8"/>
+  <path d="M 1820 480 L 1820 600 L 1700 540 Z" fill="#FFD800" stroke="#000" stroke-width="8"/>
+  <path d="M 100 480 L 100 600 L 220 540 Z" fill="#00FF66" stroke="#000" stroke-width="8"/>
+</svg>

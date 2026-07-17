@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8DCC0">
+        <animate attributeName="stop-color" values="#C8DCC0;#E8F0E5;#C8DCC0" dur="18s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#2D5A3F">
+        <animate attributeName="stop-color" values="#2D5A3F;#1a3a25;#2D5A3F" dur="22s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="stoneGrad" x1="20%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8FA98F" />
+      <stop offset="50%" stop-color="#6B8E5C" />
+      <stop offset="100%" stop-color="#2D5A3F" />
+    </linearGradient>
+
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8F0E5" />
+      <stop offset="40%" stop-color="#C8DCC0" />
+      <stop offset="100%" stop-color="#8FA98F" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="dewGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#E8F0E5" />
+      <stop offset="30%" stop-color="#C8DCC0" />
+      <stop offset="70%" stop-color="#6B8E5C" />
+      <stop offset="100%" stop-color="#2D5A3F" />
+    </radialGradient>
+
+    <filter id="blur40" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+    <filter id="blur80" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="80" />
+    </filter>
+    <filter id="blur120" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="120" />
+    </filter>
+    <filter id="blur160" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="160" />
+    </filter>
+    <filter id="stoneTex" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="5" result="noise" />
+      <feDiffuseLighting in="noise" lighting-color="#8FA98F" surfaceScale="3" result="light">
+        <feDistantLight azimuth="45" elevation="35">
+          <animate attributeName="azimuth" values="45;50;40;45" dur="20s" repeatCount="indefinite" />
+        </feDistantLight>
+      </feDiffuseLighting>
+      <feBlend in="SourceGraphic" in2="light" mode="multiply" />
+    </filter>
+    <filter id="mossTex" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="4" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="dropShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="15" dy="25" stdDeviation="20" flood-color="#1a3025" flood-opacity="0.6" />
+    </filter>
+    <filter id="vignette" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="200" />
+    </filter>
+  </defs>
+
+  <!-- 1. Base Background -->
+  <rect width="1600" height="900" fill="url(#bgGrad)" />
+
+  <!-- 2. Deep Mist Layer 1 -->
+  <circle cx="300" cy="800" r="500" fill="#2D5A3F" opacity="0.4" filter="url(#blur160)">
+    <animate attributeName="cy" values="800;750;800" dur="20s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4;0.5;0.4" dur="15s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 3. Deep Mist Layer 2 -->
+  <circle cx="1100" cy="100" r="600" fill="#6B8E5C" opacity="0.25" filter="url(#blur120)">
+    <animate attributeName="cx" values="1100;1200;1100" dur="22s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 4. Background Fog Patch -->
+  <ellipse cx="200" cy="500" rx="400" ry="300" fill="#C8DCC0" opacity="0.3" filter="url(#blur80)">
+    <animate attributeName="rx" values="400;450;400" dur="18s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.3;0.4;0.3" dur="12s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- 5. Ambient Glow Behind Subject -->
+  <ellipse cx="1050" cy="500" rx="350" ry="400" fill="#E8F0E5" opacity="0.15" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="14s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- 6. Main Subject Group (Stone + Moss) -->
+  <g transform="translate(0,0)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="12s" repeatCount="indefinite" />
+
+    <!-- 7. Stone Base (Textured Silhouette) -->
+    <path d="M650 300 C 750 250, 900 200, 1100 220 C 1300 240, 1450 350, 1480 500 C 1500 650, 1400 800, 1200 850 C 1000 900, 800 850, 700 750 C 600 650, 580 500, 620 400 C 630 360, 640 320, 650 300 Z" fill="url(#stoneGrad)" filter="url(#stoneTex)" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.95;0.9" dur="16s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 8. Stone Drop Shadow -->
+    <path d="M650 300 C 750 250, 900 200, 1100 220 C 1300 240, 1450 350, 1480 500 C 1500 650, 1400 800, 1200 850 C 1000 900, 800 850, 700 750 C 600 650, 580 500, 620 400 C 630 360, 640 320, 650 300 Z" fill="#1a3025" filter="url(#dropShadow)" opacity="0.5" transform="translate(20, 30)" />
+
+    <!-- 9. Moss Layer 1 (Deep Base) -->
+    <path d="M630 450 C 700 420, 850 380, 1000 400 C 1200 430, 1350 550, 1380 700 C 1390 800, 1250 880, 1050 890 C 850 900, 700 820, 650 700 C 600 580, 600 500, 630 450 Z" fill="#2D5A3F" filter="url(#mossTex)" opacity="0.85">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite" values="M630 450 C 700 420, 850 380, 1000 400 C 1200 430, 1350 550, 1380 700 C 1390 800, 1250 880, 1050 890 C 850 900, 700 820, 650 700 C 600 580, 600 500, 630 450 Z; M635 445 C 705 415, 855 375, 1005 395 C 1205 425, 1355 545, 1385 695 C 1395 795, 1255 875, 1055 885 C 855 895, 705 815, 655 695 C 605 575, 605 495, 635 445 Z; M630 450 C 700 420, 850 380, 1000 400 C 1200 430, 1350 550, 1380 700 C 1390 800, 1250 880, 1050 890 C 850 900, 700 820, 650 700 C 600 580, 600 500, 630 450 Z" />
+    </path>
+
+    <!-- 10. Moss Layer 2 (Mid Tone) -->
+    <path d="M680 480 C 780 450, 950 420, 1100 450 C 1280 480, 1400 600, 1420 720 C 1430 810, 1300 860, 1120 860 C 920 860, 750 780, 700 680 C 650 580, 650 520, 680 480 Z" fill="#6B8E5C" filter="url(#mossTex)" opacity="0.8">
+      <animate attributeName="d" dur="13s" repeatCount="indefinite" values="M680 480 C 780 450, 950 420, 1100 450 C 1280 480, 1400 600, 1420 720 C 1430 810, 1300 860, 1120 860 C 920 860, 750 780, 700 680 C 650 580, 650 520, 680 480 Z; M685 475 C 785 445, 955 415, 1105 445 C 1285 475, 1405 595, 1425 715 C 1435 805, 1305 855, 1125 855 C 925 855, 755 775, 705 675 C 655 575, 655 515, 685 475 Z; M680 480 C 780 450, 950 420, 1100 450 C 1280 480, 1400 600, 1420 720 C 1430 810, 1300 860, 1120 860 C 920 860, 750 780, 700 680 C 650 580, 650 520, 680 480 Z" />
+      <animateTransform attributeName="transform" type="scale" values="1;1.015;1" dur="11s" repeatCount="indefinite" additive="sum" />
+    </path>
+
+    <!-- 11. Moss Layer 3 (Light Tone) -->
+    <path d="M750 520 C 850 500, 1000 480, 1150 510 C 1300 540, 1380 620, 1390 700 C 1400 770, 1300 810, 1150 810 C 1000 810, 850 750, 790 680 C 730 610, 720 550, 750 520 Z" fill="#8FA98F" filter="url(#mossTex)" opacity="0.75">
+      <animate attributeName="d" dur="17s" repeatCount="indefinite" values="M750 520 C 850 500, 1000 480, 1150 510 C 1300 540, 1380 620, 1390 700 C 1400 770, 1300 810, 1150 810 C 1000 810, 850 750, 790 680 C 730 610, 720 550, 750 520 Z; M755 515 C 855 495, 1005 475, 1155 505 C 1305 535, 1385 615, 1395 695 C 1405 765, 1305 805, 1155 805 C 1005 805, 855 745, 795 675 C 735 605, 725 545, 755 515 Z; M750 520 C 850 500, 1000 480, 1150 510 C 1300 540, 1380 620, 1390 700 C 1400 770, 1300 810, 1150 810 C 1000 810, 850 750, 790 680 C 730 610, 720 550, 750 520 Z" />
+      <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="14s" repeatCount="indefinite" additive="sum" />
+    </path>
+
+    <!-- 12. Moss Layer 4 (Highlight Patches) -->
+    <path d="M850 560 C 920 550, 1050 540, 1180 570 C 1280 590, 1340 640, 1340 680 C 1340 720, 1260 740, 1120 740 C 980 740, 880 700, 860 650 C 840 600, 830 570, 850 560 Z" fill="#C8DCC0" filter="url(#mossTex)" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.75;0.6" dur="10s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="scale" values="1;1.025;1" dur="12s" repeatCount="indefinite" additive="sum" />
+    </path>
+
+    <!-- 13. Rim Light (Left Edge Glow) -->
+    <path d="M650 300 C 750 250, 900 200, 1100 220 C 1300 240, 1450 350, 1480 500 C 1500 650, 1400 800, 1200 850 C 1000 900, 800 850, 700 750 C 600 650, 580 500, 620 400 C 630 360, 640 320, 650 300 Z" fill="url(#rimGrad)" filter="url(#glow)" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="9s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 14. Dew Drop 1 -->
+    <g>
+      <circle cx="980" cy="550" r="12" fill="url(#dewGrad)" filter="url(#glow)" opacity="0.9">
+        <animate attributeName="r" values="12;13;12" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="6s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="976" cy="546" r="3" fill="#E8F0E5" opacity="0.8" />
+    </g>
+
+    <!-- 15. Dew Drop 2 -->
+    <g>
+      <circle cx="1120" cy="620" r="18" fill="url(#dewGrad)" filter="url(#glow)" opacity="0.85">
+        <animate attributeName="r" values="18;19.5;18" dur="11s" repeatCount="indefinite" />
+        <animate attributeName="cy" values="620;622;620" dur="14s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1114" cy="614" r="4.5" fill="#E8F0E5" opacity="0.7" />
+    </g>
+
+    <!-- 16. Dew Drop 3 -->
+    <g>
+      <circle cx="1250" cy="480" r="10" fill="url(#dewGrad)" filter="url(#glow)" opacity="0.8">
+        <animate attributeName="r" values="10;11;10" dur="10s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.8;0.95;0.8" dur="7s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1247" cy="477" r="2.5" fill="#E8F0E5" opacity="0.8" />
+    </g>
+
+    <!-- 17. Dew Drop 4 -->
+    <g>
+      <circle cx="880" cy="680" r="15" fill="url(#dewGrad)" opacity="0.75" filter="url(#glow)">
+        <animate attributeName="r" values="15;16.5;15" dur="13s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="874" cy="674" r="4" fill="#E8F0E5" opacity="0.6" />
+    </g>
+
+    <!-- 18. Dew Drop 5 -->
+    <g>
+      <circle cx="1320" cy="720" r="8" fill="url(#dewGrad)" opacity="0.7" filter="url(#glow)">
+        <animate attributeName="r" values="8;9;8" dur="9s" repeatCount="indefinite" />
+        <animate attributeName="cy" values="720;718;720" dur="11s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1317" cy="717" r="2" fill="#E8F0E5" opacity="0.8" />
+    </g>
+
+    <!-- 19. Dew Drop 6 -->
+    <g>
+      <circle cx="1050" cy="750" r="20" fill="url(#dewGrad)" opacity="0.6" filter="url(#glow)">
+        <animate attributeName="r" values="20;22;20" dur="15s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;0.8;0.6" dur="12s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1042" cy="742" r="5" fill="#E8F0E5" opacity="0.5" />
+    </g>
+  </g>
+
+  <!-- 20. Foreground Mist Layer -->
+  <rect x="0" y="700" width="1600" height="300" fill="#E8F0E5" opacity="0.15" filter="url(#blur80)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="16s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- 21. Foreground Mist Drift -->
+  <ellipse cx="400" cy="850" rx="600" ry="200" fill="#C8DCC0" opacity="0.2" filter="url(#blur120)">
+    <animate attributeName="cx" values="400;500;400" dur="25s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.2;0.3;0.2" dur="18s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- 22. Light Ray 1 -->
+  <polygon points="0,0 600,0 1300,900 200,900" fill="#E8F0E5" opacity="0.04" filter="url(#blur40)">
+    <animate attributeName="opacity" values="0.04;0.08;0.04" dur="10s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 0 0; 2 0 0; 0 0 0" dur="20s" repeatCount="indefinite" />
+  </polygon>
+
+  <!-- 23. Light Ray 2 -->
+  <polygon points="100,0 500,0 1100,900 400,900" fill="#C8DCC0" opacity="0.03" filter="url(#blur80)">
+    <animate attributeName="opacity" values="0.03;0.07;0.03" dur="14s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 0 0; -1.5 0 0; 0 0 0" dur="22s" repeatCount="indefinite" />
+  </polygon>
+
+  <!-- 24. Vignette / Atmosphere Darkening -->
+  <rect width="1600" height="900" fill="url(#bgGrad)" opacity="0.3" filter="url(#vignette)" style="mix-blend-mode: multiply;" />
+
+  <!-- 25. Top Left Soft Glow -->
+  <circle cx="0" cy="0" r="400" fill="#E8F0E5" opacity="0.15" filter="url(#blur160)">
+    <animate attributeName="r" values="400;450;400" dur="19s" repeatCount="indefinite" />
+  </circle>
+</svg>

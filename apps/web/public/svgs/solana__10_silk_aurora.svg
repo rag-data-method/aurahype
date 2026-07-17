@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#5B21B6" stop-opacity="0.85"/>
+<stop offset="40%" stop-color="#9945FF" stop-opacity="1">
+<animate attributeName="stop-color" values="#9945FF;#FF36F9;#14F195;#9945FF" dur="10s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</stop>
+<stop offset="70%" stop-color="#14F195" stop-opacity="0.95"/>
+<stop offset="100%" stop-color="#FF36F9" stop-opacity="0.85"/>
+<animate attributeName="x1" values="0%;25%;0%" dur="12s" calcMode="ease-in-out" repeatCount="indefinite"/>
+<animate attributeName="x2" values="100%;75%;100%" dur="12s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#14F195" stop-opacity="0.9"/>
+<stop offset="50%" stop-color="#9945FF" stop-opacity="1">
+<animate attributeName="stop-color" values="#9945FF;#5B21B6;#9945FF" dur="8s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</stop>
+<stop offset="100%" stop-color="#FF36F9" stop-opacity="0.85"/>
+<animate attributeName="y1" values="0%;35%;0%" dur="9s" calcMode="ease-in-out" repeatCount="indefinite"/>
+<animate attributeName="y2" values="100%;65%;100%" dur="9s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#FF36F9" stop-opacity="0.85"/>
+<stop offset="45%" stop-color="#9945FF" stop-opacity="1"/>
+<stop offset="100%" stop-color="#14F195" stop-opacity="0.9"/>
+<animate attributeName="x1" values="0%;20%;0%" dur="7s" calcMode="ease-in-out" repeatCount="indefinite"/>
+<animate attributeName="x2" values="100%;80%;100%" dur="7s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</linearGradient>
+<filter id="b1"><feGaussianBlur stdDeviation="80"/></filter>
+<filter id="b2"><feGaussianBlur stdDeviation="45"/></filter>
+<filter id="b3"><feGaussianBlur stdDeviation="20"/></filter>
+</defs>
+<rect width="1600" height="900" fill="#000000"/>
+<ellipse cx="800" cy="980" rx="1000" ry="320" fill="#5B21B6" filter="url(#b1)" opacity="0.55">
+<animate attributeName="opacity" values="0.45;0.65;0.45" dur="10s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</ellipse>
+<g>
+<animateTransform attributeName="transform" type="translate" values="-25 0;25 0;-25 0" dur="12s" calcMode="ease-in-out" repeatCount="indefinite" additive="sum"/>
+<path d="M -120,980 C 200,520 600,140 850,200 C 1150,270 1400,660 1720,980 Z" fill="url(#g1)" filter="url(#b1)" opacity="0.55">
+<animate attributeName="opacity" values="0.45;0.65;0.45" dur="8s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</path>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="20 0;-20 0;20 0" dur="10s" calcMode="ease-in-out" repeatCount="indefinite" additive="sum"/>
+<path d="M -120,950 C 250,620 550,250 820,310 C 1100,390 1350,710 1720,950 Z" fill="url(#g2)" filter="url(#b2)" opacity="0.85">
+<animate attributeName="opacity" values="0.7;0.95;0.7" dur="7s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</path>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="-15 5;15 -5;-15 5" dur="9s" calcMode="ease-in-out" repeatCount="indefinite" additive="sum"/>
+<path d="M -120,930 C 300,680 500,350 800,410 C 1050,480 1300,780 1720,930 Z" fill="url(#g3)" filter="url(#b3)" opacity="0.9">
+<animate attributeName="opacity" values="0.75;0.98;0.75" dur="6s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</path>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="15 0;-15 0;15 0" dur="11s" calcMode="ease-in-out" repeatCount="indefinite" additive="sum"/>
+<path d="M -120,960 C 200,780 450,500 780,560 C 1080,630 1350,850 1720,960 Z" fill="url(#g2)" filter="url(#b1)" opacity="0.65">
+<animate attributeName="opacity" values="0.55;0.8;0.55" dur="9s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</path>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="-20 0;20 0;-20 0" dur="10s" calcMode="ease-in-out" repeatCount="indefinite" additive="sum"/>
+<path d="M -120,940 C 250,800 500,600 800,660 C 1100,730 1350,880 1720,940 Z" fill="url(#g1)" filter="url(#b2)" opacity="0.8">
+<animate attributeName="opacity" values="0.7;0.95;0.7" dur="7s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</path>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="10 -5;-10 5;10 -5" dur="8s" calcMode="ease-in-out" repeatCount="indefinite" additive="sum"/>
+<path d="M -120,900 C 300,790 500,690 800,730 C 1100,790 1350,890 1720,900 Z" fill="#14F195" filter="url(#b3)" opacity="0.85">
+<animate attributeName="opacity" values="0.75;0.95;0.75" dur="5s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</path>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="-10 0;10 0;-10 0" dur="7s" calcMode="ease-in-out" repeatCount="indefinite" additive="sum"/>
+<path d="M -120,880 C 350,790 520,720 800,750 C 1080,800 1350,870 1720,880 Z" fill="#FFFFFF" filter="url(#b3)" opacity="0.5">
+<animate attributeName="opacity" values="0.35;0.65;0.35" dur="4s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</path>
+</g>
+<ellipse cx="360" cy="290" rx="140" ry="35" fill="#FFFFFF" filter="url(#b3)" opacity="0.55">
+<animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" calcMode="ease-in-out" repeatCount="indefinite"/>
+<animate attributeName="rx" values="140;175;140" dur="6s" calcMode="ease-in-out" repeatCount="indefinite"/>
+<animate attributeName="ry" values="35;48;35" dur="6s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="860" cy="310" rx="110" ry="28" fill="#FFFFFF" filter="url(#b3)" opacity="0.5">
+<animate attributeName="opacity" values="0.3;0.65;0.3" dur="5s" calcMode="ease-in-out" repeatCount="indefinite"/>
+<animate attributeName="rx" values="110;140;110" dur="7s" calcMode="ease-in-out" repeatCount="indefinite"/>
+<animate attributeName="ry" values="28;40;28" dur="7s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="1320" cy="420" rx="90" ry="22" fill="#FFFFFF" filter="url(#b3)" opacity="0.45">
+<animate attributeName="opacity" values="0.35;0.6;0.35" dur="6s" calcMode="ease-in-out" repeatCount="indefinite"/>
+<animate attributeName="rx" values="90;120;90" dur="8s" calcMode="ease-in-out" repeatCount="indefinite"/>
+<animate attributeName="ry" values="22;34;22" dur="8s" calcMode="ease-in-out" repeatCount="indefinite"/>
+</ellipse>
+</svg>

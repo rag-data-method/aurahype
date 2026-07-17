@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bg-purple" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#4B0082"/>
+      <stop offset="100%" stop-color="#11001C"/>
+    </radialGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow-med" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow-high" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Golden Crown Gradients -->
+    <radialGradient id="gold-grad" cx="50%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#FF8C00"/>
+      <stop offset="100%" stop-color="#8B4500"/>
+    </radialGradient>
+    
+    <linearGradient id="gold-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFF5CC"/>
+      <stop offset="50%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#AA6600"/>
+    </linearGradient>
+
+    <!-- Star / Triple Diamond Sparkle -->
+    <g id="sparkle">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="1.2s" keyTimes="0;0.3;1" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <path d="M 0 -20 Q 0 0 20 0 Q 0 0 0 20 Q 0 0 -20 0 Q 0 0 0 -20 Z" fill="#FFFFFF" filter="url(#glow-med)"/>
+      <path d="M 0 -12 Q 0 0 12 0 Q 0 0 0 12 Q 0 0 -12 0 Q 0 0 0 -12 Z" fill="#FFF5CC"/>
+    </g>
+
+    <!-- Confetti Shape -->
+    <g id="confetti">
+      <rect x="-4" y="-10" width="8" height="20" rx="4" fill="#00E5FF"/>
+    </g>
+  </defs>
+
+  <!-- Dark Purple Background -->
+  <rect width="100%" height="100%" fill="url(#bg-purple)"/>
+
+  <!-- Background Neon Rings v2 -->
+  <g opacity="0.6">
+    <circle cx="400" cy="300" r="220" fill="none" stroke="#D010F0" stroke-width="2" filter="url(#glow-med)">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="220;235;220" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="300" r="260" fill="none" stroke="#00F0FF" stroke-width="4" stroke-dasharray="40 20" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="360 400 300" to="0 400 300" dur="15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Floating Chat Bubbles and Stars -->
+  <g id="ambient-particles">
+    <circle cx="120" cy="480" r="12" fill="#00F0FF" filter="url(#glow)">
+      <animate attributeName="cy" values="480;470;480" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="160" y="520" width="20" height="10" rx="5" fill="#D010F0" filter="url(#glow)">
+      <animate attributeName="y" values="520;530;520" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <polygon points="680,120 685,135 700,135 688,145 693,160 680,150 667,160 672,145 660,135 675,135" fill="#FF0055" filter="url(#glow-med)">
+      <animateTransform attributeName="transform" type="rotate" values="0 680 140; 20 680 140; 0 680 140" dur="5s" repeatCount="indefinite"/>
+    </polygon>
+    <rect x="80" y="100" width="25" height="15" rx="7.5" fill="#FFD700" filter="url(#glow)">
+      <animate attributeName="x" values="80;90;80" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Main Energy Rings -->
+  <g transform="translate(400, 300)">
+    <circle r="200" fill="none" stroke="#00F0FF" stroke-width="6" stroke-dasharray="150 300" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="200" fill="none" stroke="#D010F0" stroke-width="6" stroke-dasharray="100 400" filter="url(#glow-med)">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="145" fill="none" stroke="#FF0055" stroke-width="4" stroke-dasharray="20 40" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Crown Shadow / Base -->
+  <g id="crown-group" transform="translate(400, 320)">
+    <!-- Entrance Animation: Scale & Rotate -->
+    <animateTransform attributeName="transform" type="translate" values="400,600; 400,300; 400,320" keyTimes="0;0.6;1" dur="1.5s" calcMode="spline" keySplines="0.16 1 0.3 1; 0.45 0 0.55 1" fill="freeze" additive="replace"/>
+    <animateTransform attributeName="transform" type="scale" values="0; 1.2; 1" keyTimes="0;0.6;1" dur="1.5s" calcMode="spline" keySplines="0.16 1 0.3 1; 0.45 0 0.55 1" fill="freeze" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="180; -15; 0" keyTimes="0;0.6;1" dur="1.5s" calcMode="spline" keySplines="0.16 1 0.3 1; 0.45 0 0.55 1" fill="freeze" additive="sum"/>
+    
+    <!-- Idle Floating Animation -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" keyTimes="0;0.5;1" dur="3s" repeatCount="indefinite" additive="sum"/>
+
+    <!-- Base Circle -->
+    <circle r="130" fill="url(#bg-purple)" stroke="#FFD700" stroke-width="8" opacity="0.9"/>
+    <circle r="118" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="10 10" opacity="0.5"/>
+
+    <!-- Galaxy Comet Trail -->
+    <circle r="105" fill="none" stroke="#D010F0" stroke-width="16" stroke-dasharray="50 610" filter="url(#glow-med)">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="105" fill="none" stroke="#00F0FF" stroke-width="8" stroke-dasharray="50 610" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Crown Geometric Paths -->
+    <g fill="url(#gold-grad)" stroke="url(#gold-edge)" stroke-width="2" filter="url(#glow)">
+      <!-- Inner Crown -->
+      <path d="M -60 20 Q 0 -100 60 20 Z"/>
+      <!-- Left Spikes -->
+      <path d="M -65 20 Q -90 -60 -30 -20 L -40 20 Z"/>
+      <path d="M -40 20 Q -60 0 -20 -10 L -25 10 L -35 20 Z"/>
+      <!-- Right Spikes -->
+      <path d="M 65 20 Q 90 -60 30 -20 L 40 20 Z"/>
+      <path d="M 40 20 Q 60 0 20 -10 L 25 10 L 35 20 Z"/>
+      <!-- Base Band -->
+      <path d="M -80 20 Q 0 50 80 20 L 80 40 Q 0 70 -80 40 Z"/>
+    </g>
+
+    <!-- Center Jewel -->
+    <g transform="translate(0, 5)">
+      <polygon points="0,-20 18,0 0,20 -18,0" fill="#D010F0" stroke="#FF0055" stroke-width="3" filter="url(#glow-high)">
+        <animate attributeName="fill" values="#D010F0;#FF00FF;#D010F0" dur="2s" repeatCount="indefinite"/>
+      </polygon>
+      <circle r="6" fill="#FFFFFF" filter="url(#glow)"/>
+    </g>
+    
+    <!-- Crown Highlights and Sparkles -->
+    <circle cx="-25" cy="-10" r="3" fill="#FFFFFF" filter="url(#glow)"/>
+    <circle cx="35" cy="-25" r="2" fill="#FFFFFF" filter="url(#glow)"/>
+
+    <!-- Radiating Pulse from Center -->
+    <circle r="10" fill="none" stroke="#FFD700" stroke-width="4" opacity="0">
+      <animate attributeName="r" values="10; 130" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="opacity" values="1; 0" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="stroke-width" values="6; 0" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+  </g>
+
+  <!-- Bottom Stream of Light -->
+  <g transform="translate(400, 480)">
+    <ellipse cx="0" cy="0" rx="160" ry="25" fill="#FFD700" filter="url(#glow-high)" opacity="0.4">
+      <animate attributeName="rx" values="160;180;160" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="25;30;25" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="0" cy="0" rx="120" ry="15" fill="#D010F0" filter="url(#glow-high)" opacity="0.6">
+      <animate attributeName="rx" values="120;140;120" dur="2.5s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Burst of Sparkles around Crown -->
+  <g>
+    <use href="#sparkle" x="280" y="180" transform="scale(1.2)">
+      <animateTransform attributeName="transform" type="rotate" from="0 280 180" to="360 280 180" dur="6s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#sparkle" x="520" y="160" transform="scale(0.9)">
+      <animateTransform attributeName="transform" type="rotate" from="360 520 160" to="0 520 160" dur="7s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#sparkle" x="230" y="280" transform="scale(1.5)">
+      <animateTransform attributeName="transform" type="rotate" from="0 230 280" to="360 230 280" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#sparkle" x="570" y="300" transform="scale(1.3)">
+      <animateTransform attributeName="transform" type="rotate" from="360 570 300" to="0 570 300" dur="8s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#sparkle" x="400" y="120" transform="scale(1)"/>
+  </g>
+
+  <!-- Floating Confetti Particles -->
+  <g id="confetti-system">
+    <use href="#confetti" x="250" y="0">
+      <animate attributeName="y" values="-20; 620" dur="3.5s" repeatCount="indefinite" begin="0s"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 250 0; 360 250 0" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti" x="550" y="0">
+      <animate attributeName="y" values="-20; 620" dur="4.2s" repeatCount="indefinite" begin="1s"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 550 0; -360 550 0" dur="4.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti" x="350" y="0">
+      <animate attributeName="y" values="-20; 620" dur="2.8s" repeatCount="indefinite" begin="0.5s"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 350 0; 360 350 0" dur="2.8s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti" x="680" y="0">
+      <animate attributeName="y" values="-20; 620" dur="3.9s" repeatCount="indefinite" begin="2s"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 680 0; -360 680 0" dur="3.9s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti" x="150" y="0">
+      <animate attributeName="y" values="-20; 620" dur="5s" repeatCount="indefinite" begin="1.5s"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 150 0; 360 150 0" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <!-- Pink / Yellow Confetti (reusing shapes with color fill override) -->
+    <!-- Note: We wrap these in a group with a transform and define specific fill via a rect for efficiency -->
+    <g>
+      <rect x="480" y="-20" width="8" height="14" rx="4" fill="#FF0055">
+        <animate attributeName="y" values="-20; 620" dur="4.5s" repeatCount="indefinite" begin="0.8s"/>
+        <animateTransform attributeName="transform" type="rotate" values="0 480 0; 360 480 0" dur="4.5s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+      <rect x="280" y="-20" width="10" height="18" rx="5" fill="#FFD700">
+        <animate attributeName="y" values="-20; 620" dur="3.2s" repeatCount="indefinite" begin="2.2s"/>
+        <animateTransform attributeName="transform" type="rotate" values="0 280 0; -360 280 0" dur="3.2s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+      <rect x="620" y="-20" width="6" height="12" rx="3" fill="#00F0FF">
+        <animate attributeName="y" values="-20; 620" dur="3.8s" repeatCount="indefinite" begin="3s"/>
+        <animateTransform attributeName="transform" type="rotate" values="0 620 0; 360 620 0" dur="3.8s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Center Foreground Glow (Top Layer) -->
+  <circle cx="400" cy="300" r="250" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.1">
+    <animate attributeName="r" values="250;260;250" dur="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>

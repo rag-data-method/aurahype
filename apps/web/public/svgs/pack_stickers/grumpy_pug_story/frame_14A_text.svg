@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Vibrant Sunburst Gradient -->
+    <radialGradient id="sunburst" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#FFD700" /> <!-- Gold -->
+      <stop offset="60%" stop-color="#FF4500" /> <!-- Orange Red -->
+      <stop offset="100%" stop-color="#8B0000" /> <!-- Dark Red -->
+    </radialGradient>
+
+    <!-- Halftone Pattern: Classic Black on White -->
+    <pattern id="halftone" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="6" fill="#000000" />
+    </pattern>
+
+    <!-- Halftone Pattern: Cyan on Transparent for overlay -->
+    <pattern id="halftone-cyan" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="5" fill="#00FFFF" />
+    </pattern>
+
+    <!-- Halftone Pattern: Magenta on Transparent for overlay -->
+    <pattern id="halftone-magenta" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="7" fill="#FF00FF" />
+    </pattern>
+
+    <!-- 3D Extrusion Filter for Maximum Pop -->
+    <filter id="comic3d" x="-20%" y="-20%" width="140%" height="140%">
+      <!-- Create the depth extrusion -->
+      <feConvolveMatrix order="3" kernelMatrix="0 0 0 0 1 0 0 0 0" in="SourceAlpha" result="bevel"/>
+      <feOffset dx="8" dy="8" in="bevel" result="offset1"/>
+      <feOffset dx="16" dy="16" in="bevel" result="offset2"/>
+      <feOffset dx="24" dy="24" in="bevel" result="offset3"/>
+      
+      <!-- Color the extrusion layers -->
+      <feFlood flood-color="#000000" result="black"/>
+      <feComposite in="black" in2="offset1" operator="in" result="shadow1"/>
+      <feFlood flood-color="#333333" result="dark-grey"/>
+      <feComposite in="dark-grey" in2="offset2" operator="in" result="shadow2"/>
+      <feFlood flood-color="#666666" result="light-grey"/>
+      <feComposite in="light-grey" in2="offset3" operator="in" result="shadow3"/>
+
+      <!-- Merge shadows -->
+      <feMerge result="merged-shadows">
+        <feMergeNode in="shadow3"/>
+        <feMergeNode in="shadow2"/>
+        <feMergeNode in="shadow1"/>
+      </feMerge>
+
+      <!-- Add a thick stroke to the text -->
+      <feMorphology operator="dilate" radius="6" in="SourceAlpha" result="thick-stroke"/>
+      <feFlood flood-color="#000000" result="stroke-color"/>
+      <feComposite in="stroke-color" in2="thick-stroke" operator="in" result="stroke"/>
+
+      <!-- Merge everything: Shadows -> Stroke -> Original Text -->
+      <feMerge>
+        <feMergeNode in="merged-shadows"/>
+        <feMergeNode in="stroke"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Starburst Shape -->
+    <path id="starburst" d="M 960 0 L 1020 420 L 1200 120 L 1100 500 L 1500 300 L 1200 600 L 1920 540 L 1300 750 L 1920 960 L 1300 900 L 1500 1200 L 1100 850 L 1200 1320 L 1020 900 L 960 1500 L 900 900 L 720 1320 L 820 850 L 420 1200 L 620 900 L 0 960 L 620 750 L 0 540 L 620 600 L 420 300 L 820 500 L 720 120 L 900 420 Z" fill="url(#sunburst)" />
+  </defs>
+
+  <!-- Background: Solid Black Base -->
+  <rect width="1920" height="1080" fill="#000000" />
+
+  <!-- Animated Sunburst Background (Rotating) -->
+  <g transform="translate(960, 540)">
+    <g class="rotate-sunburst">
+      <use href="#starburst" x="-960" y="-750" />
+    </g>
+  </g>
+
+  <!-- Layer 1: Base Halftone Dots (Cyan) - Pulsing -->
+  <rect width="1920" height="1080" fill="url(#halftone-cyan)" opacity="0.4" class="pulse-halftone" />
+
+  <!-- Layer 2: Offset Halftone Dots (Magenta) - Pulsing & Moving -->
+  <rect x="10" y="10" width="1920" height="1080" fill="url(#halftone-magenta)" opacity="0.4" class="pulse-halftone-reverse" />
+
+  <!-- Explosive Burst Shape behind Text -->
+  <path d="M 960 150 L 1050 350 L 1250 250 L 1150 450 L 1400 400 L 1200 550 L 1500 600 L 1200 650 L 1400 800 L 1150 750 L 1250 950 L 1050 850 L 960 1050 L 870 850 L 670 950 L 770 750 L 520 800 L 720 650 L 420 600 L 720 550 L 520 400 L 770 450 L 670 250 L 870 350 Z" fill="#FFFF00" stroke="#000000" stroke-width="8" class="pulse-burst" />
+
+  <!-- Main Text Container -->
+  <g transform="translate(960, 540)">
+    <!-- Text Block with 3D Filter and Shake Animation -->
+    <g class="shake-text" text-anchor="middle" dominant-baseline="central">
+      
+      <!-- Line 1: QUEM É O -->
+      <text x="0" y="-90" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="160" fill="#FFFFFF" filter="url(#comic3d)" letter-spacing="4">
+        QUEM É O
+      </text>
+
+      <!-- Line 2: BOM GAROTO? -->
+      <text x="0" y="120" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="190" fill="#FF0000" filter="url(#comic3d)" letter-spacing="2">
+        BOM GAROTO?
+      </text>
+
+    </g>
+  </g>
+
+  <!-- Foreground Overlay: Black Halftone for extra depth -->
+  <rect width="1920" height="1080" fill="url(#halftone)" opacity="0.15" />
+
+  <!-- Decorative Corner Stars -->
+  <g fill="#00FFFF" stroke="#000000" stroke-width="3" class="spin-stars">
+    <polygon points="200,150 220,210 280,210 230,250 250,310 200,270 150,310 170,250 120,210 180,210" />
+    <polygon points="1720,150 1740,210 1800,210 1750,250 1770,310 1720,270 1670,310 1690,250 1640,210 1700,210" />
+    <polygon points="200,930 220,990 280,990 230,1030 250,1090 200,1050 150,1090 170,1030 120,990 180,990" />
+    <polygon points="1720,930 1740,990 1800,990 1750,1030 1770,1090 1720,1050 1670,1090 1690,1030 1640,990 1700,990" />
+  </g>
+
+  <style>
+    /* 
+      ANIMATION DEFINITIONS 
+      Using CSS @keyframes for engaging movement.
+    */
+
+    /* 1. Slow continuous rotation for the background sunburst */
+    @keyframes rotate-sunburst {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .rotate-sunburst {
+      animation: rotate-sunburst 20s linear infinite;
+      transform-origin: center;
+    }
+
+    /* 2. Pulsing effect for the Cyan Halftone */
+    @keyframes pulse-halftone {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.05); }
+    }
+    .pulse-halftone {
+      animation: pulse-halftone 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    /* 3. Reverse pulsing for Magenta Halftone to create optical illusion */
+    @keyframes pulse-halftone-reverse {
+      0%, 100% { opacity: 0.4; transform: scale(1.1); }
+      50% { opacity: 0.7; transform: scale(1); }
+    }
+    .pulse-halftone-reverse {
+      animation: pulse-halftone-reverse 3s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    /* 4. Intense pulsing for the yellow burst behind text */
+    @keyframes pulse-burst {
+      0% { transform: scale(0.95); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(0.95); }
+    }
+    .pulse-burst {
+      animation: pulse-burst 0.8s ease-in-out infinite;
+      transform-origin: 960px 540px;
+    }
+
+    /* 5. Comic Book "Impact" Shake for the text */
+    @keyframes shake-text {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      10% { transform: translate(-4px, -4px) rotate(-1deg); }
+      20% { transform: translate(4px, 4px) rotate(1deg); }
+      30% { transform: translate(-4px, 4px) rotate(0deg); }
+      40% { transform: translate(4px, -4px) rotate(1deg); }
+      50% { transform: translate(-2px, 2px) rotate(-1deg); }
+      60% { transform: translate(2px, -2px) rotate(0deg); }
+      70% { transform: translate(-4px, -4px) rotate(-1deg); }
+      80% { transform: translate(4px, 4px) rotate(1deg); }
+      90% { transform: translate(-2px, 2px) rotate(0deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+    .shake-text {
+      animation: shake-text 0.5s linear infinite;
+    }
+
+    /* 6. Spinning corner stars */
+    @keyframes spin-stars {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.2); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+    .spin-stars {
+      animation: spin-stars 6s linear infinite;
+      transform-origin: 960px 540px;
+    }
+  </style>
+</svg>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="skyGrad" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#FF9F73">
+        <animate attributeName="stop-color" values="#FF9F73;#FFB088;#FF9F73" dur="22s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="45%" stop-color="#E54B5A">
+        <animate attributeName="stop-color" values="#E54B5A;#D63A4A;#E54B5A" dur="22s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="80%" stop-color="#1A1A2E"/>
+      <stop offset="100%" stop-color="#0A0A18"/>
+    </radialGradient>
+
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8C8DC" stop-opacity="0.9">
+        <animate attributeName="stop-opacity" values="0.9;0.6;0.9" dur="14s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#E54B5A" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="moonGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F8C8DC" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1A1A2E" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="heroRim" cx="20%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#FF9F73" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#E54B5A" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#1A1A2E" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="b40" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="b80" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="b120" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="b160" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.08"/>
+      </feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+
+    <g id="petal">
+      <path d="M0,0 C3,-2 6,0 5,3 C3,6 -2,5 -3,2 C-4,0 -2,-1 0,0 Z" fill="#F8C8DC" opacity="0.85"/>
+    </g>
+
+    <g id="hero">
+      <path d="M 1165,580 C 1175,580 1180,590 1180,600 C 1178,620 1178,650 1180,690 C 1180,730 1180,770 1178,810 C 1175,820 1170,825 1160,825 C 1150,825 1145,820 1142,810 C 1140,770 1140,730 1142,690 C 1144,650 1144,620 1142,600 C 1140,590 1145,580 1155,580 Z" fill="#1A1A2E"/>
+      <path d="M 1150,580 C 1150,560 1155,540 1165,520 C 1175,500 1185,490 1195,490 C 1185,500 1178,510 1172,530 C 1165,550 1162,570 1165,580 Z" fill="#1A1A2E"/>
+      <path d="M 1178,580 C 1185,570 1195,560 1205,550 C 1220,540 1235,535 1250,535 C 1240,545 1230,555 1220,565 C 1210,575 1195,580 1180,580 Z" fill="#1A1A2E"/>
+      <path d="M 1175,520 C 1185,530 1195,535 1205,540 C 1215,545 1225,545 1235,540 C 1225,535 1215,530 1205,525 C 1195,520 1185,520 1175,520 Z" fill="#1A1A2E"/>
+      <path d="M 1160,580 C 1150,570 1140,560 1130,550 C 1115,540 1100,535 1085,535 C 1095,545 1105,555 1115,565 C 1125,575 1140,580 1155,580 Z" fill="#1A1A2E"/>
+      <path d="M 1165,680 L 1220,670 L 1230,675 L 1165,690 Z" fill="#1A1A2E"/>
+      <path d="M 1080,535 C 1070,525 1065,515 1065,505 C 1065,495 1070,490 1080,490 C 1090,490 1095,495 1095,505 C 1095,515 1090,525 1080,535 Z" fill="#1A1A2E"/>
+    </g>
+
+    <g id="treeFar">
+      <path d="M 1300,900 C 1290,800 1300,700 1320,600 C 1340,500 1380,400 1440,320 C 1420,400 1380,500 1350,600 C 1320,700 1310,800 1310,900 Z" fill="#1A1A2E" opacity="0.35"/>
+      <path d="M 1300,900 C 1310,750 1320,600 1340,450 C 1360,300 1390,150 1420,50 C 1400,150 1370,300 1350,450 C 1330,600 1320,750 1320,900 Z" fill="#1A1A2E" opacity="0.3"/>
+      <path d="M 1310,900 C 1290,800 1280,700 1270,600 C 1260,500 1240,400 1220,320 C 1240,400 1260,500 1280,600 C 1300,700 1310,800 1320,900 Z" fill="#1A1A2E" opacity="0.25"/>
+    </g>
+
+    <g id="treeMid">
+      <path d="M 1180,900 C 1185,750 1200,550 1230,380 C 1250,280 1280,180 1320,100 C 1300,180 1260,280 1230,380 C 1200,480 1185,650 1195,900 Z" fill="#1A1A2E" opacity="0.6"/>
+      <path d="M 1195,900 C 1180,750 1160,600 1130,450 C 1100,300 1060,180 1020,100 C 1050,180 1090,300 1130,450 C 1160,600 1180,750 1180,900 Z" fill="#1A1A2E" opacity="0.5"/>
+      <path d="M 1200,900 C 1210,700 1230,500 1260,300 C 1280,200 1310,100 1350,20 C 1320,100 1290,200 1260,300 C 1230,400 1210,600 1215,900 Z" fill="#1A1A2E" opacity="0.55"/>
+      <circle cx="1230" cy="350" r="120" fill="#1A1A2E" opacity="0.5"/>
+      <circle cx="1150" cy="250" r="100" fill="#1A1A2E" opacity="0.45"/>
+      <circle cx="1320" cy="200" r="140" fill="#1A1A2E" opacity="0.4"/>
+      <circle cx="1080" cy="400" r="90" fill="#1A1A2E" opacity="0.35"/>
+      <circle cx="1280" cy="120" r="110" fill="#1A1A2E" opacity="0.3"/>
+    </g>
+
+    <g id="treeNear">
+      <path d="M 1240,900 C 1235,700 1250,500 1280,300 C 1300,200 1330,100 1370,20 C 1340,100 1310,200 1280,300 C 1250,400 1235,600 1245,900 Z" fill="#1A1A2E" opacity="0.85"/>
+      <path d="M 1245,900 C 1220,750 1190,600 1150,450 C 1110,300 1060,180 1010,80 C 1050,180 1100,300 1150,450 C 1190,600 1220,750 1230,900 Z" fill="#1A1A2E" opacity="0.75"/>
+      <path d="M 1250,900 C 1260,700 1280,500 1310,300 C 1330,200 1360,100 1400,20 C 1370,100 1340,200 1310,300 C 1280,400 1260,600 1265,900 Z" fill="#1A1A2E" opacity="0.8"/>
+      <path d="M 1245,900 C 1255,750 1270,600 1290,450 C 1310,300 1340,180 1380,80 C 1350,180 1320,300 1290,450 C 1260,600 1245,750 1235,900 Z" fill="#1A1A2E" opacity="0.7"/>
+      <circle cx="1290" cy="320" r="130" fill="#1A1A2E" opacity="0.8"/>
+      <circle cx="1200" cy="220" r="110" fill="#1A1A2E" opacity="0.75"/>
+      <circle cx="1380" cy="180" r="150" fill="#1A1A2E" opacity="0.7"/>
+      <circle cx="1120" cy="380" r="100" fill="#1A1A2E" opacity="0.65"/>
+      <circle cx="1340" cy="100" r="120" fill="#1A1A2E" opacity="0.6"/>
+      <circle cx="1280" cy="450" r="80" fill="#1A1A2E" opacity="0.5"/>
+    </g>
+
+    <g id="mtnFar">
+      <path d="M 0,900 L 0,600 C 120,550 250,480 400,420 C 550,360 700,300 850,280 C 950,270 1050,290 1100,350 C 1150,410 1180,500 1200,600 L 1200,900 Z" fill="#2A1A2E"/>
+      <path d="M 0,900 L 0,700 C 150,650 300,580 450,500 C 600,420 750,350 900,320 C 1000,300 1100,320 1150,380 C 1200,440 1220,520 1230,600 L 1230,900 Z" fill="#251528"/>
+    </g>
+
+    <g id="mtnMid">
+      <path d="M 0,900 L 0,750 C 100,700 200,650 320,600 C 440,550 580,500 720,480 C 820,470 920,490 980,540 C 1040,590 1080,660 1100,750 L 1100,900 Z" fill="#1A1A2E"/>
+      <path d="M 0,900 L 0,820 C 80,780 160,740 260,700 C 360,660 480,620 600,600 C 700,580 800,600 860,640 C 920,680 950,740 960,820 L 960,900 Z" fill="#161625"/>
+    </g>
+
+    <g id="grass">
+      <path d="M 0,900 L 0,840 C 200,830 400,820 600,810 C 800,800 1000,790 1200,780 C 1400,770 1600,760 1600,750 L 1600,900 Z" fill="#0A0A18"/>
+      <path d="M 0,900 L 0,860 C 150,855 300,850 450,845 C 600,840 750,835 900,830 C 1050,825 1200,820 1350,815 C 1500,810 1600,805 1600,800 L 1600,900 Z" fill="#070710"/>
+      <path d="M 800,900 L 810,870 L 820,900 Z" fill="#0A0A18"/>
+      <path d="M 820,900 L 835,860 L 845,900 Z" fill="#0A0A18"/>
+      <path d="M 840,900 L 855,865 L 865,900 Z" fill="#0A0A18"/>
+      <path d="M 1080,900 L 1095,855 L 1105,900 Z" fill="#0A0A18"/>
+      <path d="M 1100,900 L 1115,850 L 1125,900 Z" fill="#0A0A18"/>
+      <path d="M 1120,900 L 1130,860 L 1140,900 Z" fill="#0A0A18"/>
+    </g>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+
+  <circle cx="1100" cy="350" r="250" fill="url(#sunGrad)" filter="url(#b160)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.45;0.6" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="1100" cy="350" r="120" fill="#FF9F73" opacity="0.25" filter="url(#b120)">
+    <animate attributeName="opacity" values="0.25;0.15;0.25" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="120;130;120" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <rect width="1600" height="900" fill="url(#moonGlow)" opacity="0.3" style="mix-blend-mode: screen;"/>
+
+  <use href="#mtnFar" filter="url(#b80)"/>
+  <use href="#mtnFar"/>
+
+  <use href="#mtnMid" filter="url(#b40)"/>
+  <use href="#mtnMid"/>
+
+  <use href="#treeFar" filter="url(#b120)"/>
+  <use href="#treeFar"/>
+
+  <use href="#treeMid" filter="url(#b80)"/>
+  <use href="#treeMid"/>
+
+  <use href="#treeNear" filter="url(#b40)"/>
+  <use href="#treeNear"/>
+
+  <use href="#grass" filter="url(#b40)"/>
+  <use href="#grass"/>
+
+  <path d="M 1060,830 L 1320,830 L 1320,900 L 1060,900 Z" fill="#1A1A2E"/>
+  <path d="M 1060,830 C 1080,825 1100,820 1120,818 C 1140,816 1160,815 1180,816 C 1200,817 1220,819 1240,822 C 1260,825 1280,828 1300,830 L 1320,830 L 1320,900 L 1060,900 Z" fill="#0A0A18"/>
+
+  <g id="heroGroup">
+    <use href="#hero"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-3;0,0" dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <ellipse cx="1160" cy="830" rx="60" ry="8" fill="#1A1A2E" opacity="0.6"/>
+  <ellipse cx="1160" cy="830" rx="40" ry="5" fill="#FF9F73" opacity="0.15" filter="url(#b40)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <g id="heroRimLight">
+    <path d="M 1165,580 C 1175,580 1180,590 1180,600 C 1178,620 1178,650 1180,690 C 1180,730 1180,770 1178,810 C 1175,820 1170,825 1160,825 C 1150,825 1145,820 1142,810 C 1140,770 1140,730 1142,690 C 1144,650 1144,620 1142,600 C 1140,590 1145,580 1155,580 Z" fill="none" stroke="#FF9F73" stroke-width="1.5" opacity="0.7" filter="url(#b40)"/>
+    <path d="M 1150,580 C 1150,560 1155,540 1165,520 C 1175,500 1185,490 1195,490 C 1185,500 1178,510 1172,530 C 1165,550 1162,570 1165,580 Z" fill="none" stroke="#FF9F73" stroke-width="1" opacity="0.5" filter="url(#b40)"/>
+    <path d="M 1178,580 C 1185,570 1195,560 1205,550 C 1220,540 1235,535 1250,535 C 1240,545 1230,555 1220,565 C 1210,575 1195,580 1180,580 Z" fill="none" stroke="#FF9F73" stroke-width="1.5" opacity="0.6" filter="url(#b40)"/>
+    <path d="M 1080,535 C 1070,525 1065,515 1065,505 C 1065,495 1070,490 1080,490 C 1090,490 1095,495 1095,505 C 1095,515 1090,525 1080,535 Z" fill="none" stroke="#FF9F73" stroke-width="1.5" opacity="0.7" filter="url(#b40)"/>
+    <animate attributeName="opacity" values="0.7;0.4;0.7" dur="10s" repeatCount="indefinite"/>
+  </g>
+
+  <path d="M 1060,830 C 1080,825 1100,820 1120,818 C 1140,816 1160,815 1180,816 C 1200,817 1220,819 1240,822 C 1260,825 1280,828 1300,830" fill="none" stroke="#FF9F73" stroke-width="2" opacity="0.3" filter="url(#b40)"/>
+
+  <g id="katanaGleam">
+    <path d="M 1165,680 L 1220,670 L 1230,675 L 1165,690 Z" fill="#F8C8DC" opacity="0.8" filter="url(#b40)"/>
+    <path d="M 1165,682 L 1215,673 L 1225,677 L 1165,688 Z" fill="#FFFFFF" opacity="0.9"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.9;0.5;0.8" dur="7s" repeatCount="indefinite"/>
+  </g>
+
+  <g id="particlesFront">
+    <use href="#petal" transform="translate(200,100) scale(1.2)">
+      <animateMotion path="M0,0 C50,80 -30,160 20,300" dur="16s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="12s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.85;0.3;0.85" dur="16s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(450,50) scale(0.9)">
+      <animateMotion path="M0,0 C-40,100 60,200 -20,350" dur="19s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-270 0 0" dur="15s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="19s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(700,150) scale(1.1)">
+      <animateMotion path="M0,0 C30,120 -50,220 10,400" dur="14s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="300 0 0" dur="10s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.9;0.4;0.9" dur="14s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(950,80) scale(1.3)">
+      <animateMotion path="M0,0 C-60,90 40,180 -30,320" dur="21s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="18s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.85;0.35;0.85" dur="21s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1200,120) scale(0.8)">
+      <animateMotion path="M0,0 C40,70 -20,150 30,280" dur="17s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="200 0 0" dur="13s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.75;0.25;0.75" dur="17s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1400,60) scale(1.0)">
+      <animateMotion path="M0,0 C-30,110 50,210 -10,380" dur="20s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-250 0 0" dur="16s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="20s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(100,300) scale(1.1)">
+      <animateMotion path="M0,0 C60,80 -40,160 20,250" dur="15s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="280 0 0" dur="11s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="15s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(350,250) scale(0.95)">
+      <animateMotion path="M0,0 C-50,100 40,200 -20,350" dur="18s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-300 0 0" dur="14s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.85;0.3;0.85" dur="18s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(550,180) scale(1.2)">
+      <animateMotion path="M0,0 C40,90 -30,170 10,290" dur="13s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="320 0 0" dur="9s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.9;0.4;0.9" dur="13s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(850,220) scale(0.85)">
+      <animateMotion path="M0,0 C-40,120 50,220 -10,400" dur="22s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-280 0 0" dur="17s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.75;0.25;0.75" dur="22s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1100,200) scale(1.0)">
+      <animateMotion path="M0,0 C50,70 -20,140 30,260" dur="16s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="250 0 0" dur="12s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.8;0.35;0.8" dur="16s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1300,280) scale(1.15)">
+      <animateMotion path="M0,0 C-30,100 40,190 -20,330" dur="19s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-220 0 0" dur="15s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.85;0.3;0.85" dur="19s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1500,150) scale(0.9)">
+      <animateMotion path="M0,0 C40,110 -50,210 10,390" dur="14s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="300 0 0" dur="10s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="14s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(250,450) scale(1.0)">
+      <animateMotion path="M0,0 C-40,80 30,160 -10,240" dur="17s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-260 0 0" dur="13s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="17s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(500,400) scale(1.1)">
+      <animateMotion path="M0,0 C50,90 -30,170 20,290" dur="12s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="240 0 0" dur="8s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.9;0.4;0.9" dur="12s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(750,350) scale(0.8)">
+      <animateMotion path="M0,0 C-30,100 50,200 -20,380" dur="20s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-310 0 0" dur="16s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.75;0.25;0.75" dur="20s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1000,320) scale(1.2)">
+      <animateMotion path="M0,0 C40,70 -20,140 10,220" dur="15s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="270 0 0" dur="11s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.85;0.35;0.85" dur="15s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1250,380) scale(0.95)">
+      <animateMotion path="M0,0 C-50,110 40,210 -10,370" dur="18s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-240 0 0" dur="14s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="18s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1450,420) scale(1.05)">
+      <animateMotion path="M0,0 C30,80 -40,160 20,240" dur="13s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="290 0 0" dur="9s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.9;0.4;0.9" dur="13s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(150,600) scale(0.9)">
+      <animateMotion path="M0,0 C-40,90 50,180 -10,300" dur="21s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-270 0 0" dur="17s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="21s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(400,550) scale(1.15)">
+      <animateMotion path="M0,0 C50,100 -30,190 20,340" dur="16s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="220 0 0" dur="12s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.85;0.3;0.85" dur="16s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(650,500) scale(0.85)">
+      <animateMotion path="M0,0 C-30,110 40,210 -20,390" dur="19s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-330 0 0" dur="15s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.8;0.35;0.8" dur="19s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(900,480) scale(1.0)">
+      <animateMotion path="M0,0 C40,80 -20,160 10,260" dur="14s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="260 0 0" dur="10s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.9;0.4;0.9" dur="14s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1150,520) scale(1.1)">
+      <animateMotion path="M0,0 C-50,90 30,170 -10,290" dur="17s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-200 0 0" dur="13s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.75;0.25;0.75" dur="17s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1350,580) scale(0.95)">
+      <animateMotion path="M0,0 C30,100 -40,190 20,330" dur="20s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="310 0 0" dur="16s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.85;0.3;0.85" dur="20s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1550,500) scale(1.2)">
+      <animateMotion path="M0,0 C-40,70 50,140 -10,220" dur="15s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-280 0 0" dur="11s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.8;0.35;0.8" dur="15s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(300,750) scale(0.9)">
+      <animateMotion path="M0,0 C50,80 -30,160 20,260" dur="18s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="230 0 0" dur="14s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.9;0.4;0.9" dur="18s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(600,700) scale(1.05)">
+      <animateMotion path="M0,0 C-30,90 40,170 -10,280" dur="13s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-250 0 0" dur="9s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.85;0.3;0.85" dur="13s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(850,680) scale(1.15)">
+      <animateMotion path="M0,0 C40,100 -50,200 10,380" dur="22s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="280 0 0" dur="18s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="22s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1100,720) scale(0.85)">
+      <animateMotion path="M0,0 C-40,80 30,150 -20,240" dur="16s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-300 0 0" dur="12s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.8;0.35;0.8" dur="16s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1300,780) scale(1.0)">
+      <animateMotion path="M0,0 C50,110 -30,210 20,370" dur="19s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="240 0 0" dur="15s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.9;0.4;0.9" dur="19s" repeatCount="indefinite"/>
+    </use>
+    <use href="#petal" transform="translate(1500,700) scale(1.1)">
+      <animateMotion path="M0,0 C-30,70 40,140 -10,220" dur="14s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-270 0 0" dur="10s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.75;0.25;0.75" dur="14s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <circle cx="1100" cy="350" r="180" fill="#FF9F73" opacity="0.05" filter="url(#b160)">
+    <animate attributeName="opacity" values="0.05;0.1;0.05" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <rect width="1600" height="900" fill="#1A1A2E" opacity="0.15" filter="url(#grain)" style="mix-blend-mode: overlay; pointer-events: none;"/>
+
+  <circle cx="800" cy="450" r="600" fill="url(#heroRim)" opacity="0.2" style="mix-blend-mode: screen; pointer-events: none;">
+    <animate attributeName="opacity" values="0.2;0.3;0.2" dur="15s" repeatCount="indefinite"/>
+  </circle>
+
+  <g id="lightBeams">
+    <path d="M 1100,350 L 400,900 L 600,900 Z" fill="#FF9F73" opacity="0.03"/>
+    <path d="M 1100,350 L 800,900 L 1000,900 Z" fill="#F8C8DC" opacity="0.02"/>
+    <path d="M 1100,350 L 1200,900 L 1400,900 Z" fill="#E54B5A" opacity="0.02"/>
+    <path d="M 1100,350 L 0,600 L 0,900 Z" fill="#FF9F73" opacity="0.02"/>
+    <animate attributeName="opacity" values="1;0.7;1" dur="20s" repeatCount="indefinite"/>
+  </g>
+
+  <rect width="1600" height="900" fill="url(#skyGrad)" opacity="0.08" style="mix-blend-mode: color; pointer-events: none;">
+    <animate attributeName="opacity" values="0.08;0.12;0.08" dur="25s" repeatCount="indefinite"/>
+  </rect>
+
+  <g id="vignette">
+    <radialGradient id="vig" cx="50%" cy="50%" r="75%">
+      <stop offset="50%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.5"/>
+    </radialGradient>
+    <rect width="1600" height="900" fill="url(#vig)"/>
+  </g>
+</svg>

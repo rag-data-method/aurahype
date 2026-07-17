@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#FF3B30"/>
+      <stop offset="40%" stop-color="#5E17EB"/>
+      <stop offset="100%" stop-color="#FFD60A"/>
+      <animate attributeName="cx" values="50%;55%;50%" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="50%;45%;50%" dur="8s" repeatCount="indefinite"/>
+    </radialGradient>
+
+    <radialGradient id="spotGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#FFD60A" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#5E17EB" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFD60A" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30"/>
+      <stop offset="100%" stop-color="#FFD60A"/>
+    </linearGradient>
+
+    <radialGradient id="floorGrad" cx="50%" cy="100%" r="100%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#5E17EB" stop-opacity="0.0"/>
+    </radialGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="15" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+
+    <g id="star">
+      <path d="M0,-8 L2,-2 L8,-2 L3,2 L5,8 L0,4 L-5,8 L-3,2 L-8,-2 L-2,-2 Z" fill="#FFD60A"/>
+    </g>
+    
+    <g id="star-alt">
+      <path d="M0,-6 L1.5,-1.5 L6,-1.5 L2.5,1 L4,6 L0,3.5 L-4,6 L-2.5,1 L-6,-1.5 L-1.5,-1.5 Z" fill="#34C759"/>
+    </g>
+
+    <g id="sparkle">
+      <path d="M0,0 Q5,-10 0,-20 Q-5,-10 0,0 M0,0 Q10,-5 20,0 Q10,5 0,0 M0,0 Q5,10 0,20 Q-5,10 0,0 M0,0 Q-10,5 -20,0 Q-10,-5 0,0" fill="none" stroke="#FFF" stroke-width="2"/>
+    </g>
+
+    <g id="confetti">
+      <rect x="-4" y="-2" width="8" height="4" rx="1"/>
+      <circle cx="-6" cy="-5" r="2"/>
+      <rect x="-2" y="-6" width="4" height="8" rx="1"/>
+    </g>
+  </defs>
+
+  <!-- 1. Background Base -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+
+  <!-- 2. Halftone Dots Field -->
+  <g id="halftone-layer">
+    <circle cx="200" cy="200" r="40" fill="#FF3B30" opacity="0.2"/>
+    <circle cx="600" cy="100" r="60" fill="#FFD60A" opacity="0.15"/>
+    <circle cx="1400" cy="300" r="50" fill="#34C759" opacity="0.2"/>
+    <circle cx="1100" cy="800" r="70" fill="#5E17EB" opacity="0.15"/>
+    <circle cx="300" cy="700" r="45" fill="#FF3B30" opacity="0.2"/>
+    <circle cx="1500" cy="700" r="55" fill="#FFD60A" opacity="0.15"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -20,-10; 0,0" dur="7s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 3. Sunburst / Rays -->
+  <g id="sunburst" opacity="0.4">
+    <path d="M800,450 L0,0 L1600,0 Z" fill="#FFD60A"/>
+    <path d="M800,450 L1600,0 L1600,900 Z" fill="#34C759"/>
+    <path d="M800,450 L1600,900 L0,900 Z" fill="#5E17EB"/>
+    <path d="M800,450 L0,900 L0,0 Z" fill="#FF3B30"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="40s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 4. Big-Top Circus Tent (Background Stripes) -->
+  <g id="circus-tent" stroke="#FFF" stroke-width="1.5">
+    <!-- Tent Base -->
+    <path d="M400,900 L1100,900 L850,50 Z" fill="#5E17EB"/>
+    
+    <!-- Alternating Stripes -->
+    <path d="M500,900 L850,50 L620,900 Z" fill="#FF3B30"/>
+    <path d="M740,900 L850,50 L860,900 Z" fill="#FFD60A"/>
+    <path d="M980,900 L850,50 L1100,900 Z" fill="#34C759"/>
+    <path d="M430,900 L850,50 L560,900 Z" fill="#34C759"/>
+    <path d="M850,50 L840,900 L910,900 Z" fill="#FF3B30"/>
+    <path d="M1060,900 L850,50 L1140,900 Z" fill="#FFD60A"/>
+    
+    <!-- Tent Flags -->
+    <path d="M850,50 L943,10 L857,60 Z" fill="#FF3B30"/>
+    <path d="M850,50 L757,10 L843,60 Z" fill="#34C759"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- 5. Center Glow Aura -->
+  <circle cx="850" cy="450" r="350" fill="url(#spotGrad)" opacity="0.6" filter="url(#softGlow)">
+    <animate attributeName="r" values="300;380;300" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- 6. Spotlight Beams -->
+  <g id="spotlight-beams" opacity="0.8" stroke="url(#beamGrad)" stroke-linecap="round" stroke-width="0">
+    <path d="M-100,900 L900,100 L1100,900 Z" fill="url(#beamGrad)" opacity="0.3"/>
+    <path d="M1700,900 L800,100 L600,900 Z" fill="url(#beamGrad)" opacity="0.3"/>
+    <path d="M-100,-100 L850,200 L1700,-100 Z" fill="url(#beamGrad)" opacity="0.2"/>
+    <path d="M400,-100 L850,350 L1300,-100 Z" fill="url(#beamGrad)" opacity="0.2"/>
+    
+    <!-- Animated crossing beams -->
+    <path d="M800,100 L-100,900 L300,900 Z" fill="#FFD60A" opacity="0.1">
+      <animateTransform attributeName="transform" type="rotate" from="-5 800 100" to="5 800 100" dur="3s" repeatCount="indefinite" values="-5 800 100; 5 800 100; -5 800 100"/>
+    </path>
+    <path d="M900,100 L1700,900 L1300,900 Z" fill="#FF3B30" opacity="0.1">
+      <animateTransform attributeName="transform" type="rotate" from="5 900 100" to="-5 900 100" dur="4s" repeatCount="indefinite" values="5 900 100; -5 900 100; 5 900 100"/>
+    </path>
+  </g>
+
+  <!-- 7. Ground Floor / Trampoline Base -->
+  <ellipse cx="850" cy="880" rx="450" ry="60" fill="url(#floorGrad)">
+    <animate attributeName="rx" values="450;470;450" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 8. Geometric Floating Shapes -->
+  <g id="floating-shapes">
+    <circle cx="200" cy="300" r="15" fill="#FFD60A" stroke="#FFF" stroke-width="2">
+      <animateTransform attributeName="transform" type="rotate" from="0 200 300" to="360 200 300" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="300;280;300" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="1300" y="600" width="30" height="30" fill="#FF3B30" transform="rotate(45 1315 615)">
+      <animateTransform attributeName="transform" type="rotate" from="0 1315 615" to="360 1315 615" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="1300;1320;1300" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <polygon points="1200,150 1215,185 1250,185 1222,205 1232,240 1200,220 1168,240 1178,205 1150,185 1185,185" fill="#34C759" stroke="#FFF" stroke-width="1">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="4s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="500,700 520,740 560,740 528,770 540,810 500,785 460,810 472,770 440,740 480,740" fill="#5E17EB" stroke="#FFD60A" stroke-width="2">
+      <animateTransform attributeName="transform" type="rotate" from="0 500 775" to="360 500 775" dur="15s" repeatCount="indefinite"/>
+    </polygon>
+    <path d="M100,500 L120,480 L140,500 L120,520 Z" fill="#FF3B30">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1500,200 L1520,180 L1540,200 L1520,220 Z" fill="#34C759">
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- 9. Mid-Layer Confetti -->
+  <g id="mid-confetti">
+    <rect x="100" y="100" width="15" height="8" fill="#FF3B30" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,800" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;720" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    <rect x="1400" y="50" width="12" height="12" fill="#FFD60A">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -1100,850" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;-1080" dur="6s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    <rect x="300" y="800" width="10" height="10" fill="#34C759" rx="5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1000,-700" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="1500" cy="600" r="6" fill="#5E17EB">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -1300,-500" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 10. Sparkle Trail (Following the flip) -->
+  <g id="sparkle-trail" filter="url(#glow)">
+    <use href="#sparkle" x="750" y="600" transform="scale(0.8)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0s"/>
+    </use>
+    <use href="#sparkle" x="700" y="550" transform="scale(1)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.2s"/>
+    </use>
+    <use href="#sparkle" x="650" y="480" transform="scale(1.2)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.4s"/>
+    </use>
+    <use href="#sparkle" x="620" y="400" transform="scale(1.5)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.6s"/>
+    </use>
+    <use href="#sparkle" x="640" y="320" transform="scale(1.8)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.8s"/>
+    </use>
+    <use href="#sparkle" x="680" y="250" transform="scale(2)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="1.0s"/>
+    </use>
+    <use href="#sparkle" x="750" y="200" transform="scale(1.8)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="1.2s"/>
+    </use>
+    <use href="#sparkle" x="830" y="180" transform="scale(1.2)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="1.4s"/>
+    </use>
+    <use href="#sparkle" x="900" y="220" transform="scale(0.8)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="1.6s"/>
+    </use>
+  </g>
+
+  <!-- 11. Hero Acrobat Silhouette (Mid-Flip, positioned in the right two-thirds) -->
+  <g id="hero-acrobat" transform="translate(830, 280)">
+    <!-- Motion blur duplicate -->
+    <path d="M-30,20 Q-50,-20 -20,-60 Q10,-100 -10,-140 Q-20,-160 0,-170 Q20,-160 10,-140 Q-10,-100 20,-60 Q50,-20 30,20 Z" fill="#FFF" opacity="0.6" filter="url(#softGlow)"/>
+    
+    <!-- Main Body -->
+    <path d="M0,0 C-15,-10 -25,-50 0,-80 C15,-50 25,-10 0,0 Z" fill="#1A1A1A"/>
+    <!-- Left Leg Flipped Up -->
+    <path d="M-5,-75 Q-20,-100 -25,-130 Q-20,-150 0,-140 Q-10,-100 -5,-75 Z" fill="#1A1A1A"/>
+    <!-- Right Leg Extended -->
+    <path d="M5,-75 Q20,-50 30,-20 Q40,-10 20,-5 Q10,-30 5,-75 Z" fill="#1A1A1A"/>
+    <!-- Left Arm Reaching -->
+    <path d="M0,-40 Q-20,-60 -15,-90 Q-10,-100 5,-90 Q-5,-60 0,-40 Z" fill="#1A1A1A"/>
+    <!-- Right Arm Tucked -->
+    <path d="M0,-40 Q15,-30 10,-10 Q5,0 -5,-10 Q-5,-30 0,-40 Z" fill="#1A1A1A"/>
+    <!-- Head -->
+    <circle cx="0" cy="-90" r="12" fill="#1A1A1A"/>
+
+    <!-- Bounce / Pop Animation -->
+    <animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="1.2s" repeatCount="indefinite" additive="sum" origin="0 0"/>
+    <animateTransform attributeName="transform" type="rotate" values="-5;-15;-5" dur="3s" repeatCount="indefinite" additive="sum" origin="0 -80"/>
+  </g>
+
+  <!-- 12. Foreground Sparkles -->
+  <g id="fg-sparkles" filter="url(#glow)">
+    <use href="#star" x="200" y="200">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#star-alt" x="1300" y="400">
+      <animateTransform attributeName="transform" type="scale" values="0;1.2;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+    </use>
+    <use href="#star" x="500" y="100">
+      <animateTransform attributeName="transform" type="scale" values="0;0.8;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </use>
+    <use href="#star-alt" x="1100" y="750">
+      <animateTransform attributeName="transform" type="scale" values="0;1.5;0" dur="2.5s" repeatCount="indefinite" begin="1.5s"/>
+    </use>
+    <use href="#star" x="100" y="700">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </use>
+  </g>
+
+  <!-- 13. High-Speed Motion Lines -->
+  <g id="motion-lines" stroke="#FFF" stroke-width="3" stroke-linecap="round" opacity="0.6">
+    <line x1="650" y1="650" x2="750" y2="750">
+      <animate attributeName="x1" values="650;550;650" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="650;550;650" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1000" y1="150" x2="1100" y2="250">
+      <animate attributeName="x2" values="1100;1200;1100" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="250;150;250" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="100" y1="400" x2="200" y2="500">
+      <animate attributeName="x2" values="200;100;200" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="500;400;500" dur="3s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- 14. Foreground Confetti Burst -->
+  <g id="fg-confetti">
+    <!-- Group 1 -->
+    <use href="#confetti" x="400" y="800" fill="#FF3B30">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,-200" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti" x="400" y="800" fill="#FFD60A">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,-250" dur="2.5s" repeatCount="indefinite" begin="0.2s"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti" x="400" y="800" fill="#34C759">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 150,-150" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;720" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <!-- Group 2 -->
+    <use href="#confetti" x="1200" y="800" fill="#5E17EB">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -150,-180" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;540" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti" x="1200" y="800" fill="#FF3B30">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -50,-300" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;-180" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <!-- Group 3 Falling from Top -->
+    <use href="#confetti" x="300" y="-50" fill="#FFD60A">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,950" dur="5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#confetti" x="1400" y="-50" fill="#34C759">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,950" dur="6s" repeatCount="indefinite" begin="1s"/>
+    </use>
+    <use href="#confetti" x="800" y="-50" fill="#FF3B30">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 200,950" dur="4s" repeatCount="indefinite" begin="2s"/>
+    </use>
+  </g>
+
+  <!-- 15. Flash / Pop Effects -->
+  <g id="pop-effects">
+    <circle cx="830" cy="280" r="0" fill="#FFD60A" opacity="0.8">
+      <animate attributeName="r" values="0;100;120" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="830" cy="280" r="0" fill="#FFF" opacity="1">
+      <animate attributeName="r" values="0;60;80" dur="0.8s" repeatCount="indefinite" begin="0.2s"/>
+      <animate attributeName="opacity" values="1;0;0" dur="0.8s" repeatCount="indefinite" begin="0.2s"/>
+    </circle>
+  </g>
+
+  <!-- 16. Foreground Geometric Overlay (Chevrons) -->
+  <g id="chevrons" stroke="#FFF" stroke-width="15" fill="none" opacity="0.1">
+    <path d="M0,900 L100,800 L200,900 L300,800 L400,900 L500,800 L600,900 L700,800 L800,900 L900,800 L1000,900 L1100,800 L1200,900 L1300,800 L1400,900 L1500,800 L1600,900">
+      <animate attributeName="stroke-dasharray" values="0, 200; 200, 0" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,950 L100,850 L200,950 L300,850 L400,950 L500,850 L600,950 L700,850 L800,950 L900,850 L1000,950 L1100,850 L1200,950 L1300,850 L1400,950 L1500,850 L1600,950">
+      <animate attributeName="stroke-dasharray" values="0, 200; 200, 0" dur="5s" repeatCount="indefinite" begin="2.5s"/>
+    </path>
+  </g>
+
+  <!-- 17. Speed Lines / Abstract Energy -->
+  <g id="energy-lines" stroke="#FFF" stroke-width="2" opacity="0.5">
+    <line x1="0" y1="450" x2="200" y2="450">
+      <animate attributeName="x2" values="200;400;200" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1600" y1="200" x2="1400" y2="200">
+      <animate attributeName="x2" values="1400;1200;1400" dur="1.2s" repeatCount="indefinite" begin="0.2s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite" begin="0.2s"/>
+    </line>
+    <line x1="800" y1="0" x2="800" y2="150">
+      <animate attributeName="y2" values="150;300;150" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+    </line>
+  </g>
+
+  <!-- 18. Particle Dust -->
+  <g id="particle-dust" fill="#FFF" opacity="0.6">
+    <circle cx="100" cy="100" r="2">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 100,50; 0,0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="800" r="3">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,-50; 0,0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="50" r="2">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -50,100; 0,0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="500" r="1.5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 150,-50; 0,0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 19. Final Overlay Glow Pulse -->
+  <rect width="1600" height="900" fill="url(#spotGrad)" opacity="0" style="mix-blend-mode: overlay;">
+    <animate attributeName="opacity" values="0;0.15;0" dur="2s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

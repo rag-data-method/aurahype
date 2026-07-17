@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Comic-style thick drop shadow for depth -->
+    <filter id="comic-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="8" dy="12" stdDeviation="0" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+
+    <!-- Halftone Dot Pattern for Retro Texture -->
+    <pattern id="halftone" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <circle cx="6" cy="6" r="2.5" fill="#000000" opacity="0.12"/>
+    </pattern>
+
+    <!-- Subtle Noise Filter for Fabric Texture -->
+    <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0"/>
+      <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
+      <feBlend in="SourceGraphic" in2="monoNoise" mode="multiply"/>
+    </filter>
+
+    <!-- Lighting Overlay for 3D Fabric Folds -->
+    <linearGradient id="fold-light" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="15%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="85%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Background -->
+  <rect width="1600" height="900" fill="#ffffff"/>
+
+  <!-- The Checkerboard Group -->
+  <g id="checkerboard" filter="url(#noise)"></g>
+
+  <!-- Global Halftone Texture Overlay -->
+  <rect width="1600" height="900" fill="url(#halftone)" style="pointer-events: none; mix-blend-mode: multiply;"/>
+
+  <!-- Global Lighting Overlay for Fabric Folds -->
+  <rect width="1600" height="900" fill="url(#fold-light)" style="pointer-events: none; mix-blend-mode: soft-light;"/>
+
+  <script>
+    <![CDATA[
+      (function() {
+        var svgNS = "http://www.w3.org/2000/svg";
+        var group = document.getElementById('checkerboard');
+        
+        // Configuration
+        var cols = 12;
+        var rows = 9;
+        var cellW = 1600 / cols; // ~133.33
+        var cellH = 110; // Slightly taller than 900/rows to allow for wave overflow
+        
+        // Wave distortion parameters
+        var amplitude = 35; 
+        var frequency = 0.018;
+        var phaseShift = 0.012;
+
+        // Helper to create path data for a single warped cell
+        function createCellPath(x, y, w, h, row, col) {
+          var points = [];
+          // Generate 4 points with slight perturbations for a "hand-drawn" comic feel
+          var jitter = 1.5;
+          
+          var p1x = x + (Math.random() - 0.5) * jitter;
+          var p1y = y + getWaveY(x, row) + (Math.random() - 0.5) * jitter;
+
+          var p2x = x + w + (Math.random() - 0.5) * jitter;
+          var p2y = y + getWaveY(x + w, row) + (Math.random() - 0.5) * jitter;
+
+          var p3x = x + w + (Math.random() - 0.5) * jitter;
+          var p3y = y + h + getWaveY(x + w, row + 1) + (Math.random() - 0.5) * jitter;
+
+          var p4x = x + (Math.random() - 0.5) * jitter;
+          var p4y = y + h + getWaveY(x, row + 1) + (Math.random() - 0.5) * jitter;
+
+          return "M " + p1x.toFixed(1) + " " + p1y.toFixed(1) + 
+                 " L " + p2x.toFixed(1) + " " + p2y.toFixed(1) + 
+                 " L " + p3x.toFixed(1) + " " + p3y.toFixed(1) + 
+                 " L " + p4x.toFixed(1) + " " + p4y.toFixed(1) + " Z";
+        }
+
+        function getWaveY(xPos, rowIndex) {
+          return Math.sin(xPos * frequency + rowIndex * phaseShift) * amplitude;
+        }
+
+        // Render Grid
+        for (var r = 0; r <= rows; r++) {
+          for (var c = 0; c < cols; c++) {
+            var path = document.createElementNS(svgNS, "path");
+            
+            // Checkerboard logic: alternate colors
+            var isRed = (r + c) % 2 === 0;
+            
+            path.setAttribute("d", createCellPath(c * cellW, r * cellH - 50, cellW, cellH, r, c));
+            path.setAttribute("fill", isRed ? "#E63946" : "#FFFFFF"); // Vintage Red & White
+            path.setAttribute("stroke", "#000000");
+            path.setAttribute("stroke-width", "6"); // Thick comic-book stroke
+            path.setAttribute("stroke-linejoin", "round");
+            path.setAttribute("stroke-linecap", "round");
+            
+            // Apply comic shadow filter only to red squares for depth
+            if (isRed) {
+              path.setAttribute("filter", "url(#comic-shadow)");
+            }
+
+            group.appendChild(path);
+          }
+        }
+      })();
+    ]]>
+  </script>
+</svg>

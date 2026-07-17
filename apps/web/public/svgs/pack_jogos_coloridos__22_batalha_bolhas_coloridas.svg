@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Vivid Color Palette Gradients -->
+    <linearGradient id="sky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6F91" />
+      <stop offset="50%" stop-color="#845EC2" />
+      <stop offset="100%" stop-color="#4D8076" />
+      <animate attributeName="x1" values="0%;100%;0%" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="y1" values="0%;100%;0%" dur="10s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <radialGradient id="sunburst" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#FFC75F" />
+      <stop offset="60%" stop-color="#FF6F91" />
+      <stop offset="100%" stop-color="#845EC2" />
+      <animate attributeName="cx" values="50%;52%;48%;50%" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="50%;48%;52%;50%" dur="7s" repeatCount="indefinite" />
+    </radialGradient>
+
+    <linearGradient id="bubbleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFC75F" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF6F91" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="mascotGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4D8076"/>
+      <stop offset="100%" stop-color="#2A4843"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="glowBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Motion Paths for Confetti -->
+    <path id="conf1" d="M -100,-100 Q 800,200 1700,-50" />
+    <path id="conf2" d="M -50,950 Q 400,450 1650,900" />
+    <path id="conf3" d="M 1700,400 Q 1200,800 -100,600" />
+    <path id="conf4" d="M -100,300 Q 500,100 1700,500" />
+  </defs>
+
+  <!-- Layer 1: Base Sky -->
+  <rect width="1600" height="900" fill="url(#sky)" />
+  
+  <!-- Layer 2: Sunburst Background -->
+  <g transform="translate(200, 450)">
+    <g filter="url(#glowBlur)">
+      <circle r="600" fill="url(#sunburst)">
+        <animate attributeName="r" values="580;620;580" dur="3s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <!-- Animated Sunburst Rays -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite" />
+      <circle r="500" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.1" />
+      <g fill="none" stroke="#FFFFFF" stroke-width="100" opacity="0.1">
+        <path d="M0,0 L0,-800" />
+        <path d="M0,0 L565,-565" />
+        <path d="M0,0 L800,0" />
+        <path d="M0,0 L565,565" />
+        <path d="M0,0 L0,800" />
+        <path d="M0,0 L-565,565" />
+        <path d="M0,0 L-800,0" />
+        <path d="M0,0 L-565,-565" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Layer 3: Colorful Geometric Background Rings -->
+  <g transform="translate(200, 450)" fill="none" stroke-width="15" opacity="0.4">
+    <circle r="300" stroke="#FFC75F">
+      <animate attributeName="r" values="300;320;300" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle r="400" stroke="#FF6F91">
+      <animate attributeName="r" values="400;420;400" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle r="500" stroke="#845EC2">
+      <animate attributeName="r" values="500;530;500" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle r="350" stroke="#4D8076" stroke-dasharray="50 50">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="15s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Layer 4: Checkerboard Pattern Area -->
+  <g transform="translate(800, 450) skewX(-20)">
+    <rect x="0" y="-600" width="800" height="1200" fill="#845EC2" opacity="0.3">
+      <animate attributeName="fill" values="#845EC2;#FF6F91;#845EC2" dur="5s" repeatCount="indefinite" />
+    </rect>
+    <g fill="#FFFFFF" opacity="0.1">
+      <rect x="0" y="0" width="100" height="100">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,100; 0,0" dur="4s" repeatCount="indefinite" />
+      </rect>
+      <rect x="200" y="100" width="100" height="100">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-100; 0,0" dur="4.5s" repeatCount="indefinite" />
+      </rect>
+      <rect x="400" y="200" width="100" height="100">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,100; 0,0" dur="3.5s" repeatCount="indefinite" />
+      </rect>
+      <rect x="600" y="300" width="100" height="100">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-100; 0,0" dur="5s" repeatCount="indefinite" />
+      </rect>
+    </g>
+  </g>
+
+  <!-- Layer 5: Floating Stars Particle Backing -->
+  <g fill="#FFC75F" opacity="0.6">
+    <path d="M 400,100 L 410,130 L 440,140 L 410,150 L 400,180 L 390,150 L 360,140 L 390,130 Z">
+      <animateTransform attributeName="transform" type="rotate" values="0 400 140; 360 400 140" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M 1200,200 L 1210,230 L 1240,240 L 1210,250 L 1200,280 L 1190,250 L 1160,240 L 1190,230 Z">
+      <animateTransform attributeName="transform" type="rotate" values="0 1200 240; -360 1200 240" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+    </path>
+    <path d="M 700,700 L 705,715 L 720,720 L 705,725 L 700,740 L 695,725 L 680,720 L 695,715 Z">
+      <animateTransform attributeName="transform" type="rotate" values="0 700 720; 360 700 720" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Layer 6: Hero Subject Off-Center Cluster (Left Two-Thirds) -->
+  <g transform="translate(500, 450)">
+    
+    <!-- Cluster Core Glow -->
+    <circle cx="0" cy="0" r="250" fill="#FFFFFF" opacity="0.4" filter="url(#strongGlow)">
+      <animate attributeName="r" values="250;280;250" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Cascading Bubbles -->
+    <!-- Bubble 1 (Top Left) -->
+    <g transform="translate(-120, -150)">
+      <circle r="60" fill="url(#bubbleGrad)" filter="url(#glowBlur)">
+        <animate attributeName="r" values="60;65;60" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <path d="M -20,-20 A 40 40 0 0 1 20,-20" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    </g>
+
+    <!-- Bubble 2 (Top Right) -->
+    <g transform="translate(100, -160)">
+      <circle r="70" fill="#4D8076" stroke="#FFFFFF" stroke-width="4" filter="url(#glowBlur)">
+        <animate attributeName="r" values="70;75;70" dur="2.3s" repeatCount="indefinite" />
+      </circle>
+      <path d="M -25,-25 A 45 45 0 0 1 25,-25" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    </g>
+
+    <!-- Bubble 3 (Main Center) -->
+    <g transform="translate(0, -30)" filter="url(#strongGlow)">
+      <circle r="90" fill="#FF6F91" stroke="#FFFFFF" stroke-width="6">
+        <animate attributeName="r" values="90;95;90" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+      <path d="M -30,-30 A 60 60 0 0 1 30,-30" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.9"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-30; 0,-35; 0,-30" dur="1.5s" repeatCount="indefinite" />
+    </g>
+
+    <!-- Bubble 4 (Right Mid) -->
+    <g transform="translate(130, 40)">
+      <circle r="50" fill="#845EC2" stroke="#FFFFFF" stroke-width="4" filter="url(#glowBlur)">
+        <animate attributeName="r" values="50;55;50" dur="2.1s" repeatCount="indefinite" />
+      </circle>
+      <path d="M -15,-15 A 20 20 0 0 1 15,-15" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+    </g>
+
+    <!-- Bubble 5 (Bottom Left) -->
+    <g transform="translate(-100, 60)">
+      <circle r="65" fill="#FFC75F" stroke="#FFFFFF" stroke-width="4" filter="url(#glowBlur)">
+        <animate attributeName="r" values="65;70;65" dur="2.4s" repeatCount="indefinite" />
+      </circle>
+      <path d="M -20,-20 A 40 40 0 0 1 20,-20" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    </g>
+
+    <!-- Bubble 6 (Bottom Center) -->
+    <g transform="translate(30, 120)">
+      <circle r="40" fill="#00C9A7" stroke="#FFFFFF" stroke-width="4" filter="url(#glowBlur)">
+        <animate attributeName="r" values="40;45;40" dur="1.9s" repeatCount="indefinite" />
+      </circle>
+      <path d="M -10,-10 A 15 15 0 0 1 10,-10" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+    </g>
+
+    <!-- Bubble 7 (Small Top) -->
+    <g transform="translate(-20, -210)">
+      <circle r="35" fill="#FF6F91" stroke="#FFFFFF" stroke-width="3" filter="url(#glowBlur)">
+        <animate attributeName="r" values="35;38;35" dur="2.6s" repeatCount="indefinite" />
+      </circle>
+      <path d="M -10,-10 A 10 10 0 0 1 10,-10" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+    </g>
+
+    <!-- Bubble 8 (Far Left Mid) -->
+    <g transform="translate(-160, 10)">
+      <circle r="45" fill="#FFFFFF" opacity="0.6" stroke="#FF6F91" stroke-width="4">
+        <animate attributeName="r" values="45;48;45" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Motion Lines connecting bubble pops -->
+    <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.5">
+      <line x1="-120" y1="-150" x2="-60" y2="-60">
+        <animate attributeName="x2" values="-60;-70;-60" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="-60;-50;-60" dur="2s" repeatCount="indefinite" />
+      </line>
+      <line x1="100" y1="-160" x2="50" y2="-60">
+        <animate attributeName="x2" values="50;60;50" dur="2.3s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="-60;-70;-60" dur="2.3s" repeatCount="indefinite" />
+      </line>
+      <line x1="-100" y1="60" x2="-40" y2="0">
+        <animate attributeName="x2" values="-40;-30;-40" dur="2.4s" repeatCount="indefinite" />
+      </line>
+    </g>
+  </g>
+
+  <!-- Layer 7: Sparkle Burst Particles at Pop Points -->
+  <g transform="translate(500, 450)">
+    <!-- Burst 1 (Center) -->
+    <g transform="translate(0, -30)">
+      <g stroke="#FFFFFF" stroke-width="6" stroke-linecap="round">
+        <line x1="0" y1="0" x2="0" y2="-40">
+          <animate attributeName="y2" values="0;-40;-80;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="28" y2="-28">
+          <animate attributeName="x2" values="0;28;56;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="y2" values="0;-28;-56;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="40" y2="0">
+          <animate attributeName="x2" values="0;40;80;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="28" y2="28">
+          <animate attributeName="x2" values="0;28;56;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="y2" values="0;28;56;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="0" y2="40">
+          <animate attributeName="y2" values="0;40;80;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="-28" y2="28">
+          <animate attributeName="x2" values="0;-28;-56;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="y2" values="0;28;56;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="-40" y2="0">
+          <animate attributeName="x2" values="0;-40;-80;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="-28" y2="-28">
+          <animate attributeName="x2" values="0;-28;-56;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="y2" values="0;-28;-56;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        </line>
+      </g>
+      <circle r="10" fill="#FFFFFF" filter="url(#glowBlur)">
+        <animate attributeName="r" values="0;30;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Burst 2 (Bottom Left) -->
+    <g transform="translate(-100, 60)">
+      <g stroke="#FFC75F" stroke-width="5" stroke-linecap="round">
+        <line x1="0" y1="0" x2="0" y2="-30">
+          <animate attributeName="y2" values="0;-30;-60;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="30" y2="0">
+          <animate attributeName="x2" values="0;30;60;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="0" y2="30">
+          <animate attributeName="y2" values="0;30;60;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+        </line>
+        <line x1="0" y1="0" x2="-30" y2="0">
+          <animate attributeName="x2" values="0;-30;-60;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+        </line>
+      </g>
+      <circle r="8" fill="#FFC75F" filter="url(#glowBlur)">
+        <animate attributeName="r" values="0;20;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+
+  <!-- Layer 8: Geometric Chevron Motion Lines -->
+  <g>
+    <path d="M 650,450 L 700,400 L 700,500 Z" fill="#FFFFFF" opacity="0.8" filter="url(#glowBlur)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -150,0; 0,0" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" repeatCount="indefinite" />
+    </path>
+    <path d="M 580,450 L 630,400 L 630,500 Z" fill="#FFFFFF" opacity="0.6" filter="url(#glowBlur)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -150,0; 0,0" dur="1s" begin="0.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.6;0" dur="1s" begin="0.2s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Layer 9: Mascot Silhouette (Bottom Left Corner Reacting) -->
+  <g transform="translate(200, 700)">
+    <!-- Bounce Animation -->
+    <animateTransform attributeName="transform" type="translate" values="200,700; 200,680; 200,700" dur="0.6s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="0.6s" repeatCount="indefinite" additive="sum" />
+    
+    <!-- Shadow -->
+    <ellipse cx="0" cy="90" rx="60" ry="15" fill="#000000" opacity="0.3">
+      <animate attributeName="rx" values="60;50;60" dur="0.6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.2;0.3" dur="0.6s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- Mascot Body Base Shape -->
+    <path d="M -40,80 C -70,80 -80,30 -60,0 C -50,-20 -30,-30 -20,-40 C -20,-60 0,-80 20,-80 C 40,-80 50,-60 40,-40 C 50,-30 70,-20 80,0 C 100,30 90,80 60,80 Z" fill="url(#mascotGrad)" stroke="#FFFFFF" stroke-width="5" filter="url(#glowBlur)"/>
+    
+    <!-- Arms (Raised in Celebration) -->
+    <path d="M -60,0 C -90,-20 -100,-60 -80,-90" fill="none" stroke="#4D8076" stroke-width="15" stroke-linecap="round">
+      <animate attributeName="d" values="M -60,0 C -90,-20 -100,-60 -80,-90; M -60,0 C -90,-30 -100,-80 -80,-110; M -60,0 C -90,-20 -100,-60 -80,-90" dur="0.6s" repeatCount="indefinite" />
+    </path>
+    <path d="M 80,0 C 110,-20 120,-60 100,-90" fill="none" stroke="#4D8076" stroke-width="15" stroke-linecap="round">
+      <animate attributeName="d" values="M 80,0 C 110,-20 120,-60 100,-90; M 80,0 C 110,-30 120,-80 100,-110; M 80,0 C 110,-20 120,-60 100,-90" dur="0.6s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Star Eyes -->
+    <path d="M -25,-15 L -20,-25 L -15,-15 L -5,-15 L -15,-5 L -20,5 L -25,-5 L -35,-15 Z" fill="#FFFFFF">
+      <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="0.6s" repeatCount="indefinite" />
+    </path>
+    <path d="M 15,-15 L 20,-25 L 25,-15 L 35,-15 L 25,-5 L 20,5 L 15,-5 L 5,-15 Z" fill="#FFFFFF">
+      <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="0.6s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Mouth -->
+    <path d="M -10,10 Q 0,20 10,10" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- Layer 10: Foreground Confetti Particles -->
+  <g>
+    <!-- Confetti 1 -->
+    <rect width="20" height="20" fill="#FF6F91" filter="url(#glowBlur)">
+      <animateMotion dur="4s" repeatCount="indefinite">
+        <mpath href="#conf1" />
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="2s" repeatCount="indefinite" additive="sum" />
+    </rect>
+
+    <!-- Confetti 2 -->
+    <rect width="20" height="20" fill="#FFC75F" filter="url(#glowBlur)">
+      <animateMotion dur="5s" repeatCount="indefinite">
+        <mpath href="#conf2" />
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="3s" repeatCount="indefinite" additive="sum" />
+    </rect>
+
+    <!-- Confetti 3 -->
+    <rect width="20" height="20" fill="#4D8076" filter="url(#glowBlur)">
+      <animateMotion dur="6s" repeatCount="indefinite">
+        <mpath href="#conf3" />
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="2.5s" repeatCount="indefinite" additive="sum" />
+    </rect>
+
+    <!-- Confetti 4 -->
+    <rect width="20" height="20" fill="#845EC2" filter="url(#glowBlur)">
+      <animateMotion dur="4.5s" repeatCount="indefinite">
+        <mpath href="#conf4" />
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="3.5s" repeatCount="indefinite" additive="sum" />
+    </rect>
+
+    <!-- More Confetti Instances -->
+    <circle r="10" fill="#00C9A7" filter="url(#glowBlur)">
+      <animateMotion dur="3s" repeatCount="indefinite">
+        <mpath href="#conf1" />
+      </animateMotion>
+    </circle>
+    
+    <circle r="10" fill="#FFFFFF" filter="url(#glowBlur)">
+      <animateMotion dur="7s" repeatCount="indefinite">
+        <mpath href="#conf2" />
+      </animateMotion>
+    </circle>
+
+    <polygon points="0,-15 12,10 -12,10" fill="#FF6F91" filter="url(#glowBlur)">
+      <animateMotion dur="5.5s" repeatCount="indefinite">
+        <mpath href="#conf3" />
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="2s" repeatCount="indefinite" additive="sum" />
+    </polygon>
+
+    <polygon points="0,-15 12,10 -12,10" fill="#FFC75F" filter="url(#glowBlur)">
+      <animateMotion dur="4.2s" repeatCount="indefinite">
+        <mpath href="#conf4" />
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="3s" repeatCount="indefinite" additive="sum" />
+    </polygon>
+
+    <circle r="8" fill="#845EC2" filter="url(#glowBlur)">
+      <animateMotion dur="6.5s" repeatCount="indefinite">
+        <mpath href="#conf1" />
+      </animateMotion>
+    </circle>
+
+    <polygon points="0,12 10,-6 -10,-6" fill="#4D8076" filter="url(#glowBlur)">
+      <animateMotion dur="3.8s" repeatCount="indefinite">
+        <mpath href="#conf2" />
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="1.5s" repeatCount="indefinite" additive="sum" />
+    </polygon>
+  </g>
+
+  <!-- Layer 11: Floating Small Bubbles (Background Floating) -->
+  <g>
+    <circle cx="1300" cy="200" r="20" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.6">
+      <animate attributeName="cy" values="200;180;200" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1250" cy="300" r="15" fill="none" stroke="#FFC75F" stroke-width="3" opacity="0.6">
+      <animate attributeName="cy" values="300;280;300" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1400" cy="600" r="25" fill="none" stroke="#FF6F91" stroke-width="3" opacity="0.6">
+      <animate attributeName="cy" values="600;620;600" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1100" cy="750" r="18" fill="none" stroke="#4D8076" stroke-width="3" opacity="0.6">
+      <animate attributeName="cy" values="750;730;750" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Layer 12: High Contrast White Outline Shapes for Energy -->
+  <g stroke="#FFFFFF" stroke-width="8" fill="none" opacity="0.8">
+    <ellipse cx="500" cy="450" rx="350" ry="350" stroke-dasharray="20 40">
+      <animateTransform attributeName="transform" type="rotate" values="0 500 450; 360 500 450" dur="10s" repeatCount="indefinite" />
+    </ellipse>
+  </g>
+
+  <!-- Layer 13: Foreground Motion Blur Trails -->
+  <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.4">
+    <path d="M 450,300 L 350,200">
+      <animate attributeName="d" values="M 450,300 L 350,200; M 450,300 L 250,150; M 450,300 L 350,200" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.4;0" dur="1.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 550,500 L 650,600">
+      <animate attributeName="d" values="M 550,500 L 650,600; M 550,500 L 750,700; M 550,500 L 650,600" dur="1.8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.4;0" dur="1.8s" repeatCount="indefinite" />
+    </path>
+    <path d="M 400,550 L 300,650">
+      <animate attributeName="d" values="M 400,550 L 300,650; M 400,550 L 200,750; M 400,550 L 300,650" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.4;0" dur="2s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Layer 14: Floating Plus Symbols -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <g transform="translate(900, 150)" filter="url(#glowBlur)">
+      <rect x="-5" y="-20" width="10" height="40" />
+      <rect x="-20" y="-5" width="40" height="10" />
+      <animateTransform attributeName="transform" type="translate" values="900,150; 900,130; 900,150" dur="2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0;45;0" dur="4s" repeatCount="indefinite" additive="sum" />
+    </g>
+    <g transform="translate(1100, 500)" fill="#FFC75F" filter="url(#glowBlur)">
+      <rect x="-3" y="-15" width="6" height="30" />
+      <rect x="-15" y="-3" width="30" height="6" />
+      <animateTransform attributeName="transform" type="translate" values="1100,500; 1100,520; 1100,500" dur="2.5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0;90;0" dur="5s" repeatCount="indefinite" additive="sum" />
+    </g>
+    <g transform="translate(1000, 800)" fill="#FF6F91" filter="url(#glowBlur)">
+      <rect x="-4" y="-18" width="8" height="36" />
+      <rect x="-18" y="-4" width="36" height="8" />
+      <animateTransform attributeName="transform" type="translate" values="1000,800; 1000,780; 1000,800" dur="3s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0;-45;0" dur="6s" repeatCount="indefinite" additive="sum" />
+    </g>
+  </g>
+
+  <!-- Layer 15: Subtle Halftone Dots Overlay -->
+  <g fill="#000000" opacity="0.1">
+    <circle cx="100" cy="100" r="5" />
+    <circle cx="300" cy="200" r="8" />
+    <circle cx="500" cy="100" r="6" />
+    <circle cx="700" cy="300" r="10" />
+    <circle cx="900" cy="100" r="5" />
+    <circle cx="1100" cy="250" r="7" />
+    <circle cx="1300" cy="100" r="9" />
+    <circle cx="1500" cy="300" r="6" />
+    <circle cx="100" cy="500" r="8" />
+    <circle cx="300" cy="700" r="5" />
+    <circle cx="500" cy="800" r="10" />
+    <circle cx="700" cy="600" r="6" />
+    <circle cx="900" cy="800" r="8" />
+    <circle cx="1100" cy="600" r="5" />
+    <circle cx="1300" cy="800" r="7" />
+    <circle cx="1500" cy="600" r="9" />
+  </g>
+
+  <!-- Layer 16: Pop Text Placeholder / Sparkle Overlay -->
+  <g>
+    <circle cx="450" cy="300" r="4" fill="#FFFFFF" filter="url(#glowBlur)">
+      <animate attributeName="r" values="4;8;4" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="600" cy="400" r="3" fill="#FFC75F" filter="url(#glowBlur)">
+      <animate attributeName="r" values="3;6;3" dur="1.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="550" r="5" fill="#FF6F91" filter="url(#glowBlur)">
+      <animate attributeName="r" values="5;10;5" dur="0.8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="550" cy="600" r="4" fill="#4D8076" filter="url(#glowBlur)">
+      <animate attributeName="r" values="4;7;4" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Layer 17: Geometric Accents (Triangles) -->
+  <g>
+    <polygon points="800,100 820,130 780,130" fill="#845EC2" opacity="0.8" filter="url(#glowBlur)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,20; 0,0" dur="3s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0 800 120; 360 800 120" dur="8s" repeatCount="indefinite" additive="sum" />
+    </polygon>
+    <polygon points="1000,300 1030,340 970,340" fill="#FF6F91" opacity="0.8" filter="url(#glowBlur)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="4s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0 1000 330; -360 1000 330" dur="10s" repeatCount="indefinite" additive="sum" />
+    </polygon>
+    <polygon points="850,700 880,740 820,740" fill="#FFC75F" opacity="0.8" filter="url(#glowBlur)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,30; 0,0" dur="3.5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0 850 720; 360 850 720" dur="6s" repeatCount="indefinite" additive="sum" />
+    </polygon>
+  </g>
+
+  <!-- Layer 18: Final Vignette / Light Leaks (Bright, not dark) -->
+  <g>
+    <path d="M 0,0 L 1600,0 L 1600,100 L 0,100 Z" fill="url(#glow)" opacity="0.3" />
+    <path d="M 0,800 L 1600,800 L 1600,900 L 0,900 Z" fill="url(#glow)" opacity="0.3" />
+    <path d="M 0,0 L 100,0 L 100,900 L 0,900 Z" fill="url(#glow)" opacity="0.3" />
+    <path d="M 1500,0 L 1600,0 L 1600,900 L 1500,900 Z" fill="url(#glow)" opacity="0.3" />
+  </g>
+</svg>

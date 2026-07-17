@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Halftone Base Dot Pattern -->
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2" fill="#000000"/>
+    </pattern>
+    
+    <pattern id="dots-lg" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="4" fill="#000000"/>
+    </pattern>
+
+    <!-- Horizontal Halftone Stripes for Gradients Simulation -->
+    <pattern id="halftone-stripes" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+      <rect width="4" height="8" fill="currentColor" opacity="0.5"/>
+    </pattern>
+
+    <!-- Soft Circular Halftone Gradient (Simulated) -->
+    <pattern id="halftone-circ" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#000" opacity="0.6"/>
+    </pattern>
+
+    <!-- Pop Art Gradients (Simulated with Halftones) -->
+    <linearGradient id="halftone-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="40%" stop-color="#FFA500"/>
+      <stop offset="100%" stop-color="#FF4500"/>
+    </linearGradient>
+
+    <!-- Thick Comic Outline Style -->
+    <filter id="outline" x="-10%" y="-10%" width="120%" height="120%">
+      <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="6"/>
+      <feFlood flood-color="#000000" result="FLOOD"/>
+      <feComposite in="FLOOD" in2="DILATED" operator="in" result="OUTLINE"/>
+      <feMerge>
+        <feMergeNode in="OUTLINE"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Halftone Base Dot Pattern -->
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2" fill="#000000"/>
+    </pattern>
+
+    <!-- Hat Base Paths -->
+    <g id="hat-paths">
+      <!-- Visor -->
+      <path d="M 450,550 C 450,550 650,620 800,620 C 950,620 1150,550 1150,550 C 1250,500 1250,700 1150,750 C 950,820 650,820 450,750 C 350,700 350,500 450,550 Z" />
+      <!-- Band -->
+      <path d="M 400,400 C 400,400 600,480 800,480 C 1000,480 1200,400 1200,400 L 1220,520 C 1220,520 1000,600 800,600 C 600,600 380,520 380,520 Z" />
+      <!-- Dome -->
+      <path d="M 420,400 C 420,150 1180,150 1180,400 C 1180,400 1000,480 800,480 C 600,480 420,400 420,400 Z" />
+      <!-- Emblem -->
+      <path d="M 740,320 L 860,320 L 880,420 L 800,460 L 720,420 Z" />
+      <circle cx="800" cy="370" r="35" />
+      <path d="M 800,335 L 810,360 L 835,360 L 815,375 L 822,400 L 800,385 L 778,400 L 785,375 L 765,360 L 790,360 Z" />
+      <!-- Anchor Rope -->
+      <path d="M 720,420 C 680,480 680,540 720,540 C 760,540 760,480 720,420" />
+      <path d="M 880,420 C 920,480 920,540 880,540 C 840,540 840,480 880,420" />
+    </g>
+
+    <!-- Comic Burst Shape -->
+    <g id="burst-shape">
+      <path d="M 100,0 L 120,60 L 180,50 L 140,100 L 200,140 L 130,160 L 160,220 L 100,180 L 60,240 L 50,170 L -10,180 L 20,120 L -40,90 L 30,60 L 0,0 L 60,20 Z" />
+    </g>
+
+    <!-- Comic Star Sparkle -->
+    <g id="star">
+      <path d="M 0,-30 Q 10,-10 30,0 Q 10,10 0,30 Q -10,10 -30,0 Q -10,-10 0,-30 Z" />
+    </g>
+  </defs>
+
+  <!-- BACKGROUND LAYER -->
+  <g id="bg-layer">
+    <!-- Base Pop Art Background -->
+    <rect width="1600" height="900" fill="#00FFFF" />
+    
+    <!-- Halftone Background Overlay -->
+    <rect width="1600" height="900" fill="url(#dots)" opacity="0.15">
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="4s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Split Diagonal Stripes -->
+    <path d="M 0,0 L 1600,0 L 1600,300 L 0,900 Z" fill="#FF1493">
+      <animate attributeName="fill" values="#FF1493;#FFFF00;#FF1493" dur="6s" repeatCount="indefinite" />
+    </path>
+    <path d="M 0,900 L 1600,300 L 1600,900 Z" fill="#FFFF00">
+      <animate attributeName="fill" values="#FFFF00;#00FFFF;#FFFF00" dur="6s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Huge Background Halftone Burst -->
+    <g transform="translate(800, 450) scale(12)">
+      <circle cx="0" cy="0" r="50" fill="url(#dots)" opacity="0.2">
+        <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="8s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+
+  <!-- COMIC ACTION LINES LAYER -->
+  <g id="action-lines">
+    <!-- Thick Radiating Lines -->
+    <g stroke="#000000" stroke-width="12" stroke-linecap="round">
+      <line x1="800" y1="450" x2="200" y2="100">
+        <animate attributeName="x2" values="200;180;200" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="100;80;100" dur="2s" repeatCount="indefinite" />
+      </line>
+      <line x1="800" y1="450" x2="1400" y2="100">
+        <animate attributeName="x2" values="1400;1420;1400" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="100;80;100" dur="2.5s" repeatCount="indefinite" />
+      </line>
+      <line x1="800" y1="450" x2="200" y2="800">
+        <animate attributeName="x2" values="200;180;200" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="800;820;800" dur="3s" repeatCount="indefinite" />
+      </line>
+      <line x1="800" y1="450" x2="1400" y2="800">
+        <animate attributeName="x2" values="1400;1420;1400" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="800;820;800" dur="2.2s" repeatCount="indefinite" />
+      </line>
+      
+      <!-- Secondary Burst Lines -->
+      <line x1="800" y1="450" x2="800" y2="50" stroke-width="8" />
+      <line x1="800" y1="450" x2="800" y2="850" stroke-width="8" />
+      <line x1="800" y1="450" x2="400" y2="450" stroke-width="8" />
+      <line x1="800" y1="450" x2="1200" y2="450" stroke-width="8" />
+      
+      <!-- Diagonal Secondary Lines -->
+      <line x1="800" y1="450" x2="400" y2="200" stroke-width="6" />
+      <line x1="800" y1="450" x2="1200" y2="200" stroke-width="6" />
+      <line x1="800" y1="450" x2="400" y2="700" stroke-width="6" />
+      <line x1="800" y1="450" x2="1200" y2="700" stroke-width="6" />
+    </g>
+
+    <!-- Speed Lines / Halftone Streaks -->
+    <g fill="#000000">
+      <rect x="100" y="300" width="300" height="20" transform="rotate(-15 100 300)">
+        <animate attributeName="width" values="300;400;300" dur="1.5s" repeatCount="indefinite" />
+      </rect>
+      <rect x="1200" y="600" width="300" height="20" transform="rotate(15 1200 600)">
+        <animate attributeName="width" values="300;200;300" dur="1.8s" repeatCount="indefinite" />
+      </rect>
+      <rect x="100" y="600" width="250" height="15" transform="rotate(20 100 600)">
+        <animate attributeName="x" values="100;50;100" dur="2s" repeatCount="indefinite" />
+      </rect>
+      <rect x="1250" y="200" width="250" height="15" transform="rotate(-20 1250 200)">
+        <animate attributeName="x" values="1250;1300;1250" dur="1.2s" repeatCount="indefinite" />
+      </rect>
+    </g>
+  </g>
+
+  <!-- FLOATING BURST SHAPES LAYER -->
+  <g id="floating-bursts">
+    <!-- Burst 1 (Top Left) -->
+    <g transform="translate(250, 250) scale(2)">
+      <use href="#burst-shape" fill="#FFFF00" stroke="#000000" stroke-width="4" />
+      <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="20s" repeatCount="indefinite" />
+    </g>
+    
+    <!-- Burst 2 (Bottom Right) -->
+    <g transform="translate(1350, 650) scale(1.5)">
+      <use href="#burst-shape" fill="#FF1493" stroke="#000000" stroke-width="4" />
+      <animateTransform attributeName="transform" type="rotate" from="360 1350 650" to="0 1350 650" dur="15s" repeatCount="indefinite" />
+    </g>
+
+    <!-- Burst 3 (Top Right) -->
+    <g transform="translate(1300, 200) scale(1)">
+      <use href="#burst-shape" fill="#00FFFF" stroke="#000000" stroke-width="4" />
+      <animateTransform attributeName="transform" type="rotate" from="0 1300 200" to="-360 1300 200" dur="12s" repeatCount="indefinite" />
+    </g>
+
+    <!-- Burst 4 (Bottom Left) -->
+    <g transform="translate(300, 700) scale(1.2)">
+      <use href="#burst-shape" fill="#FFFFFF" stroke="#000000" stroke-width="4" />
+      <animateTransform attributeName="transform" type="rotate" from="-360 300 700" to="0 300 700" dur="18s" repeatCount="indefinite" />
+    </g>
+  </g>
+
+  <!-- MAIN SUBJECT: POP ART CAPTAIN HAT -->
+  <g id="captain-hat" transform="translate(0, 0)">
+    
+    <!-- Thick Aggressive Outline Shadows -->
+    <g fill="none" stroke="#000000" stroke-width="24" stroke-linejoin="round">
+      <use href="#hat-paths" />
+    </g>
+    <g fill="none" stroke="#000000" stroke-width="12" stroke-linejoin="round">
+      <use href="#hat-paths" />
+    </g>
+
+    <!-- Hat Visor -->
+    <use href="#hat-paths" fill="#1A1A2E" />
+    <!-- Visor Halftone Shading -->
+    <use href="#hat-paths" fill="url(#dots-lg)" opacity="0.4" />
+
+    <!-- Hat Band -->
+    <use href="#hat-paths" fill="#000000" />
+    
+    <!-- Hat Dome -->
+    <use href="#hat-paths" fill="#FFFFFF" />
+    <!-- Dome Halftone Shading (Simulated depth) -->
+    <path d="M 420,400 C 420,150 1180,150 1180,400 C 1180,400 1000,480 800,480 C 600,480 420,400 420,400 Z" fill="url(#halftone-circ)" opacity="0.3" />
+
+    <!-- Gold Emblem Base -->
+    <use href="#hat-paths" fill="#FFD700" />
+    <!-- Emblem Inner Detail -->
+    <use href="#hat-paths" fill="#FFFFFF" />
+    <!-- Emblem Star -->
+    <use href="#hat-paths" fill="#FFD700" />
+    
+    <!-- Emblem Anchor Rope -->
+    <use href="#hat-paths" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+    <use href="#hat-paths" fill="none" stroke="#FFD700" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Inner Hat Highlights (Retro Comic Style) -->
+    <path d="M 460,380 C 460,200 600,180 700,200" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.6" />
+    <path d="M 1140,380 C 1140,200 1000,180 900,200" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Visor Shiny Reflection -->
+    <path d="M 500,600 C 600,650 1000,650 1100,600" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.4" />
+
+    <!-- Hat Animation: Subtle Float & Tilt -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="-2 800 450; 2 800 450; -2 800 450" dur="5s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  <!-- FOREGROUND POP ART ELEMENTS -->
+  <g id="foreground-elements">
+    
+    <!-- Halftone Circles Frame -->
+    <circle cx="150" cy="150" r="100" fill="url(#dots)" opacity="0.8">
+      <animate attributeName="r" values="100;110;100" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1450" cy="750" r="120" fill="url(#dots)" opacity="0.8">
+      <animate attributeName="r" values="120;130;120" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="800" r="80" fill="url(#dots)" opacity="0.6">
+      <animate attributeName="r" values="80;90;80" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1400" cy="200" r="90" fill="url(#dots)" opacity="0.6">
+      <animate attributeName="r" values="90;100;90" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Comic "POP" Text -->
+    <g transform="translate(1300, 150) rotate(15)">
+      <text x="0" y="0" font-family="Impact, sans-serif" font-size="120" fill="#FFFF00" stroke="#000000" stroke-width="8" text-anchor="middle">POP!</text>
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="0.5s" repeatCount="indefinite" additive="sum" />
+    </g>
+
+    <g transform="translate(300, 750) rotate(-10)">
+      <text x="0" y="0" font-family="Impact, sans-serif" font-size="100" fill="#FF1493" stroke="#000000" stroke-width="8" text-anchor="middle">WOW!</text>
+      <animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="0.7s" repeatCount="indefinite" additive="sum" />
+    </g>
+
+    <!-- Comic Sparkles -->
+    <g transform="translate(600, 300)">
+      <use href="#star" fill="#FFFFFF" stroke="#000000" stroke-width="4" transform="scale(1.5)" />
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite" />
+    </g>
+
+    <g transform="translate(1000, 600)">
+      <use href="#star" fill="#FFFF00" stroke="#000000" stroke-width="4" transform="scale(1.2)" />
+      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.2s" repeatCount="indefinite" />
+    </g>
+
+    <g transform="translate(500, 650)">
+      <use href="#star" fill="#00FFFF" stroke="#000000" stroke-width="4" transform="scale(0.8)" />
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite" />
+    </g>
+
+    <!-- Halftone Edge Panels -->
+    <rect x="0" y="0" width="100" height="900" fill="url(#dots)" opacity="0.5" />
+    <rect x="1500" y="0" width="100" height="900" fill="url(#dots)" opacity="0.5" />
+  </g>
+
+  <!-- FINAL OVERLAY: HALFTONE DOT FLICKER -->
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.05" style="mix-blend-mode: multiply;">
+    <animate attributeName="opacity" values="0.05;0.15;0.05" dur="0.2s" repeatCount="indefinite" />
+  </rect>
+
+</svg>

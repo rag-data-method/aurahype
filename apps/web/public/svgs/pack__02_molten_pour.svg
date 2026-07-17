@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g1" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#FF7F00"/>
+<stop offset="100%" stop-color="#B85440"/>
+</linearGradient>
+<filter id="b1" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="30"/>
+</filter>
+<filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="70"/>
+</filter>
+<filter id="t1">
+<feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" result="n"/>
+<feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.08 0" in="n"/>
+</filter>
+</defs>
+<rect width="1600" height="900" fill="#FFF5EB"/>
+<path fill="#B85440" opacity="0.75" filter="url(#b2)" d="M400 600 C200 650 100 800 300 850 C500 900 900 880 1100 800 C1300 720 1200 600 1000 580 C800 560 600 550 400 600">
+<animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="8s" repeatCount="indefinite" additive="sum"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;-20,10;0,0" dur="8s" repeatCount="indefinite" additive="sum"/>
+</path>
+<path fill="url(#g1)" opacity="0.95" d="M700 100 C650 200 750 400 700 600 C650 750 400 850 600 880 C800 910 1100 850 1050 600 C1000 350 1100 200 1000 100 C950 50 750 50 700 100">
+<animate attributeName="d" dur="6s" repeatCount="indefinite" values="M700 100 C650 200 750 400 700 600 C650 750 400 850 600 880 C800 910 1100 850 1050 600 C1000 350 1100 200 1000 100 C950 50 750 50 700 100;M720 100 C680 220 730 420 720 620 C680 760 380 860 580 890 C780 920 1120 860 1070 620 C1020 370 1120 220 1020 100 C960 40 760 40 720 100;M700 100 C650 200 750 400 700 600 C650 750 400 850 600 880 C800 910 1100 850 1050 600 C1000 350 1100 200 1000 100 C950 50 750 50 700 100"/>
+<animateTransform attributeName="transform" type="rotate" values="-2 800 450;2 800 450;-2 800 450" dur="7s" repeatCount="indefinite"/>
+</path>
+<path fill="#FA8072" opacity="0.9" d="M750 150 C720 250 780 450 750 650 C720 780 550 820 650 860 C800 890 950 820 900 650 C850 480 920 300 850 150 C820 100 780 100 750 150">
+<animateTransform attributeName="transform" type="translate" values="0,0;30,-20;0,0" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.9;0.7;0.9" dur="4s" repeatCount="indefinite"/>
+</path>
+<ellipse fill="#FFB088" opacity="0.85" cx="600" cy="700" rx="120" ry="80">
+<animateTransform attributeName="transform" type="translate" values="0,0;50,30;0,0" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="rx" values="120;140;120" dur="4s" repeatCount="indefinite"/>
+</ellipse>
+<path fill="#FF7F00" opacity="1" d="M800 200 C780 300 820 500 800 700 C780 800 700 820 750 860 C850 890 950 820 920 700 C890 580 940 400 900 200 C880 150 820 150 800 200">
+<animateTransform attributeName="transform" type="skewX" values="0;5;0;-5;0" dur="6s" repeatCount="indefinite"/>
+</path>
+<path fill="#B85440" opacity="0.7" filter="url(#b1)" d="M500 750 C400 780 350 850 450 870 C550 890 750 880 850 850 C950 820 900 750 800 730 C700 710 600 720 500 750">
+<animateTransform attributeName="transform" type="translate" values="0,0;-30,0;0,0" dur="9s" repeatCount="indefinite"/>
+</path>
+<ellipse fill="#FFB088" opacity="0.8" cx="900" cy="750" rx="100" ry="60" filter="url(#b1)">
+<animateTransform attributeName="transform" type="translate" values="0,0;-20,40;0,0" dur="7s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.8;0.95;0.8" dur="3s" repeatCount="indefinite"/>
+</ellipse>
+<path fill="#FA8072" opacity="0.85" d="M650 300 C630 400 670 600 650 750 C640 820 580 840 620 870 C700 890 780 850 760 750 C740 650 770 500 750 350 C740 280 670 280 650 300">
+<animateTransform attributeName="transform" type="rotate" values="3 700 600;-3 700 600;3 700 600" dur="8s" repeatCount="indefinite"/>
+</path>
+<circle fill="#FF7F00" opacity="0.9" cx="820" cy="400" r="40">
+<animateTransform attributeName="transform" type="translate" values="0,0;0,300;0,0" dur="4s" repeatCount="indefinite"/>
+<animate attributeName="r" values="40;60;40" dur="4s" repeatCount="indefinite"/>
+</circle>
+<path fill="#B85440" opacity="0.6" filter="url(#b2)" d="M200 800 C100 820 50 880 150 890 C250 900 450 880 550 860 C650 840 600 800 500 790 C400 780 300 780 200 800">
+<animateTransform attributeName="transform" type="translate" values="0,0;40,-20;0,0" dur="10s" repeatCount="indefinite"/>
+</path>
+<ellipse fill="#FFB088" opacity="0.75" cx="750" cy="500" rx="80" ry="120">
+<animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="5s" repeatCount="indefinite"/>
+</ellipse>
+<rect width="1600" height="900" fill="transparent" filter="url(#t1)" pointer-events="none"/>
+</svg>

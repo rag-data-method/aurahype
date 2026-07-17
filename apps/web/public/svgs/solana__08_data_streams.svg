@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="35" result="b"/>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="core" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<filter id="halo" x="-100%" y="-100%" width="300%" height="300%">
+<feGaussianBlur stdDeviation="70"/>
+</filter>
+<linearGradient id="gp" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#5B21B6" stop-opacity="0.3"/>
+<stop offset=".4" stop-color="#9945FF" stop-opacity="1"/>
+<stop offset=".7" stop-color="#14F195" stop-opacity=".5"/>
+<stop offset="1" stop-color="#9945FF" stop-opacity=".1"/>
+</linearGradient>
+<linearGradient id="gc" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#14F195" stop-opacity=".2"/>
+<stop offset=".45" stop-color="#14F195" stop-opacity=".95"/>
+<stop offset=".75" stop-color="#9945FF" stop-opacity=".45"/>
+<stop offset="1" stop-color="#14F195" stop-opacity=".1"/>
+</linearGradient>
+<linearGradient id="gm" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#FF36F9" stop-opacity=".1"/>
+<stop offset=".5" stop-color="#FF36F9" stop-opacity=".9"/>
+<stop offset=".8" stop-color="#5B21B6" stop-opacity=".75"/>
+<stop offset="1" stop-color="#FF36F9" stop-opacity=".1"/>
+</linearGradient>
+<radialGradient id="gw" cx=".5" cy=".5" r=".5">
+<stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/>
+<stop offset=".5" stop-color="#14F195" stop-opacity=".4"/>
+<stop offset="1" stop-color="#9945FF" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#000" stop-opacity="1"/>
+<stop offset=".15" stop-color="#000" stop-opacity="0"/>
+<stop offset=".85" stop-color="#000" stop-opacity="0"/>
+<stop offset="1" stop-color="#000" stop-opacity="1"/>
+</linearGradient>
+</defs>
+<rect width="1600" height="900" fill="#000000"/>
+<ellipse cx="800" cy="450" rx="750" ry="520" fill="#5B21B6" opacity=".22" filter="url(#halo)">
+<animate attributeName="opacity" values=".22;.34;.22" dur="8s" repeatCount="indefinite"/>
+</ellipse>
+<path fill="url(#gp)" filter="url(#glow)" opacity=".9">
+<animate attributeName="d" dur="10s" repeatCount="indefinite" values="M300,-80 C420,150 180,350 340,520 C460,700 260,840 320,1020 L480,1020 C440,840 640,680 460,500 C340,320 560,140 480,-80 Z;M280,-80 C380,150 220,350 320,520 C440,700 280,840 300,1020 L460,1020 C460,840 600,680 440,500 C320,320 540,140 460,-80 Z;M300,-80 C420,150 180,350 340,520 C460,700 260,840 320,1020 L480,1020 C440,840 640,680 460,500 C340,320 560,140 480,-80 Z"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;-18,40;0,0" dur="7s" repeatCount="indefinite"/>
+</path>
+<path fill="url(#gc)" filter="url(#glow)" opacity=".85">
+<animate attributeName="d" dur="11s" repeatCount="indefinite" values="M720,-80 C840,150 620,350 760,520 C880,700 680,840 740,1020 L900,1020 C860,840 1060,680 880,500 C760,320 980,140 900,-80 Z;M700,-80 C820,150 660,350 740,520 C860,700 720,840 720,1020 L880,1020 C880,840 1020,680 860,500 C740,320 960,140 880,-80 Z;M720,-80 C840,150 620,350 760,520 C880,700 680,840 740,1020 L900,1020 C860,840 1060,680 880,500 C760,320 980,140 900,-80 Z"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;22,-30;0,0" dur="8s" repeatCount="indefinite"/>
+</path>
+<path fill="url(#gm)" filter="url(#glow)" opacity=".85">
+<animate attributeName="d" dur="9s" repeatCount="indefinite" values="M1160,-80 C1280,150 1060,350 1200,520 C1320,700 1120,840 1180,1020 L1340,1020 C1300,840 1500,680 1320,500 C1200,320 1420,140 1340,-80 Z;M1140,-80 C1240,150 1080,350 1160,520 C1280,700 1140,840 1160,1020 L1320,1020 C1320,840 1440,680 1280,500 C1160,320 1380,140 1300,-80 Z;M1160,-80 C1280,150 1060,350 1200,520 C1320,700 1120,840 1180,1020 L1340,1020 C1300,840 1500,680 1320,500 C1200,320 1420,140 1340,-80 Z"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;-14,50;0,0" dur="6s" repeatCount="indefinite"/>
+</path>
+<path fill="url(#gc)" filter="url(#glow)" opacity=".75">
+<animate attributeName="d" dur="12s" repeatCount="indefinite" values="M80,-80 C140,150 40,350 120,520 C180,700 60,840 100,1020 L200,1020 C180,840 300,680 180,500 C120,320 260,140 220,-80 Z;M60,-80 C120,150 60,350 100,520 C160,700 80,840 80,1020 L180,1020 C200,840 280,680 160,500 C100,320 240,140 200,-80 Z;M80,-80 C140,150 40,350 120,520 C180,700 60,840 100,1020 L200,1020 C180,840 300,680 180,500 C120,320 260,140 220,-80 Z"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;10,20;0,0" dur="9s" repeatCount="indefinite"/>
+</path>
+<path fill="url(#gp)" filter="url(#glow)" opacity=".8">
+<animate attributeName="d" dur="10.5s" repeatCount="indefinite" values="M1400,-80 C1500,150 1340,350 1440,520 C1540,700 1400,840 1420,1020 L1560,1020 C1560,840 1680,680 1540,500 C1440,320 1620,140 1560,-80 Z;M1380,-80 C1480,150 1360,350 1420,520 C1520,700 1420,840 1400,1020 L1540,1020 C1540,840 1660,680 1520,500 C1420,320 1600,140 1540,-80 Z;M1400,-80 C1500,150 1340,350 1440,520 C1540,700 1400,840 1420,1020 L1560,1020 C1560,840 1680,680 1540,500 C1440,320 1620,140 1560,-80 Z"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;-10,-25;0,0" dur="7.5s" repeatCount="indefinite"/>
+</path>
+<path fill="url(#gm)" filter="url(#glow)" opacity=".8">
+<animate attributeName="d" dur="8.5s" repeatCount="indefinite" values="M500,-80 C600,150 420,350 560,520 C660,700 500,840 540,1020 L680,1020 C660,840 800,680 640,500 C520,320 720,140 660,-80 Z;M480,-80 C580,150 460,350 520,520 C620,700 540,840 500,1020 L640,1020 C640,840 780,680 600,500 C480,320 700,140 640,-80 Z;M500,-80 C600,150 420,350 560,520 C660,700 500,840 540,1020 L680,1020 C660,840 800,680 640,500 C520,320 720,140 660,-80 Z"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;16,35;0,0" dur="5.5s" repeatCount="indefinite"/>
+</path>
+<ellipse cx="380" cy="420" rx="18" ry="120" fill="url(#gw)" filter="url(#core)" opacity=".6">
+<animate attributeName="cy" values="420;520;420" dur="6s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values=".6;.3;.6" dur="4s" repeatCount="indefinite"/>
+<animate attributeName="rx" values="18;24;18" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="ry" values="120;150;120" dur="5s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="800" cy="480" rx="22" ry="140" fill="url(#gw)" filter="url(#core)" opacity=".55">
+<animate attributeName="cy" values="480;380;480" dur="7s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values=".55;.25;.55" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="rx" values="22;28;22" dur="6s" repeatCount="indefinite"/>
+<animate attributeName="ry" values="140;170;140" dur="6s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="1220" cy="450" rx="16" ry="110" fill="url(#gw)" filter="url(#core)" opacity=".5">
+<animate attributeName="cy" values="450;550;450" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values=".5;.2;.5" dur="3.5s" repeatCount="indefinite"/>
+<animate attributeName="rx" values="16;22;16" dur="4.5s" repeatCount="indefinite"/>
+<animate attributeName="ry" values="110;140;110" dur="4.5s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="-200" cy="450" rx="300" ry="90" fill="#14F195" opacity=".15" filter="url(#halo)">
+<animate attributeName="cx" values="-200;1800;-200" dur="12s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values=".15;.05;.15" dur="12s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="-200" cy="450" rx="200" ry="50" fill="#9945FF" opacity=".2" filter="url(#glow)">
+<animate attributeName="cx" values="-200;1800;-200" dur="12s" begin="2s" repeatCount="indefinite"/>
+</ellipse>
+<rect width="1600" height="900" fill="url(#fade)" pointer-events="none"/>
+</svg>

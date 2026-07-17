@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Comic Halftone Dot Patterns -->
+    <pattern id="halftone-black" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="3" fill="#000000"/>
+    </pattern>
+    <pattern id="halftone-magenta" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="3" fill="#FF00B7"/>
+    </pattern>
+    <pattern id="halftone-yellow" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="3" fill="#FFDD00"/>
+    </pattern>
+    <pattern id="halftone-cyan" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="3" fill="#00E0FF"/>
+    </pattern>
+    <pattern id="halftone-red" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="3" fill="#FF0044"/>
+    </pattern>
+    
+    <!-- Straw Stripe Pattern -->
+    <pattern id="straw-stripes" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="40" height="40" fill="#FF0044"/>
+      <rect width="20" height="40" fill="#FFFFFF"/>
+    </pattern>
+
+    <!-- Cup Body Gradient (Flat Color stylized) -->
+    <linearGradient id="cup-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="15%" stop-color="#F0F0F0"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="85%" stop-color="#F0F0F0"/>
+      <stop offset="100%" stop-color="#E8E8E8"/>
+    </linearGradient>
+
+    <!-- Reusable Ice Cube -->
+    <g id="ice-cube">
+      <path d="M0,0 L30,-15 L60,0 L30,15 Z" fill="#00E0FF" opacity="0.7" stroke="#000000" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M0,0 L30,15 L30,45 L0,30 Z" fill="#00A3B8" opacity="0.6" stroke="#000000" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M60,0 L30,15 L30,45 L60,30 Z" fill="#007A8C" opacity="0.5" stroke="#000000" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Reusable Action Line -->
+    <g id="action-line">
+      <path d="M0,0 L100,-5 L100,5 Z" fill="#000000" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="100,-5 140,0 100,5" fill="#FFDD00"/>
+    </g>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1600" height="900" fill="#FFDD00"/>
+  
+  <!-- Background Halftone Dots -->
+  <circle cx="200" cy="200" r="180" fill="url(#halftone-black)"/>
+  <circle cx="1400" cy="700" r="250" fill="url(#halftone-black)"/>
+  
+  <!-- Dotted Burst Behind Cup -->
+  <circle cx="800" cy="450" r="400" fill="url(#halftone-cyan)">
+    <animate attributeName="r" values="400;420;400" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Background Floating Elements -->
+  <g id="bubbles-bg">
+    <circle cx="200" cy="150" r="25" fill="#FF00B7" stroke="#000000" stroke-width="4"/>
+    <circle cx="200" cy="150" r="10" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="1400" cy="200" r="40" fill="#00E0FF" stroke="#000000" stroke-width="5"/>
+    <circle cx="1410" cy="190" r="15" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="300" cy="750" r="60" fill="#FF0044" stroke="#000000" stroke-width="6"/>
+    <circle cx="320" cy="730" r="20" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="1250" cy="750" r="30" fill="#FFDD00" stroke="#000000" stroke-width="4"/>
+    <circle cx="1260" cy="740" r="10" fill="#FFFFFF" opacity="0.8"/>
+
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-30; 0,0" dur="5s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- ACTION LINES (Comic Style) -->
+  <!-- Top Left Burst -->
+  <use href="#action-line" transform="translate(150, 300) rotate(-45) scale(1.5)">
+    <animateTransform attributeName="transform" type="translate" values="150,300; 130,280; 150,300" dur="2s" repeatCount="indefinite" additive="sum"/>
+  </use>
+  <use href="#action-line" transform="translate(180, 250) rotate(-60) scale(1.2)">
+    <animateTransform attributeName="transform" type="translate" values="180,250; 160,230; 180,250" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+  </use>
+  <use href="#action-line" transform="translate(220, 350) rotate(-30) scale(1.8)">
+    <animateTransform attributeName="transform" type="translate" values="220,350; 200,330; 220,350" dur="1.8s" repeatCount="indefinite" additive="sum"/>
+  </use>
+
+  <!-- Bottom Right Burst -->
+  <use href="#action-line" transform="translate(1400, 600) rotate(135) scale(1.5)">
+    <animateTransform attributeName="transform" type="translate" values="1400,600; 1420,620; 1400,600" dur="2.2s" repeatCount="indefinite" additive="sum"/>
+  </use>
+  <use href="#action-line" transform="translate(1350, 650) rotate(120) scale(1.2)">
+    <animateTransform attributeName="transform" type="translate" values="1350,650; 1370,670; 1350,650" dur="2.7s" repeatCount="indefinite" additive="sum"/>
+  </use>
+  <use href="#action-line" transform="translate(1450, 550) rotate(150) scale(1.8)">
+    <animateTransform attributeName="transform" type="translate" values="1450,550; 1470,570; 1450,550" dur="1.9s" repeatCount="indefinite" additive="sum"/>
+  </use>
+
+  <!-- MAIN CUP COMPOSITION -->
+  <g transform="translate(800, 520)">
+    
+    <!-- Drop Shadow -->
+    <ellipse cx="0" cy="350" rx="260" ry="40" fill="#000000" opacity="0.3">
+      <animate attributeName="rx" values="260;280;260" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.15;0.3" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Cup Back Rim (Inside) -->
+    <ellipse cx="0" cy="-300" rx="220" ry="50" fill="#D0D0D0" stroke="#000000" stroke-width="6"/>
+    
+    <!-- Cola Liquid -->
+    <path d="M-210,-290 Q0,-230 210,-290 Q200,-100 180,100 Q0,160 -180,100 Q-200,-100 -210,-290 Z" fill="#3A1A00" stroke="#000000" stroke-width="4"/>
+    
+    <!-- Cola Surface -->
+    <ellipse cx="0" cy="-290" rx="210" ry="48" fill="#5C2E00" stroke="#000000" stroke-width="4"/>
+
+    <!-- Cup Side Outline (Left & Right) -->
+    <path d="M-220,-300 L-180,100" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+    <path d="M220,-300 L180,100" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Cup Body (Front) -->
+    <path d="M-220,-300 L-180,100 Q0,160 180,100 L220,-300 Q0,-240 -220,-300 Z" fill="url(#cup-grad)" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+
+    <!-- Cup Red Rim (Top Band) -->
+    <path d="M-220,-300 Q0,-240 220,-300 L220,-280 Q0,-220 -220,-280 Z" fill="#FF0044" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+    
+    <!-- Cup Bottom Band -->
+    <path d="M-180,100 Q0,160 180,100 L175,80 Q0,140 -175,80 Z" fill="#FF0044" stroke="#000000" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- Cup Center Graphic / Label -->
+    <!-- Yellow Circle Graphic -->
+    <circle cx="0" cy="-50" r="80" fill="#FFDD00" stroke="#000000" stroke-width="6"/>
+    <circle cx="0" cy="-50" r="60" fill="#FF0044" stroke="#000000" stroke-width="4"/>
+    
+    <!-- Soda Bubbles Graphic -->
+    <circle cx="-30" cy="-70" r="15" fill="#FFFFFF"/>
+    <circle cx="-30" cy="-70" r="6" fill="#FF0055"/>
+    <circle cx="20" cy="-30" r="10" fill="#FFFFFF"/>
+    <circle cx="20" cy="-30" r="4" fill="#FF0055"/>
+    <circle cx="-10" cy="-20" r="8" fill="#FFFFFF"/>
+    <circle cx="-10" cy="-20" r="3" fill="#FF0055"/>
+
+    <!-- Bold Text Graphic "COLA" -->
+    <text x="0" y="-35" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="42" fill="#FFFFFF" text-anchor="middle" stroke="#000000" stroke-width="3">COLA</text>
+
+    <!-- Soda Dots Pattern on Cup -->
+    <circle cx="-100" cy="-150" r="15" fill="#FF0044" stroke="#000000" stroke-width="3"/>
+    <circle cx="-80" cy="-120" r="10" fill="#00E0FF" stroke="#000000" stroke-width="3"/>
+    <circle cx="100" cy="-180" r="12" fill="#FFDD00" stroke="#000000" stroke-width="3"/>
+    <circle cx="120" cy="-140" r="8" fill="#FF0044" stroke="#000000" stroke-width="2"/>
+
+    <!-- Animated Soda Bubbles Rising -->
+    <g id="bubbles-rising">
+      <circle cx="-80" cy="-200" r="12" fill="#FFFFFF" opacity="0.8" stroke="#000000" stroke-width="2">
+        <animate attributeName="cy" values="-200;-300" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="50" cy="-180" r="8" fill="#FFFFFF" opacity="0.7" stroke="#000000" stroke-width="2">
+        <animate attributeName="cy" values="-180;-290" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="10" cy="-220" r="15" fill="#FFFFFF" opacity="0.9" stroke="#000000" stroke-width="2">
+        <animate attributeName="cy" values="-220;-340" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-120" cy="-160" r="10" fill="#FFFFFF" opacity="0.6" stroke="#000000" stroke-width="2">
+        <animate attributeName="cy" values="-160;-280" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- ICE CUBES -->
+    <!-- Ice 1 -->
+    <use href="#ice-cube" transform="translate(-60, -260) rotate(15) scale(1.1)">
+      <animateTransform attributeName="transform" type="rotate" values="15;20;15" dur="4s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="translate" values="-60,-260; -65,-265; -60,-260" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <!-- Ice 2 -->
+    <use href="#ice-cube" transform="translate(50, -250) rotate(-20) scale(1.2)">
+      <animateTransform attributeName="transform" type="rotate" values="-20;-15;-20" dur="5s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="translate" values="50,-250; 55,-245; 50,-250" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <!-- Ice 3 -->
+    <use href="#ice-cube" transform="translate(-10, -240) rotate(45) scale(0.9)">
+      <animateTransform attributeName="transform" type="rotate" values="45;50;45" dur="3.5s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animateTransform attributeName="transform" type="translate" values="-10,-240; -15,-235; -10,-240" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <!-- STRAW -->
+    <!-- Straw Shadow -->
+    <path d="M40,-300 L140,-550 L170,-550 L70,-300 Z" fill="#000000" opacity="0.2" transform="translate(10, 10)"/>
+    
+    <!-- Straw Body -->
+    <path d="M40,-300 L140,-550 L170,-550 L70,-300 Z" fill="url(#straw-stripes)" stroke="#000000" stroke-width="6" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="rotate" values="0;2;0;-2;0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </path>
+    
+    <!-- Straw Rim Highlight -->
+    <path d="M140,-550 L170,-550 L170,-560 L140,-560 Z" fill="#FFFFFF" opacity="0.5"/>
+
+  </g>
+
+  <!-- Foreground Comic Elements -->
+  <!-- Giant Halftone Overlay (Pulsing) -->
+  <g opacity="0.3">
+    <ellipse cx="800" cy="450" rx="450" ry="450" fill="url(#halftone-black)">
+      <animate attributeName="rx" values="450;480;450" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="450;480;450" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Floating Text / Burst Elements -->
+  <!-- "POP" Burst Top Right -->
+  <g transform="translate(1300, 200)">
+    <polygon points="0,-80 20,-30 70,-20 30,10 40,60 0,30 -40,60 -30,10 -70,-20 -20,-30" fill="#FF00B7" stroke="#000000" stroke-width="5" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+    <text x="0" y="15" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="50" fill="#FFDD00" text-anchor="middle" stroke="#000000" stroke-width="3">POP</text>
+  </g>
+
+  <!-- "FIZZ" Burst Mid Left -->
+  <g transform="translate(250, 500)">
+    <polygon points="0,-70 60,-20 40,50 -20,60 -60,10 -40,-50" fill="#00E0FF" stroke="#000000" stroke-width="5" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="rotate" values="0;10;0;-10;0" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+    <text x="0" y="15" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="40" fill="#FF0044" text-anchor="middle" stroke="#000000" stroke-width="3">FIZZ</text>
+  </g>
+
+  <!-- "SIP" Burst Bottom Center -->
+  <g transform="translate(800, 800)">
+    <circle cx="0" cy="0" r="60" fill="#FFDD00" stroke="#000000" stroke-width="6">
+      <animate attributeName="r" values="60;70;60" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="15" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="45" fill="#FF0044" text-anchor="middle" stroke="#000000" stroke-width="3">SIP</text>
+  </g>
+
+  <!-- Foreground Floating Bubbles -->
+  <g id="foreground-bubbles">
+    <circle cx="100" cy="800" r="20" fill="#00E0FF" stroke="#000000" stroke-width="3"/>
+    <circle cx="110" cy="790" r="8" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="1500" cy="100" r="35" fill="#FF00B7" stroke="#000000" stroke-width="4"/>
+    <circle cx="1510" cy="90" r="12" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="1500" cy="850" r="25" fill="#FF0044" stroke="#000000" stroke-width="3"/>
+    <circle cx="1510" cy="840" r="10" fill="#FFFFFF" opacity="0.8"/>
+
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,20; 0,0" dur="4s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Speed Lines / Comic Stripes -->
+  <g stroke="#000000" stroke-width="4" stroke-linecap="round">
+    <line x1="50" y1="100" x2="200" y2="80">
+      <animate attributeName="x1" values="50;20;50" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="200;170;200" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="80" y1="120" x2="180" y2="110">
+      <animate attributeName="x1" values="80;40;80" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="180;140;180" dur="3.5s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="1500" y1="400" x2="1350" y2="420">
+      <animate attributeName="x1" values="1500;1530;1500" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1350;1380;1350" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1480" y1="430" x2="1380" y2="440">
+      <animate attributeName="x1" values="1480;1510;1480" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1380;1410;1380" dur="3s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+</svg>

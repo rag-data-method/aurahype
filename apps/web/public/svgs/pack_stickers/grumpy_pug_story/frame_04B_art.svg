@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Background Sunburst Gradient -->
+    <radialGradient id="sunburst" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FF0055"/>
+      <stop offset="40%" stop-color="#CC0044"/>
+      <stop offset="100%" stop-color="#550011"/>
+    </radialGradient>
+
+    <!-- Halftone Pattern for the Floor -->
+    <pattern id="dotPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="6" fill="#110033"/>
+    </pattern>
+
+    <!-- Background Polka Dots -->
+    <pattern id="bgDots" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="40" cy="40" r="15" fill="#FFEE00"/>
+    </pattern>
+
+    <!-- Background Diagonal Stripes -->
+    <pattern id="bgStripes" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="30" height="60" fill="#00DDFF"/>
+    </pattern>
+
+    <!-- Clip Path for the Pug's Eyes (To Squint Them) -->
+    <clipPath id="eyeClip">
+      <rect id="eyeClipRect" x="0" y="0" width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- BACKGROUND LAYER                           -->
+  <!-- ========================================== -->
+  
+  <!-- Back Wall -->
+  <rect width="1920" height="1080" fill="url(#sunburst)"/>
+
+  <!-- Polka Dot Overlay on Left -->
+  <rect x="0" y="0" width="400" height="1080" fill="url(#bgDots)" opacity="0.9"/>
+
+  <!-- Diagonal Stripe Overlay on Right -->
+  <rect x="1520" y="0" width="400" height="1080" fill="url(#bgStripes)" opacity="0.9"/>
+
+  <!-- Floor -->
+  <path d="M0 900 L1920 900 L1920 1080 L0 1080 Z" fill="url(#dotPattern)"/>
+  <path d="M0 900 L1920 900" stroke="#000000" stroke-width="12"/>
+
+  <!-- ========================================== -->
+  <!-- SCENE ELEMENTS (Desk, Easel, Computer)     -->
+  <!-- ========================================== -->
+
+  <!-- Studio Easel (Left) -->
+  <g id="easel">
+    <!-- Back Leg -->
+    <path d="M250 1080 L350 400" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
+    <!-- Front Legs -->
+    <path d="M150 1080 L250 400" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
+    <path d="M350 1080 L250 400" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
+    <!-- Shelf -->
+    <rect x="160" y="750" width="180" height="24" fill="#00DDFF" stroke="#000000" stroke-width="8"/>
+    <!-- Canvas -->
+    <rect x="170" y="400" width="160" height="350" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+    <!-- Paint Splats on Canvas -->
+    <circle cx="220" cy="500" r="25" fill="#FF0055" stroke="#000000" stroke-width="4"/>
+    <circle cx="280" cy="600" r="35" fill="#00DDFF" stroke="#000000" stroke-width="4"/>
+    <circle cx="230" cy="680" r="20" fill="#FFEE00" stroke="#000000" stroke-width="4"/>
+    <path d="M240 550 L270 520 L300 560 L250 590 Z" fill="#FFEE00" stroke="#000000" stroke-width="4"/>
+  </g>
+
+  <!-- Desk -->
+  <g id="desk">
+    <!-- Back Legs -->
+    <path d="M600 1080 L600 850" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
+    <path d="M1320 1080 L1320 850" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
+    <!-- Desk Top -->
+    <rect x="500" y="800" width="920" height="60" fill="#FF0055" stroke="#000000" stroke-width="12"/>
+    <!-- Front Legs -->
+    <path d="M540 1080 L540 860" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
+    <path d="M1380 1080 L1380 860" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
+  </g>
+
+  <!-- Computer Monitor -->
+  <g id="monitor">
+    <!-- Stand -->
+    <path d="M900 800 L1020 800 L980 700 L940 700 Z" fill="#00DDFF" stroke="#000000" stroke-width="10"/>
+    <!-- Monitor Body -->
+    <rect x="650" y="300" width="620" height="420" rx="20" fill="#110033" stroke="#000000" stroke-width="14"/>
+    <!-- Screen Bezel -->
+    <rect x="670" y="320" width="580" height="380" fill="#FFFFFF" stroke="#000000" stroke-width="10"/>
+    <!-- The Blank White Canvas on Screen -->
+    <rect x="690" y="340" width="540" height="340" fill="#FFFFFF"/>
+    <!-- Flickering Cyan Screen Overlay -->
+    <rect id="screenGlow" x="690" y="340" width="540" height="340" fill="#00FFFF" opacity="0"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- THE GRUMPY PUG (Foreground)                -->
+  <!-- ========================================== -->
+
+  <g id="pug">
+    <!-- Pug Body (Sitting) -->
+    <path d="M850 1080 L850 850 C850 750, 1070 750, 1070 850 L1070 1080 Z" fill="#D4A76A" stroke="#000000" stroke-width="14"/>
+
+    <!-- Left Arm (Resting on desk) -->
+    <path d="M890 860 C840 860, 820 800, 850 780" stroke="#000000" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <ellipse cx="850" cy="780" rx="35" ry="30" fill="#D4A76A" stroke="#000000" stroke-width="14"/>
+
+    <!-- Right Arm (Resting on desk) -->
+    <path d="M1030 860 C1080 860, 1100 800, 1070 780" stroke="#000000" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <ellipse cx="1070" cy="780" rx="35" ry="30" fill="#D4A76A" stroke="#000000" stroke-width="14"/>
+
+    <!-- Pug Head -->
+    <ellipse cx="960" cy="620" rx="160" ry="140" fill="#D4A76A" stroke="#000000" stroke-width="14"/>
+
+    <!-- Ears -->
+    <path d="M810 540 C760 480, 780 400, 830 420 C870 440, 880 500, 860 550 Z" fill="#3E2723" stroke="#000000" stroke-width="12"/>
+    <path d="M1110 540 C1160 480, 1140 400, 1090 420 C1050 440, 1040 500, 1060 550 Z" fill="#3E2723" stroke="#000000" stroke-width="12"/>
+
+    <!-- The Pug's Signature Flat Face (Dark Mask) -->
+    <ellipse cx="960" cy="650" rx="110" ry="90" fill="#3E2723" stroke="#000000" stroke-width="10"/>
+
+    <!-- Wrinkles on Forehead -->
+    <path d="M900 540 Q960 520 1020 540" stroke="#000000" stroke-width="8" fill="none"/>
+    <path d="M920 500 Q960 480 1000 500" stroke="#000000" stroke-width="8" fill="none"/>
+
+    <!-- Snout Details -->
+    <ellipse cx="960" cy="660" rx="45" ry="30" fill="#1A1A1A" stroke="#000000" stroke-width="6"/>
+    <ellipse cx="950" cy="650" rx="10" ry="6" fill="#000000"/>
+    <ellipse cx="970" cy="650" rx="10" ry="6" fill="#000000"/>
+
+    <!-- Mouth (Grumpy Frown) -->
+    <path d="M930 700 Q960 680 990 700" stroke="#000000" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+    <!-- SQUINTING EYES (Animated via Clip Path) -->
+    <g clip-path="url(#eyeClip)">
+      <!-- Left Eye -->
+      <circle cx="900" cy="590" r="25" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+      <circle cx="900" cy="590" r="12" fill="#000000"/>
+      <!-- Right Eye -->
+      <circle cx="1020" cy="590" r="25" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+      <circle cx="1020" cy="590" r="12" fill="#000000"/>
+    </g>
+
+    <!-- Eyebrows (Heavy angry slant) -->
+    <path d="M860 520 L940 560" stroke="#000000" stroke-width="14" stroke-linecap="round"/>
+    <path d="M1060 520 L980 560" stroke="#000000" stroke-width="14" stroke-linecap="round"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- PROPS & FOREGROUND DETAILS                 -->
+  <!-- ========================================== -->
+
+  <!-- Paintbrushes on Desk -->
+  <g id="paintbrushes">
+    <!-- Brush 1 -->
+    <path d="M1200 820 L1250 700" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+    <path d="M1250 700 L1265 660" stroke="#FF0055" stroke-width="16" stroke-linecap="round"/>
+    <!-- Brush 2 -->
+    <path d="M1240 820 L1280 710" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+    <path d="M1280 710 L1290 670" stroke="#00DDFF" stroke-width="16" stroke-linecap="round"/>
+    <!-- Brush 3 -->
+    <path d="M1280 820 L1310 720" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+    <path d="M1310 720 L1315 680" stroke="#FFEE00" stroke-width="16" stroke-linecap="round"/>
+  </g>
+
+  <!-- Paint Palette -->
+  <g id="palette" transform="translate(1320, 780) rotate(15)">
+    <ellipse cx="0" cy="0" rx="70" ry="50" fill="#FFEE00" stroke="#000000" stroke-width="8"/>
+    <circle cx="0" cy="0" r="12" fill="#FFFFFF" stroke="#000000" stroke-width="6"/>
+    <!-- Paint Blobs -->
+    <circle cx="-40" cy="-10" r="14" fill="#FF0055" stroke="#000000" stroke-width="4"/>
+    <circle cx="-20" cy="-25" r="14" fill="#00DDFF" stroke="#000000" stroke-width="4"/>
+    <circle cx="15" cy="-25" r="14" fill="#FFEE00" stroke="#000000" stroke-width="4"/>
+    <circle cx="40" cy="-10" r="14" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+    <circle cx="30" cy="15" r="14" fill="#110033" stroke="#000000" stroke-width="4"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- CSS ANIMATIONS                             -->
+  <!-- ========================================== -->
+  <style>
+    /* 1. Screen Flickering Animation */
+    @keyframes screenFlicker {
+      0%   { opacity: 0; }
+      5%   { opacity: 0.5; }
+      10%  { opacity: 0; }
+      15%  { opacity: 0.8; }
+      20%  { opacity: 0.2; }
+      25%  { opacity: 0; }
+      30%  { opacity: 0.4; }
+      35%  { opacity: 0; }
+      40%  { opacity: 0.9; }
+      45%  { opacity: 0.1; }
+      50%  { opacity: 0; }
+      55%  { opacity: 0.6; }
+      60%  { opacity: 0; }
+      65%  { opacity: 0.3; }
+      70%  { opacity: 0; }
+      75%  { opacity: 0.7; }
+      80%  { opacity: 0; }
+      85%  { opacity: 0.5; }
+      90%  { opacity: 0; }
+      95%  { opacity: 0.9; }
+      100% { opacity: 0; }
+    }
+
+    #screenGlow {
+      animation: screenFlicker 3s infinite linear;
+    }
+
+    /* 2. Pug's Eyes Squinting Animation */
+    @keyframes squintEyes {
+      0%   { transform: translateY(0px); height: 1080px; }
+      40%  { transform: translateY(0px); height: 1080px; } /* Open */
+      50%  { transform: translateY(25px); height: 1080px; } /* Squint down */
+      60%  { transform: translateY(0px); height: 1080px; } /* Open */
+      100% { transform: translateY(0px); height: 1080px; }
+    }
+
+    #eyeClipRect {
+      transform-origin: center top;
+      animation: squintEyes 4s infinite ease-in-out;
+    }
+  </style>
+</svg>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- HALFTONE DOT PATTERNS -->
+    <pattern id="dots-large" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="2.5" fill="#000000"/>
+    </pattern>
+    <pattern id="dots-med" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1.5" fill="#000000"/>
+    </pattern>
+    <pattern id="dots-small" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1" fill="#000000"/>
+    </pattern>
+    <pattern id="dots-white-large" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="2.5" fill="#ffffff"/>
+    </pattern>
+    <pattern id="dots-white-small" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1" fill="#ffffff"/>
+    </pattern>
+
+    <!-- SUBTLE HALFTONE GRADIENTS FOR CYLINDER SHADING -->
+    <linearGradient id="shade-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff1a1a" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ff1a1a" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="shade-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cc0000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#cc0000" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="shade-3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e6e6e6" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#e6e6e6" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <!-- CLIP PATHS -->
+    <clipPath id="can-body-clip">
+      <path d="M 400 250 L 400 650 A 400 100 0 0 0 1200 650 L 1200 250 Z"/>
+    </clipPath>
+    <clipPath id="can-front-clip">
+      <path d="M 800 250 L 800 650 A 400 100 0 0 1 1200 650 L 1200 250 Z"/>
+    </clipPath>
+    
+    <!-- LID SHADING CLIP -->
+    <clipPath id="lid-clip">
+      <ellipse cx="800" cy="250" rx="400" ry="100"/>
+    </clipPath>
+
+    <!-- INSIDE OF TOP RIM -->
+    <ellipse id="lid-rim" cx="800" cy="250" rx="360" ry="88" fill="#1a1a1a"/>
+  </defs>
+
+  <!-- 1. DYNAMIC BACKGROUND -->
+  <rect id="bg-base" width="1600" height="900" fill="#FFFFFF">
+    <animate attributeName="fill" values="#FFFFFF;#FFD700;#00FFFF;#FF00FF;#FFFFFF" dur="8s" repeatCount="indefinite"/>
+  </rect>
+  <rect width="1600" height="900" fill="url(#dots-large)">
+    <animate attributeName="opacity" values="0.05;0.15;0.05" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 2. BACKGROUND ACTION LINES & SPEECH BUBBLE -->
+  <g id="action-lines">
+    <path d="M 100 100 L 350 200 M 80 300 L 320 320 M 150 800 L 380 700 M 1300 150 L 1100 220 M 1450 400 L 1200 420 M 1400 750 L 1150 650" stroke="#000000" stroke-width="12" fill="none" stroke-linecap="round">
+      <animate attributeName="d" values="M 100 100 L 350 200 M 80 300 L 320 320 M 150 800 L 380 700 M 1300 150 L 1100 220 M 1450 400 L 1200 420 M 1400 750 L 1150 650; M 90 110 L 360 210 M 70 310 L 330 330 M 140 810 L 390 710 M 1310 160 L 1110 230 M 1460 410 L 1210 430 M 1410 760 L 1160 660; M 100 100 L 350 200 M 80 300 L 320 320 M 150 800 L 380 700 M 1300 150 L 1100 220 M 1450 400 L 1200 420 M 1400 750 L 1150 650" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Comic Stars -->
+    <path d="M 150 150 L 160 180 L 190 190 L 160 200 L 150 230 L 140 200 L 110 190 L 140 180 Z" fill="#00FFFF" stroke="#000" stroke-width="4">
+      <animate attributeName="opacity" values="1;0.2;1" dur="0.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 150 190" to="360 150 190" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1350 250 L 1360 280 L 1390 290 L 1360 300 L 1350 330 L 1340 300 L 1310 290 L 1340 280 Z" fill="#FFFF00" stroke="#000" stroke-width="4">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 1350 290" to="-360 1350 290" dur="5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Speech Bubble -->
+    <g transform="translate(1250, 100)">
+      <path d="M 0 0 L 250 0 L 250 180 L 80 180 L 20 250 L 40 150 L 0 150 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+      <text x="125" y="70" font-family="Impact, sans-serif" font-size="60" text-anchor="middle" fill="#000000" font-weight="900">M-M-M</text>
+      <text x="125" y="135" font-family="Impact, sans-serif" font-size="60" text-anchor="middle" fill="#000000" font-weight="900">GOOD!</text>
+      <animateTransform attributeName="transform" type="translate" values="1250 100; 1250 80; 1250 100" dur="2s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- 3. CAN SHADOW -->
+  <ellipse cx="800" cy="720" rx="450" ry="100" fill="#000000" opacity="0.3">
+    <animate attributeName="rx" values="450;470;450" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.2;0.3" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 4. CAN BODY -->
+  <g id="soup-can">
+    <!-- Main Body Shape (Base White) -->
+    <path d="M 400 250 L 400 650 A 400 100 0 0 0 1200 650 L 1200 250 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+    
+    <!-- BACK RIM (Top Back) -->
+    <path d="M 400 250 A 400 100 0 0 0 1200 250" fill="none" stroke="#000000" stroke-width="8"/>
+
+    <!-- BODY BACKGROUND HALFTONE SHADING -->
+    <g clip-path="url(#can-body-clip)">
+      <!-- Red Base -->
+      <rect x="400" y="250" width="400" height="400" fill="#FF1A1A"/>
+      <rect x="800" y="250" width="400" height="400" fill="#E60000"/>
+      
+      <!-- Front Edge Halftone Shadow -->
+      <rect x="800" y="250" width="200" height="400" fill="url(#dots-large)" opacity="0.15"/>
+      <rect x="1000" y="250" width="200" height="400" fill="url(#dots-med)" opacity="0.25"/>
+      
+      <!-- Flat Cylinder Shading (Right Side) -->
+      <rect x="1000" y="250" width="200" height="400" fill="url(#shade-2)"/>
+      <rect x="800" y="250" width="100" height="400" fill="url(#shade-1)"/>
+    </g>
+
+    <!-- GOLD MEDALLION -->
+    <g clip-path="url(#can-body-clip)">
+      <ellipse cx="800" cy="500" rx="180" ry="180" fill="#FFD700" stroke="#000000" stroke-width="8"/>
+      <ellipse cx="800" cy="500" rx="160" ry="160" fill="none" stroke="#000000" stroke-width="4"/>
+      
+      <!-- Medallion Halftone Shading -->
+      <path d="M 980 500 A 180 180 0 0 1 620 500" fill="none" stroke="#000000" stroke-width="12" opacity="0.1"/>
+      <rect x="900" y="320" width="80" height="360" fill="url(#dots-large)" opacity="0.2" clip-path="ellipse(800 500 180 180)"/>
+      
+      <!-- Inner Text -->
+      <path id="medallion-path" d="M 800 360 A 140 140 0 0 1 940 500" fill="none"/>
+      <text font-family="Impact, sans-serif" font-weight="900" font-size="22" fill="#000000" letter-spacing="2">
+        <textPath href="#medallion-path" startOffset="50%" text-anchor="middle">CONDENSED</textPath>
+      </text>
+      
+      <!-- Tomato and Leaves -->
+      <g transform="translate(0, -10)">
+        <!-- Leaves -->
+        <path d="M 800 420 L 760 380 L 800 400 Z" fill="#00CC00" stroke="#000000" stroke-width="4"/>
+        <path d="M 800 420 L 840 370 L 800 400 Z" fill="#00CC00" stroke="#000000" stroke-width="4"/>
+        <path d="M 800 420 L 800 360 L 800 400 Z" fill="#00CC00" stroke="#000000" stroke-width="4"/>
+        
+        <!-- Tomatoes -->
+        <circle cx="770" cy="480" r="28" fill="#FF0000" stroke="#000000" stroke-width="4"/>
+        <circle cx="830" cy="480" r="28" fill="#FF0000" stroke="#000000" stroke-width="4"/>
+        <circle cx="800" cy="450" r="32" fill="#FF0000" stroke="#000000" stroke-width="4"/>
+        
+        <!-- Tomato Highlights -->
+        <circle cx="780" cy="470" r="6" fill="#FFFFFF" opacity="0.8"/>
+        <circle cx="810" cy="440" r="8" fill="#FFFFFF" opacity="0.8"/>
+      </g>
+    </g>
+
+    <!-- CAN LABEL FRONT -->
+    <g id="can-label">
+      <!-- Red Section Above Gold -->
+      <rect x="400" y="250" width="800" height="120" fill="#FFFFFF" clip-path="url(#can-front-clip)"/>
+      
+      <!-- Top White Halftone -->
+      <rect x="400" y="250" width="800" height="120" fill="url(#dots-small)" opacity="0.15" clip-path="url(#can-front-clip)"/>
+      
+      <!-- Bottom Red Section -->
+      <rect x="400" y="680" width="800" height="120" fill="#FF1A1A" clip-path="url(#can-front-clip)"/>
+      <rect x="400" y="680" width="800" height="120" fill="url(#dots-small)" opacity="0.15" clip-path="url(#can-front-clip)"/>
+
+      <!-- "Tomato" Text -->
+      <text id="txt-tomato" x="800" y="340" font-family="Impact, sans-serif" font-size="100" font-weight="900" fill="#E60000" text-anchor="middle" letter-spacing="4">Tomato</text>
+      
+      <!-- "SOUP" Text (Bouncing) -->
+      <text id="txt-soup" x="800" y="750" font-family="Impact, sans-serif" font-size="110" font-weight="900" fill="#FFD700" text-anchor="middle" letter-spacing="8">SOUP</text>
+      <text id="txt-soup-shadow" x="800" y="750" font-family="Impact, sans-serif" font-size="110" font-weight="900" fill="none" stroke="#000000" stroke-width="4" text-anchor="middle" letter-spacing="8">SOUP</text>
+      
+      <!-- "Soup" Animation -->
+      <animateTransform href="#txt-soup" attributeName="transform" type="translate" values="0 0; 0 -15; 0 0" dur="1.5s" repeatCount="indefinite"/>
+      <animateTransform href="#txt-soup-shadow" attributeName="transform" type="translate" values="0 0; 0 -15; 0 0" dur="1.5s" repeatCount="indefinite"/>
+
+      <!-- Price / Net Wt -->
+      <text x="820" y="790" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">NET WT. 10 3/4 OZ. (305g)</text>
+
+      <!-- Front Edge Thick Outline (Simulating rolled metal) -->
+      <line x1="400" y1="250" x2="400" y2="650" stroke="#000000" stroke-width="12"/>
+      <line x1="1200" y1="250" x2="1200" y2="650" stroke="#000000" stroke-width="12"/>
+      <line x1="400" y1="650" x2="1200" y2="650" stroke="#000000" stroke-width="12"/>
+      <!-- Top Gold Stripe -->
+      <line x1="400" y1="370" x2="1200" y2="370" stroke="#FFD700" stroke-width="12"/>
+      <!-- Bottom Gold Stripe -->
+      <line x1="400" y1="680" x2="1200" y2="680" stroke="#FFD700" stroke-width="12"/>
+    </g>
+
+    <!-- 5. CAN LID (TOP) -->
+    <g id="can-lid">
+      <!-- Lid Base (White/Silver) -->
+      <ellipse cx="800" cy="250" rx="400" ry="100" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+      
+      <!-- Lid Halftone Metal Texture -->
+      <ellipse cx="800" cy="250" rx="400" ry="100" fill="url(#dots-med)" opacity="0.2"/>
+      
+      <!-- Lid 3D Shading (Right Side) -->
+      <path d="M 800 150 A 400 100 0 0 1 1200 250 A 400 100 0 0 1 800 350 Z" fill="#000000" opacity="0.15" clip-path="url(#lid-clip)"/>
+      <path d="M 1000 176 A 400 100 0 0 1 1200 250 A 400 100 0 0 1 1000 324 Z" fill="url(#dots-small)" opacity="0.3" clip-path="url(#lid-clip)"/>
+      
+      <!-- Lid Rim Highlight -->
+      <ellipse cx="800" cy="250" rx="380" ry="90" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.8"/>
+      
+      <!-- Inner Lid Opening -->
+      <use href="#lid-rim"/>
+      
+      <!-- Inner Lid Halftone -->
+      <ellipse cx="800" cy="250" rx="360" ry="88" fill="url(#dots-large)" opacity="0.5"/>
+      
+      <!-- Pull Tab Mechanism -->
+      <g id="pull-tab">
+        <!-- Tab Hole -->
+        <ellipse cx="800" cy="250" rx="30" ry="15" fill="#000000"/>
+        
+        <!-- The Metal Tab -->
+        <path d="M 800 235 L 820 235 L 850 245 L 830 255 L 800 265 Z" fill="#CCCCCC" stroke="#000000" stroke-width="4"/>
+        <circle cx="830" cy="245" r="4" fill="#000000"/>
+        
+        <!-- Tab Shadow -->
+        <path d="M 800 250 L 850 250" stroke="#000000" stroke-width="3" opacity="0.5"/>
+        
+        <!-- Tab Lift Animation -->
+        <animateTransform attributeName="transform" type="rotate" values="0 830 245; 15 830 245; 0 830 245" dur="2s" repeatCount="indefinite"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 6. ANIMATED FOREGROUND ELEMENTS -->
+  <g id="foreground">
+    <!-- Floating Halftone Circles -->
+    <circle cx="200" cy="200" r="60" fill="#00FFFF" stroke="#000000" stroke-width="6">
+      <animate attributeName="r" values="60;70;60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -40; 0 0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="700" r="40" fill="#FF00FF" stroke="#000000" stroke-width="6">
+      <animate attributeName="r" values="40;50;40" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.3;0.6" dur="1.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 40; 0 0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="800" r="80" fill="#FFD700" stroke="#000000" stroke-width="6">
+      <animate attributeName="r" values="80;90;80" dur="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 40 0; 0 0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1300" cy="150" r="50" fill="#FF0000" stroke="#000000" stroke-width="6">
+      <animate attributeName="r" values="50;60;50" dur="1.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; -30 0; 0 0" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Comic Speed Lines Overlay -->
+    <rect width="1600" height="900" fill="none" stroke="#000000" stroke-width="2" opacity="0.1">
+      <animate attributeName="stroke-width" values="2;4;2" dur="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <path d="M 0 0 L 1600 900 M 1600 0 L 0 900 M 800 0 L 800 900 M 0 450 L 1600 450" stroke="#000000" stroke-width="2" opacity="0.05">
+      <animate attributeName="opacity" values="0.05;0.1;0.05" dur="1s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- 7. GLOBAL COLOR FLASHING ANIMATIONS (Lichtenstein Style) -->
+  <!-- Flash the background dots color -->
+  <rect width="1600" height="900" fill="url(#dots-white-large)" opacity="0">
+    <animate attributeName="opacity" values="0;0.2;0" dur="0.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Flash the "Tomato" text color -->
+  <animate href="#txt-tomato" attributeName="fill" values="#E60000;#FF0000;#E60000" dur="0.2s" repeatCount="indefinite"/>
+  
+  <!-- Flash the "SOUP" text color to match background -->
+  <animate href="#txt-soup" attributeName="fill" values="#FFD700;#FFFFFF;#FFD700" dur="0.8s" repeatCount="indefinite"/>
+
+</svg>

@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050508"/>
+      <stop offset="60%" stop-color="#0a0812"/>
+      <stop offset="100%" stop-color="#120a26"/>
+    </linearGradient>
+
+    <!-- Haze / Mist Gradient -->
+    <linearGradient id="hazeGrad" x1="0%" y1="100%" x2="0%" y2="40%">
+      <stop offset="0%" stop-color="#0d0920" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#0d0920" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#050508" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Back Mountain Gradient (Atmospheric Perspective) -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#150a30"/>
+      <stop offset="100%" stop-color="#080412"/>
+    </linearGradient>
+
+    <!-- Mid Mountain Gradient -->
+    <linearGradient id="midGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#201045"/>
+      <stop offset="100%" stop-color="#05030a"/>
+    </linearGradient>
+
+    <!-- Foreground Silhouette Gradient -->
+    <linearGradient id="fgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#26085e"/>
+      <stop offset="40%" stop-color="#0a0318"/>
+      <stop offset="100%" stop-color="#020103"/>
+    </linearGradient>
+
+    <!-- Noise Texture for Starfield -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0 1
+        0 0 0 0.3 0
+      "/>
+    </filter>
+
+    <!-- Star Glow -->
+    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#4c1d95" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#050508" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Diamond Star Shape -->
+    <path id="sp" d="M 0,-2.5 C 0.3,-0.8 0.8,-0.3 2.5,0 C 0.8,0.3 0.3,0.8 0,2.5 C -0.3,0.8 -0.8,0.3 -2.5,0 C -0.8,-0.3 -0.3,-0.8 0,-2.5 Z" fill="#ffffff"/>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#skyGrad)"/>
+  
+  <!-- Distant Starfield -->
+  <rect x="0" y="0" width="800" height="350" fill="#ffffff" filter="url(#noise)" opacity="0.5"/>
+
+  <!-- Constellations (Zodiac: Scorpio) -->
+  <g fill="#ffffff" opacity="0.5">
+    <circle cx="180" cy="150" r="1.2"/>
+    <circle cx="220" cy="140" r="1.5"/>
+    <circle cx="270" cy="120" r="0.8"/>
+    <circle cx="340" cy="160" r="1.0"/>
+    <circle cx="390" cy="190" r="1.2"/>
+    <circle cx="430" cy="170" r="0.8"/>
+    <circle cx="480" cy="200" r="1.0"/>
+    <circle cx="510" cy="220" r="0.6"/>
+    <path d="M 180,150 L 220,140 L 270,120 L 340,160 L 390,190 L 430,170 L 480,200 L 510,220" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.2"/>
+  </g>
+
+  <!-- Faint Milky Way / Nebula -->
+  <path d="M -50,80 Q 200,250 400,150 T 850,100 V 350 Q 500,300 200,400 T -50,450 Z" fill="#4c1d95" opacity="0.08"/>
+  <path d="M -50,50 Q 150,100 250,200 T 500,250 T 850,150" fill="none" stroke="#7c3aed" stroke-width="60" stroke-opacity="0.03" filter="blur(20px)"/>
+
+  <!-- Distant Crescent Moon -->
+  <path d="M 720,160 A 35,35 0 1,0 780,120 A 28,28 0 1,1 720,160 Z" fill="#f0f2f5" opacity="0.08"/>
+  <circle cx="760" cy="130" r="1" fill="#ffffff" opacity="0.2"/>
+
+  <!-- The Guiding Star (Above the Main Peak) -->
+  <g transform="translate(400, 170)">
+    <!-- Pulsing Outer Glow -->
+    <circle r="50" fill="url(#starGlow)">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Cross of Light -->
+    <path d="M 0,-40 L 0,40 M -40,0 L 40,0" stroke="#a78bfa" stroke-width="0.5" opacity="0.1"/>
+    <!-- Core Star -->
+    <use href="#sp" opacity="0.9">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+    </use>
+    <!-- Twinkling Phantom -->
+    <circle r="4" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.5">
+      <animate attributeName="r" values="3;7;3" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Background Mountains (Soft, atmospheric, misty) -->
+  <path d="M -50,600 L -50,220 Q 100,300 180,250 T 350,300 T 500,230 T 650,320 T 850,200 L 850,600 Z" fill="url(#bgGrad)" stroke="#120a24" stroke-width="0.5" opacity="0.8"/>
+
+  <!-- Midground Mountains (Slightly sharper, darker) -->
+  <path d="M -50,600 L -50,380 Q 150,450 280,300 C 320,280 360,350 420,260 Q 500,380 650,300 Q 750,350 850,280 L 850,600 Z" fill="url(#midGrad)" stroke="#1a0b3d" stroke-width="0.5"/>
+
+  <!-- Foreground Mountain Silhouette (Crisp, framing the star) -->
+  <path d="M -50,600 L -50,480 
+           Q 80,500 140,430 L 280,280 Q 330,210 380,250 
+           L 400,270 Q 440,310 480,380 T 620,450 T 850,400 
+           L 850,600 Z" 
+        fill="url(#fgGrad)" stroke="#7c3aed" stroke-width="0.5" stroke-opacity="0.6"/>
+
+  <!-- Deep Foreground Ground Plane (Absolute black) -->
+  <path d="M -50,600 L -50,520 Q 200,490 400,530 T 850,500 L 850,600 Z" fill="#020103"/>
+
+  <!-- Ethereal Mist / Haze Layer (Atmospheric perspective) -->
+  <rect x="0" y="250" width="800" height="350" fill="url(#hazeGrad)" pointer-events="none"/>
+
+  <!-- Guiding Star Light Beam (Connecting star to peak) -->
+  <polygon points="400,170 380,250 420,250" fill="#7c3aed" opacity="0.04">
+    <animate attributeName="opacity" values="0.02;0.06;0.02" dur="8s" repeatCount="indefinite"/>
+  </polygon>
+
+</svg>

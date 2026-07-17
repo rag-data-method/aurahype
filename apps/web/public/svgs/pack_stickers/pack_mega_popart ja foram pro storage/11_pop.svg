@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Comic Halftone Dot Patterns -->
+    <pattern id="halftone-black" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.5" fill="#000000" />
+    </pattern>
+    <pattern id="halftone-white" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.5" fill="#ffffff" />
+    </pattern>
+    <pattern id="halftone-cyan" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.5" fill="#00FFFF" />
+    </pattern>
+    <pattern id="halftone-magenta" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.5" fill="#FF00FF" />
+    </pattern>
+    <pattern id="halftone-red" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.5" fill="#FF0000" />
+    </pattern>
+
+    <!-- Comic Halftone Underlay for Background -->
+    <pattern id="bg-halftone" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="12" fill="#000000" opacity="0.15" />
+    </pattern>
+
+    <!-- Explosion Starburst -->
+    <g id="starburst">
+      <!-- Back shadow / offset layer -->
+      <path d="M 800 450 L 800 50 L 900 350 L 1200 100 L 1000 400 L 1550 300 L 1050 500 L 1550 700 L 1050 600 L 1200 850 L 900 550 L 800 950 L 700 550 L 400 850 L 550 600 L 50 700 L 550 500 L 50 300 L 600 400 L 400 100 L 700 350 Z" 
+            fill="#000000" stroke="#000000" stroke-width="20" stroke-linejoin="round" transform="translate(15, 15)" />
+      
+      <!-- Main Yellow Burst -->
+      <path d="M 800 450 L 800 50 L 900 350 L 1200 100 L 1000 400 L 1550 300 L 1050 500 L 1550 700 L 1050 600 L 1200 850 L 900 550 L 800 950 L 700 550 L 400 850 L 550 600 L 50 700 L 550 500 L 50 300 L 600 400 L 400 100 L 700 350 Z" 
+            fill="#FFE600" stroke="#000000" stroke-width="20" stroke-linejoin="round" />
+      
+      <!-- Drips overlapping the bottom for a "melting" pop art look -->
+      <path d="M 800 950 L 800 990 Q 800 1020 820 1020 Q 840 1020 840 990 L 840 940 L 800 950 Z" fill="#FFE600" stroke="#000000" stroke-width="20" stroke-linejoin="round" />
+      <path d="M 1050 600 L 1050 640 Q 1050 670 1070 670 Q 1090 670 1090 640 L 1090 590 L 1050 600 Z" fill="#FFE600" stroke="#000000" stroke-width="20" stroke-linejoin="round" />
+      <path d="M 400 850 L 400 890 Q 400 920 420 920 Q 440 920 440 890 L 440 840 L 400 850 Z" fill="#FFE600" stroke="#000000" stroke-width="20" stroke-linejoin="round" />
+      
+      <!-- Halftone shadow on right side of burst -->
+      <path d="M 800 450 L 800 950 L 700 550 L 400 850 L 550 600 L 50 700 L 550 500 L 50 300 L 600 400 L 400 100 L 700 350 Z" 
+            fill="url(#halftone-black)" opacity="0.25" />
+    </g>
+
+    <!-- Bold Letter P -->
+    <g id="letter-p">
+      <path d="M 60 60 L 60 340 L 160 340 L 160 240 L 220 240 C 300 240 320 180 320 150 C 320 110 290 60 220 60 Z M 160 130 L 200 130 C 230 130 230 170 200 170 L 160 170 Z" 
+            fill="#00FFFF" stroke="#000000" stroke-width="18" stroke-linejoin="round" />
+      <!-- Halftone overlay for depth -->
+      <path d="M 160 130 L 200 130 C 230 130 230 170 200 170 L 160 170 Z" fill="url(#halftone-magenta)" opacity="0.8" />
+    </g>
+
+    <!-- Bold Letter O -->
+    <g id="letter-o">
+      <path d="M 50 200 C 50 80 100 40 200 40 C 300 40 350 80 350 200 C 350 320 300 360 200 360 C 100 360 50 320 50 200 Z M 150 200 C 150 240 170 260 200 260 C 230 260 250 240 250 200 C 250 160 230 140 200 140 C 170 140 150 160 150 200 Z" 
+            fill="#FF00FF" stroke="#000000" stroke-width="18" stroke-linejoin="round" />
+      <!-- Halftone overlay for depth -->
+      <path d="M 150 200 C 150 240 170 260 200 260 C 230 260 250 240 250 200 C 250 160 230 140 200 140 C 170 140 150 160 150 200 Z" fill="url(#halftone-white)" opacity="0.6" />
+    </g>
+
+    <!-- Bold Exclamation Mark ! -->
+    <g id="exclamation">
+      <rect x="50" y="40" width="60" height="220" fill="#FF0000" stroke="#000000" stroke-width="18" stroke-linejoin="round" />
+      <circle cx="80" cy="320" r="40" fill="#FF0000" stroke="#000000" stroke-width="18" />
+      <!-- Halftone overlay -->
+      <rect x="50" y="40" width="60" height="220" fill="url(#halftone-cyan)" opacity="0.8" />
+      <circle cx="80" cy="320" r="40" fill="url(#halftone-cyan)" opacity="0.8" />
+    </g>
+  </defs>
+
+  <!-- Cyan Background Base -->
+  <rect width="100%" height="100%" fill="#00FFFF" />
+
+  <!-- Background Halftone Grid Animation (Scale & Rotate) -->
+  <rect width="100%" height="100%" fill="url(#bg-halftone)" />
+  <rect width="100%" height="100%" fill="url(#bg-halftone)" opacity="0.3">
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="4s" repeatCount="indefinite" additive="sum" />
+    <animateTransform attributeName="transform" type="rotate" values="0 800 450; 360 800 450" dur="120s" repeatCount="indefinite" additive="sum" />
+  </rect>
+
+  <!-- Jagged Background Action Lines (Radiating from center) -->
+  <g stroke="#000000" stroke-width="15" stroke-linecap="round">
+    <line x1="800" y1="450" x2="100" y2="100" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450; 5 800 450; 0 800 450" dur="3s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="1500" y2="100" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450; -4 800 450; 0 800 450" dur="3.5s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="100" y2="800" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.8s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450; 3 800 450; 0 800 450" dur="2.8s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="1500" y2="800" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450; -6 800 450; 0 800 450" dur="4s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="800" y2="50" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.5s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="800" y2="850" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.7s" repeatCount="indefinite" />
+    </line>
+  </g>
+
+  <!-- The Dynamic Starburst -->
+  <g transform="translate(0, 0)">
+    <use href="#starburst" x="0" y="0" />
+    <!-- Starburst Pulse & Rotate -->
+    <animateTransform attributeName="transform" type="scale" values="1;1.04;1" dur="0.8s" repeatCount="indefinite" additive="sum" />
+    <animateTransform attributeName="transform" type="rotate" values="0 800 450; 2 800 450; -2 800 450; 0 800 450" dur="6s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  <!-- Floating Halftone Circles (Action Elements) -->
+  <g>
+    <!-- Center Red Burst Action Circle -->
+    <circle cx="800" cy="450" r="180" fill="none" stroke="#FF0000" stroke-width="25" stroke-dasharray="60 40">
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450; 360 800 450" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="25;35;25" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Secondary Magenta Burst Ring -->
+    <circle cx="800" cy="450" r="260" fill="none" stroke="#FF00FF" stroke-width="15" stroke-dasharray="90 50">
+      <animateTransform attributeName="transform" type="rotate" values="360 800 450; 0 800 450" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dashoffset" values="0; 140" dur="15s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Cyan Dashed Outer Ring -->
+    <circle cx="800" cy="450" r="330" fill="none" stroke="#00FFFF" stroke-width="20" stroke-dasharray="30 80">
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450; 360 800 450" dur="20s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- POP Text Group -->
+  <g transform="translate(800, 450)">
+    
+    <!-- Big Letter P (Left) -->
+    <g transform="translate(-360, -200)">
+      <use href="#letter-p" x="0" y="0" />
+      <!-- Float & Scale Animation -->
+      <animateTransform attributeName="transform" type="translate" values="-360 -200; -360 -220; -360 -200" dur="2.5s" repeatCount="indefinite" additive="sum" />
+      <animateTransform attributeName="transform" type="scale" values="1; 1.05; 1" dur="2.5s" repeatCount="indefinite" additive="sum" />
+      <!-- Halftone Overlay Blinking -->
+      <rect x="0" y="0" width="320" height="400" fill="url(#halftone-magenta)" opacity="0">
+         <animate attributeName="opacity" values="0; 0.6; 0" dur="0.2s" repeatCount="indefinite" />
+      </rect>
+    </g>
+
+    <!-- Big Letter O (Center) -->
+    <g transform="translate(-120, -200)">
+      <use href="#letter-o" x="0" y="0" />
+      <!-- Float & Rotate Animation -->
+      <animateTransform attributeName="transform" type="translate" values="-120 -200; -120 -180; -120 -200" dur="3s" repeatCount="indefinite" additive="sum" />
+      <animateTransform attributeName="transform" type="rotate" values="-2 175 200; 2 175 200; -2 175 200" dur="3s" repeatCount="indefinite" additive="sum" />
+      <!-- Halftone Overlay Blinking -->
+      <rect x="0" y="0" width="400" height="400" fill="url(#halftone-white)" opacity="0">
+         <animate attributeName="opacity" values="0; 0.5; 0" dur="0.25s" repeatCount="indefinite" />
+      </rect>
+    </g>
+
+    <!-- Big Letter P (Right) -->
+    <g transform="translate(160, -200)">
+      <use href="#letter-p" x="0" y="0" />
+      <!-- Float & Scale Animation -->
+      <animateTransform attributeName="transform" type="translate" values="160 -200; 160 -220; 160 -200" dur="2.8s" repeatCount="indefinite" additive="sum" />
+      <animateTransform attributeName="transform" type="scale" values="1; 1.08; 1" dur="2.8s" repeatCount="indefinite" additive="sum" />
+      <!-- Halftone Overlay Blinking -->
+      <rect x="0" y="0" width="320" height="400" fill="url(#halftone-magenta)" opacity="0">
+         <animate attributeName="opacity" values="0; 0.7; 0" dur="0.15s" repeatCount="indefinite" />
+      </rect>
+    </g>
+
+    <!-- Big Exclamation Mark ! -->
+    <g transform="translate(420, -200)">
+      <use href="#exclamation" x="0" y="0" />
+      <!-- Float & Jiggle Animation -->
+      <animateTransform attributeName="transform" type="translate" values="420 -200; 420 -230; 420 -200" dur="1.5s" repeatCount="indefinite" additive="sum" />
+      <animateTransform attributeName="transform" type="rotate" values="0 80 200; 10 80 200; -10 80 200; 0 80 200" dur="1.5s" repeatCount="indefinite" additive="sum" />
+      <!-- Halftone Overlay Blinking -->
+      <rect x="0" y="0" width="160" height="400" fill="url(#halftone-cyan)" opacity="0">
+         <animate attributeName="opacity" values="0; 0.8; 0" dur="0.1s" repeatCount="indefinite" />
+      </rect>
+    </g>
+
+  </g>
+
+  <!-- Comic Speed Lines (Radiating outward) -->
+  <g stroke="#000000" stroke-width="12" stroke-linecap="round">
+    <line x1="800" y1="450" x2="200" y2="0" opacity="0.4">
+      <animateTransform attributeName="transform" type="scale" values="0.8;1.2;0.8" dur="1.2s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1.2s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="1400" y2="0" opacity="0.4">
+      <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="1.5s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1.5s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="200" y2="900" opacity="0.4">
+      <animateTransform attributeName="transform" type="scale" values="0.9;1.1;0.9" dur="1.8s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1.8s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="1400" y2="900" opacity="0.4">
+      <animateTransform attributeName="transform" type="scale" values="1;1.4;1" dur="1.1s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1.1s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="0" y2="450" opacity="0.4">
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="2s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="800" y1="450" x2="1600" y2="450" opacity="0.4">
+      <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="1.4s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1.4s" repeatCount="indefinite" />
+    </line>
+  </g>
+
+  <!-- Floating Halftone Dots (Random Pop Elements) -->
+  <g>
+    <circle cx="200" cy="200" r="30" fill="url(#halftone-red)" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -40; 0 0" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1400" cy="700" r="40" fill="url(#halftone-cyan)" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 50; 0 0" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="750" r="25" fill="url(#halftone-magenta)" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -30 0; 0 0" dur="2.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1300" cy="200" r="35" fill="url(#halftone-black)" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 40 0; 0 0" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Bottom Banner / Retro Commercial Tag -->
+  <g transform="translate(800, 820)">
+    <rect x="-400" y="-40" width="800" height="80" fill="#FF00FF" stroke="#000000" stroke-width="12" />
+    <text x="0" y="25" font-family="Arial Black, Impact, sans-serif" font-size="50" font-weight="900" fill="#FFFFFF" text-anchor="middle" stroke="#000000" stroke-width="3" letter-spacing="5">POP ART</text>
+    <!-- Banner float animation -->
+    <animateTransform attributeName="transform" type="translate" values="800 820; 800 830; 800 820" dur="2s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Comic Action Zig-Zags (Top and Bottom Frame Border) -->
+  <g stroke="#000000" stroke-width="10" fill="none">
+    <path d="M 0 20 L 50 60 L 100 20 L 150 60 L 200 20 L 250 60 L 300 20 L 350 60 L 400 20 L 450 60 L 500 20 L 550 60 L 600 20 L 650 60 L 700 20 L 750 60 L 800 20 L 850 60 L 900 20 L 950 60 L 1000 20 L 1050 60 L 1100 20 L 1150 60 L 1200 20 L 1250 60 L 1300 20 L 1350 60 L 1400 20 L 1450 60 L 1500 20 L 1550 60 L 1600 20" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 10; 0 0" dur="1s" repeatCount="indefinite" />
+  </g>
+  <g stroke="#000000" stroke-width="10" fill="none">
+    <path d="M 0 880 L 50 840 L 100 880 L 150 840 L 200 880 L 250 840 L 300 880 L 350 840 L 400 880 L 450 840 L 500 880 L 550 840 L 600 880 L 650 840 L 700 880 L 750 840 L 800 880 L 850 840 L 900 880 L 950 840 L 1000 880 L 1050 840 L 1100 880 L 1150 840 L 1200 880 L 1250 840 L 1300 880 L 1350 840 L 1400 880 L 1450 840 L 1500 880 L 1550 840 L 1600 880" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -10; 0 0" dur="1.2s" repeatCount="indefinite" />
+  </g>
+
+</svg>

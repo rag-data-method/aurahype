@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E6E6FA" />
+      <stop offset="35%" stop-color="#FFD1DC" />
+      <stop offset="70%" stop-color="#FFDAB9" />
+      <stop offset="100%" stop-color="#FFE4E1" />
+    </linearGradient>
+
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF8A9" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFC0CB" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="particleGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" />
+    </filter>
+    
+    <clipPath id="park-clip">
+      <rect width="800" height="600" />
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#skyGrad)" />
+
+  <path fill="url(#sunGrad)" d="M 250 220 A 130 130 0 0 1 510 220 A 130 130 0 0 1 250 220 Z">
+    <animate attributeName="d" values="
+      M 250 220 A 130 130 0 0 1 510 220 A 130 130 0 0 1 250 220 Z;
+      M 235 215 A 145 145 0 0 1 525 215 A 145 145 0 0 1 235 215 Z;
+      M 250 220 A 130 130 0 0 1 510 220 A 130 130 0 0 1 250 220 Z
+    " dur="12s" repeatCount="indefinite" />
+  </path>
+
+  <g clip-path="url(#park-clip)">
+    <path d="M -100 480 C 50 460, 150 420, 220 400 C 280 385, 350 365, 420 350 C 500 335, 600 340, 750 350 L 900 350 L 900 600 L -100 600 Z" fill="#D8BFD8" opacity="0.6">
+      <animate attributeName="d" values="
+        M -100 480 C 50 460, 150 420, 220 400 C 280 385, 350 365, 420 350 C 500 335, 600 340, 750 350 L 900 350 L 900 600 L -100 600 Z;
+        M -100 485 C 50 465, 150 425, 220 405 C 280 390, 350 370, 420 355 C 500 340, 600 345, 750 355 L 900 355 L 900 600 L -100 600 Z;
+        M -100 480 C 50 460, 150 420, 220 400 C 280 385, 350 365, 420 350 C 500 335, 600 340, 750 350 L 900 350 L 900 600 L -100 600 Z
+      " dur="18s" repeatCount="indefinite" />
+    </path>
+
+    <path d="M -100 520 C 100 500, 200 470, 300 445 C 400 420, 550 410, 650 430 C 750 450, 800 480, 900 460 L 900 600 L -100 600 Z" fill="#C8A2C8" opacity="0.7">
+      <animate attributeName="d" values="
+        M -100 520 C 100 500, 200 470, 300 445 C 400 420, 550 410, 650 430 C 750 450, 800 480, 900 460 L 900 600 L -100 600 Z;
+        M -100 525 C 100 505, 200 475, 300 450 C 400 425, 550 415, 650 435 C 750 455, 800 485, 900 465 L 900 600 L -100 600 Z;
+        M -100 520 C 100 500, 200 470, 300 445 C 400 420, 550 410, 650 430 C 750 450, 800 480, 900 460 L 900 600 L -100 600 Z
+      " dur="22s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <g fill="none" stroke="#8B7B8B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
+    <path d="M 550 380 Q 560 360 570 350 Q 580 340 590 335" />
+    <path d="M 570 350 Q 575 340 585 345" />
+    <path d="M 590 335 Q 600 330 610 340" />
+    <path d="M 570 350 Q 560 345 550 355" />
+    <path d="M 590 335 Q 585 320 590 310" />
+  </g>
+
+  <g fill="none" stroke="#B0A0B0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65">
+    <path d="M 120 390 Q 130 370 140 360 Q 150 350 160 345" />
+    <path d="M 140 360 Q 145 350 155 355" />
+    <path d="M 160 345 Q 170 340 175 350" />
+    <path d="M 140 360 Q 130 355 120 365" />
+  </g>
+
+  <path d="M 0 470 C 250 440, 550 440, 800 470 L 800 600 L 0 600 Z" fill="#FDFDF5" />
+  
+  <path d="M -50 485 C 250 445, 550 445, 850 485" stroke="#E8E0D5" stroke-width="1.5" fill="none" />
+  <path d="M -50 500 C 250 470, 550 470, 850 500" stroke="#E8E0D5" stroke-width="1.5" fill="none" opacity="0.7" />
+
+  <path d="M 0 600 C 100 555, 350 540, 800 600 Z" fill="#F5F0E6" />
+  <path d="M 0 600 C 400 560, 650 565, 800 600 Z" fill="#EDE8DD" />
+
+  <line x1="0" y1="600" x2="800" y2="600" stroke="#D3C1B3" stroke-width="1" opacity="0.4" />
+
+  <g fill="none" stroke="#6B5B73" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 120 385 L 120 190 Q 122 160 115 130 T 120 60" />
+    <path d="M 120 260 Q 95 220 70 205" />
+    <path d="M 120 220 Q 145 180 170 165" />
+    <path d="M 120 160 Q 95 130 75 100" />
+    <path d="M 120 130 Q 150 100 180 85" />
+    <path d="M 120 335 Q 95 355 70 355" />
+    <path d="M 120 350 Q 95 370 70 370" />
+    <path d="M 120 330 Q 150 310 170 295" />
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="8s" repeatCount="indefinite" />
+  </g>
+
+  <ellipse cx="120" cy="42" rx="18" ry="9" fill="none" stroke="#6B5B73" stroke-width="1.5" opacity="0.85">
+    <animate attributeName="rx" values="18;20;18" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="ry" values="9;10;9" dur="5s" repeatCount="indefinite" />
+  </ellipse>
+  <ellipse cx="120" cy="44" rx="10" ry="5" fill="none" stroke="#6B5B73" stroke-width="1" opacity="0.6">
+    <animate attributeName="rx" values="10;11;10" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="ry" values="5;6;5" dur="5s" repeatCount="indefinite" />
+  </ellipse>
+  <path d="M 115 35 Q 125 30 125 38" fill="none" stroke="#8B7B8B" stroke-width="1" opacity="0.5">
+    <animate attributeName="d" values="M 115 35 Q 125 30 125 38; M 115 33 Q 125 28 125 36; M 115 35 Q 125 30 125 38" dur="6s" repeatCount="indefinite" />
+  </path>
+
+  <g id="tree-leaves" opacity="0.6">
+    <circle cx="120" cy="20" r="6" fill="#8FB698" />
+    <circle cx="112" cy="25" r="4" fill="#8FB698" />
+    <circle cx="128" cy="22" r="5" fill="#A8D5BA" />
+    <circle cx="120" cy="30" r="3" fill="#7EA88A" />
+    <circle cx="135" cy="28" r="4" fill="#8FB698" />
+    <circle cx="105" cy="35" r="3.5" fill="#A8D5BA" />
+  </g>
+
+  <g id="bicycle" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="320" cy="520" r="55" fill="none" stroke="#5D4E6D" stroke-width="1.5">
+      <animateTransform attributeName="transform" type="rotate" values="0 320 520; 2 320 520; 0 320 520" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="320" cy="520" r="50" fill="none" stroke="#5D4E6D" stroke-width="1" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" values="0 320 520; 2 320 520; 0 320 520" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <line x1="320" y1="520" x2="320" y2="580" stroke="#5D4E6D" stroke-width="1" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" values="0 320 520; 2 320 520; 0 320 520" dur="6s" repeatCount="indefinite" />
+    </line>
+    <line x1="320" y1="520" x2="375" y2="545" stroke="#5D4E6D" stroke-width="1" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" values="0 320 520; 2 320 520; 0 320 520" dur="6s" repeatCount="indefinite" />
+    </line>
+    <line x1="320" y1="520" x2="265" y2="545" stroke="#5D4E6D" stroke-width="1" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" values="0 320 520; 2 320 520; 0 320 520" dur="6s" repeatCount="indefinite" />
+    </line>
+    <line x1="320" y1="520" x2="320" y2="465" stroke="#5D4E6D" stroke-width="1" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" values="0 320 520; 2 320 520; 0 320 520" dur="6s" repeatCount="indefinite" />
+    </line>
+
+    <circle cx="520" cy="520" r="55" fill="none" stroke="#5D4E6D" stroke-width="1.5" />
+    <circle cx="520" cy="520" r="50" fill="none" stroke="#5D4E6D" stroke-width="1" opacity="0.6" />
+    <line x1="520" y1="520" x2="520" y2="580" stroke="#5D4E6D" stroke-width="1" opacity="0.5" />
+    <line x1="520" y1="520" x2="575" y2="545" stroke="#5D4E6D" stroke-width="1" opacity="0.5" />
+    <line x1="520" y1="520" x2="465" y2="545" stroke="#5D4E6D" stroke-width="1" opacity="0.5" />
+    <line x1="520" y1="520" x2="520" y2="465" stroke="#5D4E6D" stroke-width="1" opacity="0.5" />
+
+    <line x1="320" y1="520" x2="450" y2="520" stroke="#5D4E6D" stroke-width="1.5" />
+    <line x1="415" y1="520" x2="450" y2="420" stroke="#5D4E6D" stroke-width="1.5" />
+    <line x1="415" y1="520" x2="520" y2="520" stroke="#5D4E6D" stroke-width="1.5" />
+    <line x1="450" y1="420" x2="540" y2="420" stroke="#5D4E6D" stroke-width="1.5" />
+    <line x1="450" y1="420" x2="450" y2="395" stroke="#5D4E6D" stroke-width="1.5" />
+    <line x1="450" y1="395" x2="520" y2="395" stroke="#5D4E6D" stroke-width="1.5" />
+    
+    <line x1="450" y1="395" x2="425" y2="340" stroke="#5D4E6D" stroke-width="1.5" />
+    <line x1="425" y1="340" x2="400" y2="345" stroke="#5D4E6D" stroke-width="1.5" />
+    <path d="M 425 340 Q 440 370 450 395" fill="none" stroke="#5D4E6D" stroke-width="1.5" />
+    
+    <path d="M 450 395 Q 460 380 470 395 T 520 395" fill="none" stroke="#5D4E6D" stroke-width="1.5" opacity="0.9" />
+
+    <line x1="540" y1="420" x2="540" y2="515" stroke="#5D4E6D" stroke-width="1.5" />
+    <circle cx="520" cy="520" r="4" fill="none" stroke="#5D4E6D" stroke-width="1.5" />
+    <circle cx="320" cy="520" r="4" fill="none" stroke="#5D4E6D" stroke-width="1.5" />
+
+    <path d="M 540 515 L 545 525 M 540 515 L 535 525 M 540 515 L 540 525" stroke="#5D4E6D" stroke-width="1.5" />
+  </g>
+
+  <circle cx="380" cy="520" r="2" fill="#FFC0CB" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="460" cy="515" r="2" fill="#B0C4DE" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="7s" repeatCount="indefinite" />
+  </circle>
+
+  <path d="M 650 200 Q 680 180 710 190 T 750 180" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.15" filter="url(#softGlow)">
+     <animate attributeName="d" values="M 650 200 Q 680 180 710 190 T 750 180; M 640 205 Q 670 185 700 195 T 740 185; M 650 200 Q 680 180 710 190 T 750 180" dur="30s" repeatCount="indefinite" />
+  </path>
+  <path d="M 680 230 Q 720 210 750 230 T 800 220" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" opacity="0.1" filter="url(#softGlow)">
+    <animate attributeName="d" values="M 680 230 Q 720 210 750 230 T 800 220; M 670 235 Q 710 215 740 235 T 790 225; M 680 230 Q 720 210 750 230 T 800 220" dur="40s" repeatCount="indefinite" />
+  </path>
+  <path d="M 50 150 Q 80 130 110 140 T 150 130" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0.12" filter="url(#softGlow)">
+    <animate attributeName="d" values="M 50 150 Q 80 130 110 140 T 150 130; M 60 155 Q 90 135 120 145 T 160 135; M 50 150 Q 80 130 110 140 T 150 130" dur="35s" repeatCount="indefinite" />
+  </path>
+
+  <g id="particles">
+    <circle cx="200" cy="250" r="2.5" fill="#FFE4E1" opacity="0.6">
+      <animate attributeName="cy" values="250;230;250" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="200;210;200" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="300" r="2" fill="#FFDAB9" opacity="0.5">
+      <animate attributeName="cy" values="300;280;300" dur="9s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="500;490;500" dur="9s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="9s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="650" cy="150" r="3" fill="#FFF0F5" opacity="0.4">
+      <animate attributeName="cy" values="150;130;150" dur="11s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="650;660;650" dur="11s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="11s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <g opacity="0.6" fill="#98C9A3">
+    <circle cx="140" cy="460" r="4" filter="url(#particleGlow)">
+      <animate attributeName="cx" values="140;350;570" dur="8s" repeatCount="indefinite" begin="0s" />
+      <animate attributeName="cy" values="460;450;465" dur="8s" repeatCount="indefinite" begin="0s" />
+      <animate attributeName="opacity" values="0.6;0.2;0" dur="8s" repeatCount="indefinite" begin="0s" />
+    </circle>
+    <circle cx="140" cy="460" r="3" filter="url(#particleGlow)">
+      <animate attributeName="cx" values="140;350;570" dur="8s" repeatCount="indefinite" begin="2s" />
+      <animate attributeName="cy" values="460;440;460" dur="8s" repeatCount="indefinite" begin="2s" />
+      <animate attributeName="opacity" values="0.6;0.2;0" dur="8s" repeatCount="indefinite" begin="2s" />
+    </circle>
+  </g>
+
+  <g opacity="0.8" stroke="#A8D5BA" stroke-width="1.5" fill="none">
+    <path d="M 125 430 Q 135 420 145 430 T 165 420">
+      <animate attributeName="d" values="M 125 430 Q 135 420 145 430 T 165 420; M 125 435 Q 135 425 145 435 T 165 425; M 125 430 Q 135 420 145 430 T 165 420" dur="6s" repeatCount="indefinite" />
+    </path>
+    <path d="M 135 440 Q 150 430 160 445" opacity="0.6">
+      <animate attributeName="d" values="M 135 440 Q 150 430 160 445; M 135 445 Q 150 435 160 450; M 135 440 Q 150 430 160 445" dur="7s" repeatCount="indefinite" />
+    </path>
+    <path d="M 115 450 Q 125 440 135 455" opacity="0.5">
+      <animate attributeName="d" values="M 115 450 Q 125 440 135 455; M 115 455 Q 125 445 135 460; M 115 450 Q 125 440 135 455" dur="8s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <g stroke="#C8A2C8" stroke-width="1" opacity="0.4">
+    <line x1="0" y1="250" x2="800" y2="250" />
+    <line x1="0" y1="350" x2="800" y2="350" />
+    <line x1="0" y1="450" x2="800" y2="450" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+  </g>
+</svg>

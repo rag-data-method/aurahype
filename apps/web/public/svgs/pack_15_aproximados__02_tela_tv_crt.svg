@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Filters -->
+    <filter id="blur20" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="blur60" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="blur120" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    
+    <filter id="static" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" result="noise">
+        <animate attributeName="baseFrequency" values="0.85;0.95;0.85" dur="0.4s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feComponentTransfer in="grayNoise" result="contrastNoise">
+        <feFuncR type="linear" slope="1.5" intercept="-0.2"/>
+        <feFuncG type="linear" slope="1.5" intercept="-0.2"/>
+        <feFuncB type="linear" slope="1.5" intercept="-0.2"/>
+      </feComponentTransfer>
+      <feComposite operator="in" in="contrastNoise" in2="SourceGraphic" result="maskedNoise"/>
+    </filter>
+
+    <filter id="screenCurve" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feSpecularLighting surfaceScale="4" specularConstant="0.6" specularExponent="25" lighting-color="#E8F4FF" in="blur" result="specular">
+        <fePointLight id="light" x="800" y="450" z="400"/>
+      </feSpecularLighting>
+      <feComposite operator="in" in="specular" in2="SourceAlpha" result="maskedSpecular"/>
+      <feComposite operator="over" in="maskedSpecular" in2="SourceGraphic" result="final"/>
+    </filter>
+
+    <!-- Gradients -->
+    <radialGradient id="glowCore" cx="50%" cy="48%" r="60%">
+      <stop offset="0%" stop-color="#E8F4FF"/>
+      <stop offset="25%" stop-color="#5AA3C0">
+        <animate attributeName="stop-color" values="#5AA3C0;#3A7A9A;#5AA3C0" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="60%" stop-color="#0A1F2E"/>
+      <stop offset="100%" stop-color="#050F1A"/>
+    </radialGradient>
+
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="40%" stop-color="#0A1F2E" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#020508" stop-opacity="1"/>
+    </radialGradient>
+
+    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2C5F7A" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#1A3A4D" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0A1F2E" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <linearGradient id="casingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1A"/>
+      <stop offset="50%" stop-color="#0D0D0D"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+
+    <!-- Patterns -->
+    <pattern id="scanlines" width="100%" height="16" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="2" fill="#2C5F7A" opacity="0.35"/>
+      <rect y="4" width="100%" height="1" fill="#E8F4FF" opacity="0.1"/>
+      <rect y="8" width="100%" height="3" fill="#0A1F2E" opacity="0.5"/>
+    </pattern>
+
+    <pattern id="pixels" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="none" stroke="#2C5F7A" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="1" cy="1" r="0.8" fill="#E8F4FF" opacity="0.1"/>
+    </pattern>
+
+    <!-- Mask for Screen Area -->
+    <clipPath id="screenClip">
+      <path d="M 200,100 Q 800,20 1400,100 Q 1480,450 1400,800 Q 800,880 200,800 Q 120,450 200,100 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- 1. Background -->
+  <rect width="1600" height="900" fill="#050F1A"/>
+
+  <!-- 2. Casing Outer Glow -->
+  <path d="M 180,80 Q 800,0 1420,80 Q 1500,450 1420,820 Q 800,900 180,820 Q 100,450 180,80 Z" 
+        fill="none" stroke="#2C5F7A" stroke-width="40" opacity="0.15" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="9s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 3. Bezel / Casing -->
+  <path d="M 150,60 Q 800,-20 1450,60 Q 1530,450 1450,840 Q 800,920 150,840 Q 70,450 150,60 Z" 
+        fill="url(#casingGrad)"/>
+  <path d="M 150,60 Q 800,-20 1450,60 Q 1530,450 1450,840 Q 800,920 150,840 Q 70,450 150,60 Z" 
+        fill="none" stroke="#000" stroke-width="20" filter="url(#blur20)"/>
+
+  <!-- 4. Bezel Inner Rim Highlight -->
+  <path d="M 190,95 Q 800,25 1410,95 Q 1470,450 1410,805 Q 800,875 190,805 Q 130,450 190,95 Z" 
+        fill="none" stroke="#2C5F7A" stroke-width="2" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="11s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 5. Screen Base (Deep Glass) -->
+  <path d="M 200,100 Q 800,20 1400,100 Q 1480,450 1400,800 Q 800,880 200,800 Q 120,450 200,100 Z" 
+        fill="#0A1F2E"/>
+
+  <!-- 6. Phosphor Glow Core (Radiant Background) -->
+  <ellipse cx="800" cy="450" rx="550" ry="350" fill="url(#glowCore)" opacity="0.9" filter="url(#blur60)">
+    <animate attributeName="opacity" values="0.9;1.0;0.85;0.9" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="550;560;545;550" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="350;360;340;350" dur="14s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 7. Center Highlight Hotspot -->
+  <ellipse cx="800" cy="440" rx="300" ry="180" fill="#E8F4FF" opacity="0.25" filter="url(#blur20)">
+    <animate attributeName="opacity" values="0.25;0.35;0.2;0.25" dur="7s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 10,-5; -5,5; 0,0" dur="15s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 8. Content / Static Clipped Area -->
+  <g clip-path="url(#screenClip)">
+    
+    <!-- 8a. Moving Scanline Bands -->
+    <g opacity="0.4" filter="url(#blur20)">
+      <rect x="100" y="200" width="1400" height="40" fill="url(#scanGrad)">
+        <animate attributeName="y" values="200;900;-100;200" dur="14s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="100" y="500" width="1400" height="60" fill="url(#scanGrad)" opacity="0.6">
+        <animate attributeName="y" values="500;1200;-200;500" dur="19s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- 8b. Horizontal Scan Lines Pattern -->
+    <rect x="0" y="0" width="1600" height="900" fill="url(#scanlines)" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.75;0.55;0.6" dur="6s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- 8c. Pixel Grid -->
+    <rect x="0" y="0" width="1600" height="900" fill="url(#pixels)">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="10s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- 8d. Static Noise (Turbulence) -->
+    <rect x="0" y="0" width="1600" height="900" fill="#E8F4FF" opacity="0.08" filter="url(#static)">
+      <animate attributeName="opacity" values="0.08;0.15;0.05;0.08" dur="0.4s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- 8e. Flickering Ghost Image (Abstract Curves) -->
+    <g stroke="#E8F4FF" fill="none" opacity="0.15" filter="url(#blur20)">
+      <path d="M 300,400 Q 800,200 1300,400 T 300,500">
+        <animate attributeName="d" values="M 300,400 Q 800,200 1300,400 T 300,500; M 320,420 Q 820,180 1320,420 T 320,520; M 300,400 Q 800,200 1300,400 T 300,500" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.15;0.25;0.1;0.15" dur="5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 400,600 Q 800,750 1200,600" stroke="#2C5F7A" stroke-width="3">
+        <animate attributeName="opacity" values="0.2;0.4;0.2" dur="8s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- 9. Screen Edge Shadow / Vignette -->
+  <path d="M 200,100 Q 800,20 1400,100 Q 1480,450 1400,800 Q 800,880 200,800 Q 120,450 200,100 Z" 
+        fill="url(#vignette)" opacity="0.85"/>
+
+  <!-- 10. Glass Reflection / Glare (Cinematic Touch) -->
+  <path d="M 220,120 Q 600,60 1000,150 L 800,450 L 350,350 Z" fill="#E8F4FF" opacity="0.04" filter="url(#blur60)" style="mix-blend-mode: overlay;">
+    <animate attributeName="opacity" values="0.04;0.07;0.03;0.04" dur="16s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 1100,200 Q 1300,250 1350,400 L 1200,600 L 900,350 Z" fill="#E8F4FF" opacity="0.02" filter="url(#blur60)" style="mix-blend-mode: overlay;">
+    <animate attributeName="opacity" values="0.02;0.05;0.02" dur="20s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 11. CRT Barrel Curvature Overlay (The Glass Shape) -->
+  <path d="M 200,100 Q 800,20 1400,100 Q 1480,450 1400,800 Q 800,880 200,800 Q 120,450 200,100 Z" 
+        fill="none" stroke="#000" stroke-width="30" opacity="0.6" filter="url(#blur60)"/>
+  
+  <path d="M 200,100 Q 800,20 1400,100 Q 1480,450 1400,800 Q 800,880 200,800 Q 120,450 200,100 Z" 
+        fill="none" stroke="#000" stroke-width="10" opacity="0.8" filter="url(#blur20)"/>
+
+  <!-- 12. Glossy Specular Highlight on Glass -->
+  <path d="M 250,130 Q 800,60 1350,130" fill="none" stroke="#E8F4FF" stroke-width="4" opacity="0.3" filter="url(#blur20)">
+    <animate attributeName="opacity" values="0.3;0.5;0.2;0.3" dur="10s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 13. Rolling Bar (Classic CRT artifact) -->
+  <rect x="200" y="100" width="1200" height="20" fill="#E8F4FF" opacity="0.05" filter="url(#blur20)" clip-path="url(#screenClip)">
+    <animate attributeName="y" values="100;900;100" dur="10s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="200" y="850" width="1200" height="40" fill="#0A1F2E" opacity="0.6" filter="url(#blur20)" clip-path="url(#screenClip)">
+    <animate attributeName="y" values="850;100;850" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 14. Corner Light Leak (Atmospheric) -->
+  <circle cx="300" cy="200" r="150" fill="#2C5F7A" opacity="0.15" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="14s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1300" cy="700" r="180" fill="#2C5F7A" opacity="0.1" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- 15. Screen Power Flicker (Global Overlay) -->
+  <rect x="0" y="0" width="1600" height="900" fill="#E8F4FF" opacity="0" style="mix-blend-mode: overlay;" pointer-events="none">
+    <animate attributeName="opacity" values="0;0.02;0;0.01;0;0.03;0" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 16. Subtle Horizontal Jitter / Tracking Loss -->
+  <g clip-path="url(#screenClip)" opacity="0.3">
+    <rect x="400" y="300" width="300" height="4" fill="#E8F4FF" filter="url(#blur20)">
+      <animate attributeName="x" values="400;410;395;400" dur="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="900" y="600" width="200" height="2" fill="#E8F4FF" filter="url(#blur20)">
+      <animate attributeName="x" values="900;890;905;900" dur="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="7s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- 17. Outer Ambient Rim Light (Casing Edge) -->
+  <path d="M 150,60 Q 800,-20 1450,60" fill="none" stroke="#2C5F7A" stroke-width="8" opacity="0.3" filter="url(#blur20)">
+    <animate attributeName="opacity" values="0.3;0.45;0.3" dur="11s" repeatCount="indefinite"/>
+  </path>
+
+</svg>

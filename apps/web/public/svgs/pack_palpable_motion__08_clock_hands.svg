@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feOffset dx="0" dy="8" result="offsetBlur"/>
+      <feComposite in="SourceGraphic" in2="offsetBlur" operator="over"/>
+    </filter>
+    <filter id="brassGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="redPulse" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#F5F0E6"/>
+  
+  <g transform="translate(800, 450)">
+    <animateTransform attributeName="transform" type="translate" 
+      values="800,450; 800,442; 800,450" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    
+    <circle r="285" fill="#2B2E33" opacity="0.06" filter="url(#softShadow)">
+      <animate attributeName="r" values="285;292;285" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.06;0.08;0.06" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="270" fill="#F5F0E6"/>
+    <circle r="268" fill="none" stroke="#C9A85C" stroke-width="3" opacity="0.8"/>
+    <circle r="260" fill="none" stroke="#2B2E33" stroke-width="1" opacity="0.1"/>
+    
+    <g stroke="#2B2E33" stroke-width="5" stroke-linecap="round" opacity="0.85">
+      <line x1="0" y1="-230" x2="0" y2="-200">
+        <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="230" y1="0" x2="200" y2="0">
+        <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" begin="0.75s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="230" x2="0" y2="200">
+        <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-230" y1="0" x2="-200" y2="0">
+        <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" begin="2.25s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <line x1="0" y1="0" x2="-80" y2="-140" stroke="#C9A85C" stroke-width="14" stroke-linecap="round" opacity="0.9" filter="url(#brassGlow)">
+      <animate attributeName="opacity" values="0.9;0.95;0.9" dur="4s" repeatCount="indefinite"/>
+    </line>
+    
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="90" to="450" dur="60s" repeatCount="indefinite"/>
+      <line x1="0" y1="0" x2="0" y2="-200" stroke="#C9A85C" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+      <circle cx="0" cy="-100" r="5" fill="#C9A85C" opacity="0.3" filter="url(#brassGlow)"/>
+    </g>
+    
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite" calcMode="linear"/>
+      <line x1="0" y1="40" x2="0" y2="-240" stroke="#C9A85C" stroke-width="4" stroke-linecap="round"/>
+      <line x1="0" y1="-190" x2="0" y2="-240" stroke="#E63946" stroke-width="4" stroke-linecap="round" opacity="0.8">
+        <animate attributeName="opacity" values="0.7;0.9;0.7" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="0" cy="-215" r="8" fill="#E63946" opacity="0.5" filter="url(#redPulse)">
+        <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <circle r="14" fill="#C9A85C" opacity="0.9" filter="url(#brassGlow)">
+      <animate attributeName="opacity" values="0.8;0.95;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="9" fill="#F5F0E6"/>
+    <circle r="5" fill="#2B2E33" opacity="0.85"/>
+  </g>
+</svg>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <!-- Filters -->
+    <filter id="blur40" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="blur80" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="blur120" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="blur160" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0410">
+        <animate attributeName="stop-color" values="#0A0410;#1a0825;#0A0410" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#1a0b2e">
+        <animate attributeName="stop-color" values="#1a0b2e;#2d1020;#1a0b2e" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#3D0E1F">
+        <animate attributeName="stop-color" values="#3D0E1F;#4a1525;#3D0E1F" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Light Beam Gradient -->
+    <radialGradient id="beamGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4A574" stop-opacity="0.6">
+        <animate attributeName="stop-opacity" values="0.6;0.45;0.6" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#B8893A" stop-opacity="0.2">
+        <animate attributeName="stop-opacity" values="0.2;0.35;0.2" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#8B0F23" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.1;0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </radialGradient>
+
+    <!-- Curtain Gradients -->
+    <linearGradient id="velvetBack" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D0E1F">
+        <animate attributeName="stop-color" values="#3D0E1F;#4a1528;#3D0E1F" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="30%" stop-color="#2a0816">
+        <animate attributeName="stop-color" values="#2a0816;#3d0e1f;#2a0816" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#3D0E1F">
+        <animate attributeName="stop-color" values="#3D0E1F;#2a0816;#3D0E1F" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="70%" stop-color="#8B0F23">
+        <animate attributeName="stop-color" values="#8B0F23;#6b0b1c;#8B0F23" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#3D0E1F">
+        <animate attributeName="stop-color" values="#3D0E1F;#4a1528;#3D0E1F" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="velvetMid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B0F23">
+        <animate attributeName="stop-color" values="#8B0F23;#6b0b1c;#8B0F23" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="25%" stop-color="#3D0E1F">
+        <animate attributeName="stop-color" values="#3D0E1F;#4a1528;#3D0E1F" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#8B0F23">
+        <animate attributeName="stop-color" values="#8B0F23;#a01028;#8B0F23" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="75%" stop-color="#3D0E1F">
+        <animate attributeName="stop-color" values="#3D0E1F;#2a0816;#3D0E1F" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#8B0F23">
+        <animate attributeName="stop-color" values="#8B0F23;#6b0b1c;#8B0F23" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="velvetFront" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B8893A">
+        <animate attributeName="stop-color" values="#B8893A;#D4A574;#B8893A" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="20%" stop-color="#8B0F23">
+        <animate attributeName="stop-color" values="#8B0F23;#a01028;#8B0F23" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="40%" stop-color="#3D0E1F">
+        <animate attributeName="stop-color" values="#3D0E1F;#4a1528;#3D0E1F" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="60%" stop-color="#8B0F23">
+        <animate attributeName="stop-color" values="#8B0F23;#6b0b1c;#8B0F23" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="80%" stop-color="#3D0E1F">
+        <animate attributeName="stop-color" values="#3D0E1F;#2a0816;#3D0E1F" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#B8893A">
+        <animate attributeName="stop-color" values="#B8893A;#D4A574;#B8893A" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Gold Rope Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B8893A">
+        <animate attributeName="stop-color" values="#B8893A;#D4A574;#B8893A" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#D4A574">
+        <animate attributeName="stop-color" values="#D4A574;#B8893A;#D4A574" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#B8893A">
+        <animate attributeName="stop-color" values="#B8893A;#D4A574;#B8893A" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Dust Motions -->
+    <path id="dustPath1" d="M 550 100 Q 600 250 580 400 T 620 700" fill="none"/>
+    <path id="dustPath2" d="M 650 150 Q 700 300 680 450 T 720 750" fill="none"/>
+    <path id="dustPath3" d="M 750 200 Q 800 350 780 500 T 820 800" fill="none"/>
+    <path id="dustPath4" d="M 850 120 Q 900 270 880 420 T 920 720" fill="none"/>
+    <path id="dustPath5" d="M 950 180 Q 1000 330 980 480 T 1020 780" fill="none"/>
+    <path id="dustPath6" d="M 1050 140 Q 1100 290 1080 440 T 1120 740" fill="none"/>
+  </defs>
+
+  <!-- Background Atmosphere -->
+  <rect width="1600" height="900" fill="url(#bgGrad)">
+    <animate attributeName="opacity" values="1;0.92;1" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- Deep Stage Depth Glow -->
+  <ellipse cx="800" cy="450" rx="600" ry="400" fill="#0A0410" opacity="0.8" filter="url(#blur160)">
+    <animate attributeName="opacity" values="0.8;0.65;0.8" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- Central Warm Light Beam -->
+  <g>
+    <ellipse cx="850" cy="400" rx="300" ry="500" fill="url(#beamGrad)" filter="url(#blur120)" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.5;0.7" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,-10; 0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+    <ellipse cx="850" cy="400" rx="150" ry="250" fill="#D4A574" filter="url(#blur80)" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.25;0.4" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,15; 0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+
+  <!-- Dust Particles in Beam -->
+  <g fill="#D4A574" opacity="0.6">
+    <circle r="2" filter="url(#blur40)">
+      <animateMotion dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#dustPath1"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="1.5" filter="url(#blur40)">
+      <animateMotion dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#dustPath2"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="3" filter="url(#blur40)">
+      <animateMotion dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#dustPath3"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="1" filter="url(#blur40)">
+      <animateMotion dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#dustPath4"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="2.5" filter="url(#blur40)">
+      <animateMotion dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#dustPath5"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="1.5" filter="url(#blur40)">
+      <animateMotion dur="21s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#dustPath6"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+  </g>
+
+  <!-- Curtain Back Layer (Slowest) -->
+  <g>
+    <path d="M 0 0 L 480 0 C 420 150, 450 300, 380 450 C 320 600, 350 750, 300 900 L 0 900 Z" fill="url(#velvetBack)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 12,0; 0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+    <path d="M 0 0 L 480 0 C 420 150, 450 300, 380 450 C 320 600, 350 750, 300 900 L 0 900 Z" fill="#0A0410" opacity="0.3" filter="url(#blur80)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 8,-4; 0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Curtain Mid Layer -->
+  <g>
+    <path d="M 0 0 L 520 0 C 460 120, 490 280, 430 420 C 380 580, 400 720, 350 900 L 0 900 Z" fill="url(#velvetMid)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,0; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,3; 0,0" dur="9s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+    <path d="M 0 0 L 520 0 C 460 120, 490 280, 430 420 C 380 580, 400 720, 350 900 L 0 900 Z" fill="#8B0F23" opacity="0.15" filter="url(#blur40)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -6,2; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Curtain Front/Highlight Layer (Fastest Sway) -->
+  <g>
+    <!-- Main Fold -->
+    <path d="M 0 0 L 560 0 C 500 100, 530 250, 480 380 C 440 550, 450 700, 400 900 L 0 900 Z" fill="url(#velvetFront)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 8,0; 0,0" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.01;1" dur="10s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+    
+    <!-- Edge Shadow Overlay -->
+    <path d="M 0 0 L 560 0 C 500 100, 530 250, 480 380 C 440 550, 450 700, 400 900 L 0 900 Z" fill="#0A0410" opacity="0.2" filter="url(#blur40)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 5,-3; 0,0" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+
+    <!-- Highlight Sheen -->
+    <path d="M 150 0 C 200 150, 180 350, 220 550 C 250 700, 200 850, 180 900 L 120 900 C 140 850, 190 700, 160 550 C 120 350, 140 150, 90 0 Z" fill="#D4A574" opacity="0.08" filter="url(#blur80)">
+      <animate attributeName="opacity" values="0.08;0.15;0.08" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,0; 0,0" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Gold Rope Trim (Hangs along curtain edge) -->
+  <g>
+    <!-- Rope Body -->
+    <path d="M 400 0 C 450 100, 420 300, 470 450 C 510 600, 480 750, 430 900" fill="none" stroke="url(#goldGrad)" stroke-width="12" filter="url(#blur40)">
+      <animate attributeName="stroke-width" values="12;14;12" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+    <path d="M 400 0 C 450 100, 420 300, 470 450 C 510 600, 480 750, 430 900" fill="none" stroke="#B8893A" stroke-width="6">
+      <animate attributeName="stroke-width" values="6;7;6" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,2; 0,0" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+    
+    <!-- Rope Braids/Detail -->
+    <path d="M 400 0 C 450 100, 420 300, 470 450 C 510 600, 480 750, 430 900" fill="none" stroke="#D4A574" stroke-width="2" stroke-dasharray="10 5" opacity="0.6">
+      <animate attributeName="stroke-dashoffset" values="0;15;0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Tassel Group (Pendulum Swing) -->
+  <g>
+    <!-- Tassel Cord -->
+    <line x1="430" y1="880" x2="435" y2="960" stroke="url(#goldGrad)" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" values="0 430 880; 3 430 880; -2 430 880; 0 430 880" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </line>
+    
+    <!-- Tassel Head -->
+    <ellipse cx="435" cy="965" rx="8" ry="6" fill="#B8893A">
+      <animateTransform attributeName="transform" type="rotate" values="0 430 880; 3 430 880; -2 430 880; 0 430 880" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+    
+    <!-- Tassel Fringe -->
+    <g>
+      <path d="M 428 970 Q 425 1000 420 1020 M 432 970 Q 430 1000 428 1020 M 435 970 Q 435 1000 435 1020 M 438 970 Q 440 1000 442 1020 M 442 970 Q 445 1000 450 1020" stroke="#D4A574" stroke-width="2" fill="none" opacity="0.9">
+        <animateTransform attributeName="transform" type="rotate" values="0 430 880; 3 430 880; -2 430 880; 0 430 880" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </path>
+      <!-- Fringe Glow -->
+      <path d="M 428 970 Q 425 1000 420 1020 M 432 970 Q 430 1000 428 1020 M 435 970 Q 435 1000 435 1020 M 438 970 Q 440 1000 442 1020 M 442 970 Q 445 1000 450 1020" stroke="#B8893A" stroke-width="4" fill="none" opacity="0.3" filter="url(#blur40)">
+        <animateTransform attributeName="transform" type="rotate" values="0 430 880; 3 430 880; -2 430 880; 0 430 880" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Top Valance / Header (Subtle independent motion) -->
+  <g>
+    <path d="M 0 0 L 600 0 C 580 40, 560 60, 540 80 C 500 60, 460 80, 420 70 C 380 60, 340 80, 300 70 C 260 60, 220 80, 180 70 C 140 60, 100 80, 60 70 C 40 60, 20 40, 0 20 Z" fill="url(#velvetBack)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,2; 0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+    <path d="M 0 0 L 600 0 C 580 40, 560 60, 540 80 C 500 60, 460 80, 420 70 C 380 60, 340 80, 300 70 C 260 60, 220 80, 180 70 C 140 60, 100 80, 60 70 C 40 60, 20 40, 0 20 Z" fill="#B8893A" opacity="0.1" filter="url(#blur40)">
+      <animate attributeName="opacity" values="0.1;0.2;0.1" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Subtle Foreground Atmosphere Veil -->
+  <rect x="0" y="0" width="1600" height="900" fill="#0A0410" opacity="0.1" filter="url(#blur160)">
+    <animate attributeName="opacity" values="0.1;0.05;0.1" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- Overlay Warm Glow on Right Edge (Editorial framing) -->
+  <ellipse cx="1400" cy="450" rx="300" ry="500" fill="#B8893A" opacity="0.03" filter="url(#blur160)">
+    <animate attributeName="opacity" values="0.03;0.06;0.03" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+</svg>

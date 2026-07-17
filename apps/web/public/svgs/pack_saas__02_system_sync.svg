@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<filter id="h"><feGaussianBlur stdDeviation="70"/></filter>
+<filter id="m"><feGaussianBlur stdDeviation="30"/></filter>
+<filter id="n"><feTurbulence baseFrequency="0.03" numOctaves="2" seed="1"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic"/></filter>
+</defs>
+
+<!-- Base: Deep Ink dominates -->
+<rect fill="#1E293B" width="1600" height="900" opacity="0.9"/>
+
+<!-- Ambient glows -->
+<circle cx="800" cy="450" r="420" fill="#4F46E5" filter="url(#h)" opacity="0.85">
+<animate attributeName="opacity" values="0.85;0.95;0.85" dur="7s" repeatCount="indefinite"/>
+</circle>
+<circle cx="1050" cy="300" r="280" fill="#94A3B8" filter="url(#m)" opacity="0.75"/>
+
+<!-- Central Precision System -->
+<g transform="translate(800,450)">
+
+<!-- Outer Status Ring -->
+<circle r="300" fill="none" stroke="#34D399" stroke-width="6" stroke-dasharray="30 50" opacity="0.9">
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Counter-Rotating Structure Ring -->
+<circle r="260" fill="none" stroke="#1E293B" stroke-width="3" stroke-dasharray="15 45" opacity="0.85">
+<animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="9s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Primary Drive Gear -->
+<circle r="220" fill="none" stroke="#4F46E5" stroke-width="50" stroke-dasharray="35 25" opacity="0.95">
+<animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="8s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Precision Spokes -->
+<g stroke="#94A3B8" stroke-width="3" opacity="0.8">
+<line x1="0" y1="-240" x2="0" y2="240"/>
+<line x1="-240" y1="0" x2="240" y2="0"/>
+<line x1="-170" y1="-170" x2="170" y2="170"/>
+<line x1="170" y1="-170" x2="-170" y2="170"/>
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+</g>
+
+<!-- Fine Tuning Ring -->
+<circle r="140" fill="none" stroke="#1E293B" stroke-width="2" opacity="0.9">
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Core Calibrator -->
+<circle r="50" fill="#34D399" opacity="0.95">
+<animateTransform attributeName="transform" type="scale" values="1;1.12;1" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.95;1;0.95" dur="5s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Orbital Node A -->
+<g>
+<circle cx="320" cy="0" r="18" fill="#4F46E5" opacity="0.95"/>
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+</g>
+
+<!-- Orbital Node B -->
+<g>
+<circle cx="0" cy="-260" r="14" fill="#34D399" opacity="0.95"/>
+<animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="6s" repeatCount="indefinite"/>
+</g>
+
+<!-- Orbital Node C -->
+<g>
+<circle cx="-200" cy="200" r="10" fill="#94A3B8" opacity="0.8"/>
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+</g>
+
+<!-- Sync Pulse Stream -->
+<circle r="280" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="4 16" opacity="0.3">
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+<animate attributeName="stroke-dashoffset" values="0;20" dur="1.5s" repeatCount="indefinite"/>
+</circle>
+
+</g>
+
+<!-- Texture Layer -->
+<rect width="1600" height="900" fill="#FFFFFF" filter="url(#n)" opacity="0.08"/>
+</svg>

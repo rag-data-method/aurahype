@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<filter id="b40"><feGaussianBlur stdDeviation="40"/></filter>
+<filter id="b80"><feGaussianBlur stdDeviation="80"/></filter>
+<filter id="b120"><feGaussianBlur stdDeviation="120"/></filter>
+<filter id="b160"><feGaussianBlur stdDeviation="160"/></filter>
+<linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0A1530"/>
+<stop offset="50%" stop-color="#2D5A6B"><animate attributeName="stop-color" values="#2D5A6B;#1F4A5B;#2D5A6B" dur="22s" repeatCount="indefinite"/></stop>
+<stop offset="100%" stop-color="#0A1530"/>
+</linearGradient>
+<linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0A1530" stop-opacity="0.9"/>
+<stop offset="40%" stop-color="#1A3A4B" stop-opacity="0.7"><animate attributeName="stop-color" values="#1A3A4B;#2D5A6B;#1A3A4B" dur="18s" repeatCount="indefinite"/></stop>
+<stop offset="100%" stop-color="#5EE5C9" stop-opacity="0.25"/>
+</linearGradient>
+<radialGradient id="lg" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0%" stop-color="#F5C97A" stop-opacity="1"/>
+<stop offset="40%" stop-color="#F5C97A" stop-opacity="0.4"/>
+<stop offset="100%" stop-color="#F5C97A" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="sg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#F5C97A" stop-opacity="0.4"/>
+<stop offset="100%" stop-color="#5EE5C9" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0A1530" stop-opacity="0.85"/>
+<stop offset="100%" stop-color="#0A1530" stop-opacity="0"/>
+</linearGradient>
+</defs>
+
+<rect width="1600" height="900" fill="#0A1530"/>
+
+<rect width="1600" height="900" fill="url(#cg)" opacity="0.5"/>
+
+<path d="M0,0 L400,0 L320,250 L420,500 L340,750 L420,900 L0,900 Z" fill="#122540" opacity="0.4" filter="url(#b160)"/>
+<path d="M1600,0 L1200,0 L1280,300 L1180,550 L1260,800 L1180,900 L1600,900 Z" fill="#122540" opacity="0.4" filter="url(#b160)"/>
+
+<g filter="url(#b120)" opacity="0.35">
+<ellipse cx="250" cy="350" rx="180" ry="260" fill="#5EE5C9"><animate attributeName="opacity" values="0.25;0.45;0.25" dur="16s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="1350" cy="300" rx="160" ry="240" fill="#5EE5C9"><animate attributeName="opacity" values="0.2;0.4;0.2" dur="20s" repeatCount="indefinite"/></ellipse>
+</g>
+
+<g filter="url(#b120)" fill="#0A1530" opacity="0.6">
+<path d="M500,0 L560,0 L540,200 Z"/>
+<path d="M720,0 L800,0 L780,280 Z"/>
+<path d="M1000,0 L1060,0 L1040,190 Z"/>
+<path d="M1200,0 L1280,0 L1250,240 Z"/>
+</g>
+
+<path d="M1380,0 L1420,0 L1050,600 L950,650 Z" fill="url(#sg)" opacity="0.12" style="mix-blend-mode:screen">
+<animate attributeName="opacity" values="0.08;0.18;0.08" dur="15s" repeatCount="indefinite"/>
+</path>
+
+<path d="M0,0 L320,0 L260,320 L340,580 L280,850 L360,900 L0,900 Z" fill="#0A1530" opacity="0.7" filter="url(#b80)"/>
+<path d="M1600,0 L1280,0 L1340,340 L1260,600 L1320,860 L1260,900 L1600,900 Z" fill="#0A1530" opacity="0.7" filter="url(#b80)"/>
+
+<g filter="url(#b40)" fill="#0A1530" opacity="0.9">
+<path d="M650,0 L720,0 L700,160 Z"/>
+<path d="M880,0 L950,0 L930,140 Z"/>
+<path d="M1100,0 L1160,0 L1140,180 Z"/>
+</g>
+
+<g fill="#5EE5C9">
+<circle cx="140" cy="280" r="4" opacity="0.6"><animate attributeName="opacity" values="0.2;1;0.2" dur="5s" repeatCount="indefinite"/></circle>
+<circle cx="190" cy="340" r="3" opacity="0.5"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="7s" repeatCount="indefinite"/></circle>
+<circle cx="110" cy="420" r="5" opacity="0.7"><animate attributeName="opacity" values="0.3;1;0.3" dur="6s" repeatCount="indefinite"/></circle>
+<circle cx="240" cy="480" r="3.5" opacity="0.5"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="8s" repeatCount="indefinite"/></circle>
+<circle cx="170" cy="550" r="4" opacity="0.6"><animate attributeName="opacity" values="0.3;1;0.3" dur="4.5s" repeatCount="indefinite"/></circle>
+<circle cx="280" cy="320" r="3" opacity="0.4"><animate attributeName="opacity" values="0.1;0.7;0.1" dur="9s" repeatCount="indefinite"/></circle>
+<circle cx="1460" cy="300" r="4" opacity="0.6"><animate attributeName="opacity" values="0.3;1;0.3" dur="5.5s" repeatCount="indefinite"/></circle>
+<circle cx="1410" cy="380" r="5" opacity="0.7"><animate attributeName="opacity" values="0.4;1;0.4" dur="6.5s" repeatCount="indefinite"/></circle>
+<circle cx="1510" cy="440" r="3" opacity="0.5"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="7.5s" repeatCount="indefinite"/></circle>
+<circle cx="1390" cy="500" r="4.5" opacity="0.6"><animate attributeName="opacity" values="0.3;1;0.3" dur="5s" repeatCount="indefinite"/></circle>
+<circle cx="1490" cy="560" r="3" opacity="0.4"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="8s" repeatCount="indefinite"/></circle>
+<circle cx="550" cy="140" r="3" opacity="0.5"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="6s" repeatCount="indefinite"/></circle>
+<circle cx="750" cy="110" r="4" opacity="0.6"><animate attributeName="opacity" values="0.3;1;0.3" dur="7s" repeatCount="indefinite"/></circle>
+<circle cx="950" cy="170" r="3.5" opacity="0.5"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="5s" repeatCount="indefinite"/></circle>
+<circle cx="1150" cy="130" r="4" opacity="0.7"><animate attributeName="opacity" values="0.4;1;0.4" dur="8s" repeatCount="indefinite"/></circle>
+</g>
+
+<rect x="0" y="780" width="1600" height="120" fill="url(#pg)"/>
+
+<g opacity="0.35">
+<ellipse cx="400" cy="810" rx="250" ry="12" fill="#5EE5C9"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="11s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="1000" cy="850" rx="350" ry="16" fill="#2D5A6B"><animate attributeName="opacity" values="0.15;0.4;0.15" dur="14s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="480" cy="835" rx="40" ry="5" fill="#F5C97A"><animate attributeName="opacity" values="0.1;0.35;0.1" dur="4s" repeatCount="indefinite"/></ellipse>
+</g>
+
+<g filter="url(#b40)" opacity="0.3" fill="#5EE5C9">
+<ellipse cx="280" cy="820" rx="120" ry="35">
+<animateTransform attributeName="transform" type="translate" values="0,0; 30,-70; 0,0" dur="17s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.2;0.45;0.2" dur="17s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="800" cy="840" rx="160" ry="45">
+<animateTransform attributeName="transform" type="translate" values="0,0; -20,-90; 0,0" dur="20s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.15;0.4;0.15" dur="20s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="1250" cy="810" rx="140" ry="40">
+<animateTransform attributeName="transform" type="translate" values="0,0; 15,-60; 0,0" dur="16s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.2;0.4;0.2" dur="16s" repeatCount="indefinite"/>
+</ellipse>
+</g>
+
+<g transform="translate(460, 640)">
+<g>
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-2; 0,0" dur="5s" repeatCount="indefinite"/>
+<path d="M -12,15 C -22,25 -28,50 -26,80 L -28,120 L -14,120 L -10,85 C -5,80 5,80 10,85 L 14,120 L 28,120 L 26,80 C 28,50 22,25 12,15 Q 0,5 -12,15 Z" fill="none" stroke="#5EE5C9" stroke-width="1.5" opacity="0.35">
+<animate attributeName="opacity" values="0.2;0.5;0.2" dur="6s" repeatCount="indefinite"/>
+</path>
+<path d="M -12,15 C -22,25 -28,50 -26,80 L -28,120 L -14,120 L -10,85 C -5,80 5,80 10,85 L 14,120 L 28,120 L 26,80 C 28,50 22,25 12,15 Q 0,5 -12,15 Z" fill="#0A1530"/>
+<circle cx="0" cy="0" r="16" fill="#0A1530"/>
+<path d="M -26,30 Q -34,45 -30,70 L -26,70 Q -28,45 -22,30 Z" fill="#0A1530"/>
+<path d="M -16,30 Q -18,45 10,62 L 26,72 L 28,66 L 12,56 Q -10,42 -8,30 Z" fill="#0A1530"/>
+<rect x="25" y="68" width="4" height="14" fill="#0A1530"/>
+</g>
+</g>
+
+<g transform="translate(491, 712)">
+<circle r="28" fill="url(#lg)" opacity="0.75">
+<animate attributeName="r" values="22;32;22" dur="3.5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.6;0.9;0.6" dur="3.5s" repeatCount="indefinite"/>
+</circle>
+<circle r="7" fill="#F5C97A" opacity="0.95">
+<animate attributeName="opacity" values="0.85;1;0.85" dur="0.3s" repeatCount="indefinite"/>
+</circle>
+</g>
+
+<g fill="#F5C97A">
+<circle cx="491" cy="712" r="1.5" opacity="0.8"><animateMotion path="M0,0 Q5,-15 -5,-35" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0;0.8" dur="4s" repeatCount="indefinite"/></circle>
+<circle cx="491" cy="712" r="1" opacity="0.6"><animateMotion path="M0,0 Q-8,-20 2,-40" dur="5.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="5.5s" repeatCount="indefinite"/></circle>
+<circle cx="491" cy="712" r="1.2" opacity="0.7"><animateMotion path="M0,0 Q10,-10 0,-30" dur="4.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0;0.7" dur="4.5s" repeatCount="indefinite"/></circle>
+</g>
+
+<g fill="#5EE5C9">
+<circle cx="220" cy="620" r="2" opacity="0"><animateMotion path="M0,0 Q20,-30 -10,-80" dur="13s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0" dur="13s" repeatCount="indefinite"/></circle>
+<circle cx="650" cy="720" r="1.5" opacity="0"><animateMotion path="M0,0 Q-15,-25 5,-70" dur="16s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="16s" repeatCount="indefinite"/></circle>
+<circle cx="1100" cy="650" r="2" opacity="0"><animateMotion path="M0,0 Q25,-20 -5,-90" dur="14s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="14s" repeatCount="indefinite"/></circle>
+<circle cx="1450" cy="520" r="1.8" opacity="0"><animateMotion path="M0,0 Q-20,-35 10,-85" dur="18s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0" dur="18s" repeatCount="indefinite"/></circle>
+<circle cx="380" cy="580" r="1.2" opacity="0"><animateMotion path="M0,0 Q15,-30 -15,-75" dur="15s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="15s" repeatCount="indefinite"/></circle>
+<circle cx="850" cy="450" r="1.6" opacity="0"><animateMotion path="M0,0 Q-25,-15 0,-60" dur="19s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0" dur="19s" repeatCount="indefinite"/></circle>
+<circle cx="1250" cy="720" r="2" opacity="0"><animateMotion path="M0,0 Q10,-40 -10,-100" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="12s" repeatCount="indefinite"/></circle>
+<circle cx="520" cy="780" r="1.4" opacity="0"><animateMotion path="M0,0 Q30,-25 -5,-65" dur="17s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="17s" repeatCount="indefinite"/></circle>
+<circle cx="950" cy="550" r="1.7" opacity="0"><animateMotion path="M0,0 Q-10,-30 15,-85" dur="14s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0" dur="14s" repeatCount="indefinite"/></circle>
+<circle cx="180" cy="720" r="1.3" opacity="0"><animateMotion path="M0,0 Q20,-20 -5,-55" dur="20s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="20s" repeatCount="indefinite"/></circle>
+<circle cx="700" cy="600" r="1.5" opacity="0"><animateMotion path="M0,0 Q-15,-35 10,-75" dur="15s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0" dur="15s" repeatCount="indefinite"/></circle>
+<circle cx="1300" cy="480" r="1.8" opacity="0"><animateMotion path="M0,0 Q25,-30 -5,-80" dur="18s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="18s" repeatCount="indefinite"/></circle>
+</g>
+
+<path d="M0,900 L0,760 L140,790 L220,860 L200,900 Z" fill="#0A1530"/>
+<path d="M1600,900 L1600,730 L1420,770 L1320,850 L1370,900 Z" fill="#0A1530"/>
+
+<g filter="url(#b40)" opacity="0.25" fill="#5EE5C9">
+<ellipse cx="480" cy="860" rx="200" ry="35">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-50; 0,0" dur="14s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="950" cy="880" rx="240" ry="45">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-60; 0,0" dur="18s" repeatCount="indefinite"/>
+</ellipse>
+</g>
+
+<rect width="1600" height="380" fill="url(#tg)" pointer-events="none"/>
+</svg>

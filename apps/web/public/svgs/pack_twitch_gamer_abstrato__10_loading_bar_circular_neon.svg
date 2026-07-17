@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0a0a1a"/>
+      <stop offset="60%" stop-color="#050510"/>
+      <stop offset="100%" stop-color="#000001"/>
+    </radialGradient>
+
+    <!-- Main Arc Gradient -->
+    <linearGradient id="arcGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="0">
+      <animate attributeName="x1" values="400;390;380;370;360;350;340;330;320;310;300;290;280;270;260;250;240;230;220;210;200;190;180;170;160;150;140;130;120;110;100;90;80;70;60;50;40;30;20;10;0;10;20;30;40;50;60;70;80;90;100;110;120;130;140;150;160;170;180;190;200;210;220;230;240;250;260;270;280;290;300;310;320;330;340;350;360;370;380;390;400" dur="4s" repeatCount="indefinite" calcMode="discrete"/>
+      <animate attributeName="y1" values="300;310;320;330;340;350;360;370;380;390;400;410;420;430;440;450;460;470;480;490;500;510;520;530;540;550;560;570;580;590;600;590;580;570;560;550;540;530;520;510;500;490;480;470;460;450;440;430;420;410;400;390;380;370;360;350;340;330;320;310;300;290;280;270;260;250;240;230;220;210;200;190;180;170;160;150;140;130;120;110;100;90;80;70;60;50;40;30;20;10;0;10;20;30;40;50;60;70;80;90;100;110;120;130;140;150;160;170;180;190;200;210;220;230;240;250;260;270;280;290;300" dur="4s" repeatCount="indefinite" calcMode="discrete"/>
+      <stop offset="0%" stop-color="#00f2ff"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ff00ff"/>
+    </linearGradient>
+
+    <!-- Energy Particle Gradient -->
+    <radialGradient id="partGrad">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#00f2ff"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Radial Neon Glow Filter -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur1"/>
+      <feGaussianBlur stdDeviation="8" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Strong Inner Glow -->
+    <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Particle Path -->
+    <path id="partPath" d="M 0 0 C 40 -20, 80 20, 120 0 C 160 -20, 200 20, 240 0"/>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGlow)" />
+  
+  <!-- Subtle Grid -->
+  <g stroke="#00f2ff" stroke-width="0.5" opacity="0.05">
+    <line x1="100" y1="0" x2="100" y2="600" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="300" y1="0" x2="300" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="500" y1="0" x2="500" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="700" y1="0" x2="700" y2="600" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="0" y1="500" x2="800" y2="500" />
+  </g>
+
+  <g transform="translate(400, 300)">
+    <!-- HUD Brackets (Static elements framing the core) -->
+    <g stroke="#a855f7" stroke-width="2" fill="none" opacity="0.4" filter="url(#neonGlow)">
+      <path d="M -240 -240 L -200 -240 L -200 -200" />
+      <path d="M 240 -240 L 200 -240 L 200 -200" />
+      <path d="M -240 240 L -200 240 L -200 200" />
+      <path d="M 240 240 L 200 240 L 200 200" />
+    </g>
+
+    <!-- Slow Counter-Rotating Orbit Lines -->
+    <g stroke="#00f2ff" stroke-width="1" opacity="0.3" fill="none">
+      <ellipse rx="300" ry="100" stroke-dasharray="10 40">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="12s" repeatCount="indefinite" />
+      </ellipse>
+      <ellipse rx="100" ry="300" stroke-dasharray="20 80" stroke="#ff00ff">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="15s" repeatCount="indefinite" />
+      </ellipse>
+    </g>
+
+    <!-- Center Data Core -->
+    <g>
+      <circle r="60" fill="none" stroke="#ff00ff" stroke-width="2" opacity="0.6" filter="url(#neonGlow)">
+        <animate attributeName="r" values="60;62;60" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle r="40" fill="none" stroke="#00f2ff" stroke-width="2" stroke-dasharray="5 10">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite" />
+      </circle>
+      <circle r="20" fill="#00f2ff" opacity="0.8" filter="url(#strongGlow)">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <text x="0" y="100" fill="#00f2ff" font-family="monospace" font-size="14" text-anchor="middle" letter-spacing="4" filter="url(#neonGlow)">LOADING</text>
+    </g>
+
+    <!-- Core Loading Bar (Rotating Group) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite" />
+      
+      <!-- Main Thick Arc -->
+      <path d="M 0 -200 A 200 200 0 0 1 141.42 -141.42" fill="none" stroke="url(#arcGrad)" stroke-width="12" stroke-linecap="round" filter="url(#neonGlow)"/>
+      
+      <!-- Secondary thinner arc orbiting -->
+      <path d="M 0 -200 A 200 200 0 0 1 100 -173.2" fill="none" stroke="#00f2ff" stroke-width="4" stroke-linecap="round" filter="url(#neonGlow)" opacity="0.8">
+        <animate attributeName="stroke-dasharray" values="0 500; 200 500; 0 500" dur="4s" repeatCount="indefinite" />
+      </path>
+
+      <!-- Tertiary inner arc -->
+      <path d="M 0 -160 A 160 160 0 0 1 113.13 -113.13" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="5 5" opacity="0.6">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite" />
+      </path>
+
+      <!-- Tip Marker (To ensure energy aligns perfectly with the arc tip) -->
+      <circle cx="141.42" cy="-141.42" r="8" fill="#ffffff" filter="url(#neonGlow)" />
+
+      <!-- Energy Particles Group (Aligned to the tip of the main arc) -->
+      <g transform="translate(141.42, -141.42) rotate(45)">
+        <!-- Particle 1 -->
+        <circle cx="0" cy="0" r="5" fill="url(#partGrad)" filter="url(#strongGlow)">
+          <animate attributeName="cx" values="0; 120" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="0; -20" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1; 0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+          <animate attributeName="r" values="5; 0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+        </circle>
+        <!-- Particle 2 -->
+        <circle cx="0" cy="0" r="4" fill="url(#partGrad)" filter="url(#strongGlow)">
+          <animate attributeName="cx" values="0; 100" dur="1.5s" begin="0.2s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="0; 10" dur="1.5s" begin="0.2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1; 0" dur="1.5s" begin="0.2s" repeatCount="indefinite" />
+          <animate attributeName="r" values="4; 0" dur="1.5s" begin="0.2s" repeatCount="indefinite" />
+        </circle>
+        <!-- Particle 3 -->
+        <circle cx="0" cy="0" r="6" fill="#00f2ff" filter="url(#strongGlow)">
+          <animate attributeName="cx" values="0; 140" dur="1.5s" begin="0.4s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="0; -40" dur="1.5s" begin="0.4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1; 0" dur="1.5s" begin="0.4s" repeatCount="indefinite" />
+          <animate attributeName="r" values="6; 1" dur="1.5s" begin="0.4s" repeatCount="indefinite" />
+        </circle>
+        <!-- Particle 4 -->
+        <circle cx="0" cy="0" r="3" fill="#ff00ff" filter="url(#strongGlow)">
+          <animate attributeName="cx" values="0; 80" dur="1.5s" begin="0.6s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="0; 30" dur="1.5s" begin="0.6s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1; 0" dur="1.5s" begin="0.6s" repeatCount="indefinite" />
+          <animate attributeName="r" values="3; 0" dur="1.5s" begin="0.6s" repeatCount="indefinite" />
+        </circle>
+        <!-- Particle 5 (Trailing line) -->
+        <line x1="0" y1="0" x2="40" y2="-10" stroke="#00f2ff" stroke-width="2" stroke-linecap="round" filter="url(#neonGlow)">
+          <animate attributeName="x2" values="0; 100" dur="1.5s" begin="0.1s" repeatCount="indefinite" />
+          <animate attributeName="y2" values="0; -30" dur="1.5s" begin="0.1s" repeatCount="indefinite" />
+          <animate attributeName="x1" values="0; 60" dur="1.5s" begin="0.1s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.8; 0" dur="1.5s" begin="0.1s" repeatCount="indefinite" />
+        </line>
+      </g>
+    </g>
+  </g>
+</svg>

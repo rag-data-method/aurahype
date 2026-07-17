@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <!-- COTTON CANDY BOUDOIR PALETTE -->
+    <!-- Deep Dark: #1A1A2E (Background, Shadows) -->
+    <!-- Periwinkle/Lavender: #C7CEEA (Velvet, Neon glow) -->
+    <!-- Silver/Mist: #E0E0E0 (Chain, metal accents) -->
+    <!-- Pastel Pink: #FFB7B2 (Silk sheet, Feathers, light accents) -->
+
+    <!-- Filters for soft, glowing, sensual atmosphere -->
+    <filter id="blur-heavy" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+    </filter>
+    <filter id="blur-medium" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+    </filter>
+    <filter id="blur-light" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+    </filter>
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E">
+        <animate attributeName="stop-color" values="#1A1A2E;#2a2a4e;#1A1A2E" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#252540">
+        <animate attributeName="stop-color" values="#252540;#3a3a60;#252540" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="silk-sheet-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB7B2"/>
+      <stop offset="50%" stop-color="#FFC8C4"/>
+      <stop offset="100%" stop-color="#E0B0AC"/>
+    </linearGradient>
+
+    <linearGradient id="velvet-cuff-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C7CEEA"/>
+      <stop offset="50%" stop-color="#A5AED8"/>
+      <stop offset="100%" stop-color="#8C96C4"/>
+    </linearGradient>
+
+    <linearGradient id="silver-chain-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E0E0E0"/>
+      <stop offset="40%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#B0B0B0"/>
+      <stop offset="100%" stop-color="#E0E0E0"/>
+    </linearGradient>
+
+    <radialGradient id="spotlight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFB7B2" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#1A1A2E" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Velvet Texture Pattern -->
+    <pattern id="velvet-texture" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#C7CEEA" opacity="0.1"/>
+      <circle cx="2" cy="2" r="1" fill="#A5AED8" opacity="0.2"/>
+      <circle cx="7" cy="8" r="1.5" fill="#8C96C4" opacity="0.15"/>
+    </pattern>
+
+    <!-- Reusable Cuff Component -->
+    <g id="cuff">
+      <!-- Velvet Body -->
+      <path d="M0,0 C40,-20 80,-10 100,10 C110,30 110,70 100,90 C80,110 40,120 0,100 C-20,80 -20,20 0,0 Z" fill="url(#velvet-cuff-grad)"/>
+      <path d="M0,0 C40,-20 80,-10 100,10 C110,30 110,70 100,90 C80,110 40,120 0,100 C-20,80 -20,20 0,0 Z" fill="url(#velvet-texture)"/>
+      
+      <!-- Inner Soft Rim -->
+      <path d="M10,15 C40,0 70,5 90,20 C95,35 95,65 90,80 C70,95 40,100 10,85 C0,70 0,30 10,15 Z" fill="#FFB7B2" opacity="0.6" filter="url(#blur-light)"/>
+      
+      <!-- Stitching -->
+      <path d="M5,5 C45,-15 85,-5 105,15 C115,35 115,75 105,95 C85,115 45,125 5,105 C-15,85 -15,25 5,5 Z" fill="none" stroke="#E0E0E0" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.8"/>
+      
+      <!-- Silver Clasp -->
+      <rect x="40" y="-10" width="20" height="15" rx="3" fill="url(#silver-chain-grad)"/>
+      <circle cx="50" cy="-5" r="3" fill="#1A1A2E"/>
+      
+      <!-- Silver Loop for Chain -->
+      <circle cx="50" cy="50" r="8" fill="none" stroke="url(#silver-chain-grad)" stroke-width="4"/>
+    </g>
+
+    <!-- Reusable Feather -->
+    <g id="feather">
+      <path d="M0,0 Q30,-40 60,-10 Q80,20 40,50 Q0,70 -20,40 Q-40,10 0,0 Z" fill="#FFB7B2" opacity="0.8"/>
+      <path d="M0,0 Q30,-40 60,-10 Q80,20 40,50 Q0,70 -20,40 Q-40,10 0,0 Z" fill="none" stroke="#E0E0E0" stroke-width="1" opacity="0.5"/>
+      <path d="M0,0 Q20,-20 40,0 Q20,20 0,0" fill="#E0E0E0" opacity="0.3"/>
+    </g>
+  </defs>
+
+  <!-- BACKGROUND LAYER -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- Ambient Spotlight -->
+  <ellipse cx="800" cy="550" rx="700" ry="500" fill="url(#spotlight)">
+    <animate attributeName="rx" values="700;720;700" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="500;520;500" dur="7s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Distant Bokeh Lights -->
+  <g opacity="0.4">
+    <circle cx="200" cy="200" r="40" fill="#C7CEEA" filter="url(#blur-heavy)">
+      <animate attributeName="cy" values="200;220;200" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="300" r="60" fill="#FFB7B2" filter="url(#blur-heavy)">
+      <animate attributeName="cy" values="300;280;300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="150" r="30" fill="#E0E0E0" filter="url(#blur-heavy)">
+      <animate attributeName="cy" values="150;170;150" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- NEON GLOW SIGNS (Sensual Ambient) -->
+  <g filter="url(#neon-glow)">
+    <!-- Neon Heart -->
+    <path d="M1300,150 C1300,80 1400,80 1400,150 C1400,220 1300,280 1300,280 C1300,280 1200,220 1200,150 C1200,80 1300,80 1300,150 Z" fill="none" stroke="#FFB7B2" stroke-width="4" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="4;6;4" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <!-- Neon Script Line -->
+    <path d="M100,700 Q300,600 500,750 T900,650" fill="none" stroke="#C7CEEA" stroke-width="3" opacity="0.5" stroke-linecap="round">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- RUFFLED SILK BEDSHEET -->
+  <g id="bedsheet">
+    <!-- Back folds (Darker) -->
+    <path d="M-100,600 C200,550 500,650 800,580 C1100,510 1400,600 1700,550 L1700,900 L-100,900 Z" fill="#D68E8A"/>
+    
+    <!-- Mid folds -->
+    <path d="M-100,650 C300,600 600,700 900,620 C1200,540 1500,650 1700,600 L1700,900 L-100,900 Z" fill="#E8A5A0"/>
+    
+    <!-- Front folds (Lighter/Pink) -->
+    <path d="M-100,700 C400,650 700,750 1000,670 C1300,590 1600,700 1700,650 L1700,900 L-100,900 Z" fill="url(#silk-sheet-grad)"/>
+    
+    <!-- Soft Highlights on Silk -->
+    <path d="M100,720 Q300,680 500,740 Q700,800 900,740 Q1100,680 1300,730" fill="none" stroke="#FFFFFF" stroke-width="15" opacity="0.3" filter="url(#blur-medium)">
+      <animate attributeName="d" values="M100,720 Q300,680 500,740 Q700,800 900,740 Q1100,680 1300,730;M100,730 Q300,690 500,750 Q700,810 900,750 Q1100,690 1300,740;M100,720 Q300,680 500,740 Q700,800 900,740 Q1100,680 1300,730" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- SENSUAL OBJECTS & COMPOSITION LAYER -->
+  <g id="composition">
+    
+    <!-- Ribbon 1 (Draped in back) -->
+    <path d="M400,500 C500,450 600,550 700,500 C800,450 900,550 1000,500" fill="none" stroke="#C7CEEA" stroke-width="12" opacity="0.7" filter="url(#blur-light)">
+      <animate attributeName="d" values="M400,500 C500,450 600,550 700,500 C800,450 900,550 1000,500;M400,510 C500,460 600,560 700,510 C800,460 900,560 1000,510;M400,500 C500,450 600,550 700,500 C800,450 900,550 1000,500" dur="6s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Left Cuff Group -->
+    <g id="cuff-left-group" transform="translate(480, 450) rotate(-25)">
+      <animateTransform attributeName="transform" type="translate" values="480,450; 480,445; 480,450" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <animateTransform attributeName="transform" type="rotate" values="-25; -23; -25" dur="7s" repeatCount="indefinite" additive="sum"/>
+      
+      <use href="#cuff" x="0" y="0"/>
+      
+      <!-- Velvet Sheen Highlight -->
+      <ellipse cx="30" cy="20" rx="20" ry="10" fill="#FFFFFF" opacity="0.4" filter="url(#blur-light)">
+        <animate attributeName="opacity" values="0.3;0.5;0.3" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+
+    <!-- Right Cuff Group -->
+    <g id="cuff-right-group" transform="translate(900, 480) rotate(15)">
+      <animateTransform attributeName="transform" type="translate" values="900,480; 900,485; 900,480" dur="6s" repeatCount="indefinite" additive="replace"/>
+      <animateTransform attributeName="transform" type="rotate" values="15; 17; 15" dur="8s" repeatCount="indefinite" additive="sum"/>
+      
+      <use href="#cuff" x="0" y="0"/>
+      
+      <!-- Velvet Sheen Highlight -->
+      <ellipse cx="70" cy="30" rx="20" ry="10" fill="#FFFFFF" opacity="0.4" filter="url(#blur-light)">
+        <animate attributeName="opacity" values="0.3;0.5;0.3" dur="5s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+
+    <!-- Silver Connecting Chain -->
+    <g id="chain-group">
+      <path id="chain-path" d="M580,500 Q740,580 950,530" fill="none" stroke="none"/>
+      <g stroke="url(#silver-chain-grad)" stroke-width="4" fill="none" stroke-linecap="round">
+        <path d="M580,500 Q620,520 660,530">
+          <animate attributeName="d" values="M580,500 Q620,520 660,530;M580,495 Q620,525 660,535;M580,500 Q620,520 660,530" dur="3s" repeatCount="indefinite"/>
+        </path>
+        <path d="M660,530 Q700,540 740,545">
+          <animate attributeName="d" values="M660,530 Q700,540 740,545;M660,535 Q700,545 740,550;M660,530 Q700,540 740,545" dur="3.5s" repeatCount="indefinite"/>
+        </path>
+        <path d="M740,545 Q780,550 820,545">
+          <animate attributeName="d" values="M740,545 Q780,550 820,545;M740,550 Q780,555 820,540;M740,545 Q780,550 820,545" dur="4s" repeatCount="indefinite"/>
+        </path>
+        <path d="M820,545 Q860,540 900,535">
+          <animate attributeName="d" values="M820,545 Q860,540 900,535;M820,540 Q860,535 900,540;M820,545 Q860,540 900,535" dur="3.2s" repeatCount="indefinite"/>
+        </path>
+        <path d="M900,535 Q920,532 950,530">
+          <animate attributeName="d" values="M900,535 Q920,532 950,530;M900,540 Q920,537 950,535;M900,535 Q920,532 950,530" dur="2.8s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </g>
+
+    <!-- Decorative Feathers -->
+    <g id="feathers">
+      <!-- Feather 1 (Top Left) -->
+      <use href="#feather" x="350" y="380" transform="rotate(-45 350 380) scale(1.2)">
+        <animateTransform attributeName="transform" type="rotate" values="-45 350 380; -40 350 380; -45 350 380" dur="5s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,5; 0,0" dur="6s" repeatCount="indefinite" additive="sum"/>
+      </use>
+      
+      <!-- Feather 2 (Bottom Right) -->
+      <use href="#feather" x="1100" y="600" transform="rotate(30 1100 600) scale(0.9)">
+        <animateTransform attributeName="transform" type="rotate" values="30 1100 600; 35 1100 600; 30 1100 600" dur="7s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="8s" repeatCount="indefinite" additive="sum"/>
+      </use>
+      
+      <!-- Feather 3 (Center Back) -->
+      <use href="#feather" x="750" y="350" transform="rotate(-10 750 350) scale(1)">
+        <animateTransform attributeName="transform" type="rotate" values="-10 750 350; -5 750 350; -10 750 350" dur="6s" repeatCount="indefinite" additive="sum"/>
+      </use>
+    </g>
+
+    <!-- Silk Ribbons Swirling -->
+    <g id="ribbons">
+      <path d="M300,800 C400,700 500,750 600,650" fill="none" stroke="#C7CEEA" stroke-width="8" stroke-linecap="round" opacity="0.6" filter="url(#blur-light)">
+        <animate attributeName="d" values="M300,800 C400,700 500,750 600,650;M300,790 C400,710 500,740 600,660;M300,800 C400,700 500,750 600,650" dur="9s" repeatCount="indefinite"/>
+      </path>
+      <path d="M1200,750 C1100,650 1000,700 900,600" fill="none" stroke="#FFB7B2" stroke-width="6" stroke-linecap="round" opacity="0.6" filter="url(#blur-light)">
+        <animate attributeName="d" values="M1200,750 C1100,650 1000,700 900,600;M1200,760 C1100,660 1000,690 900,610;M1200,750 C1100,650 1000,700 900,600" dur="10s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Sparkles / Dust Motes -->
+    <g id="sparkles" fill="#FFFFFF" opacity="0.6">
+      <circle cx="500" cy="400" r="2">
+        <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="400;380;400" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="900" cy="350" r="3">
+        <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="cy" values="350;330;350" dur="5s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+      <circle cx="700" cy="500" r="1.5">
+        <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="cy" values="500;480;500" dur="3s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+      <circle cx="1100" cy="450" r="2.5">
+        <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="cy" values="450;430;450" dur="6s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+    </g>
+
+    <!-- DROPPING LIQUID (Champagne/Perfume) -->
+    <g id="dripping-cream" filter="url(#neon-glow)">
+      <!-- Droplet 1 -->
+      <path d="M600,300 Q605,320 600,340 Q595,320 600,300 Z" fill="#FFB7B2" opacity="0.9">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,200; 0,0" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0;0.9" dur="5s" repeatCount="indefinite"/>
+      </path>
+      <!-- Droplet 2 -->
+      <path d="M1000,250 Q1005,270 1000,290 Q995,270 1000,250 Z" fill="#C7CEEA" opacity="0.8">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,250; 0,0" dur="7s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="7s" repeatCount="indefinite" begin="2s"/>
+      </path>
+    </g>
+
+    <!-- Foreground Shadow for depth -->
+    <ellipse cx="800" cy="850" rx="600" ry="50" fill="#1A1A2E" opacity="0.5" filter="url(#blur-heavy)">
+      <animate attributeName="rx" values="600;620;600" dur="8s" repeatCount="indefinite"/>
+    </ellipse>
+
+  </g>
+</svg>

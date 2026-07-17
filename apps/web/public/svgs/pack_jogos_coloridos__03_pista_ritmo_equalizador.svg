@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FF3DA6">
+        <animate attributeName="stop-color" values="#FF3DA6;#3DFFEA;#FF3DA6" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="60%" stop-color="#FFD93D">
+        <animate attributeName="stop-color" values="#FFD93D;#FF3DA6;#FFD93D" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#0D0D1A" />
+    </radialGradient>
+
+    <linearGradient id="floorGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0D0D1A" />
+      <stop offset="30%" stop-color="#3DFFEA" />
+      <stop offset="70%" stop-color="#FF3DA6" />
+      <stop offset="100%" stop-color="#FFD93D" />
+      <animateTransform attributeName="gradientTransform" type="translate" values="0,0; 0,-50; 0,0" dur="4s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <g id="star">
+      <polygon points="0,-15 4,-5 15,-4 6,3 9,14 0,8 -9,14 -6,3 -15,-4 -4,-5" fill="#FFFFFF" />
+    </g>
+  </defs>
+
+  <!-- Layer 1: Dark Background Base -->
+  <rect width="1600" height="900" fill="#0D0D1A" />
+
+  <!-- Layer 2: Radial Sunburst Rays -->
+  <g transform="translate(800,450)" opacity="0.4">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite" />
+      <polygon points="0,0 -100,-1200 100,-1200" fill="#FF3DA6" />
+      <polygon points="0,0 -100,-1200 100,-1200" fill="#FFD93D" transform="rotate(45)" />
+      <polygon points="0,0 -100,-1200 100,-1200" fill="#3DFFEA" transform="rotate(90)" />
+      <polygon points="0,0 -100,-1200 100,-1200" fill="#FF3DA6" transform="rotate(135)" />
+      <polygon points="0,0 -100,-1200 100,-1200" fill="#FFD93D" transform="rotate(180)" />
+      <polygon points="0,0 -100,-1200 100,-1200" fill="#3DFFEA" transform="rotate(225)" />
+      <polygon points="0,0 -100,-1200 100,-1200" fill="#FF3DA6" transform="rotate(270)" />
+      <polygon points="0,0 -100,-1200 100,-1200" fill="#FFD93D" transform="rotate(315)" />
+    </g>
+  </g>
+
+  <!-- Layer 3: Colorful Background Gradient Wash -->
+  <rect width="1600" height="900" fill="url(#bgGrad)" opacity="0.6" />
+
+  <!-- Layer 4: Floating Giant Geometric Shapes -->
+  <g transform="translate(300, 200)">
+    <polygon points="0,-100 86,-50 86,50 0,100 -86,50 -86,-50" fill="#FF3DA6" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.3;0.6" dur="5s" repeatCount="indefinite" />
+    </polygon>
+  </g>
+  <g transform="translate(1300, 150)">
+    <polygon points="0,-80 69,-40 69,40 0,80 -69,40 -69,-40" fill="#3DFFEA" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="25s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" repeatCount="indefinite" />
+    </polygon>
+  </g>
+
+  <!-- Layer 5: Halftone Dot Pattern (animated scale) -->
+  <g fill="#FFD93D" opacity="0.3">
+    <circle cx="200" cy="100" r="8" />
+    <circle cx="250" cy="150" r="12" />
+    <circle cx="150" cy="200" r="6" />
+    <circle cx="300" cy="250" r="10" />
+    <circle cx="100" cy="300" r="14" />
+    <circle cx="350" cy="100" r="5" />
+    <circle cx="400" cy="200" r="9" />
+    <circle cx="450" cy="350" r="11" />
+    <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="6s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  <!-- Layer 6: Perspective Dance Floor -->
+  <g transform="translate(0, 600)">
+    <polygon points="0,300 1600,300 1600,100 0,100" fill="url(#floorGrad)" opacity="0.8" />
+    <!-- Perspective Lines -->
+    <line x1="0" y1="300" x2="800" y2="100" stroke="#3DFFEA" stroke-width="2" opacity="0.5" />
+    <line x1="1600" y1="300" x2="800" y2="100" stroke="#3DFFEA" stroke-width="2" opacity="0.5" />
+    <line x1="400" y1="300" x2="800" y2="100" stroke="#FF3DA6" stroke-width="2" opacity="0.5" />
+    <line x1="1200" y1="300" x2="800" y2="100" stroke="#FF3DA6" stroke-width="2" opacity="0.5" />
+    <line x1="800" y1="300" x2="800" y2="100" stroke="#FFD93D" stroke-width="2" opacity="0.5" />
+  </g>
+
+  <!-- Layer 7: Floating Background Particles (Slow drift) -->
+  <g fill="#FFFFFF" opacity="0.6">
+    <circle cx="150" cy="500" r="4" filter="url(#glow)">
+      <animate attributeName="cy" values="500;480;500" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="450" cy="300" r="6" filter="url(#glow)">
+      <animate attributeName="cy" values="300;270;300" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1400" cy="400" r="5" filter="url(#glow)">
+      <animate attributeName="cy" values="400;370;400" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Layer 8: Equalizer Bars (Background row, darker) -->
+  <g transform="translate(0, 0)">
+    <!-- Bar 1 -->
+    <rect x="150" y="700" width="60" height="150" fill="#3DFFEA" opacity="0.5">
+      <animate attributeName="height" values="150;250;100;200;150" dur="1.2s" repeatCount="indefinite" />
+      <animate attributeName="y" values="700;600;750;650;700" dur="1.2s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 2 -->
+    <rect x="250" y="650" width="60" height="200" fill="#FF3DA6" opacity="0.5">
+      <animate attributeName="height" values="200;100;300;150;200" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="y" values="650;750;550;700;650" dur="1.5s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 3 -->
+    <rect x="350" y="720" width="60" height="130" fill="#FFD93D" opacity="0.5">
+      <animate attributeName="height" values="130;280;80;180;130" dur="1.1s" repeatCount="indefinite" />
+      <animate attributeName="y" values="720;570;770;670;720" dur="1.1s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 4 -->
+    <rect x="450" y="680" width="60" height="170" fill="#3DFFEA" opacity="0.5">
+      <animate attributeName="height" values="170;80;220;120;170" dur="1.8s" repeatCount="indefinite" />
+      <animate attributeName="y" values="680;770;630;730;680" dur="1.8s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- Layer 9: Hero Subject - Dancer Silhouette -->
+  <g transform="translate(950, 250)">
+    <!-- Bounce Animation -->
+    <animateTransform attributeName="transform" type="translate" values="950,250; 950,230; 950,250" dur="0.8s" repeatCount="indefinite" />
+    
+    <!-- Dancer Body Silhouette -->
+    <path d="M 50,200 
+             C 20,180 0,150 10,120 
+             C 15,100 40,90 60,80 
+             C 80,70 90,50 85,30 
+             C 80,10 60,0 50,0 
+             C 40,0 20,10 15,30 
+             C 10,50 20,70 40,80 
+             C 60,90 85,100 90,120 
+             C 100,150 80,180 50,200 Z" 
+          fill="#0D0D1A" stroke="#FFFFFF" stroke-width="4" />
+    
+    <!-- Left Arm (Raised) -->
+    <path d="M 50,90 C 30,60 0,20 -30,10 C -50,5 -70,15 -80,40" 
+          fill="none" stroke="#0D0D1A" stroke-width="14" stroke-linecap="round" />
+    <!-- Right Arm (Outstretched) -->
+    <path d="M 70,100 C 100,90 140,80 170,90 C 190,95 200,110 210,130" 
+          fill="none" stroke="#0D0D1A" stroke-width="14" stroke-linecap="round" />
+    
+    <!-- Left Leg (Bent) -->
+    <path d="M 50,200 C 40,240 30,280 20,320 C 15,340 0,350 -20,340" 
+          fill="none" stroke="#0D0D1A" stroke-width="16" stroke-linecap="round" />
+    <!-- Right Leg (Extended) -->
+    <path d="M 60,200 C 80,240 100,280 120,320 C 130,340 150,350 170,330" 
+          fill="none" stroke="#0D0D1A" stroke-width="16" stroke-linecap="round" />
+          
+    <!-- Glow around dancer -->
+    <circle cx="50" cy="150" r="180" fill="#3DFFEA" opacity="0.2" filter="url(#softGlow)">
+      <animate attributeName="r" values="180;200;180" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Layer 10: Mid-ground Flying Confetti -->
+  <g>
+    <!-- Confetti Piece 1 -->
+    <rect x="100" y="100" width="20" height="10" fill="#FF3DA6" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="100,100; 300,800" dur="4s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite" additive="sum" />
+    </rect>
+    <!-- Confetti Piece 2 -->
+    <rect x="500" y="50" width="15" height="15" fill="#3DFFEA" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="500,50; 200,850" dur="5s" repeatCount="indefinite" begin="1s" />
+      <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="5s" repeatCount="indefinite" additive="sum" />
+    </rect>
+    <!-- Confetti Piece 3 -->
+    <rect x="900" y="150" width="25" height="12" fill="#FFD93D" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="900,150; 600,900" dur="3.5s" repeatCount="indefinite" begin="0.5s" />
+      <animateTransform attributeName="transform" type="rotate" values="0;180;360" dur="3.5s" repeatCount="indefinite" additive="sum" />
+    </rect>
+    <!-- Confetti Piece 4 -->
+    <rect x="1300" y="200" width="18" height="8" fill="#FF3DA6" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="1300,200; 1100,900" dur="4.5s" repeatCount="indefinite" begin="2s" />
+      <animateTransform attributeName="transform" type="rotate" values="0;270" dur="4.5s" repeatCount="indefinite" additive="sum" />
+    </rect>
+  </g>
+
+  <!-- Layer 11: Foreground Equalizer Bars (Vivid, bouncing) -->
+  <g transform="translate(0, 0)">
+    <!-- Bar 1 (Pink) -->
+    <rect x="100" y="650" width="80" height="200" fill="#FF3DA6" filter="url(#glow)">
+      <animate attributeName="height" values="200;350;100;250;200" dur="1.0s" repeatCount="indefinite" />
+      <animate attributeName="y" values="650;500;750;600;650" dur="1.0s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 2 (Cyan) -->
+    <rect x="220" y="600" width="80" height="250" fill="#3DFFEA" filter="url(#glow)">
+      <animate attributeName="height" values="250;100;300;150;250" dur="1.3s" repeatCount="indefinite" />
+      <animate attributeName="y" values="600;750;550;700;600" dur="1.3s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 3 (Yellow) -->
+    <rect x="340" y="680" width="80" height="170" fill="#FFD93D" filter="url(#glow)">
+      <animate attributeName="height" values="170;300;80;220;170" dur="0.9s" repeatCount="indefinite" />
+      <animate attributeName="y" values="680;550;770;630;680" dur="0.9s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 4 (Pink) -->
+    <rect x="460" y="620" width="80" height="230" fill="#FF3DA6" filter="url(#glow)">
+      <animate attributeName="height" values="230;120;280;180;230" dur="1.1s" repeatCount="indefinite" />
+      <animate attributeName="y" values="620;730;570;670;620" dur="1.1s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 5 (Cyan) -->
+    <rect x="580" y="700" width="80" height="150" fill="#3DFFEA" filter="url(#glow)">
+      <animate attributeName="height" values="150;280;100;200;150" dur="1.4s" repeatCount="indefinite" />
+      <animate attributeName="y" values="700;570;750;650;700" dur="1.4s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 6 (Yellow) -->
+    <rect x="700" y="640" width="80" height="210" fill="#FFD93D" filter="url(#glow)">
+      <animate attributeName="height" values="210;90;320;160;210" dur="1.2s" repeatCount="indefinite" />
+      <animate attributeName="y" values="640;760;530;690;640" dur="1.2s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- Layer 12: Right Side Equalizer Bars (Framing the dancer) -->
+  <g transform="translate(0, 0)">
+    <!-- Bar 1 -->
+    <rect x="1300" y="620" width="80" height="230" fill="#3DFFEA" filter="url(#glow)">
+      <animate attributeName="height" values="230;100;350;150;230" dur="1.1s" repeatCount="indefinite" />
+      <animate attributeName="y" values="620;750;500;700;620" dur="1.1s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 2 -->
+    <rect x="1420" y="680" width="80" height="170" fill="#FF3DA6" filter="url(#glow)">
+      <animate attributeName="height" values="170;300;80;220;170" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="y" values="680;550;770;630;680" dur="1.5s" repeatCount="indefinite" />
+    </rect>
+    <!-- Bar 3 -->
+    <rect x="1540" y="650" width="60" height="200" fill="#FFD93D" filter="url(#glow)">
+      <animate attributeName="height" values="200;120;280;160;200" dur="1.0s" repeatCount="indefinite" />
+      <animate attributeName="y" values="650;730;570;690;650" dur="1.0s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- Layer 13: Disco Ball Sparkle Particles -->
+  <g>
+    <!-- Sparkle 1 -->
+    <use href="#star" x="800" y="150" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+    </use>
+    <!-- Sparkle 2 -->
+    <use href="#star" x="1100" y="100" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="scale" values="0;1.2;0" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+    </use>
+    <!-- Sparkle 3 -->
+    <use href="#star" x="600" y="250" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="scale" values="0;0.8;0" dur="1.8s" repeatCount="indefinite" begin="1s" />
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite" begin="1s" />
+    </use>
+    <!-- Sparkle 4 -->
+    <use href="#star" x="1250" y="300" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="scale" values="0;1.5;0" dur="3s" repeatCount="indefinite" begin="1.2s" />
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="1.2s" />
+    </use>
+    <!-- Sparkle 5 -->
+    <use href="#star" x="750" y="400" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.2s" repeatCount="indefinite" begin="0.3s" />
+      <animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite" begin="0.3s" />
+    </use>
+  </g>
+
+  <!-- Layer 14: Floating Geometric Rings -->
+  <g transform="translate(1200, 500)" stroke="#3DFFEA" stroke-width="4" fill="none" opacity="0.7">
+    <circle cx="0" cy="0" r="50">
+      <animateTransform attributeName="transform" type="scale" values="1;1.5;1" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="70">
+      <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="4s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" repeatCount="indefinite" begin="0.5s" />
+    </circle>
+  </g>
+
+  <!-- Layer 15: Foreground Motion Lines -->
+  <g stroke="#FFD93D" stroke-width="3" opacity="0.5">
+    <line x1="50" y1="800" x2="250" y2="800">
+      <animate attributeName="x2" values="250;450;250" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="1s" repeatCount="indefinite" />
+    </line>
+    <line x1="1200" y1="850" x2="1400" y2="850">
+      <animate attributeName="x1" values="1200;1000;1200" dur="1.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="1.2s" repeatCount="indefinite" />
+    </line>
+    <line x1="300" y1="100" x2="300" y2="300">
+      <animate attributeName="y2" values="300;500;300" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="1.5s" repeatCount="indefinite" />
+    </line>
+  </g>
+
+  <!-- Layer 16: Foreground Floating Shapes (Triangles) -->
+  <g>
+    <polygon points="200,600 220,640 180,640" fill="#FF3DA6" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-100" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="1400,500 1420,540 1380,540" fill="#3DFFEA" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-150" dur="4s" repeatCount="indefinite" begin="1s" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="4s" repeatCount="indefinite" begin="1s" />
+    </polygon>
+    <polygon points="850,700 870,740 830,740" fill="#FFD93D" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-80" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+    </polygon>
+  </g>
+
+  <!-- Layer 17: Scanline / Speed Lines Overlay -->
+  <g stroke="#FFFFFF" stroke-width="1" opacity="0.1">
+    <line x1="0" y1="100" x2="1600" y2="100">
+      <animate attributeName="y1" values="100;900" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="100;900" dur="3s" repeatCount="indefinite" />
+    </line>
+    <line x1="0" y1="300" x2="1600" y2="300">
+      <animate attributeName="y1" values="300;900" dur="4s" repeatCount="indefinite" begin="1s" />
+      <animate attributeName="y2" values="300;900" dur="4s" repeatCount="indefinite" begin="1s" />
+    </line>
+    <line x1="0" y1="500" x2="1600" y2="500">
+      <animate attributeName="y1" values="500;900" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="y2" values="500;900" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+    </line>
+  </g>
+
+  <!-- Layer 18: Vignette Edge Glow -->
+  <rect width="1600" height="900" fill="none" stroke="#FF3DA6" stroke-width="20" opacity="0.3" filter="url(#softGlow)">
+    <animate attributeName="stroke" values="#FF3DA6;#3DFFEA;#FFD93D;#FF3DA6" dur="6s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Layer 19: Final Burst of Light Behind Dancer -->
+  <circle cx="1000" cy="400" r="300" fill="#FFD93D" opacity="0.15" filter="url(#softGlow)">
+    <animate attributeName="r" values="300;320;300" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Layer 20: Foreground Particles (Fast Fly-by) -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <circle cx="0" cy="800" r="5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1600,-800" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="600" r="4">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1600,-400" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+    </circle>
+    <circle cx="1600" cy="700" r="6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -1600,-600" dur="3s" repeatCount="indefinite" begin="1s" />
+    </circle>
+    <circle cx="1600" cy="500" r="3">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -1600,-200" dur="2s" repeatCount="indefinite" begin="1.5s" />
+    </circle>
+  </g>
+
+  <!-- Layer 21: Rotating Starburst near Dancer -->
+  <g transform="translate(1100, 200)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite" />
+      <polygon points="0,-40 10,-10 40,0 10,10 0,40 -10,10 -40,0 -10,-10" fill="#FFD93D" opacity="0.6" />
+      <polygon points="0,-30 7,-7 30,0 7,7 0,30 -7,7 -30,0 -7,-7" fill="#FF3DA6" opacity="0.8" />
+    </g>
+  </g>
+
+  <!-- Layer 22: Pulsing Floor Grid Lines -->
+  <g stroke="#3DFFEA" stroke-width="2" opacity="0.4">
+    <line x1="0" y1="750" x2="1600" y2="750">
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1s" repeatCount="indefinite" />
+    </line>
+    <line x1="0" y1="800" x2="1600" y2="800">
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1s" repeatCount="indefinite" begin="0.3s" />
+    </line>
+    <line x1="0" y1="850" x2="1600" y2="850">
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1s" repeatCount="indefinite" begin="0.6s" />
+    </line>
+  </g>
+
+  <!-- Layer 23: Additional Confetti Burst -->
+  <g>
+    <rect x="400" y="400" width="15" height="8" fill="#FF3DA6" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="400,400; 100,900" dur="3s" repeatCount="indefinite" begin="0.2s" />
+      <animateTransform attributeName="transform" type="rotate" values="0;720" dur="3s" repeatCount="indefinite" additive="sum" />
+    </rect>
+    <rect x="1200" y="300" width="12" height="12" fill="#3DFFEA" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="1200,300; 1400,900" dur="3.5s" repeatCount="indefinite" begin="0.7s" />
+      <animateTransform attributeName="transform" type="rotate" values="0;-540" dur="3.5s" repeatCount="indefinite" additive="sum" />
+    </rect>
+    <rect x="700" y="200" width="20" height="6" fill="#FFD93D" rx="2">
+      <animateTransform attributeName="transform" type="translate" values="700,200; 500,900" dur="4s" repeatCount="indefinite" begin="1.1s" />
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite" additive="sum" />
+    </rect>
+  </g>
+
+  <!-- Layer 24: Pulsing Center Glow (Replacing lens flare) -->
+  <circle cx="950" cy="350" r="100" fill="#FFFFFF" opacity="0.1" filter="url(#softGlow)">
+    <animate attributeName="r" values="100;140;100" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.1;0.3;0.1" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Layer 25: Top Edge Energy Lines -->
+  <g stroke="#FF3DA6" stroke-width="3" opacity="0.5">
+    <line x1="0" y1="50" x2="200" y2="50">
+      <animate attributeName="x2" values="200;400;200" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="1600" y1="80" x2="1400" y2="80">
+      <animate attributeName="x1" values="1600;1200;1600" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+    </line>
+  </g>
+
+</svg>

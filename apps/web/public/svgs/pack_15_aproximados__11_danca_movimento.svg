@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGlow" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#4A1A38"/>
+      <stop offset="50%" stop-color="#2A0E1F"/>
+      <stop offset="100%" stop-color="#1A0614"/>
+    </radialGradient>
+
+    <radialGradient id="rimLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF9F73" stop-opacity="0.3">
+        <animate attributeName="stop-opacity" values="0.3;0.5;0.3" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="60%" stop-color="#E54B9C" stop-opacity="0.08">
+        <animate attributeName="stop-opacity" values="0.08;0.15;0.08" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#2A0E1F" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bodyGrad" cx="40%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#FF9F73"/>
+      <stop offset="50%" stop-color="#E54B9C"/>
+      <stop offset="100%" stop-color="#9C2C66"/>
+    </radialGradient>
+
+    <linearGradient id="fabricGrad1" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#E54B9C"/>
+      <stop offset="50%" stop-color="#FF9F73"/>
+      <stop offset="100%" stop-color="#FF9F73" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.4;0" dur="10s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="fabricGrad2" x1="20%" y1="20%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9C2C66"/>
+      <stop offset="60%" stop-color="#E54B9C"/>
+      <stop offset="100%" stop-color="#FF9F73" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="trailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4A574" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#E54B9C" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FF9F73" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4A574" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#D4A574" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="blurSoft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+
+    <filter id="blurMedium" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+
+    <filter id="blurAtmospheric" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+
+    <filter id="fabricTexture" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#2A0E1F"/>
+  <rect width="100%" height="100%" fill="url(#bgGlow)"/>
+
+  <!-- Atmospheric Background Blooms -->
+  <ellipse cx="550" cy="220" rx="700" ry="500" fill="url(#rimLight)" filter="url(#blurAtmospheric)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-15; 0,0" dur="16s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <ellipse cx="900" cy="450" rx="450" ry="650" fill="#E54B9C" opacity="0.08" filter="url(#blurAtmospheric)">
+    <animate attributeName="opacity" values="0.08;0.12;0.08" dur="14s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -15,10; 0,0" dur="18s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Deep Motion Trails (Ghost Layers) -->
+  <g opacity="0.25" filter="url(#blurMedium)">
+    <path d="M 150,750 C 250,500 450,150 700,200 C 850,225 850,450 750,600 C 650,750 350,850 150,750 Z" fill="url(#trailGrad)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="15s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,10; 0,0" dur="15s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="-5 500 450; 3 500 450; -5 500 450" dur="15s" repeatCount="indefinite" additive="sum"/>
+    </path>
+  </g>
+
+  <g opacity="0.3" filter="url(#blurSoft)">
+    <path d="M 200,700 C 300,500 500,250 750,300 C 880,320 850,480 780,580 C 680,720 420,780 200,700 Z" fill="url(#fabricGrad2)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.06;1" dur="12s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,-20; 0,0" dur="12s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.3;0.45;0.3" dur="12s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Mid-Ground Fabric Trails -->
+  <path d="M 280,680 C 380,520 550,280 780,330 C 900,350 850,500 780,580 C 680,680 450,730 280,680 Z" fill="url(#fabricGrad2)" opacity="0.5" filter="url(#blurSoft)">
+    <animateTransform attributeName="transform" type="scale" values="1;1.04;1" dur="10s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 700 500; 2 700 500; 0 700 500" dur="10s" repeatCount="indefinite" additive="sum"/>
+  </path>
+
+  <path d="M 250,720 C 350,550 520,220 750,260 C 880,280 820,450 750,550 C 650,700 420,780 250,720 Z" fill="url(#trailGrad)" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -10,5; 0,0" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.55;0.4" dur="14s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Main Sweeping Fabric Base -->
+  <path d="M 350,650 C 450,500 600,280 820,340 C 950,370 900,520 820,600 C 720,700 500,730 350,650 Z" fill="url(#fabricGrad1)" filter="url(#fabricTexture)">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="9s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 750 450; 1.5 750 450; 0 750 450" dur="9s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 5,-8; 0,0" dur="9s" repeatCount="indefinite" additive="sum"/>
+  </path>
+
+  <!-- Dynamic Overlapping Fabric Folds -->
+  <path d="M 400,600 C 500,450 650,300 850,360 C 920,380 900,480 850,560 C 750,650 550,680 400,600 Z" fill="url(#fabricGrad2)" opacity="0.85">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -8,12; 0,0" dur="11s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="11s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="11s" repeatCount="indefinite"/>
+  </path>
+
+  <path d="M 320,680 C 420,520 580,250 800,310 C 930,340 880,460 800,580 C 700,720 480,780 320,680 Z" fill="url(#fabricGrad1)" opacity="0.7" filter="url(#blurSoft)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 12,-15; 0,0" dur="13s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Main Dancer Body Silhouette -->
+  <g id="dancerBody">
+    <path d="M 820,340 C 880,300 950,250 980,200 C 1000,170 1020,150 1050,140 C 1070,135 1085,145 1090,160 C 1095,175 1085,195 1070,210 C 1050,230 1000,280 950,320 C 920,340 880,370 820,340 Z" fill="url(#bodyGrad)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -5,8; 0,0" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 950 280; -1 950 280; 0 950 280" dur="6s" repeatCount="indefinite" additive="sum"/>
+    </path>
+
+    <!-- Torso / Core -->
+    <path d="M 850,360 C 880,330 920,310 950,300 C 970,295 985,310 980,330 C 975,350 950,370 920,380 C 890,390 860,380 850,360 Z" fill="url(#bodyGrad)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 3,-5; 0,0" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </path>
+
+    <!-- Hip / Thigh -->
+    <path d="M 920,380 C 950,400 970,450 960,500 C 950,550 920,580 890,570 C 860,560 870,520 880,480 C 890,440 900,400 920,380 Z" fill="url(#bodyGrad)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -3,6; 0,0" dur="7s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Lower Leg / Sweep -->
+    <path d="M 890,570 C 920,590 940,650 930,720 C 925,760 910,790 890,800 C 870,810 860,780 870,740 C 880,680 870,610 890,570 Z" fill="url(#bodyGrad)">
+      <animateTransform attributeName="transform" type="rotate" values="0 900 700; 2 900 700; 0 900 700" dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Raised Arm (Extended Gracefully) -->
+    <path d="M 950,300 C 1000,280 1050,250 1080,220 C 1100,200 1115,190 1125,195 C 1135,200 1130,215 1115,230 C 1090,250 1040,290 980,320 C 960,330 950,320 950,300 Z" fill="url(#bodyGrad)">
+      <animateTransform attributeName="transform" type="rotate" values="0 950 300; -3 950 300; 0 950 300" dur="7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 5,-10; 0,0" dur="7s" repeatCount="indefinite" additive="sum"/>
+    </path>
+  </g>
+
+  <!-- Front Fabric Overlays & Folds (Creating Depth) -->
+  <path d="M 380,630 C 480,480 630,320 830,370 C 900,390 880,500 830,570 C 730,660 520,700 380,630 Z" fill="url(#fabricGrad1)" opacity="0.9" filter="url(#fabricTexture)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -6,4; 0,0" dur="10s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="10s" repeatCount="indefinite" additive="sum"/>
+  </path>
+
+  <path d="M 420,580 C 520,450 680,350 860,400 C 920,420 900,490 860,540 C 760,620 560,660 420,580 Z" fill="url(#fabricGrad2)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,-6; 0,0" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.9;0.8" dur="12s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Accent Gold Light Trails / Highlights -->
+  <path d="M 450,550 C 550,420 700,350 880,400 C 920,415 910,470 880,510 C 780,590 580,630 450,550 Z" fill="none" stroke="#D4A574" stroke-width="3" opacity="0.6" filter="url(#glowEffect)">
+    <animate attributeName="stroke-width" values="3;5;3" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -4,6; 0,0" dur="8s" repeatCount="indefinite"/>
+  </path>
+
+  <path d="M 500,500 C 600,400 720,360 850,390" fill="none" stroke="#D4A574" stroke-width="2" opacity="0.4" filter="url(#glowEffect)">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="10s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 6,-8; 0,0" dur="10s" repeatCount="indefinite"/>
+  </path>
+
+  <circle cx="650" cy="480" r="4" fill="#D4A574" filter="url(#glowEffect)">
+    <animate attributeName="r" values="4;8;4" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="6s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -10,15; 0,0" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="780" cy="420" r="3" fill="#FF9F73" filter="url(#glowEffect)">
+    <animate attributeName="r" values="3;6;3" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="9s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 12,-5; 0,0" dur="9s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Foreground Ambient Dust / Bokeh Particles -->
+  <g filter="url(#blurSoft)">
+    <circle cx="300" cy="200" r="15" fill="#D4A574" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 40,60; 0,0" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="700" r="25" fill="#E54B9C" opacity="0.2">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,-40; 0,0" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.05;0.2" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="250" r="12" fill="#FF9F73" opacity="0.25">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,30; 0,0" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.05;0.25" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="600" r="20" fill="#E54B9C" opacity="0.15">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,-20; 0,0" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.05;0.15" dur="25s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="150" r="18" fill="#D4A574" opacity="0.2">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,40; 0,0" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.05;0.2" dur="16s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Sharp Foreground Sparkles -->
+  <g opacity="0.8">
+    <circle cx="680" cy="450" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -5,10; 0,0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="850" cy="350" r="1.5" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="7s" begin="1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 8,-5; 0,0" dur="7s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="550" r="2.5" fill="#FF9F73">
+      <animate attributeName="opacity" values="0;1;0" dur="6s" begin="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,-15; 0,0" dur="6s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="920" cy="480" r="2" fill="#D4A574">
+      <animate attributeName="opacity" values="0;1;0" dur="8s" begin="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 12,8; 0,0" dur="8s" begin="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

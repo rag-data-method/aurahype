@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="ht" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="3.5" fill="black"/>
+    </pattern>
+    <clipPath id="cc">
+      <use href="#cheeseBody"/>
+    </clipPath>
+    <filter id="ds" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="b"/>
+      <feOffset in="b" dx="12" dy="16" result="o"/>
+      <feComponentTransfer in="o" result="s">
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="s"/>
+      </feMerge>
+    </filter>
+    <path id="cheeseBody" d="M340,260 L660,260 L720,400 C740,450 760,500 740,540 C720,580 690,560 680,520 C670,480 660,440 650,420 L620,600 C640,650 660,700 640,750 C620,800 580,780 570,740 C560,700 550,660 540,620 L500,800 C520,850 540,900 500,920 C460,900 480,850 500,800 L460,620 C450,660 440,700 430,740 C420,780 380,800 360,750 C340,700 360,650 380,600 L350,420 C340,440 330,480 320,520 C310,560 280,580 260,540 C240,500 260,450 280,400 L340,260 Z"/>
+    <path id="silhouette" d="M340,260 C360,190 420,170 500,180 C580,170 640,190 660,260 L720,400 C740,450 760,500 740,540 C720,580 690,560 680,520 C670,480 660,440 650,420 L620,600 C640,650 660,700 640,750 C620,800 580,780 570,740 C560,700 550,660 540,620 L500,800 C520,850 540,900 500,920 C460,900 480,850 500,800 L460,620 C450,660 440,700 430,740 C420,780 380,800 360,750 C340,700 360,650 380,600 L350,420 C340,440 330,480 320,520 C310,560 280,580 260,540 C240,500 260,450 280,400 L340,260 Z"/>
+    <path id="crust" d="M340,260 C360,190 420,170 500,180 C580,170 640,190 660,260 C620,250 580,245 500,250 C420,255 380,250 340,260 Z"/>
+  </defs>
+  <g transform="translate(500,500) scale(1.2) translate(-500,-550)">
+    <use href="#silhouette" fill="black" filter="url(#ds)"/>
+    <use href="#silhouette" fill="none" stroke="white" stroke-width="32" stroke-linejoin="round" stroke-linecap="round"/>
+    <use href="#cheeseBody" fill="#FFDD00" stroke="black" stroke-width="10" stroke-linejoin="round"/>
+    <g clip-path="url(#cc)">
+      <use href="#cheeseBody" transform="translate(16,16)" fill="url(#ht)" opacity="0.55"/>
+    </g>
+    <path d="M520,650 C530,720 540,800 520,860 C500,800 510,720 520,650 Z" fill="#00FFFF" stroke="black" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M380,580 C390,640 400,700 380,730 C360,700 370,640 380,580 Z" fill="#00FFFF" stroke="black" stroke-width="8" stroke-linejoin="round"/>
+    <g fill="#FF0000" stroke="black" stroke-width="8">
+      <circle cx="460" cy="380" r="32"/>
+      <circle cx="560" cy="460" r="38"/>
+      <circle cx="420" cy="540" r="28"/>
+      <circle cx="550" cy="580" r="34"/>
+      <circle cx="490" cy="480" r="36"/>
+    </g>
+    <g fill="white">
+      <ellipse cx="452" cy="372" rx="8" ry="5"/>
+      <ellipse cx="550" cy="450" rx="10" ry="6"/>
+      <ellipse cx="413" cy="533" rx="7" ry="4"/>
+      <ellipse cx="542" cy="572" rx="9" ry="5"/>
+      <ellipse cx="482" cy="472" rx="9" ry="6"/>
+    </g>
+    <use href="#crust" fill="#FF00FF" stroke="black" stroke-width="10" stroke-linejoin="round"/>
+  </g>
+</svg>

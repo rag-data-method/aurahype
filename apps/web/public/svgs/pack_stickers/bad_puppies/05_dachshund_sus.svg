@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <filter id="drop-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="12" dy="18" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Sticker Drop Shadow and Thick White Die-Cut Border -->
+  <g filter="url(#drop-shadow)">
+    <path d="M 500 102 
+             C 620 102, 720 160, 780 240 
+             C 860 200, 920 240, 925 310 
+             C 930 360, 900 400, 900 450 
+             C 920 550, 890 660, 820 750 
+             C 760 830, 650 900, 500 900 
+             C 350 900, 240 830, 180 750 
+             C 110 660, 80 550, 100 450 
+             C 80 360, 110 260, 180 190 
+             C 250 120, 370 102, 500 102 Z" 
+          fill="#FFFFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Cyan Pop Art Background Shape -->
+  <path d="M 500 115 
+           C 615 115, 710 170, 765 245 
+           C 840 210, 895 245, 900 310 
+           C 905 355, 875 395, 875 445 
+           C 895 540, 865 645, 800 730 
+           C 745 805, 640 870, 500 870 
+           C 360 870, 255 805, 200 730 
+           C 135 645, 105 540, 125 445 
+           C 105 360, 135 265, 200 200 
+           C 265 135, 380 115, 500 115 Z" 
+        fill="#00FFFF" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+
+  <!-- Pop Art Action Starburst Element (Bottom Left) -->
+  <path d="M 230 750 L 250 700 L 280 740 L 300 690 L 330 730 L 360 680 L 380 720 L 420 700 L 400 750 L 440 780 L 390 790 L 410 840 L 360 810 L 340 860 L 310 810 L 270 840 L 260 790 L 210 800 L 250 760 Z" 
+        fill="#FF0055" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 280 750 L 300 720 L 320 750 L 340 730 L 350 770 L 320 790 L 300 810 L 280 780 L 250 770 Z" 
+        fill="#FFFF00" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- Pop Art Anger Puff Element (Top Right) -->
+  <path d="M 750 250 L 780 200 L 810 240 L 840 190 L 860 230 L 890 210 L 880 260 L 920 280 L 880 300 L 890 340 L 850 320 L 830 360 L 810 320 L 770 340 L 780 300 L 740 280 L 770 260 Z" 
+        fill="#FFFF00" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+
+  <!-- Dachshund Body and Head Group -->
+  <g id="dachshund">
+    <!-- Main Body -->
+    <path d="M 300 550 
+             C 250 580, 220 630, 240 680 
+             C 260 730, 330 740, 380 720 
+             C 450 690, 500 660, 550 670 
+             C 600 680, 650 760, 700 750 
+             C 750 740, 780 680, 750 620 
+             C 720 560, 650 530, 600 520 
+             C 550 510, 500 500, 450 500 
+             C 400 500, 350 520, 300 550 Z" 
+          fill="#B85C38" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+    
+    <!-- Light Belly Patch -->
+    <path d="M 320 600 
+             C 280 620, 270 660, 290 690 
+             C 310 710, 360 690, 390 670 
+             C 430 640, 480 630, 510 650 
+             C 540 670, 560 720, 590 730 
+             C 620 740, 650 710, 630 670 
+             C 610 630, 560 580, 500 570 
+             C 440 560, 380 580, 320 600 Z" 
+          fill="#F2B880" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+
+    <!-- Sausage Body Highlight -->
+    <path d="M 320 540 C 360 520, 420 510, 480 510 C 530 510, 580 520, 620 540" 
+          fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Front Leg 1 (Far) -->
+    <path d="M 320 680 C 300 750, 290 820, 310 850 C 330 880, 370 870, 380 840 C 390 800, 370 750, 360 690 Z" 
+          fill="#8C3A1A" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+    <!-- Front Leg 2 (Near) -->
+    <path d="M 380 670 C 370 760, 350 840, 370 870 C 390 900, 440 890, 450 850 C 460 800, 440 740, 430 660 Z" 
+          fill="#B85C38" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+          
+    <!-- Back Leg 1 (Far) -->
+    <path d="M 560 670 C 570 740, 580 810, 600 840 C 620 870, 660 850, 670 820 C 680 780, 660 720, 640 660 Z" 
+          fill="#8C3A1A" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+    <!-- Back Leg 2 (Near) -->
+    <path d="M 640 700 C 660 770, 680 840, 700 870 C 720 900, 760 880, 770 840 C 780 800, 750 740, 720 680 Z" 
+          fill="#B85C38" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+
+    <!-- Scrunchy Wrinkles on Back -->
+    <path d="M 560 530 C 580 540, 600 560, 610 580" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+    <path d="M 580 550 C 600 560, 620 580, 630 600" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Tail -->
+    <path d="M 750 620 C 800 600, 840 650, 820 700 C 810 720, 780 710, 790 690 C 800 670, 780 640, 750 650 Z" 
+          fill="#B85C38" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+
+    <!-- Head Base (Angled Side Profile) -->
+    <path d="M 240 680 
+             C 200 650, 150 600, 160 540 
+             C 170 480, 230 450, 280 470 
+             C 330 490, 350 550, 320 600 
+             C 300 640, 270 670, 240 680 Z" 
+          fill="#B85C38" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+          
+    <!-- Head Snout Highlight -->
+    <path d="M 180 560 C 190 520, 220 490, 260 480" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Muzzle Base -->
+    <path d="M 160 540 
+             C 100 550, 80 590, 90 630 
+             C 100 670, 150 680, 180 660 
+             C 210 640, 200 600, 160 540 Z" 
+          fill="#F2B880" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+          
+    <!-- Muzzle Highlight -->
+    <path d="M 110 590 C 120 570, 140 560, 160 560" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <ellipse cx="100" cy="605" rx="22" ry="30" transform="rotate(-15 100 605)" fill="#000000"/>
+    <ellipse cx="92" cy="600" rx="6" ry="10" transform="rotate(-15 92 600)" fill="#FFFFFF"/>
+
+    <!-- Mouth Crease -->
+    <path d="M 160 620 C 140 640, 130 660, 150 670" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Lower Jaw Line -->
+    <path d="M 180 660 C 200 680, 230 670, 240 650" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Floppy Ear -->
+    <path d="M 280 470 
+             C 250 420, 180 420, 160 480 
+             C 150 540, 180 600, 220 620 
+             C 260 640, 290 580, 290 520 
+             C 290 490, 285 480, 280 470 Z" 
+          fill="#7A2E12" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+          
+    <!-- Ear Highlight -->
+    <path d="M 250 480 C 220 460, 190 480, 180 520" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Suspicious Aggressive Eyebrow (Huge Rage Arch) -->
+    <path d="M 200 490 C 230 450, 270 460, 290 500 C 250 480, 220 480, 200 490 Z" 
+          fill="#000000" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+          
+    <!-- Eyebrow Highlight -->
+    <path d="M 215 485 C 235 465, 260 470, 275 490" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Suspicious Rage Eye (Sclera partially hidden) -->
+    <circle cx="245" cy="525" r="28" fill="#FFFFFF" stroke="#000000" stroke-width="10"/>
+    
+    <!-- Pupil (Small, glaring) -->
+    <circle cx="265" cy="525" r="12" fill="#000000"/>
+    
+    <!-- Pupil Reflection -->
+    <circle cx="268" cy="522" r="4" fill="#FFFFFF"/>
+    
+    <!-- Eye Crease Wrinkle under eye -->
+    <path d="M 230 555 C 250 565, 270 560, 280 550" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Cheek Fluff Detail -->
+    <path d="M 190 640 C 180 650, 190 660, 200 650" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 210 650 C 200 660, 210 670, 220 660" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Foreground Comic Motion Lines -->
+  <path d="M 400 480 L 360 420" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 440 470 L 420 400" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 480 480 L 480 410" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+  
+  <path d="M 400 480 L 360 420" fill="none" stroke="#FFFF00" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 440 470 L 420 400" fill="none" stroke="#FFFF00" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 480 480 L 480 410" fill="none" stroke="#FFFF00" stroke-width="6" stroke-linecap="round"/>
+
+</svg>

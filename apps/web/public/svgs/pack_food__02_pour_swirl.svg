@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="poolGrad" cx="50%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#E63946"/>
+      <stop offset="60%" stop-color="#4A2511"/>
+      <stop offset="100%" stop-color="#4A2511" stop-opacity="0.9"/>
+    </radialGradient>
+    
+    <linearGradient id="streamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E63946"/>
+      <stop offset="100%" stop-color="#F4A261"/>
+    </linearGradient>
+
+    <filter id="blurModerate">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    
+    <filter id="blurStrong">
+      <feGaussianBlur stdDeviation="75"/>
+    </filter>
+    
+    <filter id="heatHaze">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.06 0" in="noise"/>
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FBF5DF" opacity="0.35"/>
+
+  <ellipse cx="800" cy="760" rx="650" ry="220" fill="#4A2511" opacity="0.75" filter="url(#blurStrong)">
+    <animate attributeName="rx" values="630;670;630" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.75;0.9;0.75" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <ellipse cx="800" cy="790" rx="420" ry="130" fill="url(#poolGrad)" opacity="0.95">
+    <animateTransform attributeName="transform" type="scale" values="1,1;1.08,1.03;1,1" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <ellipse cx="840" cy="770" rx="320" ry="95" fill="#F4A261" opacity="0.88" filter="url(#blurModerate)">
+    <animateTransform attributeName="transform" type="rotate" from="0 840 770" to="360 840 770" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="320;350;320" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <path d="M 775,0 L 825,0 L 830,720 L 770,720 Z" fill="#E63946" opacity="0.95">
+    <animate attributeName="d" values="M 775,0 L 825,0 L 835,720 L 765,720 Z;M 780,0 L 820,0 L 825,720 L 775,720 Z;M 775,0 L 825,0 L 835,720 L 765,720 Z" dur="0.6s" repeatCount="indefinite"/>
+  </path>
+
+  <path d="M 790,0 L 810,0 L 815,710 L 785,710 Z" fill="#F4A261" opacity="0.85">
+    <animate attributeName="d" values="M 790,0 L 810,0 L 820,710 L 780,710 Z;M 793,0 L 807,0 L 807,710 L 793,710 Z;M 790,0 L 810,0 L 820,710 L 780,710 Z" dur="0.7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="0.8s" repeatCount="indefinite"/>
+  </path>
+
+  <ellipse cx="800" cy="730" rx="160" ry="45" fill="#E63946" opacity="0.92">
+    <animateTransform attributeName="transform" type="rotate" from="0 800 730" to="360 800 730" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="160;190;160" dur="2.2s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <ellipse cx="800" cy="730" rx="130" ry="65" fill="none" stroke="#F4A261" stroke-width="18" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate" from="360 800 730" to="0 800 730" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="65;85;65" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <path d="M 680,760 Q 800,710 920,760" fill="none" stroke="#6A994E" stroke-width="16" opacity="0.85" stroke-linecap="round">
+    <animate attributeName="d" values="M 680,760 Q 800,710 920,760;M 660,770 Q 800,690 940,770;M 680,760 Q 800,710 920,760" dur="4.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="-15 800 760" to="15 800 760" dur="2.5s" repeatCount="indefinite"/>
+  </path>
+
+  <ellipse cx="800" cy="750" rx="220" ry="55" fill="none" stroke="#6A994E" stroke-width="10" opacity="0.8">
+    <animateTransform attributeName="transform" type="rotate" values="0 800 750;180 800 750;360 800 750" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="220;260;220" dur="5.5s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <circle cx="860" cy="680" r="18" fill="#E63946" opacity="0.95">
+    <animate attributeName="cy" values="720;480;380" dur="1.6s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="800;920;980" dur="1.6s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="22;0;22" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="740" cy="680" r="14" fill="#F4A261" opacity="0.9">
+    <animate attributeName="cy" values="720;560;460" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="800;680;620" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="18;0;18" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="800" cy="680" r="12" fill="#6A994E" opacity="0.85">
+    <animate attributeName="cy" values="720;500;380" dur="2.3s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="800;800;800" dur="2.3s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="14;0;14" dur="2.3s" repeatCount="indefinite"/>
+  </circle>
+
+  <ellipse cx="800" cy="790" rx="550" ry="160" fill="none" stroke="#E63946" stroke-width="6" opacity="0.75">
+    <animateTransform attributeName="transform" type="scale" values="0.85,0.85;1.25,1.15;0.85,0.85" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.75;0;0.75" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <rect width="1600" height="900" fill="transparent" filter="url(#heatHaze)" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <ellipse cx="800" cy="860" rx="480" ry="110" fill="#4A2511" opacity="0.85" filter="url(#blurModerate)">
+    <animateTransform attributeName="transform" type="scale" values="1,1;1.06,0.96;1,1" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <ellipse cx="800" cy="620" rx="35" ry="120" fill="#FBF5DF" opacity="0.35" filter="url(#blurModerate)">
+    <animate attributeName="opacity" values="0.35;0.55;0.35" dur="2.2s" repeatCount="indefinite"/>
+  </ellipse>
+</svg>

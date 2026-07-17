@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- Soft Lo-Fi Pastel Gradient (Blue-Lavender morning) -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9EA8E5" />
+      <stop offset="40%" stop-color="#C6BEE6" />
+      <stop offset="70%" stop-color="#F2DFE6" />
+      <stop offset="100%" stop-color="#FCECE8" />
+    </linearGradient>
+
+    <linearGradient id="bg-aura" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B9C8F2" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#E6DCFF" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Soft Subtle Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="faint-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Star Symbol -->
+    <path id="star" d="M 0 -2.5 L 0.3 -0.8 L 2 0 L 0.3 0.8 L 0 2.5 L -0.3 0.8 L -2 0 L -0.3 -0.8 Z" fill="#FFFFFF" opacity="0.6" />
+
+    <!-- Main Crescent Moon Base Path -->
+    <path id="moon-path" d="M 380 140 A 120 120 0 1 0 340 380 A 160 160 0 1 1 380 140 Z" fill="#FFFDFA" filter="url(#glow)" />
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#bg)" />
+
+  <!-- Atmospheric Aura -->
+  <circle cx="400" cy="300" r="350" fill="url(#bg-aura)" />
+
+  <!-- Stars (Faint Morning Stars) -->
+  <g filter="url(#faint-glow)">
+    <use href="#star" x="140" y="100" transform="scale(1.2)" />
+    <use href="#star" x="680" y="140" />
+    <use href="#star" x="220" y="220" transform="scale(0.8)" />
+    <use href="#star" x="630" y="280" transform="scale(0.9)" />
+    <use href="#star" x="180" y="380" transform="scale(1.3)" />
+    <use href="#star" x="710" y="420" transform="scale(0.7)" />
+    <use href="#star" x="80" y="480" transform="scale(1)" />
+    <use href="#star" x="740" y="520" transform="scale(1.1)" />
+    <use href="#star" x="300" y="80" transform="scale(0.6)" />
+    <use href="#star" x="500" y="150" transform="scale(0.8)" />
+    <use href="#star" x="120" y="180" transform="scale(0.5)" />
+    <use href="#star" x="600" y="90" transform="scale(0.9)" />
+  </g>
+
+  <!-- Static Moon (Centered behind the cloud) -->
+  <use href="#moon-path" />
+
+  <!-- Back Cloud (Behind Crescent, passing slowly) -->
+  <g opacity="0.4" filter="url(#faint-glow)">
+    <g stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Cloud Outline: Bottom Edge -->
+      <path d="M 260 260 Q 280 260 300 270 T 340 270 T 380 260 T 420 270 T 460 260 T 500 270 T 540 260 T 580 270 T 620 260 T 660 270 T 700 260 T 740 270 T 780 260" />
+      <!-- Cloud Outline: Top Edge -->
+      <path d="M 260 260 Q 270 240 290 230 T 330 230 T 370 240 T 410 230 T 450 240 T 490 230 T 530 240 T 570 230 T 610 240 T 650 230 T 690 240 T 730 230 T 770 240 T 790 260" />
+      <!-- Wispy Connectors & Details -->
+      <path d="M 290 230 C 280 210 300 200 320 220 Q 320 230 320 230" />
+      <path d="M 330 230 C 320 210 340 200 360 220 Q 360 230 360 230" />
+      <path d="M 410 230 C 400 210 420 200 440 220 Q 440 230 440 230" />
+      <path d="M 490 230 C 480 210 500 200 520 220 Q 520 230 520 230" />
+      <path d="M 570 230 C 560 210 580 200 600 220 Q 600 230 600 230" />
+      <path d="M 650 230 C 640 210 660 200 680 220 Q 680 230 680 230" />
+      <path d="M 730 230 C 720 210 740 200 760 220 Q 760 230 760 230" />
+      <!-- Soft internal lines -->
+      <path d="M 340 235 Q 350 250 350 265" />
+      <path d="M 500 235 Q 510 250 510 265" />
+      <path d="M 660 235 Q 670 250 670 265" />
+    </g>
+
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      from="-300 0" 
+      to="100 0" 
+      dur="12s" 
+      repeatCount="indefinite" 
+      calcMode="spline" 
+      keySplines="0.4 0 0.6 1" 
+    />
+  </g>
+
+  <!-- Front Cloud (Passing in front of the Moon, colored to match background to softly erase parts) -->
+  <g>
+    <!-- Cloud Outline (Front) -->
+    <g stroke="#C6BEE6" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Bottom Edge -->
+      <path d="M 260 260 Q 280 260 300 270 T 340 270 T 380 260 T 420 270 T 460 260 T 500 270 T 540 260 T 580 270 T 620 260 T 660 270 T 700 260 T 740 270 T 780 260" />
+      <!-- Top Edge -->
+      <path d="M 260 260 Q 270 240 290 230 T 330 230 T 370 240 T 410 230 T 450 240 T 490 230 T 530 240 T 570 230 T 610 240 T 650 230 T 690 240 T 730 230 T 770 240 T 790 260" />
+      <!-- Wispy Connectors & Details -->
+      <path d="M 290 230 C 280 210 300 200 320 220 Q 320 230 320 230" />
+      <path d="M 330 230 C 320 210 340 200 360 220 Q 360 230 360 230" />
+      <path d="M 410 230 C 400 210 420 200 440 220 Q 440 230 440 230" />
+      <path d="M 490 230 C 480 210 500 200 520 220 Q 520 230 520 230" />
+      <path d="M 570 230 C 560 210 580 200 600 220 Q 600 230 600 230" />
+      <path d="M 650 230 C 640 210 660 200 680 220 Q 680 230 680 230" />
+      <path d="M 730 230 C 720 210 740 200 760 220 Q 760 230 760 230" />
+      <!-- Soft internal lines -->
+      <path d="M 340 235 Q 350 250 350 265" />
+      <path d="M 500 235 Q 510 250 510 265" />
+      <path d="M 660 235 Q 670 250 670 265" />
+    </g>
+
+    <!-- Cloud Thicker/Colored Fill to Gently Erase the Moon Behing It -->
+    <g stroke="url(#bg)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#faint-glow)">
+      <!-- Bottom Edge -->
+      <path d="M 260 260 Q 280 260 300 270 T 340 270 T 380 260 T 420 270 T 460 260 T 500 270 T 540 260 T 580 270 T 620 260 T 660 270 T 700 260 T 740 270 T 780 260" />
+      <!-- Top Edge -->
+      <path d="M 260 260 Q 270 240 290 230 T 330 230 T 370 240 T 410 230 T 450 240 T 490 230 T 530 240 T 570 230 T 610 240 T 650 230 T 690 240 T 730 230 T 770 240 T 790 260" />
+      <!-- Wispy Connectors & Details -->
+      <path d="M 290 230 C 280 210 300 200 320 220 Q 320 230 320 230" />
+      <path d="M 330 230 C 320 210 340 200 360 220 Q 360 230 360 230" />
+      <path d="M 410 230 C 400 210 420 200 440 220 Q 440 230 440 230" />
+      <path d="M 490 230 C 480 210 500 200 520 220 Q 520 230 520 230" />
+      <path d="M 570 230 C 560 210 580 200 600 220 Q 600 230 600 230" />
+      <path d="M 650 230 C 640 210 660 200 680 220 Q 680 230 680 230" />
+      <path d="M 730 230 C 720 210 740 200 760 220 Q 760 230 760 230" />
+      <!-- Soft internal lines -->
+      <path d="M 340 235 Q 350 250 350 265" />
+      <path d="M 500 235 Q 510 250 510 265" />
+      <path d="M 660 235 Q 670 250 670 265" />
+    </g>
+
+    <!-- Animation for Front Cloud -->
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      from="-300 0" 
+      to="100 0" 
+      dur="12s" 
+      repeatCount="indefinite" 
+      calcMode="spline" 
+      keySplines="0.4 0 0.6 1" 
+    />
+  </g>
+
+  <!-- Moon Rotation Animation (Gentle, slow lunar drift) -->
+  <use href="#moon-path">
+    <animateTransform 
+      attributeName="transform" 
+      type="rotate" 
+      from="0 400 300" 
+      to="8 400 300" 
+      dur="12s" 
+      repeatCount="indefinite" 
+      calcMode="spline" 
+      keySplines="0.4 0 0.6 1" 
+    />
+  </use>
+
+</svg>

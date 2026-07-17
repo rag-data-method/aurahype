@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <!-- Gradients -->
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF0055" />
+            <stop offset="50%" stop-color="#FF9900" />
+            <stop offset="100%" stop-color="#FF0055" />
+        </linearGradient>
+        
+        <linearGradient id="billboardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1A0033" />
+            <stop offset="100%" stop-color="#0A001A" />
+        </linearGradient>
+
+        <!-- Filters for Neon Glow -->
+        <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="6" result="blur1" />
+            <feGaussianBlur stdDeviation="12" result="blur2" />
+            <feMerge>
+                <feMergeNode in="blur2" />
+                <feMergeNode in="blur1" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <!-- Clip Path for Billboard -->
+        <clipPath id="billboardClip">
+            <path d="M 260,100 L 1660,100 L 1660,580 L 260,580 Z" />
+        </clipPath>
+    </defs>
+
+    <!-- Background -->
+    <rect width="1920" height="1080" fill="#FF0055" />
+    
+    <!-- Background Burst Rays -->
+    <g opacity="0.3" fill="#FFCC00">
+        <path d="M 960,540 L 0,0 L 200,0 Z" />
+        <path d="M 960,540 L 400,0 L 600,0 Z" />
+        <path d="M 960,540 L 800,0 L 1000,0 Z" />
+        <path d="M 960,540 L 1200,0 L 1400,0 Z" />
+        <path d="M 960,540 L 1600,0 L 1800,0 Z" />
+        <path d="M 960,540 L 1920,0 L 1920,200 Z" />
+        <path d="M 960,540 L 1920,400 L 1920,600 Z" />
+        <path d="M 960,540 L 1920,800 L 1920,1080 Z" />
+        <path d="M 960,540 L 1600,1080 L 1400,1080 Z" />
+        <path d="M 960,540 L 1200,1080 L 1000,1080 Z" />
+        <path d="M 960,540 L 800,1080 L 600,1080 Z" />
+        <path d="M 960,540 L 400,1080 L 200,1080 Z" />
+        <path d="M 960,540 L 0,1080 L 0,800 Z" />
+        <path d="M 960,540 L 0,600 L 0,400 Z" />
+        <path d="M 960,540 L 0,200 L 0,0 Z" />
+    </g>
+
+    <!-- Background Dots -->
+    <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <circle cx="20" cy="20" r="6" fill="#FFD700" opacity="0.6" />
+    </pattern>
+    <rect width="1920" height="1080" fill="url(#bgDots)" />
+
+    <!-- ========================================== -->
+    <!-- BILLBOARD STRUCTURE                        -->
+    <!-- ========================================== -->
+    <g id="billboard">
+        <!-- Frame -->
+        <rect x="240" y="80" width="1440" height="520" fill="#111111" rx="20" stroke="#000000" stroke-width="8" />
+        <rect x="260" y="100" width="1400" height="480" fill="url(#billboardGrad)" stroke="#00FFFF" stroke-width="6" />
+        
+        <!-- Neon Border -->
+        <rect x="265" y="105" width="1390" height="470" fill="none" stroke="#FF00FF" stroke-width="4" opacity="0.8" />
+        
+        <!-- Billboard Poles -->
+        <rect x="700" y="600" width="60" height="480" fill="#222222" stroke="#000000" stroke-width="4" />
+        <rect x="1160" y="600" width="60" height="480" fill="#222222" stroke="#000000" stroke-width="4" />
+        <rect x="690" y="1030" width="80" height="50" fill="#111111" stroke="#000000" stroke-width="4" />
+        <rect x="1150" y="1030" width="80" height="50" fill="#111111" stroke="#000000" stroke-width="4" />
+    </g>
+
+    <!-- ========================================== -->
+    <!-- PAW PRINT (ANIMATED)                       -->
+    <!-- ========================================== -->
+    <g id="pawPrint" filter="url(#neonGlow)" transform="translate(960, 340) scale(1.2)">
+        <!-- Main Pad -->
+        <path d="M -60,-40 C -90,-40 -110,-10 -110,30 C -110,70 -90,90 -60,90 L 60,90 C 90,90 110,70 110,30 C 110,-10 90,-40 60,-40 Z" fill="#FF00FF" stroke="#FFFFFF" stroke-width="6" />
+        
+        <!-- Toe 1 -->
+        <ellipse cx="-70" cy="-80" rx="25" ry="35" fill="#FF00FF" stroke="#FFFFFF" stroke-width="6" transform="rotate(-15, -70, -80)" />
+        <!-- Toe 2 -->
+        <ellipse cx="-25" cy="-100" rx="25" ry="35" fill="#FF00FF" stroke="#FFFFFF" stroke-width="6" transform="rotate(-5, -25, -100)" />
+        <!-- Toe 3 -->
+        <ellipse cx="25" cy="-100" rx="25" ry="35" fill="#FF00FF" stroke="#FFFFFF" stroke-width="6" transform="rotate(5, 25, -100)" />
+        <!-- Toe 4 -->
+        <ellipse cx="70" cy="-80" rx="25" ry="35" fill="#FF00FF" stroke="#FFFFFF" stroke-width="6" transform="rotate(15, 70, -80)" />
+    </g>
+
+    <!-- ========================================== -->
+    <!-- NEON GRID ON BILLBOARD                     -->
+    <!-- ========================================== -->
+    <g clip-path="url(#billboardClip)" opacity="0.4">
+        <path d="M 300,100 L 300,580 M 400,100 L 400,580 M 500,100 L 500,580 M 600,100 L 600,580 M 700,100 L 700,580 M 800,100 L 800,580 M 900,100 L 900,580 M 1000,100 L 1000,580 M 1100,100 L 1100,580 M 1200,100 L 1200,580 M 1300,100 L 1300,580 M 1400,100 L 1400,580 M 1500,100 L 1500,580 M 1600,100 L 1600,580" stroke="#00FFFF" stroke-width="2" />
+        <path d="M 260,150 L 1660,150 M 260,200 L 1660,200 M 260,250 L 1660,250 M 260,300 L 1660,300 M 260,350 L 1660,350 M 260,400 L 1660,400 M 260,450 L 1660,450 M 260,500 L 1660,500 M 260,550 L 1660,550" stroke="#00FFFF" stroke-width="2" />
+    </g>
+
+    <!-- ========================================== -->
+    <!-- THE GRUMPY PUG                             -->
+    <!-- ========================================== -->
+    <g id="pug" filter="url(#softGlow)">
+        <!-- Body -->
+        <path d="M 860,1080 C 860,850 1060,850 1060,1080 Z" fill="#D4A373" stroke="#000000" stroke-width="8" />
+        
+        <!-- Front Left Leg -->
+        <rect x="875" y="950" width="55" height="130" fill="#D4A373" stroke="#000000" stroke-width="8" />
+        <ellipse cx="902" cy="1080" rx="35" ry="15" fill="#333333" stroke="#000000" stroke-width="8" />
+        
+        <!-- Front Right Leg (Raised Stamping) -->
+        <g id="stampingLeg">
+            <path d="M 990,980 L 1040,850 L 1100,880 L 1050,1010 Z" fill="#D4A373" stroke="#000000" stroke-width="8" />
+            <ellipse cx="1070" cy="880" rx="40" ry="20" fill="#333333" stroke="#000000" stroke-width="8" transform="rotate(-30, 1070, 880)" />
+            <!-- Claws -->
+            <path d="M 1050,860 L 1045,840 M 1070,865 L 1070,845 M 1090,860 L 1095,840" stroke="#000000" stroke-width="6" stroke-linecap="round" />
+        </g>
+
+        <!-- Head Base -->
+        <circle cx="960" cy="700" r="140" fill="#D4A373" stroke="#000000" stroke-width="8" />
+        
+        <!-- Ears -->
+        <path d="M 830,620 C 760,550 760,720 840,760 Z" fill="#A67C52" stroke="#000000" stroke-width="8" />
+        <path d="M 1090,620 C 1160,550 1160,720 1080,760 Z" fill="#A67C52" stroke="#000000" stroke-width="8" />
+
+        <!-- Face Mask (Darker fur) -->
+        <path d="M 880,700 C 880,620 1040,620 1040,700 C 1040,780 1100,780 1100,850 C 1100,950 820,950 820,850 C 820,780 880,780 880,700 Z" fill="#A67C52" stroke="#000000" stroke-width="8" />
+
+        <!-- Eyes -->
+        <g id="leftEye">
+            <ellipse cx="910" cy="720" rx="35" ry="45" fill="#FFFFFF" stroke="#000000" stroke-width="8" />
+            <circle cx="910" cy="720" r="18" fill="#000000" />
+            <circle cx="900" cy="710" r="6" fill="#FFFFFF" />
+            <!-- Angry Eyebrow -->
+            <path d="M 860,680 L 940,710" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+        </g>
+        <g id="rightEye">
+            <ellipse cx="1010" cy="720" rx="35" ry="45" fill="#FFFFFF" stroke="#000000" stroke-width="8" />
+            <circle cx="1010" cy="720" r="18" fill="#000000" />
+            <circle cx="1000" cy="710" r="6" fill="#FFFFFF" />
+            <!-- Angry Eyebrow -->
+            <path d="M 980,710 L 1060,680" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+        </g>
+
+        <!-- Nose -->
+        <path d="M 935,790 C 935,780 985,780 985,790 C 985,810 935,810 935,790 Z" fill="#000000" />
+        <path d="M 960,810 L 960,840" stroke="#000000" stroke-width="6" stroke-linecap="round" />
+        <path d="M 960,840 C 940,850 930,840 935,830" stroke="#000000" stroke-width="6" stroke-linecap="round" fill="none" />
+        <path d="M 960,840 C 980,850 990,840 985,830" stroke="#000000" stroke-width="6" stroke-linecap="round" fill="none" />
+
+        <!-- Mouth (Grumpy Frown) -->
+        <path d="M 920,880 Q 960,860 1000,880" stroke="#000000" stroke-width="8" stroke-linecap="round" fill="none" />
+        
+        <!-- Tongue (Slightly out, annoyed) -->
+        <path d="M 945,890 Q 960,920 975,890" fill="#FF3366" stroke="#000000" stroke-width="6" />
+
+        <!-- Wrinkles -->
+        <path d="M 930,770 Q 960,750 990,770" stroke="#000000" stroke-width="4" fill="none" />
+        <path d="M 940,755 Q 960,740 980,755" stroke="#000000" stroke-width="4" fill="none" />
+        <path d="M 850,680 Q 880,720 850,750" stroke="#000000" stroke-width="4" fill="none" />
+        <path d="M 1070,680 Q 1040,720 1070,750" stroke="#000000" stroke-width="4" fill="none" />
+
+        <!-- Collar -->
+        <path d="M 880,820 Q 960,860 1040,820" stroke="#FF0000" stroke-width="20" stroke-linecap="round" fill="none" />
+        <circle cx="960" cy="845" r="12" fill="#FFD700" stroke="#000000" stroke-width="4" />
+    </g>
+
+    <!-- ========================================== -->
+    <!-- FOREGROUND EFFECTS                         -->
+    <!-- ========================================== -->
+    
+    <!-- Halftone Burst behind Pug -->
+    <g opacity="0.5">
+        <circle cx="960" cy="800" r="400" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="20 20" />
+        <circle cx="960" cy="800" r="380" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="20 20" />
+        <circle cx="960" cy="800" r="360" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="20 20" />
+    </g>
+
+    <!-- Floating Action Stars -->
+    <g fill="#FFFFFF" stroke="#000000" stroke-width="6">
+        <path d="M 650,450 L 660,480 L 690,480 L 665,500 L 675,530 L 650,510 L 625,530 L 635,500 L 610,480 L 640,480 Z" />
+        <path d="M 1250,250 L 1260,280 L 1290,280 L 1265,300 L 1275,330 L 1250,310 L 1225,330 L 1235,300 L 1210,280 L 1240,280 Z" />
+        <path d="M 1400,500 L 1405,520 L 1425,520 L 1410,535 L 1415,555 L 1400,540 L 1385,555 L 1390,535 L 1375,520 L 1395,520 Z" />
+    </g>
+
+    <!-- Dust Clouds from Stamping -->
+    <g fill="#FFFFFF" stroke="#000000" stroke-width="6" opacity="0.8">
+        <circle cx="1120" cy="840" r="20" />
+        <circle cx="1080" cy="810" r="15" />
+        <circle cx="1160" cy="810" r="25" />
+        <circle cx="1140" cy="770" r="18" />
+        <circle cx="1100" cy="780" r="12" />
+    </g>
+
+    <style>
+        /* ========================================== */
+        /* ANIMATIONS                                 */
+        /* ========================================== */
+        
+        /* Paw Print Pulse (Heartbeat) */
+        #pawPrint {
+            transform-origin: 960px 340px;
+            animation: heartbeat 1.2s infinite ease-in-out;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: translate(960px, 340px) scale(1.2); opacity: 0.7; }
+            15% { transform: translate(960px, 340px) scale(1.35); opacity: 1; }
+            30% { transform: translate(960px, 340px) scale(1.2); opacity: 0.7; }
+            45% { transform: translate(960px, 340px) scale(1.35); opacity: 1; }
+            60% { transform: translate(960px, 340px) scale(1.2); opacity: 0.7; }
+            100% { transform: translate(960px, 340px) scale(1.2); opacity: 0.7; }
+        }
+
+        /* Pug Breathing / Shaking */
+        #pug {
+            transform-origin: 960px 1080px;
+            animation: pugShake 0.15s infinite linear;
+        }
+        
+        @keyframes pugShake {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-2px, 1px); }
+            50% { transform: translate(2px, -1px); }
+            75% { transform: translate(-1px, -2px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Stamping Leg Action */
+        #stampingLeg {
+            transform-origin: 990px 980px;
+            animation: stampAction 1.2s infinite ease-in-out;
+        }
+        
+        @keyframes stampAction {
+            0% { transform: rotate(0deg) translate(0, 0); }
+            20% { transform: rotate(-15deg) translate(-20px, -40px); }
+            40% { transform: rotate(0deg) translate(0, 0); }
+            45% { transform: rotate(5deg) translate(5px, 5px); }
+            50% { transform: rotate(0deg) translate(0, 0); }
+            100% { transform: rotate(0deg) translate(0, 0); }
+        }
+
+        /* Background Burst Rotation */
+        g[opacity="0.3"] {
+            transform-origin: 960px 540px;
+            animation: spinBurst 20s infinite linear;
+        }
+        
+        @keyframes spinBurst {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Floating Stars Action */
+        g[fill="#FFFFFF"] path {
+            animation: starPop 1.2s infinite ease-in-out;
+        }
+        
+        g[fill="#FFFFFF"] path:nth-child(1) { animation-delay: 0s; }
+        g[fill="#FFFFFF"] path:nth-child(2) { animation-delay: 0.3s; }
+        g[fill="#FFFFFF"] path:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes starPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.4); }
+            100% { transform: scale(1); }
+        }
+
+        /* Dust Clouds Animation */
+        g[opacity="0.8"] circle {
+            animation: dustFloat 1.2s infinite ease-out;
+            opacity: 0;
+        }
+        
+        g[opacity="0.8"] circle:nth-child(1) { animation-delay: 0.4s; }
+        g[opacity="0.8"] circle:nth-child(2) { animation-delay: 0.5s; }
+        g[opacity="0.8"] circle:nth-child(3) { animation-delay: 0.3s; }
+        g[opacity="0.8"] circle:nth-child(4) { animation-delay: 0.6s; }
+        g[opacity="0.8"] circle:nth-child(5) { animation-delay: 0.45s; }
+        
+        @keyframes dustFloat {
+            0% { transform: translate(0, 0); opacity: 0.8; }
+            100% { transform: translate(40px, -60px); opacity: 0; }
+        }
+        
+        /* Neon Grid Flicker */
+        g[clip-path] path {
+            animation: gridFlicker 3s infinite;
+        }
+        
+        @keyframes gridFlicker {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+            52% { opacity: 0.2; }
+            54% { opacity: 0.8; }
+        }
+    </style>
+</svg>

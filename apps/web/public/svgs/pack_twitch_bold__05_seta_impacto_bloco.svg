@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <pattern id="dotsBlue" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#FFF200"/>
+      <circle cx="4" cy="4" r="2" fill="#FF001B"/>
+      <circle cx="0" cy="8" r="2" fill="#FF001B"/>
+      <circle cx="8" cy="0" r="2" fill="#FF001B"/>
+    </pattern>
+    <pattern id="dotsWhite" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#000000"/>
+      <circle cx="3" cy="3" r="1.5" fill="#FFF200"/>
+    </pattern>
+    <pattern id="dotsBlack" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#FF001B"/>
+      <circle cx="5" cy="5" r="3" fill="#000000"/>
+    </pattern>
+    <rect id="bgRect" x="-50" y="-50" width="900" height="700"/>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#FF001B"/>
+
+  <!-- Animated Background Stripes/Noise -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="50,50; 10,10; -20,30; 40,-10; 0,0" dur="4s" fill="freeze" calcMode="discrete"/>
+    <use href="#bgRect" fill="#FFF200" transform="translate(8, 8)"/>
+    <use href="#bgRect" fill="#000000" transform="translate(-4, -4)"/>
+    <use href="#bgRect" fill="#FFF200" transform="translate(16, -8)"/>
+    <use href="#bgRect" fill="url(#dotsBlue)" transform="translate(-8, 16)"/>
+    <use href="#bgRect" fill="url(#dotsWhite)" transform="translate(24, 24)"/>
+    <use href="#bgRect" fill="url(#dotsBlack)" transform="translate(-16, -16)"/>
+  </g>
+
+  <!-- Top Left Black Bars -->
+  <polygon points="0,0 40,0 40,140 0,180" fill="#000000">
+    <animate attributeName="opacity" values="0;1;0;1" dur="0.4s" begin="0.3s" fill="freeze"/>
+  </polygon>
+  <polygon points="60,0 100,0 100,80 60,120" fill="#000000">
+    <animate attributeName="opacity" values="0;1;0;1" dur="0.4s" begin="0.5s" fill="freeze"/>
+  </polygon>
+
+  <!-- Bottom Right Black Bars -->
+  <polygon points="720,480 800,560 800,600 760,600 680,520" fill="#000000">
+    <animate attributeName="opacity" values="0;1;0;1" dur="0.4s" begin="0.8s" fill="freeze"/>
+  </polygon>
+  <polygon points="640,560 720,640 680,680 600,600" fill="#000000">
+    <animate attributeName="opacity" values="0;1" dur="0.2s" begin="1.0s" fill="freeze"/>
+  </polygon>
+
+  <!-- Jitter Elements -->
+  <g>
+    <animateTransform id="jit1" attributeName="transform" type="translate" values="0,0; 9,6; -4,8; 10,-10; 0,0" dur="3.2s" repeatCount="1" fill="freeze"/>
+    <circle cx="240" cy="440" r="35" fill="none" stroke="#FFF200" stroke-width="18">
+      <animate attributeName="stroke-dasharray" values="0,400;200,200" dur="2s" begin="1s" fill="freeze"/>
+    </circle>
+    <path d="M 700 160 L 750 210 L 700 260 M 740 170 L 790 220 L 740 270" fill="none" stroke="#FFF200" stroke-width="14" stroke-linecap="square"/>
+    <polygon points="140,240 180,280 140,320" fill="#000000"/>
+  </g>
+
+  <g>
+    <animateTransform id="jit2" attributeName="transform" type="translate" values="0,0; -12,10; 18,-6; -4,18; 0,0" dur="3.2s" repeatCount="1" fill="freeze"/>
+    <rect x="160" y="40" width="120" height="40" fill="#ff001b" stroke="#000000" stroke-width="12"/>
+    <rect x="680" y="380" width="80" height="80" fill="none" stroke="#FFF200" stroke-width="14"/>
+  </g>
+
+  <!-- Typographic Visuals -->
+  <g id="typo">
+    <rect x="20" y="490" width="260" height="30" fill="#FFF200"/>
+    <rect x="20" y="530" width="180" height="30" fill="#FFF200"/>
+    
+    <!-- Letter F -->
+    <polygon points="20,490 50,490 50,500 30,500 30,510 45,510 45,520 30,520 30,535 20,535"/>
+    
+    <!-- Letter O -->
+    <polygon points="60,490 75,490 75,535 60,535 60,490 M 65,500 L 65,525 L 70,525 L 70,500 Z"/>
+    
+    <!-- Letter R -->
+    <polygon points="85,490 110,490 110,510 100,520 110,520 110,535 100,535 100,520 95,520 95,535 85,535"/>
+    
+    <!-- Letter C -->
+    <polygon points="120,490 140,490 140,500 130,500 130,525 140,525 140,535 120,535"/>
+    
+    <!-- Letter E -->
+    <polygon points="150,490 175,490 175,500 160,500 160,510 172,510 172,520 160,520 160,525 175,525 175,535 150,535"/>
+
+    <animateTransform attributeName="transform" type="translate" values="0,0; -15,15; 0,0" dur="4s" fill="freeze" calcMode="discrete"/>
+  </g>
+
+  <!-- Central Arrow & Shadows -->
+  <g id="arrowSystem">
+    <animateTransform id="jit3" attributeName="transform" type="translate" values="0,0; 20,-15; -10,20; 5,0; 0,0" dur="3.2s" repeatCount="1" fill="freeze"/>
+
+    <!-- Shadow Layer 1 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-500,-400; 0,0" dur="0.5s" begin="1.0s" fill="freeze"/>
+      <path d="M320,80 L510,290 L400,290 L400,520 L240,520 L240,290 L130,290 Z" fill="#FFF200"/>
+    </g>
+
+    <!-- Shadow Layer 2 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-500,-400; 0,0" dur="0.5s" begin="1.2s" fill="freeze"/>
+      <path d="M320,80 L510,290 L400,290 L400,520 L240,520 L240,290 L130,290 Z" fill="#000000" transform="translate(-18, -18)"/>
+    </g>
+
+    <!-- Shadow Layer 3 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-500,-400; 0,0" dur="0.5s" begin="1.4s" fill="freeze"/>
+      <path d="M320,80 L510,290 L400,290 L400,520 L240,520 L240,290 L130,290 Z" fill="#FFF200" transform="translate(-34, -34)"/>
+    </g>
+
+    <!-- Shadow Layer 4 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-500,-400; 0,0" dur="0.5s" begin="1.6s" fill="freeze"/>
+      <path d="M320,80 L510,290 L400,290 L400,520 L240,520 L240,290 L130,290 Z" fill="#000000" transform="translate(-50, -50)"/>
+    </g>
+
+    <!-- Main Arrow Body -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-500,-400; 0,0" dur="0.5s" begin="1.8s" fill="freeze"/>
+      <path d="M320,80 L510,290 L400,290 L400,520 L240,520 L240,290 L130,290 Z" fill="#FF001B" stroke="#000000" stroke-width="20" stroke-linejoin="miter"/>
+    </g>
+  </g>
+
+  <!-- Flying Debris Halftone Blocks -->
+  <g id="halftone">
+    <animateTransform attributeName="transform" type="translate" values="900,600; 0,0" dur="0.6s" begin="2.2s" fill="freeze"/>
+    <rect x="0" y="440" width="140" height="40" fill="url(#dotsWhite)"/>
+    <rect x="640" y="120" width="160" height="30" fill="url(#dotsBlack)"/>
+    <rect x="120" y="140" width="200" height="25" fill="url(#dotsBlue)"/>
+  </g>
+
+  <!-- Central Shake Overlay -->
+  <g>
+    <animateTransform id="jit4" attributeName="transform" type="translate" values="0,0; -5,5; 5,-5; 0,0" dur="0.3s" begin="3.5s" fill="freeze"/>
+    <polygon points="360,580 420,580 390,600" fill="#000000"/>
+    <polygon points="370,20 430,20 400,0" fill="#000000"/>
+  </g>
+
+</svg>

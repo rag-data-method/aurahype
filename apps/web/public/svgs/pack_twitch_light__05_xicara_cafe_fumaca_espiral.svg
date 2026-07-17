@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- Soft ambient blur for steam glow -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Steam path: soft spiral -->
+    <path id="steam" d="M -8,0 C -12,-10 8,-20 4,-35 C -2,-45 -15,-40 -12,-60 C -8,-80 15,-70 10,-90 C 5,-110 -10,-105 -5,-130" fill="none" />
+
+    <!-- Stylized Cup -->
+    <g id="cup">
+      <!-- Base shadow / saucer edge -->
+      <ellipse cx="0" cy="35" rx="80" ry="12" stroke="#e8e0d8" stroke-width="1.5" fill="none" />
+      <!-- Saucer inner -->
+      <ellipse cx="0" cy="34" rx="60" ry="8" stroke="#e8e0d8" stroke-width="1" fill="none" />
+      <!-- Cup body -->
+      <path d="M -60,-20 C -60,30 60,30 60,-20" stroke="#a89890" stroke-width="1.5" fill="none" />
+      <!-- Cup rim -->
+      <ellipse cx="0" cy="-20" rx="60" ry="10" stroke="#a89890" stroke-width="1.5" fill="none" />
+      <!-- Coffee liquid -->
+      <ellipse cx="0" cy="-20" rx="52" ry="7" stroke="#c4b5ab" stroke-width="1" fill="none" />
+      <!-- Handle -->
+      <path d="M 58,-5 C 85,-15 85,15 58,5" stroke="#a89890" stroke-width="1.5" fill="none" />
+    </g>
+  </defs>
+
+  <!-- Mint background to create fresh breathing space -->
+  <rect width="800" height="600" fill="#f4f8f6" />
+
+  <!-- Global floating animation for the entire cup group -->
+  <g filter="url(#softGlow)">
+    <animateTransform attributeName="transform" type="translate" values="400,320; 400,300; 400,320" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+
+    <!-- 4 Soft Steam Spirals -->
+    
+    <!-- Steam 1 -->
+    <g opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="10,-18; -20,-150" dur="6.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.3 1" />
+      <use href="#steam" stroke="#d4d0cb" stroke-width="1.5" opacity="0.5" />
+      <animate attributeName="opacity" values="0; 0.5; 0.8; 0.2; 0" keyTimes="0; 0.1; 0.5; 0.9; 1" dur="6.5s" repeatCount="indefinite" />
+    </g>
+
+    <!-- Steam 2 -->
+    <g opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="20,-20; -5,-165" dur="7.2s" repeatCount="indefinite" begin="2.5s" calcMode="spline" keySplines="0.3 0 0.3 1" />
+      <use href="#steam" stroke="#c4beb7" stroke-width="1.2" opacity="0.5" />
+      <animate attributeName="opacity" values="0; 0.5; 0.9; 0.2; 0" keyTimes="0; 0.1; 0.5; 0.9; 1" dur="7.2s" repeatCount="indefinite" begin="2.5s" />
+    </g>
+
+    <!-- Steam 3 -->
+    <g opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="-15,-20; -40,-140" dur="5.8s" repeatCount="indefinite" begin="1.5s" calcMode="spline" keySplines="0.3 0 0.3 1" />
+      <use href="#steam" stroke="#e0dcd6" stroke-width="1.8" opacity="0.5" />
+      <animate attributeName="opacity" values="0; 0.6; 0.7; 0.2; 0" keyTimes="0; 0.1; 0.5; 0.9; 1" dur="5.8s" repeatCount="indefinite" begin="1.5s" />
+    </g>
+
+    <!-- Steam 4 -->
+    <g opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="-25,-18; -60,-155" dur="8s" repeatCount="indefinite" begin="4s" calcMode="spline" keySplines="0.3 0 0.3 1" />
+      <use href="#steam" stroke="#cec9c2" stroke-width="1" opacity="0.5" />
+      <animate attributeName="opacity" values="0; 0.4; 0.8; 0.2; 0" keyTimes="0; 0.1; 0.5; 0.9; 1" dur="8s" repeatCount="indefinite" begin="4s" />
+    </g>
+
+    <!-- Stylized Cup Instance -->
+    <use href="#cup" />
+  </g>
+</svg>

@@ -1,0 +1,414 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#2a0a40"/>
+      <stop offset="100%" stop-color="#0a0218"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <g id="face1">
+      <circle cx="0" cy="0" r="20" fill="#ff0055"/>
+      <circle cx="-7" cy="-4" r="3" fill="#1a0d26"/>
+      <circle cx="7" cy="-4" r="3" fill="#1a0d26"/>
+      <path d="M-10,8 Q0,18 10,8" fill="none" stroke="#1a0d26" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="0" cy="8" r="3" fill="#ff0055"/>
+    </g>
+    
+    <g id="face2">
+      <circle cx="0" cy="0" r="18" fill="#00ff99"/>
+      <circle cx="-6" cy="-4" r="2.5" fill="#1a0d26"/>
+      <circle cx="6" cy="-4" r="2.5" fill="#1a0d26"/>
+      <path d="M-8,6 L-4,10 L8,4" fill="none" stroke="#1a0d26" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    
+    <g id="face3">
+      <circle cx="0" cy="0" r="22" fill="#7700ff"/>
+      <path d="M-10,-5 Q-6,-10 -2,-5" fill="none" stroke="#1a0d26" stroke-width="3" stroke-linecap="round"/>
+      <path d="M2,-5 Q6,-10 10,-5" fill="none" stroke="#1a0d26" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="0" cy="10" r="5" fill="#1a0d26"/>
+    </g>
+    
+    <g id="face4">
+      <circle cx="0" cy="0" r="16" fill="#ffcc00"/>
+      <circle cx="-5" cy="-3" r="2" fill="#1a0d26"/>
+      <circle cx="5" cy="-3" r="2" fill="#1a0d26"/>
+      <path d="M-9,5 L-3,11 L3,5 L9,11" fill="none" stroke="#1a0d26" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    
+    <g id="face5">
+      <circle cx="0" cy="0" r="20" fill="#00ccff"/>
+      <polygon points="-8,-6 -4,-2 -8,2 -12,-2" fill="#1a0d26"/>
+      <polygon points="8,-6 12,-2 8,2 4,-2" fill="#1a0d26"/>
+      <path d="M-9,8 A 9 9 0 0 0 9 8" fill="none" stroke="#1a0d26" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="0" cy="10" r="4" fill="#ff0055"/>
+    </g>
+    
+    <g id="face6">
+      <circle cx="0" cy="0" r="24" fill="#ff6600"/>
+      <circle cx="-8" cy="-6" r="3.5" fill="#fff"/>
+      <circle cx="8" cy="-6" r="3.5" fill="#fff"/>
+      <circle cx="-8" cy="-6" r="1.5" fill="#1a0d26"/>
+      <circle cx="8" cy="-6" r="1.5" fill="#1a0d26"/>
+      <path d="M-14,6 L14,6" fill="none" stroke="#1a0d26" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    
+    <g id="face7">
+      <circle cx="0" cy="0" r="19" fill="#ff00cc"/>
+      <path d="M-7,-3 L-3,-3" fill="none" stroke="#1a0d26" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="7" cy="-3" r="3" fill="#1a0d26"/>
+      <path d="M-10,8 A10 10 0 0 0 10 8" fill="none" stroke="#1a0d26" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-2,12 L2,12 L0,8 Z" fill="#ff0055"/>
+    </g>
+    
+    <g id="face8">
+      <circle cx="0" cy="0" r="21" fill="#39ff14"/>
+      <path d="M-10,-4 A4 4 0 0 1 -2,-4" fill="none" stroke="#1a0d26" stroke-width="3" stroke-linecap="round"/>
+      <path d="M2,-4 A4 4 0 0 1 10,-4" fill="none" stroke="#1a0d26" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-8,6 L8,6" fill="none" stroke="#1a0d26" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    
+    <g id="face9">
+      <circle cx="0" cy="0" r="17" fill="#ff3333"/>
+      <circle cx="-6" cy="-4" r="4" fill="#1a0d26"/>
+      <circle cx="6" cy="-4" r="4" fill="#1a0d26"/>
+      <path d="M-9,6 Q0,16 9,6" fill="#fff" stroke="#1a0d26" stroke-width="2.5"/>
+    </g>
+    
+    <g id="face10">
+      <circle cx="0" cy="0" r="23" fill="#8800ff"/>
+      <polygon points="-10,-4 -4,-4 -7,-10" fill="#1a0d26"/>
+      <polygon points="4,-4 10,-4 7,-10" fill="#1a0d26"/>
+      <path d="M-10,8 Q0,0 10,8" fill="none" stroke="#1a0d26" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="0" cy="14" r="4" fill="#1a0d26"/>
+      <path d="M-13,-13 L13,-13 L13,13 L-13,13 Z" fill="none" stroke="#ffcc00" stroke-width="2.5" stroke-dasharray="6 4"/>
+    </g>
+    
+    <g id="star">
+      <polygon points="0,-12 3,-4 12,-4 5,2 8,11 0,6 -8,11 -5,2 -12,-4 -3,-4" fill="#00ccff"/>
+    </g>
+    
+    <g id="heart">
+      <path d="M0,6 C-10,-6 -20,4 0,16 C20,4 10,-6 0,6" fill="#ff0055"/>
+    </g>
+    
+    <g id="bolt">
+      <polygon points="0,-15 6,-2 2,-2 8,10 -4,2 0,2" fill="#ffcc00"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <g filter="url(#glow)">
+    <g transform="translate(400,300)">
+      <circle r="220" fill="#ff0055" opacity="0.15">
+        <animate attributeName="r" values="220;240;220" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.15;0.05;0.15" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="160" fill="#00ff99" opacity="0.15">
+        <animate attributeName="r" values="160;180;160" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.15;0.05;0.15" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="100" fill="#7700ff" opacity="0.2">
+        <animate attributeName="r" values="100;115;100" dur="5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <g>
+    <g transform="translate(80, -50)">
+      <use href="#face1"/>
+      <animateTransform attributeName="transform" type="translate" values="80,-50; 80,650" dur="4.2s" begin="0.1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="4.2s" begin="0.1s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(200, -50)">
+      <use href="#face2"/>
+      <animateTransform attributeName="transform" type="translate" values="200,-50; 180,650" dur="3.8s" begin="0.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -270" dur="3.8s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(350, -50)">
+      <use href="#face3"/>
+      <animateTransform attributeName="transform" type="translate" values="350,-50; 370,650" dur="5.1s" begin="0s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 180" dur="5.1s" begin="0s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(500, -50)">
+      <use href="#face4"/>
+      <animateTransform attributeName="transform" type="translate" values="500,-50; 480,650" dur="3.5s" begin="0.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 450" dur="3.5s" begin="0.8s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(650, -50)">
+      <use href="#face5"/>
+      <animateTransform attributeName="transform" type="translate" values="650,-50; 670,650" dur="4.5s" begin="0.3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="4.5s" begin="0.3s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(750, -50)">
+      <use href="#face6"/>
+      <animateTransform attributeName="transform" type="translate" values="750,-50; 730,650" dur="3.2s" begin="1.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 540" dur="3.2s" begin="1.2s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(150, -50)">
+      <use href="#face7"/>
+      <use href="#heart" transform="translate(-25, -15) scale(0.8)"/>
+      <animateTransform attributeName="transform" type="translate" values="150,-50; 170,650" dur="4.8s" begin="1.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 270" dur="4.8s" begin="1.5s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(300, -50)">
+      <use href="#face8"/>
+      <use href="#star" transform="translate(25, -20) scale(0.7)"/>
+      <animateTransform attributeName="transform" type="translate" values="300,-50; 280,650" dur="3.6s" begin="2.0s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="3.6s" begin="2.0s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(450, -50)">
+      <use href="#face9"/>
+      <animateTransform attributeName="transform" type="translate" values="450,-50; 470,650" dur="5.5s" begin="0.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="5.5s" begin="0.7s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(600, -50)">
+      <use href="#face10"/>
+      <animateTransform attributeName="transform" type="translate" values="600,-50; 580,650" dur="4.0s" begin="1.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -450" dur="4.0s" begin="1.8s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(50, -50)">
+      <use href="#face4"/>
+      <use href="#bolt" transform="translate(20, 20) scale(0.6)"/>
+      <animateTransform attributeName="transform" type="translate" values="50,-50; 70,650" dur="3.9s" begin="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="3.9s" begin="2.5s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(250, -50)">
+      <use href="#face6"/>
+      <use href="#heart" transform="translate(25, -10) scale(0.6)"/>
+      <animateTransform attributeName="transform" type="translate" values="250,-50; 230,650" dur="5.2s" begin="3.0s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -270" dur="5.2s" begin="3.0s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(400, -50)">
+      <use href="#face1"/>
+      <animateTransform attributeName="transform" type="translate" values="400,-50; 420,650" dur="4.1s" begin="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 180" dur="4.1s" begin="3.5s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(550, -50)">
+      <use href="#face3"/>
+      <use href="#star" transform="translate(-20, -25) scale(0.9)"/>
+      <animateTransform attributeName="transform" type="translate" values="550,-50; 530,650" dur="3.3s" begin="4.0s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 540" dur="3.3s" begin="4.0s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(700, -50)">
+      <use href="#face5"/>
+      <animateTransform attributeName="transform" type="translate" values="700,-50; 720,650" dur="4.7s" begin="4.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="4.7s" begin="4.5s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(120, -50)">
+      <use href="#face8"/>
+      <animateTransform attributeName="transform" type="translate" values="120,-50; 100,650" dur="3.4s" begin="0.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 450" dur="3.4s" begin="0.2s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(280, -50)">
+      <use href="#face10"/>
+      <use href="#bolt" transform="translate(-20, 15) scale(0.7)"/>
+      <animateTransform attributeName="transform" type="translate" values="280,-50; 300,650" dur="5.8s" begin="0.9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -180" dur="5.8s" begin="0.9s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(480, -50)">
+      <use href="#face2"/>
+      <use href="#heart" transform="translate(-22, -18) scale(0.75)"/>
+      <animateTransform attributeName="transform" type="translate" values="480,-50; 460,650" dur="4.3s" begin="1.3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="4.3s" begin="1.3s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(620, -50)">
+      <use href="#face7"/>
+      <animateTransform attributeName="transform" type="translate" values="620,-50; 640,650" dur="3.7s" begin="1.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="3.7s" begin="1.7s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(30, -50)">
+      <use href="#face9"/>
+      <use href="#star" transform="translate(22, 22) scale(0.65)"/>
+      <animateTransform attributeName="transform" type="translate" values="30,-50; 50,650" dur="5.0s" begin="2.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 270" dur="5.0s" begin="2.2s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(180, -50)">
+      <use href="#face1"/>
+      <animateTransform attributeName="transform" type="translate" values="180,-50; 160,650" dur="4.6s" begin="2.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -450" dur="4.6s" begin="2.7s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(330, -50)">
+      <use href="#face6"/>
+      <animateTransform attributeName="transform" type="translate" values="330,-50; 350,650" dur="3.1s" begin="3.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="3.1s" begin="3.2s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(520, -50)">
+      <use href="#face4"/>
+      <use href="#heart" transform="translate(20, -15) scale(0.85)"/>
+      <animateTransform attributeName="transform" type="translate" values="520,-50; 500,650" dur="4.9s" begin="3.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 180" dur="4.9s" begin="3.7s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(680, -50)">
+      <use href="#face3"/>
+      <animateTransform attributeName="transform" type="translate" values="680,-50; 700,650" dur="5.4s" begin="4.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -270" dur="5.4s" begin="4.2s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(100, -50)">
+      <use href="#face5"/>
+      <use href="#bolt" transform="translate(-18, -20) scale(0.8)"/>
+      <animateTransform attributeName="transform" type="translate" values="100,-50; 120,650" dur="3.5s" begin="4.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 540" dur="3.5s" begin="4.7s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(220, -50)">
+      <use href="#face10"/>
+      <animateTransform attributeName="transform" type="translate" values="220,-50; 200,650" dur="4.4s" begin="5.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="4.4s" begin="5.2s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(380, -50)">
+      <use href="#face7"/>
+      <use href="#star" transform="translate(-22, 20) scale(0.7)"/>
+      <animateTransform attributeName="transform" type="translate" values="380,-50; 400,650" dur="5.6s" begin="5.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="5.6s" begin="5.7s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(580, -50)">
+      <use href="#face2"/>
+      <animateTransform attributeName="transform" type="translate" values="580,-50; 560,650" dur="3.8s" begin="0.4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -180" dur="3.8s" begin="0.4s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(720, -50)">
+      <use href="#face8"/>
+      <use href="#heart" transform="translate(18, 18) scale(0.6)"/>
+      <animateTransform attributeName="transform" type="translate" values="720,-50; 740,650" dur="4.2s" begin="0.6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 450" dur="4.2s" begin="0.6s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(60, -50)">
+      <use href="#face6"/>
+      <animateTransform attributeName="transform" type="translate" values="60,-50; 40,650" dur="5.3s" begin="1.1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="5.3s" begin="1.1s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(420, -50)">
+      <use href="#face9"/>
+      <use href="#bolt" transform="translate(20, -18) scale(0.5)"/>
+      <animateTransform attributeName="transform" type="translate" values="420,-50; 440,650" dur="3.6s" begin="1.6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 270" dur="3.6s" begin="1.6s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(260, -50)">
+      <use href="#face1"/>
+      <use href="#star" transform="translate(24, -22) scale(0.85)"/>
+      <animateTransform attributeName="transform" type="translate" values="260,-50; 240,650" dur="4.8s" begin="2.1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -450" dur="4.8s" begin="2.1s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(640, -50)">
+      <use href="#face4"/>
+      <animateTransform attributeName="transform" type="translate" values="640,-50; 660,650" dur="3.3s" begin="2.6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="3.3s" begin="2.6s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(140, -50)">
+      <use href="#face3"/>
+      <animateTransform attributeName="transform" type="translate" values="140,-50; 160,650" dur="5.7s" begin="3.1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 180" dur="5.7s" begin="3.1s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(360, -50)">
+      <use href="#face5"/>
+      <use href="#heart" transform="translate(-20, 20) scale(0.9)"/>
+      <animateTransform attributeName="transform" type="translate" values="360,-50; 340,650" dur="4.1s" begin="3.6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -270" dur="4.1s" begin="3.6s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g transform="translate(560, -50)">
+      <use href="#face10"/>
+      <animateTransform attributeName="transform" type="translate" values="560,-50; 580,650" dur="3.9s" begin="4.1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 540" dur="3.9s" begin="4.1s" repeatCount="indefinite" additive="sum"/>
+    </g>
+
+    <use href="#star" transform="translate(100,100) scale(1.2)">
+      <animateTransform attributeName="transform" type="translate" values="100,-50; 120,650" dur="4.5s" begin="0s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="4.5s" begin="0s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="scale" values="1.2; 0.8; 1.2" dur="4.5s" begin="0s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <use href="#heart" transform="translate(300,200) scale(1)">
+      <animateTransform attributeName="transform" type="translate" values="300,-50; 280,650" dur="5.2s" begin="1.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -180" dur="5.2s" begin="1.2s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="scale" values="1; 1.3; 1" dur="5.2s" begin="1.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <use href="#bolt" transform="translate(500,150) scale(1.1)">
+      <animateTransform attributeName="transform" type="translate" values="500,-50; 520,650" dur="3.8s" begin="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="3.8s" begin="2.5s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="scale" values="1.1; 0.7; 1.1" dur="3.8s" begin="2.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <use href="#star" transform="translate(700,250) scale(0.9)">
+      <animateTransform attributeName="transform" type="translate" values="700,-50; 680,650" dur="4.2s" begin="0.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="4.2s" begin="0.8s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="scale" values="0.9; 1.2; 0.9" dur="4.2s" begin="0.8s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <use href="#heart" transform="translate(200,350) scale(0.8)">
+      <animateTransform attributeName="transform" type="translate" values="200,-50; 220,650" dur="5.5s" begin="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 270" dur="5.5s" begin="3.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <use href="#bolt" transform="translate(450,400) scale(1)">
+      <animateTransform attributeName="transform" type="translate" values="450,-50; 430,650" dur="4.0s" begin="1.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="4.0s" begin="1.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <circle cx="80" cy="-20" r="3" fill="#ff0055">
+      <animateTransform attributeName="transform" type="translate" values="0,-50; 0,650" dur="3.5s" begin="0.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="-20" r="4" fill="#00ff99">
+      <animateTransform attributeName="transform" type="translate" values="0,-50; 0,650" dur="4.8s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="-20" r="2.5" fill="#7700ff">
+      <animateTransform attributeName="transform" type="translate" values="0,-50; 0,650" dur="3.2s" begin="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="750" cy="-20" r="3.5" fill="#ffcc00">
+      <animateTransform attributeName="transform" type="translate" values="0,-50; 0,650" dur="5.1s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="-20" r="2" fill="#00ccff">
+      <animateTransform attributeName="transform" type="translate" values="0,-50; 0,650" dur="4.3s" begin="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="480" cy="-20" r="4" fill="#ff6600">
+      <animateTransform attributeName="transform" type="translate" values="0,-50; 0,650" dur="3.9s" begin="1.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="-20" r="3" fill="#ff00cc">
+      <animateTransform attributeName="transform" type="translate" values="0,-50; 0,650" dur="5.6s" begin="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="-20" r="2.5" fill="#39ff14">
+      <animateTransform attributeName="transform" type="translate" values="0,-50; 0,650" dur="4.1s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

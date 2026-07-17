@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="blurM"><feGaussianBlur stdDeviation="35"/></filter>
+<filter id="blurH"><feGaussianBlur stdDeviation="75"/></filter>
+<filter id="turb"><feTurbulence baseFrequency="0.02" numOctaves="3"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer></filter>
+</defs>
+
+<rect fill="#FFF5EB" width="1600" height="900"/>
+
+<circle cx="350" cy="300" r="280" fill="#B85440" opacity="0.75" filter="url(#blurH)">
+<animate attributeName="r" values="280;310;280" dur="8s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.75;0.85;0.75" dur="6s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1250" cy="600" r="260" fill="#B85440" opacity="0.7" filter="url(#blurH)">
+<animate attributeName="r" values="260;290;260" dur="9s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="800" cy="450" r="220" fill="#FFB088" opacity="0.9" filter="url(#blurM)">
+<animate attributeName="r" values="220;240;220" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.9;0.75;0.9" dur="4s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="550" cy="480" r="160" fill="#FA8072" opacity="0.95" filter="url(#blurM)">
+<animate attributeName="r" values="160;180;160" dur="7s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1050" cy="320" r="190" fill="#FFB088" opacity="0.85" filter="url(#blurM)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-25; 0,0" dur="10s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="800" cy="450" r="90" fill="#FF7F00" opacity="1">
+<animate attributeName="r" values="90;105;90" dur="4s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="1;0.85;1" dur="3s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="500" cy="220" r="70" fill="#FF7F00" opacity="0.95">
+<animate attributeName="r" values="70;82;70" dur="6s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1150" cy="680" r="75" fill="#FF7F00" opacity="0.9">
+<animate attributeName="r" values="75;88;75" dur="5s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,20; 0,0" dur="8s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="300" cy="650" r="55" fill="#FA8072" opacity="1">
+<animate attributeName="r" values="55;65;55" dur="5s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1350" cy="280" r="45" fill="#FFB088" opacity="0.9">
+<animate attributeName="cy" values="280;260;280" dur="7s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1450" cy="480" r="85" fill="#B85440" opacity="0.8" filter="url(#blurM)">
+<animate attributeName="r" values="85;100;85" dur="6s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="220" cy="400" r="40" fill="#FF7F00" opacity="1">
+<animate attributeName="opacity" values="1;0.8;1" dur="4s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0; 15,-10; 0,0" dur="12s" repeatCount="indefinite"/>
+</circle>
+
+<rect width="1600" height="900" filter="url(#turb)" opacity="0.08"/>
+</svg>

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Soft glow halos for bright elements -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur1"/>
+      <feGaussianBlur stdDeviation="28" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Atmospheric depth filters (mandatory sizes) -->
+    <filter id="blur40"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur80"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="blur120"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="blur160"><feGaussianBlur stdDeviation="160"/></filter>
+
+    <!-- Sky/Atmosphere Gradient (animating stop-color) -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A3A2A">
+        <animate attributeName="stop-color" values="#1A3A2A;#2D5A3F;#1A3A2A" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="60%" stop-color="#2D5A3F">
+        <animate attributeName="stop-color" values="#2D5A3F;#1A3A2A;#2D5A3F" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#1A3A2A">
+        <animate attributeName="stop-color" values="#1A3A2A;#2D5A3F;#1A3A2A" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Mist Gradient -->
+    <linearGradient id="mistGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8FA98F" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.15;0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#C8DCC0" stop-opacity="0.2">
+        <animate attributeName="stop-opacity" values="0.2;0.05;0.2" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#6B8E5C" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.1;0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Light Ray Gradient -->
+    <linearGradient id="rayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8DCC0" stop-opacity="0.6">
+        <animate attributeName="stop-opacity" values="0.6;0.2;0.6" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        <animate attributeName="stop-color" values="#C8DCC0;#8FA98F;#C8DCC0" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#8FA98F" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.3;0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Frond Gradient -->
+    <linearGradient id="frondGradLight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8FA98F">
+        <animate attributeName="stop-color" values="#8FA98F;#C8DCC0;#8FA98F" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#6B8E5C">
+        <animate attributeName="stop-color" values="#6B8E5C;#8FA98F;#6B8E5C" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="frondGradMid" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6B8E5C">
+        <animate attributeName="stop-color" values="#6B8E5C;#8FA98F;#6B8E5C" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#2D5A3F">
+        <animate attributeName="stop-color" values="#2D5A3F;#6B8E5C;#2D5A3F" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="frondGradDark" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D5A3F">
+        <animate attributeName="stop-color" values="#2D5A3F;#1A3A2A;#2D5A3F" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#1A3A2A">
+        <animate attributeName="stop-color" values="#1A3A2A;#2D5A3F;#1A3A2A" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Particle Shape -->
+    <circle id="p" r="1.5" fill="#C8DCC0" filter="url(#glow)"/>
+
+    <!-- Motion Paths for Particles -->
+    <path id="p1" d="M 800,900 C 750,700 850,500 800,300 C 750,100 850,0 800,-100" fill="none"/>
+    <path id="p2" d="M 850,950 C 800,750 900,550 850,350 C 800,150 900,50 850,-50" fill="none"/>
+    <path id="p3" d="M 750,920 C 700,720 800,520 750,320 C 700,120 800,20 750,-80" fill="none"/>
+    <path id="p4" d="M 900,880 C 850,680 950,480 900,280 C 850,80 950,-20 900,-120" fill="none"/>
+    <path id="p5" d="M 700,940 C 650,740 750,540 700,340 C 650,140 750,40 700,-60" fill="none"/>
+  </defs>
+
+  <!-- 1. Sky / Background Atmosphere (Negative Space Upper-Left) -->
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+  
+  <!-- 2. Deep Background Blur Layer -->
+  <g filter="url(#blur160)">
+    <ellipse cx="1200" cy="600" rx="600" ry="400" fill="#1A3A2A" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.3;0.5" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+
+  <!-- 3. Mid Background Blur Layer -->
+  <g filter="url(#blur120)">
+    <ellipse cx="1000" cy="500" rx="400" ry="300" fill="#2D5A3F" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.2;0.4" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,-10; 0,0" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+    <ellipse cx="1400" cy="700" rx="300" ry="200" fill="#1A3A2A" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.4;0.6" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,5; 0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+
+  <!-- 4. Distant Fern Fronds (Back Layer - Blurred) -->
+  <g filter="url(#blur80)" opacity="0.4">
+    <g transform="translate(950, 800)">
+      <animateTransform attributeName="transform" type="rotate" values="-1 950 800; 1 950 800; -1 950 800" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <path d="M0,0 C-30,-80 -60,-160 -50,-240 C-40,-320 -10,-400 20,-480" stroke="#2D5A3F" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <path d="M0,0 C20,-70 50,-140 80,-200 C110,-260 140,-320 120,-380" stroke="#2D5A3F" stroke-width="10" fill="none" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1250, 850)">
+      <animateTransform attributeName="transform" type="rotate" values="1 1250 850; -1 1250 850; 1 1250 850" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <path d="M0,0 C40,-60 80,-120 100,-180 C120,-240 110,-300 90,-360" stroke="#1A3A2A" stroke-width="14" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 5. Soft Light Rays (Upper Left) -->
+  <g opacity="0.3" filter="url(#glow)">
+    <polygon points="-100,-100 600,-100 1600,900 800,900" fill="url(#rayGrad)">
+      <animate attributeName="opacity" values="0.3;0.15;0.3" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 30,10; 0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </polygon>
+  </g>
+  <g opacity="0.2" filter="url(#blur40)">
+    <polygon points="200,-100 900,-100 1800,800 1100,800" fill="url(#rayGrad)">
+      <animate attributeName="opacity" values="0.2;0.05;0.2" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,5; 0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </polygon>
+  </g>
+
+  <!-- 6. Mid-Ground Ferns (Breathing + Swaying) -->
+  <g opacity="0.7">
+    <!-- Fern 1 -->
+    <g transform="translate(1050, 900)">
+      <animateTransform attributeName="transform" type="translate" values="1050,900; 1050,904; 1050,900" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="-2 1050 900; 2 1050 900; -2 1050 900" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        <path d="M0,0 C-40,-100 -80,-200 -70,-300 C-60,-400 -20,-500 20,-600" stroke="url(#frondGradMid)" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M0,0 C30,-90 60,-180 90,-260 C120,-340 150,-420 130,-500" stroke="url(#frondGradMid)" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M0,0 C-20,-80 -40,-160 -30,-240 C-20,-320 10,-400 40,-480" stroke="url(#frondGradMid)" stroke-width="5" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Fern 2 -->
+    <g transform="translate(1350, 920)">
+      <animateTransform attributeName="transform" type="translate" values="1350,920; 1350,916; 1350,920" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="1 1350 920; -1 1350 920; 1 1350 920" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        <path d="M0,0 C50,-80 100,-160 130,-240 C160,-320 150,-400 120,-480" stroke="url(#frondGradMid)" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <path d="M0,0 C20,-70 40,-140 60,-210 C80,-280 100,-350 90,-420" stroke="url(#frondGradMid)" stroke-width="5" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 7. Foreground Main Fern (Hero Subject - Right Two-Thirds) -->
+  <g transform="translate(900, 950)">
+    <!-- Breath Animation -->
+    <animateTransform attributeName="transform" type="translate" values="900,950; 900,954; 900,950" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    
+    <g>
+      <!-- Main Stem Sway -->
+      <animateTransform attributeName="transform" type="rotate" values="-0.5 900 950; 0.5 900 950; -0.5 900 950" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+
+      <!-- Central Rachis -->
+      <path d="M0,0 C-50,-150 -100,-300 -80,-450 C-60,-600 -20,-750 40,-900" stroke="url(#frondGradLight)" stroke-width="5" fill="none" stroke-linecap="round">
+        <animate attributeName="stroke-width" values="5;6;5" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </path>
+
+      <!-- Pinnae (Leaflets) - Left Side -->
+      <g stroke="url(#frondGradLight)" stroke-width="2" fill="none" stroke-linecap="round">
+        <path d="M-10,-50 Q-60,-70 -90,-40 Q-70,-20 -10,-40" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0.7;0.9" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -10 -50; 2 -10 -50; 0 -10 -50" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-20,-120 Q-80,-140 -120,-100 Q-90,-80 -20,-110" opacity="0.85">
+          <animate attributeName="opacity" values="0.85;0.65;0.85" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -20 -120; -2 -20 -120; 0 -20 -120" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-30,-190 Q-100,-210 -140,-170 Q-110,-150 -30,-180" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.6;0.8" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -30 -190; 1 -30 -190; 0 -30 -190" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-40,-260 Q-110,-280 -150,-240 Q-120,-220 -40,-250" opacity="0.75">
+          <animate attributeName="opacity" values="0.75;0.55;0.75" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -40 -260; -1 -40 -260; 0 -40 -260" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-45,-330 Q-120,-350 -160,-310 Q-130,-290 -45,-320" opacity="0.7">
+          <animate attributeName="opacity" values="0.7;0.5;0.7" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -45 -330; 2 -45 -330; 0 -45 -330" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-50,-400 Q-130,-420 -170,-380 Q-140,-360 -50,-390" opacity="0.65">
+          <animate attributeName="opacity" values="0.65;0.45;0.65" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -50 -400; -2 -50 -400; 0 -50 -400" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-50,-470 Q-135,-490 -175,-450 Q-145,-430 -50,-460" opacity="0.6">
+          <animate attributeName="opacity" values="0.6;0.4;0.6" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -50 -470; 1 -50 -470; 0 -50 -470" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-45,-540 Q-130,-560 -170,-520 Q-140,-500 -45,-530" opacity="0.55">
+          <animate attributeName="opacity" values="0.55;0.35;0.55" dur="21s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -45 -540; -1 -45 -540; 0 -45 -540" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-35,-610 Q-120,-630 -160,-590 Q-130,-570 -35,-600" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.3;0.5" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -35 -610; 2 -35 -610; 0 -35 -610" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-20,-680 Q-100,-700 -140,-660 Q-110,-640 -20,-670" opacity="0.45">
+          <animate attributeName="opacity" values="0.45;0.25;0.45" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -20 -680; -2 -20 -680; 0 -20 -680" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-5,-750 Q-70,-770 -110,-730 Q-80,-710 -5,-740" opacity="0.4">
+          <animate attributeName="opacity" values="0.4;0.2;0.4" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -5 -750; 1 -5 -750; 0 -5 -750" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M10,-820 Q-40,-840 -80,-800 Q-50,-780 10,-810" opacity="0.35">
+          <animate attributeName="opacity" values="0.35;0.15;0.35" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 10 -820; -1 10 -820; 0 10 -820" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+      </g>
+
+      <!-- Pinnae - Right Side -->
+      <g stroke="url(#frondGradLight)" stroke-width="2" fill="none" stroke-linecap="round">
+        <path d="M0,-30 Q50,-50 80,-20 Q60,0 0,-20" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0.7;0.9" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 0 -30; -2 0 -30; 0 0 -30" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-5,-100 Q60,-120 100,-80 Q70,-60 -5,-90" opacity="0.85">
+          <animate attributeName="opacity" values="0.85;0.65;0.85" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -5 -100; 2 -5 -100; 0 -5 -100" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-10,-170 Q70,-190 110,-150 Q80,-130 -10,-160" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.6;0.8" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -10 -170; -1 -10 -170; 0 -10 -170" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-15,-240 Q75,-260 115,-220 Q85,-200 -15,-230" opacity="0.75">
+          <animate attributeName="opacity" values="0.75;0.55;0.75" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -15 -240; 1 -15 -240; 0 -15 -240" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-15,-310 Q80,-330 120,-290 Q90,-270 -15,-300" opacity="0.7">
+          <animate attributeName="opacity" values="0.7;0.5;0.7" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -15 -310; -2 -15 -310; 0 -15 -310" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-10,-380 Q85,-400 125,-360 Q95,-340 -10,-370" opacity="0.65">
+          <animate attributeName="opacity" values="0.65;0.45;0.65" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -10 -380; 2 -10 -380; 0 -10 -380" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-5,-450 Q90,-470 130,-430 Q100,-410 -5,-440" opacity="0.6">
+          <animate attributeName="opacity" values="0.6;0.4;0.6" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -5 -450; -1 -5 -450; 0 -5 -450" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M5,-520 Q85,-540 125,-500 Q95,-480 5,-510" opacity="0.55">
+          <animate attributeName="opacity" values="0.55;0.35;0.55" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 5 -520; 1 5 -520; 0 5 -520" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M15,-590 Q85,-610 125,-570 Q95,-550 15,-580" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.3;0.5" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 15 -590; -2 15 -590; 0 15 -590" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M25,-660 Q85,-680 125,-640 Q95,-620 25,-650" opacity="0.45">
+          <animate attributeName="opacity" values="0.45;0.25;0.45" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 25 -660; 2 25 -660; 0 25 -660" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M35,-730 Q85,-750 125,-710 Q95,-690 35,-720" opacity="0.4">
+          <animate attributeName="opacity" values="0.4;0.2;0.4" dur="21s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 35 -730; -1 35 -730; 0 35 -730" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M40,-800 Q80,-820 120,-780 Q90,-760 40,-790" opacity="0.35">
+          <animate attributeName="opacity" values="0.35;0.15;0.35" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 40 -800; 1 40 -800; 0 40 -800" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+      </g>
+
+      <!-- SAMAMBAIA ABRINDO (Curling Tip) -->
+      <!-- The curled tip at the top of the rachis, slowly unfurling via rotate -->
+      <g transform="translate(40, -900)">
+        <animateTransform attributeName="transform" type="rotate" values="0 40 -900; 15 40 -900; 0 40 -900" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        <!-- Fiddlehead / Crozier -->
+        <path d="M0,0 C10,-10 20,-20 15,-30 C10,-40 -5,-35 -10,-25 C-15,-15 -5,-5 0,0" fill="url(#frondGradLight)" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0.7;0.9" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <!-- Tiny unfurling pinnae near the tip -->
+        <path d="M-5,-15 Q-15,-20 -20,-10 Q-10,-5 -5,-15" stroke="#C8DCC0" stroke-width="1.5" fill="none" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.4;0.8" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M5,-10 Q15,-15 20,-5 Q10,0 5,-10" stroke="#C8DCC0" stroke-width="1.5" fill="none" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.4;0.8" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+      </g>
+    </g>
+  </g>
+
+  <!-- 8. Secondary Foreground Fern (Overlapping, slightly offset) -->
+  <g transform="translate(1200, 980)" opacity="0.85">
+    <animateTransform attributeName="transform" type="translate" values="1200,980; 1200,976; 1200,980" dur="8.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0.5 1200 980; -0.5 1200 980; 0.5 1200 980" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <path d="M0,0 C-30,-120 -60,-240 -40,-360 C-20,-480 20,-600 60,-720" stroke="url(#frondGradDark)" stroke-width="6" fill="none" stroke-linecap="round"/>
+      
+      <!-- Pinnae -->
+      <g stroke="url(#frondGradDark)" stroke-width="2.5" fill="none" stroke-linecap="round">
+        <path d="M-5,-60 Q-50,-80 -80,-50 Q-60,-30 -5,-50" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.6;0.8" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -5 -60; 2 -5 -60; 0 -5 -60" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-10,-140 Q-60,-160 -90,-130 Q-70,-110 -10,-130" opacity="0.75">
+          <animate attributeName="opacity" values="0.75;0.55;0.75" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -10 -140; -2 -10 -140; 0 -10 -140" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-10,-220 Q-65,-240 -95,-210 Q-75,-190 -10,-210" opacity="0.7">
+          <animate attributeName="opacity" values="0.7;0.5;0.7" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -10 -220; 1 -10 -220; 0 -10 -220" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M-5,-300 Q-60,-320 -90,-290 Q-70,-270 -5,-290" opacity="0.65">
+          <animate attributeName="opacity" values="0.65;0.45;0.65" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 -5 -300; -1 -5 -300; 0 -5 -300" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M5,-380 Q-50,-400 -80,-370 Q-60,-350 5,-370" opacity="0.6">
+          <animate attributeName="opacity" values="0.6;0.4;0.6" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 5 -380; 2 5 -380; 0 5 -380" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M15,-460 Q-35,-480 -65,-450 Q-45,-430 15,-450" opacity="0.55">
+          <animate attributeName="opacity" values="0.55;0.35;0.55" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 15 -460; -2 15 -460; 0 15 -460" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M25,-540 Q-20,-560 -50,-530 Q-30,-510 25,-530" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.3;0.5" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 25 -540; 1 25 -540; 0 25 -540" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M35,-620 Q-5,-640 -35,-610 Q-15,-590 35,-610" opacity="0.45">
+          <animate attributeName="opacity" values="0.45;0.25;0.45" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 35 -620; -1 35 -620; 0 35 -620" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+        <path d="M45,-700 Q10,-720 -20,-690 Q0,-670 45,-690" opacity="0.4">
+          <animate attributeName="opacity" values="0.4;0.2;0.4" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animateTransform attributeName="transform" type="rotate" values="0 45 -700; 2 45 -700; 0 45 -700" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+        </path>
+      </g>
+    </g>
+  </g>
+
+  <!-- 9. Mist / Fog Layers (Drifting) -->
+  <g opacity="0.4" filter="url(#blur40)">
+    <ellipse cx="600" cy="600" rx="500" ry="150" fill="url(#mistGrad)">
+      <animate attributeName="cx" values="600;650;600" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="cy" values="600;580;600" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.4;0.2;0.4" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+  <g opacity="0.3" filter="url(#blur80)">
+    <ellipse cx="1100" cy="500" rx="400" ry="120" fill="url(#mistGrad)">
+      <animate attributeName="cx" values="1100;1050;1100" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="cy" values="500;520;500" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+  <g opacity="0.25" filter="url(#blur120)">
+    <ellipse cx="400" cy="750" rx="300" ry="100" fill="url(#mistGrad)">
+      <animate attributeName="cx" values="400;450;400" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="cy" values="750;730;750" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.25;0.1;0.25" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+
+  <!-- 10. Particles (Floating Upward via animateMotion) -->
+  <g opacity="0.6">
+    <use href="#p">
+      <animateMotion href="#p1" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+    <use href="#p">
+      <animateMotion href="#p2" dur="22s" begin="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="22s" begin="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+    <use href="#p">
+      <animateMotion href="#p3" dur="28s" begin="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="28s" begin="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+    <use href="#p">
+      <animateMotion href="#p4" dur="20s" begin="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="20s" begin="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+    <use href="#p">
+      <animateMotion href="#p5" dur="24s" begin="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="24s" begin="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+    <use href="#p">
+      <animateMotion href="#p1" dur="26s" begin="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="26s" begin="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+    <use href="#p">
+      <animateMotion href="#p2" dur="23s" begin="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="23s" begin="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+    <use href="#p">
+      <animateMotion href="#p3" dur="21s" begin="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="21s" begin="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+  </g>
+
+  <!-- 11. Foreground Soft Blur Overlays for Depth -->
+  <g filter="url(#blur40)" opacity="0.3">
+    <ellipse cx="1400" cy="850" rx="200" ry="100" fill="#1A3A2A">
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 10,-5; 0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+  <g filter="url(#blur80)" opacity="0.2">
+    <ellipse cx="500" cy="800" rx="250" ry="150" fill="#2D5A3F">
+      <animate attributeName="opacity" values="0.2;0.05;0.2" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,10; 0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+
+  <!-- 12. Subtle Vignette for Editorial Cinematic Feel -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="40%" stop-color="#1A3A2A" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#1A3A2A" stop-opacity="0.6">
+      <animate attributeName="stop-opacity" values="0.6;0.4;0.6" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </stop>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+</svg>

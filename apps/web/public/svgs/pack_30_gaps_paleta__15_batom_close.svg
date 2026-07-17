@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bgBase" cx="30%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#3D1A2F">
+        <animate attributeName="stop-color" values="#3D1A2F;#4A2040;#3D1A2F" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="60%" stop-color="#2A1020">
+        <animate attributeName="stop-color" values="#2A1020;#35152A;#2A1020" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="100%" stop-color="#150510">
+        <animate attributeName="stop-color" values="#150510;#1A0812;#150510" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+    </radialGradient>
+
+    <radialGradient id="bgLight" cx="75%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#C73A85" stop-opacity="0.25">
+        <animate attributeName="stop-opacity" values="0.25;0.35;0.25" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="50%" stop-color="#E54B9C" stop-opacity="0.08">
+        <animate attributeName="stop-opacity" values="0.08;0.15;0.08" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="100%" stop-color="#3D1A2F" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Lipstick Gradients -->
+    <linearGradient id="lipBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C73A85" />
+      <stop offset="15%" stop-color="#E54B9C" />
+      <stop offset="40%" stop-color="#F2A6C8" />
+      <stop offset="65%" stop-color="#E54B9C" />
+      <stop offset="85%" stop-color="#C73A85" />
+      <stop offset="100%" stop-color="#8B2457" />
+    </linearGradient>
+
+    <linearGradient id="lipTipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8C8DC" />
+      <stop offset="40%" stop-color="#F2A6C8" />
+      <stop offset="100%" stop-color="#E54B9C" />
+    </linearGradient>
+
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2A1020" />
+      <stop offset="20%" stop-color="#4A2040" />
+      <stop offset="45%" stop-color="#F2A6C8" />
+      <stop offset="55%" stop-color="#F8C8DC" />
+      <stop offset="70%" stop-color="#4A2040" />
+      <stop offset="100%" stop-color="#150510" />
+    </linearGradient>
+
+    <linearGradient id="metalInnerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#150510" />
+      <stop offset="30%" stop-color="#3D1A2F" />
+      <stop offset="50%" stop-color="#4A2040" />
+      <stop offset="100%" stop-color="#150510" />
+    </linearGradient>
+
+    <!-- Haze Gradient -->
+    <radialGradient id="hazeGrad" cx="60%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2A6C8" stop-opacity="0.4">
+        <animate attributeName="stop-opacity" values="0.4;0.55;0.4" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="100%" stop-color="#3D1A2F" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="blur40" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+    <filter id="blur80" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="80" />
+    </filter>
+    <filter id="blur120" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="120" />
+    </filter>
+    <filter id="blur160" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="160" />
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Reusable sparkle -->
+    <circle id="sparkle" r="3" fill="#F8C8DC" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      <animate attributeName="r" values="3;1.5;3" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    </circle>
+
+    <!-- Particle paths -->
+    <path id="path1" d="M 200 800 Q 400 400 700 500 T 1200 300" fill="none" />
+    <path id="path2" d="M 100 200 Q 500 100 900 400 T 1400 700" fill="none" />
+    <path id="path3" d="M 300 100 C 500 300, 800 200, 1000 500 S 1300 800, 1500 600" fill="none" />
+    <path id="path4" d="M 150 600 C 350 800, 600 700, 850 450 S 1100 200, 1300 350" fill="none" />
+    <path id="path5" d="M 50 400 Q 300 100 600 300 T 1100 100" fill="none" />
+    <path id="path6" d="M 250 750 Q 550 550 850 650 T 1350 450" fill="none" />
+  </defs>
+
+  <!-- Layer 1-2: Background Base -->
+  <rect width="1600" height="900" fill="url(#bgBase)" />
+  <rect width="1600" height="900" fill="url(#bgLight)" />
+
+  <!-- Layer 3-5: Deep atmospheric haze -->
+  <ellipse cx="300" cy="450" rx="400" ry="500" fill="#C73A85" opacity="0.12" filter="url(#blur160)">
+    <animate attributeName="rx" values="400;450;400" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="ry" values="500;550;500" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.12;0.18;0.12" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+
+  <ellipse cx="1100" cy="300" rx="350" ry="250" fill="#E54B9C" opacity="0.1" filter="url(#blur120)">
+    <animate attributeName="cx" values="1100;1150;1100" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.1;0.15;0.1" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+
+  <ellipse cx="700" cy="700" rx="500" ry="200" fill="#F2A6C8" opacity="0.08" filter="url(#blur80)">
+    <animate attributeName="cy" values="700;680;700" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.08;0.12;0.08" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+
+  <!-- Layer 6-8: Negative space blush mist (left side) -->
+  <circle cx="250" cy="350" r="280" fill="url(#hazeGrad)" filter="url(#blur80)" opacity="0.7">
+    <animate attributeName="r" values="280;300;280" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.7;0.85;0.7" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 15 -10; 0 0" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="180" cy="550" r="220" fill="#F8C8DC" opacity="0.25" filter="url(#blur120)">
+    <animate attributeName="r" values="220;240;220" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.25;0.35;0.25" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; -10 15; 0 0" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="320" cy="200" r="180" fill="#C73A85" opacity="0.2" filter="url(#blur80)">
+    <animate attributeName="r" values="180;200;180" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 12 8; 0 0" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <!-- Layer 9-11: Subject Shadow & Base Glow -->
+  <ellipse cx="1120" cy="760" rx="130" ry="18" fill="#150510" opacity="0.6" filter="url(#blur40)">
+    <animate attributeName="rx" values="130;140;130" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.6;0.7;0.6" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+
+  <ellipse cx="1120" cy="750" rx="100" ry="200" fill="#E54B9C" opacity="0.12" filter="url(#blur80)">
+    <animate attributeName="opacity" values="0.12;0.2;0.12" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="ry" values="200;210;200" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+
+  <!-- Layer 12-16: Lipstick Subject Group -->
+  <g id="lipstickGroup" transform="translate(1120, 480)">
+    <!-- Breath Animation -->
+    <animateTransform attributeName="transform" type="translate" values="1120 480; 1120 476; 1120 480" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="0.99;1.01;0.99" dur="8s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="rotate" values="-1 0 280; 1 0 280; -1 0 280" dur="12s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+
+    <!-- Base Case -->
+    <rect x="-65" y="250" width="130" height="110" rx="4" fill="url(#metalGrad)" />
+    <rect x="-60" y="255" width="120" height="100" rx="2" fill="url(#metalInnerGrad)" opacity="0.5" />
+
+    <!-- Metallic Collar -->
+    <rect x="-70" y="230" width="140" height="22" rx="3" fill="url(#metalGrad)" />
+    <rect x="-70" y="230" width="140" height="2" fill="#F8C8DC" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    </rect>
+
+    <!-- Inner Gold Tube -->
+    <rect x="-58" y="210" width="116" height="22" rx="2" fill="#1A0812" />
+    <rect x="-58" y="210" width="116" height="22" rx="2" fill="url(#metalGrad)" opacity="0.6" />
+
+    <!-- Lipstick Body (Bullet) -->
+    <path d="M -58 210 L -58 60 Q -58 20 -30 5 Q 0 -5 20 15 Q 58 50 58 90 L 58 210 Z" fill="url(#lipBodyGrad)" />
+
+    <!-- Cut Surface (Tip) -->
+    <ellipse cx="0" cy="60" rx="58" ry="18" fill="url(#lipTipGrad)" />
+    <ellipse cx="0" cy="60" rx="52" ry="14" fill="#F8C8DC" opacity="0.3" />
+
+    <!-- Dynamic Highlight (Gliding along surface) -->
+    <ellipse cx="-25" cy="120" rx="12" ry="35" fill="#F8C8DC" opacity="0.25" filter="url(#blur40)">
+      <animate attributeName="cy" values="120;80;120" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      <animate attributeName="rx" values="12;15;12" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      <animate attributeName="opacity" values="0.25;0.4;0.25" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    </ellipse>
+
+    <!-- Secondary Highlight -->
+    <ellipse cx="30" cy="160" rx="8" ry="25" fill="#F2A6C8" opacity="0.15" filter="url(#blur40)">
+      <animate attributeName="cy" values="160;140;160" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    </ellipse>
+
+    <!-- Tip Bright Spot -->
+    <ellipse cx="-15" cy="55" rx="20" ry="6" fill="#FFFFFF" opacity="0.35" filter="url(#glow)">
+      <animate attributeName="cx" values="-15;-5;-15" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      <animate attributeName="opacity" values="0.35;0.5;0.35" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    </ellipse>
+
+    <!-- Gloss Reflection -->
+    <path d="M -45 70 Q -40 40 -20 25" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.2" stroke-linecap="round" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.2;0.35;0.2" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      <animate attributeName="stroke-width" values="3;4;3" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    </path>
+
+    <!-- Subtle Edge Light -->
+    <path d="M 58 90 L 58 210" stroke="#F2A6C8" stroke-width="2" opacity="0.3" fill="none">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    </path>
+  </g>
+
+  <!-- Layer 17-19: Mid-ground Haze around subject -->
+  <ellipse cx="1120" cy="400" rx="200" ry="300" fill="#F8C8DC" opacity="0.06" filter="url(#blur120)">
+    <animate attributeName="rx" values="200;220;200" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.06;0.1;0.06" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+
+  <circle cx="950" cy="250" r="150" fill="#C73A85" opacity="0.08" filter="url(#blur80)">
+    <animate attributeName="r" values="150;170;150" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 20 -15; 0 0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="1250" cy="600" r="120" fill="#E54B9C" opacity="0.1" filter="url(#blur80)">
+    <animate attributeName="r" values="120;140;120" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; -15 10; 0 0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <!-- Layer 20-29: Drifting Particles / Sparkles -->
+  <circle cx="0" cy="0" r="4" fill="#F8C8DC" opacity="0.9" filter="url(#glow)">
+    <animateMotion dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="0;1" keyTimes="0;1">
+      <mpath href="#path1" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="r" values="4;2;4" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="0" cy="0" r="3" fill="#F2A6C8" opacity="0.7" filter="url(#softGlow)">
+    <animateMotion dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="0;1" keyTimes="0;1">
+      <mpath href="#path2" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="0" cy="0" r="5" fill="#F8C8DC" opacity="0.6" filter="url(#glow)">
+    <animateMotion dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="0;1" keyTimes="0;1">
+      <mpath href="#path3" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.6;0.15;0.6" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="r" values="5;3;5" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" opacity="0.8" filter="url(#glow)">
+    <animateMotion dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="0;1" keyTimes="0;1">
+      <mpath href="#path4" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="0" cy="0" r="3.5" fill="#F2A6C8" opacity="0.5" filter="url(#softGlow)">
+    <animateMotion dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="0;1" keyTimes="0;1">
+      <mpath href="#path5" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="0" cy="0" r="4.5" fill="#F8C8DC" opacity="0.4" filter="url(#blur40)">
+    <animateMotion dur="21s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="0;1" keyTimes="0;1">
+      <mpath href="#path6" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.4;0.15;0.4" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="r" values="4.5;6;4.5" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="0" cy="0" r="2" fill="#FFFFFF" opacity="0.9" filter="url(#glow)">
+    <animateMotion dur="23s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="1;0" keyTimes="0;1">
+      <mpath href="#path3" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.9;0.4;0.9" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="0" cy="0" r="3" fill="#F8C8DC" opacity="0.6" filter="url(#softGlow)">
+    <animateMotion dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="1;0" keyTimes="0;1">
+      <mpath href="#path1" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="0" cy="0" r="6" fill="#F2A6C8" opacity="0.3" filter="url(#blur40)">
+    <animateMotion dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="0;1" keyTimes="0;1">
+      <mpath href="#path2" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" opacity="0.7" filter="url(#glow)">
+    <animateMotion dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyPoints="0;1" keyTimes="0;1">
+      <mpath href="#path4" />
+    </animateMotion>
+    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+
+  <!-- Layer 30: Foreground subtle haze overlay -->
+  <rect width="1600" height="900" fill="url(#bgLight)" opacity="0.15">
+    <animate attributeName="opacity" values="0.15;0.22;0.15" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </rect>
+
+  <!-- Vignette for cinematic feel -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="60%" stop-color="#000000" stop-opacity="0" />
+    <stop offset="100%" stop-color="#150510" stop-opacity="0.5" />
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.7;0.6" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </rect>
+</svg>

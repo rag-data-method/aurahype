@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Halftone Dot Patterns -->
+    <pattern id="halftone" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="3" fill="#000"/>
+    </pattern>
+    <pattern id="halftone-red" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="4" fill="#FF0000"/>
+    </pattern>
+    <pattern id="halftone-yellow" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="5" fill="#FFDF00"/>
+    </pattern>
+    
+    <!-- Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ================= BACKGROUND ================= -->
+  <!-- Base Background -->
+  <rect width="1600" height="900" fill="#C0E0FF"/>
+  
+  <!-- Checkerboard Pattern -->
+  <g id="checkerboard">
+    <rect x="0" y="0" width="200" height="180" fill="#FFDF00"/>
+    <rect x="400" y="0" width="200" height="180" fill="#FFDF00"/>
+    <rect x="800" y="0" width="200" height="180" fill="#FFDF00"/>
+    <rect x="1200" y="0" width="200" height="180" fill="#FFDF00"/>
+    <rect x="200" y="180" width="200" height="180" fill="#FFDF00"/>
+    <rect x="600" y="180" width="200" height="180" fill="#FFDF00"/>
+    <rect x="1000" y="180" width="200" height="180" fill="#FFDF00"/>
+    <rect x="1400" y="180" width="200" height="180" fill="#FFDF00"/>
+    <rect x="0" y="360" width="200" height="180" fill="#FFDF00"/>
+    <rect x="400" y="360" width="200" height="180" fill="#FFDF00"/>
+    <rect x="800" y="360" width="200" height="180" fill="#FFDF00"/>
+    <rect x="1200" y="360" width="200" height="180" fill="#FFDF00"/>
+    <rect x="200" y="540" width="200" height="180" fill="#FFDF00"/>
+    <rect x="600" y="540" width="200" height="180" fill="#FFDF00"/>
+    <rect x="1000" y="540" width="200" height="180" fill="#FFDF00"/>
+    <rect x="1400" y="540" width="200" height="180" fill="#FFDF00"/>
+    <rect x="0" y="720" width="200" height="180" fill="#FFDF00"/>
+    <rect x="400" y="720" width="200" height="180" fill="#FFDF00"/>
+    <rect x="800" y="720" width="200" height="180" fill="#FFDF00"/>
+    <rect x="1200" y="720" width="200" height="180" fill="#FFDF00"/>
+  </g>
+
+  <!-- Corner Halftone Patterns -->
+  <rect x="0" y="0" width="400" height="400" fill="url(#halftone)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="1200" y="0" width="400" height="400" fill="url(#halftone)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0" y="500" width="400" height="400" fill="url(#halftone)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="1200" y="500" width="400" height="400" fill="url(#halftone)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ================= RADIATING ACTION LINES ================= -->
+  <g id="action-lines" stroke="#000" stroke-width="8" stroke-linecap="round">
+    <!-- Inner Burst -->
+    <line x1="800" y1="450" x2="100" y2="50">
+      <animate attributeName="stroke-width" values="8;20;8" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="1500" y2="50">
+      <animate attributeName="stroke-width" values="8;20;8" dur="1.5s" begin="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" begin="0.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="50" y2="850">
+      <animate attributeName="stroke-width" values="8;20;8" dur="1.5s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" begin="0.4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="1550" y2="850">
+      <animate attributeName="stroke-width" values="8;20;8" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="800" y2="0">
+      <animate attributeName="stroke-width" values="8;20;8" dur="1.5s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" begin="0.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="800" y2="900">
+      <animate attributeName="stroke-width" values="8;20;8" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="0" y2="450">
+      <animate attributeName="stroke-width" values="8;20;8" dur="1.5s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" begin="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="1600" y2="450">
+      <animate attributeName="stroke-width" values="8;20;8" dur="1.5s" begin="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" begin="1.4s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Diagonal Lines -->
+    <line x1="800" y1="450" x2="300" y2="0" stroke-width="12">
+      <animate attributeName="x2" values="300;250;300" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="1300" y2="0" stroke-width="12">
+      <animate attributeName="x2" values="1300;1350;1300" dur="2.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="300" y2="900" stroke-width="12">
+      <animate attributeName="x2" values="300;250;300" dur="2.4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="450" x2="1300" y2="900" stroke-width="12">
+      <animate attributeName="x2" values="1300;1350;1300" dur="2.6s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Long Radiating Lines -->
+    <line x1="800" y1="450" x2="200" y2="200" stroke-width="6"/>
+    <line x1="800" y1="450" x2="1400" y2="200" stroke-width="6"/>
+    <line x1="800" y1="450" x2="200" y2="700" stroke-width="6"/>
+    <line x1="800" y1="450" x2="1400" y2="700" stroke-width="6"/>
+  </g>
+
+  <!-- ================= FLOATING ELEMENTS ================= -->
+  <!-- Star 1 -->
+  <g transform="translate(250, 150)">
+    <polygon points="0,-60 15,-15 60,-15 25,10 40,55 0,25 -40,55 -25,10 -60,-15 -15,-15" fill="#FFDF00" stroke="#000" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#FFDF00;#FF1493;#00FFFF;#FFDF00" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Star 2 -->
+  <g transform="translate(1350, 150)">
+    <polygon points="0,-50 12,-12 50,-12 20,8 35,45 0,20 -35,45 -20,8 -50,-12 -12,-12" fill="#00FFFF" stroke="#000" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#00FFFF;#FFDF00;#FF0000;#00FFFF" dur="4s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Star 3 -->
+  <g transform="translate(250, 750)">
+    <polygon points="0,-45 10,-10 45,-10 18,7 30,40 0,18 -30,40 -18,7 -45,-10 -10,-10" fill="#FF1493" stroke="#000" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#FF1493;#00FFFF;#FFDF00;#FF1493" dur="5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Star 4 -->
+  <g transform="translate(1350, 750)">
+    <polygon points="0,-55 14,-14 55,-14 22,9 38,50 0,22 -38,50 -22,9 -55,-14 -14,-14" fill="#FF0000" stroke="#000" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#FF0000;#FFDF00;#00FFFF;#FF0000" dur="2.5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- POW! Element -->
+  <g transform="translate(1200, 700)">
+    <path d="M0,-80 L20,-30 L70,-50 L40,0 L80,40 L30,50 L20,90 L-10,50 L-60,60 L-30,10 L-70,-30 L-20,-40 Z" fill="#FFDF00" stroke="#000" stroke-width="5">
+      <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    <text x="0" y="10" font-family="Impact, sans-serif" font-size="50" fill="#FF0000" stroke="#000" stroke-width="2" text-anchor="middle" font-weight="900">POW!</text>
+  </g>
+
+  <!-- ZAP Element -->
+  <g transform="translate(400, 700)">
+    <path d="M0,-60 L15,-20 L55,-35 L25,5 L65,30 L20,40 L10,75 L-15,35 L-55,45 L-25,5 L-60,-20 L-15,-30 Z" fill="#00FFFF" stroke="#000" stroke-width="5">
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <text x="0" y="10" font-family="Impact, sans-serif" font-size="40" fill="#FF1493" stroke="#000" stroke-width="2" text-anchor="middle" font-weight="900">ZAP!</text>
+  </g>
+
+  <!-- BAM Element -->
+  <g transform="translate(200, 450)">
+    <path d="M0,-70 L18,-25 L65,-40 L30,5 L75,35 L25,45 L15,85 L-12,45 L-65,55 L-30,5 L-70,-25 L-18,-35 Z" fill="#FF1493" stroke="#000" stroke-width="5">
+      <animateTransform attributeName="transform" type="scale" values="1;1.4;1" dur="1.8s" repeatCount="indefinite"/>
+    </path>
+    <text x="0" y="10" font-family="Impact, sans-serif" font-size="45" fill="#FFDF00" stroke="#000" stroke-width="2" text-anchor="middle" font-weight="900">BAM!</text>
+  </g>
+
+  <!-- ================= CLOUD SPEECH BUBBLE ================= -->
+  <g id="speech-bubble" transform="translate(800, 450)">
+    <animateTransform attributeName="transform" type="translate" values="800,450; 800,430; 800,450" dur="3s" repeatCount="indefinite"/>
+    
+    <!-- Bubble Shadow -->
+    <path d="M-360,-240 
+             C-150,-320 150,-320 360,-240 
+             C420,-150 420,150 360,240 
+             C280,290 200,260 140,300 
+             C100,330 120,380 80,410 
+             C50,380 30,330 0,350 
+             C-50,370 -80,330 -140,300 
+             C-200,260 -280,290 -360,240 
+             C-420,150 -420,-150 -360,-240 Z" 
+          fill="#000" transform="translate(15, 15)"/>
+
+    <!-- Bubble Main Body -->
+    <path d="M-360,-240 
+             C-150,-320 150,-320 360,-240 
+             C420,-150 420,150 360,240 
+             C280,290 200,260 140,300 
+             C100,330 120,380 80,410 
+             C50,380 30,330 0,350 
+             C-50,370 -80,330 -140,300 
+             C-200,260 -280,290 -360,240 
+             C-420,150 -420,-150 -360,-240 Z" 
+          fill="#FFFFFF" stroke="#000" stroke-width="8"/>
+
+    <!-- Bubble Halftone Overlay -->
+    <path d="M-360,-240 
+             C-150,-320 150,-320 360,-240 
+             C420,-150 420,150 360,240 
+             C280,290 200,260 140,300 
+             C100,330 120,380 80,410 
+             C50,380 30,330 0,350 
+             C-50,370 -80,330 -140,300 
+             C-200,260 -280,290 -360,240 
+             C-420,150 -420,-150 -360,-240 Z" 
+          fill="url(#halftone)" opacity="0.15"/>
+  </g>
+
+  <!-- ================= OMG TEXT ================= -->
+  <g id="omg-text" transform="translate(800, 450)">
+    <animateTransform attributeName="transform" type="translate" values="800,450; 800,430; 800,450" dur="3s" repeatCount="indefinite"/>
+    
+    <!-- Text Drop Shadow -->
+    <text x="0" y="55" font-family="Impact, Arial Black, sans-serif" font-size="240" fill="#000" text-anchor="middle" font-weight="900" letter-spacing="10" transform="translate(8, 8)">OMG</text>
+
+    <!-- Text Main Fill -->
+    <text x="0" y="55" font-family="Impact, Arial Black, sans-serif" font-size="240" fill="#FFDF00" stroke="#000" stroke-width="8" text-anchor="middle" font-weight="900" letter-spacing="10">
+      OMG
+      <animate attributeName="fill" values="#FFDF00;#FF1493;#00FFFF;#FFDF00" dur="4s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- Halftone Overlay on Text (Simulated with a pattern rect behind, but here applied via pattern to fill) -->
+  </g>
+
+  <!-- ================= COMIC ACTION BARS ================= -->
+  <!-- Top Bar -->
+  <rect x="300" y="80" width="1000" height="20" fill="#FF0000" stroke="#000" stroke-width="4">
+    <animate attributeName="width" values="1000;1100;1000" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="300;250;300" dur="2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Bottom Bar -->
+  <rect x="300" y="800" width="1000" height="20" fill="#FFDF00" stroke="#000" stroke-width="4">
+    <animate attributeName="width" values="1000;1100;1000" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="300;250;300" dur="2.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Left Bar -->
+  <rect x="80" y="300" width="20" height="300" fill="#00FFFF" stroke="#000" stroke-width="4">
+    <animate attributeName="height" values="300;400;300" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="300;250;300" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Right Bar -->
+  <rect x="1500" y="300" width="20" height="300" fill="#FF1493" stroke="#000" stroke-width="4">
+    <animate attributeName="height" values="300;400;300" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="300;250;300" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ================= ADDITIONAL COMIC DETAILS ================= -->
+  <!-- Halftone Ring around Bubble -->
+  <circle cx="800" cy="450" r="420" fill="none" stroke="url(#halftone-red)" stroke-width="40" stroke-dasharray="20 10">
+    <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Halftone Ring 2 -->
+  <circle cx="800" cy="450" r="460" fill="none" stroke="url(#halftone-yellow)" stroke-width="30" stroke-dasharray="15 5">
+    <animateTransform attributeName="transform" type="rotate" from="360 800 450" to="0 800 450" dur="15s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Curved Arrow -->
+  <g transform="translate(1100, 250)">
+    <path d="M0,0 Q100,-50 150,50 Q180,100 120,140" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="120,140 100,120 140,110" fill="#FF0000" stroke="#000" stroke-width="4">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 10,10; 0,0" dur="1s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Small Burst Dots -->
+  <g fill="#000">
+    <circle cx="600" cy="200" r="8">
+      <animate attributeName="r" values="8;12;8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="600" r="6">
+      <animate attributeName="r" values="6;10;6" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="550" r="10">
+      <animate attributeName="r" values="10;14;10" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="350" r="7">
+      <animate attributeName="r" values="7;11;7" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Retro "1960s" Text -->
+  <text x="800" y="860" font-family="Courier New, monospace" font-size="30" fill="#000" text-anchor="middle" font-weight="bold" letter-spacing="5">POP ART • 1960s • OMG</text>
+
+</svg>

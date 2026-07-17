@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="50" result="blur"/>
+    </filter>
+    <filter id="deepBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80" result="blur"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0"/>
+    </filter>
+    <linearGradient id="atmosphericDepth" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5F0E6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#2B2E33" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#EFEAE0"/>
+  
+  <ellipse cx="800" cy="280" rx="700" ry="500" fill="#F5F0E6" opacity="0.65" filter="url(#deepBlur)">
+    <animate attributeName="opacity" values="0.65;0.78;0.65" dur="12s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </ellipse>
+  
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.72;0.6" dur="14s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </rect>
+  
+  <g id="distantStructure" opacity="0.75">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -12,8; 0,0" dur="15s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <path d="M 800 280 L 550 150 L 550 850 L 800 950 Z" fill="#2B2E33" opacity="0.6"/>
+    <path d="M 800 280 L 1050 150 L 1050 850 L 800 950 Z" fill="#2B2E33" opacity="0.6"/>
+  </g>
+  
+  <g id="recedingStepsBack" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 6,-4; 0,0" dur="13s" repeatCount="indefinite" calcMode="easeInOut"/>
+    
+    <path d="M 760 380 L 840 380 L 865 420 L 735 420 Z" fill="#8B8680" opacity="0.7"/>
+    <path d="M 735 420 L 865 420 L 865 435 L 735 435 Z" fill="#2B2E33" opacity="0.75">
+      <animate attributeName="opacity" values="0.75;0.6;0.75" dur="10s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </path>
+    
+    <path d="M 750 420 L 850 420 L 885 480 L 715 480 Z" fill="#8B8680" opacity="0.75"/>
+    <path d="M 715 480 L 885 480 L 885 500 L 715 500 Z" fill="#2B2E33" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.55;0.7" dur="11s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </path>
+  </g>
+  
+  <g id="recedingStepsMid" opacity="0.82">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -4,2; 0,0" dur="14s" repeatCount="indefinite" calcMode="easeInOut"/>
+    
+    <path d="M 730 480 L 870 480 L 920 560 L 680 560 Z" fill="#F5F0E6" opacity="0.72"/>
+    <path d="M 680 560 L 920 560 L 920 585 L 680 585 Z" fill="#2B2E33" opacity="0.65">
+      <animate attributeName="opacity" values="0.65;0.8;0.65" dur="9s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </path>
+    
+    <path d="M 700 560 L 900 560 L 970 660 L 630 660 Z" fill="#8B8680" opacity="0.8"/>
+    <path d="M 630 660 L 970 660 L 970 695 L 630 695 Z" fill="#2B2E33" opacity="0.75">
+      <animate attributeName="opacity" values="0.75;0.6;0.75" dur="12s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </path>
+  </g>
+  
+  <g id="recedingStepsNear" opacity="0.85">
+    <path d="M 650 660 L 950 660 L 1040 780 L 560 780 Z" fill="#F5F0E6" opacity="0.75"/>
+    <path d="M 560 780 L 1040 780 L 1040 820 L 560 820 Z" fill="#2B2E33" opacity="0.78">
+      <animate attributeName="opacity" values="0.78;0.65;0.78" dur="11s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </path>
+    
+    <path d="M 580 780 L 1020 780 L 1140 920 L 460 920 Z" fill="#8B8680" opacity="0.85"/>
+    <path d="M 460 920 L 1140 920 L 1200 980 L 400 980 Z" fill="#2B2E33" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.68;0.8" dur="13s" repeatCount="indefinite" calcMode="easeInOut"/>
+    </path>
+  </g>
+  
+  <g id="leftButtress" opacity="0.7">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -8,3; 0,0" dur="12s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <path d="M 460 920 L 650 660 L 650 180 L 420 280 Z" fill="#2B2E33" opacity="0.65"/>
+  </g>
+  
+  <g id="rightButtress" opacity="0.7">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,3; 0,0" dur="12s" repeatCount="indefinite" calcMode="easeInOut"/>
+    <path d="M 1140 920 L 950 660 L 950 180 L 1180 280 Z" fill="#2B2E33" opacity="0.65"/>
+  </g>
+  
+  <path d="M 800 0 L 1300 900 L 300 900 Z" fill="#F5F0E6" opacity="0.25" filter="url(#softGlow)">
+    <animate attributeName="opacity" values="0.25;0.4;0.25" dur="10s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </path>
+  
+  <rect x="0" y="650" width="1600" height="250" fill="url(#atmosphericDepth)" opacity="0.4" filter="url(#softGlow)">
+    <animate attributeName="opacity" values="0.4;0.55;0.4" dur="15s" repeatCount="indefinite" calcMode="easeInOut"/>
+  </rect>
+</svg>

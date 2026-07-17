@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F9EBD7"/>
+      <stop offset="60%" stop-color="#F4B89A"/>
+      <stop offset="100%" stop-color="#E8A04F"/>
+    </linearGradient>
+    
+    <filter id="blurMed" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35" result="blur"/>
+    </filter>
+    
+    <filter id="blurStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="70" result="blur"/>
+    </filter>
+    
+    <filter id="texture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="2" result="noise">
+        <animate attributeName="baseFrequency" values="0.012;0.018;0.012" dur="10s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.07 0" in="noise" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#F9EBD7"/>
+  
+  <rect x="0" y="0" width="1600" height="400" fill="url(#skyGrad)" opacity="0.8" filter="url(#blurStrong)">
+    <animate attributeName="opacity" values="0.8;0.95;0.8" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  
+  <ellipse cx="800" cy="480" rx="950" ry="200" fill="#E8A04F" opacity="0.95" filter="url(#blurStrong)">
+    <animate attributeName="ry" values="200;230;200" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="950;980;950" dur="8s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <ellipse cx="800" cy="470" rx="700" ry="140" fill="#F4B89A" opacity="0.9" filter="url(#blurMed)">
+    <animate attributeName="cx" values="800;840;800" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <path fill="#5C2E1F" opacity="0.85" d="M 180 900 C 200 780, 320 740, 420 750 C 480 755, 520 820, 550 900 Z" filter="url(#blurMed)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,-8; 0,0" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <path fill="#5C2E1F" opacity="0.85" d="M 1420 900 C 1400 780, 1280 740, 1180 750 C 1120 755, 1080 820, 1050 900 Z" filter="url(#blurMed)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -8,-8; 0,0" dur="5s" repeatCount="indefinite"/>
+  </path>
+  
+  <ellipse cx="300" cy="320" rx="600" ry="120" fill="#D08770" opacity="0.85" filter="url(#blurStrong)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 120,15; 0,0" dur="9s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <ellipse cx="1300" cy="380" rx="500" ry="100" fill="#F4B89A" opacity="0.9" filter="url(#blurMed)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -100,20; 0,0" dur="8s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <ellipse cx="600" cy="620" rx="350" ry="70" fill="#D08770" opacity="0.8" filter="url(#blurStrong)">
+    <animate attributeName="opacity" values="0.8;0.95;0.8" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <rect x="100" y="440" width="1400" height="120" fill="#E8A04F" opacity="0.75" filter="url(#blurStrong)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-40; 0,0" dur="7s" repeatCount="indefinite"/>
+  </rect>
+  
+  <ellipse cx="800" cy="920" rx="1100" ry="250" fill="#5C2E1F" opacity="0.4" filter="url(#blurStrong)"/>
+  
+  <rect width="1600" height="900" fill="#5C2E1F" opacity="0.06" filter="url(#texture)"/>
+</svg>

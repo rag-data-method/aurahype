@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="background-color:#1A1A2E;">
+  <defs>
+    <!-- ==================== BLUR FILTERS ==================== -->
+    <filter id="blur20" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="blur60" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="blur90" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="90"/>
+    </filter>
+    <filter id="blur120" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+
+    <!-- ==================== GRADIENTS ==================== -->
+    <radialGradient id="moonG" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#F8F4FF"/>
+      <stop offset="40%" stop-color="#E0D8E8"/>
+      <stop offset="85%" stop-color="#5A4A6B"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+      <animate attributeName="cx" values="45%; 46%; 44%; 45%" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animate attributeName="cy" values="40%; 39%; 41%; 40%" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </radialGradient>
+
+    <radialGradient id="moonCrater" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0D8E8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#5A4A6B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1A1A2E" stop-opacity="0.6"/>
+    </radialGradient>
+
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E">
+        <animate attributeName="stop-color" values="#1A1A2E; #211D33; #1A1A2E" dur="20s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="60%" stop-color="#2A1F3D">
+        <animate attributeName="stop-color" values="#2A1F3D; #322340; #2A1F3D" dur="22s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#5A4A6B">
+        <animate attributeName="stop-color" values="#5A4A6B; #6B5678; #5A4A6B" dur="24s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5A4A6B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F8F4FF" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <radialGradient id="fogGrad" cx="0%" cy="100%" r="100%">
+      <stop offset="0%" stop-color="#E0D8E8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#E0D8E8" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="windGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F8F4FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#F8F4FF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#F8F4FF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- ==================== CLIP PATHS ==================== -->
+    <clipPath id="moonClip">
+      <circle r="380" cx="550" cy="300"/>
+    </clipPath>
+  </defs>
+
+  <!-- ==================== LAYER 01: SOLID BASE ==================== -->
+  <rect width="1600" height="900" fill="#1A1A2E"/>
+
+  <!-- ==================== LAYER 02: SKY GRADIENT ==================== -->
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+
+  <!-- ==================== LAYER 03: DEEP ATMOSPHERE (Blur 120) ==================== -->
+  <circle r="400" cx="550" cy="300" fill="#5A4A6B" opacity="0.4" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.4; 0.5; 0.4" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </circle>
+
+  <!-- ==================== LAYER 04-06: STARS (Animated opacity and drift) ==================== -->
+  <g fill="#F8F4FF">
+    <!-- Bright Stars -->
+    <circle cx="200" cy="150" r="2.5" opacity="0.8">
+      <animate attributeName="opacity" values="0.8; 0.3; 0.9; 0.5; 0.8" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animate attributeName="cy" values="150; 152; 150" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="80" r="3" opacity="0.9">
+      <animate attributeName="opacity" values="0.9; 0.4; 0.9" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animate attributeName="r" values="3; 4; 3" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="300" r="2" opacity="0.6">
+      <animate attributeName="opacity" values="0.6; 0.2; 0.8; 0.6" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="100; 102; 100" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="200" r="2.5" opacity="0.7">
+      <animate attributeName="opacity" values="0.7; 0.3; 0.7" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1450" cy="100" r="3.5" opacity="0.9">
+      <animate attributeName="opacity" values="0.9; 0.2; 0.9" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1300" cy="400" r="2" opacity="0.5">
+      <animate attributeName="opacity" values="0.5; 0.1; 0.6; 0.5" dur="16s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Secondary Stars -->
+    <circle cx="250" cy="220" r="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.5; 0.1; 0.5" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="180" r="1" opacity="0.4">
+      <animate attributeName="opacity" values="0.4; 0.1; 0.4" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="80" cy="450" r="2" opacity="0.6">
+      <animate attributeName="opacity" values="0.6; 0.2; 0.6" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="120" r="1.5" opacity="0.7">
+      <animate attributeName="opacity" values="0.7; 0.3; 0.7" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="820" cy="60" r="1" opacity="0.5">
+      <animate attributeName="opacity" values="0.5; 0.1; 0.5" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1050" cy="250" r="2" opacity="0.6">
+      <animate attributeName="opacity" values="0.6; 0.2; 0.6" dur="13s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="350" r="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.5; 0.1; 0.5" dur="17s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1350" cy="50" r="1" opacity="0.4">
+      <animate attributeName="opacity" values="0.4; 0.1; 0.4" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="50" cy="600" r="2" opacity="0.3">
+      <animate attributeName="opacity" values="0.3; 0.1; 0.3" dur="20s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ==================== LAYER 07: MOON & CRATERS ==================== -->
+  <g clip-path="url(#moonClip)">
+    <circle r="380" cx="550" cy="300" fill="url(#moonG)"/>
+    
+    <!-- Craters -->
+    <ellipse cx="480" cy="220" rx="60" ry="30" fill="url(#moonCrater)" opacity="0.6"/>
+    <ellipse cx="620" cy="350" rx="40" ry="20" fill="url(#moonCrater)" opacity="0.4"/>
+    <ellipse cx="400" cy="380" rx="80" ry="40" fill="url(#moonCrater)" opacity="0.5"/>
+    <ellipse cx="550" cy="150" rx="50" ry="25" fill="url(#moonCrater)" opacity="0.3"/>
+    <ellipse cx="300" cy="300" rx="100" ry="50" fill="url(#moonCrater)" opacity="0.2"/>
+
+    <!-- Moon Surface Pulse -->
+    <circle r="380" cx="550" cy="300" fill="#F8F4FF" opacity="0.1">
+      <animate attributeName="opacity" values="0.1; 0.2; 0.1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </circle>
+  </g>
+
+  <!-- ==================== LAYER 08: MOON GLOW (Blur 90) ==================== -->
+  <circle r="420" cx="550" cy="300" fill="#E0D8E8" opacity="0.3" filter="url(#blur90)">
+    <animate attributeName="r" values="420; 440; 420" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.3; 0.4; 0.3" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ==================== LAYER 09: EXTREME ATMOSPHERE (Blur 120) ==================== -->
+  <circle r="480" cx="550" cy="300" fill="#5A4A6B" opacity="0.2" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.2; 0.3; 0.2" dur="20s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ==================== LAYER 10: DISTANT HILLS ==================== -->
+  <path d="M0 900 L0 650 Q 300 500 600 680 T 1200 750 L 1600 680 L 1600 900 Z" fill="#2A1F3D" opacity="0.8"/>
+
+  <!-- ==================== LAYER 11: MIDGROUND MIST (Blur 60) ==================== -->
+  <g opacity="0.4" filter="url(#blur60)">
+    <ellipse cx="600" cy="750" rx="300" ry="60" fill="#5A4A6B">
+      <animate attributeName="cx" values="600; 620; 580; 600" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </ellipse>
+    <ellipse cx="1000" cy="780" rx="400" ry="80" fill="#E0D8E8">
+      <animate attributeName="cx" values="1000; 980; 1020; 1000" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </ellipse>
+  </g>
+
+  <!-- ==================== LAYER 12: ROCKY OUTCROP BASE ==================== -->
+  <g>
+    <!-- Main Rock -->
+    <path d="M 880 900 L 900 780 C 920 760, 950 750, 980 770 L 1150 820 C 1180 830, 1200 860, 1220 900 Z" fill="#1A1A2E"/>
+    
+    <!-- Secondary Rock -->
+    <path d="M 1150 900 L 1180 850 C 1200 840, 1230 850, 1250 870 L 1400 900 Z" fill="#1A1A2E"/>
+
+    <!-- Rim Light on Rock -->
+    <path d="M 900 780 C 920 760, 950 750, 980 770" fill="none" stroke="#E0D8E8" stroke-width="2" opacity="0.6" filter="url(#blur20)">
+      <animate attributeName="opacity" values="0.6; 0.9; 0.6" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1180 850 C 1200 840, 1230 850, 1250 870" fill="none" stroke="#E0D8E8" stroke-width="1.5" opacity="0.4" filter="url(#blur20)">
+      <animate attributeName="opacity" values="0.4; 0.7; 0.4" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- ==================== LAYER 13: SUBJECT - WOLF SILHOUETTE + BREATH ==================== -->
+  <g id="wolf" opacity="1">
+    <g transform="translate(1020, 780) scale(1.4)">
+      <!-- Breathing Animation -->
+      <animateTransform attributeName="transform" type="translate" values="1020 780; 1020 778; 1020 780" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" additive="sum"/>
+      
+      <!-- Tail -->
+      <path d="M 0 0 Q -40 -10 -50 30 L -30 40 Z" fill="#0F0F1A"/>
+      <path d="M 0 0 Q -40 -10 -50 30" fill="none" stroke="#E0D8E8" stroke-width="1.5" opacity="0.4" filter="url(#blur20)">
+        <animate attributeName="opacity" values="0.4; 0.7; 0.4" dur="6s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- Hind Leg -->
+      <path d="M 0 0 L 10 50 L 25 50 L 20 40 Z" fill="#0F0F1A"/>
+      <path d="M 0 0 L 10 50" fill="none" stroke="#E0D8E8" stroke-width="1" opacity="0.2" filter="url(#blur20)"/>
+
+      <!-- Body -->
+      <path d="M 0 0 Q 25 -20 50 0 L 60 40 L 45 45 L 40 35 Q 20 30 10 50 Z" fill="#0F0F1A"/>
+
+      <!-- Front Leg -->
+      <path d="M 60 40 L 65 90 L 80 90 L 75 50 Z" fill="#0F0F1A"/>
+      <path d="M 60 40 L 65 90" fill="none" stroke="#E0D8E8" stroke-width="1.5" opacity="0.3" filter="url(#blur20)">
+        <animate attributeName="opacity" values="0.3; 0.6; 0.3" dur="5s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- Neck & Head (Howling posture) -->
+      <path d="M 50 0 L 55 -30 L 75 -40 L 85 -20 L 80 0 Z" fill="#0F0F1A"/>
+
+      <!-- Ears -->
+      <path d="M 72 -38 L 70 -52 L 78 -42 Z" fill="#0F0F1A"/>
+      <path d="M 78 -40 L 82 -50 L 82 -38 Z" fill="#0F0F1A"/>
+
+      <!-- Snout -->
+      <path d="M 75 -40 L 90 -36 L 85 -20 L 80 -20 Z" fill="#0F0F1A"/>
+
+      <!-- Head Rim Light (Most prominent) -->
+      <path d="M 55 -30 L 75 -40 L 85 -20" fill="none" stroke="#F8F4FF" stroke-width="2" opacity="0.8" filter="url(#blur20)">
+        <animate attributeName="opacity" values="0.8; 1; 0.8" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 70 -52 L 78 -42" fill="none" stroke="#F8F4FF" stroke-width="1" opacity="0.6" filter="url(#blur20)"/>
+
+      <!-- Chest Fur highlight -->
+      <path d="M 50 0 Q 55 15 60 40" fill="none" stroke="#E0D8E8" stroke-width="1" opacity="0.2" filter="url(#blur20)"/>
+    </g>
+  </g>
+
+  <!-- ==================== LAYER 14: FOREGROUND MIST (Blur 60) ==================== -->
+  <g opacity="0.6" filter="url(#blur60)">
+    <path d="M 800 900 Q 1050 780 1300 900 Z" fill="url(#fogGrad)">
+      <animate attributeName="d" values="M 800 900 Q 1050 780 1300 900 Z; M 780 900 Q 1050 760 1320 900 Z; M 800 900 Q 1050 780 1300 900 Z" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- ==================== LAYER 15: FOREGROUND MIST II (Blur 20) ==================== -->
+  <g opacity="0.5" filter="url(#blur20)">
+    <path d="M 900 900 Q 1100 820 1250 900 Z" fill="#E0D8E8">
+      <animate attributeName="d" values="M 900 900 Q 1100 820 1250 900 Z; M 880 900 Q 1100 800 1270 900 Z; M 900 900 Q 1100 820 1250 900 Z" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.5; 0.7; 0.5" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- ==================== LAYER 16: DUST / WIND PARTICLES (Animated motion) ==================== -->
+  <g fill="#F8F4FF" opacity="0.6">
+    <!-- Particle 1 -->
+    <circle r="2" opacity="0.4">
+      <animateMotion path="M 0 700 Q 800 600 1600 750" dur="20s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.4; 0.8; 0.4" dur="5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 2 -->
+    <circle r="1.5" opacity="0.3">
+      <animateMotion path="M 200 800 Q 900 700 1500 850" dur="25s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.3; 0.6; 0.3" dur="7s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 3 -->
+    <circle r="2.5" opacity="0.5">
+      <animateMotion path="M 100 650 Q 700 550 1400 700" dur="22s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.5; 0.9; 0.5" dur="6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 4 -->
+    <circle r="1" opacity="0.2">
+      <animateMotion path="M 500 850 Q 1000 750 1600 900" dur="18s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.2; 0.5; 0.2" dur="8s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 5 -->
+    <circle r="3" opacity="0.4">
+      <animateMotion path="M 300 750 Q 800 650 1300 800" dur="28s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.4; 0.7; 0.4" dur="9s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 6 -->
+    <circle r="1.5" opacity="0.3">
+      <animateMotion path="M 600 900 Q 1100 800 1600 950" dur="24s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.3; 0.6; 0.3" dur="11s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 7 -->
+    <circle r="2" opacity="0.5">
+      <animateMotion path="M -100 600 Q 500 500 1100 650" dur="19s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.5; 0.8; 0.5" dur="7s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 8 -->
+    <circle r="1" opacity="0.2">
+      <animateMotion path="M 400 950 Q 900 850 1400 1000" dur="26s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.2; 0.5; 0.2" dur="10s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 9 -->
+    <circle r="2.5" opacity="0.4">
+      <animateMotion path="M 150 550 Q 650 450 1150 600" dur="21s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.4; 0.7; 0.4" dur="8s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 10 -->
+    <circle r="1.5" opacity="0.3">
+      <animateMotion path="M 700 800 Q 1200 700 1700 850" dur="23s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.3; 0.6; 0.3" dur="12s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 11 -->
+    <circle r="2" opacity="0.5">
+      <animateMotion path="M 50 800 Q 550 700 1050 850" dur="17s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.5; 0.9; 0.5" dur="6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Particle 12 -->
+    <circle r="1" opacity="0.2">
+      <animateMotion path="M 900 700 Q 1400 600 1900 750" dur="20s" repeatCount="indefinite" rotate="auto"/>
+      <animate attributeName="opacity" values="0.2; 0.4; 0.2" dur="9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ==================== LAYER 17: WIND STREAKS (Animated) ==================== -->
+  <g opacity="0.3">
+    <rect x="0" y="400" width="300" height="2" fill="url(#windGrad)" filter="url(#blur20)">
+      <animate attributeName="x" values="-300; 1600" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="550" width="400" height="1.5" fill="url(#windGrad)" filter="url(#blur20)">
+      <animate attributeName="x" values="-400; 1600" dur="15s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="650" width="250" height="2.5" fill="url(#windGrad)" filter="url(#blur20)">
+      <animate attributeName="x" values="-250; 1600" dur="18s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="480" width="350" height="1" fill="url(#windGrad)" filter="url(#blur20)">
+      <animate attributeName="x" values="-350; 1600" dur="14s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- ==================== LAYER 18: VIGNETTE / ATMOSPHERIC DARKENING ==================== -->
+  <rect width="1600" height="900" fill="url(#skyGrad)" opacity="0.1" style="mix-blend-mode: multiply;"/>
+</svg>

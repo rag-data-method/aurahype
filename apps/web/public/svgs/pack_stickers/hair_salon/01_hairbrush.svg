@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <defs>
+        <!-- Drop shadow for the die-cut sticker -->
+        <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur"/>
+            <feOffset in="blur" dx="16" dy="18" result="offsetBlur"/>
+            <feComponentTransfer in="offsetBlur" result="shadowAlpha">
+                <feFuncA type="linear" slope="0.4"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="shadowAlpha"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Die-cut sticker group -->
+    <g filter="url(#shadow)">
+        <!-- Thick white die-cut border -->
+        <path d="M 470 80 
+                 C 500 70, 540 75, 580 95 
+                 C 620 115, 660 150, 690 200 
+                 C 720 250, 700 290, 680 320 
+                 C 710 340, 760 380, 790 420 
+                 C 820 460, 830 500, 800 540 
+                 C 770 580, 720 600, 680 610 
+                 C 650 620, 610 630, 580 640 
+                 C 560 700, 550 780, 550 850 
+                 C 550 900, 530 930, 500 930 
+                 C 470 930, 450 900, 450 850 
+                 C 450 780, 440 700, 420 640 
+                 C 390 630, 350 620, 320 610 
+                 C 280 600, 230 580, 200 540 
+                 C 170 500, 180 460, 210 420 
+                 C 240 380, 290 340, 320 320 
+                 C 300 290, 280 250, 310 200 
+                 C 340 150, 380 115, 420 95 
+                 C 440 85, 455 82, 470 80 Z" 
+              fill="#ffffff" stroke="#ffffff" stroke-width="48" stroke-linejoin="round" stroke-linecap="round"/>
+
+        <!-- Back of brush head -->
+        <ellipse cx="500" cy="340" rx="240" ry="190" fill="#ff00aa" stroke="#000000" stroke-width="10"/>
+        <ellipse cx="500" cy="340" rx="210" ry="160" fill="#d1006e" stroke="#000000" stroke-width="10"/>
+        
+        <!-- Brush handle -->
+        <path d="M 440 470 L 430 700 C 430 740, 450 760, 500 760 C 550 760, 570 740, 570 700 L 560 470 Z" 
+              fill="#ff00aa" stroke="#000000" stroke-width="10" stroke-linejoin="round"/>
+        <path d="M 450 510 L 445 690 C 445 720, 460 735, 500 735 C 540 735, 555 720, 555 690 L 550 510 Z" 
+              fill="#ff66cc" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+
+        <!-- Handle grip lines -->
+        <path d="M 460 560 L 540 560 M 455 590 L 545 590 M 452 620 L 548 620 M 450 650 L 550 650 M 450 680 L 550 680" 
+              stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+        <!-- Bristle bases -->
+        <ellipse cx="380" cy="240" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="440" cy="220" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="500" cy="210" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="560" cy="220" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="620" cy="240" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        
+        <ellipse cx="350" cy="290" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="410" cy="270" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="470" cy="260" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="530" cy="260" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="590" cy="270" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="650" cy="290" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        
+        <ellipse cx="320" cy="340" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="380" cy="320" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="440" cy="310" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="500" cy="310" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="560" cy="310" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="620" cy="320" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="680" cy="340" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        
+        <ellipse cx="350" cy="390" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="410" cy="370" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="470" cy="360" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="530" cy="360" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="590" cy="370" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="650" cy="390" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        
+        <ellipse cx="380" cy="440" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="440" cy="420" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="500" cy="410" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="560" cy="420" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+        <ellipse cx="620" cy="440" rx="18" ry="12" fill="#000000" opacity="0.3"/>
+
+        <!-- Bristle stems -->
+        <g stroke="#000000" stroke-width="6" stroke-linecap="round">
+            <line x1="380" y1="235" x2="380" y2="185"/>
+            <line x1="440" y1="215" x2="440" y2="165"/>
+            <line x1="500" y1="205" x2="500" y2="155"/>
+            <line x1="560" y1="215" x2="560" y2="165"/>
+            <line x1="620" y1="235" x2="620" y2="185"/>
+            
+            <line x1="350" y1="285" x2="350" y2="235"/>
+            <line x1="410" y1="265" x2="410" y2="215"/>
+            <line x1="470" y1="255" x2="470" y2="205"/>
+            <line x1="530" y1="255" x2="530" y2="205"/>
+            <line x1="590" y1="265" x2="590" y2="215"/>
+            <line x1="650" y1="285" x2="650" y2="235"/>
+            
+            <line x1="320" y1="335" x2="320" y2="285"/>
+            <line x1="380" y1="315" x2="380" y2="265"/>
+            <line x1="440" y1="305" x2="440" y2="255"/>
+            <line x1="500" y1="305" x2="500" y2="255"/>
+            <line x1="560" y1="305" x2="560" y2="255"/>
+            <line x1="620" y1="315" x2="620" y2="265"/>
+            <line x1="680" y1="335" x2="680" y2="285"/>
+            
+            <line x1="350" y1="385" x2="350" y2="335"/>
+            <line x1="410" y1="365" x2="410" y2="315"/>
+            <line x1="470" y1="355" x2="470" y2="305"/>
+            <line x1="530" y1="355" x2="530" y2="305"/>
+            <line x1="590" y1="365" x2="590" y2="315"/>
+            <line x1="650" y1="385" x2="650" y2="335"/>
+            
+            <line x1="380" y1="435" x2="380" y2="385"/>
+            <line x1="440" y1="415" x2="440" y2="365"/>
+            <line x1="500" y1="405" x2="500" y2="355"/>
+            <line x1="560" y1="415" x2="560" y2="365"/>
+            <line x1="620" y1="435" x2="620" y2="385"/>
+        </g>
+
+        <!-- Bristle tips -->
+        <g fill="#ffeb3b" stroke="#000000" stroke-width="5">
+            <circle cx="380" cy="180" r="9"/>
+            <circle cx="440" cy="160" r="9"/>
+            <circle cx="500" cy="150" r="9"/>
+            <circle cx="560" cy="160" r="9"/>
+            <circle cx="620" cy="180" r="9"/>
+            
+            <circle cx="350" cy="230" r="9"/>
+            <circle cx="410" cy="210" r="9"/>
+            <circle cx="470" cy="200" r="9"/>
+            <circle cx="530" cy="200" r="9"/>
+            <circle cx="590" cy="210" r="9"/>
+            <circle cx="650" cy="230" r="9"/>
+            
+            <circle cx="320" cy="280" r="9"/>
+            <circle cx="380" cy="260" r="9"/>
+            <circle cx="440" cy="250" r="9"/>
+            <circle cx="500" cy="250" r="9"/>
+            <circle cx="560" cy="250" r="9"/>
+            <circle cx="620" cy="260" r="9"/>
+            <circle cx="680" cy="280" r="9"/>
+            
+            <circle cx="350" cy="330" r="9"/>
+            <circle cx="410" cy="310" r="9"/>
+            <circle cx="470" cy="300" r="9"/>
+            <circle cx="530" cy="300" r="9"/>
+            <circle cx="590" cy="310" r="9"/>
+            <circle cx="650" cy="330" r="9"/>
+            
+            <circle cx="380" cy="380" r="9"/>
+            <circle cx="440" cy="360" r="9"/>
+            <circle cx="500" cy="350" r="9"/>
+            <circle cx="560" cy="360" r="9"/>
+            <circle cx="620" cy="380" r="9"/>
+        </g>
+
+        <!-- TANGLED CURLY HAIR -->
+        <!-- Base Hair Fills -->
+        <g fill="none" stroke="#2a1505" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Main central mass -->
+            <path d="M 350 220 C 300 150, 420 80, 480 130 C 520 80, 620 120, 580 200 C 640 180, 680 280, 620 320 C 680 360, 640 460, 560 450 C 600 520, 480 550, 420 500 C 380 560, 280 500, 320 420 C 260 400, 260 300, 320 280 C 280 240, 300 180, 350 220 Z"/>
+            <!-- Top left wild curl -->
+            <path d="M 320 180 C 250 120, 200 180, 250 240 C 200 280, 260 340, 300 300"/>
+            <!-- Top right wild curl -->
+            <path d="M 620 180 C 700 120, 750 180, 700 240 C 750 280, 690 340, 650 300"/>
+            <!-- Bottom left wild strand -->
+            <path d="M 300 420 C 200 480, 220 600, 320 550 C 280 620, 380 640, 400 580"/>
+            <!-- Bottom right wild strand -->
+            <path d="M 640 420 C 740 480, 720 600, 620 550 C 660 620, 560 640, 540 580"/>
+            <!-- Extra flying strands -->
+            <path d="M 400 140 C 350 60, 280 100, 320 160"/>
+            <path d="M 580 140 C 650 60, 720 100, 660 160"/>
+            <path d="M 480 100 C 480 30, 540 20, 520 90"/>
+        </g>
+
+        <!-- Hair Highlight Fills -->
+        <g fill="none" stroke="#7a4a2a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 350 220 C 300 150, 420 80, 480 130 C 520 80, 620 120, 580 200 C 640 180, 680 280, 620 320 C 680 360, 640 460, 560 450 C 600 520, 480 550, 420 500 C 380 560, 280 500, 320 420 C 260 400, 260 300, 320 280 C 280 240, 300 180, 350 220 Z"/>
+            <path d="M 320 180 C 250 120, 200 180, 250 240 C 200 280, 260 340, 300 300"/>
+            <path d="M 620 180 C 700 120, 750 180, 700 240 C 750 280, 690 340, 650 300"/>
+            <path d="M 300 420 C 200 480, 220 600, 320 550 C 280 620, 380 640, 400 580"/>
+            <path d="M 640 420 C 740 480, 720 600, 620 550 C 660 620, 560 640, 540 580"/>
+            <path d="M 400 140 C 350 60, 280 100, 320 160"/>
+            <path d="M 580 140 C 650 60, 720 100, 660 160"/>
+            <path d="M 480 100 C 480 30, 540 20, 520 90"/>
+        </g>
+
+        <!-- Hair Black Outlines -->
+        <g fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 350 220 C 300 150, 420 80, 480 130 C 520 80, 620 120, 580 200 C 640 180, 680 280, 620 320 C 680 360, 640 460, 560 450 C 600 520, 480 550, 420 500 C 380 560, 280 500, 320 420 C 260 400, 260 300, 320 280 C 280 240, 300 180, 350 220 Z"/>
+            <path d="M 320 180 C 250 120, 200 180, 250 240 C 200 280, 260 340, 300 300"/>
+            <path d="M 620 180 C 700 120, 750 180, 700 240 C 750 280, 690 340, 650 300"/>
+            <path d="M 300 420 C 200 480, 220 600, 320 550 C 280 620, 380 640, 400 580"/>
+            <path d="M 640 420 C 740 480, 720 600, 620 550 C 660 620, 560 640, 540 580"/>
+            <path d="M 400 140 C 350 60, 280 100, 320 160"/>
+            <path d="M 580 140 C 650 60, 720 100, 660 160"/>
+            <path d="M 480 100 C 480 30, 540 20, 520 90"/>
+        </g>
+
+        <!-- Cartoon Face (stuck in the hair) -->
+        <circle cx="520" cy="280" r="45" fill="#ffccaa" stroke="#000000" stroke-width="8"/>
+        <!-- Eyes (X's, dizzy) -->
+        <line x1="500" y1="270" x2="520" y2="290" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+        <line x1="520" y1="270" x2="500" y2="290" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+        <line x1="530" y1="270" x2="550" y2="290" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+        <line x1="550" y1="270" x2="530" y2="290" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+        <!-- Mouth -->
+        <path d="M 510 300 Q 525 315, 540 300" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+        <!-- Sweat drop -->
+        <path d="M 555 255 Q 565 235, 555 225 Q 545 235, 555 255" fill="#00e5ff" stroke="#000000" stroke-width="5"/>
+
+        <!-- Comic Halftone Dots (Background accents) -->
+        <g fill="#ffeb3b">
+            <circle cx="280" cy="450" r="4"/>
+            <circle cx="295" cy="450" r="4"/>
+            <circle cx="310" cy="450" r="4"/>
+            <circle cx="280" cy="465" r="4"/>
+            <circle cx="295" cy="465" r="4"/>
+            <circle cx="310" cy="465" r="4"/>
+            <circle cx="280" cy="480" r="4"/>
+            <circle cx="295" cy="480" r="4"/>
+            <circle cx="310" cy="480" r="4"/>
+            
+            <circle cx="690" cy="220" r="4"/>
+            <circle cx="705" cy="220" r="4"/>
+            <circle cx="720" cy="220" r="4"/>
+            <circle cx="690" cy="235" r="4"/>
+            <circle cx="705" cy="235" r="4"/>
+            <circle cx="720" cy="235" r="4"/>
+            <circle cx="690" cy="250" r="4"/>
+            <circle cx="705" cy="250" r="4"/>
+            <circle cx="720" cy="250" r="4"/>
+        </g>
+
+        <!-- Pop Art Action Starbursts -->
+        <path d="M 260 230 L 280 250 L 290 220 L 310 240 L 300 270 L 330 280 L 310 300 L 280 290 L 260 320 L 240 300 L 240 270 L 210 260 L 230 240 Z" 
+              fill="#00e5ff" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M 660 380 L 680 400 L 690 370 L 710 390 L 700 420 L 730 430 L 710 450 L 680 440 L 660 470 L 640 450 L 640 420 L 610 410 L 630 390 Z" 
+              fill="#ffeb3b" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+
+        <!-- Comic Sound Effect Text: "OUCH!" -->
+        <g transform="translate(220, 140) rotate(-15)">
+            <text x="0" y="0" font-family="Arial Black, Impact, sans-serif" font-size="70" font-weight="900" 
+                  fill="#ffeb3b" stroke="#000000" stroke-width="10" stroke-linejoin="round">OUCH!</text>
+            <text x="0" y="0" font-family="Arial Black, Impact, sans-serif" font-size="70" font-weight="900" 
+                  fill="#ffeb3b">OUCH!</text>
+        </g>
+    </g>
+</svg>

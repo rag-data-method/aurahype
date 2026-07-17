@@ -1,0 +1,353 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#260a33"/>
+      <stop offset="100%" stop-color="#12001a"/>
+    </radialGradient>
+    <g id="p">
+      <circle r="6" fill="#FFD700">
+        <animate attributeName="r" values="6;0;6" dur="1.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.4;1" dur="1.7s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="4" fill="#FF007F">
+        <animate attributeName="r" values="0;5;0" dur="2.3s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="3" fill="#00FFFF">
+        <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <g id="c">
+      <rect x="-5" y="-5" width="10" height="10" fill="#FF007F">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-4" y="-4" width="8" height="8" fill="#00FFFF">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <g id="h">
+      <rect x="350" y="150" width="100" height="200" rx="20" fill="#1D0E2E"/>
+    </g>
+    <g id="spark">
+      <circle r="3" fill="#00FFFF">
+        <animate attributeName="r" values="3;8;3" dur="0.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <g id="streak">
+      <rect x="-1" y="-15" width="2" height="30" fill="#FFD700">
+        <animate attributeName="y" values="-15;-30;-15" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <g id="ln">
+      <line x1="0" y1="0" x2="40" y2="-40" stroke="#FF007F" stroke-width="2" stroke-linecap="round" opacity="0.6">
+        <animate attributeName="x2" values="40;60;40" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="-40;-60;-40" dur="2s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    <g id="tri">
+      <polygon points="0,-8 7,4 -7,4" fill="#00FFFF">
+        <animateTransform attributeName="transform" type="scale" values="1;1.5;1" dur="1.2s" repeatCount="indefinite"/>
+      </polygon>
+    </g>
+    <g id="cr">
+      <path d="M0,-6 L6,0 L0,6 L-6,0 Z" stroke="#FFD700" stroke-width="2" fill="none">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="180" dur="2.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+
+  <!-- Background Beam -->
+  <path d="M 400 -100 L 200 700 L 600 700 Z" fill="#FF007F" opacity="0.08">
+    <animate attributeName="opacity" values="0.08;0.15;0.08" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 400 -100 L 250 700 L 550 700 Z" fill="#00FFFF" opacity="0.05">
+    <animate attributeName="opacity" values="0.05;0.12;0.05" dur="5s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- DEFS (Required for <use>) -->
+  <defs>
+    <g id="circ">
+      <circle r="4" fill="#00FFFF"/>
+    </g>
+    <g id="sq">
+      <rect x="-3" y="-3" width="6" height="6" fill="#FF007F"/>
+    </g>
+    <g id="star">
+      <polygon points="0,-5 1.5,-1.5 5,0 1.5,1.5 0,5 -1.5,1.5 -5,0 -1.5,-1.5" fill="#FFD700"/>
+    </g>
+  </defs>
+
+  <!-- Background Floating Elements -->
+  <g opacity="0.3">
+    <use href="#sq" x="100" y="100"/>
+    <use href="#circ" x="700" y="120"/>
+    <use href="#star" x="200" y="500"/>
+    <use href="#sq" x="650" y="450"/>
+    <use href="#circ" x="150" y="300"/>
+    <use href="#star" x="80" y="400"/>
+    <use href="#sq" x="600" y="80"/>
+    <use href="#circ" x="500" y="550"/>
+    <use href="#star" x="750" y="300"/>
+    <use href="#sq" x="120" y="200"/>
+    <use href="#circ" x="450" y="50"/>
+    <use href="#star" x="350" y="580"/>
+    <use href="#sq" x="550" y="250"/>
+    <use href="#circ" x="250" y="50"/>
+    <use href="#star" x="80" y="550"/>
+    <use href="#sq" x="720" y="500"/>
+    <use href="#circ" x="180" y="450"/>
+  </g>
+
+  <!-- Background Explosion Particles -->
+  <g>
+    <use href="#p" x="400" y="300">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -200,-150" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="400" y="300">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 150,-200" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="3s" repeatCount="indefinite" begin="0.2s"/>
+    </use>
+    <use href="#p" x="400" y="300">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 180,120" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.8s" repeatCount="indefinite" begin="0.5s"/>
+    </use>
+    <use href="#p" x="400" y="300">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -120,180" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="3.2s" repeatCount="indefinite" begin="0.8s"/>
+    </use>
+    <use href="#p" x="400" y="300">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -80,-200" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.2s" repeatCount="indefinite" begin="1.1s"/>
+    </use>
+    <use href="#p" x="400" y="300">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 220,-50" dur="2.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.7s" repeatCount="indefinite" begin="0.3s"/>
+    </use>
+    <use href="#p" x="400" y="300">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -150,100" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+    </use>
+    <use href="#p" x="400" y="300">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,220" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+    </use>
+  </g>
+
+  <!-- Circular Orbit Particles -->
+  <g stroke-width="2" stroke-linecap="round">
+    <line x1="400" y1="100" x2="400" y2="80" stroke="#FF007F">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="400" y1="100" x2="400" y2="80" stroke="#00FFFF">
+      <animateTransform attributeName="transform" type="rotate" from="180 400 300" to="540 400 300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="400" y1="100" x2="400" y2="80" stroke="#FFD700">
+      <animateTransform attributeName="transform" type="rotate" from="90 400 300" to="450 400 300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="400" y1="100" x2="400" y2="80" stroke="#FF007F">
+      <animateTransform attributeName="transform" type="rotate" from="270 400 300" to="630 400 300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="400" y1="100" x2="400" y2="80" stroke="#00FFFF">
+      <animateTransform attributeName="transform" type="rotate" from="45 400 300" to="405 400 300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="400" y1="100" x2="400" y2="80" stroke="#FFD700">
+      <animateTransform attributeName="transform" type="rotate" from="135 400 300" to="495 400 300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.9s" repeatCount="indefinite"/>
+    </line>
+    <line x1="400" y1="100" x2="400" y2="80" stroke="#FF007F">
+      <animateTransform attributeName="transform" type="rotate" from="225 400 300" to="585 400 300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="400" y1="100" x2="400" y2="80" stroke="#00FFFF">
+      <animateTransform attributeName="transform" type="rotate" from="315 400 300" to="675 400 300" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.1s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Glowing Aura Rings -->
+  <ellipse cx="400" cy="300" rx="160" ry="220" fill="none" stroke="#FFD700" stroke-width="4" opacity="0.3">
+    <animate attributeName="rx" values="160;180;160" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="220;240;220" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="12s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="400" cy="300" rx="140" ry="200" fill="none" stroke="#FF007F" stroke-width="3" opacity="0.2">
+    <animate attributeName="rx" values="140;155;140" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="200;215;200" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.05;0.2" dur="3s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="360 400 300" to="0 400 300" dur="15s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="400" cy="300" rx="130" ry="190" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.15">
+    <animate attributeName="rx" values="130;145;130" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="190;205;190" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.05;0.15" dur="3.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="18s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- MAIN WAVING HAND GROUP -->
+  <g id="hand-group">
+    <animateTransform attributeName="transform" type="rotate" values="-15 400 400; 15 400 400; -15 400 400" dur="2.5s" repeatCount="indefinite" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" calcMode="spline"/>
+
+    <!-- Wrist Base -->
+    <rect x="375" y="430" width="50" height="70" rx="15" fill="#9146FF"/>
+    <rect x="375" y="430" width="50" height="70" rx="15" fill="none" stroke="#FFD700" stroke-width="4">
+    </rect>
+
+    <!-- Palm Base (Main Square) -->
+    <rect x="350" y="250" width="100" height="180" rx="20" fill="#9146FF"/>
+    <rect x="350" y="250" width="100" height="180" rx="20" fill="none" stroke="#00FFFF" stroke-width="4">
+    </rect>
+
+    <!-- Inner Palm Detail (Screen / Stream Window) -->
+    <rect x="365" y="280" width="70" height="110" rx="10" fill="#1D0E2E"/>
+    <rect x="365" y="280" width="70" height="110" rx="10" fill="none" stroke="#FF007F" stroke-width="2" opacity="0.8"/>
+
+    <!-- Geometric Play Symbol (Abstract reference to streaming) -->
+    <polygon points="390,320 390,350 415,335" fill="#00FFFF">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </polygon>
+
+    <!-- Fingers (Simple Rectangles popping out from the top) -->
+    <!-- Pinky -->
+    <rect x="360" y="170" width="25" height="90" rx="12" fill="#9146FF"/>
+    <rect x="360" y="170" width="25" height="90" rx="12" fill="none" stroke="#FF007F" stroke-width="3"/>
+    <!-- Ring -->
+    <rect x="390" y="150" width="25" height="110" rx="12" fill="#9146FF"/>
+    <rect x="390" y="150" width="25" height="110" rx="12" fill="none" stroke="#FFD700" stroke-width="3"/>
+    <!-- Middle -->
+    <rect x="420" y="140" width="25" height="120" rx="12" fill="#9146FF"/>
+    <rect x="420" y="140" width="25" height="120" rx="12" fill="none" stroke="#00FFFF" stroke-width="3"/>
+    <!-- Index -->
+    <rect x="450" y="160" width="25" height="100" rx="12" fill="#9146FF"/>
+    <rect x="450" y="160" width="25" height="100" rx="12" fill="none" stroke="#FF007F" stroke-width="3"/>
+
+    <!-- Thumb -->
+    <rect x="440" y="340" width="80" height="30" rx="15" fill="#9146FF" transform="rotate(-25 440 340)"/>
+    <rect x="440" y="340" width="80" height="30" rx="15" fill="none" stroke="#FFD700" stroke-width="3" transform="rotate(-25 440 340)"/>
+
+    <!-- Joints / Hinges (Geometric circles at finger bases) -->
+    <circle cx="372" cy="250" r="6" fill="#00FFFF"/>
+    <circle cx="402" cy="250" r="6" fill="#FF007F"/>
+    <circle cx="432" cy="250" r="6" fill="#FFD700"/>
+    <circle cx="462" cy="250" r="6" fill="#00FFFF"/>
+
+    <!-- Screen "Live" Indicator Dot -->
+    <circle cx="420" cy="295" r="4" fill="#FF007F">
+      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="4;6;4" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Energy Sparkles on Hand -->
+    <use href="#spark" x="380" y="180"/>
+    <use href="#spark" x="460" y="220"/>
+    <use href="#spark" x="370" y="380"/>
+    <use href="#spark" x="450" y="400"/>
+    <use href="#spark" x="410" y="150"/>
+    <use href="#spark" x="480" y="360"/>
+
+  </g>
+
+  <!-- Foreground Floating Confetti (Falling/Strobing) -->
+  <g id="confetti">
+    <use href="#c" x="200" y="50">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 600" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 200 50; 360 200 50" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#c" x="600" y="20">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 600" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 600 20; -360 600 20" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#c" x="300" y="400">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 20 100" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 300 400; 180 300 400" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#c" x="500" y="500">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -20 -100" dur="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 500 500; -180 500 500" dur="1.8s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#c" x="150" y="500">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -150" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 150 500; 360 150 500" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#c" x="650" y="150">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 450" dur="5.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 650 150; -360 650 150" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- Foreground Floating Lines & Shapes -->
+  <g id="fg-elements">
+    <use href="#ln" x="200" y="500">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -50 50" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#ln" x="600" y="450">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 50 50" dur="2.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#tri" x="250" y="100">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 20" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#tri" x="550" y="150">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -20" dur="2.3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#cr" x="150" y="200">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 30 30" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#cr" x="650" y="350">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -30 -30" dur="3.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#streak" x="300" y="450">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -80" dur="1.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#streak" x="500" y="520">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -60" dur="1.8s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Welcome Text (Stylized, Abstract, Glowing) -->
+  <g transform="translate(400, 560)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="72" font-weight="900" fill="#FFD700" text-anchor="middle" letter-spacing="8">
+      WELCOME
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </text>
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="72" font-weight="900" fill="#00FFFF" text-anchor="middle" letter-spacing="8">
+      WELCOME
+      <animate attributeName="opacity" values="0;0.4;0" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="2 2; -2 -2; 2 2" dur="0.3s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Chat Bubble Floating (Abstract, Hinting at Streaming Culture) -->
+  <g transform="translate(200, 150)" opacity="0.6">
+    <rect x="-40" y="-25" width="80" height="50" rx="25" fill="#FF007F"/>
+    <path d="M -20 25 L -30 45 L 0 25 Z" fill="#FF007F"/>
+    <circle cx="-15" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="15" cy="0" r="5" fill="#FFFFFF"/>
+    <animateTransform attributeName="transform" type="translate" values="200 150; 200 120; 200 150" dur="3s" repeatCount="indefinite"/>
+  </g>
+
+  <g transform="translate(600, 250)" opacity="0.6">
+    <rect x="-40" y="-25" width="80" height="50" rx="25" fill="#00FFFF"/>
+    <path d="M 0 25 L 30 45 L 20 25 Z" fill="#00FFFF"/>
+    <circle cx="-15" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="15" cy="0" r="5" fill="#FFFFFF"/>
+    <animateTransform attributeName="transform" type="translate" values="600 250; 600 220; 600 250" dur="4s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Screen Overlay Glow -->
+  <circle cx="400" cy="300" r="300" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.1">
+    <animate attributeName="r" values="300;320;300" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+</svg>

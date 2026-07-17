@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#555"/>
+      <stop offset="25%" stop-color="#fff"/>
+      <stop offset="50%" stop-color="#888"/>
+      <stop offset="75%" stop-color="#ddd"/>
+      <stop offset="100%" stop-color="#444"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="100%;0%;100%" dur="10s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#050505"/>
+
+  <g stroke="#ccff00" stroke-width="1" opacity="0.25" filter="url(#glow)">
+    <line x1="800" y1="450" x2="0" y2="0"/>
+    <line x1="800" y1="450" x2="1600" y2="0"/>
+    <line x1="800" y1="450" x2="0" y2="900"/>
+    <line x1="800" y1="450" x2="1600" y2="900"/>
+    <line x1="800" y1="450" x2="0" y2="450"/>
+    <line x1="800" y1="450" x2="1600" y2="450"/>
+    <line x1="800" y1="450" x2="800" y2="0"/>
+    <line x1="800" y1="450" x2="800" y2="900"/>
+  </g>
+
+  <g stroke="#ffff00" stroke-width="2" opacity="0.5" filter="url(#glow)">
+    <line x1="0" y1="200" x2="1600" y2="200">
+      <animate attributeName="y1" values="200;220;200" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="200;180;200" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="700" x2="1600" y2="700">
+      <animate attributeName="y1" values="700;680;700" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="700;720;700" dur="3s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <g transform="translate(800,450)">
+    <path fill="url(#silver)" stroke="#ffff00" stroke-width="3" filter="url(#glow)">
+      <animate attributeName="d"
+        values="M0,-250 L60,-80 L240,-60 L100,40 L150,220 L0,120 L-150,220 L-100,40 L-240,-60 L-60,-80 Z;
+                M0,-230 L80,-90 L230,-80 L110,50 L170,200 L0,140 L-170,200 L-110,50 L-230,-80 L-80,-90 Z;
+                M0,-250 L60,-80 L240,-60 L100,40 L150,220 L0,120 L-150,220 L-100,40 L-240,-60 L-60,-80 Z"
+        dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path fill="none" stroke="#ccff00" stroke-width="4" filter="url(#strongGlow)">
+      <animate attributeName="d"
+        values="M0,-180 L40,-60 L170,-40 L70,30 L110,160 L0,90 L-110,160 L-70,30 L-170,-40 L-40,-60 Z;
+                M0,-170 L50,-70 L160,-50 L80,40 L120,150 L0,100 L-120,150 L-80,40 L-160,-50 L-50,-70 Z;
+                M0,-180 L40,-60 L170,-40 L70,30 L110,160 L0,90 L-110,160 L-70,30 L-170,-40 L-40,-60 Z"
+        dur="5s" repeatCount="indefinite"/>
+    </path>
+    <circle r="260" fill="none" stroke="#ccff00" stroke-width="1" opacity="0.4" stroke-dasharray="40 30">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g fill="none" stroke="#ccff00" stroke-width="5" filter="url(#glow)">
+    <path d="M80,80 L250,80 L250,130 L130,130 L130,250 L80,250 Z">
+      <animate attributeName="stroke-width" values="5;8;5" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1520,80 L1350,80 L1350,130 L1470,130 L1470,250 L1520,250 Z">
+      <animate attributeName="stroke-width" values="5;8;5" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M80,820 L250,820 L250,770 L130,770 L130,650 L80,650 Z">
+      <animate attributeName="stroke-width" values="5;8;5" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1520,820 L1350,820 L1350,770 L1470,770 L1470,650 L1520,650 Z">
+      <animate attributeName="stroke-width" values="5;8;5" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g fill="#ffff00" filter="url(#glow)">
+    <polygon points="300,150 340,220 260,220">
+      <animateTransform attributeName="transform" type="rotate" from="0 300 190" to="360 300 190" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1300,150 1340,220 1260,220">
+      <animateTransform attributeName="transform" type="rotate" from="0 1300 190" to="-360 1300 190" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="2.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="300,750 350,670 400,750 350,830">
+      <animateTransform attributeName="transform" type="rotate" from="0 350 750" to="360 350 750" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1300,750 1350,670 1400,750 1350,830">
+      <animateTransform attributeName="transform" type="rotate" from="0 1350 750" to="-360 1350 750" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.2s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <path d="M0,850 L1600,850 L1600,900 L0,900 Z" fill="url(#silver)" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M0,855 L1600,855" stroke="#ffff00" stroke-width="3" filter="url(#glow)">
+    <animate attributeName="stroke-width" values="3;6;3" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+</svg>

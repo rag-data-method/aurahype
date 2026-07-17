@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" style="width:100%; height:100%; display:block;">
+  <defs>
+    <!-- Halftone Pattern for Background -->
+    <pattern id="dotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="4" fill="#000000" opacity="0.15"/>
+    </pattern>
+    
+    <!-- Halftone Pattern for Text Box Shadow -->
+    <pattern id="boxDots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="3" fill="#000000" opacity="0.3"/>
+    </pattern>
+
+    <!-- Vibrant Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base Background: Bright Cyan -->
+  <rect width="1920" height="1080" fill="#00E5FF" />
+
+  <!-- Background Halftone Grid (Animated Scaling) -->
+  <rect width="1920" height="1080" fill="url(#dotGrid)" style="animation: bgPulse 8s infinite ease-in-out;" />
+
+  <!-- Rotating Sunburst Background -->
+  <g transform="translate(960, 540)">
+    <g style="animation: spin 60s linear infinite;">
+      <polygon points="0,-1200 200,-1200 0,0 -200,-1200" fill="#FFEA00" />
+      <polygon points="0,-1200 200,-1200 0,0 -200,-1200" fill="#FFEA00" transform="rotate(45)" />
+      <polygon points="0,-1200 200,-1200 0,0 -200,-1200" fill="#FFEA00" transform="rotate(90)" />
+      <polygon points="0,-1200 200,-1200 0,0 -200,-1200" fill="#FFEA00" transform="rotate(135)" />
+      <polygon points="0,-1200 200,-1200 0,0 -200,-1200" fill="#FFEA00" transform="rotate(180)" />
+      <polygon points="0,-1200 200,-1200 0,0 -200,-1200" fill="#FFEA00" transform="rotate(225)" />
+      <polygon points="0,-1200 200,-1200 0,0 -200,-1200" fill="#FFEA00" transform="rotate(270)" />
+      <polygon points="0,-1200 200,-1200 0,0 -200,-1200" fill="#FFEA00" transform="rotate(315)" />
+    </g>
+  </g>
+
+  <!-- Central Starburst Graphic -->
+  <g transform="translate(960, 540)">
+    <g style="animation: spin 20s linear infinite reverse;">
+      <polygon points="0,-500 100,-150 500,-100 150,0 500,100 100,150 0,500 -100,150 -500,100 -150,0 -500,-100 -100,-150" fill="#FF1744" stroke="#000000" stroke-width="12" stroke-linejoin="round" />
+    </g>
+  </g>
+
+  <!-- Main Text Box Container -->
+  <g transform="translate(960, 540)">
+    
+    <!-- Massive Offset Shadow (Halftone) -->
+    <path d="M -650,-180 L 650,-180 L 650,180 L -650,180 Z" fill="url(#boxDots)" transform="translate(40, 40)" />
+    
+    <!-- Solid Black Drop Shadow -->
+    <path d="M -650,-180 L 650,-180 L 650,180 L -650,180 Z" fill="#000000" transform="translate(30, 30)" stroke="#000000" stroke-width="15" stroke-linejoin="round" />
+    
+    <!-- Main Box Shape (Electric Blue) -->
+    <path d="M -650,-180 L 650,-180 L 650,180 L -650,180 Z" fill="#2979FF" stroke="#000000" stroke-width="15" stroke-linejoin="round" />
+    
+    <!-- Inner Box Highlight -->
+    <path d="M -635,-165 L 635,-165 L 635,165 L -635,165 Z" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.6" />
+
+    <!-- Main Text: "SISTEMA" -->
+    <text x="0" y="-25" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-weight="900" font-size="210" fill="#FFEA00" stroke="#000000" stroke-width="16" paint-order="stroke fill" letter-spacing="12" style="filter: url(#glow); animation: textPulse 1.5s infinite ease-in-out;">
+      SISTEMA
+    </text>
+
+    <!-- Sub Text: "REINICIANDO..." -->
+    <text x="0" y="115" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-weight="900" font-size="140" fill="#FF1744" stroke="#000000" stroke-width="12" paint-order="stroke fill" letter-spacing="10" style="animation: textPulse 1.5s infinite ease-in-out 0.2s;">
+      REINICIANDO...
+    </text>
+  </g>
+
+  <!-- Action Burst Elements (Rotating around corners) -->
+  <g style="animation: spin 10s linear infinite;">
+    <polygon points="150,150 250,50 350,150 250,250" fill="#FF1744" stroke="#000000" stroke-width="8" transform="translate(-960, -540)" />
+    <polygon points="150,150 250,50 350,150 250,250" fill="#FF1744" stroke="#000000" stroke-width="8" transform="translate(960, -540)" />
+    <polygon points="150,150 250,50 350,150 250,250" fill="#FF1744" stroke="#000000" stroke-width="8" transform="translate(-960, 540)" />
+    <polygon points="150,150 250,50 350,150 250,250" fill="#FF1744" stroke="#000000" stroke-width="8" transform="translate(960, 540)" />
+  </g>
+
+  <!-- Inline CSS Animations -->
+  <style>
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes bgPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.8; }
+    }
+    @keyframes textPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+  </style>
+</svg>

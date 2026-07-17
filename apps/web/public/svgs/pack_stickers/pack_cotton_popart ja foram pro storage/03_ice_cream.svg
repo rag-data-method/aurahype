@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Halftone Pattern: Standard Comic Dots -->
+    <pattern id="halftone" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4" fill="#000000"/>
+    </pattern>
+    
+    <!-- Halftone Pattern: Inverted -->
+    <pattern id="halftone-inv" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#000000"/>
+      <circle cx="6" cy="6" r="4" fill="#ffffff"/>
+    </pattern>
+
+    <!-- Halftone Pattern: Red Dots -->
+    <pattern id="halftone-red" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="5" fill="#FF0044"/>
+    </pattern>
+
+    <!-- Halftone Pattern: Cyan Dots -->
+    <pattern id="halftone-cyan" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="5" fill="#00FFFF"/>
+    </pattern>
+
+    <!-- Halftone Pattern: Yellow Dots -->
+    <pattern id="halftone-yellow" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="5" fill="#FFFF00"/>
+    </pattern>
+
+    <!-- Halftone Pattern: Magenta Dots -->
+    <pattern id="halftone-magenta" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="5" fill="#FF00FF"/>
+    </pattern>
+
+    <!-- Action Line Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#FFFF00" flood-opacity="1"/>
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND: Layered Pop Colors -->
+  <!-- Base Magenta -->
+  <rect width="1600" height="900" fill="#FF00CC"/>
+  
+  <!-- Diagonal Split Cyan -->
+  <path d="M 0 900 L 800 0 L 1600 0 L 1600 900 Z" fill="#00DDFF"/>
+  
+  <!-- Yellow Sunburst Circle -->
+  <circle cx="800" cy="450" r="500" fill="#FFFF00"/>
+
+  <!-- Halftone Background Overlay -->
+  <rect width="1600" height="900" fill="url(#halftone)" opacity="0.15"/>
+
+  <!-- ========================================== -->
+  <!-- REPEATING BACKGROUND ELEMENTS (Warhol Grid) -->
+  <!-- ========================================== -->
+  <g opacity="0.25" stroke="#000000" stroke-width="4">
+    <!-- Grid Row 1 -->
+    <path d="M 100 100 L 600 100" stroke-dasharray="12 12"/>
+    <path d="M 1000 100 L 1500 100" stroke-dasharray="12 12"/>
+    <!-- Grid Row 2 -->
+    <path d="M 50 250 L 750 250" stroke-dasharray="20 20"/>
+    <path d="M 850 250 L 1550 250" stroke-dasharray="20 20"/>
+    <!-- Grid Row 3 -->
+    <path d="M 200 750 L 550 750" stroke-dasharray="8 8"/>
+    <path d="M 1050 750 L 1400 750" stroke-dasharray="8 8"/>
+    
+    <!-- Floating Dots -->
+    <circle cx="200" cy="200" r="15" fill="#FF00CC" stroke="#000"/>
+    <circle cx="1400" cy="300" r="25" fill="#00DDFF" stroke="#000"/>
+    <circle cx="300" cy="800" r="10" fill="#FFFF00" stroke="#000"/>
+    <circle cx="1300" cy="800" r="20" fill="#FF00CC" stroke="#000"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- COMIC ACTION LINES (Lichtenstein Style) -->
+  <!-- ========================================== -->
+  <g stroke="#000000" stroke-width="6" stroke-linecap="round">
+    <!-- Upper Left Burst -->
+    <line x1="150" y1="150" x2="350" y2="300">
+      <animateTransform attributeName="transform" type="rotate" from="0 250 225" to="360 250 225" dur="12s" repeatCount="indefinite"/>
+    </line>
+    <line x1="120" y1="250" x2="320" y2="400">
+      <animateTransform attributeName="transform" type="rotate" from="0 220 325" to="360 220 325" dur="12s" repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="100" x2="400" y2="250">
+      <animateTransform attributeName="transform" type="rotate" from="0 300 175" to="360 300 175" dur="12s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Lower Right Burst -->
+    <line x1="1250" y1="550" x2="1450" y2="700">
+      <animateTransform attributeName="transform" type="rotate" from="0 1350 625" to="-360 1350 625" dur="10s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1300" y1="450" x2="1500" y2="600">
+      <animateTransform attributeName="transform" type="rotate" from="0 1400 525" to="-360 1400 525" dur="10s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Center Radiating Lines -->
+    <line x1="800" y1="50" x2="800" y2="200">
+      <animate attributeName="y2" values="200;180;200" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="850" x2="800" y2="700">
+      <animate attributeName="y2" values="700;720;700" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="550" y1="450" x2="700" y2="450">
+      <animate attributeName="x2" values="700;680;700" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1050" y1="450" x2="900" y2="450">
+      <animate attributeName="x2" values="900;920;900" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- MAIN SUBJECT: MELTING ICE CREAM CONE       -->
+  <!-- ========================================== -->
+  
+  <!-- Shadow Base -->
+  <ellipse cx="800" cy="840" rx="150" ry="30" fill="url(#halftone-inv)" opacity="0.6">
+    <animate attributeName="rx" values="150;160;150" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.4;0.6" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- CONE GROUP -->
+  <g id="cone">
+    <!-- Back Cone (Waffle Grid) -->
+    <path d="M 730 450 L 640 820 L 960 820 L 870 450 Z" fill="#FFCC00" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+    
+    <!-- Waffle Grid Pattern (Diagonal Lines) -->
+    <g stroke="#000000" stroke-width="5" opacity="0.8">
+      <line x1="714" y1="520" x2="886" y2="520"/>
+      <line x1="698" y1="590" x2="902" y2="590"/>
+      <line x1="682" y1="660" x2="918" y2="660"/>
+      <line x1="666" y1="730" x2="934" y2="730"/>
+      <line x1="650" y1="800" x2="950" y2="800"/>
+      
+      <line x1="814" y1="450" x2="670" y2="820"/>
+      <line x1="800" y1="450" x2="800" y2="820"/>
+      <line x1="786" y1="450" x2="930" y2="820"/>
+    </g>
+
+    <!-- Cone Outline (Thick Black Stroke) -->
+    <path d="M 730 450 L 640 820 L 960 820 L 870 450 Z" fill="none" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    
+    <!-- Cone Bottom Fill (Halftone) -->
+    <path d="M 650 810 L 950 810 L 960 820 L 640 820 Z" fill="url(#halftone)"/>
+  </g>
+
+  <!-- ICE CREAM MASS GROUP -->
+  <g id="ice-cream">
+    <!-- Main Scoop Base (Magenta) -->
+    <path d="M 720 470 C 680 400, 680 320, 740 280 C 780 250, 820 250, 860 280 C 920 320, 920 400, 880 470 Z" fill="#FF00CC" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+    
+    <!-- Scoop Highlight (Cyan) -->
+    <path d="M 740 290 C 770 270, 810 270, 840 290 C 890 320, 890 380, 860 430 C 850 380, 820 340, 740 290 Z" fill="#00FFFF" stroke="#000000" stroke-width="4"/>
+    
+    <!-- Scoop Shadow / Halftone Overlay -->
+    <path d="M 720 470 C 680 400, 680 320, 740 280 C 780 250, 820 250, 860 280 C 920 320, 920 400, 880 470 Z" fill="url(#halftone-magenta)" opacity="0.6" style="mix-blend-mode: multiply;"/>
+    
+    <!-- Top Rim Halftone -->
+    <path d="M 740 280 C 780 250, 820 250, 860 280" fill="none" stroke="url(#halftone-red)" stroke-width="20"/>
+
+    <!-- Melting Pool on Rim -->
+    <path d="M 720 470 Q 720 500 750 490 Q 780 480 800 500 Q 820 520 850 490 Q 880 460 880 470 Z" fill="#FF00CC" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M 720 470 Q 720 500 750 490 Q 780 480 800 500 Q 820 520 850 490 Q 880 460 880 470 Z" fill="url(#halftone-magenta)" opacity="0.5"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- DRIPS & HIGHLIGHTS (The Melting Action)    -->
+  <!-- ========================================== -->
+
+  <!-- DRIP 1 (Large Center Drip) -->
+  <g id="drip-1">
+    <path d="M 760 490 Q 760 580 780 620 Q 790 640 800 620 Q 820 580 820 490 Z" fill="#FF00CC" stroke="#000000" stroke-width="6" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 20; 0 0" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <!-- Drip Halftone -->
+    <path d="M 760 490 Q 760 580 780 620 Q 790 640 800 620 Q 820 580 820 490 Z" fill="url(#halftone-magenta)" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 20; 0 0" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <!-- Comic Highlight (White Slash) -->
+    <path d="M 775 510 L 770 580" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.9">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 20; 0 0" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <!-- Small black comic reflection line -->
+    <path d="M 785 520 L 785 560" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 20; 0 0" dur="4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- DRIP 2 (Left Drip) -->
+  <g id="drip-2">
+    <path d="M 720 470 Q 715 520 725 550 Q 730 560 735 550 Q 745 520 740 475 Z" fill="#00FFFF" stroke="#000000" stroke-width="5" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 15; 0 0" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#00FFFF;#FFFF00;#00FFFF" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <!-- Drip Halftone -->
+    <path d="M 720 470 Q 715 520 725 550 Q 730 560 735 550 Q 745 520 740 475 Z" fill="url(#halftone-cyan)" opacity="0.7">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 15; 0 0" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+    <!-- Comic Highlight -->
+    <path d="M 725 480 L 720 530" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 15; 0 0" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- DRIP 3 (Right Drip) -->
+  <g id="drip-3">
+    <path d="M 870 460 Q 875 510 865 540 Q 860 550 855 540 Q 845 510 850 465 Z" fill="#FFFF00" stroke="#000000" stroke-width="5" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 25; 0 0" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#FFFF00;#FF00CC;#FFFF00" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <!-- Drip Halftone -->
+    <path d="M 870 460 Q 875 510 865 540 Q 860 550 855 540 Q 845 510 850 465 Z" fill="url(#halftone-yellow)" opacity="0.7">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 25; 0 0" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <!-- Comic Highlight -->
+    <path d="M 865 470 L 860 520" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 25; 0 0" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- SIZZLING DRIPS (Small drops falling off) -->
+  <!-- Drop 1 -->
+  <circle cx="780" cy="620" r="8" fill="#FF00CC" stroke="#000000" stroke-width="3">
+    <animate attributeName="cy" values="620;700;620" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0;1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Drop 2 -->
+  <circle cx="730" cy="550" r="6" fill="#00FFFF" stroke="#000000" stroke-width="3">
+    <animate attributeName="cy" values="550;650;550" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0;1" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Drop 3 -->
+  <circle cx="860" cy="540" r="7" fill="#FFFF00" stroke="#000000" stroke-width="3">
+    <animate attributeName="cy" values="540;640;540" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0;1" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ========================================== -->
+  <!-- FOREGROUND DETAILS & SURFACE SPLASH        -->
+  <!-- ========================================== -->
+
+  <!-- Splash Puddle on the Ground -->
+  <g id="splash">
+    <!-- Main Puddle -->
+    <ellipse cx="800" cy="840" rx="100" ry="20" fill="#FF00CC" stroke="#000000" stroke-width="5">
+      <animate attributeName="rx" values="100;110;100" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="800" cy="840" rx="100" ry="20" fill="url(#halftone-magenta)" opacity="0.6">
+      <animate attributeName="rx" values="100;110;100" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Splash Droplets -->
+    <circle cx="750" cy="830" r="5" fill="#FFFF00" stroke="#000000" stroke-width="2">
+      <animate attributeName="cy" values="830;810;830" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="850" cy="825" r="4" fill="#00FFFF" stroke="#000000" stroke-width="2">
+      <animate attributeName="cy" values="825;800;825" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="820" r="6" fill="#FF00CC" stroke="#000000" stroke-width="2">
+      <animate attributeName="cy" values="820;790;820" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- COMIC EXPRESSION & BURST TEXT              -->
+  <!-- ========================================== -->
+  
+  <!-- "MELT" Burst -->
+  <g id="burst-text" transform="translate(1100, 200)">
+    <!-- Burst Shape -->
+    <path d="M 0 -80 L 20 -30 L 70 -50 L 40 -10 L 80 20 L 30 30 L 40 80 L 0 40 L -40 80 L -30 30 L -80 20 L -40 -10 L -70 -50 L -20 -30 Z" fill="#FFFF00" stroke="#000000" stroke-width="6" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="0.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    
+    <!-- Halftone Overlay on Burst -->
+    <path d="M 0 -80 L 20 -30 L 70 -50 L 40 -10 L 80 20 L 30 30 L 40 80 L 0 40 L -40 80 L -30 30 L -80 20 L -40 -10 L -70 -50 L -20 -30 Z" fill="url(#halftone)" opacity="0.3">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="0.8s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Text "MELT!" -->
+    <text x="0" y="15" font-family="Impact, Arial Black, sans-serif" font-size="50" font-weight="900" text-anchor="middle" fill="#FF0044" stroke="#000000" stroke-width="3" letter-spacing="2">
+      MELT!
+      <animate attributeName="fill" values="#FF0044;#00FFFF;#FF0044" dur="1s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- "POP" Burst -->
+  <g id="pop-burst" transform="translate(250, 600)">
+    <path d="M 0 -60 L 15 -20 L 55 -35 L 30 0 L 60 35 L 15 25 L 0 60 L -15 25 L -60 35 L -30 0 L -55 -35 L -15 -20 Z" fill="#00FFFF" stroke="#000000" stroke-width="5" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="0.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 0 -60 L 15 -20 L 55 -35 L 30 0 L 60 35 L 15 25 L 0 60 L -15 25 L -60 35 L -30 0 L -55 -35 L -15 -20 Z" fill="url(#halftone-red)" opacity="0.4">
+      <animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="0.6s" repeatCount="indefinite"/>
+    </path>
+    <text x="0" y="12" font-family="Impact, Arial Black, sans-serif" font-size="40" font-weight="900" text-anchor="middle" fill="#FFFF00" stroke="#000000" stroke-width="3">
+      POP!
+      <animate attributeName="fill" values="#FFFF00;#FF00CC;#FFFF00" dur="1.2s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- FLOATING FOREGROUND SHAPES                 -->
+  <!-- ========================================== -->
+  
+  <g id="floating-shapes">
+    <!-- Floating Star -->
+    <path d="M 1300 150 L 1320 210 L 1380 210 L 1330 250 L 1350 310 L 1300 270 L 1250 310 L 1270 250 L 1220 210 L 1280 210 Z" fill="#FF00CC" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -30; 0 0" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 1300 230" to="360 1300 230" dur="10s" repeatCount="indefinite" additive="sum"/>
+    </path>
+
+    <!-- Floating Bolt -->
+    <path d="M 300 350 L 350 350 L 320 400 L 380 400 L 280 500 L 310 420 L 250 420 Z" fill="#FFFF00" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 20 20; 0 0" dur="2s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Floating Circle -->
+    <circle cx="1200" cy="700" r="30" fill="#00FFFF" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -20 10; 0 0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="30;40;30" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- FINAL VIGNETTE / FRAME OVERLAY             -->
+  <!-- ========================================== -->
+  
+  <!-- Rough Edge Frame -->
+  <rect x="20" y="20" width="1560" height="860" fill="none" stroke="#000000" stroke-width="12" stroke-dasharray="30 20 10 20"/>
+  
+  <!-- Corner Accents -->
+  <g stroke="#000000" stroke-width="8">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="0" y2="100"/>
+    
+    <line x1="1600" y1="0" x2="1500" y2="0"/>
+    <line x1="1600" y1="0" x2="1600" y2="100"/>
+    
+    <line x1="0" y1="900" x2="100" y2="900"/>
+    <line x1="0" y1="900" x2="0" y2="800"/>
+    
+    <line x1="1600" y1="900" x2="1500" y2="900"/>
+    <line x1="1600" y1="900" x2="1600" y2="800"/>
+  </g>
+
+</svg>

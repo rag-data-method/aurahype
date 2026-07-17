@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGrad" cx="75%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#FFD400">
+        <animate attributeName="stop-color" values="#FFD400;#FF2D6B;#FFD400" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </radialGradient>
+
+    <linearGradient id="ray1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF2D6B"/>
+      <stop offset="100%" stop-color="#FFD400"/>
+    </linearGradient>
+    <linearGradient id="ray2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#9D00FF"/>
+    </linearGradient>
+
+    <radialGradient id="impactGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#FFD400"/>
+      <stop offset="60%" stop-color="#FF2D6B"/>
+      <stop offset="100%" stop-color="#00D9FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="fighterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A1A"/>
+      <stop offset="100%" stop-color="#2A0A3A"/>
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="subtleGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <g id="starBurst">
+      <path d="M0,-40 L5,-8 L40,-5 L8,0 L40,5 L5,8 L0,40 L-5,8 L-40,5 L-8,0 L-40,-5 L-5,-8 Z" fill="#FFFFFF"/>
+      <circle r="12" fill="#FFFFFF"/>
+      <path d="M0,-60 L-5,-15 L-60,0 L-5,15 L0,60 L5,15 L60,0 L5,-15 Z" fill="none" stroke="#FFD400" stroke-width="3"/>
+    </g>
+
+    <g id="speedLine">
+      <line x1="0" y1="0" x2="200" y2="0" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <g id="confetti-c">
+      <circle r="6" fill="#FF2D6B"/>
+    </g>
+    <g id="confetti-s">
+      <rect x="-5" y="-5" width="10" height="10" fill="#00D9FF" transform="rotate(15)"/>
+    </g>
+    <g id="confetti-t">
+      <path d="M0,-8 L6,6 L-6,6 Z" fill="#FFD400"/>
+    </g>
+    <g id="confetti-x">
+      <line x1="-6" y1="-6" x2="6" y2="6" stroke="#9D00FF" stroke-width="4"/>
+      <line x1="6" y1="-6" x2="-6" y2="6" stroke="#9D00FF" stroke-width="4"/>
+    </g>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1600" height="900" fill="#1A1A2E"/>
+
+  <!-- Animated Gradient Layer -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+
+  <!-- Halftone Dots -->
+  <g opacity="0.25">
+    <pattern id="halftone" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="10" fill="#FF2D6B"/>
+    </pattern>
+    <rect width="1600" height="900" fill="url(#halftone)">
+      <animateTransform attributeName="transform" type="translate" from="-30 -30" to="0 0" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <pattern id="halftone2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="14" fill="#00D9FF"/>
+    </pattern>
+    <rect width="1600" height="900" fill="url(#halftone2)" opacity="0.4">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="40 40" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Sunburst Rays -->
+  <g transform="translate(1150, 380)">
+    <g>
+      <polygon points="0,0 -200,-900 200,-900" fill="#FF2D6B">
+        <animate attributeName="fill" values="#FF2D6B;#9D00FF;#FF2D6B" dur="4s" repeatCount="indefinite"/>
+      </polygon>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <polygon points="0,0 -200,-900 200,-900" fill="#FFD400" transform="rotate(45)"/>
+      <animateTransform attributeName="transform" type="rotate" from="45" to="405" dur="20s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <polygon points="0,0 -200,-900 200,-900" fill="#00D9FF" transform="rotate(90)">
+        <animate attributeName="fill" values="#00D9FF;#FF2D6B;#00D9FF" dur="3s" repeatCount="indefinite"/>
+      </polygon>
+      <animateTransform attributeName="transform" type="rotate" from="90" to="450" dur="20s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <polygon points="0,0 -200,-900 200,-900" fill="#9D00FF" transform="rotate(135)"/>
+      <animateTransform attributeName="transform" type="rotate" from="135" to="495" dur="20s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <polygon points="0,0 -200,-900 200,-900" fill="#FF2D6B" transform="rotate(180)"/>
+      <animateTransform attributeName="transform" type="rotate" from="180" to="540" dur="20s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <polygon points="0,0 -200,-900 200,-900" fill="#FFD400" transform="rotate(225)"/>
+      <animateTransform attributeName="transform" type="rotate" from="225" to="585" dur="20s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <polygon points="0,0 -200,-900 200,-900" fill="#00D9FF" transform="rotate(270)"/>
+      <animateTransform attributeName="transform" type="rotate" from="270" to="630" dur="20s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <polygon points="0,0 -200,-900 200,-900" fill="#9D00FF" transform="rotate(315)"/>
+      <animateTransform attributeName="transform" type="rotate" from="315" to="675" dur="20s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- Concentric Rings -->
+  <g transform="translate(1150, 380)" opacity="0.6">
+    <circle r="150" fill="none" stroke="#FFD400" stroke-width="15" stroke-dasharray="60 30">
+      <animate attributeName="r" values="150;170;150" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="220" fill="none" stroke="#FF2D6B" stroke-width="8" stroke-dasharray="90 40">
+      <animate attributeName="r" values="220;250;220" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="320" fill="none" stroke="#00D9FF" stroke-width="5" stroke-dasharray="50 80">
+      <animate attributeName="r" values="320;340;320" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="25s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Floor Burst -->
+  <g transform="translate(1150, 750)">
+    <polygon points="0,0 -600,150 600,150" fill="#1A1A2E"/>
+    <polygon points="0,0 -500,150 -150,150" fill="#FF2D6B" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="0,0 -100,150 200,150" fill="#00D9FF" opacity="0.8"/>
+    <polygon points="0,0 150,150 550,150" fill="#FFD400" opacity="0.8"/>
+  </g>
+
+  <!-- Background Fighter Silhouette (Left, mid-air kick) -->
+  <g transform="translate(850, 450)">
+    <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+    <path d="M0,200 Q-40,180 -60,140 C-80,100 -60,50 -30,20 L-10,30 L10,10 L40,50 L30,100 L60,200 Z" fill="#0A0A1A" opacity="0.3" transform="translate(-40, -100) scale(1.2) rotate(-15)"/>
+  </g>
+
+  <!-- Hero Fighter Silhouettes (Center-Right Clash) -->
+  <g transform="translate(1050, 480)">
+    <animateTransform attributeName="transform" type="translate" values="1050,480; 1050,470; 1050,480" dur="0.5s" repeatCount="indefinite"/>
+    
+    <!-- Fighter Left (Throwing punch) -->
+    <g transform="translate(-50, 0)">
+      <path d="M-40,180 L-20,120 L-60,100 L-50,60 L-20,50 L-10,10 L20,-10 L40,20 L60,10 L80,40 L70,80 L40,90 L50,120 L30,180 Z" fill="url(#fighterGrad)"/>
+      <circle cx="10" cy="10" r="25" fill="url(#fighterGrad)"/>
+      <!-- Glowing fist -->
+      <circle cx="80" cy="40" r="15" fill="#00D9FF" filter="url(#glow)"/>
+    </g>
+
+    <!-- Fighter Right (Blocking/Hit) -->
+    <g transform="translate(80, 0) scale(-1, 1)">
+      <path d="M-40,180 L-20,120 L-60,100 L-50,60 L-20,50 L-10,10 L20,-10 L40,20 L60,10 L80,40 L70,80 L40,90 L50,120 L30,180 Z" fill="url(#fighterGrad)"/>
+      <circle cx="10" cy="10" r="25" fill="url(#fighterGrad)"/>
+      <!-- Glowing fist -->
+      <circle cx="80" cy="40" r="15" fill="#FF2D6B" filter="url(#glow)"/>
+    </g>
+  </g>
+
+  <!-- Impact Burst (White Star Explosion) -->
+  <g transform="translate(1100, 440)">
+    <circle r="100" fill="url(#impactGrad)" filter="url(#glow)">
+      <animate attributeName="r" values="80;120;80" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.7;1" dur="0.4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <g filter="url(#glow)">
+      <use href="#starBurst" transform="scale(2)">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.5;1" dur="0.3s" repeatCount="indefinite"/>
+      </use>
+      <use href="#starBurst" transform="scale(3) rotate(45)" opacity="0.6">
+        <animateTransform attributeName="transform" type="rotate" from="45" to="405" dur="6s" repeatCount="indefinite"/>
+      </use>
+    </g>
+  </g>
+
+  <!-- Speed Lines Radiating from Impact -->
+  <g transform="translate(1100, 440)">
+    <use href="#speedLine" transform="rotate(10) translate(120,0)" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="0.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#speedLine" transform="rotate(45) translate(120,0)" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="0.6s" begin="0.1s" repeatCount="indefinite"/>
+    </use>
+    <use href="#speedLine" transform="rotate(80) translate(120,0)" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="0.4s" begin="0.2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#speedLine" transform="rotate(120) translate(120,0)" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="0.7s" begin="0.3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#speedLine" transform="rotate(160) translate(120,0)" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="0.5s" begin="0.15s" repeatCount="indefinite"/>
+    </use>
+    <use href="#speedLine" transform="rotate(200) translate(120,0)" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="0.6s" begin="0.25s" repeatCount="indefinite"/>
+    </use>
+    <use href="#speedLine" transform="rotate(245) translate(120,0)" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="0.4s" begin="0.35s" repeatCount="indefinite"/>
+    </use>
+    <use href="#speedLine" transform="rotate(290) translate(120,0)" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="0.8s" begin="0.1s" repeatCount="indefinite"/>
+    </use>
+    <use href="#speedLine" transform="rotate(335) translate(120,0)" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="0.5s" begin="0.4s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Floating Geometric Shapes Layer -->
+  <g>
+    <!-- Large Pink Triangle -->
+    <polygon points="200,100 350,300 50,300" fill="#FF2D6B" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-30; 0,0" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="20s" repeatCount="indefinite" additive="sum"/>
+    </polygon>
+
+    <!-- Cyan Hexagon -->
+    <polygon points="100,700 140,670 180,700 180,750 140,780 100,750" fill="#00D9FF" opacity="0.7">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,0; 0,0" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 140 725" to="-360 140 725" dur="15s" repeatCount="indefinite" additive="sum"/>
+    </polygon>
+
+    <!-- Yellow Circle Ring -->
+    <circle cx="1500" cy="200" r="60" fill="none" stroke="#FFD400" stroke-width="12" opacity="0.8">
+      <animate attributeName="r" values="60;80;60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="12;4;12" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Purple Zig Zag -->
+    <polyline points="1450,750 1500,700 1550,750 1600,700" fill="none" stroke="#9D00FF" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,20; 0,0" dur="2.5s" repeatCount="indefinite"/>
+    </polyline>
+
+    <!-- Pink Square Outline -->
+    <rect x="50" y="500" width="80" height="80" fill="none" stroke="#FF2D6B" stroke-width="8" opacity="0.8" transform="rotate(15 90 540)">
+      <animateTransform attributeName="transform" type="rotate" from="0 90 540" to="360 90 540" dur="10s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Cyan Cross -->
+    <g transform="translate(1400, 600)">
+      <rect x="-10" y="-40" width="20" height="80" fill="#00D9FF" opacity="0.8"/>
+      <rect x="-40" y="-10" width="80" height="20" fill="#00D9FF" opacity="0.8"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="1.5s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- Foreground Confetti Particles -->
+  <!-- Layer 1: Fast flying circles -->
+  <g>
+    <use href="#confetti-c" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 C-200,-100 -400,-300 -600,-200" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-c" fill="#FFD400" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 C200,-200 400,-100 600,-300" dur="2.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#confetti-c" fill="#00D9FF" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 C100,200 0,400 -100,600" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#confetti-c" fill="#9D00FF" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 C-300,100 -500,200 -700,100" dur="2.2s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Layer 2: Spinning Squares -->
+  <g>
+    <use href="#confetti-s" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 L-300,-200" dur="1.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-s" fill="#FF2D6B" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 L400,-100" dur="1.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.7s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-s" fill="#FFD400" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 L200,300" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-s" fill="#9D00FF" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 L-100,400" dur="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.6s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- Layer 3: Triangles -->
+  <g>
+    <use href="#confetti-t" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 C-150,-300 -300,-400 -450,-300" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-t" fill="#FF2D6B" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 C150,-300 300,-400 450,-300" dur="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-t" fill="#00D9FF" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 C200,100 300,200 400,300" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.8s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-t" fill="#9D00FF" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 C-200,200 -300,300 -400,400" dur="3.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- Layer 4: X Shapes -->
+  <g>
+    <use href="#confetti-x" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 L-400,0" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-x" stroke="#FFD400" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 L400,0" dur="2.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-x" stroke="#00D9FF" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 L0,400" dur="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.8s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#confetti-x" stroke="#FF2D6B" transform="translate(1100, 440)">
+      <animateMotion path="M0,0 L0,-400" dur="2.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- Screen Edge Floating Particles -->
+  <g opacity="0.7">
+    <circle cx="100" cy="100" r="8" fill="#FFD400">
+      <animate attributeName="cy" values="100;120;100" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="100;110;100" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="800" r="10" fill="#FF2D6B">
+      <animate attributeName="cy" values="800;780;800" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1500;1490;1500" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="800" r="6" fill="#00D9FF">
+      <animate attributeName="cy" values="800;820;800" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="200;210;200" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="100" r="12" fill="#9D00FF" opacity="0.6">
+      <animate attributeName="r" values="12;18;12" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Diagonal Motion Stripes Overlay -->
+  <g opacity="0.15">
+    <polygon points="-100,0 100,0 300,900 100,900" fill="#FFFFFF">
+      <animateTransform attributeName="transform" type="translate" from="-200,0" to="200,0" dur="1s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="400,0 600,0 800,900 600,900" fill="#FFFFFF">
+      <animateTransform attributeName="transform" type="translate" from="200,0" to="-200,0" dur="1.2s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="900,0 1100,0 1300,900 1100,900" fill="#FFFFFF">
+      <animateTransform attributeName="transform" type="translate" from="-200,0" to="200,0" dur="0.8s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1400,0 1600,0 1800,900 1600,900" fill="#FFFFFF">
+      <animateTransform attributeName="transform" type="translate" from="200,0" to="-200,0" dur="1.5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Text Glow Zones (Abstract Placeholders for Title) -->
+  <g transform="translate(350, 450)" filter="url(#subtleGlow)">
+    <!-- This area is intentionally left as negative space with subtle energy for text overlay -->
+    <circle cx="0" cy="0" r="150" fill="#1A1A2E" opacity="0.5"/>
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#FF2D6B" stroke-width="4" stroke-dasharray="20 10">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#00D9FF" stroke-width="3" stroke-dasharray="15 15">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Final Pop Flash Overlay -->
+  <g opacity="0.1">
+    <rect width="1600" height="900" fill="white">
+      <animate attributeName="opacity" values="0;0.2;0" dur="1.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="1600" height="900">
+  <defs>
+    <!-- BLOCK HALFTONE DOT PATTERN -->
+    <pattern id="halftone" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(45)">
+      <circle cx="20" cy="20" r="2" fill="#000000"/>
+      <circle cx="0" cy="0" r="1.5" fill="#000000"/>
+      <circle cx="40" cy="0" r="1.5" fill="#000000"/>
+      <circle cx="0" cy="40" r="1.5" fill="#000000"/>
+      <circle cx="40" cy="40" r="1.5" fill="#000000"/>
+    </pattern>
+
+    <!-- HALFTONE RING PATTERN (LICHTENSTEIN STYLE) -->
+    <pattern id="halftone-cyan" patternUnits="userSpaceOnUse" width="24" height="24">
+      <circle cx="12" cy="12" r="10" fill="#00FFFF"/>
+      <circle cx="0" cy="0" r="10" fill="#00FFFF"/>
+      <circle cx="24" cy="0" r="10" fill="#00FFFF"/>
+      <circle cx="0" cy="24" r="10" fill="#00FFFF"/>
+      <circle cx="24" cy="24" r="10" fill="#00FFFF"/>
+    </pattern>
+
+    <pattern id="halftone-magenta" patternUnits="userSpaceOnUse" width="24" height="24">
+      <circle cx="12" cy="12" r="10" fill="#FF00FF"/>
+      <circle cx="0" cy="0" r="10" fill="#FF00FF"/>
+      <circle cx="24" cy="0" r="10" fill="#FF00FF"/>
+      <circle cx="0" cy="24" r="10" fill="#FF00FF"/>
+      <circle cx="24" cy="24" r="10" fill="#FF00FF"/>
+    </pattern>
+
+    <pattern id="halftone-yellow" patternUnits="userSpaceOnUse" width="24" height="24">
+      <circle cx="12" cy="12" r="10" fill="#FFFF00"/>
+      <circle cx="0" cy="0" r="10" fill="#FFFF00"/>
+      <circle cx="24" cy="0" r="10" fill="#FFFF00"/>
+      <circle cx="0" cy="24" r="10" fill="#FFFF00"/>
+      <circle cx="24" cy="24" r="10" fill="#FFFF00"/>
+    </pattern>
+
+    <!-- FULL COLORED DIAMOND FACET DEFINITION -->
+    <g id="diamond-facets">
+      <!-- GIRDLE / BASE -->
+      <path d="M 0 200 L 150 50 L 250 50 L 400 200 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8" stroke-linejoin="miter"/>
+      <!-- CROWN / TABLE -->
+      <path d="M 0 200 L 200 0 L 400 200 L 250 50 L 150 50 Z" fill="#00FFFF" stroke="#000000" stroke-width="8" stroke-linejoin="miter"/>
+      <!-- FACET SHADOWS AND LIGHTS -->
+      <polygon points="0,200 200,0 150,50" fill="#0088FF" stroke="#000000" stroke-width="6" stroke-linejoin="miter"/>
+      <polygon points="200,0 400,200 250,50" fill="#00FFFF" stroke="#000000" stroke-width="6" stroke-linejoin="miter"/>
+      <polygon points="0,200 150,50 250,50 400,200" fill="#D4AF37" stroke="#000000" stroke-width="6" stroke-linejoin="miter"/>
+      <!-- CENTER CROWN TABLE -->
+      <polygon points="150,50 200,0 250,50" fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-linejoin="miter"/>
+      <line x1="200" y1="0" x2="200" y2="50" stroke="#000000" stroke-width="4"/>
+      <line x1="150" y1="50" x2="250" y2="50" stroke="#000000" stroke-width="4"/>
+    </g>
+
+    <!-- 4-POINT STAR (WARHOL) -->
+    <g id="star-pop">
+      <path d="M0,-40 Q0,0 40,0 Q0,0 0,40 Q0,0 -40,0 Q0,0 0,-40 Z" fill="#FFFFFF" stroke="#000000" stroke-width="6"/>
+      <circle cx="0" cy="0" r="8" fill="#FF0000"/>
+    </g>
+
+    <!-- SMALL SPARKLE -->
+    <g id="sparkle">
+      <path d="M0,-20 Q0,0 20,0 Q0,0 0,20 Q0,0 -20,0 Q0,0 0,-20 Z" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+      <circle cx="0" cy="0" r="5" fill="#FFFF00"/>
+    </g>
+
+    <!-- COMIC ACTION LINE -->
+    <g id="action-line">
+      <path d="M 0 0 L 120 0" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+      <path d="M 10 -10 L 110 10" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+      <path d="M 0 0 L 120 0" stroke="#FF0000" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <!-- COMIC HALFTONE CIRCLE -->
+    <g id="comic-dot">
+      <circle cx="0" cy="0" r="60" fill="url(#halftone-cyan)"/>
+      <circle cx="0" cy="0" r="60" fill="none" stroke="#000000" stroke-width="8"/>
+    </g>
+
+    <g id="comic-dot-m">
+      <circle cx="0" cy="0" r="40" fill="url(#halftone-magenta)"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#000000" stroke-width="6"/>
+    </g>
+
+    <g id="comic-dot-y">
+      <circle cx="0" cy="0" r="40" fill="url(#halftone-yellow)"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#000000" stroke-width="6"/>
+    </g>
+
+    <!-- FLOATING FACET -->
+    <g id="floating-facet">
+      <polygon points="0,0 50,20 20,60 -30,40" fill="#FF00FF" stroke="#000000" stroke-width="6" stroke-linejoin="miter"/>
+      <polygon points="0,0 50,20 60,-10 10,-30" fill="#00FFFF" stroke="#000000" stroke-width="6" stroke-linejoin="miter"/>
+    </g>
+
+    <!-- COLOR PALETTE FILTER -->
+    <filter id="pop-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#FFFF00" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND: BOLD MAGENTA -->
+  <rect width="1600" height="900" fill="#FF00FF"/>
+
+  <!-- BACKGROUND HALFTONE OVERLAY -->
+  <rect width="1600" height="900" fill="url(#halftone)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.6;0.4" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- BACKGROUND BOLD STRIPES (RETRO COMMERCIAL) -->
+  <g id="retro-stripes">
+    <rect x="0" y="0" width="1600" height="40" fill="#00FFFF" stroke="#000000" stroke-width="4"/>
+    <rect x="0" y="860" width="1600" height="40" fill="#00FFFF" stroke="#000000" stroke-width="4"/>
+    <!-- ANIMATED BARS -->
+    <rect x="0" y="140" width="1600" height="20" fill="#FFFF00" stroke="#000000" stroke-width="4" opacity="0.8"/>
+    <rect x="0" y="740" width="1600" height="20" fill="#FFFF00" stroke="#000000" stroke-width="4" opacity="0.8"/>
+  </g>
+
+  <!-- FLOATING COMIC DOTS (BACKGROUND LAYER) -->
+  <g id="bg-dots">
+    <!-- CYAN DOT 1 -->
+    <use href="#comic-dot" x="200" y="200">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-40; 0,0" dur="6s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <!-- MAGENTA DOT 2 -->
+    <use href="#comic-dot-m" x="1400" y="250">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,30; 0,0" dur="5s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="20s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <!-- YELLOW DOT 3 -->
+    <use href="#comic-dot-y" x="150" y="700">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,0; 0,0" dur="7s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <!-- CYAN DOT 4 -->
+    <use href="#comic-dot" x="1300" y="750">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="5.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- COMIC ACTION LINES (SPEED/MOTION) -->
+  <g id="action-lines">
+    <use href="#action-line" x="300" y="450">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -200,0; 0,0" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#action-line" x="1100" y="480">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 200,0; 0,0" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="1.8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#action-line" x="800" y="150">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-150; 0,0" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#action-line" x="800" y="750">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,150; 0,0" dur="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="1.4s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- MAIN DIAMOND (MASSIVE & CENTERED) -->
+  <g id="main-diamond-group" transform="translate(800, 450)">
+    <!-- FLOATING ANIMATION -->
+    <animateTransform attributeName="transform" type="translate" 
+      values="800,430; 800,470; 800,430" 
+      dur="4s" 
+      repeatCount="indefinite" 
+      additive="sum"/>
+
+    <!-- DIAMOND ROTATION & COLOR SWITCHING -->
+    <g id="main-diamond-rotate">
+      <use href="#diamond-facets" transform="translate(-200, -100) scale(1)">
+        <!-- COLOR FLASH ANIMATIONS ON FACETS -->
+        <animate attributeName="stroke" values="#000000;#FF0000;#000000" dur="0.8s" repeatCount="indefinite"/>
+      </use>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0; 5; 0; -5; 0" 
+        dur="6s" 
+        repeatCount="indefinite" 
+        additive="sum"/>
+    </g>
+  </g>
+
+  <!-- SECONDARY DIAMONDS -->
+  <g id="diamond-2" transform="translate(300, 250)">
+    <g>
+      <use href="#diamond-facets" transform="translate(-100, -50) scale(0.5)"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="15s" repeatCount="indefinite"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate" values="300,230; 300,270; 300,230" dur="3.5s" repeatCount="indefinite"/>
+  </g>
+
+  <g id="diamond-3" transform="translate(1300, 650)">
+    <g>
+      <use href="#diamond-facets" transform="translate(-100, -50) scale(0.6)"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate" values="1300,630; 1300,670; 1300,630" dur="5s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- FLOATING FACETS (BROKEN CRYSTAL PIECES) -->
+  <g id="floating-facets">
+    <use href="#floating-facet" x="500" y="150">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,-50; 0,0" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 180; 360" dur="6s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#floating-facet" x="1100" y="200">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,40; 0,0" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -180; 0" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#floating-facet" x="200" y="600">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 40,30; 0,0" dur="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 90; 0" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#floating-facet" x="1400" y="500">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,-20; 0,0" dur="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -90; 0" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- GRAPHIC SPARKLE STARS (WARHOL STYLE) -->
+  <g id="stars">
+    <!-- STAR 1 -->
+    <use href="#star-pop" x="800" y="150" filter="url(#pop-glow)">
+      <animateTransform attributeName="transform" type="scale" values="0;1.5;0" dur="1.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 45; 0" dur="1.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <!-- STAR 2 -->
+    <use href="#star-pop" x="500" y="350">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -45; 0" dur="1.5s" begin="0.3s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <!-- STAR 3 -->
+    <use href="#star-pop" x="1100" y="400">
+      <animateTransform attributeName="transform" type="scale" values="0;1.2;0" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 90; 0" dur="1.8s" begin="0.6s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <!-- STAR 4 -->
+    <use href="#star-pop" x="650" y="650">
+      <animateTransform attributeName="transform" type="scale" values="0;1.3;0" dur="1.4s" begin="0.9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -90; 0" dur="1.4s" begin="0.9s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <!-- STAR 5 -->
+    <use href="#star-pop" x="950" y="700">
+      <animateTransform attributeName="transform" type="scale" values="0;1.1;0" dur="1.6s" begin="1.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 180; 0" dur="1.6s" begin="1.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- TINY SPARKLES -->
+  <g id="sparkles">
+    <use href="#sparkle" x="750" y="250">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="0.8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" x="850" y="300">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="1.1s" begin="0.2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" x="450" y="450">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="0.9s" begin="0.4s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" x="1150" y="550">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="1.3s" begin="0.6s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" x="600" y="750">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="0.7s" begin="0.8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" x="1000" y="800">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="1.0s" begin="1.0s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" x="350" y="550">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="0.6s" begin="0.1s" repeatCount="indefinite"/>
+    </use>
+    <use href="#sparkle" x="1250" y="350">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="0.9s" begin="0.5s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- FOREGROUND DUST / PARTICLES -->
+  <g id="dust-particles" fill="#FFFFFF" stroke="#000000" stroke-width="2">
+    <circle cx="100" cy="100" r="5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,100; 0,0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="800" r="8">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,-50; 0,0" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="50" r="6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,200; 0,0" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="850" r="4">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -50,-150; 0,0" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- BOLD TEXT ELEMENT (RETRO COMMERCIAL STYLE) -->
+  <g id="text-layer" transform="translate(800, 850)" text-anchor="middle">
+    <text x="0" y="0" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="60" fill="#FFFF00" stroke="#000000" stroke-width="6" letter-spacing="8">DIAMONDS</text>
+    <text x="0" y="0" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="60" fill="#FFFF00" stroke="#000000" stroke-width="6" letter-spacing="8">
+      DIAMONDS
+      <animate attributeName="fill" values="#FFFF00;#00FFFF;#FF00FF;#FFFF00" dur="3s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- FOREGROUND HALFTONE FLASH -->
+  <g id="foreground-halftone">
+    <rect x="0" y="0" width="1600" height="900" fill="url(#halftone)" opacity="0">
+      <animate attributeName="opacity" values="0;0.1;0" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+</svg>

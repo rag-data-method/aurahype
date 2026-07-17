@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-heavy" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glow-med" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+    </filter>
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.03 0"/>
+    </filter>
+    
+    <linearGradient id="irid-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5B21B6">
+        <animate attributeName="stop-color" values="#5B21B6;#9945FF;#5B21B6" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="60%" stop-color="#14F195">
+        <animate attributeName="stop-color" values="#14F195;#9945FF;#14F195" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#FF36F9">
+        <animate attributeName="stop-color" values="#FF36F9;#14F195;#FF36F9" dur="12s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="irid-2" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#14F195">
+        <animate attributeName="stop-color" values="#14F195;#FF36F9;#14F195" dur="9s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#9945FF">
+        <animate attributeName="stop-color" values="#9945FF;#FFFFFF;#9945FF" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#5B21B6">
+        <animate attributeName="stop-color" values="#5B21B6;#14F195;#5B21B6" dur="11s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="irid-3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF36F9" stop-opacity="0.9">
+        <animate attributeName="stop-opacity" values="0.9;0.6;0.9" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.6">
+        <animate attributeName="stop-opacity" values="0.6;0.9;0.6" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#14F195" stop-opacity="0.8">
+        <animate attributeName="stop-color" values="#14F195;#9945FF;#14F195" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#000000"/>
+  
+  <path d="M -100,780 C 300,730 700,930 1100,830 S 1700,880 1700,780" 
+        fill="none" stroke="#5B21B6" stroke-width="180" stroke-linecap="round" 
+        filter="url(#glow-heavy)" opacity="0.35">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M -100,780 C 300,730 700,930 1100,830 S 1700,880 1700,780" 
+        fill="none" stroke="#5B21B6" stroke-width="140" stroke-linecap="round" 
+        opacity="0.6">
+    <animateTransform type="translate" values="0,0; 0,25; 0,0" dur="12s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M -100,620 C 400,570 800,770 1200,670 S 1700,720 1700,620" 
+        fill="none" stroke="url(#irid-1)" stroke-width="110" stroke-linecap="round" 
+        filter="url(#glow-med)" opacity="0.45">
+    <animate attributeName="opacity" values="0.4;0.6;0.4" dur="7s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M -100,620 C 400,570 800,770 1200,670 S 1700,720 1700,620" 
+        fill="none" stroke="url(#irid-1)" stroke-width="90" stroke-linecap="round" 
+        opacity="0.85">
+    <animateTransform type="translate" values="0,0; 0,-20; 0,0" dur="10s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M -100,480 C 500,430 900,580 1300,480 S 1700,530 1700,430" 
+        fill="none" stroke="url(#irid-2)" stroke-width="80" stroke-linecap="round" 
+        filter="url(#glow-heavy)" opacity="0.35">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="9s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M -100,480 C 500,430 900,580 1300,480 S 1700,530 1700,430" 
+        fill="none" stroke="url(#irid-2)" stroke-width="60" stroke-linecap="round" 
+        opacity="0.8">
+    <animateTransform type="translate" values="0,0; 0,20; 0,0" dur="11s" repeatCount="indefinite"/>
+    <animateTransform type="rotate" values="0 800 450; 1.5 800 450; 0 800 450" dur="15s" repeatCount="indefinite" additive="sum"/>
+  </path>
+  
+  <path d="M 400,300 C 800,250 1200,370 1700,300" 
+        fill="none" stroke="url(#irid-3)" stroke-width="50" stroke-linecap="round" 
+        filter="url(#glow-med)" opacity="0.5">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)" style="pointer-events:none;"/>
+</svg>

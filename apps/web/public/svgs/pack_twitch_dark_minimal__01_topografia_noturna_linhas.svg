@@ -1,0 +1,139 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="background-color: #0a0914; width: 100%; height: 100%;">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="peakGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="40%" stop-color="#7c3aed" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#050508" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <mask id="edgeMask">
+      <rect width="100%" height="100%" fill="white" opacity="0.4"/>
+      <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+        <stop offset="40%" stop-color="white" stop-opacity="1"/>
+        <stop offset="100%" stop-color="black" stop-opacity="1"/>
+      </radialGradient>
+      <rect width="100%" height="100%" fill="url(#vignette)"/>
+    </mask>
+  </defs>
+
+  <!-- Background Glow -->
+  <circle cx="400" cy="300" r="400" fill="url(#glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Base Topography Contours -->
+  <g mask="url(#edgeMask)">
+    <path d="M -50 650 C 50 450, 150 550, 250 350 C 350 150, 450 350, 550 150 C 650 -50, 750 150, 850 250 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.3" opacity="0.15"/>
+    <path d="M -50 650 C 80 500, 180 600, 280 400 C 380 200, 480 400, 580 200 C 680 0, 780 200, 850 300 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.4" opacity="0.2"/>
+    
+    <!-- Eastern Peaks (Primary Mountain Range) -->
+    <path d="M 200 650 C 240 500, 280 580, 320 400 C 360 220, 400 400, 440 250 C 480 100, 520 250, 560 150 C 600 50, 640 150, 680 200 C 720 250, 760 200, 850 300 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.25"/>
+    <path d="M 200 650 C 250 520, 290 590, 340 420 C 390 250, 430 420, 470 280 C 510 140, 550 280, 590 180 C 630 80, 670 180, 710 230 C 750 280, 790 220, 850 320 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.35"/>
+    <path d="M 200 650 C 260 540, 300 600, 360 440 C 420 280, 460 440, 500 310 C 540 180, 580 310, 620 210 C 660 110, 700 210, 740 260 C 780 310, 820 240, 850 340 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.6" opacity="0.45"/>
+    <path d="M 200 650 C 270 560, 310 610, 380 460 C 450 310, 490 460, 530 340 C 570 220, 610 340, 650 240 C 690 140, 730 240, 770 290 C 810 340, 850 260, 850 360 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.7" opacity="0.55"/>
+    <path d="M 200 650 C 280 580, 320 620, 400 480 C 480 340, 520 480, 560 370 C 600 260, 640 370, 680 270 C 720 170, 760 270, 800 320 C 840 370, 850 280, 850 380 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.8" opacity="0.65"/>
+    <path d="M 200 650 C 290 600, 330 630, 420 500 C 510 370, 550 500, 590 400 C 630 300, 670 400, 710 300 C 750 200, 790 300, 830 350 C 850 390, 850 300, 850 400 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.75"/>
+    <path d="M 200 650 C 300 620, 340 640, 440 520 C 540 400, 580 520, 620 430 C 660 340, 700 430, 740 330 C 780 230, 820 330, 850 370 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="1.2" opacity="0.85"/>
+    <path d="M 200 650 C 310 640, 350 650, 460 540 C 570 430, 610 540, 650 460 C 690 380, 730 460, 770 360 C 810 260, 850 360, 850 400 L 850 650 Z" fill="none" stroke="#ffffff" stroke-width="1.3" opacity="0.9" filter="url(#softGlow)"/>
+    <path d="M 200 650 C 320 660, 360 660, 480 560 C 600 460, 640 560, 680 490 C 720 420, 760 490, 800 390 C 840 290, 850 380, 850 420 L 850 650 Z" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="1" filter="url(#softGlow)"/>
+
+    <!-- Central Valley & Western Foothills -->
+    <path d="M 200 650 C 150 500, 100 400, 0 300 L 0 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.4" opacity="0.2"/>
+    <path d="M 200 650 C 160 520, 110 420, 0 340 L 0 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.3"/>
+    <path d="M 200 650 C 170 540, 120 440, 0 380 L 0 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.6" opacity="0.4"/>
+    <path d="M 200 650 C 180 560, 130 460, 0 420 L 0 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.7" opacity="0.5"/>
+    <path d="M 200 650 C 190 580, 140 480, 0 460 L 0 650 Z" fill="none" stroke="#7c3aed" stroke-width="0.8" opacity="0.6"/>
+    <path d="M 200 650 C 200 600, 150 500, 0 500 L 0 650 Z" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.7"/>
+    <path d="M 200 650 C 210 620, 160 520, 0 540 L 0 650 Z" fill="none" stroke="#ffffff" stroke-width="1.1" opacity="0.8" filter="url(#softGlow)"/>
+    <path d="M 200 650 C 220 640, 170 540, 0 580 L 0 650 Z" fill="none" stroke="#7c3aed" stroke-width="1.3" opacity="0.9" filter="url(#softGlow)"/>
+  </g>
+
+  <!-- Peak Illumination -->
+  <g mask="url(#edgeMask)">
+    <!-- Eastern Peak -->
+    <circle cx="560" cy="150" r="180" fill="url(#peakGlow)"/>
+    <circle cx="560" cy="150" r="8" fill="#ffffff" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="6;10;6" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Secondary Peak -->
+    <circle cx="440" cy="250" r="120" fill="url(#peakGlow)"/>
+    <circle cx="440" cy="250" r="6" fill="#ffffff" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="4;7;4" dur="7s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Western Peak -->
+    <circle cx="200" cy="650" r="150" fill="url(#peakGlow)"/>
+    <circle cx="200" cy="650" r="5" fill="#ffffff" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="3;6;3" dur="9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Animated Flowing Accent Lines -->
+  <g mask="url(#edgeMask)" opacity="0.6">
+    <!-- Path 1: Flowing from central valley upwards into the mountain range -->
+    <path d="M 150 650 C 200 550, 250 500, 300 450 C 350 400, 300 350, 400 300 C 450 275, 500 250, 560 150" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="10 800" filter="url(#softGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -10; 0 0" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" from="0" to="-810" dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Path 2: Flowing across the eastern ridges -->
+    <path d="M 250 650 C 300 550, 350 500, 420 420 C 490 340, 450 280, 520 220 C 590 160, 620 180, 680 150" fill="none" stroke="#7c3aed" stroke-width="0.8" stroke-dasharray="8 1000">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 5; 0 0" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" from="0" to="-1008" dur="12s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Path 3: Flowing from the western foothills -->
+    <path d="M 50 650 C 100 600, 150 550, 200 500 C 250 450, 200 400, 280 350" fill="none" stroke="#a78bfa" stroke-width="1.2" stroke-dasharray="15 600" filter="url(#softGlow)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-615" dur="15s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Path 4: Slow pulse along the main ridge line -->
+    <path d="M 200 650 C 280 580, 330 620, 420 500 C 510 380, 580 480, 630 400" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-dasharray="5 500" opacity="0.4">
+      <animate attributeName="stroke-dashoffset" from="0" to="-505" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Ambient Particles (Floating dust/stars) -->
+  <g fill="#ffffff" filter="url(#softGlow)">
+    <circle cx="400" cy="300" r="1" opacity="0.3">
+      <animate attributeName="opacity" values="0;0.5;0" dur="6s" repeatCount="indefinite" begin="0s"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -10; 0 0" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="200" r="1.2" opacity="0.4">
+      <animate attributeName="opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite" begin="2s"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 5 0; 0 0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="450" r="0.8" opacity="0.2">
+      <animate attributeName="opacity" values="0;0.4;0" dur="10s" repeatCount="indefinite" begin="4s"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; -5 -5; 0 0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="350" r="1" opacity="0.3">
+      <animate attributeName="opacity" values="0;0.5;0" dur="7s" repeatCount="indefinite" begin="1s"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 5; 0 0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="500" r="0.9" opacity="0.25">
+      <animate attributeName="opacity" values="0;0.4;0" dur="9s" repeatCount="indefinite" begin="3s"/>
+    </circle>
+    <circle cx="480" cy="320" r="1.1" opacity="0.35">
+      <animate attributeName="opacity" values="0;0.6;0" dur="11s" repeatCount="indefinite" begin="5s"/>
+    </circle>
+  </g>
+</svg>

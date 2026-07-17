@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0524"/>
+      <stop offset="55%" stop-color="#4b0d3a"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+      <animate attributeName="x1" values="0%;15%;0%" dur="12s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c0c0c0"/>
+      <stop offset="25%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#909090"/>
+      <stop offset="75%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b0b0b0"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="0%;100%;0%" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="holo" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff00aa" stop-opacity="0.8"/>
+      <stop offset="35%" stop-color="#00ffff" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#ff00ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#7a00ff" stop-opacity="0.8"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <g fill="#ffffff" filter="url(#glow)">
+    <circle cx="200" cy="150" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="1400" cy="200" r="3"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="1200" cy="700" r="2"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="300" cy="750" r="3"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.5s" repeatCount="indefinite"/></circle>
+    <circle cx="800" cy="100" r="2"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="1100" cy="500" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.2s" repeatCount="indefinite"/></circle>
+    <circle cx="500" cy="250" r="2"><animate attributeName="opacity" values="0.2;1;0.2" dur="4.5s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <g fill="url(#chrome)" filter="url(#glow)">
+    <path d="M150 120 l6 18 18 6-18 6-6 18-6-18-18-6 18-6z">
+      <animateTransform attributeName="transform" type="rotate" from="0 150 120" to="360 150 120" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1450 180 l8 24 24 8-24 8-8 24-8-24-24-8 24-8z">
+      <animateTransform attributeName="transform" type="rotate" from="0 1450 180" to="-360 1450 180" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1300 720 l5 15 15 5-15 5-5 15-5-15-15-5 15-5z">
+      <animateTransform attributeName="transform" type="rotate" from="0 1300 720" to="360 1300 720" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g fill="url(#chrome)" opacity="0.9">
+    <path d="M400 300 Q550 150 700 300 T1000 350 T750 550 T450 500 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0;20,-30;0,0" dur="8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M900 200 Q1050 100 1200 250 T1300 450 T1050 500 T850 400 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-30,20;0,0" dur="9s" repeatCount="indefinite"/>
+    </path>
+    <path d="M500 600 Q650 500 800 650 T950 800 T650 850 T450 750 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0;25,25;0,0" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g fill="url(#holo)" opacity="0.35">
+    <ellipse cx="1200" cy="250" rx="300" ry="180">
+      <animateTransform attributeName="transform" type="rotate" from="0 1200 250" to="360 1200 250" dur="60s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="400" cy="700" rx="350" ry="200">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 700" to="-360 400 700" dur="70s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g transform="translate(800,450)">
+    <circle r="90" fill="url(#chrome)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,-15;0,0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="180" fill="none" stroke="url(#chrome)" stroke-width="4" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="220" fill="none" stroke="url(#holo)" stroke-width="2" opacity="0.5" stroke-dasharray="20 40">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="25s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="140" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3" stroke-dasharray="10 20">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

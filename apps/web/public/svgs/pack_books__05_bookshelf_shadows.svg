@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#722F37"/>
+<stop offset="50%" stop-color="#8B3A44"/>
+<stop offset="100%" stop-color="#722F37"/>
+</linearGradient>
+<linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#1F4E5C"/>
+<stop offset="50%" stop-color="#2A6575"/>
+<stop offset="100%" stop-color="#1F4E5C"/>
+</linearGradient>
+<linearGradient id="ray" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#B8893A" stop-opacity="0"/>
+<stop offset="50%" stop-color="#B8893A" stop-opacity="0.7"/>
+<stop offset="100%" stop-color="#B8893A" stop-opacity="0"/>
+</linearGradient>
+<filter id="b1" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="30"/>
+</filter>
+<filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="75"/>
+</filter>
+<filter id="t1" x="0" y="0" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="n">
+<animate attributeName="baseFrequency" values="0.9;0.95;0.9" dur="8s" repeatCount="indefinite"/>
+</feTurbulence>
+<feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.08 0"/>
+</filter>
+</defs>
+
+<rect fill="#1A1614" width="1600" height="900"/>
+<rect fill="#1F4E5C" width="1600" height="900" opacity="0.9">
+<animate attributeName="opacity" values="0.9;0.82;0.9" dur="7s" repeatCount="indefinite"/>
+</rect>
+
+<g opacity="0.75" filter="url(#b2)">
+<rect fill="#1A1614" x="300" width="250" height="900"/>
+<rect fill="#1A1614" x="950" width="350" height="900"/>
+<animateTransform attributeName="transform" type="translate" values="-40,0;40,0;-40,0" dur="10s" repeatCount="indefinite"/>
+</g>
+
+<g opacity="0.95">
+<rect fill="#722F37" x="80" width="85" height="900"/>
+<rect fill="url(#g1)" x="175" width="65" height="900"/>
+<rect fill="#722F37" x="250" width="95" height="900"/>
+<rect fill="#722F37" x="480" width="75" height="900"/>
+<rect fill="url(#g1)" x="565" width="80" height="900"/>
+<rect fill="#722F37" x="980" width="70" height="900"/>
+<rect fill="#722F37" x="1180" width="90" height="900"/>
+<rect fill="url(#g1)" x="1280" width="60" height="900"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;0,20;0,0" dur="9s" repeatCount="indefinite"/>
+</g>
+
+<g opacity="0.88">
+<rect fill="#1F4E5C" x="350" width="110" height="900"/>
+<rect fill="url(#g2)" x="660" width="95" height="900"/>
+<rect fill="#1F4E5C" x="1380" width="125" height="900"/>
+<rect fill="url(#g2)" x="1515" width="50" height="900"/>
+<animate attributeName="opacity" values="0.88;0.78;0.88" dur="6s" repeatCount="indefinite"/>
+</g>
+
+<g opacity="0.9">
+<rect fill="#F5EDDC" x="130" y="120" width="22" height="680" opacity="0.85">
+<animate attributeName="opacity" values="0.85;0.95;0.85" dur="4s" repeatCount="indefinite" begin="0s"/>
+</rect>
+<rect fill="#F5EDDC" x="280" y="180" width="18" height="560" opacity="0.8">
+<animate attributeName="opacity" values="0.8;1;0.8" dur="5s" repeatCount="indefinite" begin="1.2s"/>
+</rect>
+<rect fill="#F5EDDC" x="595" y="90" width="28" height="720" opacity="0.75">
+<animate attributeName="opacity" values="0.75;0.9;0.75" dur="6s" repeatCount="indefinite" begin="0.8s"/>
+</rect>
+<rect fill="#F5EDDC" x="1010" y="140" width="20" height="620" opacity="0.85">
+<animate attributeName="opacity" values="0.85;0.7;0.85" dur="4.5s" repeatCount="indefinite" begin="2s"/>
+</rect>
+<rect fill="#F5EDDC" x="1310" y="220" width="26" height="480" opacity="0.8">
+<animate attributeName="opacity" values="0.8;0.65;0.8" dur="5.5s" repeatCount="indefinite" begin="3s"/>
+</rect>
+</g>
+
+<g opacity="0.95">
+<rect fill="url(#ray)" x="-200" width="300" height="900">
+<animateTransform attributeName="transform" type="translate" values="-200,0;1500,0;-200,0" dur="12s" repeatCount="indefinite"/>
+</rect>
+<rect fill="#B8893A" x="430" width="10" height="900" opacity="0.7">
+<animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" repeatCount="indefinite"/>
+</rect>
+<rect fill="#B8893A" x="1080" width="14" height="900" opacity="0.75">
+<animate attributeName="opacity" values="0.75;0.5;0.75" dur="4s" repeatCount="indefinite" begin="2s"/>
+</rect>
+<rect fill="#B8893A" x="1480" width="8" height="900" opacity="0.6">
+<animate attributeName="opacity" values="0.6;0.85;0.6" dur="5s" repeatCount="indefinite" begin="1s"/>
+</rect>
+</g>
+
+<g opacity="0.65" filter="url(#b1)">
+<rect fill="#722F37" x="40" width="90" height="900">
+<animateTransform attributeName="transform" type="translate" values="0,0;60,0;0,0" dur="8s" repeatCount="indefinite"/>
+</rect>
+<rect fill="#1F4E5C" x="780" width="140" height="900">
+<animateTransform attributeName="transform" type="translate" values="0,0;-40,0;0,0" dur="9s" repeatCount="indefinite"/>
+</rect>
+</g>
+
+<rect width="1600" height="900" filter="url(#t1)" opacity="0.1" style="mix-blend-mode:overlay"/>
+
+<radialGradient id="v" cx="50%" cy="50%" r="75%">
+<stop offset="0%" stop-color="#1A1614" stop-opacity="0"/>
+<stop offset="100%" stop-color="#1A1614" stop-opacity="0.7"/>
+</radialGradient>
+<rect fill="url(#v)" width="1600" height="900">
+<animate attributeName="opacity" values="0.7;0.85;0.7" dur="8s" repeatCount="indefinite"/>
+</rect>
+</svg>

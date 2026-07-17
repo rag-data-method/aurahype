@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Filters for atmospheric depth -->
+    <filter id="blur160" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="160"/></filter>
+    <filter id="blur120" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="blur90" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="90"/></filter>
+    <filter id="blur60" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="blur40" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur20" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="20"/></filter>
+
+    <!-- Grain filter for filmic texture -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.15  0 0 0 0 0.08  0 0 0 0 0.05  0 0 0 0.04 0" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="composite"/>
+      <feBlend mode="overlay" in="composite" in2="SourceGraphic"/>
+    </filter>
+
+    <!-- Scarf wind displacement -->
+    <filter id="windDistort">
+      <feTurbulence type="turbulence" baseFrequency="0.008 0.04" numOctaves="2" result="turb">
+        <animate attributeName="baseFrequency" values="0.008 0.04;0.012 0.05;0.008 0.035;0.009 0.045;0.008 0.04" dur="12s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Sun glow -->
+    <filter id="sunGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+
+    <!-- Rim light blur -->
+    <filter id="rimBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+
+    <!-- Gradients -->
+    <radialGradient id="sun" cx="0.25" cy="0.5" r="0.35">
+      <stop offset="0%" stop-color="#FFF0D6" stop-opacity="0.9"/>
+      <stop offset="20%" stop-color="#FFDCA8" stop-opacity="0.6"/>
+      <stop offset="45%" stop-color="#FF8C42" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2C1810">
+        <animate attributeName="stop-color" values="#2C1810;#3A2015;#2C1810" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="45%" stop-color="#5C3018">
+        <animate attributeName="stop-color" values="#5C3018;#6E3A20;#5C3018" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="82%" stop-color="#C07030">
+        <animate attributeName="stop-color" values="#C07030;#D08040;#C07030" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#FF6B00">
+        <animate attributeName="stop-color" values="#FF6B00;#FFB347;#FF6B00" dur="25s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="duneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C9A574"/>
+      <stop offset="40%" stop-color="#A87B4A"/>
+      <stop offset="100%" stop-color="#2C1810"/>
+    </linearGradient>
+
+    <linearGradient id="scarf" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF8C42"/>
+      <stop offset="50%" stop-color="#FF6B00"/>
+      <stop offset="100%" stop-color="#8B2600"/>
+    </linearGradient>
+
+    <!-- Particle shapes -->
+    <radialGradient id="emberGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFF0D6" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#FF8C42" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+
+    <g id="spark">
+      <circle r="2.5" fill="url(#emberGrad)">
+        <animate attributeName="r" values="1.5;3.5;1.5" dur="3.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <g id="dust">
+      <circle r="1.2" fill="#E8C9A0" opacity="0.6">
+        <animate attributeName="opacity" values="0;0.8;0" dur="4.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Scarf path with subtle wave for SMIL animation -->
+    <path id="scarfPath" d="M0,0 C-40,-8 -90,-5 -150,15 C-210,35 -280,20 -350,45 C-420,70 -480,50 -550,75 C-580,85 -600,80 -620,90" fill="none"/>
+  </defs>
+
+  <!-- Base Sky -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- Ambient Sun Glow -->
+  <circle cx="400" cy="500" r="350" fill="url(#sun)" filter="url(#sunGlow)">
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Distant Atmospheric Fog (blurred warm haze) -->
+  <rect x="-200" y="200" width="2000" height="600" fill="#D48840" opacity="0.15" filter="url(#blur160)">
+    <animate attributeName="opacity" values="0.12;0.18;0.12" dur="18s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Distant Mountains (upper left) -->
+  <g filter="url(#blur120)">
+    <!-- Far peak -->
+    <path d="M-100,600 L80,280 L250,520 L350,350 L480,580 L580,420 L720,600 Z" fill="#2C1810" opacity="0.75">
+      <animate attributeName="opacity" values="0.7;0.8;0.7" dur="20s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Mid ground dune masses (atmospheric) -->
+  <g filter="url(#blur90)">
+    <path d="M-100,750 C300,720 700,780 900,650 C1100,520 1300,580 1700,480 L1700,1000 L-100,1000 Z" fill="#5C3018" opacity="0.4"/>
+  </g>
+
+  <g filter="url(#blur60)">
+    <path d="M-100,850 C200,800 500,870 750,720 C1000,570 1250,620 1700,550 L1700,1000 L-100,1000 Z" fill="#7A4518" opacity="0.5"/>
+  </g>
+
+  <!-- Mid-left sweeping dune (creates negative space on right) -->
+  <g filter="url(#blur40)">
+    <path d="M-100,900 C350,820 700,780 950,680 C1150,600 1400,580 1700,520 L1700,1000 L-100,1000 Z" fill="#A06028" opacity="0.6"/>
+  </g>
+
+  <!-- Mid-ground right dune -->
+  <g filter="url(#blur20)">
+    <path d="M600,1000 C800,880 1100,820 1400,750 C1550,715 1650,700 1700,680 L1700,1000 Z" fill="#C9A574" opacity="0.7"/>
+  </g>
+
+  <!-- Main Dune Sweep (Foreground bottom right) -->
+  <path d="M1050,1000 C1200,940 1350,880 1500,820 C1600,780 1650,760 1700,740 L1700,1000 Z" fill="url(#duneGrad)"/>
+
+  <!-- Subtle warm fog at horizon line -->
+  <rect x="0" y="620" width="1600" height="100" fill="#FF6B00" opacity="0.08" filter="url(#blur90)">
+    <animate attributeName="opacity" values="0.06;0.12;0.06" dur="15s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Hero Traveler Group -->
+  <g id="traveler" transform="translate(1150, 680)">
+    <!-- Breathing sway -->
+    <animateTransform attributeName="transform" type="translate" values="1150,680; 1150,676; 1150,680" dur="4s" repeatCount="indefinite" additive="replace"/>
+
+    <!-- Shadow on sand -->
+    <ellipse cx="8" cy="42" rx="28" ry="6" fill="#2C1810" opacity="0.45" filter="url(#rimBlur)">
+      <animate attributeName="rx" values="26;30;26" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.5;0.4" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Body Silhouette -->
+    <path d="M0,-70 C6,-70 10,-65 10,-58 C10,-48 12,-40 14,-30 C16,-10 14,10 16,30 C17,40 18,42 20,42 L24,42 L24,46 C24,48 22,48 20,48 L-4,48 C-6,48 -8,48 -8,46 L-8,42 L-4,42 C-2,42 -1,40 0,30 C2,10 0,-10 2,-30 C4,-40 6,-48 6,-58 C6,-65 2,-70 0,-70 Z" fill="#1A0E08"/>
+
+    <!-- Head / Hood -->
+    <circle cx="0" cy="-72" r="9" fill="#1A0E08"/>
+    <path d="M-10,-72 C-10,-82 10,-82 10,-72 C10,-65 5,-62 0,-62 C-5,-62 -10,-65 -10,-72 Z" fill="#1A0E08"/>
+
+    <!-- Walking Legs (subtle stride animation) -->
+    <g>
+      <!-- Right leg forward -->
+      <path d="M12,30 L18,42 L22,46" stroke="#1A0E08" stroke-width="5" stroke-linecap="round" fill="none">
+        <animate attributeName="d" values="M12,30 L18,42 L22,46;M10,30 L16,42 L20,46;M12,30 L18,42 L22,46" dur="2.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Left leg back -->
+      <path d="M-2,30 L-6,42 L-10,46" stroke="#1A0E08" stroke-width="5" stroke-linecap="round" fill="none">
+        <animate attributeName="d" values="M-2,30 L-6,42 L-10,46;M0,30 L-2,42 L-4,46;M-2,30 L-6,42 L-10,46" dur="2.4s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Arm Silhouette -->
+    <path d="M10,-30 L14,-5 L14,8" stroke="#1A0E08" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Scarf (The Color Accent) -->
+    <!-- Using a clipPath/mask approach with SMIL masked by the rich red -->
+    <g filter="url(#windDistort)">
+      <!-- Scarf tail (leftwards) -->
+      <path d="M2,-65 C-40,-65 -90,-50 -150,-30 C-220,-5 -300,-15 -380,10 C-460,35 -520,15 -580,35 L-590,20 C-530,0 -470,20 -390,-5 C-310,-30 -230,-20 -160,-45 C-100,-65 -50,-80 2,-65 Z" fill="url(#scarf)">
+        <!-- Scarf breathe/wave -->
+        <animate attributeName="d" dur="3s" repeatCount="indefinite"
+          values="M2,-65 C-40,-65 -90,-50 -150,-30 C-220,-5 -300,-15 -380,10 C-460,35 -520,15 -580,35 L-590,20 C-530,0 -470,20 -390,-5 C-310,-30 -230,-20 -160,-45 C-100,-65 -50,-80 2,-65 Z;
+                  M2,-63 C-38,-68 -88,-48 -148,-28 C-218,-3 -298,-13 -378,12 C-458,37 -518,17 -578,37 L-588,22 C-528,2 -468,22 -388,-3 C-308,-28 -228,-18 -158,-43 C-98,-63 -48,-78 2,-63 Z;
+                  M2,-65 C-40,-65 -90,-50 -150,-30 C-220,-5 -300,-15 -380,10 C-460,35 -520,15 -580,35 L-590,20 C-530,0 -470,20 -390,-5 C-310,-30 -230,-20 -160,-45 C-100,-65 -50,-80 2,-65 Z"/>
+      </path>
+      <!-- Scarf neck wrap -->
+      <path d="M-6,-62 C-2,-55 6,-55 10,-62 C8,-68 0,-68 -6,-62 Z" fill="#FF6B00"/>
+      <path d="M-4,-60 C0,-56 4,-56 8,-60 C6,-64 0,-64 -4,-60 Z" fill="#8B2600"/>
+    </g>
+
+    <!-- Rim light on hood and shoulders -->
+    <path d="M-10,-72 C-10,-82 10,-82 10,-72 C10,-68 8,-65 5,-63" stroke="#FFDCA8" stroke-width="2" fill="none" opacity="0.6" filter="url(#rimBlur)">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,-70 C6,-70 10,-65 10,-58 C10,-52 12,-48 14,-40" stroke="#FFDCA8" stroke-width="1.5" fill="none" opacity="0.5" filter="url(#rimBlur)">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="6s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Tiny staff / walking pole (optional but iconic) -->
+    <line x1="14" y1="8" x2="22" y2="44" stroke="#1A0E08" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Foreground dune edge to frame bottom -->
+  <path d="M-100,1000 C200,940 500,900 700,850 C850,815 950,780 1050,760 L1100,1000 Z" fill="#2C1810" opacity="0.85"/>
+
+  <!-- Atmospheric Particles Layer -->
+  <g id="particleLayer">
+    <!-- Embers / Sand Glints drifting upward and left -->
+    <use href="#spark" x="900" y="800">
+      <animateMotion path="M0,0 Q-100,-150 -300,-250" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1100" y="750">
+      <animateMotion path="M0,0 Q-80,-120 -250,-200" dur="10s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="10s" begin="1.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1300" y="820">
+      <animateMotion path="M0,0 Q-120,-180 -350,-280" dur="7s" begin="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="7s" begin="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1000" y="700">
+      <animateMotion path="M0,0 Q-60,-100 -200,-180" dur="9s" begin="0.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1200" y="780">
+      <animateMotion path="M0,0 Q-90,-140 -280,-220" dur="11s" begin="2.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="950" y="850">
+      <animateMotion path="M0,0 Q-110,-160 -320,-260" dur="6.5s" begin="4s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1150" y="720">
+      <animateMotion path="M0,0 Q-50,-90 -180,-160" dur="12s" begin="1s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1350" y="760">
+      <animateMotion path="M0,0 Q-130,-190 -380,-290" dur="8.5s" begin="5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1050" y="820">
+      <animateMotion path="M0,0 Q-70,-130 -220,-210" dur="9.5s" begin="3.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1250" y="800">
+      <animateMotion path="M0,0 Q-100,-150 -290,-230" dur="7.5s" begin="6s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="850" y="780">
+      <animateMotion path="M0,0 Q-140,-170 -360,-270" dur="10s" begin="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1450" y="740">
+      <animateMotion path="M0,0 Q-80,-110 -240,-190" dur="8s" begin="4.5s" repeatCount="indefinite"/>
+    </use>
+
+    <!-- Extra tiny embers -->
+    <use href="#spark" x="1080" y="760" transform="scale(0.6)">
+      <animateMotion path="M0,0 Q-90,-140 -260,-220" dur="13s" begin="0.8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1180" y="810" transform="scale(0.5)">
+      <animateMotion path="M0,0 Q-70,-120 -200,-200" dur="14s" begin="2.2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1280" y="730" transform="scale(0.7)">
+      <animateMotion path="M0,0 Q-110,-160 -330,-250" dur="11s" begin="3.8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="980" y="790" transform="scale(0.4)">
+      <animateMotion path="M0,0 Q-60,-100 -190,-170" dur="15s" begin="1.2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1380" y="770" transform="scale(0.6)">
+      <animateMotion path="M0,0 Q-120,-180 -350,-280" dur="12s" begin="5.5s" repeatCount="indefinite"/>
+    </use>
+
+    <!-- Dust / Sand particles drifting laterally -->
+    <use href="#dust" x="800" y="680">
+      <animateMotion path="M0,0 L-400,-50" dur="18s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="900" y="720">
+      <animateMotion path="M0,0 L-350,-30" dur="22s" begin="4s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1100" y="690">
+      <animateMotion path="M0,0 L-450,-60" dur="20s" begin="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1000" y="750">
+      <animateMotion path="M0,0 L-380,-40" dur="24s" begin="6s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1200" y="710">
+      <animateMotion path="M0,0 L-420,-55" dur="19s" begin="1s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="850" y="700">
+      <animateMotion path="M0,0 L-300,-20" dur="21s" begin="5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1050" y="730">
+      <animateMotion path="M0,0 L-360,-35" dur="17s" begin="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1150" y="670">
+      <animateMotion path="M0,0 L-480,-70" dur="23s" begin="7s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="950" y="760">
+      <animateMotion path="M0,0 L-320,-25" dur="25s" begin="2.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1250" y="740">
+      <animateMotion path="M0,0 L-400,-45" dur="20s" begin="4.5s" repeatCount="indefinite"/>
+    </use>
+
+    <!-- More tiny dust specs near ground -->
+    <use href="#dust" x="980" y="810" transform="scale(0.8)">
+      <animateMotion path="M0,0 L-250,-20" dur="16s" begin="1.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1080" y="840" transform="scale(0.7)">
+      <animateMotion path="M0,0 L-280,-15" dur="19s" begin="3.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1180" y="790" transform="scale(0.9)">
+      <animateMotion path="M0,0 L-300,-30" dur="14s" begin="5.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1030" y="860" transform="scale(0.6)">
+      <animateMotion path="M0,0 L-220,-10" dur="21s" begin="0.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1130" y="820" transform="scale(0.8)">
+      <animateMotion path="M0,0 L-270,-25" dur="18s" begin="6.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="880" y="830" transform="scale(0.7)">
+      <animateMotion path="M0,0 L-200,-15" dur="22s" begin="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="1280" y="850" transform="scale(0.6)">
+      <animateMotion path="M0,0 L-320,-35" dur="17s" begin="4s" repeatCount="indefinite"/>
+    </use>
+    <use href="#dust" x="930" y="870" transform="scale(0.5)">
+      <animateMotion path="M0,0 L-180,-5" dur="24s" begin="7s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Foreground haze / wind wash -->
+  <rect x="0" y="600" width="1600" height="300" fill="#E8C9A0" opacity="0.04" filter="url(#blur40)">
+    <animate attributeName="opacity" values="0.03;0.06;0.03" dur="14s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Vignette for cinematic focus -->
+  <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+    <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#1A0E08" stop-opacity="0.5"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+
+  <!-- Film grain overlay -->
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)" pointer-events="none" opacity="0.6"/>
+
+  <!-- Optional title-safe zone subtle highlight (very faint) -->
+  <rect x="100" y="150" width="700" height="400" fill="#FFDCA8" opacity="0" pointer-events="none">
+    <animate attributeName="opacity" values="0;0.015;0" dur="20s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

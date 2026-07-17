@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Comic Yellow -->
+    <color id="c-yellow">#FFD700</color>
+    <!-- Pitch Black -->
+    <color id="c-black">#000000</color>
+
+    <!-- Main burst ray shape: trapezoid radiating from center -->
+    <path id="ray" d="M 0,-1050 L 42,-1050 L 8,0 L -8,0 L -42,-1050 Z" />
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#FFD700" />
+
+  <!-- Sunburst container, centered on canvas -->
+  <g id="burst" transform="translate(800, 450)">
+    <!-- Rays will be injected here by the script -->
+  </g>
+
+  <!-- Central core circle -->
+  <circle cx="800" cy="450" r="140" fill="#000000" />
+  <circle cx="800" cy="450" r="120" fill="#FFD700" />
+
+  <script>
+    // <![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+      const burst = document.getElementById('burst');
+      const NS = "http://www.w3.org/2000/svg";
+      
+      // Calculate diagonal to ensure rays always cover the canvas
+      const w = 1600;
+      const h = 900;
+      const maxDim = Math.ceil(Math.sqrt(w*w + h*h));
+      
+      // Scale the ray to cover the diagonal from the center
+      const scale = maxDim / 1050;
+
+      // Helper to create a ray instance
+      function createRay(rotation, color, scaleFactor) {
+        const use = document.createElementNS(NS, 'use');
+        use.setAttributeNS(null, 'href', '#ray');
+        use.setAttributeNS(null, 'fill', color);
+        
+        // Rotate and scale
+        const transform = `rotate(${rotation}) scale(${scaleFactor})`;
+        use.setAttributeNS(null, 'transform', transform);
+        
+        return use;
+      }
+
+      // Configuration
+      const rayCount = 72; // 72 rays = 5 degrees apart
+      const step = 360 / rayCount;
+
+      // Layer 1: Thick Black Rays (Background layer)
+      // These sit slightly "behind" by starting at a negative scale or offset, 
+      // but since they are black on yellow, we just alternate standard sizes.
+      // To create the "explosive" gap effect, we draw Black rays first.
+      for (let i = 0; i < rayCount; i++) {
+        const rot = i * step;
+        // Alternate colors: Black, Yellow, Black, Yellow...
+        // But to make it look like a "Black and Yellow" explosion,
+        // we do thick Black rays and thin Yellow rays in the gaps.
+        
+        const ray = createRay(rot, '#000000', scale * 1.05); // Slightly larger to prevent sub-pixel gaps
+        burst.appendChild(ray);
+      }
+
+      // Layer 2: Thin Yellow Rays (Foreground layer)
+      // Offset by half a step to sit perfectly in the black gaps
+      for (let i = 0; i < rayCount; i++) {
+        const rot = (i * step) + (step / 2);
+        // Scale down the thickness of the yellow ray to create the black border effect
+        const ray = createRay(rot, '#FFD700', scale * 0.65); 
+        burst.appendChild(ray);
+      }
+    });
+    // ]]>
+  </script>
+</svg>

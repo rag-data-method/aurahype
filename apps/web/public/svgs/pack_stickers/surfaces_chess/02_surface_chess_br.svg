@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+var s=document.documentElement,cx=800,cy=450,mR=1200,C=14,R=10,W=2000,H=1200,O=-200,P=-150,B=[],D=[];
+function T(x,y){var dx=x-cx,dy=y-cy,r=Math.sqrt(dx*dx+dy*dy),a=Math.atan2(dy,dx),t=3.2*(r/mR),p=Math.pow(r/mR,0.82)*mR*1.08;return[Math.round(cx+p*Math.cos(a+t)),Math.round(cy+p*Math.sin(a+t))]}
+for(var i=0;i&lt;C;i++)for(var j=0;j&lt;R;j++){
+var x0=O+i*(W/C),x1=O+(i+1)*(W/C),y0=P+j*(H/R),y1=P+(j+1)*(H/R);
+var q='M'+T(x0,y0).join(' ')+'L'+T(x1,y0).join(' ')+'L'+T(x1,y1).join(' ')+'L'+T(x0,y1).join(' ')+'Z';
+((i+j)&amp;1?D:B).push(q)}
+var b=document.createElementNS('http://www.w3.org/2000/svg','path');b.setAttribute('fill','#000');b.setAttribute('d',B.join(''));s.appendChild(b);
+var r=document.createElementNS('http://www.w3.org/2000/svg','path');r.setAttribute('fill','#F00');r.setAttribute('d',D.join(''));s.appendChild(r)
+})
+</script>
+</svg>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Primary Comic-Book Drop Shadow Filter -->
+    <filter id="dropshadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="12" dy="12" stdDeviation="0" flood-color="#000000" flood-opacity="1"/>
+    </filter>
+
+    <!-- Halftone Dot Patterns -->
+    <pattern id="dots-yellow" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#FFE600"/>
+      <circle cx="8" cy="8" r="3.5" fill="#000000"/>
+    </pattern>
+
+    <pattern id="dots-blue" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+      <rect width="14" height="14" fill="#00D4FF"/>
+      <circle cx="7" cy="7" r="3" fill="#000000"/>
+    </pattern>
+
+    <pattern id="dots-red" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+      <rect width="12" height="12" fill="#FF0055"/>
+      <circle cx="6" cy="6" r="2.5" fill="#000000"/>
+    </pattern>
+
+    <pattern id="dots-magenta" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <rect width="20" height="20" fill="#FF00FF"/>
+      <circle cx="10" cy="10" r="5" fill="#000000"/>
+    </pattern>
+    
+    <pattern id="dots-neon" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(60)">
+      <rect width="10" height="10" fill="#39FF14"/>
+      <circle cx="5" cy="5" r="2" fill="#000000"/>
+    </pattern>
+
+    <!-- Jagged Starburst/Explosion Shape -->
+    <path id="starburst" d="
+      M 800 100 L 870 280 L 1030 200 L 970 360 L 1140 340 L 1020 460 
+      L 1200 500 L 1040 560 L 1180 660 L 1000 640 L 1050 780 L 900 680 
+      L 830 820 L 760 680 L 620 780 L 670 640 L 490 660 L 630 560 
+      L 470 500 L 650 460 L 530 340 L 700 360 L 640 200 L 760 280 Z
+    " />
+
+    <!-- Abstract Arrow Graphic -->
+    <g id="arrow">
+      <path d="M 0 0 L 80 -30 L 70 -10 L 160 -10 L 160 10 L 70 10 L 80 30 Z" fill="#00D4FF" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Star Graphic -->
+    <g id="star">
+      <path d="M 0 -40 L 12 -12 L 40 -12 L 18 8 L 26 36 L 0 20 L -26 36 L -18 8 L -40 -12 L -12 -12 Z" fill="#FFE600" stroke="#000000" stroke-width="5" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Squiggly Action Lines -->
+    <path id="squiggle" d="M 0 0 Q 20 -20 40 0 T 80 0 T 120 0" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+  </defs>
+
+  <!-- === BACKGROUND LAYER === -->
+  <!-- Base Cyan Background -->
+  <rect width="1600" height="900" fill="#00D4FF"/>
+  
+  <!-- Background Halftone Overlay -->
+  <rect width="1600" height="900" fill="url(#dots-blue)" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Background Radiating Lines -->
+  <g stroke="#000000" stroke-width="3" opacity="0.8">
+    <line x1="800" y1="450" x2="-100" y2="-100"><animate attributeName="stroke-width" values="3;6;3" dur="2s" repeatCount="indefinite"/></line>
+    <line x1="800" y1="450" x2="900" y2="-100"><animate attributeName="stroke-width" values="3;6;3" dur="2.2s" repeatCount="indefinite"/></line>
+    <line x1="800" y1="450" x2="1900" y2="-100"><animate attributeName="stroke-width" values="3;6;3" dur="1.8s" repeatCount="indefinite"/></line>
+    <line x1="800" y1="450" x2="1900" y2="450"><animate attributeName="stroke-width" values="3;6;3" dur="2.5s" repeatCount="indefinite"/></line>
+    <line x1="800" y1="450" x2="1900" y2="1000"><animate attributeName="stroke-width" values="3;6;3" dur="2.1s" repeatCount="indefinite"/></line>
+    <line x1="800" y1="450" x2="900" y2="1000"><animate attributeName="stroke-width" values="3;6;3" dur="1.9s" repeatCount="indefinite"/></line>
+    <line x1="800" y1="450" x2="-100" y2="1000"><animate attributeName="stroke-width" values="3;6;3" dur="2.3s" repeatCount="indefinite"/></line>
+    <line x1="800" y1="450" x2="-100" y2="450"><animate attributeName="stroke-width" values="3;6;3" dur="2.7s" repeatCount="indefinite"/></line>
+  </g>
+
+  <!-- === FLOATING DECORATIVE ELEMENTS === -->
+  
+  <!-- Arrows -->
+  <use href="#arrow" transform="translate(200, 200) scale(1.5)">
+    <animateTransform attributeName="transform" type="translate" values="200 200; 220 180; 200 200" dur="3s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="10s" repeatCount="indefinite" additive="sum"/>
+  </use>
+  
+  <use href="#arrow" transform="translate(1400, 700) scale(1.2) rotate(180)">
+    <animateTransform attributeName="transform" type="translate" values="1400 700; 1380 720; 1400 700" dur="4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="180 1400 700" to="540 1400 700" dur="12s" repeatCount="indefinite" additive="sum"/>
+  </use>
+
+  <!-- Stars -->
+  <use href="#star" transform="translate(300, 700)">
+    <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="2s" repeatCount="indefinite" additive="sum"/>
+  </use>
+  <use href="#star" transform="translate(1300, 200)">
+    <animateTransform attributeName="transform" type="scale" values="1.2;0.8;1.2" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+  </use>
+
+  <!-- Halftone Circles (Floating) -->
+  <circle cx="150" cy="150" r="80" fill="url(#dots-magenta)" stroke="#000000" stroke-width="5">
+    <animate attributeName="cx" values="150;170;150" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="150;130;150" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="1450" cy="750" r="100" fill="url(#dots-yellow)" stroke="#000000" stroke-width="5">
+    <animate attributeName="r" values="100;110;100" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Squiggly Lines -->
+  <use href="#squiggle" transform="translate(100, 800) rotate(-30)">
+    <animateTransform attributeName="transform" type="translate" values="100 800; 120 820; 100 800" dur="2s" repeatCount="indefinite"/>
+  </use>
+  <use href="#squiggle" transform="translate(1500, 100) rotate(150)">
+    <animateTransform attributeName="transform" type="translate" values="1500 100; 1480 120; 1500 100" dur="2.5s" repeatCount="indefinite"/>
+  </use>
+
+  <!-- === MAIN STAR BURST EXPLOSION (OUCH!) === -->
+  <g transform="translate(800, 450)">
+    <!-- Continuous subtle breathing animation -->
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+    
+    <!-- Thick Black Outline Backing -->
+    <use href="#starburst" transform="translate(-800, -450) scale(1.05)" fill="#000000" filter="url(#dropshadow)">
+      <animateTransform attributeName="transform" type="rotate" from="0 -800 -450" to="360 -800 -450" dur="60s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <!-- Main Red Halftone Body -->
+    <use href="#starburst" transform="translate(-800, -450)" fill="url(#dots-red)">
+      <animateTransform attributeName="transform" type="rotate" from="0 -800 -450" to="360 -800 -450" dur="60s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <!-- Secondary Yellow Halftone Layer (Creates comic texture) -->
+    <use href="#starburst" transform="translate(-790, -440) scale(0.85)" fill="url(#dots-yellow)" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 -790 -440" to="-360 -790 -440" dur="50s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <!-- Inner White Sharp Burst (Pain highlight) -->
+    <use href="#starburst" transform="translate(-800, -450) scale(0.6)" fill="#FFFFFF" stroke="#000000" stroke-width="8">
+      <animateTransform attributeName="transform" type="rotate" from="0 -800 -450" to="360 -800 -450" dur="40s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <!-- === THE TEXT "OUCH!" === -->
+    <g stroke="#000000" stroke-width="14" stroke-linejoin="round" paint-order="stroke">
+      <!-- Base Red Text -->
+      <text x="0" y="35" text-anchor="middle" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="220" font-weight="900" fill="#FF0055" letter-spacing="10">
+        OUCH!
+        <!-- Text Jitter Animation to simulate pain/shock -->
+        <animateTransform attributeName="transform" type="translate" values="0 0; 5 -5; -5 5; 0 0" dur="0.2s" repeatCount="indefinite"/>
+      </text>
+
+      <!-- Cyan Offset Text (3D Pop effect) -->
+      <text x="8" y="42" text-anchor="middle" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="220" font-weight="900" fill="#00D4FF" letter-spacing="10" opacity="0.9">
+        OUCH!
+        <animateTransform attributeName="transform" type="translate" values="8 42; 3 -3; 13 47; 8 42" dur="0.2s" repeatCount="indefinite"/>
+      </text>
+      
+      <!-- Yellow Highlight Text (Final layer of 3D) -->
+      <text x="12" y="46" text-anchor="middle" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="220" font-weight="900" fill="#FFE600" letter-spacing="10" opacity="0.8">
+        OUCH!
+        <animateTransform attributeName="transform" type="translate" values="12 46; 7 -1; 17 51; 12 46" dur="0.2s" repeatCount="indefinite"/>
+      </text>
+    </g>
+  </g>
+
+  <!-- === FOREGROUND SHOCK LINES === -->
+  <!-- Vertical Zig Zag Lines Left -->
+  <g stroke="#000000" stroke-width="8" stroke-linecap="round">
+    <path d="M 450 350 L 480 450 L 450 550">
+      <animate attributeName="d" values="M 450 350 L 480 450 L 450 550; M 450 330 L 500 450 L 450 570; M 450 350 L 480 450 L 450 550" dur="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 350 400 L 380 500 L 350 600">
+      <animate attributeName="d" values="M 350 400 L 380 500 L 350 600; M 350 380 L 400 500 L 350 620; M 350 400 L 380 500 L 350 600" dur="0.6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Vertical Zig Zag Lines Right -->
+  <g stroke="#000000" stroke-width="8" stroke-linecap="round">
+    <path d="M 1150 350 L 1120 450 L 1150 550">
+      <animate attributeName="d" values="M 1150 350 L 1120 450 L 1150 550; M 1150 330 L 1100 450 L 1150 570; M 1150 350 L 1120 450 L 1150 550" dur="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1250 400 L 1220 500 L 1250 600">
+      <animate attributeName="d" values="M 1250 400 L 1220 500 L 1250 600; M 1250 380 L 1200 500 L 1250 620; M 1250 400 L 1220 500 L 1250 600" dur="0.6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Diagonal Impact Lines -->
+  <g stroke="#000000" stroke-width="10" stroke-linecap="round">
+    <line x1="550" y1="250" x2="700" y2="350">
+      <animate attributeName="x1" values="550;530;550" dur="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="250;230;250" dur="0.3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1050" y1="250" x2="900" y2="350">
+      <animate attributeName="x1" values="1050;1070;1050" dur="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="250;230;250" dur="0.3s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- === FOREGROUND FLOATING DOTS (Halftone Overlay) === -->
+  <g fill="#FF0055" opacity="0.6">
+    <circle cx="200" cy="800" r="25">
+      <animate attributeName="r" values="25;35;25" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#FF0055;#00D4FF;#FF0055" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="150" r="40">
+      <animate attributeName="r" values="40;30;40" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#FFE600;#FF00FF;#FFE600" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="100" r="15">
+      <animate attributeName="cy" values="100;120;100" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="800" r="20">
+      <animate attributeName="cx" values="1500;1480;1500" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

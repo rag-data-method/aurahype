@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="ht-red" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.5" fill="#E63946"/>
+    </pattern>
+    <pattern id="ht-blue" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.5" fill="#00A8E8"/>
+    </pattern>
+    <radialGradient id="fade" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="white"/>
+      <stop offset="100%" stop-color="black"/>
+    </radialGradient>
+    <mask id="ht-mask" maskContentUnits="objectBoundingBox">
+      <circle cx="0.5" cy="0.5" r="0.5" fill="url(#fade)"/>
+    </mask>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#F2B705"/>
+
+  <!-- Halftone dots -->
+  <g transform="translate(140,140)">
+    <circle r="130" fill="url(#ht-red)" mask="url(#ht-mask)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g transform="translate(1460,160)">
+    <circle r="110" fill="url(#ht-blue)" mask="url(#ht-mask)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g transform="translate(160,780)">
+    <circle r="140" fill="url(#ht-blue)" mask="url(#ht-mask)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.25;1" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g transform="translate(1440,820)">
+    <circle r="150" fill="url(#ht-red)" mask="url(#ht-mask)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Comic action lines -->
+  <g stroke="#1A1A1A" stroke-width="7" stroke-linecap="round">
+    <line x1="280" y1="240" x2="380" y2="220">
+      <animate attributeName="x1" values="280;300;280" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="380;400;380" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="270" y1="265" x2="370" y2="255">
+      <animate attributeName="x1" values="270;290;270" dur="2.3s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="370;390;370" dur="2.3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="290" y1="290" x2="390" y2="290">
+      <animate attributeName="x1" values="290;310;290" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="390;410;390" dur="2.6s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  <g stroke="#1A1A1A" stroke-width="7" stroke-linecap="round">
+    <line x1="1200" y1="680" x2="1300" y2="660">
+      <animate attributeName="x1" values="1200;1180;1200" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1300;1280;1300" dur="2.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1210" y1="705" x2="1310" y2="695">
+      <animate attributeName="x1" values="1210;1190;1210" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1310;1290;1310" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1190" y1="730" x2="1290" y2="730">
+      <animate attributeName="x1" values="1190;1170;1190" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1290;1270;1290" dur="2.8s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Bursting rays -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="12s" repeatCount="indefinite"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(0 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(18 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(36 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(54 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(72 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(90 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(108 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(126 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(144 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(162 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(180 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(198 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(216 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(234 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(252 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(270 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(288 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(306 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(324 800 450)"/>
+    <rect x="800" y="435" width="900" height="30" rx="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" transform="rotate(342 800 450)"/>
+  </g>
+
+  <!-- Giant comic explosion -->
+  <g>
+    <animateTransform attributeName="transform" type="scale" values="1;1.08;0.98;1.04;1" keyTimes="0;0.2;0.4;0.7;1" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    <path d="M800,50 L884,247 L1083,167 L1003,366 L1200,450 L1003,534 L1083,733 L884,653 L800,850 L716,653 L517,733 L597,534 L400,450 L597,366 L517,167 L716,247 Z" fill="#1A1A1A">
+      <animateTransform attributeName="transform" type="translate" values="12,12;16,16;10,10;12,12" keyTimes="0;0.3;0.6;1" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M800,50 L884,247 L1083,167 L1003,366 L1200,450 L1003,534 L1083,733 L884,653 L800,850 L716,653 L517,733 L597,534 L400,450 L597,366 L517,167 L716,247 Z" fill="#E63946" stroke="#1A1A1A" stroke-width="14" stroke-linejoin="round"/>
+  </g>
+
+  <!-- misscanvas.com -->
+  <g text-anchor="middle" font-family="Impact,Arial Black,sans-serif" font-size="82" font-weight="bold">
+    <text x="804" y="474" fill="#FFFFFF">misscanvas.com</text>
+    <text x="800" y="470" fill="#1A1A1A">misscanvas.com</text>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0;0,-5;0,0" keyTimes="0;0.25;0.5;0.75;1" dur="2s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Blinking pop stars -->
+  <g transform="translate(680,300)">
+    <polygon points="0,-25 8,-8 25,0 8,8 0,25 -8,8 -25,0 -8,-8" fill="#00A8E8" stroke="#1A1A1A" stroke-width="4">
+      <animateTransform attributeName="transform" type="scale" values="1;0.4;1" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.4;1" dur="1.2s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+  <g transform="translate(980,620)">
+    <polygon points="0,-20 6,-6 20,0 6,6 0,20 -6,6 -20,0 -6,-6" fill="#FFD700" stroke="#1A1A1A" stroke-width="4">
+      <animateTransform attributeName="transform" type="scale" values="1;0.5;1" dur="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="0.9s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+  <g transform="translate(1050,350)">
+    <polygon points="0,-30 10,-10 30,0 10,10 0,30 -10,10 -30,0 -10,-10" fill="#00A8E8" stroke="#1A1A1A" stroke-width="4">
+      <animateTransform attributeName="transform" type="scale" values="0.6;1.2;0.6" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+</svg>

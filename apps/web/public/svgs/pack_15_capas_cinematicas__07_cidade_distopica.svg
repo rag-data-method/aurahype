@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F0A2E">
+        <animate attributeName="stop-color" values="#0F0A2E;#150C38;#0F0A2E" dur="20s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#1A1040">
+        <animate attributeName="stop-color" values="#1A1040;#241555;#1A1040" dur="20s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#E54B9C" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#5E6AD2" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="50%" cy="50%" r="75%">
+      <stop offset="55%" stop-color="#0F0A2E" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0F0A2E" stop-opacity="0.7"/>
+    </radialGradient>
+    <filter id="b120"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="b90"><feGaussianBlur stdDeviation="90"/></filter>
+    <filter id="b60"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="b20"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <circle cx="1250" cy="380" r="450" fill="#5E6AD2" opacity="0.25" filter="url(#b120)">
+    <animate attributeName="cx" values="1250;1280;1250" dur="25s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.25;0.45;0.25" dur="18s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="950" cy="320" r="380" fill="#E54B9C" opacity="0.2" filter="url(#b120)">
+    <animate attributeName="cy" values="320;340;320" dur="22s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="20s" repeatCount="indefinite"/>
+  </circle>
+
+  <rect x="0" y="450" width="1600" height="450" fill="#0F0A2E" opacity="0.35" filter="url(#b90)">
+    <animate attributeName="opacity" values="0.35;0.55;0.35" dur="15s" repeatCount="indefinite"/>
+  </rect>
+
+  <path d="M 820 900 L 860 420 L 900 900 Z" fill="url(#beam)" opacity="0.4" filter="url(#b60)">
+    <animate attributeName="opacity" values="0.4;0.75;0.4" dur="12s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 1120 900 L 1170 380 L 1220 900 Z" fill="url(#beam)" opacity="0.3" filter="url(#b60)">
+    <animate attributeName="opacity" values="0.3;0.65;0.3" dur="14s" repeatCount="indefinite" begin="2s"/>
+  </path>
+  <path d="M 1320 900 L 1360 480 L 1400 900 Z" fill="url(#beam)" opacity="0.35" filter="url(#b60)">
+    <animate attributeName="opacity" values="0.35;0.7;0.35" dur="16s" repeatCount="indefinite" begin="4s"/>
+  </path>
+
+  <path d="M 0 900 L 0 780 L 50 780 L 50 720 L 110 720 L 110 820 L 170 820 L 170 660 L 240 660 L 240 800 L 310 800 L 310 590 L 390 590 L 390 740 L 470 740 L 470 520 L 550 520 L 550 720 L 630 720 L 630 560 L 710 560 L 710 770 L 790 770 L 790 460 L 870 460 L 870 700 L 950 700 L 950 420 L 1040 420 L 1040 740 L 1120 740 L 1120 490 L 1210 490 L 1210 720 L 1290 720 L 1290 540 L 1370 540 L 1370 800 L 1450 800 L 1450 620 L 1530 620 L 1530 870 L 1600 870 L 1600 900 Z" fill="#06030F"/>
+
+  <g fill="#E54B9C">
+    <rect x="810" y="480" width="5" height="8" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="825" y="500" width="5" height="8" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <rect x="810" y="520" width="5" height="8" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.1;0.7" dur="5s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <rect x="965" y="440" width="6" height="10" fill="#FF6B00" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="985" y="460" width="6" height="10" fill="#FF6B00" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="3.5s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <rect x="1135" y="510" width="5" height="8" fill="#5E6AD2" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1315" y="560" width="5" height="8" fill="#E54B9C" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <rect x="970" y="410" width="50" height="6" fill="#FF6B00" opacity="0.8" filter="url(#b20)">
+    <animate attributeName="opacity" values="0.8;0.1;0.8;0.4;0.9;0.2;0.8" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="1140" y="480" width="35" height="5" fill="#E54B9C" opacity="0.7" filter="url(#b20)">
+    <animate attributeName="opacity" values="0.7;0.2;0.7;0;0.7" dur="5s" repeatCount="indefinite" begin="1s"/>
+  </rect>
+
+  <g transform="translate(1150,280)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 18,10; 0,0" dur="20s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="-2 150 50; 2 150 50; -2 150 50" dur="18s" repeatCount="indefinite" additive="sum"/>
+
+      <ellipse cx="150" cy="50" rx="165" ry="58" fill="#E54B9C" opacity="0.35" filter="url(#b60)">
+        <animate attributeName="opacity" values="0.35;0.65;0.35" dur="10s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="150" cy="50" rx="155" ry="52" fill="#FF6B00" opacity="0.25" filter="url(#b90)">
+        <animate attributeName="opacity" values="0.25;0.55;0.25" dur="12s" repeatCount="indefinite"/>
+      </ellipse>
+
+      <path d="M 20 50 Q 20 10 150 5 Q 280 10 280 50 Q 280 90 150 95 Q 20 90 20 50 Z" fill="#0F0A2E"/>
+      <rect x="100" y="92" width="100" height="18" rx="3" fill="#0F0A2E"/>
+      <path d="M 260 40 L 300 25 L 300 75 L 260 60 Z" fill="#0F0A2E"/>
+
+      <path d="M 20 50 Q 20 10 150 5 Q 280 10 280 50" fill="none" stroke="#E54B9C" stroke-width="2" opacity="0.5" filter="url(#b20)">
+        <animate attributeName="opacity" values="0.5;0.85;0.5" dur="8s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 280 50 Q 280 90 150 95 Q 20 90 20 50" fill="none" stroke="#FF6B00" stroke-width="1.5" opacity="0.35" filter="url(#b20)">
+        <animate attributeName="opacity" values="0.35;0.75;0.35" dur="10s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <rect x="0" y="650" width="1600" height="250" fill="#0F0A2E" opacity="0.4" filter="url(#b60)">
+    <animate attributeName="opacity" values="0.4;0.6;0.4" dur="15s" repeatCount="indefinite"/>
+  </rect>
+
+  <g fill="#FF6B00" opacity="0.6">
+    <circle cx="850" cy="860" r="2.5" filter="url(#b20)">
+      <animate attributeName="cy" values="860;700;860" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="830" r="2" filter="url(#b20)">
+      <animate attributeName="cy" values="830;650;830" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1420" cy="790" r="2" filter="url(#b20)">
+      <animate attributeName="cy" values="790;610;790" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="20s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g fill="#E54B9C" opacity="0.5">
+    <circle cx="500" cy="880" r="2" filter="url(#b20)">
+      <animate attributeName="cy" values="880;790;880" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="890" r="2.5" filter="url(#b20)">
+      <animate attributeName="cy" values="890;760;890" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="860" r="2" filter="url(#b20)">
+      <animate attributeName="cy" values="860;790;860" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="13s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g fill="#5E6AD2" opacity="0.4">
+    <circle cx="700" cy="840" r="2" filter="url(#b20)">
+      <animate attributeName="cy" values="840;740;840" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="17s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="870" r="2" filter="url(#b20)">
+      <animate attributeName="cy" values="870;770;870" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="19s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="820" r="2" filter="url(#b20)">
+      <animate attributeName="cy" values="820;750;820" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect width="1600" height="900" fill="url(#vig)" pointer-events="none"/>
+</svg>

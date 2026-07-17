@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Drop Shadow Filter -->
+    <filter id="drop-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="12" dy="18" stdDeviation="12" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+
+    <!-- Gradients for Leather Jacket -->
+    <linearGradient id="leather-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a2a" />
+      <stop offset="40%" stop-color="#111111" />
+      <stop offset="60%" stop-color="#000000" />
+      <stop offset="100%" stop-color="#0a0a0a" />
+    </linearGradient>
+
+    <linearGradient id="jacket-shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Neon Sunglasses Gradient -->
+    <linearGradient id="neon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff00cc" />
+      <stop offset="50%" stop-color="#00ffff" />
+      <stop offset="100%" stop-color="#ccff00" />
+    </linearGradient>
+
+    <!-- Glass Reflection Gradient -->
+    <linearGradient id="glass-reflect" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Metal Gradient for Zippers -->
+    <linearGradient id="silver-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#888888" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#888888" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sticker Group with Shadow and White Die-Cut Border -->
+  <g id="sticker-group" filter="url(#drop-shadow)">
+    
+    <!-- Die-Cut White Border Background -->
+    <path d="M 500,120 
+             C 430,120 380,140 330,160 
+             C 280,180 250,230 230,280 
+             C 200,270 160,300 140,340 
+             C 120,380 130,430 140,480 
+             C 120,540 130,600 150,660 
+             C 170,720 210,770 260,800 
+             C 300,840 350,880 400,880 
+             C 450,880 480,850 500,850 
+             C 520,850 550,880 600,880 
+             C 650,880 700,840 740,800 
+             C 790,770 830,720 850,660 
+             C 870,600 880,540 860,480 
+             C 870,430 880,380 860,340 
+             C 840,300 800,270 770,280 
+             C 750,230 720,180 670,160 
+             C 620,140 570,120 500,120 Z" 
+          fill="#ffffff" stroke="none" />
+
+    <!-- Thick Black Outline / Inner Stroke of the Die-Cut -->
+    <path d="M 500,140 
+             C 440,140 390,158 340,178 
+             C 295,195 268,240 248,288 
+             C 245,295 240,298 232,296 
+             C 200,290 170,315 158,348 
+             C 145,380 152,425 160,475 
+             C 140,530 150,590 168,650 
+             C 186,710 225,755 272,785 
+             C 310,822 355,860 400,860 
+             C 445,860 470,830 500,830 
+             C 530,830 555,860 600,860 
+             C 645,860 690,822 728,785 
+             C 775,755 814,710 832,650 
+             C 850,590 860,530 840,475 
+             C 848,425 855,380 842,348 
+             C 830,315 800,290 768,296 
+             C 760,298 755,295 752,288 
+             C 732,240 705,195 660,178 
+             C 610,158 560,140 500,140 Z" 
+          fill="none" stroke="#000000" stroke-width="18" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- ==================== ILLUSTRATION ==================== -->
+    <g id="illustration" clip-path="url(#clip-inner)">
+      <clipPath id="clip-inner">
+        <path d="M 500,140 C 440,140 390,158 340,178 C 295,195 268,240 248,288 C 245,295 240,298 232,296 C 200,290 170,315 158,348 C 145,380 152,425 160,475 C 140,530 150,590 168,650 C 186,710 225,755 272,785 C 310,822 355,860 400,860 C 445,860 470,830 500,830 C 530,830 555,860 600,860 C 645,860 690,822 728,785 C 775,755 814,710 832,650 C 850,590 860,530 840,475 C 848,425 855,380 842,348 C 830,315 800,290 768,296 C 760,298 755,295 752,288 C 732,240 705,195 660,178 C 610,158 560,140 500,140 Z" />
+      </clipPath>
+
+      <!-- Base Background (Pop Art Burst) -->
+      <rect x="0" y="0" width="1000" height="1000" fill="#ffcc00" />
+      <path d="M 500,500 L 0,0 L 1000,0 Z" fill="#ff0055" />
+      <path d="M 500,500 L 1000,0 L 1000,1000 Z" fill="#00ccff" />
+      <path d="M 500,500 L 1000,1000 L 0,1000 Z" fill="#ccff00" />
+      
+      <!-- Background Halftone Pattern (Yellow) -->
+      <pattern id="halftone" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="10" cy="10" r="6" fill="#ffdd33" />
+      </pattern>
+      <rect x="0" y="0" width="1000" height="1000" fill="url(#halftone)" />
+
+      <!-- Black Leather Jacket (Back Layer) -->
+      <g id="jacket-back">
+        <!-- Main Body -->
+        <path d="M 260,820 
+                 C 220,750 200,650 220,550 
+                 C 240,480 280,420 340,400 
+                 C 370,390 410,380 450,375 
+                 L 450,830 Z" fill="url(#leather-grad)" stroke="#000000" stroke-width="12" stroke-linejoin="round" />
+        <path d="M 740,820 
+                 C 780,750 800,650 780,550 
+                 C 760,480 720,420 660,400 
+                 C 630,390 590,380 550,375 
+                 L 550,830 Z" fill="url(#leather-grad)" stroke="#000000" stroke-width="12" stroke-linejoin="round" />
+        
+        <!-- Jacket Collar (Up) -->
+        <path d="M 450,375 L 380,280 L 500,320 L 620,280 L 550,375 Z" fill="#111111" stroke="#000000" stroke-width="10" stroke-linejoin="round" />
+        
+        <!-- Collar Highlights -->
+        <path d="M 390,290 L 500,330 L 610,290" fill="none" stroke="#ffffff" stroke-width="4" stroke-opacity="0.2" stroke-linecap="round" />
+        
+        <!-- Jacket Zippers -->
+        <g id="zippers">
+          <!-- Left Zipper -->
+          <rect x="345" y="560" width="12" height="200" rx="4" fill="url(#silver-grad)" stroke="#000000" stroke-width="4" />
+          <rect x="341" y="550" width="20" height="18" rx="3" fill="#333333" stroke="#000000" stroke-width="3" />
+          <circle cx="351" cy="553" r="4" fill="url(#silver-grad)" />
+          
+          <!-- Right Zipper -->
+          <rect x="643" y="560" width="12" height="200" rx="4" fill="url(#silver-grad)" stroke="#000000" stroke-width="4" />
+          <rect x="639" y="550" width="20" height="18" rx="3" fill="#333333" stroke="#000000" stroke-width="3" />
+          <circle cx="649" cy="553" r="4" fill="url(#silver-grad)" />
+        </g>
+
+        <!-- Jacket Pockets -->
+        <path d="M 280,650 L 330,640 L 340,700 L 290,710 Z" fill="#050505" stroke="#000000" stroke-width="6" stroke-linejoin="round" />
+        <path d="M 720,650 L 670,640 L 660,700 L 710,710 Z" fill="#050505" stroke="#000000" stroke-width="6" stroke-linejoin="round" />
+        
+        <!-- Jacket Stitching -->
+        <path d="M 305,645 L 325,642 M 310,665 L 335,660 M 320,685 L 340,680" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+        <path d="M 695,645 L 675,642 M 690,665 L 665,660 M 680,685 L 660,680" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+
+        <!-- Jacket Shine Overlay -->
+        <path d="M 230,550 C 240,480 280,420 340,400 L 340,600 Z" fill="url(#jacket-shine)" />
+        <path d="M 770,550 C 760,480 720,420 660,400 L 660,600 Z" fill="url(#jacket-shine)" />
+      </g>
+
+      <!-- Pug Head Base -->
+      <g id="pug-head">
+        <!-- Snout Wrinkles -->
+        <path d="M 450,280 Q 500,300 550,280" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+        <path d="M 460,265 Q 500,280 540,265" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" />
+        
+        <!-- Cheeks (Fawn Color) -->
+        <path d="M 340,400 
+                 C 320,350 340,250 400,200 
+                 C 450,160 550,160 600,200 
+                 C 660,250 680,350 660,400 
+                 C 680,500 650,600 500,620 
+                 C 350,600 320,500 340,400 Z" 
+              fill="#f2d6b6" stroke="#000000" stroke-width="12" stroke-linejoin="round" />
+        
+        <!-- Ears (Black, Droopy) -->
+        <path d="M 340,250 C 280,280 220,350 240,450 C 260,520 320,480 360,400 Z" fill="#111111" stroke="#000000" stroke-width="10" stroke-linejoin="round" />
+        <path d="M 660,250 C 720,280 780,350 760,450 C 740,520 680,480 640,400 Z" fill="#111111" stroke="#000000" stroke-width="10" stroke-linejoin="round" />
+        
+        <!-- Inner Ear Shadow -->
+        <path d="M 340,260 C 290,290 240,350 255,430" fill="none" stroke="#333333" stroke-width="6" stroke-linecap="round" />
+        <path d="M 660,260 C 710,290 760,350 745,430" fill="none" stroke="#333333" stroke-width="6" stroke-linecap="round" />
+
+        <!-- Snout / Muzzle (Black) -->
+        <path d="M 420,350 
+                 C 420,300 480,280 500,280 
+                 C 520,280 580,300 580,350 
+                 C 590,400 570,500 500,520 
+                 C 430,500 410,400 420,350 Z" 
+              fill="#111111" stroke="#000000" stroke-width="10" stroke-linejoin="round" />
+
+        <!-- Nose -->
+        <path d="M 465,340 
+                 C 465,320 485,310 500,310 
+                 C 515,310 535,320 535,340 
+                 C 535,370 515,390 500,390 
+                 C 485,390 465,370 465,340 Z" 
+              fill="#000000" stroke="#000000" stroke-width="8" stroke-linejoin="round" />
+        <!-- Nose Highlight -->
+        <ellipse cx="485" cy="335" rx="10" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-15 485 335)" />
+
+        <!-- Mean Mouth / Snarl -->
+        <path d="M 430,460 Q 500,480 570,460" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+        <path d="M 440,470 Q 450,490 460,470" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" />
+        <path d="M 560,470 Q 550,490 540,470" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" />
+        
+        <!-- Underbite Tooth -->
+        <path d="M 485,480 L 490,510 L 500,480 L 510,510 L 515,480 Z" fill="#ffffff" stroke="#000000" stroke-width="6" stroke-linejoin="round" />
+
+        <!-- Angry Eyebrows & Forehead Wrinkles -->
+        <path d="M 380,260 Q 430,300 480,280" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" />
+        <path d="M 620,260 Q 570,300 520,280" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" />
+        <path d="M 460,240 Q 500,260 540,240" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" />
+
+        <!-- Cheek Blush -->
+        <ellipse cx="380" cy="420" rx="35" ry="25" fill="#ff6699" opacity="0.6" />
+        <ellipse cx="620" cy="420" rx="35" ry="25" fill="#ff6699" opacity="0.6" />
+      </g>
+
+      <!-- Neon Sunglasses -->
+      <g id="sunglasses">
+        <!-- Left Lens -->
+        <path d="M 340,320 
+                 C 340,260 400,260 430,280 
+                 C 460,310 450,380 400,390 
+                 C 360,390 340,360 340,320 Z" 
+              fill="url(#neon-grad)" stroke="#000000" stroke-width="10" stroke-linejoin="round" />
+        
+        <!-- Right Lens -->
+        <path d="M 660,320 
+                 C 660,260 600,260 570,280 
+                 C 540,310 550,380 600,390 
+                 C 640,390 660,360 660,320 Z" 
+              fill="url(#neon-grad)" stroke="#000000" stroke-width="10" stroke-linejoin="round" />
+
+        <!-- Bridge -->
+        <path d="M 430,280 Q 500,240 570,280" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" />
+        
+        <!-- Left Arm -->
+        <path d="M 340,320 L 280,300" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" />
+        
+        <!-- Right Arm -->
+        <path d="M 660,320 L 720,300" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" />
+
+        <!-- Glass Reflections (Angled Slashes) -->
+        <path d="M 365,290 L 405,370 M 390,280 L 430,360" fill="none" stroke="url(#glass-reflect)" stroke-width="8" stroke-linecap="round" />
+        <path d="M 635,290 L 595,370 M 610,280 L 570,360" fill="none" stroke="url(#glass-reflect)" stroke-width="8" stroke-linecap="round" />
+      </g>
+
+      <!-- Extra Graphic Elements / Sparkles -->
+      <g id="sparkles">
+        <!-- Top Left Sparkle -->
+        <path d="M 250,180 Q 260,200 280,210 Q 260,220 250,240 Q 240,220 220,210 Q 240,200 250,180 Z" fill="#ffff00" stroke="#000000" stroke-width="4" stroke-linejoin="round" />
+        <circle cx="250" cy="210" r="6" fill="#ffffff" />
+        
+        <!-- Top Right Sparkle -->
+        <path d="M 750,180 Q 760,200 780,210 Q 760,220 750,240 Q 740,220 720,210 Q 740,200 750,180 Z" fill="#ffff00" stroke="#000000" stroke-width="4" stroke-linejoin="round" />
+        <circle cx="750" cy="210" r="6" fill="#ffffff" />
+
+        <!-- Bottom Left Bolt -->
+        <path d="M 200,700 L 230,720 L 210,750 L 260,730 L 230,780 L 280,740 L 250,790 L 290,750 L 240,800 L 200,700 Z" fill="#ff0055" stroke="#000000" stroke-width="6" stroke-linejoin="round" />
+        
+        <!-- Bottom Right Star -->
+        <path d="M 800,650 L 820,690 L 860,690 L 830,720 L 840,760 L 800,730 L 760,760 L 770,720 L 740,690 L 780,690 Z" fill="#00ccff" stroke="#000000" stroke-width="6" stroke-linejoin="round" />
+      </g>
+
+      <!-- Comic Book Sound Effect Bubble -->
+      <g id="sound-effect" transform="translate(180, 480) rotate(-15)">
+        <path d="M 0,0 
+                 L 80,-20 L 60,-50 L 110,-40 
+                 L 120,-80 L 160,-50 L 180,-70 
+                 L 200,-20 L 240,0 
+                 L 200,30 L 220,60 L 170,50 
+                 L 150,90 L 110,50 L 80,70 
+                 L 60,30 Z" 
+              fill="#ffffff" stroke="#000000" stroke-width="8" stroke-linejoin="round" />
+        <text x="120" y="35" font-family="Arial, sans-serif" font-weight="900" font-size="60" text-anchor="middle" fill="#ff0055" stroke="#000000" stroke-width="4">GRR!</text>
+      </g>
+
+    </g> <!-- End Illustration Clip Path -->
+
+  </g> <!-- End Sticker Group -->
+</svg>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#2D5A3F"/>
+<stop offset="0.3" stop-color="#6B8E5C"/>
+<stop offset="0.7" stop-color="#8FA98F"/>
+<stop offset="1" stop-color="#C8DCC0"/>
+<animate attributeName="x1" values="0;0.1;0" dur="20s" repeatCount="indefinite"/>
+</linearGradient>
+<radialGradient id="liq" cx="0.4" cy="0.3" r="0.6">
+<stop offset="0" stop-color="#8FA98F"/>
+<stop offset="0.5" stop-color="#6B8E5C"/>
+<stop offset="1" stop-color="#2D5A3F"/>
+<animate attributeName="cy" values="0.3;0.35;0.3" dur="12s" repeatCount="indefinite"/>
+</radialGradient>
+<linearGradient id="wood" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#8FA98F" stop-opacity="0.1"/>
+<stop offset="1" stop-color="#E8DCC0" stop-opacity="0.3"/>
+<animate attributeName="x1" values="0;0.05;0" dur="18s" repeatCount="indefinite"/>
+</linearGradient>
+<filter id="f1" x="-30%" y="-30%" width="160%" height="160%">
+<feGaussianBlur stdDeviation="40"/>
+</filter>
+<filter id="f2" x="-40%" y="-40%" width="180%" height="180%">
+<feGaussianBlur stdDeviation="80"/>
+</filter>
+<filter id="f3" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="120"/>
+</filter>
+<filter id="f4" x="-60%" y="-60%" width="220%" height="220%">
+<feGaussianBlur stdDeviation="160"/>
+</filter>
+<filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+<feGaussianBlur stdDeviation="12" result="blur"/>
+<feMerge>
+<feMergeNode in="blur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+<feGaussianBlur stdDeviation="6"/>
+</filter>
+<filter id="drop" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="8" dy="18" stdDeviation="22" flood-color="#1A1A1A" flood-opacity="0.55"/>
+</filter>
+<filter id="grain">
+<feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="n"/>
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" in="n" result="g"/>
+<feBlend mode="multiply" in="g" in2="SourceGraphic"/>
+</filter>
+<path id="s1" d="M 0 0 c 20,-40 10,-90 -10,-140 c -20,-50 -15,-100 5,-150"/>
+<path id="s2" d="M 0 0 c -25,-35 -20,-85 0,-135 c 20,-50 10,-105 -5,-155"/>
+<path id="s3" d="M 0 0 c 15,-45 5,-95 -15,-145 c -25,-48 -20,-98 0,-148"/>
+<path id="s4" d="M 0 0 c -18,-38 -12,-88 8,-138 c 18,-52 12,-102 -8,-152"/>
+<path id="s5" d="M 0 0 c 22,-42 18,-92 -2,-142 c -22,-48 -18,-98 2,-148"/>
+</defs>
+<!-- BACKGROUND ATMOSPHERE -->
+<rect width="1600" height="900" fill="#2D5A3F"/>
+<rect width="1600" height="900" fill="url(#bg)" opacity="0.6"/>
+<ellipse cx="550" cy="450" rx="700" ry="500" fill="#E8DCC0" opacity="0.35" filter="url(#f4)">
+<animate attributeName="rx" values="700;750;700" dur="20s" repeatCount="indefinite"/>
+<animate attributeName="ry" values="500;540;500" dur="20s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.35;0.3;0.35" dur="20s" repeatCount="indefinite"/>
+<animate attributeName="cy" values="450;430;450" dur="16s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="850" cy="400" rx="900" ry="600" fill="#C8DCC0" opacity="0.2" filter="url(#f3)">
+<animate attributeName="cx" values="850;900;850" dur="22s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.2;0.15;0.2" dur="18s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="1200" cy="500" rx="500" ry="300" fill="#8FA98F" opacity="0.3" filter="url(#f2)">
+<animate attributeName="rx" values="500;550;500" dur="15s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.3;0.22;0.3" dur="15s" repeatCount="indefinite"/>
+</ellipse>
+<!-- NEGATIVE SPACE HAZE LEFT -->
+<rect x="0" y="0" width="640" height="900" fill="#C8DCC0" opacity="0.12" filter="url(#f3)">
+<animate attributeName="opacity" values="0.12;0.08;0.12" dur="14s" repeatCount="indefinite"/>
+</rect>
+<rect x="0" y="0" width="500" height="900" fill="#E8DCC0" opacity="0.08" filter="url(#f4)">
+<animate attributeName="opacity" values="0.08;0.05;0.08" dur="18s" repeatCount="indefinite"/>
+</rect>
+<!-- WOODEN SURFACE -->
+<g opacity="0.55">
+<rect x="680" y="520" width="800" height="6" fill="#E8DCC0" filter="url(#soft)"/>
+<rect x="690" y="560" width="780" height="5" fill="#C8DCC0" filter="url(#soft)"/>
+<rect x="700" y="600" width="750" height="4" fill="#E8DCC0" filter="url(#soft)"/>
+<rect x="710" y="650" width="720" height="5" fill="#C8DCC0" filter="url(#soft)"/>
+<rect x="720" y="700" width="700" height="4" fill="#E8DCC0" filter="url(#soft)"/>
+<rect x="730" y="750" width="670" height="5" fill="#C8DCC0" filter="url(#soft)"/>
+<rect x="740" y="800" width="640" height="4" fill="#E8DCC0" filter="url(#soft)"/>
+<animate attributeName="opacity" values="0.55;0.45;0.55" dur="16s" repeatCount="indefinite"/>
+</g>
+<!-- CERAMIC CUP RIM (seen from above-side) -->
+<ellipse cx="1050" cy="480" rx="190" ry="60" fill="#C8DCC0" filter="url(#drop)"/>
+<ellipse cx="1050" cy="478" rx="190" ry="60" fill="#E8DCC0" filter="url(#soft)"/>
+<!-- CUP INTERIOR DEPTH -->
+<ellipse cx="1050" cy="480" rx="175" ry="52" fill="#6B8E5C" opacity="0.6" filter="url(#soft)"/>
+<!-- MATCHA LIQUID SURFACE -->
+<ellipse cx="1050" cy="478" rx="175" ry="52" fill="url(#liq)" filter="url(#soft)"/>
+<!-- LIQUID RIPPLE 1 -->
+<ellipse cx="1040" cy="472" rx="60" ry="18" fill="none" stroke="#C8DCC0" stroke-width="1.5" opacity="0.3" filter="url(#soft)">
+<animate attributeName="rx" values="60;80;60" dur="8s" repeatCount="indefinite"/>
+<animate attributeName="ry" values="18;24;18" dur="8s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.3;0.1;0.3" dur="8s" repeatCount="indefinite"/>
+</ellipse>
+<!-- LIQUID RIPPLE 2 -->
+<ellipse cx="1060" cy="482" rx="40" ry="12" fill="none" stroke="#E8DCC0" stroke-width="1" opacity="0.25" filter="url(#soft)">
+<animate attributeName="rx" values="40;55;40" dur="10s" repeatCount="indefinite" begin="2s"/>
+<animate attributeName="ry" values="12;17;12" dur="10s" repeatCount="indefinite" begin="2s"/>
+<animate attributeName="opacity" values="0.25;0.08;0.25" dur="10s" repeatCount="indefinite" begin="2s"/>
+</ellipse>
+<!-- RIM LIGHT / HIGHLIGHT -->
+<ellipse cx="980" cy="455" rx="40" ry="10" fill="#E8DCC0" opacity="0.45" filter="url(#glow)">
+<animate attributeName="opacity" values="0.45;0.3;0.45" dur="12s" repeatCount="indefinite"/>
+</ellipse>
+<path d="M 920 455 Q 950 425 990 440" fill="none" stroke="#E8DCC0" stroke-width="2.5" opacity="0.35" filter="url(#glow)"/>
+<!-- CUP BODY / SIDE SHADOW -->
+<path d="M 860 480 Q 860 620 1050 620 Q 1240 620 1240 480" fill="#2D5A3F" opacity="0.5" filter="url(#f1)"/>
+<path d="M 860 480 Q 860 620 1050 620 Q 1240 620 1240 480" fill="none" stroke="#C8DCC0" stroke-width="1.5" opacity="0.4" filter="url(#soft)"/>
+<!-- AMBIENT SHADOW ON TABLE -->
+<ellipse cx="1080" cy="560" rx="200" ry="50" fill="#2D5A3F" opacity="0.25" filter="url(#f2)">
+<animate attributeName="rx" values="200;220;200" dur="14s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.25;0.18;0.25" dur="14s" repeatCount="indefinite"/>
+</ellipse>
+<!-- STEAM WISPS -->
+<g opacity="0.35" filter="url(#soft)">
+<use href="#s1" stroke="#C8DCC0" stroke-width="14" fill="none" stroke-linecap="round">
+<animateMotion dur="10s" repeatCount="indefinite" path="M 1040 470 Q 1060 380 1030 280"/>
+<animate attributeName="opacity" values="0;0.35;0.25;0" dur="10s" repeatCount="indefinite"/>
+</use>
+<use href="#s2" stroke="#E8DCC0" stroke-width="10" fill="none" stroke-linecap="round">
+<animateMotion dur="12s" repeatCount="indefinite" path="M 1060 475 Q 1030 360 1080 250"/>
+<animate attributeName="opacity" values="0;0.3;0.2;0" dur="12s" repeatCount="indefinite" begin="2s"/>
+</use>
+<use href="#s3" stroke="#C8DCC0" stroke-width="12" fill="none" stroke-linecap="round">
+<animateMotion dur="14s" repeatCount="indefinite" path="M 1055 465 Q 1080 370 1040 260"/>
+<animate attributeName="opacity" values="0;0.28;0.18;0" dur="14s" repeatCount="indefinite" begin="1s"/>
+</use>
+<use href="#s4" stroke="#E8DCC0" stroke-width="8" fill="none" stroke-linecap="round">
+<animateMotion dur="11s" repeatCount="indefinite" path="M 1030 480 Q 1050 390 1020 290"/>
+<animate attributeName="opacity" values="0;0.32;0.22;0" dur="11s" repeatCount="indefinite" begin="3s"/>
+</use>
+<use href="#s5" stroke="#C8DCC0" stroke-width="10" fill="none" stroke-linecap="round">
+<animateMotion dur="13s" repeatCount="indefinite" path="M 1070 460 Q 1090 380 1060 270"/>
+<animate attributeName="opacity" values="0;0.3;0.2;0" dur="13s" repeatCount="indefinite" begin="4s"/>
+</use>
+</g>
+<!-- ADDITIONAL STEAM LAYER 2 -->
+<g opacity="0.2" filter="url(#f1)">
+<use href="#s1" stroke="#E8DCC0" stroke-width="22" fill="none" stroke-linecap="round">
+<animateMotion dur="15s" repeatCount="indefinite" path="M 1045 472 Q 1065 360 1035 230"/>
+<animate attributeName="opacity" values="0;0.2;0.15;0" dur="15s" repeatCount="indefinite" begin="1.5s"/>
+</use>
+<use href="#s3" stroke="#C8DCC0" stroke-width="18" fill="none" stroke-linecap="round">
+<animateMotion dur="18s" repeatCount="indefinite" path="M 1065 468 Q 1040 350 1090 220"/>
+<animate attributeName="opacity" values="0;0.18;0.12;0" dur="18s" repeatCount="indefinite" begin="3s"/>
+</use>
+</g>
+<!-- ATMOSPHERIC FOG OVERLAY LAYERS -->
+<rect x="600" y="200" width="900" height="500" fill="#C8DCC0" opacity="0.08" filter="url(#f3)">
+<animate attributeName="x" values="600;650;600" dur="25s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.08;0.05;0.08" dur="25s" repeatCount="indefinite"/>
+</rect>
+<rect x="800" y="300" width="700" height="400" fill="#E8DCC0" opacity="0.06" filter="url(#f4)">
+<animate attributeName="x" values="800;750;800" dur="20s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.06;0.03;0.06" dur="20s" repeatCount="indefinite"/>
+</rect>
+<!-- RIM GLOW HALO -->
+<ellipse cx="1050" cy="480" rx="210" ry="70" fill="none" stroke="#E8DCC0" stroke-width="3" opacity="0.15" filter="url(#glow)">
+<animate attributeName="rx" values="210;225;210" dur="14s" repeatCount="indefinite"/>
+<animate attributeName="ry" values="70;78;70" dur="14s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.15;0.1;0.15" dur="14s" repeatCount="indefinite"/>
+</ellipse>
+<!-- ADDITIONAL DEPTH: distant haze blob -->
+<ellipse cx="1300" cy="350" rx="300" ry="200" fill="#6B8E5C" opacity="0.1" filter="url(#f3)">
+<animate attributeName="cx" values="1300;1250;1300" dur="22s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.1;0.06;0.1" dur="22s" repeatCount="indefinite"/>
+</ellipse>
+<!-- GRAIN OVERLAY -->
+<rect width="1600" height="900" fill="transparent" filter="url(#grain)" opacity="0.6" pointer-events="none"/>
+</svg>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="gradLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B65C2B" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#D4A017" stop-opacity="0.9"/>
+    </linearGradient>
+    
+    <linearGradient id="gradStem" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6B7E5B" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#6B7E5B" stop-opacity="0.75"/>
+    </linearGradient>
+    
+    <filter id="blurGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="blurShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    
+    <path id="pathMain" d="M800,-200 Q600,100 800,300 Q1000,500 800,700 Q600,900 800,1100" fill="none"/>
+    <path id="pathSec" d="M1000,-200 Q1200,150 900,400 Q600,650 1000,900" fill="none"/>
+    
+    <g id="leafArt">
+      <path d="M0,-75 C-22,-45 -40,-20 -35,5 C-48,25 -42,50 -22,65 C-12,78 0,90 0,105 C0,90 12,78 22,65 C42,50 48,25 35,5 C40,-20 22,-45 0,-75 Z" fill="url(#gradLeaf)"/>
+      <path d="M0,105 Q2,125 0,145 Q-2,125 0,105" fill="url(#gradStem)"/>
+      <path d="M0,-65 L0,95 M-22,-22 L0,8 M22,-22 L0,8 M-18,35 L0,45 M18,35 L0,45" stroke="#B65C2B" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>
+    </g>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF5E8"/>
+  
+  <g opacity="0.4">
+    <circle r="3" fill="#D4A017">
+      <animateMotion path="M300,0 L300,900" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" fill="#B65C2B">
+      <animateMotion path="M1300,0 L1300,900" dur="7s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="opacity" values="0;0.35;0" dur="7s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <circle r="2.5" fill="#D4A017">
+      <animateMotion path="M500,0 L500,900" dur="6s" repeatCount="indefinite" begin="3s"/>
+      <animate attributeName="opacity" values="0;0.45;0" dur="6s" repeatCount="indefinite" begin="3s"/>
+    </circle>
+  </g>
+  
+  <g filter="url(#blurGlow)">
+    <g>
+      <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#pathMain"/>
+      </animateMotion>
+      <g transform="scale(2.2)">
+        <animateTransform attributeName="transform" type="rotate" values="-12;8;-12" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+        <animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="2.8s" repeatCount="indefinite" additive="sum"/>
+        <use href="#leafArt"/>
+      </g>
+    </g>
+  </g>
+  
+  <g opacity="0.85" filter="url(#blurShadow)">
+    <g>
+      <animateMotion dur="7s" repeatCount="indefinite" begin="3.5s" rotate="auto">
+        <mpath href="#pathSec"/>
+      </animateMotion>
+      <g transform="scale(1.6)">
+        <animateTransform attributeName="transform" type="rotate" values="10;-15;10" dur="4s" repeatCount="indefinite" additive="sum"/>
+        <use href="#leafArt"/>
+        <animate attributeName="opacity" values="0.8;0.95;0.8" dur="3s" repeatCount="indefinite"/>
+      </g>
+    </g>
+  </g>
+  
+  <ellipse cx="800" cy="450" rx="140" ry="90" fill="#D4A017" opacity="0.12" filter="url(#blurShadow)">
+    <animate attributeName="rx" values="140;160;140" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="90;105;90" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.15;0.1" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+</svg>

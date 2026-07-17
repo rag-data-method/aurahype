@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF0F5" />
+      <stop offset="60%" stop-color="#E6E6FA" />
+      <stop offset="100%" stop-color="#FFE4E1" />
+    </linearGradient>
+    <radialGradient id="rayGrad" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#FFFACD" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#FFFACD" stop-opacity="0.0" />
+    </radialGradient>
+    <linearGradient id="curtainLeft" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#F0F8FF" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="curtainRight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#F0F8FF" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.9" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+    <filter id="blur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.5" />
+    </filter>
+    <clipPath id="windowClip">
+      <rect x="250" y="100" width="300" height="300" rx="2" />
+    </clipPath>
+  </defs>
+
+  <!-- Background Wall -->
+  <rect width="100%" height="100%" fill="#FFF5EE" />
+
+  <!-- Window Clip Group -->
+  <g clip-path="url(#windowClip)">
+    <!-- Sky -->
+    <rect x="250" y="100" width="300" height="300" fill="url(#skyGrad)" />
+
+    <!-- Sun -->
+    <circle cx="400" cy="50" r="30" fill="#FFF5E1" filter="url(#softGlow)">
+      <animate attributeName="cy" values="50;60;50" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="r" values="30;35;30" dur="6s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Morning Sunbeams -->
+    <g opacity="0.7">
+      <path d="M400,-50 L150,430 L280,430 L400,-50 Z" fill="url(#rayGrad)">
+        <animate attributeName="d" values="M400,-50 L150,430 L280,430 L400,-50 Z; M400,-50 L130,430 L260,430 L400,-50 Z; M400,-50 L150,430 L280,430 L400,-50 Z" dur="8s" repeatCount="indefinite" />
+      </path>
+      <path d="M400,-50 L280,430 L380,430 L400,-50 Z" fill="url(#rayGrad)">
+        <animate attributeName="d" values="M400,-50 L280,430 L380,430 L400,-50 Z; M400,-50 L270,430 L370,430 L400,-50 Z; M400,-50 L280,430 L380,430 L400,-50 Z" dur="7s" repeatCount="indefinite" />
+      </path>
+      <path d="M400,-50 L380,430 L520,430 L400,-50 Z" fill="url(#rayGrad)" opacity="0.5">
+        <animate attributeName="d" values="M400,-50 L380,430 L520,430 L400,-50 Z; M400,-50 L390,430 L530,430 L400,-50 Z; M400,-50 L380,430 L520,430 L400,-50 Z" dur="9s" repeatCount="indefinite" />
+      </path>
+      <path d="M400,-50 L520,430 L650,430 L400,-50 Z" fill="url(#rayGrad)" opacity="0.3">
+        <animate attributeName="d" values="M400,-50 L520,430 L650,430 L400,-50 Z; M400,-50 L530,430 L660,430 L400,-50 Z; M400,-50 L520,430 L650,430 L400,-50 Z" dur="6s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    <!-- Dust Motes (Floating slowly) -->
+    <g fill="#FFFFFF" opacity="0.6">
+      <circle cx="350" cy="150" r="0.8">
+        <animate attributeName="cy" values="150;140;150" dur="5s" repeatCount="indefinite" />
+        <animate attributeName="cx" values="350;345;350" dur="7s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="420" cy="220" r="1.2">
+        <animate attributeName="cy" values="220;230;220" dur="6s" repeatCount="indefinite" />
+        <animate attributeName="cx" values="420;425;420" dur="8s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="310" cy="280" r="0.6">
+        <animate attributeName="cy" values="280;275;280" dur="7s" repeatCount="indefinite" />
+        <animate attributeName="cx" values="310;315;310" dur="5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="480" cy="180" r="1.0">
+        <animate attributeName="cy" values="180;190;180" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="cx" values="480;475;480" dur="6s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="290" cy="350" r="0.9">
+        <animate attributeName="cy" values="350;345;350" dur="6s" repeatCount="indefinite" />
+        <animate attributeName="cx" values="290;295;290" dur="9s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="520" cy="300" r="0.7">
+        <animate attributeName="cy" values="300;310;300" dur="5s" repeatCount="indefinite" />
+        <animate attributeName="cx" values="520;515;520" dur="7s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Curtains (Inside Window Frame) -->
+    <g fill="none" stroke="#FFF0F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+      <!-- Left Curtain Panel -->
+      <path fill="url(#curtainLeft)" d="M250,80 C260,180 270,280 290,400 L250,400 Z">
+        <animate attributeName="d" values="M250,80 C260,180 270,280 290,400 L250,400 Z; M250,80 C265,180 265,280 285,400 L250,400 Z; M250,80 C260,180 270,280 290,400 L250,400 Z" dur="5s" repeatCount="indefinite" />
+      </path>
+
+      <!-- Right Curtain Panel -->
+      <path fill="url(#curtainRight)" d="M550,80 C540,180 530,280 510,400 L550,400 Z">
+        <animate attributeName="d" values="M550,80 C540,180 530,280 510,400 L550,400 Z; M550,80 C535,180 535,280 515,400 L550,400 Z; M550,80 C540,180 530,280 510,400 L550,400 Z" dur="5.5s" repeatCount="indefinite" />
+      </path>
+    </g>
+  </g>
+
+  <!-- Window Exterior Frame (Painted Wood) -->
+  <rect x="230" y="80" width="340" height="340" rx="5" fill="none" stroke="#FAF0E6" stroke-width="14" />
+  <rect x="238" y="88" width="324" height="324" rx="2" fill="none" stroke="#FDF5E6" stroke-width="2" />
+  <!-- Inner Sash Lines -->
+  <path d="M400,90 V410" stroke="#FAF0E6" stroke-width="8" />
+  <path d="M250,250 H550" stroke="#FAF0E6" stroke-width="8" />
+  <path d="M395,90 V410" stroke="#FDF5E6" stroke-width="1" />
+  <path d="M250,245 H550" stroke="#FDF5E6" stroke-width="1" />
+
+  <!-- Curtain Rod -->
+  <rect x="210" y="70" width="380" height="14" rx="7" fill="#FAF0E6" />
+  <rect x="210" y="74" width="380" height="6" rx="3" fill="#FFF8DC" opacity="0.8" />
+
+  <!-- Left Curtain Rings & Tieback -->
+  <g stroke="#FFE4E1" stroke-width="1.5" fill="none">
+    <ellipse cx="255" cy="77" rx="3" ry="6" />
+    <ellipse cx="270" cy="77" rx="3" ry="6" />
+    <ellipse cx="285" cy="77" rx="3" ry="6" />
+    <ellipse cx="300" cy="77" rx="3" ry="6" />
+    <ellipse cx="315" cy="77" rx="3" ry="6" />
+    <ellipse cx="330" cy="77" rx="3" ry="6" />
+    <!-- Tieback with soft curve -->
+    <path d="M275,270 Q290,265 280,285" stroke-width="2" stroke-dasharray="2,3" opacity="0.6" />
+  </g>
+
+  <!-- Right Curtain Rings & Tieback -->
+  <g stroke="#FFE4E1" stroke-width="1.5" fill="none">
+    <ellipse cx="470" cy="77" rx="3" ry="6" />
+    <ellipse cx="485" cy="77" rx="3" ry="6" />
+    <ellipse cx="500" cy="77" rx="3" ry="6" />
+    <ellipse cx="515" cy="77" rx="3" ry="6" />
+    <ellipse cx="530" cy="77" rx="3" ry="6" />
+    <ellipse cx="545" cy="77" rx="3" ry="6" />
+    <!-- Tieback with soft curve -->
+    <path d="M525,270 Q510,265 520,285" stroke-width="2" stroke-dasharray="2,3" opacity="0.6" />
+  </g>
+
+  <!-- Window Sill -->
+  <rect x="220" y="410" width="360" height="16" rx="3" fill="#FAF0E6" />
+  <rect x="224" y="414" width="352" height="4" rx="2" fill="#FFF8DC" opacity="0.8" />
+
+  <!-- Plant on Sill (Gentle sway) -->
+  <g transform="translate(240, 410)">
+    <!-- Pot -->
+    <path d="M0,0 L5,25 L35,25 L40,0 Z" fill="#F5F5DC" stroke="#FAF0E6" stroke-width="1" />
+    <!-- Leaves -->
+    <path d="M20,0 Q5,-30 0,-60 Q15,-30 20,0" fill="#E6E6FA" stroke="#D8BFD8" stroke-width="1.5" opacity="0.9">
+      <animateTransform attributeName="transform" type="rotate" values="-2 20 0; 2 20 0; -2 20 0" dur="6s" repeatCount="indefinite" />
+    </path>
+    <path d="M20,0 Q35,-20 25,-50 Q30,-20 20,0" fill="#FFF0F5" stroke="#E6E6FA" stroke-width="1.5" opacity="0.9">
+      <animateTransform attributeName="transform" type="rotate" values="2 20 0; -2 20 0; 2 20 0" dur="7s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Soft Morning Overlay to tie the atmosphere together -->
+  <rect width="100%" height="100%" fill="#FFF0F5" opacity="0.15" style="mix-blend-mode: overlay;" pointer-events="none" />
+</svg>

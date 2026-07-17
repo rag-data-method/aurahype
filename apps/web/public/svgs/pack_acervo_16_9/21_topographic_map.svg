@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="85%">
+      <stop offset="0%" stop-color="#1e1e1e"/>
+      <stop offset="100%" stop-color="#070707"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <path stroke="#ff6b00" stroke-width="2.5" opacity="0.45" d="M400,450 C400,300 600,250 800,280 C1000,310 1200,350 1200,450 C1200,580 1000,650 800,620 C600,590 400,600 400,450 Z">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="9s" repeatCount="indefinite" begin="0s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;12,-8;0,0" dur="18s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450;1.5 800 450;0 800 450" dur="28s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    <path stroke="#ff8c00" stroke-width="2" opacity="0.55" d="M550,450 C550,360 680,330 800,350 C920,370 1050,390 1050,450 C1050,530 920,560 800,540 C680,520 550,540 550,450 Z">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="10s" repeatCount="indefinite" begin="-2s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;-10,6;0,0" dur="16s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450;-1.2 800 450;0 800 450" dur="26s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    <path stroke="#ff5500" stroke-width="2" opacity="0.4" d="M200,200 C250,120 400,120 450,200 C500,280 400,350 300,320 C200,290 150,280 200,200 Z">
+      <animate attributeName="opacity" values="0.35;0.65;0.35" dur="8s" repeatCount="indefinite" begin="-4s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;8,10;0,0" dur="20s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450;2 800 450;0 800 450" dur="30s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    <path stroke="#ff7700" stroke-width="2.5" opacity="0.45" d="M1100,180 C1150,100 1350,100 1400,180 C1450,260 1350,320 1250,300 C1150,280 1050,260 1100,180 Z">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="11s" repeatCount="indefinite" begin="-1.5s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;-14,-6;0,0" dur="17s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450;-1 800 450;0 800 450" dur="25s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    <path stroke="#ff8c00" stroke-width="2" opacity="0.5" d="M250,650 C300,570 500,570 550,650 C600,730 500,800 400,780 C300,760 200,730 250,650 Z">
+      <animate attributeName="opacity" values="0.45;0.75;0.45" dur="9s" repeatCount="indefinite" begin="-3s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;10,12;0,0" dur="19s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450;1.5 800 450;0 800 450" dur="27s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    <path stroke="#ff6600" stroke-width="2.5" opacity="0.4" d="M1050,680 C1100,600 1350,600 1400,680 C1450,760 1300,820 1200,800 C1100,780 1000,760 1050,680 Z">
+      <animate attributeName="opacity" values="0.35;0.6;0.35" dur="12s" repeatCount="indefinite" begin="-5s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;-8,-10;0,0" dur="21s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450;-1.8 800 450;0 800 450" dur="32s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    <path stroke="#ffaa00" stroke-width="1.5" opacity="0.6" d="M700,450 C700,400 760,380 800,400 C840,420 860,460 860,500 C840,540 760,540 700,500 C680,480 680,460 700,450 Z">
+      <animate attributeName="opacity" values="0.55;0.85;0.55" dur="7s" repeatCount="indefinite" begin="-6s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;6,-6;0,0" dur="14s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450;2.5 800 450;0 800 450" dur="22s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    <path stroke="#ff5e00" stroke-width="2" opacity="0.35" d="M150,450 C180,350 320,350 350,450 C380,550 280,600 200,580 C120,560 120,530 150,450 Z">
+      <animate attributeName="opacity" values="0.3;0.55;0.3" dur="13s" repeatCount="indefinite" begin="-2.5s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;-12,8;0,0" dur="22s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450;1 800 450;0 800 450" dur="34s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    <path stroke="#ff7b00" stroke-width="2" opacity="0.35" d="M1250,450 C1280,350 1480,350 1450,450 C1420,550 1320,600 1280,580 C1240,560 1220,530 1250,450 Z">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="10s" repeatCount="indefinite" begin="-3.5s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;14,4;0,0" dur="15s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 800 450;-1.5 800 450;0 800 450" dur="29s" repeatCount="indefinite" additive="sum"/>
+    </path>
+  </g>
+</svg>

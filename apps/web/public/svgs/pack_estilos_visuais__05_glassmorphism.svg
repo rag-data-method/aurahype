@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef2ff"/>
+      <stop offset="50%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#f5f3ff"/>
+    </linearGradient>
+    <radialGradient id="o1" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ff9a9e">
+        <animate attributeName="stop-color" values="#ff9a9e;#ff7eb3;#ff9a9e" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#fecfef" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="o2" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#a18cd1">
+        <animate attributeName="stop-color" values="#a18cd1;#c2a6ff;#a18cd1" dur="14s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#fbc2eb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="o3" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#84fab0">
+        <animate attributeName="stop-color" values="#84fab0;#a8edea;#84fab0" dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#8fd3f4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="o4" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffecd2">
+        <animate attributeName="stop-color" values="#ffecd2;#ffd1a9;#ffecd2" dur="13s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#fcb69f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="o5" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e0c3fc">
+        <animate attributeName="stop-color" values="#e0c3fc;#b8b3ff;#e0c3fc" dur="15s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#8ec5fc" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="24" stdDeviation="36" flood-color="#2d1b4e" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g filter="url(#blur)">
+    <circle cx="320" cy="340" r="240" fill="url(#o1)">
+      <animate attributeName="cx" values="320;360;320" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="cy" values="340;290;340" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="1220" cy="240" r="300" fill="url(#o2)">
+      <animate attributeName="cx" values="1220;1170;1220" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="cy" values="240;290;240" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="880" cy="720" r="280" fill="url(#o3)">
+      <animate attributeName="cx" values="880;930;880" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="cy" values="720;670;720" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="420" cy="780" r="210" fill="url(#o4)">
+      <animate attributeName="cx" values="420;460;420" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="cy" values="780;730;780" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+    <circle cx="1360" cy="660" r="200" fill="url(#o5)">
+      <animate attributeName="cx" values="1360;1310;1360" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="cy" values="660;710;660" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+  </g>
+  <g filter="url(#shadow)">
+    <g transform="translate(240,170)">
+      <rect width="720" height="520" rx="44" fill="url(#shine)" fill-opacity="0.42" stroke="#fff" stroke-opacity="0.55" stroke-width="1.5"/>
+      <rect x="44" y="44" width="632" height="84" rx="20" fill="#fff" fill-opacity="0.24">
+        <animate attributeName="fill-opacity" values="0.24;0.34;0.24" dur="7s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="44" y="160" width="370" height="240" rx="26" fill="#fff" fill-opacity="0.2"/>
+      <rect x="440" y="160" width="236" height="150" rx="26" fill="#fff" fill-opacity="0.2"/>
+      <rect x="440" y="334" width="236" height="150" rx="26" fill="#fff" fill-opacity="0.2"/>
+      <animateTransform attributeName="transform" type="translate" additive="sum" values="0,0;0,-16;0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </g>
+    <g transform="translate(1040,140)">
+      <rect width="400" height="280" rx="32" fill="url(#shine)" fill-opacity="0.38" stroke="#fff" stroke-opacity="0.5" stroke-width="1.5"/>
+      <rect x="32" y="32" width="336" height="64" rx="16" fill="#fff" fill-opacity="0.22"/>
+      <rect x="32" y="116" width="336" height="132" rx="22" fill="#fff" fill-opacity="0.18">
+        <animate attributeName="fill-opacity" values="0.18;0.28;0.18" dur="8s" repeatCount="indefinite"/>
+      </rect>
+      <animateTransform attributeName="transform" type="translate" additive="sum" values="0,0;0,-12;0,0" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </g>
+    <g transform="translate(1100,500)">
+      <rect width="340" height="340" rx="32" fill="url(#shine)" fill-opacity="0.38" stroke="#fff" stroke-opacity="0.5" stroke-width="1.5"/>
+      <circle cx="170" cy="140" r="72" fill="url(#o2)" fill-opacity="0.45" filter="url(#blur)"/>
+      <rect x="50" y="250" width="240" height="26" rx="13" fill="#fff" fill-opacity="0.25"/>
+      <rect x="50" y="290" width="180" height="16" rx="8" fill="#fff" fill-opacity="0.18"/>
+      <animateTransform attributeName="transform" type="translate" additive="sum" values="0,0;0,-14;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="bg-grad" cx="400" cy="300" r="450">
+      <stop offset="0%" stop-color="#110022"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <linearGradient id="bar-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF0055"/>
+      <stop offset="50%" stop-color="#FFCC00"/>
+      <stop offset="100%" stop-color="#00FFFF"/>
+    </linearGradient>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+
+    <g id="part">
+      <circle cx="0" cy="-110" r="14" fill="#00FFFF"/>
+      <circle cx="-95.26" cy="55" r="14" fill="#FFCC00"/>
+      <circle cx="95.26" cy="55" r="14" fill="#FF0055"/>
+    </g>
+
+    <g id="part2">
+      <polygon points="0,-15 14,10 -14,10" fill="#00FF99"/>
+      <polygon points="0,-15 14,10 -14,10" transform="rotate(120)" fill="#FFCC00"/>
+      <polygon points="0,-15 14,10 -14,10" transform="rotate(240)" fill="#FF0055"/>
+    </g>
+
+    <g id="part3">
+      <circle cx="0" cy="-180" r="10" fill="#00FFFF"/>
+      <circle cx="-90" cy="-156" r="10" fill="#FFFFFF"/>
+      <circle cx="-160" cy="-90" r="10" fill="#FFCC00"/>
+      <circle cx="-180" cy="0" r="10" fill="#FF0055"/>
+      <circle cx="-160" cy="90" r="10" fill="#CC00FF"/>
+      <circle cx="-90" cy="156" r="10" fill="#00FF99"/>
+      <circle cx="0" cy="180" r="10" fill="#00FFFF"/>
+      <circle cx="90" cy="156" r="10" fill="#FFFFFF"/>
+      <circle cx="160" cy="90" r="10" fill="#FFCC00"/>
+      <circle cx="180" cy="0" r="10" fill="#FF0055"/>
+      <circle cx="160" cy="-90" r="10" fill="#CC00FF"/>
+      <circle cx="90" cy="-156" r="10" fill="#00FF99"/>
+    </g>
+
+    <g id="confetti">
+      <circle cx="0" cy="0" r="12" fill="#00FFFF" opacity="0.9"/>
+      <circle cx="180" cy="240" r="8" fill="#FF0055" opacity="0.8"/>
+      <polygon points="340,180 355, 170 365, 185" fill="#00FF99" opacity="0.9"/>
+      <polygon points="100, 50 120, 40 110, 70" fill="#FFCC00" opacity="0.9"/>
+      <circle cx="620" cy="140" r="10" fill="#FFCC00" opacity="0.9"/>
+      <circle cx="700" cy="420" r="12" fill="#CC00FF" opacity="0.85"/>
+      <circle cx="250" cy="500" r="8" fill="#00FF99" opacity="0.8"/>
+      <polygon points="50, 400 65, 395 60, 415" fill="#FF0055" opacity="0.9"/>
+      <circle cx="500" cy="520" r="10" fill="#00FFFF" opacity="0.85"/>
+      <polygon points="720, 250 735, 240 730, 260" fill="#00FFFF" opacity="0.9"/>
+      <polygon points="150, 450 165, 440 160, 460" fill="#CC00FF" opacity="0.9"/>
+    </g>
+
+    <g id="starburst">
+      <line x1="0" y1="0" x2="0" y2="-50" stroke="#00FFFF" stroke-width="3" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="0" y2="50" stroke="#00FFFF" stroke-width="3" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="-50" y2="0" stroke="#FF0055" stroke-width="3" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="50" y2="0" stroke="#FF0055" stroke-width="3" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="-35" y2="-35" stroke="#FFCC00" stroke-width="3" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="35" y2="35" stroke="#FFCC00" stroke-width="3" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="35" y2="-35" stroke="#00FF99" stroke-width="3" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="-35" y2="35" stroke="#00FF99" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <g filter="url(#soft-glow)">
+    <circle cx="400" cy="300" r="240" fill="#1A0033" opacity="0.6"/>
+    <circle cx="400" cy="300" r="170" fill="#2E0055" opacity="0.5"/>
+    <circle cx="400" cy="300" r="100" fill="#440077" opacity="0.4"/>
+  </g>
+
+  <use href="#confetti">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 400 300"
+      to="-360 400 300"
+      dur="20s"
+      repeatCount="indefinite"
+    />
+  </use>
+
+  <use href="#starburst" transform="translate(400,300)">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 0 0"
+      to="360 0 0"
+      dur="6s"
+      repeatCount="indefinite"
+      additive="sum"
+      calcMode="spline"
+      keySplines="0.4 0 0.2 1"
+    />
+    <animateTransform
+      attributeName="transform"
+      type="scale"
+      values="0.8;1.5;0.8"
+      dur="4s"
+      repeatCount="indefinite"
+      additive="sum"
+    />
+  </use>
+
+  <use href="#part3" transform="translate(400,300)">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 400 300"
+      to="360 400 300"
+      dur="12s"
+      repeatCount="indefinite"
+    />
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 0 0"
+      to="-360 0 0"
+      dur="7s"
+      repeatCount="indefinite"
+      additive="sum"
+    />
+  </use>
+
+  <use href="#part2" transform="translate(400,300)">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 400 300"
+      to="-360 400 300"
+      dur="8s"
+      repeatCount="indefinite"
+    />
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 0 0"
+      to="360 0 0"
+      dur="3s"
+      repeatCount="indefinite"
+      additive="sum"
+    />
+  </use>
+
+  <use href="#part" transform="translate(400,300)">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 400 300"
+      to="360 400 300"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 0 0"
+      to="-360 0 0"
+      dur="2s"
+      repeatCount="indefinite"
+      additive="sum"
+    />
+  </use>
+
+  <g transform="translate(400,300)">
+    <circle r="55" fill="none" stroke="#00FFFF" stroke-width="4" stroke-dasharray="15 30"/>
+    <circle r="65" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.5" stroke-dasharray="5 25"/>
+    <circle r="75" fill="none" stroke="#00FFFF" stroke-width="1" opacity="0.2" stroke-dasharray="2 40"/>
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 400 300"
+      to="360 400 300"
+      dur="10s"
+      repeatCount="indefinite"
+    />
+  </g>
+
+  <g transform="translate(400,300)">
+    <circle r="140" fill="none" stroke="#FFCC00" stroke-width="5" stroke-dasharray="40 60"/>
+    <circle r="150" fill="none" stroke="#FF0055" stroke-width="2" opacity="0.6" stroke-dasharray="10 45"/>
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 400 300"
+      to="-360 400 300"
+      dur="14s"
+      repeatCount="indefinite"
+    />
+  </g>
+
+  <g filter="url(#glow)">
+    <rect x="355" y="235" width="24" height="130" rx="12" fill="url(#bar-grad)"/>
+    <rect x="420" y="235" width="24" height="130" rx="12" fill="url(#bar-grad)"/>
+    <animateTransform
+      attributeName="transform"
+      type="scale"
+      values="1;1.08;1"
+      dur="2s"
+      repeatCount="indefinite"
+      additive="sum"
+    />
+  </g>
+</svg>

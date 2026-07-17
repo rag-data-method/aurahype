@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Pop Art Halftone Pattern -->
+    <pattern id="halftone" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#000000" opacity="0"/>
+      <circle cx="4" cy="4" r="2.8" fill="#000000"/>
+    </pattern>
+
+    <pattern id="halftone-large" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="14" height="14" fill="#000000" opacity="0"/>
+      <circle cx="7" cy="7" r="5" fill="#000000"/>
+    </pattern>
+
+    <!-- Glowing Crown Gradient -->
+    <radialGradient id="crownGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#ffff00" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#ffcc00" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ff6600" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Base Shadow Gradient -->
+    <radialGradient id="baseShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Comic Burst Background Gradient -->
+    <radialGradient id="burstGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff00cc"/>
+      <stop offset="100%" stop-color="#00ffff"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip Path for Halftone Shading -->
+    <clipPath id="kingBodyClip">
+      <path d="M 480 320 L 520 320 L 520 340 A 70 70 0 0 1 560 380 A 60 60 0 0 1 540 420 C 540 440 550 450 570 460 C 590 470 600 490 600 530 C 600 570 580 590 560 600 L 440 600 C 420 590 400 570 400 530 C 400 490 410 470 430 460 C 450 450 460 440 460 420 A 60 60 0 0 1 440 380 A 70 70 0 0 1 480 340 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Transparent Background (No background rect) -->
+
+  <!-- Die-Cut White Border Outline -->
+  <g id="sticker-border">
+    <!-- Outer thick white border path -->
+    <path d="M 480 320 L 520 320 L 520 340 A 70 70 0 0 1 560 380 A 60 60 0 0 1 540 420 C 540 440 550 450 570 460 C 590 470 600 490 600 530 C 600 570 580 590 560 600 L 440 600 C 420 590 400 570 400 530 C 400 490 410 470 430 460 C 450 450 460 440 460 420 A 60 60 0 0 1 440 380 A 70 70 0 0 1 480 340 Z" 
+          fill="none" stroke="#ffffff" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Connector for base -->
+    <path d="M 440 600 L 560 600 L 540 640 L 460 640 Z" fill="none" stroke="#ffffff" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Tiered Base -->
+    <path d="M 460 640 L 540 640 L 530 680 L 470 680 Z M 470 680 L 530 680 L 520 720 L 480 720 Z M 480 720 L 520 720 L 500 780 Z" fill="none" stroke="#ffffff" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Comic Book Burst Background -->
+  <g id="comic-burst">
+    <polygon points="500,100 540,350 800,200 600,400 900,500 600,600 800,800 540,650 500,900 460,650 200,800 400,600 100,500 400,400 200,200 460,350" 
+             fill="url(#burstGrad)" stroke="#000000" stroke-width="15" stroke-linejoin="round"/>
+    <!-- Halftone overlay on burst -->
+    <polygon points="500,100 540,350 800,200 600,400 900,500 600,600 800,800 540,650 500,900 460,650 200,800 400,600 100,500 400,400 200,200 460,350" 
+             fill="url(#halftone-large)" opacity="0.4"/>
+  </g>
+
+  <!-- Base Shadow -->
+  <ellipse cx="500" cy="790" rx="180" ry="40" fill="url(#baseShadow)" />
+
+  <!-- The Chess King -->
+  <g id="chess-king">
+    <!-- Base Tier 3 (Bottom) -->
+    <path d="M 480 720 L 520 720 L 500 780 Z" fill="#00ccff" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    
+    <!-- Base Tier 2 -->
+    <path d="M 470 680 L 530 680 L 520 720 L 480 720 Z" fill="#00ccff" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M 470 680 L 530 680 L 520 720 L 480 720 Z" fill="url(#halftone)" opacity="0.3"/>
+    
+    <!-- Base Tier 1 -->
+    <path d="M 460 640 L 540 640 L 530 680 L 470 680 Z" fill="#00ccff" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M 460 640 L 540 640 L 530 680 L 470 680 Z" fill="url(#halftone)" opacity="0.3"/>
+    
+    <!-- Connector / Collar -->
+    <path d="M 440 600 L 560 600 L 540 640 L 460 640 Z" fill="#ff00cc" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M 440 600 L 560 600 L 540 640 L 460 640 Z" fill="url(#halftone)" opacity="0.4"/>
+    <circle cx="460" cy="620" r="5" fill="#ffffff" />
+    <circle cx="500" cy="620" r="5" fill="#ffffff" />
+    <circle cx="540" cy="620" r="5" fill="#ffffff" />
+
+    <!-- Main Body -->
+    <path d="M 480 320 L 520 320 L 520 340 A 70 70 0 0 1 560 380 A 60 60 0 0 1 540 420 C 540 440 550 450 570 460 C 590 470 600 490 600 530 C 600 570 580 590 560 600 L 440 600 C 420 590 400 570 400 530 C 400 490 410 470 430 460 C 450 450 460 440 460 420 A 60 60 0 0 1 440 380 A 70 70 0 0 1 480 340 Z" 
+          fill="#ff00cc" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    
+    <!-- Body Halftone Shading -->
+    <path d="M 480 320 L 520 320 L 520 340 A 70 70 0 0 1 560 380 A 60 60 0 0 1 540 420 C 540 440 550 450 570 460 C 590 470 600 490 600 530 C 600 570 580 590 560 600 L 440 600 C 420 590 400 570 400 530 C 400 490 410 470 430 460 C 450 450 460 440 460 420 A 60 60 0 0 1 440 380 A 70 70 0 0 1 480 340 Z" 
+          fill="url(#halftone)" opacity="0.4" clip-path="url(#kingBodyClip)"/>
+
+    <!-- Body Highlights (White thick comic lines) -->
+    <path d="M 480 340 A 60 60 0 0 1 460 420" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    <path d="M 430 470 C 420 490 420 550 450 580" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    <path d="M 520 340 A 60 60 0 0 1 540 420" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- Glowing Yellow Crown -->
+    <g id="crown" filter="url(#glow)">
+      <!-- Crown Base -->
+      <path d="M 460 320 L 460 280 L 480 280 L 480 260 L 520 260 L 520 280 L 540 280 L 540 320 Z" 
+            fill="url(#crownGlow)" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+      
+      <!-- Crown Highlights -->
+      <path d="M 470 280 L 470 320" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+      <path d="M 530 280 L 530 320" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+      <path d="M 490 260 L 490 280" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+      
+      <!-- Jewel / Center detail -->
+      <circle cx="500" cy="300" r="12" fill="#ff00cc" stroke="#000000" stroke-width="6"/>
+      <circle cx="500" cy="300" r="4" fill="#ffffff"/>
+    </g>
+
+    <!-- Aggressive Thick Outline (Redrawn over everything to ensure crispness) -->
+    <path d="M 480 320 L 520 320 L 520 340 A 70 70 0 0 1 560 380 A 60 60 0 0 1 540 420 C 540 440 550 450 570 460 C 590 470 600 490 600 530 C 600 570 580 590 560 600 L 440 600 C 420 590 400 570 400 530 C 400 490 410 470 430 460 C 450 450 460 440 460 420 A 60 60 0 0 1 440 380 A 70 70 0 0 1 480 340 Z" 
+          fill="none" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+  </g>
+</svg>

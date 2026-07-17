@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="warmBloom" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="75"/>
+    </filter>
+    <filter id="softFocus" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="airShiver">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="1">
+        <animate attributeName="baseFrequency" values="0.008;0.012;0.008" dur="10s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#1F4E5C" opacity="0.95"/>
+  
+  <path d="M0,0h1600v900h-1600z" fill="#722F37" opacity="0.85" filter="url(#softFocus)">
+    <animate attributeName="opacity" values="0.85;0.78;0.85" dur="7s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M300,300 Q540,340 780,360 L760,740 Q520,720 280,800 Z" fill="#F5EDDC" opacity="0.9" filter="url(#softFocus)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 6,-3; 0,0" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <g opacity="0.7">
+    <path d="M350,410h360" stroke="#1A1614" stroke-width="3" opacity="0.8"/>
+    <path d="M340,460h370" stroke="#1A1614" stroke-width="3" opacity="0.8"/>
+    <path d="M330,510h380" stroke="#1A1614" stroke-width="3" opacity="0.8"/>
+    <path d="M320,560h390" stroke="#1A1614" stroke-width="3" opacity="0.7"/>
+    <path d="M310,610h400" stroke="#1A1614" stroke-width="3" opacity="0.6"/>
+    <animate attributeName="opacity" values="0.7;0.65;0.7" dur="6s" repeatCount="indefinite"/>
+  </g>
+  
+  <path d="M1300,300 Q1060,340 820,360 L840,740 Q1080,720 1320,800 Z" fill="#F5EDDC" opacity="0.9" filter="url(#softFocus)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -6,-3; 0,0" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <g opacity="0.7">
+    <path d="M890,410h360" stroke="#1A1614" stroke-width="3" opacity="0.8"/>
+    <path d="M890,460h370" stroke="#1A1614" stroke-width="3" opacity="0.8"/>
+    <path d="M890,510h380" stroke="#1A1614" stroke-width="3" opacity="0.8"/>
+    <path d="M890,560h390" stroke="#1A1614" stroke-width="3" opacity="0.7"/>
+    <path d="M890,610h400" stroke="#1A1614" stroke-width="3" opacity="0.6"/>
+    <animate attributeName="opacity" values="0.7;0.65;0.7" dur="6.5s" repeatCount="indefinite"/>
+  </g>
+  
+  <ellipse cx="800" cy="550" rx="350" ry="280" fill="#B8893A" opacity="0.85" filter="url(#warmBloom)">
+    <animateTransform attributeName="transform" type="scale" values="1;1.12;1" dur="5s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0.85;0.72;0.88;0.75;0.85" dur="0.4s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <circle cx="800" cy="550" r="140" fill="#B8893A" opacity="1" filter="url(#softFocus)">
+    <animateTransform attributeName="transform" type="scale" values="1;0.92;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+  </circle>
+  
+  <g transform="translate(800,550)">
+    <path d="M0,0 L-250,-500 L250,-500 Z" fill="#B8893A" opacity="0.25" filter="url(#softFocus)">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,0 L-400,0 L-300,-400 Z" fill="#F5EDDC" opacity="0.2" filter="url(#softFocus)">
+      <animateTransform attributeName="transform" type="rotate" from="120" to="480" dur="10s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,0 L400,0 L300,-400 Z" fill="#B8893A" opacity="0.2" filter="url(#softFocus)">
+      <animateTransform attributeName="transform" type="rotate" from="240" to="600" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <path d="M0,0 Q300,450 0,900 Z" fill="#1A1614" opacity="0.85">
+    <animate attributeName="opacity" values="0.85;0.75;0.85" dur="9s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M1600,0 Q1300,450 1600,900 Z" fill="#1A1614" opacity="0.85">
+    <animate attributeName="opacity" values="0.85;0.75;0.85" dur="9s" repeatCount="indefinite"/>
+  </path>
+  
+  <ellipse cx="800" cy="850" rx="700" ry="250" fill="#722F37" opacity="0.65" filter="url(#softFocus)">
+    <animate attributeName="opacity" values="0.65;0.55;0.65" dur="8s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <rect width="1600" height="900" filter="url(#airShiver)" opacity="0.1"/>
+</svg>

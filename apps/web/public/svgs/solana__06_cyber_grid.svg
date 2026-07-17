@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#9945FF"/>
+<stop offset="45%" stop-color="#14F195"/>
+<stop offset="75%" stop-color="#FF36F9"/>
+<stop offset="100%" stop-color="#9945FF"/>
+</linearGradient>
+<linearGradient id="g2" x1="0%" y1="100%" x2="0%" y2="0%">
+<stop offset="0%" stop-color="#14F195"/>
+<stop offset="55%" stop-color="#9945FF"/>
+<stop offset="100%" stop-color="#FF36F9"/>
+</linearGradient>
+<radialGradient id="hg" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#FF36F9" stop-opacity="0.9"/>
+<stop offset="45%" stop-color="#9945FF" stop-opacity="0.5"/>
+<stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="g3" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#14F195" stop-opacity="0.55"/>
+<stop offset="50%" stop-color="#9945FF" stop-opacity="0.2"/>
+<stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+</radialGradient>
+<filter id="f1" x="-100%" y="-100%" width="300%" height="300%">
+<feGaussianBlur stdDeviation="70" result="b"/>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="f2" x="-100%" y="-100%" width="300%" height="300%">
+<feGaussianBlur stdDeviation="35" result="b"/>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="f3" x="-100%" y="-100%" width="300%" height="300%">
+<feGaussianBlur stdDeviation="12" result="b"/>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
+<rect width="1600" height="900" fill="#000000"/>
+<ellipse cx="-100" cy="950" rx="650" ry="280" fill="#5B21B6" filter="url(#f1)" opacity="0.55">
+<animate attributeName="opacity" values="0.45;0.65;0.45" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</ellipse>
+<ellipse cx="1700" cy="950" rx="650" ry="280" fill="#5B21B6" filter="url(#f1)" opacity="0.55">
+<animate attributeName="opacity" values="0.45;0.65;0.45" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</ellipse>
+<ellipse cx="800" cy="250" rx="720" ry="125" fill="url(#hg)" filter="url(#f1)" opacity="0.8">
+<animate attributeName="opacity" values="0.6;0.95;0.6" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="rx" values="680;780;680" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="ry" values="115;140;115" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</ellipse>
+<ellipse cx="800" cy="900" rx="850" ry="230" fill="url(#g3)" filter="url(#f1)" opacity="0.28">
+<animate attributeName="opacity" values="0.2;0.38;0.2" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</ellipse>
+<g filter="url(#f1)" opacity="0.22">
+<path d="M800 250L-600 900M800 250L-400 900M800 250L-200 900M800 250L0 900M800 250L200 900M800 250L400 900M800 250L600 900M800 250L800 900M800 250L1000 900M800 250L1200 900M800 250L1400 900M800 250L1600 900M800 250L1800 900M800 250L2000 900M800 250L2200 900M800 250L1338 0M800 250L1262 0M800 250L1185 0M800 250L1108 0M800 250L1031 0M800 250L954 0M800 250L877 0M800 250L800 0M800 250L723 0M800 250L646 0M800 250L569 0M800 250L492 0M800 250L415 0M800 250L338 0M800 250L261 0" fill="none" stroke="url(#g1)" stroke-width="1"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="-14,-7;14,-7;14,7;-14,7;-14,-7" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+<g>
+<animateTransform attributeName="transform" type="rotate" values="-0.5 800 450;0.5 800 450;-0.5 800 450" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<path d="M800 250L-600 900M800 250L-400 900M800 250L-200 900M800 250L0 900M800 250L200 900M800 250L400 900M800 250L600 900M800 250L800 900M800 250L1000 900M800 250L1200 900M800 250L1400 900M800 250L1600 900M800 250L1800 900M800 250L2000 900M800 250L2200 900M800 250L1338 0M800 250L1262 0M800 250L1185 0M800 250L1108 0M800 250L1031 0M800 250L954 0M800 250L877 0M800 250L800 0M800 250L723 0M800 250L646 0M800 250L569 0M800 250L492 0M800 250L415 0M800 250L338 0M800 250L261 0" fill="none" stroke="url(#g1)" stroke-width="1.6" opacity="0.9" pathLength="1000" stroke-dasharray="60 60">
+<animate attributeName="stroke-dashoffset" values="0;-120" dur="6s" repeatCount="indefinite" calcMode="linear"/>
+<animate attributeName="opacity" values="0.8;1;0.8" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+<path d="M812 240L788 240M838 220L762 220M874 190L726 190M911 160L689 160M960 120L640 120M1009 80L591 80M1058 40L542 40M1108 0L492 0M788 260L812 260M751 290L849 290M702 330L898 330M640 380L960 380M566 440L1034 440M480 510L1120 510M382 590L1218 590M271 680L1329 680M148 780L1452 780M12 890L1588 890" fill="none" stroke="url(#g2)" stroke-width="1.3" opacity="0.85" pathLength="1000" stroke-dasharray="50 50">
+<animate attributeName="stroke-dashoffset" values="0;-100" dur="7s" repeatCount="indefinite" calcMode="linear"/>
+<animate attributeName="opacity" values="0.75;0.95;0.75" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+</g>
+</g>
+<g filter="url(#f2)" opacity="0.35">
+<path d="M800 250L-600 900M800 250L-400 900M800 250L-200 900M800 250L0 900M800 250L200 900M800 250L400 900M800 250L600 900M800 250L800 900M800 250L1000 900M800 250L1200 900M800 250L1400 900M800 250L1600 900M800 250L1800 900M800 250L2000 900M800 250L2200 900M800 250L1338 0M800 250L1262 0M800 250L1185 0M800 250L1108 0M800 250L1031 0M800 250L954 0M800 250L877 0M800 250L800 0M800 250L723 0M800 250L646 0M800 250L569 0M800 250L492 0M800 250L415 0M800 250L338 0M800 250L261 0" fill="none" stroke="#FF36F9" stroke-width="2.2">
+<animate attributeName="opacity" values="0.25;0.5;0.25" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+</g>
+<g filter="url(#f3)" opacity="0.45">
+<path d="M812 240L788 240M838 220L762 220M874 190L726 190M911 160L689 160M960 120L640 120M1009 80L591 80M1058 40L542 40M1108 0L492 0M788 260L812 260M751 290L849 290M702 330L898 330M640 380L960 380M566 440L1034 440M480 510L1120 510M382 590L1218 590M271 680L1329 680M148 780L1452 780M12 890L1588 890" fill="none" stroke="#14F195" stroke-width="1.4">
+<animate attributeName="opacity" values="0.35;0.6;0.35" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</path>
+</g>
+<line x1="0" y1="250" x2="1600" y2="250" stroke="#FF36F9" stroke-width="2" filter="url(#f2)" opacity="0.85">
+<animate attributeName="opacity" values="0.7;0.95;0.7" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="stroke-width" values="2;3.5;2" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</line>
+<line x1="0" y1="900" x2="1600" y2="900" stroke="#5B21B6" stroke-width="2" opacity="0.7" filter="url(#f3)"/>
+<circle cx="800" cy="250" r="24" fill="#FF36F9" filter="url(#f2)" opacity="0.85">
+<animate attributeName="r" values="22;32;22" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<animate attributeName="opacity" values="0.75;0.95;0.75" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</circle>
+<circle cx="800" cy="250" r="7" fill="#FFFFFF" filter="url(#f3)" opacity="0.55">
+<animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</circle>
+</svg>

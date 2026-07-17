@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#7c4a25"/>
+      <stop offset="45%" stop-color="#4a2a16"/>
+      <stop offset="100%" stop-color="#1f120c"/>
+    </radialGradient>
+    <linearGradient id="leatherGrad" x1="0%" y1="0%" x2="100%" y2="60%">
+      <stop offset="0%" stop-color="#3d2314"/>
+      <stop offset="35%" stop-color="#6b3e26"/>
+      <stop offset="60%" stop-color="#9e5d36"/>
+      <stop offset="85%" stop-color="#c47a4a"/>
+      <stop offset="100%" stop-color="#e8a06a"/>
+    </linearGradient>
+    <linearGradient id="toeShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,245,220,0)"/>
+      <stop offset="50%" stop-color="rgba(255,245,220,0.55)"/>
+      <stop offset="100%" stop-color="rgba(255,245,220,0)"/>
+    </linearGradient>
+    <linearGradient id="laceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2e1a0f"/>
+      <stop offset="100%" stop-color="#4a2a18"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <style>
+      .shimmer{opacity:0.7;animation:shine 5s ease-in-out infinite;}
+      @keyframes shine{0%,100%{transform:translateX(-40px);opacity:0.5;}50%{transform:translateX(40px);opacity:0.9;}}
+      .particle{animation:float 8s ease-in-out infinite;}
+      .p2{animation-delay:-2.5s;}
+      .p3{animation-delay:-5s;}
+      @keyframes float{0%,100%{transform:translateY(0) translateX(0);opacity:0.3;}50%{transform:translateY(-25px) translateX(12px);opacity:0.8;}}
+      .ambient{animation:pulse 6s ease-in-out infinite;}
+      @keyframes pulse{0%,100%{opacity:0.4;}50%{opacity:0.7;}}
+    </style>
+  </defs>
+  
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+  
+  <g class="ambient" opacity="0.4">
+    <ellipse cx="960" cy="540" rx="520" ry="220" fill="#d49a5e" filter="url(#glow)"/>
+  </g>
+  
+  <g transform="translate(0, 60)">
+    <ellipse cx="960" cy="690" rx="360" ry="28" fill="#0f0906" opacity="0.55" filter="url(#softShadow)"/>
+    
+    <path d="M710 650 L800 645 L1245 640 C1255 640 1258 648 1245 652 L800 657 C780 658 760 655 740 652 L710 650 Z" fill="#1a0f09"/>
+    <path d="M710 650 L800 645 L800 657 L710 662 C700 663 698 655 710 650 Z" fill="#0f0906"/>
+    
+    <path d="M710 630 L710 575 C710 535 750 505 790 495 C830 485 870 490 900 505 C930 520 960 525 1000 528 C1100 535 1190 550 1235 575 C1270 595 1275 615 1245 635 C1215 655 1160 645 1120 640 L800 640 C770 640 740 645 710 630 Z" fill="url(#leatherGrad)"/>
+    
+    <path d="M1120 545 C1160 560 1210 585 1245 635" fill="none" stroke="#2a1810" stroke-width="4" stroke-linecap="round"/>
+    <path d="M1120 545 C1145 550 1165 565 1185 585" fill="none" stroke="#5c3a1e" stroke-width="2" stroke-dasharray="4 6"/>
+    
+    <path d="M790 495 C770 520 760 560 760 600" fill="none" stroke="#2a1810" stroke-width="3" opacity="0.6"/>
+    
+    <path d="M900 505 L940 520 L1010 525 L980 510 Z" fill="url(#laceGrad)"/>
+    <path d="M910 508 L935 518 M945 520 L975 512" fill="none" stroke="#1a0f09" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="910" cy="508" r="4" fill="#8b5a2b"/>
+    <circle cx="935" cy="518" r="4" fill="#8b5a2b"/>
+    <circle cx="945" cy="520" r="4" fill="#8b5a2b"/>
+    <circle cx="975" cy="512" r="4" fill="#8b5a2b"/>
+    
+    <path d="M710 630 L800 640" fill="none" stroke="#1a0f09" stroke-width="3"/>
+    
+    <ellipse cx="1180" cy="590" rx="90" ry="35" fill="url(#toeShine)" transform="rotate(-15 1180 590)" class="shimmer"/>
+    <path d="M1000 535 C1080 540 1150 555 1200 580" fill="none" stroke="#f4d2a8" stroke-width="8" stroke-linecap="round" opacity="0.35" class="shimmer"/>
+    <path d="M760 515 C780 505 800 500 820 500" fill="none" stroke="#f4d2a8" stroke-width="5" stroke-linecap="round" opacity="0.25"/>
+    
+    <path d="M920 505 C940 512 970 515 1000 515" fill="none" stroke="#2a1810" stroke-width="2" opacity="0.5"/>
+  </g>
+  
+  <circle class="particle" cx="480" cy="300" r="3" fill="#f4c68d" opacity="0.3"/>
+  <circle class="particle p2" cx="1420" cy="250" r="4" fill="#f4c68d" opacity="0.3"/>
+  <circle class="particle p3" cx="1600" cy="720" r="2.5" fill="#f4c68d" opacity="0.3"/>
+  <circle class="particle" cx="300" cy="800" r="3.5" fill="#f4c68d" opacity="0.3"/>
+</svg>

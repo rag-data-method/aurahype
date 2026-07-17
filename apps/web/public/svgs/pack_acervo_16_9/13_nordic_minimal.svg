@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" shape-rendering="geometricPrecision">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EDF3F7"/>
+      <stop offset="100%" stop-color="#DDE7EE"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#AECFE6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#AECFE6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- Large ice-blue ring -->
+  <circle cx="420" cy="320" r="320" fill="none" stroke="#AECFE6" stroke-width="2" opacity="0.35">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 36,-24; 0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.35;0.5;0.35" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Large slate-grey ring -->
+  <circle cx="1120" cy="620" r="420" fill="none" stroke="#5F7285" stroke-width="1.5" opacity="0.25">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -32,22; 0,0" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.25;0.38;0.25" dur="15s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Central sage-green glow ring -->
+  <circle cx="820" cy="460" r="260" fill="url(#glow)" stroke="#9AB3A4" stroke-width="2" opacity="0.45">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 22,18; 0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.45;0.6;0.45" dur="11s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Top-right ice-blue ring -->
+  <circle cx="1240" cy="260" r="200" fill="none" stroke="#AECFE6" stroke-width="2" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -18,-12; 0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.4;0.55;0.4" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Bottom-left sage ring -->
+  <circle cx="320" cy="720" r="240" fill="none" stroke="#9AB3A4" stroke-width="1.5" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 26,16; 0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.3;0.45;0.3" dur="13s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Small slate ring -->
+  <circle cx="620" cy="560" r="120" fill="none" stroke="#5F7285" stroke-width="2" opacity="0.45">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 14,-16; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.45;0.6;0.45" dur="9s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Small sage ring -->
+  <circle cx="1020" cy="340" r="140" fill="none" stroke="#9AB3A4" stroke-width="2" opacity="0.35">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -16,14; 0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.35;0.5;0.35" dur="10s" repeatCount="indefinite"/>
+  </circle>
+</svg>

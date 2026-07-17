@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Blur filters for atmospheric depth -->
+    <filter id="blur40" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur80" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="blur120" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="blur160" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="160"/></filter>
+
+    <!-- Organic grain overlay -->
+    <filter id="noise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" result="alphaNoise"/>
+      <feComposite operator="in" in="alphaNoise" in2="SourceGraphic" result="composite"/>
+      <feBlend mode="overlay" in="composite" in2="SourceGraphic"/>
+    </filter>
+
+    <!-- Gradient 1: Deep Purple to Void -->
+    <radialGradient id="g1" cx="30%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#6B4FBB">
+        <animate attributeName="stop-color" values="#6B4FBB;#3D1A4F;#6B4FBB" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#3D1A4F">
+        <animate attributeName="stop-color" values="#3D1A4F;#6B4FBB;#3D1A4F" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#2a0f38"/>
+    </radialGradient>
+
+    <!-- Gradient 2: Tangerine Sun-Glow -->
+    <radialGradient id="g2" cx="65%" cy="85%" r="70%">
+      <stop offset="0%" stop-color="#FF6B00">
+        <animate attributeName="stop-color" values="#FF6B00;#FFB07A;#FF6B00" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="40%" stop-color="#FF9F73">
+        <animate attributeName="stop-color" values="#FF9F73;#FF6B00;#FF9F73" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#FFB07A">
+        <animate attributeName="stop-color" values="#FFB07A;#FF9F73;#FFB07A" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </radialGradient>
+
+    <!-- Gradient 3: The Magical Coral-Magenta Meeting Zone -->
+    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B4FBB">
+        <animate attributeName="stop-color" values="#6B4FBB;#FF9F73;#6B4FBB" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="45%" stop-color="#FF6B00">
+        <animate attributeName="stop-color" values="#FF6B00;#6B4FBB;#FF6B00" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#FFB07A">
+        <animate attributeName="stop-color" values="#FFB07A;#FF9F73;#FFB07A" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Gradient 4: Horizontal atmospheric band -->
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6B4FBB" stop-opacity="0.8">
+        <animate attributeName="stop-color" values="#6B4FBB;#3D1A4F;#6B4FBB" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#FF9F73" stop-opacity="0.5">
+        <animate attributeName="stop-color" values="#FF9F73;#FFB07A;#FF9F73" dur="21s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#FF6B00" stop-opacity="0.6">
+        <animate attributeName="stop-color" values="#FF6B00;#FF9F73;#FF6B00" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Gradient 5: Soft glow halo -->
+    <radialGradient id="g5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFB07A" stop-opacity="0.7">
+        <animate attributeName="stop-opacity" values="0.7;0.3;0.7" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Shared organic paths for morphing -->
+    <path id="p1" d="M-100,200 C100,150 400,300 600,250 C800,200 1000,350 1200,300 C1400,250 1700,400 1700,400 L1700,-100 L-100,-100 Z"/>
+    <path id="p2" d="M-100,250 C200,180 500,320 700,280 C900,240 1100,380 1300,320 C1500,260 1700,420 1700,420 L1700,-100 L-100,-100 Z"/>
+    <path id="p3" d="M-100,300 C150,220 450,350 650,300 C850,250 1050,400 1250,340 C1450,280 1700,440 1700,440 L1700,-100 L-100,-100 Z"/>
+    <path id="p4" d="M-100,350 C250,260 550,380 750,320 C950,260 1150,420 1350,360 C1550,300 1700,460 1700,460 L1700,-100 L-100,-100 Z"/>
+
+    <path id="p5" d="M-100,650 C200,700 500,550 700,600 C900,650 1100,500 1300,560 C1500,620 1700,480 1700,480 L1700,1000 L-100,1000 Z"/>
+    <path id="p6" d="M-100,700 C150,740 450,580 650,640 C850,700 1050,540 1250,600 C1450,660 1700,520 1700,520 L1700,1000 L-100,1000 Z"/>
+    <path id="p7" d="M-100,750 C300,780 600,620 800,680 C1000,740 1200,580 1400,640 C1600,700 1700,560 1700,560 L1700,1000 L-100,1000 Z"/>
+    <path id="p8" d="M-100,800 C100,820 500,650 700,720 C900,790 1100,620 1300,700 C1500,780 1700,600 1700,600 L1700,1000 L-100,1000 Z"/>
+
+    <!-- Drift paths for particles -->
+    <path id="drift1" d="M200,100 Q600,300 400,500 T800,800" fill="none"/>
+    <path id="drift2" d="M1400,100 Q1000,300 1200,500 T800,800" fill="none"/>
+    <path id="drift3" d="M800,-50 Q400,200 600,450 T200,850" fill="none"/>
+  </defs>
+
+  <!-- Layer 1: Base Background (Deep Void) -->
+  <rect width="1600" height="900" fill="#3D1A4F"/>
+
+  <!-- Layer 2: Upper Purple Atmosphere (Massive, Blurred) -->
+  <rect x="-200" y="-200" width="2000" height="700" fill="url(#g1)" filter="url(#blur160)" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- Layer 3: Lower Orange Atmosphere (Massive, Blurred) -->
+  <rect x="-200" y="400" width="2000" height="700" fill="url(#g2)" filter="url(#blur160)" opacity="0.95">
+    <animate attributeName="opacity" values="0.95;0.85;0.95" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- Layer 4: Purple Cloud Ribbons (Upper) -->
+  <use href="#p1" fill="#6B4FBB" filter="url(#blur120)" opacity="0.7">
+    <animate attributeName="d" values="#p1;#p2;#p1" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="-30,10;30,-10;-30,10" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </use>
+
+  <!-- Layer 5: Secondary Purple Wave -->
+  <use href="#p3" fill="#3D1A4F" filter="url(#blur80)" opacity="0.6">
+    <animate attributeName="d" values="#p3;#p4;#p3" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="0.98;1.02;0.98" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </use>
+
+  <!-- Layer 6: Tangerine Rising Wave (Lower) -->
+  <use href="#p5" fill="#FF6B00" filter="url(#blur120)" opacity="0.75">
+    <animate attributeName="d" values="#p5;#p6;#p5" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="20,-15;-20,15;20,-15" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </use>
+
+  <!-- Layer 7: Secondary Orange Wave -->
+  <use href="#p7" fill="#FF9F73" filter="url(#blur80)" opacity="0.65">
+    <animate attributeName="d" values="#p7;#p8;#p7" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1.02;0.98;1.02" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </use>
+
+  <!-- Layer 8: THE MAGICAL MEETING ZONE (Coral-Magenta Transition) -->
+  <rect x="0" y="350" width="1600" height="250" fill="url(#g3)" filter="url(#blur80)" opacity="0.85">
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,-10;0,10;0,-10" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- Layer 9: Horizontal Atmospheric Band -->
+  <rect x="0" y="400" width="1600" height="120" fill="url(#g4)" filter="url(#blur40)" opacity="0.7">
+    <animateTransform attributeName="transform" type="scale" values="1,0.95;1,1.05;1,0.95" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- Layer 10: Soft Glow Halo in Transition -->
+  <ellipse cx="800" cy="480" rx="600" ry="100" fill="url(#g5)" filter="url(#blur80)" opacity="0.8">
+    <animate attributeName="rx" values="600;650;600" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="ry" values="100;120;100" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- Layer 11: Sharp Violet Flowing Ribbon (Upper Focus) -->
+  <path d="M-50,150 C200,100 500,280 800,220 C1100,160 1400,300 1650,200 L1650,50 L-50,50 Z" fill="#6B4FBB" opacity="0.5" filter="url(#blur40)">
+    <animate attributeName="d" values="M-50,150 C200,100 500,280 800,220 C1100,160 1400,300 1650,200 L1650,50 L-50,50 Z;M-50,180 C250,140 550,250 850,190 C1150,130 1350,330 1650,230 L1650,50 L-50,50 Z;M-50,150 C200,100 500,280 800,220 C1100,160 1400,300 1650,200 L1650,50 L-50,50 Z" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,20;0,0" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 12: Deep Violet Undertow -->
+  <path d="M-50,280 C300,240 600,360 900,300 C1200,240 1500,380 1650,320 L1650,200 L-50,200 Z" fill="#3D1A4F" opacity="0.6" filter="url(#blur80)">
+    <animate attributeName="d" values="M-50,280 C300,240 600,360 900,300 C1200,240 1500,380 1650,320 L1650,200 L-50,200 Z;M-50,300 C350,270 650,330 950,280 C1250,230 1450,390 1650,340 L1650,200 L-50,200 Z;M-50,280 C300,240 600,360 900,300 C1200,240 1500,380 1650,320 L1650,200 L-50,200 Z" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1,0.98;1,1.02;1,0.98" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </path>
+
+  <!-- Layer 13: Bright Tangerine Crest (Lower Focus) -->
+  <path d="M-50,750 C250,700 550,820 850,760 C1150,700 1450,840 1650,780 L1650,900 L-50,900 Z" fill="#FF6B00" opacity="0.55" filter="url(#blur40)">
+    <animate attributeName="d" values="M-50,750 C250,700 550,820 850,760 C1150,700 1450,840 1650,780 L1650,900 L-50,900 Z;M-50,720 C200,680 500,850 800,790 C1100,730 1400,860 1650,810 L1650,900 L-50,900 Z;M-50,750 C250,700 550,820 850,760 C1150,700 1450,840 1650,780 L1650,900 L-50,900 Z" dur="21s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-15;0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 14: Soft Peach Undertow -->
+  <path d="M-50,680 C300,640 600,720 900,680 C1200,640 1500,740 1650,700 L1650,850 L-50,850 Z" fill="#FFB07A" opacity="0.45" filter="url(#blur80)">
+    <animate attributeName="d" values="M-50,680 C300,640 600,720 900,680 C1200,640 1500,740 1650,700 L1650,850 L-50,850 Z;M-50,660 C350,630 650,700 950,660 C1250,620 1450,760 1650,720 L1650,850 L-50,850 Z;M-50,680 C300,640 600,720 900,680 C1200,640 1500,740 1650,700 L1650,850 L-50,850 Z" dur="23s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1,1.02;1,0.98;1,1.02" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </path>
+
+  <!-- Layer 15: Central Marbled Bleed (The Fusion) -->
+  <path d="M400,380 C500,350 700,420 900,400 C1100,380 1200,450 1300,420 C1250,500 1050,520 850,510 C650,500 450,460 400,380 Z" fill="url(#g3)" filter="url(#blur40)" opacity="0.8">
+    <animate attributeName="d" values="M400,380 C500,350 700,420 900,400 C1100,380 1200,450 1300,420 C1250,500 1050,520 850,510 C650,500 450,460 400,380 Z;M380,400 C520,370 680,440 880,420 C1080,400 1220,470 1320,440 C1280,520 1040,540 840,530 C640,520 420,480 380,400 Z;M400,380 C500,350 700,420 900,400 C1100,380 1200,450 1300,420 C1250,500 1050,520 850,510 C650,500 450,460 400,380 Z" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;10,-10;0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 16: Diagonal Atmospheric Slash (Vaporwave feel) -->
+  <path d="M-100,500 L1700,300 L1700,450 L-100,650 Z" fill="url(#g4)" filter="url(#blur120)" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,30;0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.4;0.55;0.4" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 17: Particle System (Drifting Light) -->
+  <g opacity="0.7">
+    <circle r="4" fill="#FFB07A" filter="url(#blur40)">
+      <animateMotion dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#drift1"/>
+      </animateMotion>
+      <animate attributeName="r" values="4;6;4" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="6" fill="#FF9F73" filter="url(#blur40)">
+      <animateMotion dur="24s" repeatCount="indefinite" begin="2s" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#drift2"/>
+      </animateMotion>
+      <animate attributeName="r" values="6;3;6" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="3" fill="#6B4FBB" filter="url(#blur40)">
+      <animateMotion dur="22s" repeatCount="indefinite" begin="4s" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#drift3"/>
+      </animateMotion>
+      <animate attributeName="r" values="3;5;3" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="5" fill="#FF6B00" filter="url(#blur40)">
+      <animateMotion dur="18s" repeatCount="indefinite" begin="1s" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#drift1"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="4" fill="#3D1A4F" filter="url(#blur40)">
+      <animateMotion dur="25s" repeatCount="indefinite" begin="5s" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#drift2"/>
+      </animateMotion>
+      <animate attributeName="r" values="4;7;4" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="3" fill="#FFB07A" filter="url(#blur40)">
+      <animateMotion dur="28s" repeatCount="indefinite" begin="3s" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#drift3"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="7" fill="#FF9F73" filter="url(#blur40)">
+      <animateMotion dur="21s" repeatCount="indefinite" begin="6s" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#drift1"/>
+      </animateMotion>
+      <animate attributeName="r" values="7;4;7" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+    <circle r="5" fill="#6B4FBB" filter="url(#blur40)">
+      <animateMotion dur="19s" repeatCount="indefinite" begin="7s" calcMode="spline" keySplines="0.4 0 0.6 1">
+        <mpath href="#drift2"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </circle>
+  </g>
+
+  <!-- Layer 18: Additional floating ribbons for depth -->
+  <path d="M-50,420 C200,390 500,460 800,430 C1100,400 1400,480 1650,440 L1650,380 L-50,380 Z" fill="#FF9F73" opacity="0.35" filter="url(#blur80)">
+    <animate attributeName="d" values="M-50,420 C200,390 500,460 800,430 C1100,400 1400,480 1650,440 L1650,380 L-50,380 Z;M-50,440 C250,410 550,440 850,410 C1150,380 1350,500 1650,460 L1650,380 L-50,380 Z;M-50,420 C200,390 500,460 800,430 C1100,400 1400,480 1650,440 L1650,380 L-50,380 Z" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,10;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <path d="M-50,520 C300,490 600,560 900,530 C1200,500 1500,570 1650,540 L1650,480 L-50,480 Z" fill="#6B4FBB" opacity="0.3" filter="url(#blur120)">
+    <animate attributeName="d" values="M-50,520 C300,490 600,560 900,530 C1200,500 1500,570 1650,540 L1650,480 L-50,480 Z;M-50,500 C350,480 650,530 950,500 C1250,470 1450,590 1650,560 L1650,480 L-50,480 Z;M-50,520 C300,490 600,560 900,530 C1200,500 1500,570 1650,540 L1650,480 L-50,480 Z" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1,0.98;1,1.02;1,0.98" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </path>
+
+  <!-- Layer 19: Noise texture overlay for organic grain -->
+  <rect width="1600" height="900" fill="#ffffff" filter="url(#noise)" opacity="0.6" style="mix-blend-mode: overlay; pointer-events: none;"/>
+
+  <!-- Layer 20: Final vignette to focus the eye on the transition -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+    <stop offset="50%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#12051a" stop-opacity="0.5"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" style="mix-blend-mode: multiply; pointer-events: none;"/>
+</svg>

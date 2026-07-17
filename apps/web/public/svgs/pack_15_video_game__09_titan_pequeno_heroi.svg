@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3D3D2F">
+        <animate attributeName="stop-color" values="#3D3D2F;#4A4A3F;#3D3D2F" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="40%" stop-color="#6B5F47">
+        <animate attributeName="stop-color" values="#6B5F47;#7A6E52;#6B5F47" dur="25s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#8B8E5C">
+        <animate attributeName="stop-color" values="#8B8E5C;#9A9D6B;#8B8E5C" dur="25s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Rupture Light Gradient -->
+    <radialGradient id="ruptureLight" cx="20%" cy="55%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD5" stop-opacity="0.7">
+        <animate attributeName="stop-opacity" values="0.7;0.85;0.7" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#F5EBD5" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#F5EBD5" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Rim Light Glow -->
+    <radialGradient id="heroGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5EBD5" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F5EBD5" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="blur40"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur80"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="blur120"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="blur160"><feGaussianBlur stdDeviation="160"/></filter>
+    <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+
+    <!-- Titan Body Path -->
+    <path id="titanPath" d="M640,950 C620,750 580,600 550,550 C540,500 560,450 580,420 C570,400 520,380 500,350 C480,300 510,200 580,180 C620,170 650,140 640,100 C630,60 620,30 600,10 L650,0 L700,10 C680,40 670,70 660,100 C650,140 680,160 720,160 C780,160 820,130 860,100 L880,140 C850,180 820,220 800,250 C780,280 810,320 860,350 C900,370 930,340 950,300 L980,350 C950,400 920,450 900,480 C880,510 920,550 980,580 C1050,610 1100,650 1120,700 C1140,750 1150,850 1160,950 Z"/>
+
+    <!-- Moss Patches -->
+    <g id="moss1">
+      <path fill="#4A5C3A" opacity="0.6" filter="url(#blur8)" d="M600,220 C620,200 650,210 670,230 C650,250 620,260 600,240 Z"/>
+      <path fill="#5D7048" opacity="0.4" filter="url(#blur8)" d="M720,300 C740,280 780,290 800,310 C770,340 730,330 720,300 Z"/>
+      <path fill="#4A5C3A" opacity="0.5" filter="url(#blur8)" d="M850,450 C880,430 920,440 940,460 C910,490 870,480 850,450 Z"/>
+      <path fill="#5D7048" opacity="0.3" filter="url(#blur8)" d="M620,550 C650,530 690,540 710,560 C680,590 640,580 620,550 Z"/>
+    </g>
+    <g id="moss2">
+      <path fill="#4A5C3A" opacity="0.5" filter="url(#blur8)" d="M650,120 C670,100 700,110 710,130 C690,150 660,140 650,120 Z"/>
+      <path fill="#5D7048" opacity="0.4" filter="url(#blur8)" d="M780,180 C800,160 840,170 850,190 C830,210 790,200 780,180 Z"/>
+      <path fill="#4A5C3A" opacity="0.6" filter="url(#blur8)" d="M820,350 C850,330 890,340 910,360 C880,390 840,380 820,350 Z"/>
+      <path fill="#5D7048" opacity="0.4" filter="url(#blur8)" d="M900,500 C930,480 970,490 990,510 C960,540 920,530 900,500 Z"/>
+    </g>
+
+    <!-- Dust Particle -->
+    <circle id="p" r="2" fill="#F5EBD5" opacity="0.6"/>
+  </defs>
+
+  <!-- Layer 1: Background Sky -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#skyGrad)"/>
+
+  <!-- Layer 2: Distant Fog/Clouds (blur160) -->
+  <g filter="url(#blur160)" opacity="0.4">
+    <ellipse cx="400" cy="400" rx="300" ry="150" fill="#6B5F47">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,10; 0,0" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1200" cy="300" rx="400" ry="200" fill="#3D3D2F">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 40,-20; 0,0" dur="25s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="800" cy="200" rx="500" ry="100" fill="#8B8E5C" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="30s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Layer 3: Far Background Mountains (blur120) -->
+  <g filter="url(#blur120)" opacity="0.5">
+    <path fill="#4A4A3F" d="M0,900 L0,650 C150,600 300,550 450,620 C600,690 750,580 900,640 C1050,700 1200,600 1350,680 C1500,760 1600,620 1600,900 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,5; 0,0" dur="22s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 4: Mid Background Titan Base (blur80) -->
+  <g filter="url(#blur80)" opacity="0.6">
+    <path fill="#2A2A25" d="M500,950 C480,850 550,750 650,700 C700,680 750,650 800,620 C850,580 900,550 950,500 L1000,950 Z"/>
+  </g>
+
+  <!-- Layer 5: Mid-ground Atmospheric Dust (blur40) -->
+  <g filter="url(#blur40)" opacity="0.3">
+    <circle cx="500" cy="600" r="100" fill="#F5EBD5">
+      <animate attributeName="cy" values="600;580;600" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="500" r="150" fill="#8B8E5C">
+      <animate attributeName="cx" values="900;920;900" dur="18s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 6: The Massive Titan Silhouette (Main) -->
+  <g id="titanGroup">
+    <!-- Titan Body -->
+    <use href="#titanPath" fill="#1E1E1A"/>
+    
+    <!-- Animated Breathing -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+
+    <!-- Moss on Titan -->
+    <use href="#moss1"/>
+    <use href="#moss2"/>
+
+    <!-- Fissure/Crack in Titan -->
+    <path stroke="#F5EBD5" stroke-width="3" fill="none" opacity="0.8" d="M580,180 Q600,250 590,300 T610,400 T600,500 T620,600">
+      <animate attributeName="stroke-opacity" values="0.8;0.4;0.8" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Layer 7: Titan Rim Light (Right Side) -->
+  <g>
+    <path fill="#F5EBD5" opacity="0.15" filter="url(#blur40)" d="M640,100 L650,0 L700,10 C680,40 670,70 660,100 Z"/>
+    <path fill="#F5EBD5" opacity="0.2" filter="url(#blur80)" d="M860,100 L880,140 C850,180 820,220 800,250 L780,200 C810,160 840,120 860,100 Z"/>
+    <path fill="#F5EBD5" opacity="0.15" filter="url(#blur40)" d="M950,300 L980,350 C950,400 920,450 900,480 L880,420 C910,380 940,340 950,300 Z"/>
+    <animate attributeName="opacity" values="1;0.8;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Layer 8: The Rupture / Light Behind Titan -->
+  <ellipse cx="320" cy="500" rx="350" ry="450" fill="url(#ruptureLight)">
+    <animate attributeName="rx" values="350;380;350" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="450;480;450" dur="14s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Layer 9: Ground / Foreground Terrain -->
+  <path fill="#1A1915" d="M0,900 L0,820 C100,810 200,790 300,800 C400,810 500,840 600,830 C700,820 800,780 900,790 C1000,800 1100,840 1200,850 C1300,860 1400,820 1500,810 C1550,805 1600,820 1600,900 Z"/>
+  
+  <!-- Layer 10: Ground Mist (blur40) -->
+  <g filter="url(#blur40)" opacity="0.4">
+    <ellipse cx="400" cy="850" rx="300" ry="40" fill="#8B8E5C">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,0; 0,0" dur="16s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1000" cy="880" rx="400" ry="50" fill="#6B5F47">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,0; 0,0" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Layer 11: Tiny Hero Silhouette -->
+  <g id="hero">
+    <!-- Hero Glow -->
+    <circle cx="250" cy="755" r="25" fill="url(#heroGlow)" opacity="0.8">
+      <animate attributeName="r" values="25;30;25" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Hero Shape -->
+    <g fill="#0F0F0D">
+      <!-- Legs -->
+      <path d="M238,780 L238,760 L245,760 L245,780 Z"/>
+      <path d="M255,780 L255,760 L262,760 L262,780 Z"/>
+      <!-- Torso -->
+      <path d="M235,760 L265,760 L262,745 L238,745 Z"/>
+      <!-- Arm & Sword Raised -->
+      <path d="M245,750 L235,710 L240,705 L250,745 Z"/> <!-- Arm -->
+      <path d="M232,712 L238,702 L235,695 L229,705 Z"/> <!-- Hand -->
+      <path d="M235,695 L232,690 L235,688 L238,693 Z"/> <!-- Hilt -->
+      <path d="M236,692 L238,690 L245,630 L243,628 L236,690 Z"/> <!-- Blade -->
+      <!-- Head -->
+      <circle cx="250" cy="740" r="7"/>
+    </g>
+
+    <!-- Hero Rim Light (Left side facing rupture) -->
+    <path d="M238,780 L238,760 L245,760 L245,780 Z" fill="#F5EBD5" opacity="0.6"/>
+    <path d="M235,760 L265,760 L262,745 L238,745 Z" fill="#F5EBD5" opacity="0.5"/>
+    <circle cx="250" cy="740" r="7" fill="none" stroke="#F5EBD5" stroke-width="1.5" opacity="0.7"/>
+    <path d="M245,750 L235,710 L240,705 L250,745 Z" fill="#F5EBD5" opacity="0.8"/>
+    <path d="M235,695 L232,690 L235,688 L238,693 Z" fill="#F5EBD5"/>
+    <path d="M236,692 L238,690 L245,630 L243,628 L236,690 Z" fill="#F5EBD5" opacity="0.9"/>
+
+    <!-- Hero Breathing Animation -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-2; 0,0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </g>
+
+  <!-- Layer 12: Atmospheric Dust / Falling Debris -->
+  <g>
+    <use href="#p" x="500" y="600">
+      <animateMotion path="M0,0 L20,-80 L-10,-160" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="18s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="700" y="500">
+      <animateMotion path="M0,0 L-30,-100 L40,-220" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="22s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="850" y="400">
+      <animateMotion path="M0,0 L10,-60 L-20,-140" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="15s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="600" y="700">
+      <animateMotion path="M0,0 L40,-120 L-30,-240" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="20s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="950" y="300">
+      <animateMotion path="M0,0 L-20,-80 L30,-180" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="25s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="550" y="350">
+      <animateMotion path="M0,0 L15,-50 L-10,-110" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="17s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="750" y="650">
+      <animateMotion path="M0,0 L-25,-90 L20,-180" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="19s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="800" y="200">
+      <animateMotion path="M0,0 L35,-70 L-15,-150" dur="23s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="23s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="650" y="450">
+      <animateMotion path="M0,0 L-15,-40 L25,-100" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="16s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p" x="900" y="550">
+      <animateMotion path="M0,0 L20,-100 L-40,-200" dur="21s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="21s" repeatCount="indefinite"/>
+    </use>
+    
+    <!-- Additional smaller dust -->
+    <circle r="1" fill="#F5EBD5" x="580" y="580">
+      <animateMotion path="M0,0 L10,-40 L-5,-90" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.5" fill="#F5EBD5" x="720" y="420">
+      <animateMotion path="M0,0 L-20,-60 L30,-130" dur="26s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="26s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1" fill="#F5EBD5" x="880" y="380">
+      <animateMotion path="M0,0 L15,-50 L-20,-110" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.5" fill="#F5EBD5" x="520" y="680">
+      <animateMotion path="M0,0 L25,-80 L-15,-170" dur="24s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="24s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1" fill="#F5EBD5" x="680" y="320">
+      <animateMotion path="M0,0 L-10,-30 L20,-70" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 13: Foreground Floating Particles / Embers -->
+  <g>
+    <circle r="1.5" fill="#F5EBD5" opacity="0.8">
+      <animateMotion path="M100,900 C150,800 50,700 120,600 C180,500 80,400 150,300" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.2;0.8;1" dur="30s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" fill="#F5EBD5" opacity="0.9">
+      <animateMotion path="M200,900 C250,750 150,650 220,550 C280,450 180,350 250,250" dur="35s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="35s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1" fill="#F5EBD5" opacity="0.6">
+      <animateMotion path="M300,900 C350,820 250,720 320,620 C380,520 280,420 350,320" dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0.6;0" keyTimes="0;0.25;0.75;1" dur="28s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.5" fill="#F5EBD5" opacity="0.7">
+      <animateMotion path="M50,900 C100,780 0,680 70,580 C130,480 30,380 100,280" dur="32s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.2;0.8;1" dur="32s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.5" fill="#F5EBD5" opacity="0.8">
+      <animateMotion path="M400,900 C450,800 350,700 420,600 C480,500 380,400 450,300" dur="26s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.2;0.8;1" dur="26s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Drifting sideways dust near ground -->
+    <circle r="2" fill="#8B8E5C" opacity="0.4" filter="url(#blur8)">
+      <animateMotion path="M0,850 C100,840 200,860 300,850 C400,840 500,860 600,850" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3" fill="#6B5F47" opacity="0.3" filter="url(#blur8)">
+      <animateMotion path="M1600,880 C1500,870 1400,890 1300,880 C1200,870 1100,890 1000,880" dur="24s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.5" fill="#F5EBD5" opacity="0.5" filter="url(#blur8)">
+      <animateMotion path="M800,900 C900,880 1000,900 1100,880 C1200,860 1300,880 1400,900" dur="22s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 14: Light Shafts / God Rays -->
+  <g opacity="0.1">
+    <polygon points="100,0 300,0 600,900 200,900" fill="url(#ruptureLight)">
+      <animateTransform attributeName="transform" type="skewX" values="0;5;0" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.05;0.15;0.05" dur="12s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="250,0 400,0 900,900 500,900" fill="url(#ruptureLight)">
+      <animateTransform attributeName="transform" type="skewX" values="0;-3;0" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.05;0.12;0.05" dur="15s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Layer 15: Foreground Rocks/Grass Silhouettes (Very bottom) -->
+  <g fill="#0D0D0B">
+    <path d="M0,900 L0,860 C20,850 40,855 60,870 C80,885 100,880 120,890 C140,900 160,885 180,895 C200,905 220,890 240,900 Z"/>
+    <path d="M1400,900 L1400,875 C1420,865 1440,870 1460,885 C1480,900 1500,890 1520,900 L1600,900 L1600,900 Z"/>
+    <!-- Small grass blades near hero -->
+    <path d="M230,800 L228,785 L232,785 Z"/>
+    <path d="M240,800 L238,780 L242,780 Z"/>
+    <path d="M260,800 L258,788 L262,788 Z"/>
+    <path d="M270,800 L268,782 L272,782 Z"/>
+  </g>
+
+  <!-- Layer 16: Final Vignette / Cover Darkness -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="40%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.6"/>
+  </radialGradient>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+
+</svg>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="sky" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0A0F2E">
+        <animate attributeName="stop-color" values="#0A0F2E;#121B4A;#0A0F2E" dur="20s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="35%" stop-color="#0A0F2E">
+        <animate attributeName="stop-color" values="#0A0F2E;#0D1538;#0A0F2E" dur="25s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="85%" stop-color="#050817">
+        <animate attributeName="stop-color" values="#050817;#070B20;#050817" dur="22s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#02030A" />
+    </linearGradient>
+
+    <!-- Horizon Glow Gradient -->
+    <linearGradient id="horizGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF9F73" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.5;0" dur="18s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#FF9F73" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Milky Way Glow -->
+    <linearGradient id="milkyWayGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F8F4FF" stop-opacity="0.05"/>
+      <stop offset="50%" stop-color="#2A3F6B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#F8F4FF" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="b20"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="b60"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="b90"><feGaussianBlur stdDeviation="90"/></filter>
+    <filter id="b120"><feGaussianBlur stdDeviation="120"/></filter>
+
+    <!-- Star Shape -->
+    <circle id="S" r="1.2" fill="#F8F4FF">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </defs>
+
+  <!-- Layer 1: Sky Background -->
+  <rect width="1600" height="900" fill="url(#sky)" />
+
+  <!-- Layer 2: Deep Atmospheric Haze -->
+  <rect y="500" width="1600" height="400" fill="#0A0F2E" opacity="0.6" filter="url(#b120)" />
+
+  <!-- Layer 3: Horizon Warm Glow Base -->
+  <rect y="650" width="1600" height="250" fill="url(#horizGlow)" opacity="0.4" filter="url(#b90)" />
+
+  <!-- Layer 4: Distant Left Warm Fog Bank -->
+  <ellipse cx="300" cy="750" rx="500" ry="150" fill="#FF9F73" opacity="0.15" filter="url(#b120)">
+    <animate attributeName="cx" values="300;280;300" dur="25s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- Layer 5: Milky Way Diagonal Band -->
+  <g filter="url(#b60)" opacity="0.6">
+    <path d="M -100,850 Q 400,400 900,100 L 1100,-50 L -100,-50 Z" fill="url(#milkyWayGrad)" />
+    <path d="M 0,800 Q 500,350 1000,50" fill="none" stroke="#F8F4FF" stroke-width="2" opacity="0.1" filter="url(#b20)" />
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-10; 0,0" dur="40s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Layer 6: Dense Star Field -->
+  <g>
+    <!-- Clusters of stars using use for efficiency -->
+    <use href="#S" x="150" y="200" />
+    <use href="#S" x="250" y="150" />
+    <use href="#S" x="350" y="250" />
+    <use href="#S" x="450" y="100" />
+    <use href="#S" x="550" y="300" />
+    <use href="#S" x="650" y="180" />
+    <use href="#S" x="750" y="80" />
+    <use href="#S" x="850" y="220" />
+    <use href="#S" x="950" y="140" />
+    <use href="#S" x="1050" y="260" />
+    <use href="#S" x="1150" y="90" />
+    <use href="#S" x="1250" y="170" />
+    <use href="#S" x="1350" y="210" />
+    <use href="#S" x="1450" y="120" />
+    <use href="#S" x="200" y="350" />
+    <use href="#S" x="300" y="450" />
+    <use href="#S" x="400" y="380" />
+    <use href="#S" x="500" y="480" />
+    <use href="#S" x="600" y="320" />
+    <use href="#S" x="700" y="420" />
+    <use href="#S" x="800" y="280" />
+    <use href="#S" x="900" y="380" />
+    <use href="#S" x="1000" y="320" />
+    <use href="#S" x="1100" y="420" />
+    <use href="#S" x="1200" y="300" />
+    <use href="#S" x="1300" y="400" />
+    <use href="#S" x="1400" y="340" />
+    <use href="#S" x="100" y="500" />
+    <use href="#S" x="200" y="600" />
+    <use href="#S" x="300" y="550" />
+    <use href="#S" x="400" y="650" />
+    <use href="#S" x="500" y="580" />
+    <use href="#S" x="600" y="680" />
+    <use href="#S" x="700" y="520" />
+    <use href="#S" x="800" y="620" />
+    <use href="#S" x="900" y="560" />
+    <use href="#S" x="1000" y="660" />
+    <use href="#S" x="1100" y="580" />
+    <use href="#S" x="1200" y="680" />
+    <use href="#S" x="1300" y="600" />
+    <use href="#S" x="1400" y="700" />
+    <use href="#S" x="1500" y="520" />
+    <use href="#S" x="50" y="100" />
+    <use href="#S" x="150" y="50" />
+    <use href="#S" x="50" y="250" />
+    <use href="#S" x="250" y="350" />
+    <use href="#S" x="350" y="50" />
+    <use href="#S" x="450" y="200" />
+    <use href="#S" x="550" y="80" />
+    <use href="#S" x="650" y="120" />
+    <use href="#S" x="750" y="280" />
+    <use href="#S" x="850" y="320" />
+    <use href="#S" x="950" y="60" />
+    <use href="#S" x="1050" y="180" />
+    <use href="#S" x="1150" y="220" />
+    <use href="#S" x="1250" y="60" />
+    <use href="#S" x="1350" y="120" />
+    <use href="#S" x="1450" y="280" />
+    <use href="#S" x="1550" y="80" />
+    <use href="#S" x="1550" y="200" />
+    <use href="#S" x="1550" y="350" />
+    <use href="#S" x="1550" y="500" />
+    <use href="#S" x="1550" y="650" />
+    
+    <!-- Larger detailed stars -->
+    <circle cx="420" cy="180" r="2" fill="#F8F4FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="680" cy="120" r="2.5" fill="#F8F4FF" opacity="0.9">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="820" cy="260" r="1.8" fill="#F8F4FF" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1120" cy="80" r="2" fill="#F8F4FF" opacity="0.7">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1380" cy="190" r="2.2" fill="#F8F4FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Layer 7: Shooting Star -->
+  <g>
+    <line x1="0" y1="0" x2="80" y2="-30" stroke="#F8F4FF" stroke-width="2" opacity="0" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;1;0" dur="12s" begin="2s" repeatCount="indefinite" />
+      <animateMotion path="M 200,-50 L 900,400" dur="12s" begin="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="0" y1="0" x2="120" y2="-40" stroke="url(#horizGlow)" stroke-width="4" opacity="0" stroke-linecap="round" filter="url(#b20)">
+      <animate attributeName="opacity" values="0;0.6;0" dur="12s" begin="2s" repeatCount="indefinite" />
+      <animateMotion path="M 200,-50 L 900,400" dur="12s" begin="2s" repeatCount="indefinite" />
+    </line>
+  </g>
+
+  <!-- Layer 8: Distant Hill Silhouette -->
+  <path d="M 0,750 Q 400,680 800,720 T 1600,700 L 1600,900 L 0,900 Z" fill="#070A1E" opacity="0.8" filter="url(#b60)" />
+
+  <!-- Layer 9: Mid-ground Atmospheric Glow Base -->
+  <ellipse cx="1050" cy="780" rx="200" ry="80" fill="#FF9F73" opacity="0.2" filter="url(#b90)">
+    <animate attributeName="rx" values="200;220;200" dur="15s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- Layer 10: Main Hill/Focal Ground -->
+  <path d="M 800,900 L 820,780 Q 900,740 980,760 T 1150,800 L 1200,900 Z" fill="#050714" />
+
+  <!-- Layer 11: Observatory Silhouette -->
+  <g>
+    <!-- Observatory Body -->
+    <path d="M 1020,780 L 1020,710 Q 1020,680 1050,670 L 1130,670 Q 1160,680 1160,710 L 1160,780 Z" fill="#03050F" />
+    <!-- Observatory Dome -->
+    <path d="M 1010,680 C 1010,620 1030,580 1090,580 C 1150,580 1170,620 1170,680 Z" fill="#03050F" />
+    <!-- Observatory Slit -->
+    <path d="M 1070,600 L 1110,600 L 1105,660 L 1075,660 Z" fill="#0A0F2E" />
+    <!-- Warm light inside slit -->
+    <path d="M 1072,602 L 1108,602 L 1103,658 L 1077,658 Z" fill="#FF9F73" opacity="0.6" filter="url(#b20)">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="8s" repeatCount="indefinite" />
+    </path>
+    <!-- Base of observatory -->
+    <rect x="1015" y="770" width="150" height="20" fill="#03050F" />
+    
+    <!-- Observatory Sway (Subtle breathing) -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-2; 0,0" dur="12s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Layer 12: Observatory Rim Light -->
+  <g opacity="0.8">
+    <!-- Left edge rim light -->
+    <path d="M 1020,780 L 1020,710 Q 1020,680 1050,670" fill="none" stroke="#FF9F73" stroke-width="2" filter="url(#b20)" />
+    <path d="M 1010,680 C 1010,620 1030,580 1090,580" fill="none" stroke="#FF9F73" stroke-width="1.5" filter="url(#b20)" />
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="10s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Layer 13: Foreground Hill Silhouette -->
+  <path d="M 0,900 L 0,820 Q 200,780 400,830 T 900,880 L 1600,850 L 1600,900 Z" fill="#02030A" />
+  
+  <!-- Foreground Trees (Left side to balance composition) -->
+  <g fill="#02030A">
+    <!-- Tree 1 -->
+    <path d="M 150,830 L 160,750 L 170,830 Z" />
+    <path d="M 140,780 L 180,700 L 220,780 Z" />
+    <path d="M 130,730 L 180,620 L 230,730 Z" />
+    
+    <!-- Tree 2 -->
+    <path d="M 80,850 L 90,780 L 100,850 Z" />
+    <path d="M 70,800 L 100,730 L 130,800 Z" />
+    <path d="M 60,750 L 100,650 L 140,750 Z" />
+    
+    <!-- Tree 3 -->
+    <path d="M 250,840 L 260,780 L 270,840 Z" />
+    <path d="M 240,800 L 270,720 L 300,800 Z" />
+    
+    <!-- Tree 4 -->
+    <path d="M 600,870 L 610,810 L 620,870 Z" />
+    <path d="M 590,830 L 620,760 L 650,830 Z" />
+  </g>
+
+  <!-- Layer 14: Foreground Atmospheric Fog -->
+  <rect y="800" width="1600" height="100" fill="#0A0F2E" opacity="0.5" filter="url(#b120)" />
+
+  <!-- Layer 15: Floating Dust / Particles -->
+  <g>
+    <circle cx="200" cy="600" r="1" fill="#F8F4FF" opacity="0.3">
+      <animate attributeName="cy" values="600;580;600" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="200;220;200" dur="18s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="10s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="500" r="1.5" fill="#F8F4FF" opacity="0.2">
+      <animate attributeName="cy" values="500;520;500" dur="20s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="500;480;500" dur="22s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="12s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="800" cy="400" r="1" fill="#F8F4FF" opacity="0.3">
+      <animate attributeName="cy" values="400;380;400" dur="16s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="800;820;800" dur="19s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="11s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1200" cy="300" r="1.2" fill="#F8F4FF" opacity="0.2">
+      <animate attributeName="cy" values="300;320;300" dur="14s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1200;1180;1200" dur="17s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="13s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1400" cy="600" r="1" fill="#F8F4FF" opacity="0.3">
+      <animate attributeName="cy" values="600;580;600" dur="18s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1400;1420;1400" dur="21s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="9s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="700" r="1.5" fill="#FF9F73" opacity="0.2">
+      <animate attributeName="cy" values="700;680;700" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="300;320;300" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.1;0.3;0.1" dur="14s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="900" cy="750" r="1" fill="#FF9F73" opacity="0.3">
+      <animate attributeName="cy" values="750;730;750" dur="17s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="900;880;900" dur="20s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="10s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1100" cy="650" r="1.2" fill="#F8F4FF" opacity="0.2">
+      <animate attributeName="cy" values="650;630;650" dur="13s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1100;1120;1100" dur="16s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.1;0.3;0.1" dur="11s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Layer 16: Vignette & Final Atmosphere -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="50%" stop-color="#02030A" stop-opacity="0" />
+    <stop offset="100%" stop-color="#02030A" stop-opacity="0.7" />
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none" />
+</svg>

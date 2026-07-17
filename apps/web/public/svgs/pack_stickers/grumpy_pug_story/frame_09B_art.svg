@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Glow Filter for Cubes -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    /* Base Styles */
+    .bg-shape { fill: #F3E03B; }
+    .bg-shape-alt { fill: #FF3B77; }
+    
+    .cube-face-top { fill: #FFFFFF; }
+    .cube-face-side { fill: #FF00FF; }
+    .cube-face-front { fill: #00FFFF; }
+    .cube-outline { stroke: #000000; stroke-width: 8px; stroke-linejoin: round; }
+    
+    .pug-fawn { fill: #D4A373; }
+    .pug-black { fill: #1A1A1A; }
+    .pug-tongue { fill: #FF3B77; }
+    .pug-white { fill: #FFFFFF; }
+    .pug-outline { stroke: #000000; stroke-width: 12px; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Floating Cubes Animation */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-40px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .cube-group {
+      animation: float 4s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center center;
+    }
+    .cube-1 { animation-delay: 0s; }
+    .cube-2 { animation-delay: -1.2s; }
+    .cube-3 { animation-delay: -2.5s; }
+    .cube-4 { animation-delay: -0.5s; }
+    .cube-5 { animation-delay: -3.0s; }
+    .cube-6 { animation-delay: -1.8s; }
+
+    /* Pug Running Animation */
+    @keyframes run-body {
+      0% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-20px) rotate(-2deg); }
+      50% { transform: translateY(0px) rotate(0deg); }
+      75% { transform: translateY(-20px) rotate(2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    @keyframes run-leg-lf {
+      0% { transform: rotate(30deg); }
+      50% { transform: rotate(-50deg); }
+      100% { transform: rotate(30deg); }
+    }
+    @keyframes run-leg-rf {
+      0% { transform: rotate(-50deg); }
+      50% { transform: rotate(30deg); }
+      100% { transform: rotate(-50deg); }
+    }
+    @keyframes run-leg-lb {
+      0% { transform: rotate(-40deg); }
+      50% { transform: rotate(40deg); }
+      100% { transform: rotate(-40deg); }
+    }
+    @keyframes run-leg-rb {
+      0% { transform: rotate(40deg); }
+      50% { transform: rotate(-40deg); }
+      100% { transform: rotate(40deg); }
+    }
+    @keyframes run-tail {
+      0% { transform: rotate(-10deg); }
+      50% { transform: rotate(20deg); }
+      100% { transform: rotate(-10deg); }
+    }
+    @keyframes run-head {
+      0% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+      100% { transform: rotate(-5deg); }
+    }
+    @keyframes run-ear-l {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(-15deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes run-ear-r {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(15deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes run-tongue {
+      0% { transform: scaleY(1); }
+      50% { transform: scaleY(1.4); }
+      100% { transform: scaleY(1); }
+    }
+
+    .pug-body-group {
+      animation: run-body 0.6s linear infinite;
+      transform-box: fill-box;
+      transform-origin: center center;
+    }
+    .pug-head-group {
+      animation: run-head 0.6s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 800px 500px;
+    }
+    .leg-lf {
+      animation: run-leg-lf 0.3s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 750px 750px;
+    }
+    .leg-rf {
+      animation: run-leg-rf 0.3s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 850px 750px;
+    }
+    .leg-lb {
+      animation: run-leg-lb 0.3s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 680px 720px;
+    }
+    .leg-rb {
+      animation: run-leg-rb 0.3s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 780px 720px;
+    }
+    .pug-tail {
+      animation: run-tail 0.15s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 600px 650px;
+    }
+    .pug-ear-l {
+      animation: run-ear-l 0.3s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 700px 400px;
+    }
+    .pug-ear-r {
+      animation: run-ear-r 0.3s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 900px 400px;
+    }
+    .pug-tongue {
+      animation: run-tongue 0.15s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 820px 620px;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#1A1A2E" />
+  
+  <!-- Halftone Dots Pattern (Simulated with circles) -->
+  <circle cx="200" cy="200" r="80" fill="#16213E" opacity="0.5" />
+  <circle cx="600" cy="100" r="120" fill="#16213E" opacity="0.5" />
+  <circle cx="1200" cy="300" r="150" fill="#16213E" opacity="0.5" />
+  <circle cx="1700" cy="150" r="100" fill="#16213E" opacity="0.5" />
+  <circle cx="1500" cy="900" r="180" fill="#16213E" opacity="0.5" />
+  <circle cx="300" cy="850" r="110" fill="#16213E" opacity="0.5" />
+  <circle cx="900" cy="950" r="90" fill="#16213E" opacity="0.5" />
+
+  <!-- Abstract Background Shapes -->
+  <circle cx="960" cy="540" r="450" fill="#FF00FF" opacity="0.2" />
+  <circle cx="960" cy="540" r="350" fill="#00FFFF" opacity="0.2" />
+  <rect x="100" y="100" width="300" height="300" fill="#F3E03B" opacity="0.3" transform="rotate(15 250 250)" />
+  <rect x="1500" y="700" width="250" height="250" fill="#FF3B77" opacity="0.3" transform="rotate(-20 1625 825)" />
+
+  <!-- Floating 3D Cubes (Behind Pug) -->
+  <g class="cube-group cube-4" filter="url(#glow)">
+    <g transform="translate(1300, 200) scale(0.6)">
+      <polygon points="0,-100 100,-50 100,50 0,0" class="cube-face-side cube-outline" />
+      <polygon points="0,-100 -100,-50 -100,50 0,0" class="cube-face-front cube-outline" />
+      <polygon points="-100,-50 0,-100 100,-50 0,0" class="cube-face-top cube-outline" />
+    </g>
+  </g>
+  <g class="cube-group cube-5" filter="url(#glow)">
+    <g transform="translate(300, 400) scale(0.8)">
+      <polygon points="0,-100 100,-50 100,50 0,0" class="cube-face-side cube-outline" />
+      <polygon points="0,-100 -100,-50 -100,50 0,0" class="cube-face-front cube-outline" />
+      <polygon points="-100,-50 0,-100 100,-50 0,0" class="cube-face-top cube-outline" />
+    </g>
+  </g>
+
+  <!-- The Grumpy Pug (Running) -->
+  <g class="pug-body-group">
+    
+    <!-- Tail -->
+    <g class="pug-tail">
+      <path d="M 620,650 Q 550,600 580,550 Q 610,500 650,550" class="pug-fawn pug-outline" fill="none" stroke-width="25" />
+      <circle cx="650" cy="550" r="20" class="pug-fawn pug-outline" />
+    </g>
+
+    <!-- Back Legs -->
+    <g class="leg-lb">
+      <path d="M 680,720 L 620,850 L 650,950 L 690,950 L 670,850 L 720,750 Z" class="pug-fawn pug-outline" />
+      <path d="M 650,950 L 630,980 L 690,980 L 690,950 Z" class="pug-black pug-outline" />
+    </g>
+    <g class="leg-rb">
+      <path d="M 780,720 L 840,850 L 810,950 L 770,950 L 790,850 L 740,750 Z" class="pug-fawn pug-outline" />
+      <path d="M 810,950 L 830,980 L 770,980 L 770,950 Z" class="pug-black pug-outline" />
+    </g>
+
+    <!-- Body -->
+    <ellipse cx="800" cy="650" rx="180" ry="120" class="pug-fawn pug-outline" />
+    <!-- Body Wrinkles -->
+    <path d="M 700,600 Q 750,620 800,600" class="pug-outline" fill="none" stroke-width="8" />
+    <path d="M 720,640 Q 760,660 800,640" class="pug-outline" fill="none" stroke-width="8" />
+
+    <!-- Front Legs -->
+    <g class="leg-lf">
+      <path d="M 750,750 L 700,880 L 730,980 L 770,980 L 750,880 L 790,780 Z" class="pug-fawn pug-outline" />
+      <path d="M 730,980 L 710,1010 L 770,1010 L 770,980 Z" class="pug-black pug-outline" />
+    </g>
+    <g class="leg-rf">
+      <path d="M 850,750 L 900,880 L 870,980 L 830,980 L 850,880 L 810,780 Z" class="pug-fawn pug-outline" />
+      <path d="M 870,980 L 890,1010 L 830,1010 L 830,980 Z" class="pug-black pug-outline" />
+    </g>
+
+    <!-- Collar & Tag -->
+    <path d="M 720,550 Q 800,620 880,550" class="pug-outline" fill="none" stroke-width="25" stroke="#FF3B77" />
+    <circle cx="800" cy="590" r="25" class="pug-outline" fill="#F3E03B" stroke-width="6" />
+
+    <!-- Head Group -->
+    <g class="pug-head-group">
+      <!-- Ears -->
+      <g class="pug-ear-l">
+        <path d="M 700,400 Q 650,300 720,350 Z" class="pug-black pug-outline" />
+      </g>
+      <g class="pug-ear-r">
+        <path d="M 900,400 Q 950,300 880,350 Z" class="pug-black pug-outline" />
+      </g>
+
+      <!-- Main Head Shape -->
+      <rect x="680" y="350" width="240" height="220" rx="80" ry="80" class="pug-fawn pug-outline" />
+
+      <!-- Forehead Wrinkles (Grumpy) -->
+      <path d="M 750,400 Q 800,420 850,400" class="pug-outline" fill="none" stroke-width="10" />
+      <path d="M 760,430 Q 800,450 840,430" class="pug-outline" fill="none" stroke-width="10" />
+
+      <!-- Muzzle -->
+      <ellipse cx="800" cy="520" rx="90" ry="60" class="pug-black pug-outline" />
+      
+      <!-- Nose -->
+      <ellipse cx="800" cy="490" rx="35" ry="25" class="pug-outline" fill="#000000" />
+      <ellipse cx="790" cy="485" rx="8" ry="5" class="pug-white" opacity="0.6" />
+
+      <!-- Mouth (Frown) -->
+      <path d="M 760,540 Q 800,530 840,540" class="pug-outline" fill="none" stroke-width="8" />
+      <path d="M 790,530 L 800,550 L 810,530" class="pug-outline" fill="none" stroke-width="6" />
+
+      <!-- Tongue -->
+      <g class="pug-tongue">
+        <path d="M 780,560 Q 800,620 820,560 Z" class="pug-tongue pug-outline" />
+      </g>
+
+      <!-- Eyes (Angry/Grumpy) -->
+      <!-- Left Eye -->
+      <circle cx="740" cy="450" r="35" class="pug-white pug-outline" />
+      <circle cx="730" cy="450" r="12" class="pug-black" />
+      <circle cx="726" cy="446" r="4" class="pug-white" />
+      <!-- Left Eyebrow -->
+      <path d="M 700,420 L 760,440 L 750,450 Z" class="pug-black pug-outline" />
+
+      <!-- Right Eye -->
+      <circle cx="860" cy="450" r="35" class="pug-white pug-outline" />
+      <circle cx="850" cy="450" r="12" class="pug-black" />
+      <circle cx="846" cy="446" r="4" class="pug-white" />
+      <!-- Right Eyebrow -->
+      <path d="M 900,420 L 840,440 L 850,450 Z" class="pug-black pug-outline" />
+    </g>
+  </g>
+
+  <!-- Floating 3D Cubes (In Front of Pug) -->
+  <g class="cube-group cube-1" filter="url(#glow)">
+    <g transform="translate(1200, 600) scale(1.2)">
+      <polygon points="0,-100 100,-50 100,50 0,0" class="cube-face-side cube-outline" />
+      <polygon points="0,-100 -100,-50 -100,50 0,0" class="cube-face-front cube-outline" />
+      <polygon points="-100,-50 0,-100 100,-50 0,0" class="cube-face-top cube-outline" />
+    </g>
+  </g>
+  <g class="cube-group cube-2" filter="url(#glow)">
+    <g transform="translate(400, 700) scale(1.5)">
+      <polygon points="0,-100 100,-50 100,50 0,0" class="cube-face-side cube-outline" />
+      <polygon points="0,-100 -100,-50 -100,50 0,0" class="cube-face-front cube-outline" />
+      <polygon points="-100,-50 0,-100 100,-50 0,0" class="cube-face-top cube-outline" />
+    </g>
+  </g>
+  <g class="cube-group cube-3" filter="url(#glow)">
+    <g transform="translate(1600, 800) scale(0.9)">
+      <polygon points="0,-100 100,-50 100,50 0,0" class="cube-face-side cube-outline" />
+      <polygon points="0,-100 -100,-50 -100,50 0,0" class="cube-face-front cube-outline" />
+      <polygon points="-100,-50 0,-100 100,-50 0,0" class="cube-face-top cube-outline" />
+    </g>
+  </g>
+  <g class="cube-group cube-6" filter="url(#glow)">
+    <g transform="translate(100, 150) scale(1.0)">
+      <polygon points="0,-100 100,-50 100,50 0,0" class="cube-face-side cube-outline" />
+      <polygon points="0,-100 -100,-50 -100,50 0,0" class="cube-face-front cube-outline" />
+      <polygon points="-100,-50 0,-100 100,-50 0,0" class="cube-face-top cube-outline" />
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#FFF5EB" stop-opacity="0.3"/>
+<stop offset="0.6" stop-color="#FFB088" stop-opacity="0.7"/>
+<stop offset="1" stop-color="#FF7F00" stop-opacity="0.9"/>
+</linearGradient>
+<filter id="b1" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="30"/>
+</filter>
+<filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="75"/>
+</filter>
+<filter id="n" x="0" y="0" width="100%" height="100%">
+<feTurbulence baseFrequency="0.008" numOctaves="2" result="t"/>
+<feColorMatrix in="t" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.08 0"/>
+</filter>
+</defs>
+
+<rect width="1600" height="900" fill="url(#sky)"/>
+
+<rect x="0" y="600" width="1600" height="300" fill="#B85440" opacity="0.9"/>
+<rect x="0" y="550" width="1600" height="250" fill="#FF7F00" opacity="0.9" filter="url(#b2)"/>
+<rect x="0" y="480" width="1600" height="280" fill="#FFB088" opacity="0.85" filter="url(#b1)"/>
+<rect x="0" y="420" width="1600" height="220" fill="#FA8072" opacity="0.9" filter="url(#b1)">
+<animate attributeName="opacity" values="0.9;0.75;0.9" dur="6s" repeatCount="indefinite"/>
+</rect>
+
+<rect width="1600" height="900" fill="#FF7F00" opacity="0.06" filter="url(#n)"/>
+
+<circle cx="200" cy="650" r="45" fill="#FA8072" opacity="0.9" filter="url(#b1)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-420" dur="7s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.9;0.3;0.9" dur="7s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="600" cy="700" r="70" fill="#FFB088" opacity="0.95" filter="url(#b2)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-550" dur="10s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="900" cy="580" r="35" fill="#FF7F00" opacity="0.95" filter="url(#b1)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-320" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="r" values="35;48;35" dur="5s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1300" cy="680" r="55" fill="#FA8072" opacity="0.85" filter="url(#b2)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-480" dur="8s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.85;0.4;0.85" dur="8s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="400" cy="620" r="40" fill="#B85440" opacity="0.8" filter="url(#b1)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-360" dur="6s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" additive="sum" values="-30,0; 30,0; -30,0" dur="4s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1100" cy="740" r="60" fill="#FF7F00" opacity="0.9" filter="url(#b2)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-520" dur="9s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="150" cy="720" r="50" fill="#FFB088" opacity="0.9" filter="url(#b1)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-400" dur="6.5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.9;0.5;0.9" dur="6.5s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1450" cy="600" r="30" fill="#FA8072" opacity="0.95" filter="url(#b1)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,-300" dur="4.5s" repeatCount="indefinite"/>
+</circle>
+
+<ellipse cx="800" cy="720" rx="1000" ry="250" fill="#FF7F00" opacity="0.5" filter="url(#b2)">
+<animate attributeName="opacity" values="0.5;0.7;0.5" dur="5s" repeatCount="indefinite"/>
+</ellipse>
+
+<rect x="0" y="380" width="1600" height="180" fill="#FA8072" opacity="0.4" filter="url(#b2)">
+<animate attributeName="opacity" values="0.4;0.6;0.4" dur="8s" repeatCount="indefinite"/>
+</rect>
+</svg>

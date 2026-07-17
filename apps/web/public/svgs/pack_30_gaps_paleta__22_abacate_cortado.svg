@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="1600" height="900">
+  <defs>
+    <radialGradient id="bgGrad" cx="30%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#E8DCC0"/>
+      <stop offset="40%" stop-color="#C9A574"/>
+      <stop offset="100%" stop-color="#2D5A3F"/>
+      <animate attributeName="cx" values="30%;32%;28%;30%" dur="21s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.4;0.7;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="cy" values="40%;38%;42%;40%" dur="17s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;0.8;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </radialGradient>
+    <radialGradient id="hazeGrad" cx="70%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#8FA98F" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#6B8E5C" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#2D5A3F" stop-opacity="0"/>
+      <animate attributeName="cx" values="70%;68%;72%;70%" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.3;0.7;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </radialGradient>
+    <linearGradient id="fleshGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9A574"/>
+      <stop offset="35%" stop-color="#8FA98F"/>
+      <stop offset="70%" stop-color="#6B8E5C"/>
+      <stop offset="100%" stop-color="#2D5A3F"/>
+      <animate attributeName="x1" values="0%;-2%;1%;0%" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="100%;102%;98%;100%" dur="16s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="seedGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#E8DCC0"/>
+      <stop offset="40%" stop-color="#C9A574"/>
+      <stop offset="80%" stop-color="#8FA98F"/>
+      <stop offset="100%" stop-color="#6B8E5C"/>
+      <animate attributeName="cx" values="40%;42%;38%;40%" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;0.8;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="cy" values="35%;33%;37%;35%" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.4;0.7;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </radialGradient>
+    <radialGradient id="highlightGrad" cx="30%" cy="25%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#E8DCC0" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C9A574" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DCC0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8FA98F" stop-opacity="0"/>
+      <animate attributeName="x1" values="0%;-5%;2%;0%" dur="12s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="glowHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C9A574" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#C9A574" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur40" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="blur80" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="blur120" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="blur160" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="15" dy="25" stdDeviation="20" flood-color="#2D5A3F" flood-opacity="0.45"/>
+    </filter>
+    <filter id="grainy" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="noise"/>
+      <feColorMatrix type="saturate" values="0" result="grayNoise"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+      <feComposite in="grayNoise" in2="SourceGraphic" operator="atop"/>
+    </filter>
+    <clipPath id="canvasClip">
+      <rect width="1600" height="900"/>
+    </clipPath>
+    <path id="skinRim" d="M930,480 C880,580 880,720 950,780 C1020,840 1150,820 1240,740 C1320,660 1360,540 1330,420 C1300,280 1200,200 1100,190 C1020,180 950,230 930,310 C920,360 920,420 930,480 Z"/>
+    <path id="seed" d="M1060,380 C1010,380 970,430 970,490 C970,550 1010,600 1060,600 C1110,600 1150,550 1150,490 C1150,430 1110,380 1060,380 Z"/>
+    <path id="hazeOrb1" d="M0,0 L1600,0 L1600,900 L0,900 Z"/>
+  </defs>
+  <g clip-path="url(#canvasClip)">
+    <rect width="1600" height="900" fill="url(#bgGrad)"/>
+    <rect width="1600" height="900" fill="#2D5A3F" opacity="0.45">
+      <animate attributeName="opacity" values="0.45;0.5;0.42;0.45" dur="22s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="220" cy="360" r="480" fill="#E8DCC0" filter="url(#blur160)" opacity="0.35">
+      <animate attributeName="cx" values="220;200;240;220" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="360;380;340;360" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="600" r="600" fill="#2D5A3F" filter="url(#blur120)" opacity="0.5">
+      <animate attributeName="cx" values="1200;1230;1180;1200" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="600;580;620;600" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="850" cy="650" r="300" fill="#6B8E5C" filter="url(#blur80)" opacity="0.3">
+      <animate attributeName="cx" values="850;830;870;850" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="0" y="0" width="1600" height="900" fill="url(#hazeGrad)" opacity="0.6" filter="url(#blur40)">
+      <animate attributeName="opacity" values="0.6;0.7;0.55;0.6" dur="14s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="500" cy="250" r="150" fill="#E8DCC0" filter="url(#blur80)" opacity="0.25">
+      <animate attributeName="r" values="150;170;140;150" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="0" y="0" width="1600" height="900" fill="url(#rayGrad)" opacity="0.4" filter="url(#blur40)" transform="rotate(-25 800 450)">
+      <animate attributeName="opacity" values="0.4;0.5;0.35;0.4" dur="11s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="-25 800 450;-23 800 450;-27 800 450;-25 800 450" dur="20s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="1300" cy="500" r="500" fill="#8FA98F" filter="url(#blur160)" opacity="0.15">
+      <animate attributeName="cx" values="1300;1320;1280;1300" dur="17s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="700" r="400" fill="#C9A574" filter="url(#blur120)" opacity="0.2">
+      <animate attributeName="cy" values="700;680;720;700" dur="13s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="150" r="100" fill="#E8DCC0" filter="url(#blur40)" opacity="0.3">
+      <animate attributeName="r" values="100;120;90;100" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="200" r="200" fill="#2D5A3F" filter="url(#blur80)" opacity="0.2">
+      <animate attributeName="cx" values="1400;1380;1420;1400" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="800" r="250" fill="#6B8E5C" filter="url(#blur120)" opacity="0.25">
+      <animate attributeName="cy" values="800;780;820;800" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <use href="#skinRim" fill="none" stroke="#2D5A3F" stroke-width="45" filter="url(#blur80)" opacity="0.6"/>
+    <use href="#skinRim" fill="none" stroke="#6B8E5C" stroke-width="25" filter="url(#blur40)" opacity="0.5"/>
+    <g filter="url(#softShadow)" opacity="0.85">
+      <path d="M950,480 C900,580 900,720 970,780 C1040,840 1170,820 1260,740 C1340,660 1380,540 1350,420 C1320,280 1220,200 1120,190 C1040,180 970,230 950,310 C940,360 940,420 950,480 Z" fill="url(#fleshGrad)"/>
+    </g>
+    <use href="#skinRim" fill="none" stroke="#E8DCC0" stroke-width="8" filter="url(#glow)" opacity="0.75">
+      <animate attributeName="opacity" values="0.75;0.9;0.7;0.75" dur="8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#skinRim" fill="none" stroke="#C9A574" stroke-width="14" filter="url(#blur40)" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.65;0.45;0.5" dur="10s" repeatCount="indefinite"/>
+    </use>
+    <path d="M980,450 C940,530 940,660 1000,720 C1060,780 1180,760 1260,690 C1330,620 1360,510 1340,410 C1310,290 1220,220 1130,210 C1060,200 1000,240 980,310 C970,360 970,410 980,450 Z" fill="url(#fleshGrad)" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.95;0.88;0.9" dur="12s" repeatCount="indefinite"/>
+    </path>
+    <g transform="translate(1080,490)">
+      <animateTransform attributeName="transform" type="translate" values="1080,490;1078,492;1082,488;1080,490" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.4;0.7;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <circle cx="0" cy="0" r="95" fill="url(#seedGrad)" filter="url(#softShadow)"/>
+      <circle cx="0" cy="0" r="95" fill="none" stroke="#E8DCC0" stroke-width="4" filter="url(#glow)" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.8;0.55;0.6" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <ellipse cx="-25" cy="-20" rx="28" ry="18" fill="url(#highlightGrad)" transform="rotate(-35)" opacity="0.8">
+        <animate attributeName="rx" values="28;32;26;28" dur="11s" repeatCount="indefinite"/>
+        <animate attributeName="ry" values="18;21;16;18" dur="13s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="-15" cy="-12" r="6" fill="#FFFFFF" filter="url(#glow)" opacity="0.9">
+        <animate attributeName="r" values="6;7;5;6" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;1;0.8;0.9" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-15" cy="-12" r="2" fill="#FFFFFF"/>
+      <ellipse cx="10" cy="25" rx="40" ry="25" fill="#6B8E5C" opacity="0.25" transform="rotate(15)">
+        <animate attributeName="rx" values="40;42;38;40" dur="15s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    <circle cx="1150" cy="420" r="12" fill="#E8DCC0" filter="url(#glow)" opacity="0.85">
+      <animateTransform attributeName="transform" type="translate" values="0,0;2,-3;-1,2;0,0" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0.6;0.9;0.85" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1180" cy="460" r="6" fill="#E8DCC0" filter="url(#glow)" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-2,1;1,-2;0,0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1090" cy="380" r="4" fill="#E8DCC0" opacity="0.7">
+      <animateTransform attributeName="transform" type="translate" values="0,0;1,2;-2,-1;0,0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1250" cy="550" r="8" fill="#8FA98F" filter="url(#glow)" opacity="0.5">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-1,2;2,-1;0,0" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1050" cy="650" r="5" fill="#C9A574" opacity="0.5">
+      <animateTransform attributeName="transform" type="translate" values="0,0;2,1;-1,-2;0,0" dur="13s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1350" cy="480" r="140" fill="url(#glowHalo)" filter="url(#blur80)" opacity="0.4">
+      <animate attributeName="r" values="140;160;130;140" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1350" cy="480" r="80" fill="#C9A574" filter="url(#blur40)" opacity="0.35">
+      <animate attributeName="r" values="80;90;75;80" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="420" r="550" fill="#E8DCC0" filter="url(#blur160)" opacity="0.15">
+      <animate attributeName="cx" values="350;330;370;350" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1380" cy="750" r="200" fill="#2D5A3F" filter="url(#blur120)" opacity="0.2">
+      <animate attributeName="cy" values="750;730;770;750" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="150" r="80" fill="#8FA98F" filter="url(#blur80)" opacity="0.25">
+      <animate attributeName="cx" values="180;200;160;180" dur="17s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="150" r="120" fill="#8FA98F" filter="url(#blur120)" opacity="0.15">
+      <animate attributeName="r" values="120;140;110;120" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M850,100 L150,800 L350,900 L1050,200 Z" fill="url(#rayGrad)" opacity="0.2" filter="url(#blur40)">
+      <animateTransform attributeName="transform" type="rotate" values="0 500 500;2 500 500;-1 500 500;0 500 500" dur="25s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="650" cy="150" r="8" fill="#E8DCC0" filter="url(#glow)" opacity="0.4">
+      <animateTransform attributeName="transform" type="translate" values="0,0;5,8;-3,-5;0,0" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="300" r="5" fill="#E8DCC0" opacity="0.35">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-4,6;3,-4;0,0" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="750" cy="750" r="6" fill="#C9A574" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate" values="0,0;3,-5;-2,4;0,0" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="650" r="4" fill="#8FA98F" opacity="0.25">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-2,3;1,-2;0,0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="0" y="0" width="1600" height="900" fill="#2D5A3F" opacity="0.08" filter="url(#grainy)"/>
+  </g>
+</svg>

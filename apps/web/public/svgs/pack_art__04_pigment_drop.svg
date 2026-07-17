@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="cobaltBloom" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="70%" stop-color="#1E40AF"/>
+      <stop offset="100%" stop-color="#1C1917"/>
+    </radialGradient>
+    <filter id="blurStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="75"/>
+    </filter>
+    <filter id="blurModerate" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
+    </filter>
+    <filter id="waterDistortion" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" result="turbulence" seed="5">
+        <animate attributeName="baseFrequency" values="0.012;0.016;0.012" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="seed" values="5;6;5" dur="3s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0" result="softTurb"/>
+      <feComposite in="softTurb" in2="SourceGraphic" operator="over"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FFFBEB"/>
+  
+  <ellipse cx="800" cy="500" rx="600" ry="400" fill="url(#cobaltBloom)" opacity="0.9" filter="url(#blurStrong)">
+    <animateTransform attributeName="transform" type="scale" values="0.9;1.15;0.9" dur="6s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 800 500" to="360 800 500" dur="25s" repeatCount="indefinite" additive="sum"/>
+  </ellipse>
+  
+  <path d="M800 450 Q500 200 300 450 T100 500" fill="none" stroke="#D4A017" stroke-width="100" filter="url(#blurModerate)" opacity="0.9" stroke-linecap="round">
+    <animate attributeName="d" values="M800 450 Q500 200 300 450 T100 500;M800 450 Q400 300 200 400 T0 600;M800 450 Q500 200 300 450 T100 500" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite"/>
+  </path>
+  
+  <circle cx="800" cy="450" r="0" fill="#DC2626" filter="url(#blurModerate)" opacity="0">
+    <animate attributeName="r" values="0;350;0" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.95;0" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="800" cy="450" r="180" fill="#D4A017" filter="url(#blurStrong)" opacity="0.85">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 60 -40; 0 0" dur="5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="-180 800 450" dur="15s" repeatCount="indefinite" additive="sum"/>
+  </circle>
+  
+  <ellipse cx="800" cy="200" rx="40" ry="60" fill="#1C1917" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0 -300; 0 250; 0 280" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+    <animate attributeName="opacity" values="0.9;0;0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1 1; 2 0.5; 3 0" dur="4s" repeatCount="indefinite" additive="sum"/>
+  </ellipse>
+  
+  <circle cx="800" cy="450" r="50" fill="#DC2626" opacity="0.95">
+    <animate attributeName="r" values="30;60;30" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#DC2626;#2563EB;#DC2626" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="800" cy="450" r="120" fill="none" stroke="#2563EB" stroke-width="30" filter="url(#blurModerate)" opacity="0.8">
+    <animate attributeName="r" values="80;500;80" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="30;0;30" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <path d="M800 450 C1000 400 1200 600 1400 450" fill="none" stroke="#1C1917" stroke-width="12" opacity="0.9" stroke-linecap="round">
+    <animate attributeName="d" values="M800 450 C1000 400 1200 600 1400 450;M800 450 C1100 500 1300 300 1500 500;M800 450 C1000 400 1200 600 1400 450" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <rect width="1600" height="900" fill="transparent" filter="url(#waterDistortion)" opacity="0.5"/>
+  
+  <g opacity="0.9">
+    <circle cx="800" cy="450" r="20" fill="#FFFBEB" filter="url(#blurModerate)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 300 -150; 0 0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="450" r="15" fill="#D4A017" filter="url(#blurModerate)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -200 250; 0 0" dur="7s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="800" cy="450" r="25" fill="#2563EB" filter="url(#blurModerate)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 150 300; 0 0" dur="5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+  </g>
+  
+  <radialGradient id="vignette" cx="50%" cy="50%">
+    <stop offset="50%" stop-color="#1C1917" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#1C1917" stop-opacity="0.6"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)">
+    <animate attributeName="opacity" values="0.8;0.95;0.8" dur="10s" repeatCount="indefinite"/>
+  </rect>
+</svg>

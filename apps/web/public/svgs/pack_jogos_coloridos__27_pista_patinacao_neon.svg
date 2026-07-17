@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#240046" />
+      <stop offset="60%" stop-color="#14022e" />
+      <stop offset="100%" stop-color="#0a0017" />
+      <animate attributeName="cx" values="45%;55%;45%" dur="12s" repeatCount="indefinite" />
+    </radialGradient>
+
+    <linearGradient id="sunBurstGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF477E" />
+      <stop offset="50%" stop-color="#00D9FF" />
+      <stop offset="100%" stop-color="#FFEE32" />
+      <animate attributeName="x1" values="0%;100%;0%" dur="8s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0, 217, 255, 0)" />
+      <stop offset="40%" stop-color="rgba(255, 71, 126, 0.4)" />
+      <stop offset="100%" stop-color="rgba(255, 238, 50, 0.8)" />
+      <animate attributeName="y1" values="0%;-20%" dur="4s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <linearGradient id="trailGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF477E" />
+      <stop offset="50%" stop-color="#00D9FF" />
+      <stop offset="100%" stop-color="#FFEE32" />
+      <animate attributeName="x1" values="0%;100%;0%" dur="6s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="heavyGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <mask id="burstMask">
+      <g fill="#FFFFFF">
+        <rect x="0" y="0" width="1600" height="900" fill="#000" />
+        <polygon points="800,450 -200,900 -200,0" />
+        <polygon points="800,450 100,-200 1500,-200" />
+        <polygon points="800,450 1800,0 1800,900" />
+        <polygon points="800,450 100,1100 1500,1100" />
+      </g>
+    </mask>
+
+    <g id="confetti-shape">
+      <rect x="-4" y="-8" width="8" height="16" rx="2" />
+    </g>
+
+    <pattern id="checkerboard" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="scale(1,0.5)">
+      <rect x="0" y="0" width="30" height="30" fill="#FF477E" opacity="0.2" />
+      <rect x="30" y="0" width="30" height="30" fill="#00D9FF" opacity="0.2" />
+      <rect x="0" y="30" width="30" height="30" fill="#00D9FF" opacity="0.2" />
+      <rect x="30" y="30" width="30" height="30" fill="#FFEE32" opacity="0.2" />
+    </pattern>
+
+    <g id="dot-cluster">
+      <circle cx="0" cy="0" r="3" fill="#00D9FF" />
+      <circle cx="10" cy="5" r="2" fill="#FF477E" />
+      <circle cx="-8" cy="12" r="4" fill="#FFEE32" />
+      <circle cx="15" cy="-10" r="2.5" fill="#FFFFFF" />
+      <circle cx="-15" cy="-5" r="1.5" fill="#00D9FF" />
+    </g>
+  </defs>
+
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+
+  
+  <g opacity="0.1">
+    <circle cx="800" cy="450" r="400" fill="none" stroke="#FF477E" stroke-width="100">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="60s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  <g id="sunburst">
+    <g mask="url(#burstMask)">
+      <rect x="0" y="0" width="1600" height="900" fill="url(#sunBurstGrad)" opacity="0.8" />
+      <polygon points="800,450 -200,900 -200,0" fill="#00D9FF" opacity="0.3" />
+      <polygon points="800,450 100,-200 1500,-200" fill="#FFEE32" opacity="0.3" />
+      <polygon points="800,450 1800,0 1800,900" fill="#FF477E" opacity="0.3" />
+      <polygon points="800,450 100,1100 1500,1100" fill="#FFFFFF" opacity="0.1" />
+    </g>
+    <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="20s" repeatCount="indefinite" />
+  </g>
+
+  
+  <g id="halftones">
+    <circle cx="800" cy="450" r="350" fill="none" stroke="#FFEE32" stroke-width="15" stroke-dasharray="5, 15" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="15s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="800" cy="450" r="380" fill="none" stroke="#00D9FF" stroke-width="10" stroke-dasharray="2, 25" opacity="0.4">
+      <animateTransform attributeName="transform" type="rotate" from="360 800 450" to="0 800 450" dur="25s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="800" cy="450" r="250" fill="none" stroke="#FF477E" stroke-width="20" stroke-dasharray="40, 20" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="-360 800 450" dur="18s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  <polygon points="0,900 1600,450 1600,900" fill="url(#checkerboard)" />
+  <rect x="0" y="450" width="1600" height="450" fill="url(#floorGrad)" />
+
+  
+  <g id="floor-light">
+    <ellipse cx="400" cy="900" rx="500" ry="100" fill="#FFEE32" opacity="0.15" filter="url(#glow)" />
+    <ellipse cx="1200" cy="900" rx="400" ry="80" fill="#FF477E" opacity="0.15" filter="url(#glow)" />
+    <ellipse cx="800" cy="900" rx="300" ry="60" fill="#00D9FF" opacity="0.2" filter="url(#glow)" />
+    <animate attributeName="opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite" />
+  </g>
+
+  
+  <g id="grid-lines" opacity="0.4" stroke="#00D9FF" stroke-width="2">
+    <line x1="0" y1="550" x2="1600" y2="550" />
+    <line x1="0" y1="650" x2="1600" y2="650" />
+    <line x1="0" y1="750" x2="1600" y2="750" />
+    <line x1="0" y1="850" x2="1600" y2="850" />
+    <line x1="200" y1="900" x2="400" y2="450" />
+    <line x1="600" y1="900" x2="800" y2="450" />
+    <line x1="1000" y1="900" x2="1200" y2="450" />
+    <line x1="1400" y1="900" x2="1600" y2="450" />
+  </g>
+
+  
+  <g id="hero-group" transform="translate(550, 250)">
+    
+    <g opacity="0.8">
+      <ellipse cx="150" cy="350" rx="100" ry="10" fill="#FF477E" filter="url(#glow)">
+        <animate attributeName="rx" values="100;120;100" dur="1s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1s" repeatCount="indefinite" />
+      </ellipse>
+      <ellipse cx="350" cy="300" rx="80" ry="8" fill="#00D9FF" filter="url(#glow)">
+        <animate attributeName="rx" values="80;100;80" dur="1.5s" repeatCount="indefinite" />
+      </ellipse>
+    </g>
+
+    
+    <g id="motion-trails" opacity="0.7">
+      <path d="M 150 300 Q 50 100 400 200" fill="none" stroke="url(#trailGrad)" stroke-width="12" stroke-linecap="round" filter="url(#glow)">
+        <animate attributeName="stroke-dasharray" values="0 1000; 1000 0" dur="2s" repeatCount="indefinite" />
+      </path>
+      <path d="M 180 250 Q 100 50 450 150" fill="none" stroke="#FFEE32" stroke-width="6" stroke-linecap="round">
+        <animate attributeName="stroke-dasharray" values="0 1000; 1000 0" dur="1.5s" repeatCount="indefinite" />
+      </path>
+      
+      
+      <path d="M 180 200 C 150 100, 250 50, 350 100 C 450 150, 550 50, 600 150" fill="none" stroke="#FF477E" stroke-width="8" stroke-linecap="round" filter="url(#glow)">
+        <animate attributeName="stroke-dashoffset" values="0; -200" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="stroke-dasharray" values="20, 20" dur="0s" repeatCount="indefinite" /> 
+      </path>
+      <path d="M 200 220 C 170 120, 270 70, 370 120 C 470 170, 570 70, 620 170" fill="none" stroke="#00D9FF" stroke-width="5" stroke-linecap="round" filter="url(#glow)">
+        <animate attributeName="stroke-dashoffset" values="0; -200" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="stroke-dasharray" values="30, 30" dur="0s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    
+    <g id="skater-body">
+      
+      <g id="skates">
+        
+        <rect x="160" y="340" width="60" height="15" rx="5" fill="#FFEE32" />
+        <rect x="160" y="365" width="60" height="15" rx="5" fill="#00D9FF" />
+        
+        <rect x="155" y="355" width="70" height="10" rx="2" fill="#FF477E" />
+        <rect x="150" y="375" width="80" height="12" rx="2" fill="#FF477E" />
+        
+        <circle cx="170" cy="355" r="4" fill="#FFFFFF" />
+        <circle cx="210" cy="355" r="4" fill="#FFFFFF" />
+        <circle cx="170" cy="381" r="5" fill="#FFFFFF" />
+        <circle cx="190" cy="381" r="5" fill="#FFFFFF" />
+        <circle cx="210" cy="381" r="5" fill="#FFFFFF" />
+      </g>
+
+      
+      <path d="M 250 150 C 220 120, 180 140, 190 180 C 200 220, 240 230, 270 200 C 300 170, 280 130, 250 150 Z" fill="#00D9FF" />
+      <path d="M 240 160 C 230 150, 210 160, 215 175 C 220 190, 230 195, 240 185 C 250 175, 245 165, 240 160 Z" fill="#FF477E" />
+      <circle cx="230" cy="170" r="5" fill="#FFFFFF" />
+
+      
+      <path d="M 230 180 L 210 260 L 180 280" fill="none" stroke="#00D9FF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 230 180 L 270 220 L 310 240" fill="none" stroke="#FF477E" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+
+      
+      <path d="M 270 220 L 290 330 L 240 355" fill="none" stroke="#00D9FF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 310 240 L 300 310 L 270 330" fill="none" stroke="#FF477E" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+      
+      
+      <path d="M 230 180 L 210 260 L 180 280" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+         <animate attributeName="opacity" values="0.8;0.2;0.8" dur="0.5s" repeatCount="indefinite" />
+      </path>
+      <path d="M 270 220 L 290 330 L 240 355" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+         <animate attributeName="opacity" values="0.2;0.8;0.2" dur="0.5s" repeatCount="indefinite" />
+      </path>
+
+      
+      <path d="M 250 150 L 230 180" fill="none" stroke="#FFEE32" stroke-width="20" stroke-linecap="round" />
+      <path d="M 250 150 L 280 180" fill="none" stroke="#FFEE32" stroke-width="20" stroke-linecap="round" />
+
+      
+      <circle cx="180" cy="290" r="12" fill="#FFFFFF" filter="url(#glow)" />
+      <circle cx="320" cy="250" r="12" fill="#FFFFFF" filter="url(#glow)" />
+
+      
+      <g id="sparkle-1">
+        <path d="M 180 290 L 180 270 M 180 290 L 180 310 M 160 290 L 180 290 M 200 290 L 180 290" stroke="#FFEE32" stroke-width="4" stroke-linecap="round" />
+        <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="1s" repeatCount="indefinite" />
+      </g>
+      <g id="sparkle-2">
+        <path d="M 320 250 L 320 230 M 320 250 L 320 270 M 300 250 L 320 250 M 340 250 L 320 250" stroke="#00D9FF" stroke-width="4" stroke-linecap="round" />
+        <animateTransform attributeName="transform" type="scale" values="0;1.2;0" dur="0.8s" repeatCount="indefinite" />
+      </g>
+    </g>
+
+    <animateTransform attributeName="transform" type="translate" values="550,250; 550,230; 550,250" dur="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="1.5s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  
+  <g id="particles-fg" filter="url(#glow)">
+    
+    <g id="confetti-body-1">
+      <use href="#confetti-shape" fill="#FF477E" />
+      <animateTransform attributeName="transform" type="rotate" values="0;720" dur="3s" repeatCount="indefinite" />
+      <animateMotion path="M -50 -50 Q 800 200 1700 -50" dur="6s" repeatCount="indefinite" />
+    </g>
+    <g id="confetti-body-2">
+      <use href="#confetti-shape" fill="#00D9FF" />
+      <animateTransform attributeName="transform" type="rotate" values="0;-1080" dur="4s" repeatCount="indefinite" />
+      <animateMotion path="M 1650 -100 Q 800 400 -50 -50" dur="7s" repeatCount="indefinite" />
+    </g>
+    <g id="confetti-body-3">
+      <use href="#confetti-shape" fill="#FFEE32" />
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="2s" repeatCount="indefinite" />
+      <animateMotion path="M -50 100 Q 400 800 1700 100" dur="5s" repeatCount="indefinite" />
+    </g>
+    <g id="confetti-body-4">
+      <rect x="-5" y="-5" width="10" height="10" fill="#FF477E" />
+      <animateTransform attributeName="transform" type="rotate" values="45;225" dur="2.5s" repeatCount="indefinite" />
+      <animateMotion path="M 1700 200 Q 800 600 -50 200" dur="8s" repeatCount="indefinite" />
+    </g>
+    <g id="confetti-body-5">
+      <circle cx="0" cy="0" r="4" fill="#FFFFFF" />
+      <animateMotion path="M 800 -50 Q 200 450 800 950" dur="9s" repeatCount="indefinite" />
+    </g>
+    <g id="confetti-body-6">
+      <polygon points="0,-5 4,4 -4,4" fill="#00D9FF" />
+      <animateTransform attributeName="transform" type="scale" values="0.5;1.5;0.5" dur="1s" repeatCount="indefinite" />
+      <animateMotion path="M 1000 -50 Q 1400 450 1000 950" dur="7s" repeatCount="indefinite" />
+    </g>
+
+    
+    <g id="dots-far-1">
+      <use href="#dot-cluster" />
+      <animateMotion path="M -50 0 Q 500 300 1700 0" dur="10s" repeatCount="indefinite" />
+    </g>
+    <g id="dots-far-2">
+      <use href="#dot-cluster" />
+      <animateMotion path="M 1700 900 Q 800 600 -50 900" dur="12s" repeatCount="indefinite" />
+    </g>
+    <g id="dots-far-3">
+      <use href="#dot-cluster" />
+      <animateMotion path="M 200 -50 Q 400 400 200 950" dur="15s" repeatCount="indefinite" />
+    </g>
+  </g>
+
+  
+  <g id="geometric-shapes">
+    <polygon points="100,100 120,140 80,140" fill="#FFEE32" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="1400,150 1450,200 1350,200" fill="#FF477E" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="0 1400 150" to="-360 1400 150" dur="15s" repeatCount="indefinite" />
+    </polygon>
+    <rect x="300" y="700" width="30" height="30" fill="#00D9FF" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="0 315 715" to="360 315 715" dur="8s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-50; 0,0" dur="3s" repeatCount="indefinite" additive="sum" />
+    </rect>
+    <circle cx="1300" cy="800" r="15" fill="#FFEE32" filter="url(#glow)">
+      <animate attributeName="r" values="15;25;15" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <rect x="800" y="100" width="20" height="60" fill="#FF477E" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="0 810 130" to="360 810 130" dur="5s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  
+  <g id="neon-lines" filter="url(#glow)">
+    <path d="M 100 450 L 300 400" stroke="#FF477E" stroke-width="4" fill="none" />
+    <path d="M 120 460 L 280 420" stroke="#00D9FF" stroke-width="3" fill="none" />
+    <path d="M 1300 300 L 1500 350" stroke="#FFEE32" stroke-width="4" fill="none" />
+    <path d="M 1280 310 L 1480 360" stroke="#FF477E" stroke-width="3" fill="none" />
+  </g>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#bgGrad)" opacity="0.1" style="mix-blend-mode: overlay;" pointer-events="none" />
+
+  
+  <g id="title-text" transform="translate(0, 20)">
+    
+    <text x="100" y="250" font-family="Impact, sans-serif" font-style="italic" font-weight="900" font-size="160" fill="none" stroke="#00D9FF" stroke-width="24" letter-spacing="-5">PISTA</text>
+    <text x="100" y="250" font-family="Impact, sans-serif" font-style="italic" font-weight="900" font-size="160" fill="#1B1B3A" stroke="#FFEE32" stroke-width="8" letter-spacing="-5">PISTA</text>
+    <text x="100" y="250" font-family="Impact, sans-serif" font-style="italic" font-weight="900" font-size="160" fill="url(#sunBurstGrad)" stroke="none" letter-spacing="-5" filter="url(#textGlow)">PISTA</text>
+
+    
+    <text x="100" y="340" font-family="sans-serif" font-weight="800" font-size="48" fill="#FFEE32" letter-spacing="12" filter="url(#textGlow)">DE PATINAÇÃO NEON</text>
+    
+    <text x="100" y="380" font-family="sans-serif" font-size="24" fill="#00D9FF" letter-spacing="4">EXTREME INLINE COMBO THRILL</text>
+
+    
+    <rect x="100" y="420" width="300" height="10" fill="#FF477E" filter="url(#glow)">
+      <animate attributeName="width" values="300;330;300" dur="2s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  
+  <g id="foreground-flares" pointer-events="none">
+    <circle cx="1100" cy="300" r="100" fill="#FF477E" opacity="0.05" filter="url(#heavyGlow)" />
+    <circle cx="1100" cy="300" r="60" fill="#00D9FF" opacity="0.08" filter="url(#glow)" />
+    <circle cx="400" cy="550" r="80" fill="#FFEE32" opacity="0.06" filter="url(#heavyGlow)" />
+  </g>
+
+</svg>

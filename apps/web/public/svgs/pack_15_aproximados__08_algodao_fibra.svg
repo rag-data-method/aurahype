@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDFAF4"/>
+      <stop offset="50%" stop-color="#F8F5EE"/>
+      <stop offset="100%" stop-color="#F5E8C8"/>
+      <animate attributeName="x1" values="0;0.02;0" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="1;1.02;1" dur="18s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <radialGradient id="warmGlow" cx="1300" cy="100" r="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F5E8C8" stop-opacity="0.75"/>
+      <stop offset="40%" stop-color="#F5E8C8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#F8F5EE" stop-opacity="0"/>
+      <animate attributeName="cx" values="1300;1320;1300" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="100;110;100" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="900;920;900" dur="20s" repeatCount="indefinite"/>
+    </radialGradient>
+
+    <linearGradient id="cottonEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F5E8C8" stop-opacity="0.5"/>
+      <animate attributeName="x1" values="0%;2%;0%" dur="12s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <radialGradient id="cottonCore" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#F8F5EE" stop-opacity="0.9"/>
+      <animate attributeName="cx" values="40%;42%;40%" dur="16s" repeatCount="indefinite"/>
+    </radialGradient>
+
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#E0DAD0" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#E0DAD0" stop-opacity="0.65"/>
+      <animate attributeName="x2" values="0.5;0.55;0.5" dur="22s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <filter id="fAtmo" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="fMedium" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="fSoft" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="fVSoft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="fTexture" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="fNoise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.05 0" in="noise" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="composite"/>
+      <feBlend mode="multiply" in="composite" in2="SourceGraphic"/>
+    </filter>
+    <filter id="fGlint" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="fDust" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+  <rect width="1600" height="900" fill="url(#warmGlow)"/>
+
+  <g opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 15,-10; 0,0" dur="22s" repeatCount="indefinite"/>
+    <rect x="100" y="-100" width="1800" height="1200" fill="#F5E8C8" filter="url(#fAtmo)"/>
+  </g>
+
+  <g opacity="0.35">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -20,10; 0,0" dur="18s" repeatCount="indefinite"/>
+    <circle cx="1200" cy="200" r="700" fill="#F5E8C8" filter="url(#fMedium)"/>
+  </g>
+
+  <g opacity="0.4" filter="url(#fMedium)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 10,-15; 0,0" dur="20s" repeatCount="indefinite"/>
+    <path d="M 200 150 C 350 50, 550 250, 800 150 C 1050 50, 1250 300, 1500 200 C 1400 550, 1100 750, 800 650 C 500 550, 250 750, 100 500 C -50 350, 50 250, 200 150 Z" fill="#F8F5EE"/>
+    <path d="M 100 200 C 250 100, 400 350, 650 250 C 900 150, 1150 400, 1400 300 C 1300 600, 1000 800, 700 700 C 400 600, 150 800, 0 550 C -100 400, -50 300, 100 200 Z" fill="#E0DAD0" opacity="0.4"/>
+  </g>
+
+  <g opacity="0.6" filter="url(#fSoft)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -12,8; 0,0" dur="15s" repeatCount="indefinite"/>
+    <path d="M 300 400 C 450 250, 700 450, 950 300 C 1200 150, 1400 450, 1500 300 C 1450 650, 1100 850, 800 750 C 500 650, 200 850, 150 550 C 100 450, 150 550, 300 400 Z" fill="#FFFFFF"/>
+  </g>
+
+  <g opacity="0.25" filter="url(#fMedium)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,-5; 0,0" dur="19s" repeatCount="indefinite"/>
+    <path d="M 50 100 C 200 0, 400 200, 650 100 C 900 0, 1100 250, 1350 150 C 1300 400, 1000 600, 700 500 C 400 400, 100 600, 50 350 C 0 200, -50 200, 50 100 Z" fill="#E0DAD0"/>
+  </g>
+
+  <g opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -6,10; 0,0" dur="17s" repeatCount="indefinite"/>
+    <ellipse cx="1000" cy="400" rx="600" ry="400" fill="url(#cottonCore)" filter="url(#fSoft)"/>
+  </g>
+
+  <g transform="translate(560, 550)" filter="url(#fTexture)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="560,550; 575,540; 560,550" dur="22s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 600 600; 2 600 600; 0 600 600" dur="26s" repeatCount="indefinite" additive="sum"/>
+    <path d="M 0,-40 Q 30,-60 60,-30 Q 90,-10 120,-40 Q 150,-70 180,-30 Q 210,10 240,-30 Q 270,-60 300,-20 Q 330,20 360,-30 Q 390,-70 420,-20 L 440,40 Q 410,100 380,50 Q 350,0 320,60 Q 290,120 260,60 Q 230,0 200,70 Q 170,140 140,70 Q 110,0 80,80 Q 50,160 20,80 Q -10,0 -30,60 Z" fill="#FFFFFF"/>
+  </g>
+
+  <g opacity="0.35" filter="url(#fSoft)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 5,-8; 0,0" dur="20s" repeatCount="indefinite"/>
+    <path d="M 1000 500 C 1150 350, 1400 550, 1600 400 C 1550 750, 1250 950, 950 850 C 650 750, 350 950, 300 650 C 250 550, 850 650, 1000 500 Z" fill="#E0DAD0"/>
+  </g>
+
+  <g transform="translate(500, 400)" filter="url(#fSoft)">
+    <animateTransform attributeName="transform" type="translate" values="500,400; 510,395; 500,400" dur="14s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.04;1" dur="14s" repeatCount="indefinite" additive="sum"/>
+    <path d="M 0,0 Q 50,-30 100,10 T 200,0 Q 250,40 200,80 T 100,120 Q 50,90 0,70 Z" fill="url(#cottonCore)" opacity="0.9"/>
+  </g>
+
+  <g transform="translate(900, 250)" filter="url(#fVSoft)">
+    <animateTransform attributeName="transform" type="translate" values="900,250; 890,260; 900,250" dur="16s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1000 300; -1.5 1000 300; 0 1000 300" dur="20s" repeatCount="indefinite" additive="sum"/>
+    <path d="M 0,0 C 40,-20 80,20 120,0 C 160,-20 200,30 240,10 C 280,40 240,100 200,120 C 160,140 120,100 80,110 C 40,120 0,80 0,0 Z" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+
+  <g transform="translate(350, 600)" filter="url(#fVSoft)">
+    <animateTransform attributeName="transform" type="translate" values="350,600; 360,590; 350,600" dur="18s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 30,-50 80,-20 T 160,-40 Q 200,0 150,50 T 70,80 Q 20,40 0,0 Z" fill="#FFFFFF" opacity="0.7"/>
+  </g>
+
+  <g transform="translate(1100, 500)" filter="url(#fVSoft)">
+    <animateTransform attributeName="transform" type="translate" values="1100,500; 1105,515; 1100,500" dur="24s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 1200 600; 1 1200 600; 0 1200 600" dur="28s" repeatCount="indefinite" additive="sum"/>
+    <path d="M 0,0 C 60,-30 100,30 160,0 C 220,-30 260,30 320,0 C 360,40 300,100 240,120 C 180,140 120,100 60,110 C 0,120 -60,80 0,0 Z" fill="#FFFFFF" opacity="0.75"/>
+  </g>
+
+  <g transform="translate(150, 300)" filter="url(#fSoft)">
+    <animateTransform attributeName="transform" type="translate" values="150,300; 160,290; 150,300" dur="15s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 40,-20 80,10 T 160,-10 Q 200,30 150,70 T 70,90 Q 30,50 0,0 Z" fill="#F8F5EE" opacity="0.8"/>
+  </g>
+
+  <g transform="translate(1300, 150)" filter="url(#fVSoft)">
+    <animateTransform attributeName="transform" type="translate" values="1300,150; 1290,160; 1300,150" dur="19s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 25,-35 60,-10 T 120,-30 Q 150,10 110,50 T 40,70 Q 10,30 0,0 Z" fill="#FFFFFF" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(600, 750)" opacity="0.5" filter="url(#fVSoft)">
+    <animateTransform attributeName="transform" type="translate" values="600,750; 615,740; 600,750" dur="21s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 50,-20 90,20 140,0 C 190,-20 230,20 280,0 C 320,30 260,90 210,110 C 160,130 110,90 60,100 C 10,110 -40,70 0,0 Z" fill="#E0DAD0"/>
+  </g>
+
+  <g transform="translate(400, 200)" filter="url(#fVSoft)">
+    <animateTransform attributeName="transform" type="translate" values="400,200; 410,210; 400,200" dur="23s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 35,-25 70,5 T 140,-15 Q 170,20 130,55 T 50,75 Q 15,35 0,0 Z" fill="#FFFFFF" opacity="0.7"/>
+  </g>
+
+  <g transform="translate(800, 100)" filter="url(#fSoft)">
+    <animateTransform attributeName="transform" type="translate" values="800,100; 790,110; 800,100" dur="17s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 40,-30 80,20 120,-10 C 160,-40 200,20 240,-10 C 280,30 220,90 180,110 C 140,130 100,90 60,100 C 20,110 -20,70 0,0 Z" fill="#F8F5EE" opacity="0.6"/>
+  </g>
+
+  <g transform="translate(1050, 700)" filter="url(#fVSoft)">
+    <animateTransform attributeName="transform" type="translate" values="1050,700; 1065,715; 1050,700" dur="25s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 45,-15 90,15 T 180,5 Q 220,40 170,75 T 80,95 Q 35,55 0,0 Z" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+
+  <g transform="translate(200, 500)" filter="url(#fSoft)">
+    <animateTransform attributeName="transform" type="translate" values="200,500; 215,490; 200,500" dur="15s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 30,-25 60,15 90,-5 C 120,-25 150,15 180,-5 C 210,20 160,70 130,85 C 100,100 70,70 40,80 C 10,90 -20,60 0,0 Z" fill="#F8F5EE" opacity="0.75"/>
+  </g>
+
+  <g transform="translate(1400, 400)" filter="url(#fVSoft)">
+    <animateTransform attributeName="transform" type="translate" values="1400,400; 1385,405; 1400,400" dur="18s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 30,-40 70,-10 T 140,-30 Q 170,10 130,50 T 50,70 Q 10,30 0,0 Z" fill="#FFFFFF" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(750, 550)" filter="url(#fTexture)">
+    <animateTransform attributeName="transform" type="translate" values="750,550; 765,560; 750,550" dur="13s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="13s" repeatCount="indefinite" additive="sum"/>
+    <path d="M 0,-60 Q 40,-90 80,-50 T 160,-70 Q 200,-30 160,10 T 80,30 Q 40,0 0,-60 Z" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <g transform="translate(450, 450)" filter="url(#fTexture)">
+    <animateTransform attributeName="transform" type="translate" values="450,450; 460,440; 450,450" dur="16s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 500 500; 1.5 500 500; 0 500 500" dur="22s" repeatCount="indefinite" additive="sum"/>
+    <path d="M 0,0 C 50,-40 90,20 140,-10 C 190,-40 230,30 280,0 C 320,40 260,110 210,130 C 160,150 110,110 60,120 C 10,130 -40,90 0,0 Z" fill="#FFFFFF" opacity="0.95"/>
+  </g>
+
+  <g transform="translate(560, 550)">
+    <animateTransform attributeName="transform" type="translate" values="560,550; 575,540; 560,550" dur="12s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 600 600; 1 600 600; 0 600 600" dur="18s" repeatCount="indefinite" additive="sum"/>
+    <path d="M -10,-50 Q 20,-80 50,-40 T 110,-60 Q 140,-20 100,20 T 40,40 Q 10,10 -10,-50 Z" fill="#FFFFFF"/>
+    <path d="M -20,-60 Q 10,-100 60,-50 T 130,-70 Q 160,-20 120,30 T 50,50 Q 10,10 -20,-60 Z" fill="url(#cottonEdge)" opacity="0.4"/>
+  </g>
+
+  <g transform="translate(850, 350)">
+    <animateTransform attributeName="transform" type="translate" values="850,350; 840,360; 850,350" dur="14s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 45,-35 85,25 130,-5 C 175,-35 215,25 260,-5 C 300,35 240,105 195,125 C 150,145 105,105 60,115 C 15,125 -30,85 0,0 Z" fill="#FFFFFF"/>
+    <path d="M -10,-10 C 35,-45 75,15 120,-15 C 165,-45 205,15 250,-15 C 290,25 230,95 185,115 C 140,135 95,95 50,105 C 5,115 -40,75 -10,-10 Z" fill="url(#cottonEdge)" opacity="0.35"/>
+  </g>
+
+  <g transform="translate(600, 250)">
+    <animateTransform attributeName="transform" type="translate" values="600,250; 610,240; 600,250" dur="20s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 30,-45 70,-10 T 140,-30 Q 170,10 130,55 T 50,75 Q 15,35 0,0 Z" fill="#FFFFFF"/>
+  </g>
+
+  <g transform="translate(100, 650)">
+    <animateTransform attributeName="transform" type="translate" values="100,650; 110,660; 100,650" dur="24s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 55,-30 95,30 150,0 C 205,-30 245,30 300,0 C 340,40 280,100 235,120 C 190,140 145,100 100,110 C 55,120 10,80 0,0 Z" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <g transform="translate(1200, 600)">
+    <animateTransform attributeName="transform" type="translate" values="1200,600; 1215,590; 1200,600" dur="17s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 40,-30 80,10 T 160,-10 Q 200,30 150,70 T 70,90 Q 30,50 0,0 Z" fill="#FFFFFF"/>
+  </g>
+
+  <g transform="translate(250, 150)">
+    <animateTransform attributeName="transform" type="translate" values="250,150; 240,160; 250,150" dur="19s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 35,-25 65,15 100,-5 C 135,-25 165,15 200,-5 C 235,20 185,70 150,85 C 115,100 85,70 50,80 C 15,90 -20,60 0,0 Z" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+
+  <g transform="translate(550, 800)">
+    <animateTransform attributeName="transform" type="translate" values="550,800; 560,810; 550,800" dur="22s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 25,-35 60,-5 T 120,-25 Q 150,15 110,50 T 40,70 Q 5,30 0,0 Z" fill="#FFFFFF"/>
+  </g>
+
+  <g transform="translate(900, 800)">
+    <animateTransform attributeName="transform" type="translate" values="900,800; 910,790; 900,800" dur="15s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 40,-30 80,20 120,-10 C 160,-40 200,20 240,-10 C 280,30 220,100 180,120 C 140,140 100,100 60,110 C 20,120 -20,80 0,0 Z" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <g transform="translate(1300, 750)">
+    <animateTransform attributeName="transform" type="translate" values="1300,750; 1285,765; 1300,750" dur="18s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 35,-20 70,10 T 140,-10 Q 170,30 130,65 T 50,85 Q 15,45 0,0 Z" fill="#FFFFFF"/>
+  </g>
+
+  <g transform="translate(1500, 200)">
+    <animateTransform attributeName="transform" type="translate" values="1500,200; 1510,190; 1500,200" dur="25s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 30,-20 60,20 90,0 C 120,-20 150,20 180,0 C 210,30 160,80 130,95 C 100,110 70,80 40,90 C 10,100 -20,70 0,0 Z" fill="#FFFFFF" opacity="0.7"/>
+  </g>
+
+  <g transform="translate(300, 800)">
+    <animateTransform attributeName="transform" type="translate" values="300,800; 315,815; 300,800" dur="20s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 20,-25 50,-5 T 100,-20 Q 130,10 100,40 T 40,55 Q 10,25 0,0 Z" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+
+  <g transform="translate(1150, 250)">
+    <animateTransform attributeName="transform" type="translate" values="1150,250; 1160,240; 1150,250" dur="16s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 25,-15 50,15 75,0 C 100,-15 125,15 150,0 C 175,20 135,60 110,70 C 85,80 60,60 35,70 C 10,80 -15,55 0,0 Z" fill="#FFFFFF" opacity="0.75"/>
+  </g>
+
+  <g transform="translate(50, 400)">
+    <animateTransform attributeName="transform" type="translate" values="50,400; 60,410; 50,400" dur="23s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 30,-20 60,10 T 120,-10 Q 150,25 110,60 T 40,80 Q 10,40 0,0 Z" fill="#FFFFFF" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(1400, 550)">
+    <animateTransform attributeName="transform" type="translate" values="1400,550; 1410,540; 1400,550" dur="14s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 45,-25 85,25 130,-5 C 175,-35 215,25 260,-5 C 300,35 240,95 200,115 C 160,135 120,95 80,105 C 40,115 0,75 0,0 Z" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+
+  <g transform="translate(680, 420)">
+    <animateTransform attributeName="transform" type="translate" values="680,420; 690,430; 680,420" dur="19s" repeatCount="indefinite"/>
+    <path d="M 0,0 Q 15,-25 40,-5 T 80,-15 Q 105,10 80,35 T 30,45 Q 5,20 0,0 Z" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <g transform="translate(480, 680)">
+    <animateTransform attributeName="transform" type="translate" values="480,680; 490,670; 480,680" dur="21s" repeatCount="indefinite"/>
+    <path d="M 0,0 C 35,-20 65,20 100,0 C 135,-20 165,20 200,0 C 235,25 185,75 150,90 C 115,105 85,75 50,85 C 15,95 -20,65 0,0 Z" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+
+  <g opacity="0.25">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -5,10; 0,0" dur="28s" repeatCount="indefinite"/>
+    <path d="M 200 800 C 400 700, 600 900, 800 800 C 1000 700, 1200 900, 1400 800 C 1300 1000, 1000 1100, 800 1000 C 600 900, 300 1000, 200 800 Z" fill="url(#shadowGrad)" filter="url(#fSoft)"/>
+  </g>
+
+  <g opacity="0.2">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,-5; 0,0" dur="24s" repeatCount="indefinite"/>
+    <path d="M 600 850 C 800 750, 1000 950, 1200 850 C 1100 1000, 900 1050, 700 950 C 500 850, 400 950, 600 850 Z" fill="url(#shadowGrad)" filter="url(#fVSoft)"/>
+  </g>
+
+  <g opacity="0.15">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -10,5; 0,0" dur="30s" repeatCount="indefinite"/>
+    <path d="M 0 900 C 200 800, 400 1000, 600 900 C 800 800, 1000 1000, 1200 900 L 1600 900 L 0 900 Z" fill="#E0DAD0" filter="url(#fSoft)"/>
+  </g>
+
+  <g opacity="0.12">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 12,-8; 0,0" dur="26s" repeatCount="indefinite"/>
+    <path d="M 400 900 C 600 850, 800 950, 1000 900 C 1200 850, 1400 950, 1600 900 L 1600 900 L 400 900 Z" fill="#E0DAD0" filter="url(#fMedium)"/>
+  </g>
+  
+  <g opacity="0.08" filter="url(#fAtmo)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-15; 0,0" dur="32s" repeatCount="indefinite"/>
+    <rect x="-100" y="800" width="1800" height="200" fill="#E0DAD0"/>
+  </g>
+
+  <g opacity="0.6">
+    <circle cx="1200" cy="250" r="20" fill="#FFFFFF" filter="url(#fGlint)">
+      <animate attributeName="cx" values="1200;1210;1200" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="250;245;250" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="20;25;20" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.8;0.6" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="950" cy="450" r="12" fill="#FFFFFF" filter="url(#fGlint)">
+      <animate attributeName="cx" values="950;945;950" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="450;455;450" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="12;16;12" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="350" r="8" fill="#FFFFFF" filter="url(#fGlint)">
+      <animate attributeName="cx" values="650;660;650" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;340;350" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="8;12;8" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.7;0.5" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="600" r="6" fill="#FFFFFF" filter="url(#fGlint)">
+      <animate attributeName="cx" values="500;495;500" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="600;605;600" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="6;9;6" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1350" cy="450" r="10" fill="#FFFFFF" filter="url(#fGlint)">
+      <animate attributeName="cx" values="1350;1340;1350" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="450;460;450" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="10;14;10" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="500" r="7" fill="#FFFFFF" filter="url(#fGlint)">
+      <animate attributeName="cx" values="300;310;300" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="500;490;500" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="7;10;7" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="13s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g opacity="0.4">
+    <circle cx="200" cy="150" r="3" fill="#F5E8C8" filter="url(#fDust)">
+      <animate attributeName="cx" values="200;220;200" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="150;130;150" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="700" r="4" fill="#F5E8C8" filter="url(#fDust)">
+      <animate attributeName="cx" values="1400;1380;1400" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="700;720;700" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="100" r="2" fill="#F5E8C8" filter="url(#fDust)">
+      <animate attributeName="cx" values="800;820;800" dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="100;110;100" dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.7;0.5" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="800" r="3" fill="#F5E8C8" filter="url(#fDust)">
+      <animate attributeName="cx" values="1100;1085;1100" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="800;815;800" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="750" r="2.5" fill="#F5E8C8" filter="url(#fDust)">
+      <animate attributeName="cx" values="400;415;400" dur="24s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="750;735;750" dur="24s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect width="1600" height="900" fill="url(#bgGrad)" opacity="0.0" style="pointer-events: none;">
+    <animate attributeName="opacity" values="0;0;0" dur="1s"/>
+  </rect>
+
+  <rect width="100%" height="100%" filter="url(#fNoise)" opacity="0.08" style="pointer-events: none; mix-blend-mode: overlay;"/>
+</svg>

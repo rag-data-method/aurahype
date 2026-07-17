@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Pop Art Sunburst Gradient -->
+    <radialGradient id="sunburst" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="40%" stop-color="#FF4081" />
+      <stop offset="100%" stop-color="#FFEA00" />
+    </radialGradient>
+    
+    <!-- Halftone Pattern -->
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="6" fill="#000000" />
+    </pattern>
+
+    <!-- Filters for 3D Pop Art Shadows -->
+    <filter id="shadow">
+      <feDropShadow dx="12" dy="12" stdDeviation="0" flood-color="#000000" flood-opacity="1"/>
+    </filter>
+    <filter id="shadow-sm">
+      <feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000000" flood-opacity="1"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* Global Background Pulse */
+    @keyframes bg-pulse {
+      0%, 100% { fill: #FFEA00; }
+      50% { fill: #00E5FF; }
+    }
+    
+    /* Rotating Sunburst */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Shifting Halftone */
+    @keyframes shift-dots {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(10px, -5px); }
+      50% { transform: translate(-5px, 10px); }
+      75% { transform: translate(5px, 5px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* Explosive Text Pulse */
+    @keyframes text-pop {
+      0% { transform: scale(1); fill: #FFFFFF; }
+      25% { transform: scale(1.15); fill: #FFEA00; }
+      50% { transform: scale(1); fill: #00E5FF; }
+      75% { transform: scale(1.1); fill: #FF4081; }
+      100% { transform: scale(1); fill: #FFFFFF; }
+    }
+    
+    /* Shadow Layer Pulse (offset timing) */
+    @keyframes shadow-pop {
+      0% { transform: scale(1); fill: #000000; }
+      25% { transform: scale(1.15); fill: #1A1A1A; }
+      50% { transform: scale(1); fill: #000000; }
+      75% { transform: scale(1.1); fill: #1A1A1A; }
+      100% { transform: scale(1); fill: #000000; }
+    }
+
+    /* Floating Elements Drift */
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(15px, -25px) rotate(5deg); }
+      66% { transform: translate(-10px, 15px) rotate(-3deg); }
+    }
+
+    /* Background Base Animation */
+    .bg-base {
+      animation: bg-pulse 2s infinite ease-in-out;
+    }
+
+    /* Sunburst Animation */
+    .sunburst-group {
+      transform-origin: 960px 540px;
+      animation: spin 20s linear infinite;
+    }
+
+    /* Halftone Animation */
+    .halftone-layer {
+      animation: shift-dots 4s infinite linear;
+    }
+
+    /* Text Animations */
+    .text-layer {
+      transform-origin: 960px 540px;
+      animation: text-pop 1.5s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .text-shadow {
+      transform-origin: 960px 540px;
+      animation: shadow-pop 1.5s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      animation-delay: 0.1s;
+    }
+
+    /* Floating Decorations */
+    .float-1 { animation: float 5s infinite ease-in-out; }
+    .float-2 { animation: float 6s infinite ease-in-out reverse; }
+    .float-3 { animation: float 7s infinite ease-in-out; animation-delay: 1s; }
+  </style>
+
+  <!-- 1. Base Background Layer -->
+  <rect width="100%" height="100%" class="bg-base" />
+
+  <!-- 2. Halftone Dots Layer -->
+  <rect width="100%" height="100%" fill="url(#dots)" opacity="0.15" class="halftone-layer" />
+
+  <!-- 3. Sunburst Rays Layer -->
+  <g class="sunburst-group">
+    <!-- Generate 24 Rays -->
+    <polygon points="960,540 -500,-500 500,-500" fill="url(#sunburst)" opacity="0.6" />
+    <polygon points="960,540 500,-500 1500,-500" fill="url(#sunburst)" opacity="0.6" />
+    <polygon points="960,540 1500,-500 2420,-500" fill="url(#sunburst)" opacity="0.6" />
+    <polygon points="960,540 2420,-500 2420,500" fill="url(#sunburst)" opacity="0.6" />
+    <polygon points="960,540 2420,500 2420,1580" fill="url(#sunburst)" opacity="0.6" />
+    <polygon points="960,540 2420,1580 1500,1580" fill="url(#sunburst)" opacity="0.6" />
+    <polygon points="960,540 1500,1580 500,1580" fill="url(#sunburst)" opacity="0.6" />
+    <polygon points="960,540 500,1580 -500,1580" fill="url(#sunburst)" opacity="0.6" />
+    <polygon points="960,540 -500,1580 -500,500" fill="url(#sunburst)" opacity="0.6" />
+    <polygon points="960,540 -500,500 -500,-500" fill="url(#sunburst)" opacity="0.6" />
+    <!-- Inner Rays (offset) -->
+    <polygon points="960,540 -500,0 0,-500" fill="#FF4081" opacity="0.4" />
+    <polygon points="960,540 0,-500 1000,-500" fill="#FF4081" opacity="0.4" />
+    <polygon points="960,540 1000,-500 1920,-500" fill="#FF4081" opacity="0.4" />
+    <polygon points="960,540 1920,-500 2420,0" fill="#FF4081" opacity="0.4" />
+    <polygon points="960,540 2420,0 2420,1000" fill="#FF4081" opacity="0.4" />
+    <polygon points="960,540 2420,1000 1920,1580" fill="#FF4081" opacity="0.4" />
+    <polygon points="960,540 1920,1580 1000,1580" fill="#FF4081" opacity="0.4" />
+    <polygon points="960,540 1000,1580 0,1580" fill="#FF4081" opacity="0.4" />
+    <polygon points="960,540 0,1580 -500,1000" fill="#FF4081" opacity="0.4" />
+    <polygon points="960,540 -500,1000 -500,0" fill="#FF4081" opacity="0.4" />
+  </g>
+
+  <!-- 4. Background Floating Pop Art Elements -->
+  <g class="float-1">
+    <path d="M 300 200 Q 350 150 400 200 Q 450 250 400 300 Q 350 350 300 300 Q 250 250 300 200 Z" fill="#00E5FF" stroke="#000" stroke-width="5" filter="url(#shadow-sm)" />
+    <text x="350" y="255" font-family="Impact, sans-serif" font-size="40" fill="#000" text-anchor="middle" dominant-baseline="middle" transform="rotate(-15 350 255)">POW!</text>
+  </g>
+
+  <g class="float-2">
+    <path d="M 1600 800 Q 1650 750 1700 800 Q 1750 850 1700 900 Q 1650 950 1600 900 Q 1550 850 1600 800 Z" fill="#FF4081" stroke="#000" stroke-width="5" filter="url(#shadow-sm)" />
+    <text x="1650" y="855" font-family="Impact, sans-serif" font-size="40" fill="#FFF" text-anchor="middle" dominant-baseline="middle" transform="rotate(20 1650 855)">ZAP!</text>
+  </g>
+
+  <g class="float-3">
+    <circle cx="200" cy="800" r="60" fill="#FFEA00" stroke="#000" stroke-width="5" filter="url(#shadow-sm)" />
+    <text x="200" y="800" font-family="Impact, sans-serif" font-size="50" fill="#000" text-anchor="middle" dominant-baseline="middle">?</text>
+  </g>
+
+  <g class="float-1" style="animation-delay: 2s;">
+    <path d="M 1700 200 L 1750 250 L 1700 300 L 1650 250 Z" fill="#FFF" stroke="#000" stroke-width="4" filter="url(#shadow-sm)" />
+  </g>
+
+  <!-- 5. Central Massive Text Box -->
+  <g transform="translate(960, 540)">
+    <!-- Background Box for Text -->
+    <rect x="-750" y="-220" width="1500" height="440" rx="20" fill="#FF4081" stroke="#000" stroke-width="10" filter="url(#shadow)" />
+    <!-- Inner highlight -->
+    <rect x="-730" y="-200" width="1460" height="400" rx="10" fill="none" stroke="#FFF" stroke-width="5" opacity="0.5" />
+    
+    <!-- Text Group -->
+    <g>
+      <!-- 3D Shadow Layer -->
+      <text class="text-shadow" x="0" y="-40" font-family="Impact, Arial Black, sans-serif" font-size="140" font-weight="900" fill="#000" text-anchor="middle" dominant-baseline="middle" stroke="#000" stroke-width="4">
+        MODO POP ART
+      </text>
+      <text class="text-shadow" x="0" y="100" font-family="Impact, Arial Black, sans-serif" font-size="180" font-weight="900" fill="#000" text-anchor="middle" dominant-baseline="middle" stroke="#000" stroke-width="4">
+        ATIVADO.
+      </text>
+
+      <!-- Main Front Layer -->
+      <text class="text-layer" x="0" y="-40" font-family="Impact, Arial Black, sans-serif" font-size="140" font-weight="900" fill="#FFF" text-anchor="middle" dominant-baseline="middle" stroke="#000" stroke-width="8">
+        MODO POP ART
+      </text>
+      <text class="text-layer" x="0" y="100" font-family="Impact, Arial Black, sans-serif" font-size="180" font-weight="900" fill="#FFF" text-anchor="middle" dominant-baseline="middle" stroke="#000" stroke-width="8">
+        ATIVADO.
+      </text>
+    </g>
+  </g>
+
+</svg>

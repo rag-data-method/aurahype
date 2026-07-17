@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E54B9C">
+        <animate attributeName="stop-color" values="#E54B9C;#FF9F73;#E54B9C" dur="28s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="45%" stop-color="#FF9F73">
+        <animate attributeName="stop-color" values="#FF9F73;#FFD166;#FF9F73" dur="28s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#2D5A3F">
+        <animate attributeName="stop-color" values="#2D5A3F;#1A1A2E;#2D5A3F" dur="28s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF9F73">
+        <animate attributeName="stop-color" values="#FF9F73;#FFD166;#FF9F73" dur="22s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#E54B9C">
+        <animate attributeName="stop-color" values="#E54B9C;#FF9F73;#E54B9C" dur="22s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFD166"/>
+      <stop offset="100%" stop-color="#FF9F73"/>
+    </linearGradient>
+
+    <linearGradient id="mntGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2D5A3F"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+
+    <linearGradient id="treeFar1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2D5A3F" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1A1A2E" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <linearGradient id="treeFar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2D5A3F" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1A1A2E" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <radialGradient id="windowGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFD166" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#FF9F73" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#FF9F73" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="treeMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2D5A3F" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+
+    <linearGradient id="treeClose" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="100%" stop-color="#0D0D17"/>
+    </linearGradient>
+
+    <linearGradient id="towerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="60%" stop-color="#2D5A3F"/>
+      <stop offset="100%" stop-color="#FF9F73"/>
+    </linearGradient>
+
+    <filter id="blur160" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="160"/></filter>
+    <filter id="blur120" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="blur80" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="blur40" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur15" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="15"/></filter>
+    <filter id="blur8" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="8"/></filter>
+
+    <g id="tower">
+      <path d="M 1230 900 L 1230 730 L 1280 730 L 1280 900 M 1260 730 L 1260 900 M 1370 900 L 1370 730 L 1415 730 L 1415 900 M 1390 730 L 1390 900 M 1230 730 L 1415 730 L 1415 715 L 1230 715 Z" fill="#2D5A3F"/>
+      <rect x="1230" y="710" width="185" height="10" fill="#1A1A2E"/>
+      <path d="M 1210 710 L 1235 580 L 1410 580 L 1435 710 Z" fill="#1A1A2E"/>
+      <path d="M 1225 580 L 1245 490 L 1400 490 L 1420 580 Z" fill="#2D5A3F"/>
+      <path d="M 1200 490 L 1245 430 L 1400 430 L 1445 490 Z" fill="#1A1A2E"/>
+      <rect x="1295" y="650" width="55" height="35" rx="3" fill="#FF9F73"/>
+      <rect x="1295" y="650" width="55" height="35" rx="3" fill="url(#windowGlow)"/>
+      <rect x="1315" y="510" width="15" height="60" rx="2" fill="#FF9F73" opacity="0.7"/>
+      <path d="M 1300 710 L 1300 825 L 1250 900" stroke="#1A1A2E" stroke-width="4" fill="none"/>
+      <path d="M 1350 710 L 1350 825 L 1400 900" stroke="#1A1A2E" stroke-width="4" fill="none"/>
+      <rect x="1310" y="480" width="8" height="15" fill="#2D5A3F"/>
+    </g>
+
+    <g id="bird1">
+      <path d="M 0 0 Q 8 -6 16 0 Q 8 -2 0 0 Z" fill="#1A1A2E"/>
+    </g>
+    <g id="bird2">
+      <path d="M 0 0 Q 12 -8 24 0 Q 12 -3 0 0 Z" fill="#1A1A2E"/>
+    </g>
+
+    <g id="smoke" opacity="0.6">
+      <circle r="8" fill="#FF9F73" opacity="0.4">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 10 -25; 20 -55" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.4;0.1;0" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="8;14;22" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="6" fill="#FFD166" opacity="0.3">
+        <animateTransform attributeName="transform" type="translate" values="0 0; -5 -20; 5 -45" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0.1;0" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="6;12;18" dur="10s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="10" fill="#E54B9C" opacity="0.2">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 15 -30; 25 -65" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.2;0.05;0" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="10;18;28" dur="12s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <g id="farTrees1">
+      <path d="M 0 900 L 0 590 C 60 540 120 600 180 560 C 240 520 300 580 350 540 C 420 500 480 570 550 530 C 620 490 700 560 780 520 C 850 480 920 550 1000 510 C 1080 470 1150 520 1240 500 L 1240 700 L 1600 700 L 1600 900 Z" fill="url(#treeFar1)"/>
+      <path d="M 200 900 L 200 620 C 260 570 320 630 380 590 C 450 550 520 610 600 570 C 680 530 750 580 850 560 C 950 540 1050 600 1150 560 C 1250 520 1350 590 1450 550 L 1450 750 L 1600 750 L 1600 900 Z" fill="url(#treeFar1)"/>
+    </g>
+
+    <g id="farTrees2">
+      <path d="M -100 900 L -100 640 C 0 590 80 650 160 610 C 250 570 340 630 430 590 C 520 550 620 610 720 570 C 820 530 930 590 1040 550 C 1150 510 1260 570 1370 530 C 1480 490 1550 540 1650 520 L 1650 750 L 1600 750 L 1600 900 Z" fill="url(#treeFar2)"/>
+      <path d="M 100 900 L 100 680 C 200 630 300 690 400 650 C 500 610 620 670 740 630 C 860 590 980 650 1100 610 C 1220 570 1340 630 1460 590 C 1580 550 1650 600 1750 580 L 1750 800 L 1600 800 L 1600 900 Z" fill="url(#treeFar2)"/>
+    </g>
+
+    <g id="midTrees">
+      <path d="M -50 900 L -50 750 C 100 680 250 750 400 700 C 550 650 700 720 850 670 C 1000 620 1150 690 1300 640 C 1450 590 1550 650 1650 620 L 1650 850 L 1600 850 L 1600 900 Z" fill="url(#treeMid)"/>
+      <path d="M 50 900 L 50 780 C 200 710 350 780 500 730 C 650 680 800 750 950 700 C 1100 650 1250 720 1400 670 C 1550 620 1650 680 1750 650 L 1750 880 L 1600 880 L 1600 900 Z" fill="url(#treeMid)"/>
+      <path d="M 0 900 L 0 840 C 80 790 160 850 240 810 C 320 770 420 830 520 790 C 620 750 720 810 820 770 C 920 730 1020 790 1120 750 C 1220 710 1320 770 1420 730 C 1520 690 1600 750 1680 720 L 1680 900 Z" fill="url(#treeMid)"/>
+    </g>
+
+    <g id="closeTrees">
+      <path d="M -100 900 L -100 800 C 50 730 200 800 350 750 C 500 700 650 770 800 720 C 950 670 1100 740 1250 690 C 1400 640 1500 700 1600 670 L 1600 900 Z" fill="url(#treeClose)"/>
+      <path d="M 200 900 L 200 820 C 350 750 500 820 650 770 C 800 720 950 790 1100 740 C 1250 690 1400 760 1550 710 C 1700 660 1800 720 1900 690 L 1900 900 Z" fill="url(#treeClose)"/>
+      <path d="M 0 900 L 0 880 C 100 830 200 890 300 850 C 400 810 500 870 600 830 C 700 790 800 850 900 810 C 1000 770 1100 830 1200 790 C 1300 750 1400 810 1500 770 C 1600 730 1700 790 1800 760 L 1800 900 Z" fill="url(#treeClose)"/>
+      <path d="M 1300 900 L 1310 780 C 1315 750 1315 750 1320 780 Z" fill="#0D0D17"/>
+      <path d="M 1350 900 L 1362 740 C 1367 700 1367 700 1372 740 Z" fill="#0D0D17"/>
+      <path d="M 1420 900 L 1430 800 C 1435 770 1435 770 1440 800 Z" fill="#0D0D17"/>
+      <path d="M 1480 900 L 1495 720 C 1500 680 1500 680 1505 720 Z" fill="#0D0D17"/>
+    </g>
+
+    <g id="particle">
+      <circle r="1.5" fill="#FFD166" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <g id="ember">
+      <circle r="2" fill="#FF9F73" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <g id="dust">
+      <circle r="1" fill="#FFD166" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.1;0.4" dur="5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </defs>
+
+  <rect width="1600" height="900" fill="#1A1A2E"/>
+
+  <rect width="1600" height="900" fill="url(#sky1)"/>
+
+  <ellipse cx="800" cy="550" rx="700" ry="450" fill="url(#sky2)" opacity="0.4" filter="url(#blur160)"/>
+
+  <circle cx="850" cy="450" r="180" fill="url(#sunGrad)" opacity="0.8" filter="url(#blur80)">
+    <animate attributeName="opacity" values="0.8;0.65;0.8" dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="180;200;180" dur="20s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="1200" cy="400" r="350" fill="#E54B9C" opacity="0.2" filter="url(#blur120)">
+    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="350;400;350" dur="22s" repeatCount="indefinite"/>
+  </circle>
+
+  <path d="M 0 620 C 200 550, 400 580, 600 520 C 800 460, 1000 500, 1200 480 C 1400 460, 1500 490, 1600 470 L 1600 900 L 0 900 Z" fill="url(#mntGrad)" opacity="0.3" filter="url(#blur120)"/>
+
+  <path d="M 0 680 C 250 600, 500 640, 750 570 C 1000 500, 1250 540, 1600 510 L 1600 900 L 0 900 Z" fill="url(#mntGrad)" opacity="0.5" filter="url(#blur80)"/>
+
+  <use href="#farTrees1" filter="url(#blur80)"/>
+
+  <use href="#farTrees2" filter="url(#blur40)"/>
+
+  <use href="#midTrees" filter="url(#blur15)"/>
+
+  <use href="#closeTrees"/>
+
+  <use href="#tower" transform="translate(0, -5)">
+    <animateTransform attributeName="transform" type="translate" values="0 -5; 0 0; 0 -5" dur="6s" repeatCount="indefinite"/>
+  </use>
+
+  <g>
+    <circle cx="1322" cy="667" r="30" fill="url(#windowGlow)" filter="url(#blur15)">
+      <animate attributeName="opacity" values="0.9;0.6;0.9" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="30;38;30" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1322" cy="667" r="60" fill="url(#windowGlow)" opacity="0.3" filter="url(#blur40)">
+      <animate attributeName="opacity" values="0.3;0.15;0.3" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="60;75;60" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g transform="translate(1314, 475)">
+    <use href="#smoke"/>
+  </g>
+
+  <rect x="0" y="0" width="1600" height="900" fill="url(#sunGrad)" opacity="0.05" style="mix-blend-mode: overlay;">
+    <animate attributeName="opacity" values="0.05;0.1;0.05" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <g opacity="0.6">
+    <use href="#bird1" x="300" y="250">
+      <animateMotion path="M 0 0 C 100 -30, 200 20, 400 -10 C 600 -40, 800 10, 1000 -20" dur="18s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#bird1" x="350" y="280">
+      <animateMotion path="M 0 0 C 80 -20, 180 30, 350 0 C 520 -30, 700 20, 900 -10" dur="16s" repeatCount="indefinite"/>
+    </use>
+    <use href="#bird2" x="280" y="230">
+      <animateMotion path="M 0 0 C 120 -40, 250 10, 450 -20 C 650 -50, 850 0, 1100 -30" dur="20s" repeatCount="indefinite"/>
+    </use>
+    <use href="#bird1" x="450" y="210">
+      <animateMotion path="M 0 0 C 60 -15, 140 25, 280 -5 C 420 -35, 580 15, 750 -15" dur="14s" repeatCount="indefinite"/>
+    </use>
+    <use href="#bird1" x="380" y="300">
+      <animateMotion path="M 0 0 C 90 -25, 190 35, 380 5 C 570 -25, 760 25, 950 -5" dur="17s" repeatCount="indefinite"/>
+    </use>
+    <use href="#bird2" x="250" y="270">
+      <animateMotion path="M 0 0 C 70 -20, 150 30, 300 0 C 450 -30, 620 20, 800 -10" dur="15s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <g opacity="0.5">
+    <use href="#particle" x="200" y="700"><animateMotion path="M 0 0 Q 30 -100 60 -200" dur="12s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="400" y="650"><animateMotion path="M 0 0 Q -20 -80 40 -180" dur="15s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="600" y="720"><animateMotion path="M 0 0 Q 50 -120 100 -220" dur="10s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="800" y="680"><animateMotion path="M 0 0 Q -40 -90 20 -190" dur="14s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="1000" y="750"><animateMotion path="M 0 0 Q 60 -130 120 -230" dur="11s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="1200" y="620"><animateMotion path="M 0 0 Q -30 -70 30 -170" dur="13s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="1400" y="700"><animateMotion path="M 0 0 Q 40 -110 80 -210" dur="16s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="300" y="550"><animateMotion path="M 0 0 Q -50 -100 10 -200" dur="18s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="500" y="600"><animateMotion path="M 0 0 Q 70 -140 140 -240" dur="12s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="700" y="780"><animateMotion path="M 0 0 Q -60 -110 0 -210" dur="15s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="900" y="640"><animateMotion path="M 0 0 Q 20 -90 60 -190" dur="10s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="1100" y="710"><animateMotion path="M 0 0 Q -70 -120 -10 -220" dur="14s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="1300" y="660"><animateMotion path="M 0 0 Q 80 -150 160 -250" dur="11s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="1500" y="730"><animateMotion path="M 0 0 Q -20 -80 40 -180" dur="17s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="100" y="680"><animateMotion path="M 0 0 Q 40 -100 80 -200" dur="13s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="250" y="790"><animateMotion path="M 0 0 Q -40 -90 0 -190" dur="16s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="450" y="740"><animateMotion path="M 0 0 Q 50 -110 100 -210" dur="12s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="650" y="620"><animateMotion path="M 0 0 Q -30 -70 30 -170" dur="15s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="850" y="690"><animateMotion path="M 0 0 Q 60 -120 120 -220" dur="10s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="1050" y="760"><animateMotion path="M 0 0 Q -50 -100 10 -200" dur="14s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="1250" y="670"><animateMotion path="M 0 0 Q 30 -90 60 -190" dur="11s" repeatCount="indefinite"/></use>
+    <use href="#particle" x="1450" y="640"><animateMotion path="M 0 0 Q -60 -110 0 -210" dur="18s" repeatCount="indefinite"/></use>
+  </g>
+
+  <g opacity="0.4">
+    <use href="#ember" x="1280" y="680"><animateMotion path="M 0 0 Q 10 -40 20 -80 Q 30 -120 10 -160" dur="9s" repeatCount="indefinite"/></use>
+    <use href="#ember" x="1290" y="670"><animateMotion path="M 0 0 Q -15 -50 -5 -100 Q 5 -150 -10 -190" dur="11s" repeatCount="indefinite"/></use>
+    <use href="#ember" x="1310" y="665"><animateMotion path="M 0 0 Q 20 -60 40 -120 Q 60 -180 30 -220" dur="8s" repeatCount="indefinite"/></use>
+    <use href="#ember" x="1330" y="675"><animateMotion path="M 0 0 Q -10 -45 -20 -90 Q -30 -135 -15 -175" dur="10s" repeatCount="indefinite"/></use>
+    <use href="#ember" x="1345" y="660"><animateMotion path="M 0 0 Q 25 -55 50 -110 Q 75 -165 45 -205" dur="12s" repeatCount="indefinite"/></use>
+    <use href="#ember" x="1320" y="685"><animateMotion path="M 0 0 Q -20 -50 -40 -100 Q -60 -150 -30 -190" dur="7s" repeatCount="indefinite"/></use>
+    <use href="#ember" x="1300" y="690"><animateMotion path="M 0 0 Q 15 -65 30 -130 Q 45 -195 20 -235" dur="13s" repeatCount="indefinite"/></use>
+    <use href="#ember" x="1295" y="655"><animateMotion path="M 0 0 Q -25 -40 -50 -80 Q -75 -120 -40 -160" dur="9s" repeatCount="indefinite"/></use>
+    <use href="#ember" x="1315" y="680"><animateMotion path="M 0 0 Q 5 -55 10 -110 Q 15 -165 5 -205" dur="11s" repeatCount="indefinite"/></use>
+    <use href="#ember" x="1335" y="665"><animateMotion path="M 0 0 Q -30 -60 -60 -120 Q -90 -180 -50 -220" dur="8s" repeatCount="indefinite"/></use>
+  </g>
+
+  <g opacity="0.3" filter="url(#blur8)">
+    <use href="#dust" x="150" y="800"><animateMotion path="M 0 0 Q 40 -20 80 -10 Q 120 0 160 -15" dur="20s" repeatCount="indefinite"/></use>
+    <use href="#dust" x="450" y="820"><animateMotion path="M 0 0 Q -30 -15 -60 -5 Q -90 5 -120 -10" dur="18s" repeatCount="indefinite"/></use>
+    <use href="#dust" x="750" y="780"><animateMotion path="M 0 0 Q 50 -25 100 -15 Q 150 -5 200 -20" dur="22s" repeatCount="indefinite"/></use>
+    <use href="#dust" x="1050" y="840"><animateMotion path="M 0 0 Q -40 -10 -80 0 Q -120 10 -160 -5" dur="16s" repeatCount="indefinite"/></use>
+    <use href="#dust" x="1350" y="790"><animateMotion path="M 0 0 Q 35 -20 70 -10 Q 105 0 140 -15" dur="19s" repeatCount="indefinite"/></use>
+    <use href="#dust" x="250" y="860"><animateMotion path="M 0 0 Q -25 -15 -50 -5 Q -75 5 -100 -10" dur="21s" repeatCount="indefinite"/></use>
+    <use href="#dust" x="550" y="810"><animateMotion path="M 0 0 Q 45 -25 90 -15 Q 135 -5 180 -20" dur="17s" repeatCount="indefinite"/></use>
+    <use href="#dust" x="850" y="850"><animateMotion path="M 0 0 Q -35 -10 -70 0 Q -105 10 -140 -5" dur="23s" repeatCount="indefinite"/></use>
+    <use href="#dust" x="1150" y="800"><animateMotion path="M 0 0 Q 30 -20 60 -10 Q 90 0 120 -15" dur="15s" repeatCount="indefinite"/></use>
+    <use href="#dust" x="1450" y="830"><animateMotion path="M 0 0 Q -45 -15 -90 -5 Q -135 5 -180 -10" dur="24s" repeatCount="indefinite"/></use>
+  </g>
+
+  <rect x="0" y="0" width="1600" height="900" fill="#1A1A2E" opacity="0.1" style="mix-blend-mode: multiply;">
+    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="10s" repeatCount="indefinite"/>
+  </rect>
+
+  <path d="M 0 900 L 0 0 L 300 0 L 300 900 Z" fill="url(#sky1)" opacity="0.05"/>
+  <path d="M 1300 0 L 1600 0 L 1600 900 L 1300 900 Z" fill="#1A1A2E" opacity="0.15"/>
+
+  <g opacity="0.15">
+    <rect x="0" y="0" width="1600" height="4" fill="#1A1A2E"/>
+    <rect x="0" y="8" width="1600" height="2" fill="#1A1A2E"/>
+    <rect x="0" y="14" width="1600" height="1" fill="#1A1A2E"/>
+    <rect x="0" y="896" width="1600" height="4" fill="#1A1A2E"/>
+    <rect x="0" y="890" width="1600" height="2" fill="#1A1A2E"/>
+    <rect x="0" y="885" width="1600" height="1" fill="#1A1A2E"/>
+  </g>
+</svg>

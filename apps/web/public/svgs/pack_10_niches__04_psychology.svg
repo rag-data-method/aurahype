@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<filter id="b1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="70"/></filter>
+<filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"/></filter>
+<filter id="t1"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="n"/><feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.4 0" in="n" result="cn"/><feComposite in="SourceGraphic" in2="cn" operator="arithmetic" k1="0.2" k2="0.8"/></filter>
+</defs>
+<rect width="1600" height="900" fill="#FBF5EE"/>
+<g opacity="0.9" filter="url(#b1)">
+<path fill="#FFB088" d="M150,450C200,250 500,150 700,300C900,450 850,750 650,850C450,950 200,800 150,600C100,500 100,550 150,450Z" transform="translate(425,550)">
+<animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;0,-20;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+</path>
+</g>
+<g opacity="0.85" filter="url(#b2)">
+<path fill="#FA8072" d="M1100,300C1250,200 1450,250 1550,400C1650,550 1500,700 1300,750C1100,800 900,650 950,500C1000,400 1000,350 1100,300Z" transform="translate(1200,500)">
+<animateTransform attributeName="transform" type="rotate" values="-3;2;-3" dur="11s" repeatCount="indefinite" additive="sum"/>
+<animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="10s" repeatCount="indefinite" additive="sum"/>
+</path>
+</g>
+<g opacity="0.8" filter="url(#b1)">
+<path fill="#9CAF88" d="M600,600C750,500 950,550 1050,700C1150,850 1000,950 800,900C600,850 450,700 500,600C550,550 550,650 600,600Z" transform="translate(800,750)">
+<animateTransform attributeName="transform" type="translate" values="0,0;30,-10;0,0" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" additive="sum"/>
+</path>
+</g>
+<path fill="#FFB088" opacity="0.85" d="M-50,750C150,650 400,700 600,800C800,900 1000,850 1200,750L1200,950L-50,950Z" filter="url(#b2)">
+<animateTransform attributeName="transform" type="translate" values="0,0;0,-40;0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1"/>
+</path>
+<g opacity="0.9" transform="translate(1300,200)">
+<path fill="#FA8072" d="M0,100C100,0 300,50 400,150C500,250 400,400 250,450C100,500 -50,400 0,250C25,150 25,150 0,100Z">
+<animateTransform attributeName="transform" type="scale" values="1;1.12;1" dur="8s" repeatCount="indefinite" additive="sum"/>
+<animate attributeName="opacity" values="0.9;0.7;0.9" dur="6s" repeatCount="indefinite"/>
+</path>
+</g>
+<g opacity="0.75" filter="url(#t1)">
+<path fill="#9CAF88" d="M300,100C450,50 650,100 750,200C850,300 700,450 550,500C400,550 200,450 250,300C275,200 200,150 300,100Z" transform="translate(475,300)">
+<animateTransform attributeName="transform" type="rotate" values="0;5;0" dur="7s" repeatCount="indefinite" additive="sum"/>
+<animateTransform attributeName="transform" type="scale" values="1;1.06;1" dur="11s" repeatCount="indefinite" additive="sum"/>
+</path>
+</g>
+<g opacity="0.95">
+<path fill="#FFB088" d="M900,500C1050,400 1250,450 1350,600C1450,750 1300,900 1100,900C900,900 750,750 800,600C825,550 825,550 900,500Z" transform="translate(1100,700)">
+<animateTransform attributeName="transform" type="translate" values="0,0;-20,10;0,0" dur="12s" repeatCount="indefinite" additive="sum"/>
+</path>
+</g>
+<g opacity="0.8" filter="url(#b2)">
+<path fill="#FA8072" d="M500,200C600,150 750,180 800,280C850,380 700,480 550,480C400,480 350,350 400,250C425,200 450,220 500,200Z" transform="translate(575,340)">
+<animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="9s" repeatCount="indefinite" additive="sum"/>
+</path>
+</g>
+<path fill="#9CAF88" opacity="0.85" d="M100,800C200,750 350,780 400,850C450,920 300,980 150,950C50,930 50,850 100,800Z" filter="url(#b1)">
+<animate attributeName="opacity" values="0.85;0.7;0.85" dur="8s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;15,-5;0,0" dur="10s" repeatCount="indefinite"/>
+</path>
+<g opacity="0.8">
+<path fill="#FFB088" d="M1400,600C1500,550 1600,600 1650,700C1700,800 1600,900 1450,900C1300,900 1250,800 1300,700C1325,650 1350,620 1400,600Z" transform="translate(1475,750)">
+<animateTransform attributeName="transform" type="rotate" values="0;-4;0" dur="6s" repeatCount="indefinite" additive="sum"/>
+</path>
+</g>
+</svg>

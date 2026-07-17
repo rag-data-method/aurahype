@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skin" x1="20%" y1="15%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#D4AA7D"/>
+      <stop offset="45%" stop-color="#C9A574"/>
+      <stop offset="100%" stop-color="#8B5A2B">
+        <animate attributeName="stop-color" values="#8B5A2B;#7A4D24;#8B5A2B" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8D5B8" stop-opacity="0.35">
+        <animate attributeName="stop-opacity" values="0.35;0.55;0.35" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#E8D5B8" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFF5E0" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#E8D5B8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#E8D5B8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="50%" stop-color="#3E2723" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#3E2723" stop-opacity="0.35"/>
+    </radialGradient>
+    <filter id="b20" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="b60" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="b120" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="sandTurb" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="5" result="noise">
+        <animate attributeName="baseFrequency" values="0.7;0.705;0.7" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="0.78 0 0 0 0  0 0.66 0 0 0  0 0 0.45 0 0  0 0 0 0.2 0" in="noise" result="coloredNoise"/>
+    </filter>
+    <path id="fp" d="M0,45 C-18,28 -22,5 -12,-18 C-6,-30 12,-34 28,-28 C44,-22 56,-8 58,10 C60,28 52,42 38,50 C24,58 6,55 0,45 Z M-8,-22 a4.5,4.5 0 1,1 0.1,0 M8,-28 a4.5,4.5 0 1,1 0.1,0 M24,-28 a4.5,4.5 0 1,1 0.1,0 M38,-22 a4,4 0 1,1 0.1,0 M50,-12 a3.5,3.5 0 1,1 0.1,0"/>
+  </defs>
+
+  <!-- Base Sand -->
+  <rect width="1600" height="900" fill="#E8D5B8"/>
+
+  <!-- Sand Grain Texture -->
+  <rect width="1600" height="900" fill="#C9A574" filter="url(#sandTurb)" opacity="0.25">
+    <animate attributeName="opacity" values="0.25;0.32;0.25" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- Atmospheric Sun Glow -->
+  <circle cx="420" cy="320" r="450" fill="url(#sun)" filter="url(#b120)" opacity="0.6">
+    <animate attributeName="opacity" values="0.55;0.7;0.55" dur="11s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    <animate attributeName="cx" values="420;450;420" dur="16s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="320;300;320" dur="13s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </circle>
+
+  <!-- Distant Sand Ripples -->
+  <g filter="url(#b60)" opacity="0.35">
+    <path d="M-100,500 Q400,450 900,520 T1700,480" fill="none" stroke="#C9A574" stroke-width="40" opacity="0.6"/>
+    <path d="M-100,650 Q500,600 1000,680 T1700,620" fill="none" stroke="#C9A574" stroke-width="60" opacity="0.4"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 12,5; 0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </g>
+
+  <!-- Mid Sand Ripples -->
+  <g filter="url(#b20)" opacity="0.4">
+    <path d="M0,550 Q300,530 600,570 T1200,540 T1600,580" fill="none" stroke="#C9A574" stroke-width="25" opacity="0.5"/>
+    <path d="M0,720 Q400,690 800,740 T1600,700" fill="none" stroke="#C9A574" stroke-width="35" opacity="0.3"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -8,-4; 0,0" dur="19s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </g>
+
+  <!-- Footprints Fading -->
+  <g fill="#A89072">
+    <use href="#fp" transform="translate(320,640) scale(1.25) rotate(-12)" opacity="0.15">
+      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="13s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </use>
+    <use href="#fp" transform="translate(440,610) scale(1.15) rotate(-8)" opacity="0.25">
+      <animate attributeName="opacity" values="0.25;0.35;0.25" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </use>
+    <use href="#fp" transform="translate(560,580) scale(1.05) rotate(-4)" opacity="0.35">
+      <animate attributeName="opacity" values="0.35;0.45;0.35" dur="14s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </use>
+    <use href="#fp" transform="translate(680,550) scale(0.95) rotate(0)" opacity="0.45">
+      <animate attributeName="opacity" values="0.45;0.55;0.45" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </use>
+  </g>
+
+  <!-- Left Foot Shadow -->
+  <g transform="translate(540,540)">
+    <path d="M-60,100 C-90,0 -50,-80 20,-100 C50,-110 90,-115 120,-105 C140,-100 150,-85 155,-65 C160,-30 140,20 120,60 C90,110 40,130 -10,125 C-40,120 -60,110 -60,100 Z" fill="#6B4F3E" filter="url(#b20)" opacity="0.45" transform="scale(1.05,0.85) translate(5,15)">
+      <animate attributeName="opacity" values="0.45;0.6;0.45" dur="9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="scale" values="1.05;1.1;1.05" dur="10s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Left Foot (Grounded) -->
+  <g transform="translate(540,540)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-2; 0,0" dur="8s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 0.4; 0" dur="11s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <!-- Main Shape -->
+      <path d="M-60,100 C-90,0 -50,-80 20,-100 C50,-110 90,-115 120,-105 C140,-100 150,-85 155,-65 C160,-30 140,20 120,60 C90,110 40,130 -10,125 C-40,120 -60,110 -60,100 Z" fill="url(#skin)"/>
+      <!-- Underside Depth -->
+      <path d="M-40,110 C-20,120 20,125 60,115 C90,105 110,80 130,50 C110,90 80,120 40,125 C0,130 -30,120 -40,110 Z" fill="#8B5A2B" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.4;0.3" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </path>
+      <!-- Rim Light -->
+      <path d="M-50,80 C-70,0 -40,-70 20,-90 C45,-98 70,-102 90,-100 C70,-105 40,-108 10,-100 C-50,-80 -80,0 -60,80 Z" fill="url(#rim)" filter="url(#b20)" opacity="0.35">
+        <animate attributeName="opacity" values="0.35;0.5;0.35" dur="7s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Right Foot Shadow -->
+  <g transform="translate(960,500)">
+    <path d="M-40,150 C-60,90 -50,30 -30,-20 C-15,-60 10,-90 40,-100 C70,-110 100,-100 110,-70 C120,-30 100,20 80,70 C60,110 40,140 20,155 C0,165 -25,160 -40,150 Z" fill="#6B4F3E" filter="url(#b20)" opacity="0.4" transform="scale(1.08,0.8) translate(8,20)">
+      <animate attributeName="opacity" values="0.4;0.55;0.4" dur="10s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="scale" values="1.08;1.14;1.08" dur="12s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="skewX" values="0; 2; 0" dur="14s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Right Foot (Lifting) -->
+  <g transform="translate(960,500)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-3; 0,0" dur="9s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -0.5; 0" dur="12s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 3,-1; 0,0" dur="15s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <!-- Main Shape -->
+      <path d="M-40,150 C-60,90 -50,30 -30,-20 C-15,-60 10,-90 40,-100 C70,-110 100,-100 110,-70 C120,-30 100,20 80,70 C60,110 40,140 20,155 C0,165 -25,160 -40,150 Z" fill="url(#skin)"/>
+      <!-- Underside Depth -->
+      <path d="M-20,140 C0,150 30,155 50,145 C70,130 85,100 95,60 C80,100 60,135 30,150 C10,158 -10,155 -20,140 Z" fill="#8B5A2B" opacity="0.35">
+        <animate attributeName="opacity" values="0.35;0.45;0.35" dur="11s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </path>
+      <!-- Rim Light -->
+      <path d="M-35,120 C-55,60 -45,10 -25,-30 C-10,-65 15,-90 40,-98 C20,-95 0,-80 -15,-50 C-30,-15 -40,40 -30,100 Z" fill="url(#rim)" filter="url(#b20)" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.45;0.3" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Foreground Sand Drift -->
+  <g filter="url(#b20)" opacity="0.3">
+    <path d="M200,850 Q600,820 1000,860 T1400,830" fill="none" stroke="#C9A574" stroke-width="50"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 6,-3; 0,0" dur="17s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </g>
+
+  <!-- Dust Motes / Particles -->
+  <g fill="#E8D5B8" filter="url(#b20)">
+    <circle cx="200" cy="300" r="3" opacity="0">
+      <animate attributeName="opacity" values="0;0.7;0" dur="20s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 40,-20; 0,0" dur="25s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </circle>
+    <circle cx="1300" cy="400" r="4" opacity="0">
+      <animate attributeName="opacity" values="0;0.6;0" dur="22s" begin="2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,10; 0,0" dur="28s" begin="2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </circle>
+    <circle cx="800" cy="750" r="2.5" opacity="0">
+      <animate attributeName="opacity" values="0;0.8;0" dur="18s" begin="4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,15; 0,0" dur="24s" begin="4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </circle>
+    <circle cx="500" cy="200" r="3.5" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;0" dur="24s" begin="1s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,-25; 0,0" dur="30s" begin="1s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </circle>
+  </g>
+
+  <!-- Cinematic Vignette & Grade -->
+  <rect width="1600" height="900" fill="url(#vignette)" opacity="0.35" style="pointer-events:none;">
+    <animate attributeName="opacity" values="0.35;0.45;0.35" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </rect>
+</svg>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Halftone Dot Pattern -->
+    <pattern id="halftone" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="6" fill="#000000"/>
+    </pattern>
+    
+    <!-- Halftone Dot Pattern (Small) -->
+    <pattern id="halftoneSmall" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="3" fill="#000000"/>
+    </pattern>
+
+    <!-- Clip Paths -->
+    <clipPath id="circleClip">
+      <circle cx="960" cy="540" r="500"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    :root {
+      --bg-1: #FF006E;
+      --bg-2: #8338EC;
+      --bg-3: #3A86FF;
+      --bg-4: #06FFB4;
+      --sun-1: #FFBE0B;
+      --sun-2: #FB5607;
+      --mnt-1: #FF006E;
+      --mnt-2: #8338EC;
+      --mnt-3: #3A86FF;
+      --pug-fur: #D4A373;
+      --pug-mask: #2B1D14;
+    }
+
+    /* Background Color Shifting */
+    .sky-bg {
+      animation: skyShift 8s ease-in-out infinite alternate;
+    }
+    @keyframes skyShift {
+      0% { fill: var(--bg-1); }
+      33% { fill: var(--bg-2); }
+      66% { fill: var(--bg-3); }
+      100% { fill: var(--bg-4); }
+    }
+
+    /* Sunburst Rotation and Color Shift */
+    .sunburst {
+      transform-origin: 960px 540px;
+      animation: sunRotate 20s linear infinite, sunColor 6s ease-in-out infinite alternate;
+    }
+    @keyframes sunRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes sunColor {
+      0% { fill: var(--sun-1); }
+      100% { fill: var(--sun-2); }
+    }
+
+    /* Halftone Overlay Pulse */
+    .halftone-overlay {
+      animation: halftonePulse 4s ease-in-out infinite alternate;
+      opacity: 0.15;
+    }
+    @keyframes halftonePulse {
+      0% { opacity: 0.1; }
+      100% { opacity: 0.25; }
+    }
+
+    /* Mountain Layers Shifting */
+    .mnt-back {
+      animation: mntShift1 10s ease-in-out infinite alternate;
+    }
+    @keyframes mntShift1 {
+      0% { fill: var(--mnt-1); transform: translateX(0px); }
+      100% { fill: var(--mnt-2); transform: translateX(-30px); }
+    }
+
+    .mnt-mid {
+      animation: mntShift2 8s ease-in-out infinite alternate;
+    }
+    @keyframes mntShift2 {
+      0% { fill: var(--mnt-2); transform: translateX(0px); }
+      100% { fill: var(--mnt-3); transform: translateX(20px); }
+    }
+
+    .mnt-front {
+      animation: mntShift3 12s ease-in-out infinite alternate;
+    }
+    @keyframes mntShift3 {
+      0% { fill: #2B1D14; transform: translateX(0px); }
+      100% { fill: #000000; transform: translateX(-10px); }
+    }
+
+    /* The Grumpy Pug Animations */
+    #pug-group {
+      transform-origin: 960px 800px;
+      animation: pugBreathe 3s ease-in-out infinite, pugGrumpyShake 0.4s ease-in-out infinite;
+    }
+    @keyframes pugBreathe {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-10px) scale(1.01); }
+    }
+    @keyframes pugGrumpyShake {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(0.5deg); }
+      75% { transform: rotate(-0.5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    /* Pug Ear Twitch */
+    .ear-left {
+      transform-origin: 780px 500px;
+      animation: earTwitchLeft 4s ease-in-out infinite;
+    }
+    @keyframes earTwitchLeft {
+      0%, 90%, 100% { transform: rotate(0deg); }
+      92% { transform: rotate(-8deg); }
+      94% { transform: rotate(0deg); }
+      96% { transform: rotate(-5deg); }
+    }
+
+    .ear-right {
+      transform-origin: 1140px 500px;
+      animation: earTwitchRight 5s ease-in-out infinite;
+    }
+    @keyframes earTwitchRight {
+      0%, 85%, 100% { transform: rotate(0deg); }
+      87% { transform: rotate(8deg); }
+      89% { transform: rotate(0deg); }
+    }
+
+    /* Pug Blink */
+    .eye-left, .eye-right {
+      animation: blink 4s infinite;
+    }
+    @keyframes blink {
+      0%, 96%, 100% { transform: scaleY(1); }
+      98% { transform: scaleY(0.1); }
+    }
+
+    /* Wrinkles Furrow (Grumpy) */
+    .wrinkle {
+      animation: furrow 2s ease-in-out infinite alternate;
+    }
+    @keyframes furrow {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(3px); }
+    }
+
+    /* Tail Wag (Grumpy slow wag) */
+    .tail {
+      transform-origin: 1150px 850px;
+      animation: tailWag 1s ease-in-out infinite alternate;
+    }
+    @keyframes tailWag {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(15deg); }
+    }
+
+    /* Floating Pop Art Elements */
+    .float-bone {
+      animation: floatUp1 6s ease-in-out infinite;
+    }
+    @keyframes floatUp1 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-40px) rotate(10deg); }
+    }
+
+    .float-star {
+      animation: floatUp2 5s ease-in-out infinite;
+    }
+    @keyframes floatUp2 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-60px) rotate(-15deg); }
+    }
+
+    .float-bolt {
+      animation: floatUp3 7s ease-in-out infinite;
+    }
+    @keyframes floatUp3 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(20deg); }
+    }
+
+    /* Foreground Ground Pulse */
+    .ground-strip {
+      animation: groundPulse 3s ease-in-out infinite alternate;
+    }
+    @keyframes groundPulse {
+      0% { fill: #FF006E; }
+      100% { fill: #FB5607; }
+    }
+
+    /* Overlay Scanlines */
+    .scanlines {
+      animation: scanMove 10s linear infinite;
+    }
+    @keyframes scanMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(40px); }
+    }
+  </style>
+
+  <!-- Base Sky -->
+  <rect class="sky-bg" width="1920" height="1080" fill="var(--bg-1)"/>
+
+  <!-- Animated Sunburst Background -->
+  <g clip-path="url(#circleClip)">
+    <g class="sunburst">
+      <rect x="460" y="40" width="1000" height="1000" fill="var(--sun-1)"/>
+      <!-- Rays -->
+      <g stroke="#000000" stroke-width="8">
+        <line x1="960" y1="540" x2="960" y2="-200" />
+        <line x1="960" y1="540" x2="1360" y2="-100" />
+        <line x1="960" y1="540" x2="1660" y2="240" />
+        <line x1="960" y1="540" x2="1760" y2="640" />
+        <line x1="960" y1="540" x2="1660" y2="940" />
+        <line x1="960" y1="540" x2="1360" y2="1240" />
+        <line x1="960" y1="540" x2="960" y2="1340" />
+        <line x1="960" y1="540" x2="560" y2="1240" />
+        <line x1="960" y1="540" x2="260" y2="940" />
+        <line x1="960" y1="540" x2="160" y2="640" />
+        <line x1="960" y1="540" x2="260" y2="240" />
+        <line x1="960" y1="540" x2="560" y2="-100" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Halftone Overlay on Sky -->
+  <rect class="halftone-overlay" width="1920" height="1080" fill="url(#halftone)"/>
+
+  <!-- Background Mountains (Layered) -->
+  <path class="mnt-back" d="M0,800 L200,600 L400,750 L600,550 L800,700 L1000,500 L1200,650 L1400,580 L1600,720 L1920,600 L1920,1080 L0,1080 Z" fill="var(--mnt-1)" stroke="#000000" stroke-width="8"/>
+  
+  <path class="mnt-mid" d="M-100,900 L150,700 L350,850 L550,650 L750,800 L950,600 L1150,750 L1350,680 L1550,820 L1750,700 L2020,900 L2020,1080 L-100,1080 Z" fill="var(--mnt-2)" stroke="#000000" stroke-width="8"/>
+
+  <!-- Foreground Mountains -->
+  <path class="mnt-front" d="M0,950 L250,800 L450,920 L650,780 L850,900 L1050,750 L1250,880 L1450,790 L1650,910 L1920,820 L1920,1080 L0,1080 Z" fill="#2B1D14" stroke="#000000" stroke-width="10"/>
+
+  <!-- Ground Strip -->
+  <rect class="ground-strip" y="950" width="1920" height="130" fill="#FF006E" stroke="#000000" stroke-width="10"/>
+
+  <!-- Floating Pop Art Elements -->
+  <g class="float-bone" transform="translate(300, 300)">
+    <path d="M0,0 Q-20,-20 0,-40 Q20,-20 0,0 L0,80 Q-20,100 0,120 Q20,100 0,80 Z M-15,-30 L15,-10 M-15,110 L15,90" fill="#FFBE0B" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+
+  <g class="float-star" transform="translate(1600, 250)">
+    <polygon points="0,-40 12,-12 40,-10 20,10 26,40 0,25 -26,40 -20,10 -40,-10 -12,-12" fill="#06FFB4" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+
+  <g class="float-bolt" transform="translate(1500, 700)">
+    <polygon points="20,0 0,40 20,40 -10,90 30,40 10,40" fill="#FF006E" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+
+  <g class="float-bolt" transform="translate(400, 650) scale(-1, 1)">
+    <polygon points="20,0 0,40 20,40 -10,90 30,40 10,40" fill="#8338EC" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+
+  <!-- THE GRUMPY PUG -->
+  <g id="pug-group">
+    <!-- Tail -->
+    <path class="tail" d="M1150,850 Q1180,800 1160,750 Q1140,780 1130,820" fill="var(--pug-fur)" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Body -->
+    <ellipse cx="960" cy="850" rx="180" ry="140" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+    <!-- Body shadow/detail -->
+    <path d="M820,850 Q960,950 1100,850" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Back Legs -->
+    <ellipse cx="790" cy="930" rx="40" ry="50" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+    <ellipse cx="1130" cy="930" rx="40" ry="50" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+    <!-- Paws -->
+    <ellipse cx="790" cy="970" rx="35" ry="20" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+    <ellipse cx="1130" cy="970" rx="35" ry="20" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+
+    <!-- Front Legs -->
+    <rect x="880" y="880" width="40" height="90" rx="20" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+    <rect x="1000" y="880" width="40" height="90" rx="20" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+    <!-- Front Paws -->
+    <ellipse cx="900" cy="970" rx="30" ry="18" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+    <ellipse cx="1020" cy="970" rx="30" ry="18" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+
+    <!-- Head Group -->
+    <g id="head">
+      <!-- Ears -->
+      <path class="ear-left" d="M780,550 Q720,480 750,420 Q800,450 830,500 Z" fill="var(--pug-mask)" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+      <path class="ear-right" d="M1140,550 Q1200,480 1170,420 Q1120,450 1090,500 Z" fill="var(--pug-mask)" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+
+      <!-- Main Head -->
+      <circle cx="960" cy="600" r="160" fill="var(--pug-fur)" stroke="#000000" stroke-width="8"/>
+
+      <!-- Face Mask (Dark) -->
+      <path d="M830,540 Q960,480 1090,540 Q1120,650 1090,720 Q960,780 830,720 Q800,650 830,540 Z" fill="var(--pug-mask)" stroke="#000000" stroke-width="8"/>
+
+      <!-- Wrinkles (Grumpy Lines) -->
+      <g class="wrinkle">
+        <path d="M900,520 Q960,500 1020,520" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+        <path d="M910,500 Q960,480 1010,500" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+        <path d="M920,480 Q960,460 1000,480" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+      </g>
+
+      <!-- Eyes (White sclera) -->
+      <ellipse class="eye-left" cx="900" cy="580" rx="35" ry="40" fill="#FFFFFF" stroke="#000000" stroke-width="6"/>
+      <ellipse class="eye-right" cx="1020" cy="580" rx="35" ry="40" fill="#FFFFFF" stroke="#000000" stroke-width="6"/>
+
+      <!-- Pupils (Looking grumpy/sideways) -->
+      <circle cx="910" cy="580" r="12" fill="#000000"/>
+      <circle cx="1030" cy="580" r="12" fill="#000000"/>
+      <!-- Eye shine -->
+      <circle cx="906" cy="576" r="4" fill="#FFFFFF"/>
+      <circle cx="1026" cy="576" r="4" fill="#FFFFFF"/>
+
+      <!-- Eyebrows (Heavy grumpy furrow) -->
+      <path d="M860,530 Q900,560 930,540" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+      <path d="M1060,530 Q1020,560 990,540" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+      <!-- Nose -->
+      <ellipse cx="960" cy="650" rx="30" ry="20" fill="#000000" stroke="#000000" stroke-width="4"/>
+      <!-- Nostrils -->
+      <ellipse cx="950" cy="650" rx="6" ry="10" fill="#1A1A1A"/>
+      <ellipse cx="970" cy="650" rx="6" ry="10" fill="#1A1A1A"/>
+
+      <!-- Mouth (Serious Grumpy Frown) -->
+      <path d="M920,700 Q960,690 1000,700" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+      <!-- Jowls -->
+      <path d="M900,680 Q920,740 940,720" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round"/>
+      <path d="M1020,680 Q1000,740 980,720" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round"/>
+
+      <!-- Tongue (Just a tiny bit showing, grumpy) -->
+      <path d="M950,705 Q960,720 970,705" fill="#FF006E" stroke="#000000" stroke-width="4"/>
+    </g>
+  </g>
+
+  <!-- Foreground Pop Art Accents -->
+  <!-- Thick Outline Circle behind head (partially visible) -->
+  <circle cx="960" cy="540" r="220" fill="none" stroke="#000000" stroke-width="12" stroke-dasharray="40,20"/>
+
+  <!-- Side Action Lines -->
+  <g stroke="#000000" stroke-width="8" stroke-linecap="round">
+    <line x1="600" y1="500" x2="700" y2="520">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="580" y1="540" x2="680" y2="550">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,0; 0,0" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="620" y1="580" x2="720" y2="580">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -25,0; 0,0" dur="1.8s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="1320" y1="500" x2="1220" y2="520">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,0; 0,0" dur="2.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1340" y1="540" x2="1240" y2="550">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,0; 0,0" dur="2.7s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1300" y1="580" x2="1200" y2="580">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 25,0; 0,0" dur="1.9s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Halftone Overlay at Bottom -->
+  <rect class="halftone-overlay" y="900" width="1920" height="180" fill="url(#halftoneSmall)"/>
+
+  <!-- Top/Bottom Color Bars (Pop Art Style) -->
+  <rect y="0" width="1920" height="40" fill="#000000"/>
+  <rect y="1040" width="1920" height="40" fill="#000000"/>
+
+  <!-- Scanline Overlay -->
+  <g class="scanlines" opacity="0.1">
+    <line x1="0" y1="0" x2="1920" y2="0" stroke="#000000" stroke-width="2"/>
+    <line x1="0" y1="10" x2="1920" y2="10" stroke="#000000" stroke-width="2"/>
+    <line x1="0" y1="20" x2="1920" y2="20" stroke="#000000" stroke-width="2"/>
+    <line x1="0" y1="30" x2="1920" y2="30" stroke="#000000" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#00183a"/>
+<stop offset=".5" stop-color="#003a75"/>
+<stop offset="1" stop-color="#8a9bb5"/>
+</linearGradient>
+<linearGradient id="h" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#ffffff" stop-opacity=".75"/>
+<stop offset="1" stop-color="#c0c8d8" stop-opacity=".25"/>
+</linearGradient>
+<filter id="f" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="2"/>
+</filter>
+<path id="a" d="M0,0 L200,0 L100,173.2 Z"/>
+<path id="b" d="M0,173.2 L200,173.2 L100,0 Z"/>
+<path id="c" d="M0,0 L120,0 L60,103.9 Z"/>
+<path id="d" d="M0,103.9 L120,103.9 L60,0 Z"/>
+<path id="e" d="M0,0 L70,0 L35,60.6 Z"/>
+</defs>
+<rect width="1600" height="900" fill="url(#g)"/>
+<g opacity=".25">
+<use href="#a" x="80" y="80" fill="#002855"><animate attributeName="opacity" values=".15;.4;.15" dur="12s" repeatCount="indefinite"/></use>
+<use href="#b" x="350" y="200" fill="#003366"><animate attributeName="opacity" values=".2;.45;.2" dur="14s" repeatCount="indefinite"/></use>
+<use href="#a" x="600" y="50" fill="#002855"><animate attributeName="opacity" values=".15;.35;.15" dur="11s" repeatCount="indefinite"/></use>
+<use href="#b" x="900" y="250" fill="#003366"><animate attributeName="opacity" values=".2;.4;.2" dur="13s" repeatCount="indefinite"/></use>
+<use href="#a" x="1200" y="100" fill="#002855"><animate attributeName="opacity" values=".15;.4;.15" dur="15s" repeatCount="indefinite"/></use>
+<use href="#b" x="1450" y="300" fill="#003366"><animate attributeName="opacity" values=".2;.45;.2" dur="12s" repeatCount="indefinite"/></use>
+<use href="#b" x="150" y="500" fill="#002855"><animate attributeName="opacity" values=".15;.35;.15" dur="16s" repeatCount="indefinite"/></use>
+<use href="#a" x="450" y="600" fill="#003366"><animate attributeName="opacity" values=".2;.4;.2" dur="10s" repeatCount="indefinite"/></use>
+<use href="#b" x="750" y="450" fill="#002855"><animate attributeName="opacity" values=".15;.4;.15" dur="14s" repeatCount="indefinite"/></use>
+<use href="#a" x="1100" y="550" fill="#003366"><animate attributeName="opacity" values=".2;.45;.2" dur="11s" repeatCount="indefinite"/></use>
+<use href="#b" x="1350" y="650" fill="#002855"><animate attributeName="opacity" values=".15;.35;.15" dur="13s" repeatCount="indefinite"/></use>
+<use href="#a" x="250" y="750" fill="#003366"><animate attributeName="opacity" values=".2;.4;.2" dur="15s" repeatCount="indefinite"/></use>
+<use href="#c" x="300" y="100" fill="#004080"><animate attributeName="opacity" values=".2;.5;.2" dur="9s" repeatCount="indefinite"/></use>
+<use href="#d" x="500" y="350" fill="#003d7a"><animate attributeName="opacity" values=".25;.55;.25" dur="10s" repeatCount="indefinite"/></use>
+<use href="#c" x="800" y="100" fill="#004080"><animate attributeName="opacity" values=".2;.5;.2" dur="11s" repeatCount="indefinite"/></use>
+<use href="#d" x="1050" y="400" fill="#003d7a"><animate attributeName="opacity" values=".25;.55;.25" dur="12s" repeatCount="indefinite"/></use>
+<use href="#c" x="1300" y="50" fill="#004080"><animate attributeName="opacity" values=".2;.5;.2" dur="13s" repeatCount="indefinite"/></use>
+<use href="#d" x="50" y="300" fill="#003d7a"><animate attributeName="opacity" values=".25;.55;.25" dur="14s" repeatCount="indefinite"/></use>
+<use href="#c" x="250" y="450" fill="#004080"><animate attributeName="opacity" values=".2;.5;.2" dur="9s" repeatCount="indefinite"/></use>
+<use href="#d" x="550" y="150" fill="#003d7a"><animate attributeName="opacity" values=".25;.55;.25" dur="10s" repeatCount="indefinite"/></use>
+<use href="#c" x="850" y="500" fill="#004080"><animate attributeName="opacity" values=".2;.5;.2" dur="11s" repeatCount="indefinite"/></use>
+<use href="#d" x="1150" y="200" fill="#003d7a"><animate attributeName="opacity" values=".25;.55;.25" dur="12s" repeatCount="indefinite"/></use>
+<use href="#c" x="1450" y="100" fill="#004080"><animate attributeName="opacity" values=".2;.5;.2" dur="13s" repeatCount="indefinite"/></use>
+<use href="#d" x="100" y="650" fill="#003d7a"><animate attributeName="opacity" values=".25;.55;.25" dur="14s" repeatCount="indefinite"/></use>
+<use href="#c" x="400" y="800" fill="#004080"><animate attributeName="opacity" values=".2;.5;.2" dur="9s" repeatCount="indefinite"/></use>
+<use href="#d" x="700" y="700" fill="#003d7a"><animate attributeName="opacity" values=".25;.55;.25" dur="10s" repeatCount="indefinite"/></use>
+<use href="#c" x="1000" y="800" fill="#004080"><animate attributeName="opacity" values=".2;.5;.2" dur="11s" repeatCount="indefinite"/></use>
+<use href="#d" x="1250" y="450" fill="#003d7a"><animate attributeName="opacity" values=".25;.55;.25" dur="12s" repeatCount="indefinite"/></use>
+</g>
+<g fill="url(#h)" filter="url(#f)">
+<use href="#e" x="200" y="200"><animate attributeName="opacity" values=".3;.9;.3" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; 15,-10; 0,0" dur="10s" repeatCount="indefinite"/></use>
+<use href="#e" x="600" y="300"><animate attributeName="opacity" values=".2;.8;.2" dur="8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; -10,15; 0,0" dur="12s" repeatCount="indefinite"/></use>
+<use href="#e" x="1000" y="150"><animate attributeName="opacity" values=".3;.9;.3" dur="9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; 12,8; 0,0" dur="11s" repeatCount="indefinite"/></use>
+<use href="#e" x="1400" y="450"><animate attributeName="opacity" values=".2;.8;.2" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; -15,-5; 0,0" dur="13s" repeatCount="indefinite"/></use>
+<use href="#e" x="300" y="600"><animate attributeName="opacity" values=".3;.9;.3" dur="8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; 8,-12; 0,0" dur="10s" repeatCount="indefinite"/></use>
+<use href="#e" x="800" y="750"><animate attributeName="opacity" values=".2;.8;.2" dur="9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; -8,10; 0,0" dur="12s" repeatCount="indefinite"/></use>
+<use href="#e" x="1200" y="350"><animate attributeName="opacity" values=".3;.9;.3" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; 10,10; 0,0" dur="11s" repeatCount="indefinite"/></use>
+<use href="#e" x="1500" y="750"><animate attributeName="opacity" values=".2;.8;.2" dur="8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; -12,-8; 0,0" dur="13s" repeatCount="indefinite"/></use>
+</g>
+</svg>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Sticker Drop Shadow Filter -->
+    <filter id="sticker-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="12" dy="18" stdDeviation="14" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Halftone Dot Pattern for the Sticker Interior -->
+    <pattern id="halftone" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(22.5)">
+      <circle cx="8" cy="8" r="5.5" fill="#000000" opacity="0.18"/>
+    </pattern>
+
+    <!-- Halftone Pattern for the Background Explosion Burst -->
+    <pattern id="halftone-bg" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+      <circle cx="6" cy="6" r="4" fill="#000000" opacity="0.15"/>
+    </pattern>
+
+    <!-- Center Radial Color Fade -->
+    <radialGradient id="centerFade" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Inner Shadow for the Loofah Center Hole Depth -->
+    <radialGradient id="holeDepth" cx="50%" cy="50%" r="50%">
+      <stop offset="40%" stop-color="#000000" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 
+    MAIN STICKER GROUP 
+    Centered and scaled to fill ~80% of the viewBox.
+  -->
+  <g transform="translate(500, 500) scale(0.82) translate(-500, -500)" filter="url(#sticker-shadow)">
+    
+    <!-- 
+      DIE-CUT OUTLINE 
+      Thick white border + black stroke to simulate the physical sticker edge.
+    -->
+    <path d="M 500 50 
+             C 560 120 650 70 680 160 
+             C 750 170 800 220 820 280 
+             C 880 320 900 400 850 460 
+             C 910 520 920 600 860 660 
+             C 880 740 840 820 760 850 
+             C 740 910 660 940 580 920 
+             C 520 960 440 960 380 920 
+             C 300 940 220 910 200 850 
+             C 120 820 80 740 100 660 
+             C 40 600 50 520 110 460 
+             C 60 400 80 320 140 280 
+             C 160 220 210 170 280 160 
+             C 310 70 400 120 460 50 
+             Q 500 20 500 50 Z" 
+          fill="#ffffff" stroke="#000000" stroke-width="18" stroke-linejoin="round"/>
+
+    <!-- 
+      BACKGROUND BURST 
+      Comic-book explosion shape with vibrant colors and halftone dots.
+    -->
+    <g id="background-burst">
+      <!-- Cyan Background Burst -->
+      <path d="M 500 60 
+               C 560 130 640 80 670 170 
+               C 740 180 790 230 810 290 
+               C 870 330 890 410 840 470 
+               C 900 530 910 610 850 670 
+               C 870 750 830 830 750 860 
+               C 730 920 650 950 570 930 
+               C 510 970 430 970 370 930 
+               C 290 950 210 920 190 860 
+               C 110 830 70 750 90 670 
+               C 30 610 40 530 100 470 
+               C 50 410 70 330 130 290 
+               C 150 230 200 180 270 170 
+               C 300 80 380 130 440 60 
+               Q 500 30 500 60 Z" 
+            fill="#00d4ff" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+      
+      <!-- Halftone Overlay on Cyan Burst -->
+      <path d="M 500 60 
+               C 560 130 640 80 670 170 
+               C 740 180 790 230 810 290 
+               C 870 330 890 410 840 470 
+               C 900 530 910 610 850 670 
+               C 870 750 830 830 750 860 
+               C 730 920 650 950 570 930 
+               C 510 970 430 970 370 930 
+               C 290 950 210 920 190 860 
+               C 110 830 70 750 90 670 
+               C 30 610 40 530 100 470 
+               C 50 410 70 330 130 290 
+               C 150 230 200 180 270 170 
+               C 300 80 380 130 440 60 
+               Q 500 30 500 60 Z" 
+            fill="url(#halftone-bg)"/>
+    </g>
+
+    <!-- 
+      SPEED LINES / ACTION LINES 
+      Radiating from the center to emphasize the comic explosion energy.
+    -->
+    <g id="speed-lines" stroke="#000000" stroke-width="10" stroke-linecap="round">
+      <line x1="160" y1="160" x2="280" y2="280" />
+      <line x1="840" y1="160" x2="720" y2="280" />
+      <line x1="160" y1="840" x2="280" y2="720" />
+      <line x1="840" y1="840" x2="720" y2="720" />
+      
+      <line x1="500" y1="40"  x2="500" y2="140" stroke-width="12"/>
+      <line x1="500" y1="960" x2="500" y2="860" stroke-width="12"/>
+      <line x1="40"  y1="500" x2="140" y2="500" stroke-width="12"/>
+      <line x1="960" y1="500" x2="860" y2="500" stroke-width="12"/>
+      
+      <line x1="200" y1="300" x2="300" y2="380" stroke-width="8"/>
+      <line x1="800" y1="300" x2="700" y2="380" stroke-width="8"/>
+      <line x1="200" y1="700" x2="300" y2="620" stroke-width="8"/>
+      <line x1="800" y1="700" x2="700" y2="620" stroke-width="8"/>
+      
+      <line x1="320" y1="120" x2="380" y2="220" stroke-width="7"/>
+      <line x1="680" y1="120" x2="620" y2="220" stroke-width="7"/>
+      <line x1="120" y1="320" x2="220" y2="380" stroke-width="7"/>
+      <line x1="880" y1="320" x2="780" y2="380" stroke-width="7"/>
+    </g>
+
+    <!-- 
+      LOOFAH INTERIOR BASE 
+      A complex, bubbly starburst shape representing the chaotic mesh of a real loofah.
+    -->
+    <g id="loofah-mesh">
+      <path d="M 500 230 
+               C 560 240 610 210 650 260 
+               C 700 270 740 310 750 360 
+               C 790 400 790 460 750 500 
+               C 790 540 790 600 750 640 
+               C 740 690 700 730 650 740 
+               C 610 790 560 760 500 770 
+               C 440 760 390 790 350 740 
+               C 300 730 260 690 250 640 
+               C 210 600 210 540 250 500 
+               C 210 460 210 400 250 360 
+               C 260 310 300 270 350 260 
+               C 390 210 440 240 500 230 Z" 
+            fill="#ffffff" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+      
+      <!-- Halftone Overlay on Loofah Base -->
+      <path d="M 500 230 
+               C 560 240 610 210 650 260 
+               C 700 270 740 310 750 360 
+               C 790 400 790 460 750 500 
+               C 790 540 790 600 750 640 
+               C 740 690 700 730 650 740 
+               C 610 790 560 760 500 770 
+               C 440 760 390 790 350 740 
+               C 300 730 260 690 250 640 
+               C 210 600 210 540 250 500 
+               C 210 460 210 400 250 360 
+               C 260 310 300 270 350 260 
+               C 390 210 440 240 500 230 Z" 
+            fill="url(#halftone)"/>
+    </g>
+
+    <!-- 
+      LOOFAH COLORED SECTIONS 
+      Segmented color blocks to create a chaotic, explosive pop-art aesthetic.
+    -->
+    <g id="loofah-colors" stroke="#000000" stroke-width="10" stroke-linejoin="round">
+      <!-- Magenta Segment (Top Right) -->
+      <path d="M 500 230 
+               C 560 240 610 210 650 260 
+               C 700 270 740 310 750 360 
+               C 760 410 730 460 680 480 
+               C 630 450 560 430 500 430 
+               C 500 360 500 290 500 230 Z" 
+            fill="#ff00aa"/>
+      
+      <!-- Bright Yellow Segment (Bottom Right) -->
+      <path d="M 500 430 
+               C 560 430 630 450 680 480 
+               C 730 500 760 550 750 600 
+               C 740 650 700 690 650 700 
+               C 590 660 540 620 500 570 
+               C 500 520 500 470 500 430 Z" 
+            fill="#ffe600"/>
+      
+      <!-- Bright Red Segment (Bottom Left) -->
+      <path d="M 500 570 
+               C 540 620 590 660 650 700 
+               C 610 750 560 760 500 770 
+               C 440 760 390 790 350 740 
+               C 310 700 280 650 320 600 
+               C 380 570 440 550 500 570 Z" 
+            fill="#ff2a2a"/>
+      
+      <!-- Cyan Segment (Top Left) -->
+      <path d="M 500 230 
+               C 440 240 390 210 350 260 
+               C 300 270 260 310 250 360 
+               C 240 410 270 460 320 480 
+               C 370 450 440 430 500 430 
+               C 500 360 500 290 500 230 Z" 
+            fill="#00d4ff"/>
+    </g>
+
+    <!-- 
+      INNER LOOFAH TEXTURE & SHADING 
+      Adds depth and chaotic "mesh" lines over the colored segments.
+    -->
+    <g id="loofah-texture" stroke="#000000" stroke-width="8" stroke-linecap="round">
+      <!-- Inner Mesh Lines (Chaotic Crosses and Curves) -->
+      <path d="M 430 300 Q 460 360 500 380" fill="none"/>
+      <path d="M 580 320 Q 540 380 500 380" fill="none"/>
+      <path d="M 500 380 Q 480 460 520 520" fill="none"/>
+      <path d="M 500 380 Q 530 450 590 480" fill="none"/>
+      <path d="M 500 380 Q 450 450 390 480" fill="none"/>
+      
+      <path d="M 350 350 Q 400 400 440 420" fill="none"/>
+      <path d="M 650 350 Q 600 400 560 420" fill="none"/>
+      <path d="M 400 620 Q 450 560 480 520" fill="none"/>
+      <path d="M 600 620 Q 550 560 520 520" fill="none"/>
+      
+      <path d="M 300 500 Q 350 480 400 500" fill="none"/>
+      <path d="M 700 500 Q 650 480 600 500" fill="none"/>
+      <path d="M 320 600 Q 380 580 440 600" fill="none"/>
+      <path d="M 680 600 Q 620 580 560 600" fill="none"/>
+      
+      <!-- More chaotic internal loops -->
+      <path d="M 380 280 Q 420 320 450 300" fill="none"/>
+      <path d="M 620 280 Q 580 320 550 300" fill="none"/>
+      <path d="M 320 420 Q 360 450 340 480" fill="none"/>
+      <path d="M 680 420 Q 640 450 660 480" fill="none"/>
+    </g>
+
+    <!-- 
+      CENTER HOLE & ROPE LOOP 
+      The central void where the loofah is gathered, with a hanging rope loop.
+    -->
+    <g id="center-hole">
+      <!-- White hole base -->
+      <circle cx="500" cy="500" r="80" fill="#ffffff" stroke="#000000" stroke-width="12"/>
+      
+      <!-- Inner shadow for 3D hole depth -->
+      <circle cx="500" cy="500" r="80" fill="url(#holeDepth)"/>
+      
+      <!-- Rope Loop -->
+      <path d="M 490 425 
+               C 490 370 460 340 440 320 
+               C 420 300 420 260 450 250 
+               C 480 240 500 270 500 300 
+               C 500 270 520 240 550 250 
+               C 580 260 580 300 560 320 
+               C 540 340 510 370 510 425 Z" 
+            fill="none" stroke="#000000" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <!-- Rope Loop Highlight for 3D effect -->
+      <path d="M 490 425 
+               C 490 370 460 340 440 320 
+               C 420 300 420 260 450 250 
+               C 480 240 500 270 500 300 
+               C 500 270 520 240 550 250 
+               C 580 260 580 300 560 320 
+               C 540 340 510 370 510 425 Z" 
+            fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- 
+      KNOT DETAIL 
+      Center knot where the mesh gathers, placed over the hole and rope.
+    -->
+    <g id="knot-detail">
+      <circle cx="500" cy="500" r="30" fill="#ff00aa" stroke="#000000" stroke-width="10"/>
+      <circle cx="500" cy="500" r="30" fill="url(#halftone)"/>
+      
+      <!-- Small highlight on the knot -->
+      <circle cx="490" cy="490" r="8" fill="#ffffff" opacity="0.8"/>
+    </g>
+
+    <!-- 
+      FINAL HALFTONE OVERLAY 
+      Applies a subtle full-cover halftone to unify the entire sticker pop-art look.
+    -->
+    <path d="M 500 50 
+             C 560 120 650 70 680 160 
+             C 750 170 800 220 820 280 
+             C 880 320 900 400 850 460 
+             C 910 520 920 600 860 660 
+             C 880 740 840 820 760 850 
+             C 740 910 660 940 580 920 
+             C 520 960 440 960 380 920 
+             C 300 940 220 910 200 850 
+             C 120 820 80 740 100 660 
+             C 40 600 50 520 110 460 
+             C 60 400 80 320 140 280 
+             C 160 220 210 170 280 160 
+             C 310 70 400 120 460 50 
+             Q 500 20 500 50 Z" 
+          fill="url(#centerFade)" pointer-events="none"/>
+
+  </g>
+</svg>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1A2E" />
+      <stop offset="45%" stop-color="#3D3D4F" />
+      <stop offset="100%" stop-color="#8B8B9F" />
+      <animate attributeName="y1" values="0;0.03;0" dur="20s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="1;0.97;1" dur="20s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <!-- God Ray / Sunbeam Gradient -->
+    <linearGradient id="rayGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E0DAD0" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#E0DAD0" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#E0DAD0" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Fog Layer Gradient -->
+    <linearGradient id="fogGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B8B9F" stop-opacity="0" />
+      <stop offset="50%" stop-color="#E0DAD0" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#8B8B9F" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="blur40"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur80"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="blur120"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="blur160"><feGaussianBlur stdDeviation="160"/></filter>
+
+    <!-- Atmospheric Grain -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" />
+    </filter>
+
+    <!-- Particle Path -->
+    <path id="pUp" d="M0,0 Q10,-20 0,-40" fill="none" />
+    <path id="pRight" d="M0,0 Q20,-5 40,0" fill="none" />
+
+    <!-- Reusable Particles -->
+    <circle id="part1" r="1.5" fill="#E0DAD0" opacity="0.6" />
+    <circle id="part2" r="2.5" fill="#E0DAD0" opacity="0.4" />
+    <circle id="part3" r="1" fill="#8B8B9F" opacity="0.7" />
+
+    <!-- Reusable Factory Elements -->
+    <g id="chimney">
+      <rect x="0" y="0" width="30" height="200" fill="#1A1A2E" />
+      <rect x="-5" y="-10" width="40" height="15" fill="#3D3D4F" />
+    </g>
+    <g id="girder">
+      <path d="M0,0 L50,100 L100,0 L90,0 L50,80 L10,0 Z" fill="#1A1A2E" />
+    </g>
+  </defs>
+
+  <!-- Layer 1: Deep Sky -->
+  <rect width="1600" height="900" fill="url(#skyGrad)" />
+
+  <!-- Layer 2: Animated Sky Gradient Shift -->
+  <rect width="1600" height="900" fill="#1A1A2E" opacity="0">
+    <animate attributeName="opacity" values="0;0.15;0" dur="25s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Layer 3: God Ray / Pale Daylight -->
+  <polygon points="800,0 1600,0 1200,900 400,900" fill="url(#rayGrad)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.8;0.5;0.7;0.6" dur="15s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="900,0 1300,0 1000,700 700,700" fill="url(#rayGrad)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.6;0.3;0.5;0.4" dur="18s" repeatCount="indefinite" />
+  </polygon>
+
+  <!-- Layer 4: Distant Sky-line Glow -->
+  <ellipse cx="800" cy="450" rx="800" ry="400" fill="#3D3D4F" opacity="0.3" filter="url(#blur160)" />
+
+  <!-- Layer 5: Far Background Fog -->
+  <rect x="0" y="400" width="1600" height="500" fill="#3D3D4F" opacity="0.4" filter="url(#blur120)" />
+
+  <!-- Layer 6: Far Factory Silhouettes (Blurred) -->
+  <g transform="translate(200, 350)" opacity="0.6" filter="url(#blur80)">
+    <use href="#chimney" transform="scale(1.5)" />
+    <use href="#chimney" x="100" transform="scale(1.2)" />
+    <use href="#chimney" x="250" transform="scale(1.8)" />
+    <use href="#chimney" x="400" transform="scale(1.4)" />
+    <use href="#chimney" x="550" transform="scale(2)" />
+    <use href="#girder" x="50" y="100" transform="scale(2)" />
+    <use href="#girder" x="300" y="150" transform="scale(1.5) rotate(10)" />
+    <use href="#girder" x="500" y="80" transform="scale(2.2) rotate(-5)" />
+    <rect x="-50" y="200" width="900" height="20" fill="#1A1A2E" />
+  </g>
+
+  <!-- Layer 7: Mid-ground Atmospheric Blur -->
+  <rect x="0" y="500" width="1600" height="400" fill="#8B8B9F" opacity="0.3" filter="url(#blur80)" />
+
+  <!-- Layer 8: Mid-ground Structures (Twisted Girders) -->
+  <g transform="translate(0, 450)" opacity="0.8" filter="url(#blur40)">
+    <use href="#girder" x="100" y="50" transform="scale(3) rotate(15)" />
+    <use href="#girder" x="1200" y="100" transform="scale(2.5) rotate(-20)" />
+    <use href="#girder" x="600" y="200" transform="scale(4) rotate(5)" />
+    <path d="M0,400 L1600,400 L1600,450 L0,450 Z" fill="#1A1A2E" />
+    <!-- Hanging cables -->
+    <path d="M200,400 Q250,500 300,400" fill="none" stroke="#1A1A2E" stroke-width="3" />
+    <path d="M1100,400 Q1150,550 1200,400" fill="none" stroke="#1A1A2E" stroke-width="4" />
+    <path d="M800,400 Q850,480 900,400" fill="none" stroke="#1A1A2E" stroke-width="2" />
+    <!-- Smoke from far stacks -->
+    <ellipse cx="350" cy="300" rx="60" ry="20" fill="#8B8B9F" opacity="0.5">
+      <animate attributeName="cy" values="300;250" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="rx" values="60;100" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0" dur="10s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="600" cy="280" rx="80" ry="25" fill="#8B8B9F" opacity="0.4">
+      <animate attributeName="cy" values="280;200" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="rx" values="80;150" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0" dur="12s" repeatCount="indefinite" />
+    </ellipse>
+  </g>
+
+  <!-- Layer 9: Ground Plane / Horizon Line -->
+  <rect x="0" y="680" width="1600" height="220" fill="#1A1A2E" />
+
+  <!-- Layer 10: Ground Texture / Debris -->
+  <g fill="#3D3D4F" opacity="0.5">
+    <rect x="100" y="700" width="200" height="10" />
+    <rect x="400" y="720" width="150" height="8" />
+    <rect x="800" y="690" width="300" height="12" />
+    <rect x="1200" y="710" width="180" height="9" />
+    <path d="M50,750 L150,750 L120,780 L80,780 Z" />
+    <path d="M900,760 L1050,760 L1020,800 L930,800 Z" />
+  </g>
+
+  <!-- Layer 11: Hero Subject (Child Silhouette) positioned at 1/3 mark -->
+  <g id="hero" transform="translate(480, 560)">
+    <!-- Shadow -->
+    <ellipse cx="15" cy="125" rx="40" ry="8" fill="#000" opacity="0.5" filter="url(#blur40)" />
+    
+    <!-- Main Silhouette -->
+    <g fill="#0A0A14">
+      <!-- Head -->
+      <circle cx="15" cy="15" r="14" />
+      <!-- Body/Hoodie -->
+      <path d="M-5,25 L35,25 L40,70 L30,90 L20,125 L10,125 L0,90 L-10,70 Z" />
+      <!-- Arm (swinging) -->
+      <path d="M5,35 L-15,65 L-5,70 L15,45 Z">
+        <animateTransform attributeName="transform" type="rotate" values="0 5 35; 15 5 35; 0 5 35" dur="3s" repeatCount="indefinite" />
+      </path>
+      <path d="M25,35 L45,65 L35,70 L15,45 Z">
+        <animateTransform attributeName="transform" type="rotate" values="0 25 35; -15 25 35; 0 25 35" dur="3s" repeatCount="indefinite" />
+      </path>
+      <!-- Legs (walking) -->
+      <path d="M10,90 L5,125 L20,125 L18,90 Z">
+        <animateTransform attributeName="transform" type="rotate" values="0 10 90; 20 10 90; 0 10 90" dur="3s" repeatCount="indefinite" />
+      </path>
+      <path d="M20,90 L25,125 L10,125 L12,90 Z">
+        <animateTransform attributeName="transform" type="rotate" values="0 20 90; -20 20 90; 0 20 90" dur="3s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    <!-- Rim Light (Left side) from the God Ray -->
+    <g fill="#E0DAD0" opacity="0.6" filter="url(#blur40)">
+      <circle cx="5" cy="15" r="14" />
+      <path d="M-5,25 L-2,70 L-5,90 L-12,70 Z" />
+      <ellipse cx="5" cy="125" rx="35" ry="6" />
+    </g>
+
+    <!-- Breath / Sway Animation -->
+    <animateTransform attributeName="transform" type="translate" values="480,560; 480,562; 480,560" dur="4s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="scale" values="1;1.01;1" dur="4s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  <!-- Layer 12: Near Ground Mist / Fog -->
+  <rect x="0" y="650" width="1600" height="250" fill="url(#fogGrad)" opacity="0.5" filter="url(#blur80)">
+    <animate attributeName="x" values="0;-50;0" dur="20s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Layer 13: Foreground Silhouettes (Ruins framing the bottom right) -->
+  <g transform="translate(1000, 500)" fill="#1A1A2E">
+    <path d="M0,400 L150,400 L120,200 L80,220 L50,100 L0,150 Z" />
+    <rect x="140" y="250" width="30" height="150" />
+    <path d="M200,400 L350,400 L320,300 L280,320 L250,250 L200,280 Z" />
+    <animateTransform attributeName="transform" type="translate" values="1000,500; 1000,503; 1000,500" dur="6s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Layer 14: Foreground Fog Wall (Heavy Blur) -->
+  <rect x="0" y="750" width="1600" height="150" fill="#8B8B9F" opacity="0.6" filter="url(#blur120)" />
+  <rect x="0" y="800" width="1600" height="100" fill="#E0DAD0" opacity="0.4" filter="url(#blur160)" />
+
+  <!-- Layer 15: Atmospheric Particles (Drifting Ash/Dust) -->
+  <g>
+    <use href="#part1" x="200" y="500">
+      <animateMotion dur="12s" repeatCount="indefinite"><mpath href="#pUp"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;0" dur="12s" repeatCount="indefinite" />
+    </use>
+    <use href="#part2" x="400" y="600">
+      <animateMotion dur="15s" repeatCount="indefinite" begin="2s"><mpath href="#pUp"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.8;0" dur="15s" repeatCount="indefinite" begin="2s" />
+    </use>
+    <use href="#part3" x="600" y="450">
+      <animateMotion dur="18s" repeatCount="indefinite" begin="1s"><mpath href="#pRight"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.6;0" dur="18s" repeatCount="indefinite" begin="1s" />
+    </use>
+    <use href="#part1" x="800" y="700">
+      <animateMotion dur="10s" repeatCount="indefinite" begin="3s"><mpath href="#pUp"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.9;0" dur="10s" repeatCount="indefinite" begin="3s" />
+    </use>
+    <use href="#part2" x="1000" y="550">
+      <animateMotion dur="14s" repeatCount="indefinite" begin="0.5s"><mpath href="#pRight"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.7;0" dur="14s" repeatCount="indefinite" begin="0.5s" />
+    </use>
+    <use href="#part3" x="1200" y="650">
+      <animateMotion dur="16s" repeatCount="indefinite" begin="4s"><mpath href="#pUp"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;0" dur="16s" repeatCount="indefinite" begin="4s" />
+    </use>
+    <use href="#part1" x="1400" y="500">
+      <animateMotion dur="13s" repeatCount="indefinite" begin="2.5s"><mpath href="#pUp"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.5;0" dur="13s" repeatCount="indefinite" begin="2.5s" />
+    </use>
+    <use href="#part2" x="300" y="800">
+      <animateMotion dur="20s" repeatCount="indefinite" begin="1.5s"><mpath href="#pRight"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.4;0" dur="20s" repeatCount="indefinite" begin="1.5s" />
+    </use>
+    <use href="#part3" x="500" y="300">
+      <animateMotion dur="11s" repeatCount="indefinite" begin="5s"><mpath href="#pUp"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.8;0" dur="11s" repeatCount="indefinite" begin="5s" />
+    </use>
+    <use href="#part1" x="1100" y="400">
+      <animateMotion dur="17s" repeatCount="indefinite" begin="3.5s"><mpath href="#pRight"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.6;0" dur="17s" repeatCount="indefinite" begin="3.5s" />
+    </use>
+    <use href="#part2" x="150" y="750">
+      <animateMotion dur="14s" repeatCount="indefinite" begin="6s"><mpath href="#pUp"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;0" dur="14s" repeatCount="indefinite" begin="6s" />
+    </use>
+    <use href="#part3" x="900" y="200">
+      <animateMotion dur="22s" repeatCount="indefinite" begin="0s"><mpath href="#pUp"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.3;0" dur="22s" repeatCount="indefinite" begin="0s" />
+    </use>
+    <use href="#part1" x="1300" y="750">
+      <animateMotion dur="15s" repeatCount="indefinite" begin="7s"><mpath href="#pRight"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.7;0" dur="15s" repeatCount="indefinite" begin="7s" />
+    </use>
+    <use href="#part2" x="700" y="850">
+      <animateMotion dur="19s" repeatCount="indefinite" begin="2s"><mpath href="#pUp"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.5;0" dur="19s" repeatCount="indefinite" begin="2s" />
+    </use>
+    <use href="#part3" x="50" y="400">
+      <animateMotion dur="12s" repeatCount="indefinite" begin="4.5s"><mpath href="#pRight"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.9;0" dur="12s" repeatCount="indefinite" begin="4.5s" />
+    </use>
+  </g>
+
+  <!-- Layer 16: Wind / Fog Drift Lines -->
+  <g stroke="#E0DAD0" stroke-width="2" opacity="0.2" fill="none" filter="url(#blur40)">
+    <path d="M0,600 Q200,580 400,600 T800,600 T1200,600 T1600,600">
+      <animate attributeName="d" values="M0,600 Q200,580 400,600 T800,600 T1200,600 T1600,600; M0,610 Q200,630 400,610 T800,610 T1200,610 T1600,610; M0,600 Q200,580 400,600 T800,600 T1200,600 T1600,600" dur="15s" repeatCount="indefinite" />
+    </path>
+    <path d="M0,700 Q300,680 600,700 T1200,700 T1600,700">
+      <animate attributeName="d" values="M0,700 Q300,680 600,700 T1200,700 T1600,700; M0,690 Q300,710 600,690 T1200,690 T1600,690; M0,700 Q300,680 600,700 T1200,700 T1600,700" dur="18s" repeatCount="indefinite" />
+    </path>
+    <path d="M0,800 Q400,780 800,800 T1600,800">
+      <animate attributeName="d" values="M0,800 Q400,780 800,800 T1600,800; M0,810 Q400,830 800,810 T1600,810; M0,800 Q400,780 800,800 T1600,800" dur="22s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Layer 17: Subtle Light Pulse on the Ground (where the ray hits) -->
+  <ellipse cx="900" cy="750" rx="300" ry="50" fill="url(#rayGrad)" opacity="0.3" filter="url(#blur80)">
+    <animate attributeName="opacity" values="0.3;0.5;0.2;0.4;0.3" dur="10s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- Layer 18: Vignette / Cinematic Darkening -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="50%" stop-color="#1A1A2E" stop-opacity="0" />
+    <stop offset="100%" stop-color="#1A1A2E" stop-opacity="0.6" />
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none" />
+
+  <!-- Layer 19: Organic Grain Overlay -->
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.4" pointer-events="none" />
+
+  <!-- Layer 20: Top Negative Space Wash (To ensure title legibility) -->
+  <rect x="0" y="0" width="1600" height="350" fill="#1A1A2E" opacity="0.15" pointer-events="none" />
+
+</svg>

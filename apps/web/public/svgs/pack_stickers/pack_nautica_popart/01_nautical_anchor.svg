@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Blue Halftone Dot Pattern -->
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <circle r="3.5" fill="#0077BE" opacity="0.8"/>
+    </pattern>
+    
+    <!-- Halftone Background Pattern -->
+    <pattern id="bgdots" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <circle r="5" fill="#0055FF" opacity="0.6"/>
+    </pattern>
+
+    <!-- Pop Starburst -->
+    <path id="starburst" d="M0,-100 L30,-30 L100,0 L30,30 L0,100 L-30,30 L-100,0 L-30,-30 Z" fill="#ffffff"/>
+
+    <!-- Clip Path for Anchor -->
+    <clipPath id="anchorClip">
+      <path d="M 800,80 
+               C 860,80 900,130 900,190 
+               L 900,220 
+               H 1000 
+               Q 1020,220 1020,240 
+               Q 1020,260 1000,260 
+               H 900 
+               L 900,650 
+               C 900,700 950,750 1000,780 
+               L 1050,730 
+               Q 1065,715 1080,730 
+               Q 1095,745 1080,760 
+               L 930,910 
+               Q 915,925 900,910 
+               L 750,760 
+               Q 735,745 750,730 
+               Q 765,715 780,730 
+               L 830,780 
+               C 880,750 930,700 930,650 
+               L 930,260 
+               H 830 
+               Q 810,260 810,240 
+               Q 810,220 830,220 
+               H 930 
+               C 930,170 900,130 860,130 
+               L 800,130 
+               C 760,130 730,170 730,220 
+               H 830 
+               Q 850,220 850,240 
+               Q 850,260 830,260 
+               L 730,260 
+               L 730,650 
+               C 730,700 780,750 830,780 
+               L 780,730 
+               Q 765,715 750,730 
+               Q 735,745 750,760 
+               L 900,910 
+               Q 915,925 930,910 
+               L 1080,760 
+               Q 1095,745 1080,730 
+               Q 1065,715 1050,730 
+               L 1000,780 
+               C 1050,750 1100,700 1100,650 
+               L 1100,260 
+               H 1200 
+               Q 1220,260 1220,240 
+               Q 1220,220 1200,220 
+               H 1100 
+               C 1100,170 1070,130 1030,130 
+               L 960,130 
+               C 920,130 890,170 890,220 
+               H 800 
+               C 800,170 770,130 730,130 
+               L 660,130 
+               C 620,130 590,170 590,220 
+               H 500 
+               Q 480,220 480,240 
+               Q 480,260 500,260 
+               H 590 
+               L 590,650 
+               C 590,700 640,750 690,780 
+               L 640,730 
+               Q 625,715 610,730 
+               Q 595,745 610,760 
+               L 760,910 
+               Q 775,925 790,910 
+               L 940,760 
+               Q 955,745 940,730 
+               Q 925,715 910,730 
+               L 860,780 
+               C 910,750 960,700 960,650 
+               L 960,260 
+               H 860 
+               Q 840,260 840,240 
+               Q 840,220 860,220 
+               H 960 
+               C 960,190 940,160 910,150 
+               L 910,190 
+               C 910,130 870,80 800,80 Z"/>
+    </clipPath>
+
+    <!-- Action Line Template -->
+    <path id="actionLine" d="M 0,0 L 50,0 L 0,10 L 50,10 L 0,20 L 50,20" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </defs>
+
+  <!-- Solid Red Base Background -->
+  <rect width="1600" height="900" fill="#FF1966"/>
+
+  <!-- Animated Blue Halftone Background Layer -->
+  <rect width="1600" height="900" fill="url(#bgdots)">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="patternTransform" type="translate" values="0,0; 30,30; 0,0" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Secondary Animated Halftone Overlay -->
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="patternTransform" type="translate" values="0,0; -20,-20; 0,0" dur="8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Floating Background Starbursts -->
+  <g fill="#FFF700" opacity="0.3">
+    <use href="#starburst" transform="translate(200, 200) scale(1.5)">
+      <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#starburst" transform="translate(1400, 700) scale(1.2)">
+      <animateTransform attributeName="transform" type="rotate" from="360 1400 700" to="0 1400 700" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="4s" repeatCount="indefinite"/>
+    </use>
+    <use href="#starburst" transform="translate(1300, 150) scale(0.8)">
+      <animateTransform attributeName="transform" type="rotate" from="0 1300 150" to="360 1300 150" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Anchor Group -->
+  <g id="anchor" transform="translate(0, 20)">
+    <!-- Anchor Shadow/Outline (Thick Black) -->
+    <path d="M 800,80 
+             C 860,80 900,130 900,190 
+             L 900,220 
+             H 1000 
+             Q 1020,220 1020,240 
+             Q 1020,260 1000,260 
+             H 900 
+             L 900,650 
+             C 900,700 950,750 1000,780 
+             L 1050,730 
+             Q 1065,715 1080,730 
+             Q 1095,745 1080,760 
+             L 930,910 
+             Q 915,925 900,910 
+             L 750,760 
+             Q 735,745 750,730 
+             Q 765,715 780,730 
+             L 830,780 
+             C 880,750 930,700 930,650 
+             L 930,260 
+             H 830 
+             Q 810,260 810,240 
+             Q 810,220 830,220 
+             H 930 
+             C 930,170 900,130 860,130 
+             L 800,130 
+             C 760,130 730,170 730,220 
+             H 830 
+             Q 850,220 850,240 
+             Q 850,260 830,260 
+             L 730,260 
+             L 730,650 
+             C 730,700 780,750 830,780 
+             L 780,730 
+             Q 765,715 750,730 
+             Q 735,745 750,760 
+             L 900,910 
+             Q 915,925 930,910 
+             L 1080,760 
+             Q 1095,745 1080,730 
+             Q 1065,715 1050,730 
+             L 1000,780 
+             C 1050,750 1100,700 1100,650 
+             L 1100,260 
+             H 1200 
+             Q 1220,260 1220,240 
+             Q 1220,220 1200,220 
+             H 1100 
+             C 1100,170 1070,130 1030,130 
+             L 960,130 
+             C 920,130 890,170 890,220 
+             H 800 
+             C 800,170 770,130 730,130 
+             L 660,130 
+             C 620,130 590,170 590,220 
+             H 500 
+             Q 480,220 480,240 
+             Q 480,260 500,260 
+             H 590 
+             L 590,650 
+             C 590,700 640,750 690,780 
+             L 640,730 
+             Q 625,715 610,730 
+             Q 595,745 610,760 
+             L 760,910 
+             Q 775,925 790,910 
+             L 940,760 
+             Q 955,745 940,730 
+             Q 925,715 910,730 
+             L 860,780 
+             C 910,750 960,700 960,650 
+             L 960,260 
+             H 860 
+             Q 840,260 840,240 
+             Q 840,220 860,220 
+             H 960 
+             C 960,190 940,160 910,150 
+             L 910,190 
+             C 910,130 870,80 800,80 Z" 
+          fill="none" stroke="#000000" stroke-width="16" stroke-linejoin="round"/>
+    
+    <!-- Anchor Main Fill (Yellow) -->
+    <path d="M 800,80 
+             C 860,80 900,130 900,190 
+             L 900,220 
+             H 1000 
+             Q 1020,220 1020,240 
+             Q 1020,260 1000,260 
+             H 900 
+             L 900,650 
+             C 900,700 950,750 1000,780 
+             L 1050,730 
+             Q 1065,715 1080,730 
+             Q 1095,745 1080,760 
+             L 930,910 
+             Q 915,925 900,910 
+             L 750,760 
+             Q 735,745 750,730 
+             Q 765,715 780,730 
+             L 830,780 
+             C 880,750 930,700 930,650 
+             L 930,260 
+             H 830 
+             Q 810,260 810,240 
+             Q 810,220 830,220 
+             H 930 
+             C 930,170 900,130 860,130 
+             L 800,130 
+             C 760,130 730,170 730,220 
+             H 830 
+             Q 850,220 850,240 
+             Q 850,260 830,260 
+             L 730,260 
+             L 730,650 
+             C 730,700 780,750 830,780 
+             L 780,730 
+             Q 765,715 750,730 
+             Q 735,745 750,760 
+             L 900,910 
+             Q 915,925 930,910 
+             L 1080,760 
+             Q 1095,745 1080,730 
+             Q 1065,715 1050,730 
+             L 1000,780 
+             C 1050,750 1100,700 1100,650 
+             L 1100,260 
+             H 1200 
+             Q 1220,260 1220,240 
+             Q 1220,220 1200,220 
+             H 1100 
+             C 1100,170 1070,130 1030,130 
+             L 960,130 
+             C 920,130 890,170 890,220 
+             H 800 
+             C 800,170 770,130 730,130 
+             L 660,130 
+             C 620,130 590,170 590,220 
+             H 500 
+             Q 480,220 480,240 
+             Q 480,260 500,260 
+             H 590 
+             L 590,650 
+             C 590,700 640,750 690,780 
+             L 640,730 
+             Q 625,715 610,730 
+             Q 595,745 610,760 
+             L 760,910 
+             Q 775,925 790,910 
+             L 940,760 
+             Q 955,745 940,730 
+             Q 925,715 910,730 
+             L 860,780 
+             C 910,750 960,700 960,650 
+             L 960,260 
+             H 860 
+             Q 840,260 840,240 
+             Q 840,220 860,220 
+             H 960 
+             C 960,190 940,160 910,150 
+             L 910,190 
+             C 910,130 870,80 800,80 Z" 
+          fill="#FFF700"/>
+          
+    <!-- Anchor Halftone Overlay -->
+    <rect x="400" y="0" width="800" height="900" fill="url(#dots)" clip-path="url(#anchorClip)" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Anchor Center Stripes (Pop Art Detailing) -->
+    <g clip-path="url(#anchorClip)">
+      <path d="M 500,100 L 600,100 L 800,900 L 700,900 Z" fill="#00E5FF" opacity="0.8"/>
+      <path d="M 700,100 L 800,100 L 1000,900 L 900,900 Z" fill="#FF0055" opacity="0.8"/>
+      <path d="M 900,100 L 1000,100 L 1200,900 L 1100,900 Z" fill="#00E5FF" opacity="0.8"/>
+    </g>
+
+    <!-- Anchor Shading / 3D Bevel -->
+    <path d="M 800,80 
+             C 860,80 900,130 900,190 
+             L 900,220 
+             H 1000 
+             Q 1020,220 1020,240 
+             Q 1020,260 1000,260 
+             H 900 
+             L 900,650 
+             C 900,700 950,750 1000,780 
+             L 1050,730 
+             Q 1065,715 1080,730 
+             Q 1095,745 1080,760 
+             L 930,910 
+             Q 915,925 900,910 
+             L 750,760 
+             Q 735,745 750,730 
+             Q 765,715 780,730 
+             L 830,780 
+             C 880,750 930,700 930,650 
+             L 930,260 
+             H 830 
+             Q 810,260 810,240 
+             Q 810,220 830,220 
+             H 930 
+             C 930,170 900,130 860,130 
+             L 800,130 
+             C 760,130 730,170 730,220 
+             H 830 
+             Q 850,220 850,240 
+             Q 850,260 830,260 
+             L 730,260 
+             L 730,650 
+             C 730,700 780,750 830,780 
+             L 780,730 
+             Q 765,715 750,730 
+             Q 735,745 750,760 
+             L 900,910 
+             Q 915,925 930,910 
+             L 1080,760 
+             Q 1095,745 1080,730 
+             Q 1065,715 1050,730 
+             L 1000,780 
+             C 1050,750 1100,700 1100,650 
+             L 1100,260 
+             H 1200 
+             Q 1220,260 1220,240 
+             Q 1220,220 1200,220 
+             H 1100 
+             C 1100,170 1070,130 1030,130 
+             L 960,130 
+             C 920,130 890,170 890,220 
+             H 800 
+             C 800,170 770,130 730,130 
+             L 660,130 
+             C 620,130 590,170 590,220 
+             H 500 
+             Q 480,220 480,240 
+             Q 480,260 500,260 
+             H 590 
+             L 590,650 
+             C 590,700 640,750 690,780 
+             L 640,730 
+             Q 625,715 610,730 
+             Q 595,745 610,760 
+             L 760,910 
+             Q 775,925 790,910 
+             L 940,760 
+             Q 955,745 940,730 
+             Q 925,715 910,730 
+             L 860,780 
+             C 910,750 960,700 960,650 
+             L 960,260 
+             H 860 
+             Q 840,260 840,240 
+             Q 840,220 860,220 
+             H 960 
+             C 960,190 940,160 910,150 
+             L 910,190 
+             C 910,130 870,80 800,80 Z" 
+          fill="none" stroke="#000000" stroke-width="8" stroke-linejoin="round" stroke-dasharray="20,10" opacity="0.5"/>
+
+    <!-- Anchor Base / Stock -->
+    <path d="M 500,240 H 1100 V 260 H 500 Z" fill="#00E5FF" stroke="#000000" stroke-width="8"/>
+
+    <!-- Anchor Ring (Top Shackle) -->
+    <circle cx="800" cy="130" r="55" fill="none" stroke="#000000" stroke-width="16"/>
+    <circle cx="800" cy="130" r="55" fill="none" stroke="#00E5FF" stroke-width="8"/>
+    <circle cx="800" cy="130" r="55" fill="none" stroke="#FFF700" stroke-width="4" stroke-dasharray="15, 15">
+      <animate attributeName="stroke-dashoffset" values="0;30" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Anchor Ring Inner Shadow -->
+    <path d="M 800,75 A 55,55 0 0,1 855,130" fill="none" stroke="#000000" stroke-width="16" stroke-linecap="round" opacity="0.3"/>
+
+    <!-- Central "Bolt" / Pin -->
+    <circle cx="800" cy="240" r="20" fill="#FF0055" stroke="#000000" stroke-width="8"/>
+    <circle cx="800" cy="240" r="8" fill="#FFF700"/>
+    <line x1="790" y1="240" x2="810" y2="240" stroke="#000000" stroke-width="4"/>
+    
+    <!-- Anchor Animation (Gentle Bobbing & Tilt) -->
+    <animateTransform attributeName="transform" type="translate" values="0,20; 0,0; 0,20" dur="4s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="-1 800 450; 1 800 450; -1 800 450" dur="6s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Floating Action Lines (Left Side) -->
+  <g id="actionLinesLeft" transform="translate(200, 450)">
+    <use href="#actionLine" transform="scale(2)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,0; 0,0" dur="1.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#actionLine" transform="translate(10, 40) scale(1.5)">
+      <animateTransform attributeName="transform" type="translate" values="10,40; 40,40; 10,40" dur="1.2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#actionLine" transform="translate(-10, 80) scale(2.5)">
+      <animateTransform attributeName="transform" type="translate" values="-10,80; 30,80; -10,80" dur="1.8s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Floating Action Lines (Right Side) -->
+  <g id="actionLinesRight" transform="translate(1300, 450)">
+    <use href="#actionLine" transform="scale(2)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="1.7s" repeatCount="indefinite"/>
+    </use>
+    <use href="#actionLine" transform="translate(-10, 40) scale(1.5)">
+      <animateTransform attributeName="transform" type="translate" values="-10,40; -40,40; -10,40" dur="1.3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#actionLine" transform="translate(10, 80) scale(2.5)">
+      <animateTransform attributeName="transform" type="translate" values="10,80; -30,80; 10,80" dur="1.9s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Comic Burst Clouds -->
+  <g id="comicClouds">
+    <!-- Top Left Cloud -->
+    <path d="M 50,50 Q 100,0 150,50 Q 200,0 250,50 Q 300,0 350,50 Q 400,100 350,150 Q 400,200 350,250 Q 300,300 250,250 Q 200,300 150,250 Q 100,300 50,250 Q 0,200 50,150 Q 0,100 50,50 Z" 
+          fill="#FFF700" stroke="#000000" stroke-width="8" transform="translate(50, 50) scale(0.8)">
+      <animateTransform attributeName="transform" type="translate" values="50,50; 60,40; 50,50" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <text x="150" y="180" font-family="Arial, sans-serif" font-weight="900" font-size="60" fill="#000000" text-anchor="middle" transform="translate(50, 50)">HEAVY!</text>
+
+    <!-- Bottom Right Cloud -->
+    <path d="M 50,50 Q 100,0 150,50 Q 200,0 250,50 Q 300,0 350,50 Q 400,100 350,150 Q 400,200 350,250 Q 300,300 250,250 Q 200,300 150,250 Q 100,300 50,250 Q 0,200 50,150 Q 0,100 50,50 Z" 
+          fill="#00E5FF" stroke="#000000" stroke-width="8" transform="translate(1200, 600) scale(0.9)">
+      <animateTransform attributeName="transform" type="translate" values="1200,600; 1190,610; 1200,600" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <text x="1350" y="730" font-family="Arial, sans-serif" font-weight="900" font-size="50" fill="#000000" text-anchor="middle" transform="translate(1200, 600)">ANCHOR!</text>
+  </g>
+
+  <!-- Floating Halftone Circles (Decorative) -->
+  <g id="floatingDots">
+    <circle cx="300" cy="800" r="40" fill="url(#dots)" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-50; 0,0" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="40;50;40" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1300" cy="100" r="60" fill="url(#dots)" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="60;45;60" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="400" r="30" fill="#FFF700" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,20; 0,0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="800" r="50" fill="#FF0055" stroke="#000000" stroke-width="4">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,-30; 0,0" dur="5.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Color Cycling Overlay (Simulates Lichtenstein color switching) -->
+  <rect width="1600" height="900" fill="#00E5FF" opacity="0" style="mix-blend-mode: multiply;">
+    <animate attributeName="opacity" values="0;0.1;0" dur="8s" repeatCount="indefinite"/>
+  </rect>
+  <rect width="1600" height="900" fill="#FF0055" opacity="0" style="mix-blend-mode: multiply;">
+    <animate attributeName="opacity" values="0;0.1;0" dur="8s" begin="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Comic Book Border Frame -->
+  <rect width="1600" height="900" fill="none" stroke="#000000" stroke-width="40"/>
+  <rect x="20" y="20" width="1560" height="860" fill="none" stroke="#FFF700" stroke-width="10"/>
+  <rect x="30" y="30" width="1540" height="840" fill="none" stroke="#000000" stroke-width="5"/>
+  
+  <!-- Corner Accents -->
+  <path d="M 40,40 L 150,40 L 150,60 L 60,60 L 60,150 L 40,150 Z" fill="#FFF700" stroke="#000000" stroke-width="4"/>
+  <path d="M 1560,40 L 1450,40 L 1450,60 L 1540,60 L 1540,150 L 1560,150 Z" fill="#FFF700" stroke="#000000" stroke-width="4"/>
+  <path d="M 40,860 L 150,860 L 150,840 L 60,840 L 60,750 L 40,750 Z" fill="#FFF700" stroke="#000000" stroke-width="4"/>
+  <path d="M 1560,860 L 1450,860 L 1450,840 L 1540,840 L 1540,750 L 1560,750 Z" fill="#FFF700" stroke="#000000" stroke-width="4"/>
+
+</svg>

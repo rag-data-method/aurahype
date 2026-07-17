@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Sticker Drop Shadow -->
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
+      <feOffset in="blur" dx="12" dy="18" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadowMatrix">
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadowMatrix"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Halftone Pattern for Lenses -->
+    <pattern id="halftone" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="3" fill="#0088AA" opacity="0.4"/>
+    </pattern>
+
+    <!-- Shiny Lip Highlight Gradient -->
+    <linearGradient id="lipShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF4D4D" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#D90000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- STICKER DROP SHADOW & WHITE DIE-CUT BORDER -->
+  <g filter="url(#shadow)">
+    
+    <!-- White Die-Cut Border Path -->
+    <path d="
+      M 500 150
+      C 380 150, 280 220, 260 340
+      C 230 320, 180 330, 160 360
+      C 140 390, 160 430, 200 450
+      C 180 480, 180 520, 210 550
+      C 200 580, 220 610, 250 620
+      C 240 650, 260 680, 300 690
+      C 320 720, 360 740, 400 750
+      C 420 780, 460 800, 500 800
+      C 540 800, 580 780, 600 750
+      C 640 740, 680 720, 700 690
+      C 740 680, 760 650, 750 620
+      C 780 610, 800 580, 790 550
+      C 820 520, 820 480, 800 450
+      C 840 430, 860 390, 840 360
+      C 820 330, 770 320, 740 340
+      C 720 220, 620 150, 500 150
+      Z
+    " fill="#FFFFFF" stroke="none"/>
+
+    <!-- Main Sticker Base Fill (Skin Tone) -->
+    <path d="
+      M 500 170
+      C 390 170, 300 235, 282 345
+      C 255 325, 210 335, 192 360
+      C 175 385, 192 420, 230 440
+      C 212 470, 212 510, 240 540
+      C 230 570, 248 600, 280 610
+      C 270 640, 290 670, 330 680
+      C 350 710, 390 730, 430 740
+      C 450 770, 480 790, 500 790
+      C 520 790, 550 770, 570 740
+      C 610 730, 650 710, 670 680
+      C 710 670, 730 640, 720 610
+      C 752 600, 770 570, 760 540
+      C 788 510, 788 470, 770 440
+      C 808 420, 825 385, 808 360
+      C 790 335, 745 325, 718 345
+      C 700 235, 610 170, 500 170
+      Z
+    " fill="#FFE4C4" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+
+    <!-- ================= FACE DETAILS ================= -->
+    
+    <!-- Nose -->
+    <path d="M 500 520 Q 480 580 500 600 Q 520 580 500 520 Z" fill="#E6C2A0" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M 480 595 Q 500 615 520 595" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Cheek Blush Left -->
+    <ellipse cx="320" cy="580" rx="50" ry="35" fill="#FF69B4" opacity="0.6" transform="rotate(-10 320 580)"/>
+    <ellipse cx="320" cy="580" rx="50" ry="35" fill="none" stroke="#000000" stroke-width="6" transform="rotate(-10 320 580)"/>
+
+    <!-- Cheek Blush Right -->
+    <ellipse cx="680" cy="580" rx="50" ry="35" fill="#FF69B4" opacity="0.6" transform="rotate(10 680 580)"/>
+    <ellipse cx="680" cy="580" rx="50" ry="35" fill="none" stroke="#000000" stroke-width="6" transform="rotate(10 680 580)"/>
+
+    <!-- Freckles -->
+    <g fill="#D2691E">
+      <circle cx="280" cy="540" r="4"/>
+      <circle cx="295" cy="555" r="4"/>
+      <circle cx="265" cy="565" r="4"/>
+      <circle cx="720" cy="540" r="4"/>
+      <circle cx="705" cy="555" r="4"/>
+      <circle cx="735" cy="565" r="4"/>
+    </g>
+
+    <!-- ================= CAT-EYE SUNGLASSES ================= -->
+
+    <!-- Left Lens Base -->
+    <path d="
+      M 230 420
+      C 230 420, 180 380, 150 400
+      C 130 420, 160 480, 220 500
+      C 280 520, 320 490, 340 450
+      C 360 410, 320 380, 230 420
+      Z
+    " fill="#00E5FF" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+    
+    <!-- Left Lens Halftone Overlay -->
+    <path d="
+      M 230 420
+      C 230 420, 180 380, 150 400
+      C 130 420, 160 480, 220 500
+      C 280 520, 320 490, 340 450
+      C 360 410, 320 380, 230 420
+      Z
+    " fill="url(#halftone)"/>
+
+    <!-- Left Lens Reflection -->
+    <path d="M 220 430 Q 250 450 280 440" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Right Lens Base -->
+    <path d="
+      M 770 420
+      C 770 420, 820 380, 850 400
+      C 870 420, 840 480, 780 500
+      C 720 520, 680 490, 660 450
+      C 640 410, 680 380, 770 420
+      Z
+    " fill="#00E5FF" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+
+    <!-- Right Lens Halftone Overlay -->
+    <path d="
+      M 770 420
+      C 770 420, 820 380, 850 400
+      C 870 420, 840 480, 780 500
+      C 720 520, 680 490, 660 450
+      C 640 410, 680 380, 770 420
+      Z
+    " fill="url(#halftone)"/>
+
+    <!-- Right Lens Reflection -->
+    <path d="M 720 440 Q 750 450 780 430" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Sunglasses Frame (Thick Black) -->
+    <!-- Top Bar -->
+    <path d="M 310 390 Q 500 350 690 390" fill="none" stroke="#000000" stroke-width="28" stroke-linecap="round"/>
+    <!-- Left Arm -->
+    <path d="M 220 420 L 150 400" fill="none" stroke="#000000" stroke-width="24" stroke-linecap="round"/>
+    <!-- Right Arm -->
+    <path d="M 780 420 L 850 400" fill="none" stroke="#000000" stroke-width="24" stroke-linecap="round"/>
+    <!-- Left Wing Point -->
+    <path d="M 150 400 L 110 390" fill="none" stroke="#000000" stroke-width="18" stroke-linecap="round"/>
+    <!-- Right Wing Point -->
+    <path d="M 850 400 L 890 390" fill="none" stroke="#000000" stroke-width="18" stroke-linecap="round"/>
+
+    <!-- ================= BITING LIPS ================= -->
+
+    <!-- Upper Lip Background (Dark Red for thickness) -->
+    <path d="
+      M 340 650
+      C 380 620, 450 630, 500 610
+      C 550 630, 620 620, 660 650
+      C 640 680, 580 690, 500 680
+      C 420 690, 360 680, 340 650
+      Z
+    " fill="#990000" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+
+    <!-- Lower Lip Base (Bright Red) -->
+    <path d="
+      M 340 650
+      C 360 680, 420 690, 500 680
+      C 580 690, 640 680, 660 650
+      C 640 720, 560 750, 500 740
+      C 440 750, 360 720, 340 650
+      Z
+    " fill="#FF0000" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+
+    <!-- Upper Lip Top Highlight (Volumizing curve) -->
+    <path d="
+      M 355 645
+      C 390 625, 450 635, 500 615
+      C 550 635, 610 625, 645 645
+    " fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- The "Bite" - White Teeth / Lip being pulled down -->
+    <path d="
+      M 440 650
+      Q 500 665 560 650
+      Q 500 710 440 650
+      Z
+    " fill="#FFFFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+
+    <!-- Lower Lip Gloss / Shine -->
+    <path d="
+      M 390 690
+      Q 430 710 480 705
+    " fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+    <path d="
+      M 520 705
+      Q 570 710 610 690
+    " fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- Lip Crease Lines (Comic Book Style) -->
+    <path d="M 330 650 Q 320 665 335 670" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 670 650 Q 680 665 665 670" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- ================= POP ART ACCENTS ================= -->
+
+    <!-- Action Lines (Left) -->
+    <path d="M 130 280 L 160 310" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 110 330 L 150 350" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 140 240 L 170 260" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Action Lines (Right) -->
+    <path d="M 870 280 L 840 310" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 890 330 L 850 350" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 860 240 L 830 260" stroke="#000000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Action Lines (Bottom) -->
+    <path d="M 450 820 L 470 790" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 550 820 L 530 790" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 500 835 L 500 800" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Magenta Starbursts -->
+    <g fill="#FF1493" stroke="#000000" stroke-width="6" stroke-linejoin="round">
+      <!-- Top Left -->
+      <path d="M 200 220 L 215 255 L 250 260 L 220 280 L 230 315 L 200 295 L 170 315 L 180 280 L 150 260 L 185 255 Z" />
+      <!-- Top Right -->
+      <path d="M 800 220 L 815 255 L 850 260 L 820 280 L 830 315 L 800 295 L 770 315 L 780 280 L 750 260 L 785 255 Z" />
+      <!-- Bottom Left -->
+      <path d="M 220 720 L 230 745 L 255 750 L 235 765 L 240 790 L 220 775 L 200 790 L 205 765 L 185 750 L 210 745 Z" />
+      <!-- Bottom Right -->
+      <path d="M 780 720 L 790 745 L 815 750 L 795 765 L 800 790 L 780 775 L 760 790 L 765 765 L 745 750 L 770 745 Z" />
+    </g>
+
+    <!-- Yellow Retro Sunburst Behind Face -->
+    <g fill="#FFD700" stroke="#000000" stroke-width="8" stroke-linejoin="round">
+      <path d="M 500 200 L 480 240 L 500 220 L 520 240 Z" />
+      <path d="M 500 770 L 480 730 L 500 750 L 520 730 Z" />
+      <path d="M 210 500 L 250 480 L 230 500 L 250 520 Z" />
+      <path d="M 790 500 L 750 480 L 770 500 L 750 520 Z" />
+      
+      <path d="M 340 260 L 350 300 L 360 270 Z" />
+      <path d="M 660 260 L 650 300 L 640 270 Z" />
+      <path d="M 340 740 L 350 700 L 360 730 Z" />
+      <path d="M 660 740 L 650 700 L 640 730 Z" />
+    </g>
+
+  </g>
+</svg>

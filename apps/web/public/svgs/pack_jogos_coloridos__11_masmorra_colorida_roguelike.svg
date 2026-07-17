@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF9F1C"/>
+      <stop offset="50%" stop-color="#E71D8C"/>
+      <stop offset="100%" stop-color="#9B5DE5"/>
+    </linearGradient>
+    <radialGradient id="tg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF9F1C" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FF9F1C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9B5DE5" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#9B5DE5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="f1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15"/>
+    </filter>
+    <filter id="f2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="f3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#011627"/>
+
+  <polygon points="-100,0 600,0 500,900 -100,900" fill="#E71D8C" opacity="0.12">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,0; 0,0" dur="5s" repeatCount="indefinite"/>
+  </polygon>
+
+  <polygon points="0,0 700,0 850,900 0,900" fill="#FF9F1C" opacity="0.1">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="6s" repeatCount="indefinite"/>
+  </polygon>
+
+  <g transform="translate(250,250)" opacity="0.15">
+    <polygon points="0,-120 30,-30 120,0 30,30 0,120 -30,30 -120,0 -30,-30" fill="none" stroke="#FEE440" stroke-width="8">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <g transform="translate(1200,500)">
+    <polygon points="0,-900 50,-200 900,0 50,200 0,900 -50,200 -900,0 -50,-200" fill="url(#lg)" opacity="0.25">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="0,-700 40,-150 700,0 40,150 0,700 -40,150 -700,0 -40,-150" fill="#2EC4B6" opacity="0.2">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="14s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <g fill="#2EC4B6">
+    <circle cx="120" cy="120" r="18" opacity="0.3">
+      <animate attributeName="r" values="18;28;18" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="220" r="28" opacity="0.25">
+      <animate attributeName="r" values="28;38;28" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="380" r="14" opacity="0.35">
+      <animate attributeName="r" values="14;22;14" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="480" r="22" opacity="0.2">
+      <animate attributeName="r" values="22;32;22" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="550" r="30" opacity="0.2">
+      <animate attributeName="r" values="30;40;30" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g transform="translate(880,220)">
+    <g>
+      <rect width="720" height="45" fill="#2EC4B6"/>
+      <path d="M0 22.5 H720 M90 0 v45 M240 0 v45 M390 0 v45 M540 0 v45" stroke="#011627" stroke-width="3"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,6; 0,0" dur="7s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <g transform="translate(1460,220)">
+    <g>
+      <rect width="45" height="550" fill="#25B0A5"/>
+      <path d="M22.5 0 v550 M0 120 h45 M0 280 h45 M0 440 h45" stroke="#011627" stroke-width="3"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -4,0; 0,0" dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <rect x="1000" y="440" width="140" height="35" fill="#2EC4B6"/>
+  <rect x="1350" y="360" width="35" height="140" fill="#2EC4B6"/>
+
+  <g transform="translate(880,710)">
+    <rect width="720" height="30" fill="#FF9F1C"/>
+    <rect width="720" height="6" y="30" fill="#E71D8C"/>
+    <line x1="0" y1="12" x2="720" y2="12" stroke="#011627" stroke-width="3" stroke-dasharray="30 50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 80,0; 0,0" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <g transform="translate(950,265)">
+    <circle cx="0" cy="10" r="55" fill="url(#tg)" filter="url(#f1)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M-8,0 Q0,-35 8,0 L4,35 L-4,35 Z" fill="#FF9F1C" filter="url(#f2)">
+      <animateTransform attributeName="transform" type="scale" values="1,1;1.2,1.4;1,1" dur="0.3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g transform="translate(1390,265)">
+    <circle cx="0" cy="10" r="55" fill="url(#tg)" filter="url(#f1)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="0.45s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M-8,0 Q0,-35 8,0 L4,35 L-4,35 Z" fill="#FF9F1C" filter="url(#f2)">
+      <animateTransform attributeName="transform" type="scale" values="1,1;1.3,1.2;1,1" dur="0.35s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g transform="translate(1350,670)">
+    <circle cx="0" cy="0" r="45" fill="url(#gg)" filter="url(#f1)">
+      <animate attributeName="r" values="35;55;35" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="-15" y="-15" width="30" height="30" fill="#9B5DE5">
+      <animateTransform attributeName="transform" type="rotate" from="45" to="405" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <g transform="translate(1100,615)">
+    <g stroke="#FEE440" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+      <g>
+        <path d="M-15,15 L-55,20 L-45,45 L-5,35 Z" fill="#FEE440" stroke="none" opacity="0.6">
+          <animate attributeName="opacity" values="0.6;0;0.6" dur="0.5s" repeatCount="indefinite"/>
+        </path>
+        <path d="M0,0 L-45,10 L-35,55 L0,40 Z" fill="#E71D8C" stroke="none"/>
+        <path d="M5,-5 L35,0 L40,30 L35,60 L10,65 L-10,60 L-5,30 Z" fill="#011627"/>
+        <circle cx="20" cy="-25" r="16" fill="#011627"/>
+        <path d="M35,-25 L85,-85 L95,-75 L45,-15 Z" fill="#fff" filter="url(#f3)"/>
+        <rect x="28" y="-5" width="10" height="24" transform="rotate(-45 33 7)" fill="#9B5DE5" stroke="none"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-18; 0,0" dur="1.2s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="0.6s" repeatCount="indefinite" additive="sum"/>
+      </g>
+    </g>
+  </g>
+
+  <g stroke="#fff" stroke-width="3" opacity="0.7">
+    <line x1="900" y1="430" x2="1080" y2="430" stroke-dasharray="50 80">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 140,0; 0,0" dur="0.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="880" y1="480" x2="1060" y2="480" stroke-dasharray="40 100">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 160,0; 0,0" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="920" y1="380" x2="1100" y2="380" stroke-dasharray="70 90">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 120,0; 0,0" dur="1s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <g>
+    <rect x="250" y="-40" width="18" height="18" fill="#FF9F1C">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,1000" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    <circle cx="450" cy="-40" r="12" fill="#2EC4B6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,1000" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <polygon points="650,-40 670,-10 630,-10" fill="#E71D8C">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,1000" dur="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+    </polygon>
+    <rect x="850" y="-40" width="16" height="16" fill="#9B5DE5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,1000" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    <circle cx="1050" cy="-40" r="10" fill="#FEE440">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,1000" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <polygon points="1250,-40 1265,-15 1235,-15" fill="#FF9F1C">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,1000" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </polygon>
+    <rect x="1450" y="-40" width="20" height="8" fill="#2EC4B6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,1000" dur="5.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    <circle cx="150" cy="-40" r="14" fill="#E71D8C">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,1000" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g>
+    <circle cx="-40" cy="180" r="10" fill="#FEE440">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1700,0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="-40" y="320" width="14" height="14" fill="#9B5DE5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1700,0" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    <polygon points="-40,460 -25,490 -55,490" fill="#2EC4B6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1700,0" dur="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+    </polygon>
+    <rect x="-40" y="580" width="12" height="22" fill="#E71D8C">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1700,0" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    <circle cx="-40" cy="720" r="12" fill="#FF9F1C">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1700,0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <polygon points="-40,820 -30,845 -50,845" fill="#FEE440">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1700,0" dur="3.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.2s" repeatCount="indefinite" additive="sum"/>
+    </polygon>
+    <rect x="-40" y="120" width="18" height="6" fill="#2EC4B6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1700,0" dur="4.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    <circle cx="-40" cy="260" r="10" fill="#9B5DE5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1700,0" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g fill="#fff">
+    <g transform="translate(150,150)">
+      <path d="M0,-18 L4,-4 L18,0 L4,4 L0,18 L-4,4 L-18,0 L-4,-4 Z">
+        <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(450,280)">
+      <path d="M0,-14 L3,-3 L14,0 L3,3 L0,14 L-3,3 L-14,0 L-3,-3 Z">
+        <animateTransform attributeName="transform" type="scale" values="0;1.2;0" dur="2.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(780,720)">
+      <path d="M0,-20 L5,-5 L20,0 L5,5 L0,20 L-5,5 L-20,0 L-5,-5 Z">
+        <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(1300,120)">
+      <path d="M0,-12 L3,-3 L12,0 L3,3 L0,12 L-3,3 L-12,0 L-3,-3 Z">
+        <animateTransform attributeName="transform" type="scale" values="0;1.1;0" dur="1.8s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <g stroke="#9B5DE5" stroke-width="6" opacity="0.5">
+    <g transform="translate(600,600)">
+      <line x1="-10" y1="0" x2="10" y2="0"/>
+      <line x1="0" y1="-10" x2="0" y2="10"/>
+      <animateTransform attributeName="transform" type="translate" values="600,600; 600,550; 600,600" dur="4s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(750,300)">
+      <line x1="-8" y1="0" x2="8" y2="0"/>
+      <line x1="0" y1="-8" x2="0" y2="8"/>
+      <animateTransform attributeName="transform" type="translate" values="750,300; 750,260; 750,300" dur="5s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <circle cx="200" cy="850" r="100" fill="#E71D8C" opacity="0.12">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-60; 0,0" dur="7s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="1500" cy="80" r="140" fill="#FF9F1C" opacity="0.1">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,50; 0,0" dur="9s" repeatCount="indefinite"/>
+  </circle>
+</svg>

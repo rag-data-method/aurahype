@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <filter id="a" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+  <filter id="b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  <filter id="c" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.5"/></filter>
+  <clipPath id="g"><circle r="235"/></clipPath>
+</defs>
+<rect width="1600" height="900" fill="#F5F5DC"/>
+<ellipse cx="800" cy="780" rx="260" ry="40" fill="#112B3C" opacity="0.8" filter="url(#a)">
+  <animate attributeName="rx" values="260;285;260" dur="6s" repeatCount="indefinite"/>
+  <animate attributeName="ry" values="40;46;40" dur="6s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0.8;0.85;0.8" dur="6s" repeatCount="indefinite"/>
+</ellipse>
+<g transform="translate(800,450)">
+  <animateTransform attributeName="transform" type="translate" values="0,0;0,-12;0,0" dur="6s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  <circle r="300" fill="#C5A059" opacity="0.95"/>
+  <circle r="295" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="270" fill="#112B3C" opacity="0.9"/>
+  <circle r="250" fill="#C5A059" opacity="0.9"/>
+  <circle r="235" fill="#FFFFFF" opacity="0.7"/>
+  <g clip-path="url(#g)">
+    <circle r="235" fill="#112B3C" opacity="0.9"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="4s" repeatCount="indefinite"/>
+      <path d="M-400,140 C-200,100 0,180 200,140 S600,100 800,140 V500 H-400 Z" fill="#112B3C" opacity="0.85">
+        <animateTransform attributeName="transform" type="translate" values="0,0;-80,0;0,0" dur="8s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-400,180 C-150,140 150,220 400,180 S800,140 1000,180 V500 H-400 Z" fill="#112B3C" opacity="0.9">
+        <animateTransform attributeName="transform" type="translate" values="0,0;60,0;0,0" dur="6s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-400,220 C-150,180 150,260 400,220 S800,180 1000,220 V500 H-400 Z" fill="#112B3C" opacity="0.95">
+        <animateTransform attributeName="transform" type="translate" values="0,0;-40,0;0,0" dur="5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  <path d="M-150,-150 Q-50,-200 80,-140 T180,0" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.8" filter="url(#b)">
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="7s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,10;0,0" dur="7s" repeatCount="indefinite"/>
+  </path>
+  <g>
+    <g transform="rotate(0) translate(0,-285)"><circle r="14" fill="#112B3C" opacity="0.9"/><circle cx="-4" cy="-4" r="4" fill="#FFFFFF" opacity="0.9"><animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" repeatCount="indefinite"/></circle></g>
+    <g transform="rotate(45) translate(0,-285)"><circle r="14" fill="#112B3C" opacity="0.9"/><circle cx="-4" cy="-4" r="4" fill="#FFFFFF" opacity="0.9"><animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" begin="0.4s" repeatCount="indefinite"/></circle></g>
+    <g transform="rotate(90) translate(0,-285)"><circle r="14" fill="#112B3C" opacity="0.9"/><circle cx="-4" cy="-4" r="4" fill="#FFFFFF" opacity="0.9"><animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" begin="0.8s" repeatCount="indefinite"/></circle></g>
+    <g transform="rotate(135) translate(0,-285)"><circle r="14" fill="#112B3C" opacity="0.9"/><circle cx="-4" cy="-4" r="4" fill="#FFFFFF" opacity="0.9"><animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" begin="1.2s" repeatCount="indefinite"/></circle></g>
+    <g transform="rotate(180) translate(0,-285)"><circle r="14" fill="#112B3C" opacity="0.9"/><circle cx="-4" cy="-4" r="4" fill="#FFFFFF" opacity="0.9"><animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" begin="1.6s" repeatCount="indefinite"/></circle></g>
+    <g transform="rotate(225) translate(0,-285)"><circle r="14" fill="#112B3C" opacity="0.9"/><circle cx="-4" cy="-4" r="4" fill="#FFFFFF" opacity="0.9"><animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" begin="2s" repeatCount="indefinite"/></circle></g>
+    <g transform="rotate(270) translate(0,-285)"><circle r="14" fill="#112B3C" opacity="0.9"/><circle cx="-4" cy="-4" r="4" fill="#FFFFFF" opacity="0.9"><animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" begin="2.4s" repeatCount="indefinite"/></circle></g>
+    <g transform="rotate(315) translate(0,-285)"><circle r="14" fill="#112B3C" opacity="0.9"/><circle cx="-4" cy="-4" r="4" fill="#FFFFFF" opacity="0.9"><animate attributeName="opacity" values="0.7;0.95;0.7" dur="3s" begin="2.8s" repeatCount="indefinite"/></circle></g>
+  </g>
+  <g filter="url(#c)">
+    <ellipse cx="-90" cy="-120" rx="4" ry="7" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.1;0.8;1" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-150;0,150" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="50" cy="-80" rx="4" ry="7" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.1;0.8;1" dur="5s" begin="1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-150;0,150" dur="5s" begin="1s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="-30" cy="-160" rx="4" ry="7" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.1;0.8;1" dur="4.5s" begin="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-150;0,150" dur="4.5s" begin="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="100" cy="-140" rx="4" ry="7" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.1;0.8;1" dur="6s" begin="0.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-150;0,150" dur="6s" begin="0.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="-120" cy="-60" rx="4" ry="7" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.1;0.8;1" dur="5.5s" begin="1.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-150;0,150" dur="5.5s" begin="1.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="20" cy="-180" rx="4" ry="7" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.1;0.8;1" dur="7s" begin="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-150;0,150" dur="7s" begin="3s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="-3;3;-3" dur="7s" repeatCount="indefinite"/>
+    <path d="M-280,-160 C-380,-80 -360,120 -220,220 C-120,290 60,260 120,180" stroke="#112B3C" stroke-width="24" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <path d="M-280,-160 C-380,-80 -360,120 -220,220 C-120,290 60,260 120,180" stroke="#C5A059" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <g transform="translate(120,180)">
+      <animateTransform attributeName="transform" type="rotate" values="-8;8;-8" dur="3s" repeatCount="indefinite" additive="sum"/>
+      <path d="M0,0 Q10,30 5,60" stroke="#C5A059" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.9"/>
+      <path d="M0,0 Q-10,30 -5,60" stroke="#C5A059" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.9"/>
+    </g>
+  </g>
+</g>
+</svg>

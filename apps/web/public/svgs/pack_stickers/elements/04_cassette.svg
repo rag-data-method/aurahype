@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="6" dy="12" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <linearGradient id="tapeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF1493"/>
+      <stop offset="100%" stop-color="#C71585"/>
+    </linearGradient>
+
+    <radialGradient id="reelGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#FFFF00"/>
+      <stop offset="100%" stop-color="#FFD700"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Drop Shadow -->
+  <path d="M 200,180 L 800,180 A 20,20 0 0,1 820,200 L 820,480 L 850,480 A 20,20 0 0,1 870,500 L 870,620 L 840,620 L 840,650 L 870,650 L 870,720 A 20,20 0 0,1 850,740 L 820,740 L 820,800 A 20,20 0 0,1 800,820 L 200,820 A 20,20 0 0,1 180,800 L 180,200 A 20,20 0 0,1 200,180 Z" fill="#000000" opacity="0.35" filter="url(#shadow)" transform="translate(12, 18)"/>
+
+  <!-- Thick White Die-Cut Border -->
+  <path d="M 200,180 L 800,180 A 20,20 0 0,1 820,200 L 820,480 L 850,480 A 20,20 0 0,1 870,500 L 870,620 L 840,620 L 840,650 L 870,650 L 870,720 A 20,20 0 0,1 850,740 L 820,740 L 820,800 A 20,20 0 0,1 800,820 L 200,820 A 20,20 0 0,1 180,800 L 180,200 A 20,20 0 0,1 200,180 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="24" stroke-linejoin="round"/>
+
+  <!-- Sticker Main Shape (Magenta) -->
+  <path d="M 200,180 L 800,180 A 20,20 0 0,1 820,200 L 820,480 L 850,480 A 20,20 0 0,1 870,500 L 870,620 L 840,620 L 840,650 L 870,650 L 870,720 A 20,20 0 0,1 850,740 L 820,740 L 820,800 A 20,20 0 0,1 800,820 L 200,820 A 20,20 0 0,1 180,800 L 180,200 A 20,20 0 0,1 200,180 Z" fill="url(#tapeGrad)" stroke="#000000" stroke-width="14" stroke-linejoin="round"/>
+
+  <!-- Top Strip / Window Edge -->
+  <path d="M 200,380 L 800,380 L 800,200 A 20,20 0 0,0 780,180 L 220,180 A 20,20 0 0,0 200,200 Z" fill="#FF1493" stroke="#000000" stroke-width="12"/>
+  <path d="M 180,380 L 820,380" stroke="#000000" stroke-width="14" fill="none"/>
+
+  <!-- Center Window (Cutout Effect) -->
+  <path d="M 250,240 L 750,240 A 15,15 0 0,1 765,255 L 765,330 A 15,15 0 0,1 750,345 L 250,345 A 15,15 0 0,1 235,330 L 235,255 A 15,15 0 0,1 250,240 Z" fill="#00BFFF" stroke="#000000" stroke-width="14"/>
+
+  <!-- Window Inner Bevel -->
+  <path d="M 258,248 L 742,248 A 8,8 0 0,1 750,256 L 750,329 A 8,8 0 0,1 742,337 L 258,337 A 8,8 0 0,1 250,329 L 250,256 A 8,8 0 0,1 258,248 Z" fill="none" stroke="#000000" stroke-width="6"/>
+
+  <!-- Tape Spools -->
+  <circle cx="360" cy="292" r="38" fill="url(#reelGrad)" stroke="#000000" stroke-width="10"/>
+  <circle cx="360" cy="292" r="16" fill="#FF1493" stroke="#000000" stroke-width="8"/>
+  <circle cx="360" cy="292" r="7" fill="#000000"/>
+
+  <circle cx="640" cy="292" r="38" fill="url(#reelGrad)" stroke="#000000" stroke-width="10"/>
+  <circle cx="640" cy="292" r="16" fill="#FF1493" stroke="#000000" stroke-width="8"/>
+  <circle cx="640" cy="292" r="7" fill="#000000"/>
+
+  <!-- Tape Windings (Black) -->
+  <circle cx="360" cy="292" r="32" fill="none" stroke="#000000" stroke-width="12" stroke-dasharray="4 8"/>
+  <circle cx="640" cy="292" r="32" fill="none" stroke="#000000" stroke-width="12" stroke-dasharray="4 8"/>
+
+  <!-- Tape connecting spools -->
+  <path d="M 398,292 L 602,292" stroke="#000000" stroke-width="14" fill="none"/>
+  <path d="M 398,292 L 602,292" stroke="#00FFFF" stroke-width="5" fill="none" opacity="0.6"/>
+
+  <!-- Label / Sticker Background -->
+  <path d="M 230,410 L 770,410 L 770,760 A 10,10 0 0,1 760,770 L 240,770 A 10,10 0 0,1 230,760 Z" fill="#FFFF00" stroke="#000000" stroke-width="12"/>
+
+  <!-- Label Inner Detail Lines -->
+  <path d="M 230,480 L 770,480" stroke="#000000" stroke-width="8" fill="none"/>
+  <path d="M 230,700 L 770,700" stroke="#000000" stroke-width="8" fill="none"/>
+
+  <!-- Cyan Stripes on Label -->
+  <path d="M 230,490 L 770,490" stroke="#00FFFF" stroke-width="6" fill="none"/>
+  <path d="M 230,510 L 770,510" stroke="#00FFFF" stroke-width="6" fill="none"/>
+  <path d="M 230,530 L 770,530" stroke="#00FFFF" stroke-width="6" fill="none"/>
+
+  <!-- Retro Text -->
+  <text x="500" y="460" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="72" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="4">MIXTAPE</text>
+  <text x="500" y="575" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="140" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="2">SIDE A</text>
+  
+  <text x="260" y="740" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="36" font-weight="900" fill="#000000">A</text>
+  <text x="740" y="740" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="36" font-weight="900" fill="#000000" text-anchor="end">B</text>
+
+  <text x="500" y="740" font-family="monospace" font-size="28" font-weight="bold" fill="#000000" text-anchor="middle">TYPE I • 90 MIN • NR</text>
+
+  <!-- Screws -->
+  <g fill="#C0C0C0" stroke="#000000" stroke-width="6">
+    <circle cx="220" cy="210" r="12"/>
+    <line x1="214" y1="204" x2="226" y2="216" stroke-width="5"/>
+    <line x1="226" y1="204" x2="214" y2="216" stroke-width="5"/>
+
+    <circle cx="780" cy="210" r="12"/>
+    <line x1="774" y1="204" x2="786" y2="216" stroke-width="5"/>
+    <line x1="786" y1="204" x2="774" y2="216" stroke-width="5"/>
+
+    <circle cx="220" cy="790" r="12"/>
+    <line x1="214" y1="784" x2="226" y2="796" stroke-width="5"/>
+    <line x1="226" y1="784" x2="214" y2="796" stroke-width="5"/>
+
+    <circle cx="780" cy="790" r="12"/>
+    <line x1="774" y1="784" x2="786" y2="796" stroke-width="5"/>
+    <line x1="786" y1="784" x2="774" y2="796" stroke-width="5"/>
+  </g>
+
+  <!-- Bottom Tape Access Holes (Trapezoids) -->
+  <!-- Left Hole -->
+  <path d="M 320,650 L 420,650 L 430,730 L 310,730 Z" fill="#00BFFF" stroke="#000000" stroke-width="10"/>
+  <!-- Right Hole -->
+  <path d="M 580,650 L 680,650 L 690,730 L 570,730 Z" fill="#00BFFF" stroke="#000000" stroke-width="10"/>
+
+  <!-- Bottom Tape Access Holes Inner Border -->
+  <path d="M 328,658 L 412,658 L 420,722 L 318,722 Z" fill="none" stroke="#000000" stroke-width="5"/>
+  <path d="M 588,658 L 672,658 L 680,722 L 578,722 Z" fill="none" stroke="#000000" stroke-width="5"/>
+
+  <!-- Bottom Center Hole (Write-protect notch area) -->
+  <path d="M 460,660 L 540,660 L 540,720 L 460,720 Z" fill="#00BFFF" stroke="#000000" stroke-width="10"/>
+  <path d="M 468,668 L 532,668 L 532,712 L 468,712 Z" fill="none" stroke="#000000" stroke-width="5"/>
+
+  <!-- Pop Art Halftone Dots (Background Texture on Pink) -->
+  <g fill="#000000" opacity="0.15">
+    <!-- Top Left Cluster -->
+    <circle cx="220" cy="420" r="8"/>
+    <circle cx="240" cy="420" r="8"/>
+    <circle cx="260" cy="420" r="8"/>
+    <circle cx="220" cy="440" r="8"/>
+    <circle cx="240" cy="440" r="8"/>
+    <circle cx="260" cy="440" r="8"/>
+
+    <!-- Top Right Cluster -->
+    <circle cx="740" cy="420" r="8"/>
+    <circle cx="760" cy="420" r="8"/>
+    <circle cx="780" cy="420" r="8"/>
+    <circle cx="740" cy="440" r="8"/>
+    <circle cx="760" cy="440" r="8"/>
+    <circle cx="780" cy="440" r="8"/>
+
+    <!-- Bottom Left Cluster -->
+    <circle cx="210" cy="760" r="8"/>
+    <circle cx="230" cy="760" r="8"/>
+    <circle cx="210" cy="780" r="8"/>
+    <circle cx="230" cy="780" r="8"/>
+
+    <!-- Bottom Right Cluster -->
+    <circle cx="770" cy="760" r="8"/>
+    <circle cx="790" cy="760" r="8"/>
+    <circle cx="770" cy="780" r="8"/>
+    <circle cx="790" cy="780" r="8"/>
+  </g>
+
+  <!-- Pop Art Speed Lines / Action Bursts -->
+  <g stroke="#000000" stroke-width="8" stroke-linecap="round">
+    <!-- Top Left Burst -->
+    <line x1="160" y1="160" x2="210" y2="210"/>
+    <line x1="140" y1="190" x2="200" y2="220"/>
+    <line x1="190" y1="140" x2="220" y2="200"/>
+
+    <!-- Bottom Right Burst -->
+    <line x1="840" y1="840" x2="790" y2="790"/>
+    <line x1="860" y1="810" x2="800" y2="780"/>
+    <line x1="810" y1="860" x2="780" y2="800"/>
+
+    <!-- Top Right Burst -->
+    <line x1="840" y1="160" x2="790" y2="210"/>
+    <line x1="860" y1="190" x2="800" y2="220"/>
+    <line x1="810" y1="140" x2="780" y2="200"/>
+
+    <!-- Bottom Left Burst -->
+    <line x1="160" y1="840" x2="210" y2="790"/>
+    <line x1="140" y1="810" x2="200" y2="780"/>
+    <line x1="190" y1="860" x2="220" y2="800"/>
+  </g>
+
+  <!-- Starbursts / Sparkles -->
+  <g fill="#FFFF00" stroke="#000000" stroke-width="6" stroke-linejoin="round">
+    <!-- Top Center Star -->
+    <path d="M 500,120 L 515,155 L 550,155 L 525,180 L 535,215 L 500,195 L 465,215 L 475,180 L 450,155 L 485,155 Z"/>
+    
+    <!-- Left Mid Star -->
+    <path d="M 100,500 L 112,525 L 137,525 L 118,545 L 125,570 L 100,555 L 75,570 L 82,545 L 63,525 L 88,525 Z"/>
+
+    <!-- Right Mid Star -->
+    <path d="M 900,500 L 912,525 L 937,525 L 918,545 L 925,570 L 900,555 L 875,570 L 882,545 L 863,525 L 888,525 Z"/>
+  </g>
+
+</svg>

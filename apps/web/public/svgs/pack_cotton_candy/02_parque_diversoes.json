@@ -1,0 +1,24 @@
+{
+  "slug": "02_parque_diversoes",
+  "title": "Parque de Diversões",
+  "category": "cotton_candy",
+  "objects": "ferris wheel silhouette + pastel balloons + fluffy clouds",
+  "colors": {
+    "primary": "#B5EAD7",
+    "secondary": "#FFB7B2",
+    "accent": "#FFFFFF",
+    "bg": "#E2F0CB"
+  },
+  "tags": [
+    "light",
+    "candy",
+    "carnival",
+    "wheel"
+  ],
+  "svgFile": "02_parque_diversoes.svg",
+  "sizeKB": 12.37,
+  "animations": 38,
+  "gradients": 8,
+  "generatedAt": "2026-06-19",
+  "model": "@cf/moonshotai/kimi-k2.7-code"
+}

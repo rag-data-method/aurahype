@@ -1,0 +1,24 @@
+{
+  "slug": "03_nuvens_doces",
+  "title": "Nuvens Doces",
+  "category": "cotton_candy",
+  "objects": "fluffy pink clouds + sleeping crescent moon + floating stars",
+  "colors": {
+    "primary": "#C7CEEA",
+    "secondary": "#FFB7B2",
+    "accent": "#FFDAC1",
+    "bg": "#FFFFFF"
+  },
+  "tags": [
+    "light",
+    "candy",
+    "sky",
+    "moon"
+  ],
+  "svgFile": "03_nuvens_doces.svg",
+  "sizeKB": 11.18,
+  "animations": 53,
+  "gradients": 4,
+  "generatedAt": "2026-06-19",
+  "model": "@cf/moonshotai/kimi-k2.7-code"
+}

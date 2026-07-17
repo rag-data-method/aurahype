@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A2A3F">
+        <animate attributeName="stop-color" values="#1A2A3F;#24193A;#1A2A3F" dur="18s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#2D4A5F">
+        <animate attributeName="stop-color" values="#2D4A5F;#3D5A7F;#2D4A5F" dur="22s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Golden Beam Gradient -->
+    <linearGradient id="beamGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5C97A" stop-opacity="0.35">
+        <animate attributeName="stop-opacity" values="0.25;0.45;0.25" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#F5C97A" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Window Warm Glow -->
+    <radialGradient id="winGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5C97A" stop-opacity="0.9">
+        <animate attributeName="stop-opacity" values="0.6;1.0;0.6" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#F5C97A" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Blur Filters -->
+    <filter id="b20"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="b60"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="b90"><feGaussianBlur stdDeviation="90"/></filter>
+    <filter id="b120"><feGaussianBlur stdDeviation="120"/></filter>
+
+    <!-- Foreground Particle -->
+    <circle id="p1" r="2" fill="#F5C97A" opacity="0.4"/>
+    <circle id="p2" r="3" fill="#F5C97A" opacity="0.3"/>
+    <circle id="p3" r="1.5" fill="#5A8FA8" opacity="0.5"/>
+  </defs>
+
+  <!-- Background Sky -->
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+
+  <!-- Distant Stars -->
+  <g id="stars" fill="#FFFFFF" opacity="0.4">
+    <circle cx="200" cy="150" r="1.5"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="450" cy="80" r="1"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="9s" repeatCount="indefinite"/></circle>
+    <circle cx="700" cy="200" r="2"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="100" cy="300" r="1"><animate attributeName="opacity" values="0.1;0.5;0.1" dur="11s" repeatCount="indefinite"/></circle>
+    <circle cx="350" cy="120" r="1.5"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="550" cy="250" r="1"><animate attributeName="opacity" values="0.3;0.6;0.3" dur="6s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- Deep Atmospheric Haze Layer -->
+  <ellipse cx="400" cy="900" rx="1400" ry="900" fill="#2D4A5F" opacity="0.35" filter="url(#b120)">
+    <animate attributeName="opacity" values="0.3;0.4;0.3" dur="20s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Mid Atmospheric Haze Layer -->
+  <path d="M-200,900 L1800,900 L1800,450 Q1200,520 800,450 Q400,380 -200,500 Z" fill="#5A8FA8" opacity="0.4" filter="url(#b90)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 40,0; 0,0" dur="25s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Low Fog Layer Left (Cinematic Negative Space) -->
+  <path d="M-200,900 L600,900 L600,750 Q400,780 200,720 Q0,660 -200,680 Z" fill="#1A2A3F" opacity="0.7" filter="url(#b60)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 60,0; 0,0" dur="30s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Castle Silhouette Group (Right Two-Thirds) -->
+  <g id="castle" transform="translate(900, 0)">
+    <!-- Subtle Sway of the Castle -->
+    <animateTransform attributeName="transform" type="translate" values="900,0; 895,0; 900,0; 905,0; 900,0" dur="18s" repeatCount="indefinite"/>
+
+    <!-- Main Castle Path Silhouette -->
+    <path d="M 100,900 
+             L 120,600 L 110,580 L 130,550 L 150,580 L 140,600 
+             L 160,520 L 140,490 L 170,450 L 200,490 L 180,520 
+             L 190,400 L 170,370 L 210,300 L 250,370 L 230,400 
+             L 240,200 L 220,170 L 270,80 L 320,170 L 300,200 
+             L 310,400 L 330,370 L 370,300 L 410,370 L 390,400 
+             L 400,520 L 420,490 L 450,450 L 480,490 L 460,520 
+             L 480,600 L 470,580 L 490,550 L 510,580 L 500,600 
+             L 520,900 Z" 
+          fill="#1A2A3F"/>
+    
+    <!-- Golden Rim Light on Right Edge -->
+    <path d="M 100,900 
+             L 120,600 L 110,580 L 130,550 L 150,580 L 140,600 
+             L 160,520 L 140,490 L 170,450 L 200,490 L 180,520 
+             L 190,400 L 170,370 L 210,300 L 250,370 L 230,400 
+             L 240,200 L 220,170 L 270,80 L 320,170 L 300,200 
+             L 310,400 L 330,370 L 370,300 L 410,370 L 390,400 
+             L 400,520 L 420,490 L 450,450 L 480,490 L 460,520 
+             L 480,600 L 470,580 L 490,550 L 510,580 L 500,600 
+             L 520,900 Z" 
+          fill="none" stroke="#F5C97A" stroke-width="2" opacity="0.8" filter="url(#b20)"/>
+
+    <!-- Tower Top Window Glow -->
+    <circle cx="270" cy="160" r="25" fill="url(#winGlow)"/>
+    <path d="M 260,150 L 280,150 M 270,140 L 270,160" stroke="#F5C97A" stroke-width="3" opacity="0.7"/>
+
+    <!-- Birds near tower top -->
+    <g id="birds" fill="none" stroke="#1A2A3F" stroke-width="2.5" stroke-linecap="round">
+      <path d="M 400,120 Q 410,110 420,120 Q 430,110 440,120">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 5,-2; 0,0" dur="12s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 430,140 Q 438,132 445,140 Q 452,132 460,140">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -4,3; 0,0" dur="15s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 370,100 Q 375,95 380,100 Q 385,95 390,100" stroke-width="1.5" opacity="0.6">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 3,5; 0,0" dur="9s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Golden Beam from Above -->
+    <path d="M 220,-100 L 320,-100 L 370,350 L 170,350 Z" fill="url(#beamGrad)" opacity="0.6">
+      <animate attributeName="opacity" values="0.5;0.7;0.5" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Mid-ground Fog Layer Right -->
+  <path d="M 800,900 L 1800,900 L 1800,700 Q 1400,750 1000,650 Q 800,600 800,900 Z" fill="#5A8FA8" opacity="0.45" filter="url(#b90)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -50,0; 0,0" dur="22s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Foreground Fog Layer Left -->
+  <path d="M -200,900 L 700,900 Q 500,820 200,860 Q -100,900 -200,900 Z" fill="#2D4A5F" opacity="0.6" filter="url(#b60)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 80,0; 0,0" dur="28s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Atmospheric Particles Drifting -->
+  <g id="particles">
+    <use href="#p1">
+      <animateMotion path="M -50,200 Q 400,100 850,300 T 1650,150" dur="20s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p1">
+      <animateMotion path="M 100,400 Q 500,300 900,500 T 1700,350" dur="25s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p2">
+      <animateMotion path="M 0,600 Q 450,450 850,700 T 1600,550" dur="18s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p3">
+      <animateMotion path="M -80,300 Q 350,250 800,350 T 1620,200" dur="22s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p1">
+      <animateMotion path="M 50,150 Q 300,50 600,200 T 1200,100" dur="15s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p2">
+      <animateMotion path="M 200,700 Q 600,550 1000,800 T 1500,650" dur="24s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p3">
+      <animateMotion path="M -20,500 Q 400,400 820,600 T 1650,450" dur="19s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p1">
+      <animateMotion path="M 150,100 Q 500,0 900,150 T 1400,50" dur="16s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p2">
+      <animateMotion path="M 80,800 Q 480,650 880,900 T 1580,750" dur="21s" repeatCount="indefinite"/>
+    </use>
+    <use href="#p3">
+      <animateMotion path="M 300,250 Q 700,150 1100,300 T 1700,200" dur="17s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- Top Vignette for Cinematic Depth -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+    <stop offset="60%" stop-color="#1A2A3F" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#1A2A3F" stop-opacity="0.75"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+
+  <!-- Foreground Mist (Bottom) -->
+  <rect x="0" y="750" width="1600" height="150" fill="#1A2A3F" opacity="0.8" filter="url(#b60)">
+    <animate attributeName="opacity" values="0.7;0.85;0.7" dur="14s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

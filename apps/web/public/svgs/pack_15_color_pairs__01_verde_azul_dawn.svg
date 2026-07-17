@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <filter id="b40" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+    <filter id="b80" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80" />
+    </filter>
+    <filter id="b120" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="120" />
+    </filter>
+    <filter id="b160" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="160" />
+    </filter>
+    
+    <radialGradient id="g1" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#5EE5C9">
+        <animate attributeName="stop-color" values="#5EE5C9;#6B8E5C;#5EE5C9" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="50%" stop-color="#4DA8DA">
+        <animate attributeName="stop-color" values="#4DA8DA;#1E4D6B;#4DA8DA" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="100%" stop-color="#2D5A3F">
+        <animate attributeName="stop-color" values="#2D5A3F;#6B8E5C;#2D5A3F" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+    </radialGradient>
+    
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D5A3F">
+        <animate attributeName="stop-color" values="#2D5A3F;#6B8E5C;#2D5A3F" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="60%" stop-color="#6B8E5C">
+        <animate attributeName="stop-color" values="#6B8E5C;#5EE5C9;#6B8E5C" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="100%" stop-color="#1E4D6B">
+        <animate attributeName="stop-color" values="#1E4D6B;#4DA8DA;#1E4D6B" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="g3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E4D6B">
+        <animate attributeName="stop-color" values="#1E4D6B;#4DA8DA;#1E4D6B" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="50%" stop-color="#4DA8DA">
+        <animate attributeName="stop-color" values="#4DA8DA;#5EE5C9;#4DA8DA" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="100%" stop-color="#6B8E5C">
+        <animate attributeName="stop-color" values="#6B8E5C;#2D5A3F;#6B8E5C" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="g4" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4DA8DA" />
+      <stop offset="40%" stop-color="#5EE5C9">
+        <animate attributeName="stop-color" values="#5EE5C9;#6B8E5C;#5EE5C9" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+      <stop offset="100%" stop-color="#2D5A3F">
+        <animate attributeName="stop-color" values="#2D5A3F;#1E4D6B;#2D5A3F" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+      </stop>
+    </linearGradient>
+  </defs>
+  
+  <rect x="0" y="0" width="1600" height="900" fill="#1E4D6B">
+    <animate attributeName="fill" values="#1E4D6B;#2D5A3F;#1E4D6B" dur="35s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </rect>
+  
+  <ellipse cx="980" cy="350" rx="900" ry="500" fill="url(#g1)" opacity="0.25" filter="url(#b160)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;40,20;0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="0.98;1.02;0.98" dur="12s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+  
+  <path d="M-80,480 C320,200 680,680 1280,380 C1480,260 1680,560 1720,980 L1720,-120 Z" fill="#2D5A3F" filter="url(#b120)" opacity="0.45">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-30,20;0,0" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.45;0.6;0.45" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M1680,420 C1260,120 960,600 480,300 C280,180 80,480 40,900 L40,-200 Z" fill="url(#g3)" filter="url(#b120)" opacity="0.35">
+    <animateTransform attributeName="transform" type="translate" values="0,0;50,-30;0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="16s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M-100,900 C200,500 700,-100 1600,200 L1600,900 Z" fill="url(#g2)" opacity="0.5" filter="url(#b80)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;60,30;0,0" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M1700,-50 C1400,300 1000,700 400,500 C100,380 -100,650 -100,950 L1700,950 Z" fill="url(#g4)" opacity="0.4" filter="url(#b80)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-40,20;0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="0.99;1.01;0.99" dur="14s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <ellipse cx="550" cy="600" rx="700" ry="450" fill="#6B8E5C" opacity="0.3" filter="url(#b120)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-50,-20;0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.3;0.45;0.3" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+  
+  <ellipse cx="1150" cy="280" rx="850" ry="500" fill="#4DA8DA" opacity="0.25" filter="url(#b160)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;30,40;0,0" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="1.01;0.99;1.01" dur="15s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+  
+  <path d="M-80,600 C350,300 750,850 1350,500 C1550,380 1680,650 1720,980 L1720,-80 Z" fill="#2D5A3F" opacity="0.55" filter="url(#b40)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;20,-15;0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M-80,350 C350,100 650,550 1050,280 C1250,150 1450,350 1480,650 L1480,-80 L-80,-80 Z" fill="url(#g4)" opacity="0.5" filter="url(#b40)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-30,25;0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="0.98;1.02;0.98" dur="12s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M1680,700 C1280,450 880,900 380,600 C180,480 -100,750 -100,1000 L1680,1000 Z" fill="#1E4D6B" opacity="0.45" filter="url(#b40)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;40,-20;0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M-80,750 C250,500 550,850 950,600 C1150,480 1350,650 1380,950 L1380,-80 L-80,-80 Z" fill="url(#g2)" opacity="0.6" filter="url(#b40)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,15;0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="1.01;0.99;1.01" dur="10s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <ellipse cx="720" cy="460" rx="420" ry="320" fill="url(#g1)" opacity="0.65" filter="url(#b80)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;25,-15;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="0.98;1.02;0.98" dur="9s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+  
+  <path d="M-100,850 C220,600 500,950 900,680 C1100,550 1300,720 1340,1000 L-100,1000 Z" fill="#2D5A3F" opacity="0.7">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-30,20;0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.7;0.85;0.7" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M1700,150 C1380,350 980,850 480,550 C280,420 100,680 60,980 L60,-100 L1700,-100 Z" fill="#1E4D6B" opacity="0.7">
+    <animateTransform attributeName="transform" type="translate" values="0,0;35,-25;0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="1.02;0.98;1.02" dur="11s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M-80,500 C250,280 600,750 1050,450 C1250,320 1450,550 1480,850 L1480,50 L-80,50 Z" fill="#6B8E5C" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" values="0,0;20,15;0,0" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.5;0.65;0.5" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M1680,650 C1320,400 920,880 420,580 C220,460 -80,720 -80,950 L1680,950 Z" fill="#4DA8DA" opacity="0.55">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-25,20;0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="0.99;1.01;0.99" dur="9s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M-80,650 C280,400 600,800 1000,550 C1200,420 1400,600 1440,900 L-80,900 Z" fill="url(#g3)" opacity="0.75">
+    <animateTransform attributeName="transform" type="translate" values="0,0;15,-15;0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <ellipse cx="720" cy="460" rx="360" ry="260" fill="url(#g1)" opacity="0.8" filter="url(#b40)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,10;0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.8;0.95;0.8" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+  
+  <path d="M-80,580 C300,380 500,720 900,500 C1100,380 1300,550 1340,800 L-80,800 Z" fill="#5EE5C9" opacity="0.45">
+    <animateTransform attributeName="transform" type="translate" values="0,0;30,-20;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="1.01;0.99;1.01" dur="8s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M1680,380 C1340,200 940,600 440,350 C240,240 60,450 40,700 L40,-100 L1680,-100 Z" fill="#5EE5C9" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-15,25;0,0" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M-80,420 C320,220 620,620 1120,350 C1320,230 1520,420 1560,680 L1560,-80 L-80,-80 Z" fill="#4DA8DA" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" values="0,0;25,-15;0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.6;0.75;0.6" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M-80,720 C280,520 580,880 980,620 C1180,480 1380,680 1420,950 L-80,950 Z" fill="#2D5A3F" opacity="0.65">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,15;0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="0.98;1.02;0.98" dur="9s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <circle cx="720" cy="460" r="180" fill="#5EE5C9" opacity="0.35" filter="url(#b80)">
+    <animate attributeName="r" values="180;200;180" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.35;0.55;0.35" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+  
+  <ellipse cx="720" cy="460" rx="140" ry="100" fill="url(#g1)" opacity="0.5" filter="url(#b40)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;10,-10;0,0" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="6s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </ellipse>
+  
+  <circle cx="0" cy="0" r="12" fill="#5EE5C9" opacity="0.6">
+    <animateMotion path="M-200,100 Q300,300 800,400 T1600,500 T1800,800" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+  <circle cx="0" cy="0" r="8" fill="#6B8E5C" opacity="0.5">
+    <animateMotion path="M1800,200 Q1400,400 900,500 T200,700 T-200,600" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+  <circle cx="0" cy="0" r="14" fill="#4DA8DA" opacity="0.45">
+    <animateMotion path="M1600,-100 Q1200,200 700,350 T200,500 T-200,300" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.45;0.15;0.45" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+  <circle cx="0" cy="0" r="10" fill="#2D5A3F" opacity="0.55">
+    <animateMotion path="M-200,800 Q300,600 800,450 T1300,250 T1700,400" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.55;0.2;0.55" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+  <circle cx="0" cy="0" r="6" fill="#5EE5C9" opacity="0.7">
+    <animateMotion path="M400,-200 Q600,200 720,460 T900,800 T600,1000" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </circle>
+  
+  <path d="M-80,300 C150,150 450,550 750,350 C950,240 1150,420 1180,650 L-80,650 Z" fill="url(#g2)" opacity="0.7">
+    <animateTransform attributeName="transform" type="translate" values="0,0;15,-10;0,0" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.7;0.85;0.7" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+  
+  <path d="M1680,550 C1380,350 980,750 580,500 C380,380 180,600 140,850 L1680,850 Z" fill="url(#g4)" opacity="0.75">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,15;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+    <animateTransform attributeName="transform" type="scale" values="1.01;0.99;1.01" dur="8s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+  </path>
+</svg>

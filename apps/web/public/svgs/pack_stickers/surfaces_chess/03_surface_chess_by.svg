@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="chk" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#000000"/>
+      <rect width="20" height="20" fill="#FFD700"/>
+      <rect x="20" y="20" width="20" height="20" fill="#FFD700"/>
+    </pattern>
+    <pattern id="dot" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#000000"/>
+      <circle cx="8" cy="8" r="5" fill="#FFD700"/>
+    </pattern>
+    <pattern id="dot2" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#000000"/>
+      <circle cx="12" cy="12" r="7" fill="#FFD700"/>
+    </pattern>
+    <pattern id="dot3" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#000000"/>
+      <circle cx="16" cy="16" r="9" fill="#FFD700"/>
+    </pattern>
+    <clipPath id="cp1">
+      <polygon points="550,50 1050,50 1400,850 200,850"/>
+    </clipPath>
+    <clipPath id="cp2">
+      <polygon points="650,150 950,150 1200,750 400,750"/>
+    </clipPath>
+    <clipPath id="cp3">
+      <polygon points="750,250 850,250 1000,650 600,650"/>
+    </clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="url(#dot3)"/>
+  <rect x="-100" y="-100" width="1800" height="1100" fill="url(#dot2)" clip-path="url(#cp1)"/>
+  <rect x="-100" y="-100" width="1800" height="1100" fill="url(#dot)" clip-path="url(#cp2)"/>
+  <g clip-path="url(#cp3)">
+    <rect x="-100" y="-100" width="1800" height="1100" fill="url(#chk)" transform="skewX(-12) scale(1.2,1) translate(-160,0)"/>
+  </g>
+  <polygon points="750,250 850,250 1000,650 600,650" fill="none" stroke="#FFD700" stroke-width="8"/>
+  <polygon points="650,150 950,150 1200,750 400,750" fill="none" stroke="#FFD700" stroke-width="6"/>
+  <polygon points="550,50 1050,50 1400,850 200,850" fill="none" stroke="#FFD700" stroke-width="4"/>
+</svg>

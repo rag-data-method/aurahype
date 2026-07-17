@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Vivid Background Gradient -->
+    <radialGradient id="bg-grad" cx="0%" cy="0%" r="120%">
+      <stop offset="0%" stop-color="#FFD93D" />
+      <stop offset="40%" stop-color="#4D96FF" />
+      <stop offset="80%" stop-color="#6BCB77" />
+      <animate attributeName="cy" values="0%;20%;0%" dur="8s" repeatCount="indefinite" />
+    </radialGradient>
+
+    <!-- Sunburst Radial Gradient -->
+    <radialGradient id="sun-grad" cx="50%" cy="120%" r="100%">
+      <stop offset="0%" stop-color="#FF6B6B" />
+      <stop offset="40%" stop-color="#FFD93D" />
+      <stop offset="100%" stop-color="#FF6B6B" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Voxel Block Gradients (Face-based to create isometric 3D depth) -->
+    <radialGradient id="cube-top-grad">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    
+    <linearGradient id="cube-shadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Blur for Clouds -->
+    <filter id="cloud-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" />
+    </filter>
+
+    <!-- Checkerboard Pattern -->
+    <pattern id="checker" width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+      <rect width="40" height="40" fill="#FFD93D" opacity="0.4"/>
+      <rect x="40" width="40" height="40" fill="#FF6B6B" opacity="0.4"/>
+      <rect y="40" width="40" height="40" fill="#4D96FF" opacity="0.4"/>
+      <rect x="40" y="40" width="40" height="40" fill="#6BCB77" opacity="0.4"/>
+    </pattern>
+
+    <!-- Isometric Voxel Block -->
+    <g id="voxel-block">
+      <!-- Top Face -->
+      <path d="M 0,-30 L 40,-8 L 0,15 L -40,-8 Z" fill="#4D96FF" />
+      <path d="M 0,-30 L 40,-8 L 0,15 L -40,-8 Z" fill="url(#cube-top-grad)" pointer-events="none"/>
+      
+      <!-- Right Face -->
+      <path d="M 0,15 L 40,-8 L 40,22 L 0,45 Z" fill="#2D5DFF" />
+      
+      <!-- Left Face -->
+      <path d="M 0,15 L -40,-8 L -40,22 L 0,45 Z" fill="#7BB7FF" />
+    </g>
+
+    <!-- Reusable Cube Cloud Chunk -->
+    <g id="cloud-chunk">
+      <rect x="0" y="0" width="40" height="40" fill="#ffffff"/>
+      <rect x="0" y="40" width="40" height="10" fill="rgba(0,0,0,0.1)"/>
+      <rect x="40" y="0" width="10" height="40" fill="rgba(0,0,0,0.1)"/>
+    </g>
+  </defs>
+
+  <!-- 1. Base Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" />
+
+  <!-- 2. Checkerboard Pattern Layer -->
+  <rect width="100%" height="100%" fill="url(#checker)">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 80 80; 0 0" dur="10s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- 3. Sunburst Rays (Behind Voxels) -->
+  <g filter="url(#glow)">
+    <rect width="100%" height="100%" fill="url(#sun-grad)" />
+    <g transform="translate(800, 450)">
+      <g opacity="0.6">
+        <path d="M 0 0 L 1200 -600 L 1600 -400 Z" fill="#FF6B6B" />
+        <path d="M 0 0 L 1600 -400 L 1800 0 Z" fill="#FFD93D" />
+        <path d="M 0 0 L 1800 0 L 1600 400 Z" fill="#4D96FF" />
+        <path d="M 0 0 L 1600 400 L 1200 600 Z" fill="#6BCB77" />
+        <path d="M 0 0 L 1200 600 L 0 900 Z" fill="#FF6B6B" />
+        <path d="M 0 0 L 0 900 L -1200 600 Z" fill="#FFD93D" />
+        <path d="M 0 0 L -1200 600 L -1600 400 Z" fill="#4D96FF" />
+        <path d="M 0 0 L -1600 400 L -1800 0 Z" fill="#6BCB77" />
+        <path d="M 0 0 L -1800 0 L -1600 -400 Z" fill="#FF6B6B" />
+        <path d="M 0 0 L -1600 -400 L -1200 -600 Z" fill="#FFD93D" />
+        <path d="M 0 0 L -1200 -600 L 0 -900 Z" fill="#4D96FF" />
+        <path d="M 0 0 L 0 -900 L 1200 -600 Z" fill="#6BCB77" />
+      </g>
+      <animateTransform attributeName="transform" type="rotate" dur="12s" values="0;30" repeatCount="indefinite" />
+    </g>
+  </g>
+
+  <!-- 4. Floating Voxel Island 1 (Back Left) -->
+  <g transform="translate(300, 300) scale(0.8)">
+    <use href="#voxel-block" fill="#FF6B6B" />
+    <use href="#voxel-block" y="-30" fill="#FFD93D" />
+    <use href="#voxel-block" y="-60" fill="#6BCB77" />
+    <use href="#voxel-block" x="-40" y="-15" fill="#4D96FF" />
+    <use href="#voxel-block" x="40" y="-15" fill="#FF6B6B" />
+    <use href="#voxel-block" x="-40" y="-45" fill="#FFD93D" />
+    <animateTransform attributeName="transform" type="translate" values="300 300; 320 280; 300 300" dur="6s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0; 5; 0" dur="7s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  <!-- 5. Floating Voxel Island 2 (Mid-Right) -->
+  <g transform="translate(1300, 200) scale(0.9)">
+    <use href="#voxel-block" fill="#4D96FF" />
+    <use href="#voxel-block" x="-40" y="-15" fill="#6BCB77" />
+    <use href="#voxel-block" x="40" y="-15" fill="#FFD93D" />
+    <use href="#voxel-block" y="-30" fill="#FF6B6B" />
+    <use href="#voxel-block" y="-60" fill="#4D96FF" />
+    <use href="#voxel-block" x="-40" y="-45" fill="#FFD93D" />
+    <use href="#voxel-block" x="40" y="-45" fill="#6BCB77" />
+    <use href="#voxel-block" x="-80" y="-60" fill="#FF6B6B" />
+    <animateTransform attributeName="transform" type="translate" values="1300 200; 1280 220; 1300 200" dur="5s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0; -5; 0" dur="6s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  <!-- 6. Main Floating Voxel Landscape (Hero Subject Anchor) -->
+  <g id="hero-landscape" transform="translate(900, 550)">
+    <!-- Base Layer -->
+    <use href="#voxel-block" fill="#6BCB77" />
+    <use href="#voxel-block" x="-40" y="-15" fill="#6BCB77" />
+    <use href="#voxel-block" x="40" y="-15" fill="#6BCB77" />
+    <use href="#voxel-block" x="-80" y="-30" fill="#6BCB77" />
+    <use href="#voxel-block" x="80" y="-30" fill="#6BCB77" />
+    
+    <!-- Second Layer -->
+    <use href="#voxel-block" y="-30" fill="#4D96FF" />
+    <use href="#voxel-block" x="-40" y="-45" fill="#4D96FF" />
+    <use href="#voxel-block" x="40" y="-45" fill="#4D96FF" />
+    
+    <!-- Third Layer (Peak) -->
+    <use href="#voxel-block" y="-60" fill="#FFD93D" />
+    
+    <!-- Accent Blocks -->
+    <use href="#voxel-block" x="-40" y="-75" fill="#FF6B6B" />
+    <use href="#voxel-block" x="40" y="-75" fill="#FF6B6B" />
+    <use href="#voxel-block" x="-80" y="-60" fill="#FFD93D" />
+    <use href="#voxel-block" x="80" y="-60" fill="#FFD93D" />
+    
+    <!-- A few floating blocks around the main landscape -->
+    <use href="#voxel-block" x="-150" y="-50" fill="#FF6B6B" transform="scale(0.6)" />
+    <use href="#voxel-block" x="160" y="-80" fill="#4D96FF" transform="scale(0.7)" />
+    <use href="#voxel-block" x="120" y="20" fill="#FFD93D" transform="scale(0.5)" />
+    
+    <animateTransform attributeName="transform" type="translate" values="900 550; 900 530; 900 550" dur="3s" repeatCount="indefinite" />
+  </g>
+
+  <!-- 7. Floating Clouds -->
+  <g id="clouds" filter="url(#cloud-glow)">
+    <g transform="translate(400, 150) scale(1.5)">
+      <use href="#cloud-chunk" x="0" y="0" />
+      <use href="#cloud-chunk" x="40" y="0" />
+      <use href="#cloud-chunk" x="80" y="0" />
+      <use href="#cloud-chunk" x="20" y="-30" />
+      <use href="#cloud-chunk" x="60" y="-30" />
+      <animateTransform attributeName="transform" type="translate" values="400 150; 450 140; 400 150" dur="10s" repeatCount="indefinite" />
+    </g>
+    <g transform="translate(1100, 250) scale(1.2)">
+      <use href="#cloud-chunk" x="0" y="0" />
+      <use href="#cloud-chunk" x="40" y="0" />
+      <use href="#cloud-chunk" x="80" y="0" />
+      <use href="#cloud-chunk" x="120" y="0" />
+      <use href="#cloud-chunk" x="40" y="-40" />
+      <use href="#cloud-chunk" x="80" y="-40" />
+      <animateTransform attributeName="transform" type="translate" values="1100 250; 1050 260; 1100 250" dur="12s" repeatCount="indefinite" />
+    </g>
+    <g transform="translate(200, 500) scale(0.8)">
+      <use href="#cloud-chunk" x="0" y="0" />
+      <use href="#cloud-chunk" x="40" y="0" />
+      <use href="#cloud-chunk" x="80" y="0" />
+      <use href="#cloud-chunk" x="40" y="-40" />
+      <animateTransform attributeName="transform" type="translate" values="200 500; 220 490; 200 500" dur="8s" repeatCount="indefinite" />
+    </g>
+  </g>
+
+  <!-- 8. Colorful Halftone Dots Overlay -->
+  <g fill="#ffffff" opacity="0.5">
+    <circle cx="200" cy="200" r="40" />
+    <circle cx="300" cy="350" r="25" />
+    <circle cx="150" cy="400" r="15" />
+    <circle cx="400" cy="150" r="30" />
+    <circle cx="500" cy="450" r="50" />
+    <circle cx="100" cy="600" r="20" />
+    <circle cx="350" cy="700" r="35" />
+    <circle cx="250" cy="800" r="45" />
+    <circle cx="50" cy="800" r="20" />
+    <circle cx="450" cy="750" r="10" />
+    
+    <!-- Halftone Animation -->
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 800 450; 360 800 450" dur="20s" repeatCount="indefinite" />
+  </g>
+
+  <!-- 9. Hero Character: Blocky Builder Silhouette -->
+  <g id="hero-builder" transform="translate(900, 510)">
+    <!-- Shadow -->
+    <ellipse cx="0" cy="45" rx="40" ry="10" fill="#000000" opacity="0.3" />
+    
+    <!-- Legs -->
+    <rect x="-10" y="20" width="8" height="20" fill="#333333" />
+    <rect x="2" y="20" width="8" height="20" fill="#333333" />
+    
+    <!-- Torso -->
+    <rect x="-12" y="0" width="24" height="25" fill="#444444" />
+    
+    <!-- Head -->
+    <rect x="-8" y="-18" width="16" height="16" fill="#555555" />
+    <circle cx="-3" cy="-14" r="2" fill="#ffffff" /> <!-- Eye -->
+    
+    <!-- Arm holding block -->
+    <rect x="12" y="5" width="18" height="6" fill="#555555" transform="rotate(-20 12 5)" />
+    
+    <!-- Held Block -->
+    <g transform="translate(28, -5) scale(0.4)">
+      <use href="#voxel-block" fill="#FFD93D" />
+    </g>
+
+    <!-- Arm swinging back -->
+    <rect x="-28" y="5" width="16" height="6" fill="#555555" transform="rotate(10 -12 5)" />
+    
+    <!-- Bounce Animation -->
+    <animateTransform attributeName="transform" type="translate" values="900 510; 900 500; 900 510" dur="0.8s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="scale" values="1; 1.05; 1" dur="0.8s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  <!-- 10. Geometric Floating Shapes (Stars, Triangles, etc.) -->
+  <g>
+    <!-- Star 1 -->
+    <path d="M 800 100 L 812 140 L 850 140 L 820 165 L 830 200 L 800 175 L 770 200 L 780 165 L 750 140 L 788 140 Z" fill="#FFD93D" stroke="#FF6B6B" stroke-width="3" />
+    <animateTransform attributeName="transform" type="rotate" values="0 800 150; 360 800 150" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+    
+    <!-- Star 2 -->
+    <path d="M 1300 600 L 1310 630 L 1340 630 L 1315 650 L 1325 680 L 1300 660 L 1275 680 L 1285 650 L 1260 630 L 1290 630 Z" fill="#6BCB77" stroke="#4D96FF" stroke-width="2" />
+    <animateTransform attributeName="transform" type="rotate" values="0 1300 640; -360 1300 640" dur="7s" repeatCount="indefinite" />
+    <animate attributeName="scale" values="1;1.5;1" dur="3s" repeatCount="indefinite" />
+    
+    <!-- Triangle 1 -->
+    <path d="M 600 300 L 640 300 L 620 250 Z" fill="#FF6B6B" stroke="#FFD93D" stroke-width="2" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -20; 0 0" dur="4s" repeatCount="indefinite" />
+    
+    <!-- Triangle 2 -->
+    <path d="M 1500 400 L 1530 400 L 1515 360 Z" fill="#4D96FF" stroke="#6BCB77" stroke-width="2" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 20; 0 0" dur="3s" repeatCount="indefinite" />
+  </g>
+
+  <!-- 11. Motion Lines / Energy Swirls -->
+  <path d="M 900 510 Q 600 400 300 300" fill="none" stroke="#FFD93D" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+  <path d="M 900 510 Q 1200 600 1500 700" fill="none" stroke="#FF6B6B" stroke-width="6" stroke-linecap="round" opacity="0.8" />
+  
+  <path d="M 900 510 Q 500 600 200 750" fill="none" stroke="#6BCB77" stroke-width="10" stroke-linecap="round" stroke-dasharray="20 30" opacity="0.8" />
+  <animate attributeName="stroke-dashoffset" values="0;-50" dur="1s" repeatCount="indefinite" />
+
+  <!-- 12. Sparkle Particles -->
+  <g id="sparkles">
+    <path d="M 700 200 Q 705 205 700 210 Q 695 205 700 200" fill="#ffffff" />
+    <path d="M 1200 800 Q 1205 805 1200 810 Q 1195 805 1200 800" fill="#ffffff" />
+    <path d="M 500 600 Q 505 605 500 610 Q 495 605 500 600" fill="#FFD93D" />
+    <path d="M 1400 200 Q 1405 205 1400 210 Q 1395 205 1400 200" fill="#FF6B6B" />
+    
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="scale" values="1;2;1" dur="1.5s" repeatCount="indefinite" />
+  </g>
+
+  <!-- 13. Confetti Particles (Foreground) -->
+  <g id="confetti">
+    <!-- Red Square -->
+    <rect x="200" y="200" width="20" height="20" fill="#FF6B6B">
+      <animateTransform attributeName="transform" type="translate" values="200 200; 180 800" dur="4s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="4s" repeatCount="indefinite" additive="sum" />
+    </rect>
+    
+    <!-- Green Square -->
+    <rect x="600" y="100" width="30" height="30" fill="#6BCB77">
+      <animateTransform attributeName="transform" type="translate" values="600 100; 620 900" dur="5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0; -360" dur="5s" repeatCount="indefinite" additive="sum" />
+    </rect>
+    
+    <!-- Yellow Square -->
+    <rect x="1000" y="50" width="15" height="15" fill="#FFD93D">
+      <animateTransform attributeName="transform" type="translate" values="1000 50; 980 850" dur="3s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="3s" repeatCount="indefinite" additive="sum" />
+    </rect>
+    
+    <!-- Blue Square -->
+    <rect x="1400" y="300" width="25" height="25" fill="#4D96FF">
+      <animateTransform attributeName="transform" type="translate" values="1400 300; 1420 950" dur="6s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="6s" repeatCount="indefinite" additive="sum" />
+    </rect>
+
+    <!-- More scattered confetti -->
+    <circle cx="300" cy="100" r="10" fill="#FF6B6B">
+      <animateTransform attributeName="transform" type="translate" values="300 100; 320 850" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="800" cy="50" r="8" fill="#6BCB77">
+      <animateTransform attributeName="transform" type="translate" values="800 50; 780 800" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+
+    <circle cx="1100" cy="150" r="12" fill="#FFD93D">
+      <animateTransform attributeName="transform" type="translate" values="1100 150; 1120 900" dur="5.5s" repeatCount="indefinite" />
+    </circle>
+
+    <rect x="150" y="400" width="18" height="18" fill="#4D96FF">
+      <animateTransform attributeName="transform" type="translate" values="150 400; 130 850" dur="3s" repeatCount="indefinite" />
+    </rect>
+
+    <rect x="450" y="600" width="22" height="22" fill="#FF6B6B" transform="rotate(45)">
+      <animateTransform attributeName="transform" type="translate" values="450 600; 470 900" dur="4s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- 14. Foreground Geometric Accents (Chevrons) -->
+  <g id="chevrons" opacity="0.7" fill="none" stroke="#FFD93D" stroke-width="8">
+    <path d="M 100 800 L 150 750 L 100 700" />
+    <path d="M 130 800 L 180 750 L 130 700" />
+    <path d="M 160 800 L 210 750 L 160 700" />
+    
+    <animateTransform attributeName="transform" type="translate" values="0 0; 20 0; 0 0" dur="2s" repeatCount="indefinite" />
+  </g>
+  
+  <!-- 15. Additional Floating Particles from Hero -->
+  <g transform="translate(900, 510)">
+    <circle cx="0" cy="0" r="5" fill="#ffffff">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -50 -100" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="4" fill="#FFD93D">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 60 -80" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <rect x="0" y="0" width="6" height="6" fill="#FF6B6B">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 40 -120" dur="2.5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0; 180" dur="2.5s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="1;0" dur="2.5s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- 16. Scanlines for retro feel (subtle) -->
+  <g opacity="0.1">
+    <line x1="0" y1="0" x2="1600" y2="0" stroke="#000000" stroke-width="2" />
+    <line x1="0" y1="10" x2="1600" y2="10" stroke="#000000" stroke-width="2" />
+    <!-- Repeat pattern via JS or just manually a few for effect, but pure SVG here -->
+    <line x1="0" y1="20" x2="1600" y2="20" stroke="#000000" stroke-width="2" />
+    <line x1="0" y1="30" x2="1600" y2="30" stroke="#000000" stroke-width="2" />
+    <line x1="0" y1="40" x2="1600" y2="40" stroke="#000000" stroke-width="2" />
+    <line x1="0" y1="50" x2="1600" y2="50" stroke="#000000" stroke-width="2" />
+    <line x1="0" y1="60" x2="1600" y2="60" stroke="#000000" stroke-width="2" />
+    <line x1="0" y1="70" x2="1600" y2="70" stroke="#000000" stroke-width="2" />
+    <line x1="0" y1="80" x2="1600" y2="80" stroke="#000000" stroke-width="2" />
+    <line x1="0" y1="90" x2="1600" y2="90" stroke="#000000" stroke-width="2" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 10; 0 0" dur="0.5s" repeatCount="indefinite" />
+  </g>
+</svg>

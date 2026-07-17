@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradients -->
+    <radialGradient id="bgGrad" cx="80%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#FF3838">
+        <animate attributeName="stop-color" values="#FF3838;#FF0066;#FF3838" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#2A0845">
+        <animate attributeName="stop-color" values="#2A0845;#5500AA;#2A0845" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#110022"/>
+    </radialGradient>
+
+    <linearGradient id="trailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#39FF88" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#39FF88"/>
+      <stop offset="100%" stop-color="#00FFFF"/>
+    </linearGradient>
+
+    <linearGradient id="explosionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD23F"/>
+      <stop offset="100%" stop-color="#FF3838"/>
+    </linearGradient>
+
+    <!-- Patterns & Filters -->
+    <pattern id="scanlines" x="0" y="0" width="1600" height="16" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="1600" height="8" fill="#2A0845" opacity="0.3"/>
+    </pattern>
+
+    <pattern id="chevron" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <polyline points="0,15 30,45 60,15" fill="none" stroke="#FF3838" stroke-width="6" opacity="0.5"/>
+      <polyline points="0,35 30,65 60,35" fill="none" stroke="#FFD23F" stroke-width="6" opacity="0.5"/>
+    </pattern>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="heroGlow">
+      <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Reusable Animations -->
+    <animateTransform id="spinSlow" attributeName="transform" type="rotate" from="0 1050 450" to="360 1050 450" dur="20s" repeatCount="indefinite"/>
+    
+    <animateTransform id="spinFast" attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="8s" repeatCount="indefinite"/>
+
+    <animate id="pulse" attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+
+    <animateTransform id="float" attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite"/>
+  </defs>
+
+  <!-- Layer 1: Base Background -->
+  <rect width="1600" height="900" fill="#2A0845"/>
+  
+  <!-- Layer 2: Animated Background Gradient -->
+  <rect width="1600" height="900" fill="url(#bgGrad)">
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 3: Retro Sunburst (Top Left) -->
+  <g opacity="0.4">
+    <path d="M0,0 L1600,0 L1600,900 L0,900 Z" fill="url(#explosionGrad)" mask="url(#sunburstMask)">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="60s" repeatCount="indefinite"/>
+    </path>
+    <mask id="sunburstMask">
+      <rect width="1600" height="900" fill="white"/>
+      <g transform="translate(800,450)">
+        <path d="M-1600,-1600 L1600,-1600 L1600,1600 L-1600,1600 Z" fill="black">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="15" dur="0.01s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </mask>
+    <circle cx="800" cy="450" r="600" fill="none" stroke="#FFD23F" stroke-width="2" opacity="0.5">
+      <animate attributeName="r" values="600;620;600" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="450" r="550" fill="none" stroke="#FF3838" stroke-width="4" opacity="0.5">
+      <animate attributeName="r" values="550;570;550" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 4: Giant Halftone Disco Burst (Behind Hero) -->
+  <g transform="translate(1050, 450)">
+    <g>
+      <use href="#spinSlow" />
+      <circle cx="0" cy="0" r="350" fill="none" stroke="#39FF88" stroke-width="3" stroke-dasharray="20 40"/>
+      <circle cx="0" cy="0" r="300" fill="none" stroke="#FFD23F" stroke-width="6" stroke-dasharray="60 30"/>
+      <circle cx="0" cy="0" r="250" fill="none" stroke="#FF3838" stroke-width="9" stroke-dasharray="15 45"/>
+      <circle cx="0" cy="0" r="200" fill="none" stroke="#00FFFF" stroke-width="12" stroke-dasharray="80 20"/>
+    </g>
+  </g>
+
+  <!-- Layer 5: Scrolling Scanlines -->
+  <rect width="1600" height="900" fill="url(#scanlines)">
+    <animateTransform attributeName="transform" type="translate" from="0,0" to="0,16" dur="0.2s" repeatCount="indefinite"/>
+  </rect>
+  <rect width="1600" height="900" fill="url(#scanlines)" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" from="0,0" to="0,-16" dur="0.3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 6: Background Stars -->
+  <g fill="#FFFFFF">
+    <rect x="150" y="100" width="4" height="4" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="400" y="250" width="6" height="6" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.5;1" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    <rect x="650" y="50" width="3" height="3" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="850" y="800" width="5" height="5" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.1;0.7" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="200" y="700" width="4" height="4" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="500" y="550" width="6" height="2" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" from="0,0" to="20,0" dur="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="300" y="400" width="2" height="2" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0;0.9" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="700" y="300" width="8" height="8" fill="#39FF88" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 704 304" to="90 704 304" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Layer 7: Retro Grid Floor -->
+  <g transform="translate(0, 750)" opacity="0.4">
+    <polygon points="0,150 1600,150 1300,0 300,0" fill="#2A0845"/>
+    <line x1="500" y1="0" x2="200" y2="150" stroke="#39FF88" stroke-width="2">
+      <animate attributeName="x1" values="500;600;500" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="200;300;200" dur="4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="700" y1="0" x2="700" y2="150" stroke="#39FF88" stroke-width="2">
+      <animate attributeName="x1" values="700;800;700" dur="4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="900" y1="0" x2="1200" y2="150" stroke="#39FF88" stroke-width="2">
+      <animate attributeName="x1" values="900;1000;900" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1200;1300;1200" dur="4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="30" x2="1600" y2="30" stroke="#FF3838" stroke-width="1">
+      <animate attributeName="y1" values="30;150;30" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="30;150;30" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="70" x2="1600" y2="70" stroke="#FF3838" stroke-width="1">
+      <animate attributeName="y1" values="70;150;70" dur="3s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="70;150;70" dur="3s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Layer 8: Giant Chevron Pattern (Left Side) -->
+  <rect x="0" y="0" width="700" height="900" fill="url(#chevron)">
+    <animateTransform attributeName="transform" type="translate" from="0,0" to="0,-60" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 9: Floating Geometric Accents -->
+  <g fill="#FF0066" opacity="0.8">
+    <rect x="100" y="150" width="40" height="40" transform="rotate(15 120 170)">
+      <animateTransform attributeName="transform" type="rotate" from="15 120 170" to="375 120 170" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="100;120;100" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="350" y="600" width="60" height="60" fill="#00FFFF" transform="rotate(45 380 630)">
+      <animateTransform attributeName="transform" type="rotate" from="45 380 630" to="405 380 630" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <polygon points="600,100 620,140 580,140" fill="#FFD23F" transform="translate(0,0)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,20; 0,0" dur="2.5s" repeatCount="indefinite"/>
+    </polygon>
+    <circle cx="250" cy="300" r="15" fill="#39FF88" stroke="#FFFFFF" stroke-width="3">
+      <animate attributeName="r" values="15;25;15" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Layer 10: Giant Pixel Blocks (Background Depth) -->
+  <g opacity="0.3">
+    <rect x="50" y="50" width="80" height="80" fill="#FF3838">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,-20; 0,0" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="180" y="200" width="120" height="40" fill="#39FF88">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,10; 0,0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="80" y="500" width="50" height="120" fill="#FFD23F">
+      <animateTransform attributeName="transform" type="rotate" from="0 105 560" to="90 105 560" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Layer 11: Speed Lines -->
+  <g stroke="#FFFFFF" stroke-width="2" opacity="0.6">
+    <line x1="0" y1="450" x2="300" y2="450">
+      <animate attributeName="x2" values="300;500;300" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="0.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="470" x2="400" y2="470" stroke="#39FF88">
+      <animate attributeName="x2" values="400;600;400" dur="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="0.7s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="430" x2="200" y2="430" stroke="#FFD23F">
+      <animate attributeName="x2" values="200;400;200" dur="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="0.4s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Layer 12: Hero Glow Behind -->
+  <circle cx="1250" cy="450" r="150" fill="#39FF88" opacity="0.3" filter="url(#glow)">
+    <animate attributeName="r" values="150;180;150" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Layer 13: Pixelated Trail (Behind Hero) -->
+  <g filter="url(#glow)">
+    <rect x="900" y="430" width="300" height="20" fill="url(#trailGrad)" opacity="0.8">
+      <animate attributeName="width" values="300;350;300" dur="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="900;850;900" dur="0.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="950" y="410" width="200" height="10" fill="#39FF88" opacity="0.6">
+      <animate attributeName="width" values="200;250;200" dur="0.3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="980" y="480" width="150" height="10" fill="#00FFFF" opacity="0.6">
+      <animate attributeName="width" values="150;200;150" dur="0.25s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Animated Pixel Trail Squares -->
+    <rect x="1000" y="425" width="20" height="20" fill="#FFD23F" opacity="0.9">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,0; 0,0" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0;0.9" dur="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1050" y="445" width="15" height="15" fill="#FF3838" opacity="0.9">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -80,0; 0,0" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0;0.9" dur="0.6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Layer 14: Main Hero Subject (Pixel Ship Silhouette) -->
+  <g transform="translate(1200, 450)">
+    <!-- Subtle continuous floating bounce -->
+    <animateTransform attributeName="transform" type="translate" values="1200,440; 1200,460; 1200,440" dur="3s" repeatCount="indefinite" additive="replace"/>
+    
+    <!-- Pop/Scale animation -->
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="0.4s" repeatCount="indefinite" additive="sum"/>
+
+    <g transform="translate(-100, -60)">
+      <!-- Ship Base (Simplified Pixel Art Style) -->
+      <!-- Main Body -->
+      <rect x="120" y="30" width="60" height="60" fill="#111111"/>
+      <rect x="100" y="40" width="20" height="40" fill="#111111"/>
+      <rect x="80" y="50" width="20" height="20" fill="#111111"/>
+      
+      <!-- Wings / Fins -->
+      <rect x="140" y="0" width="20" height="30" fill="#111111"/>
+      <rect x="140" y="90" width="20" height="30" fill="#111111"/>
+      <rect x="160" y="10" width="30" height="20" fill="#111111"/>
+      <rect x="160" y="90" width="30" height="20" fill="#111111"/>
+      
+      <!-- Cockpit / Details -->
+      <rect x="140" y="45" width="30" height="30" fill="#2A0845"/>
+      <rect x="170" y="55" width="10" height="10" fill="#FF3838">
+        <animate attributeName="opacity" values="1;0.2;1" dur="0.2s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Engine Glow Core -->
+      <rect x="60" y="55" width="20" height="10" fill="#39FF88" filter="url(#heroGlow)">
+        <animate attributeName="fill" values="#39FF88;#FFFFFF;#39FF88" dur="0.1s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Outline strokes for definition -->
+      <rect x="120" y="30" width="60" height="60" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <rect x="100" y="40" width="20" height="40" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <rect x="80" y="50" width="20" height="20" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <rect x="140" y="0" width="20" height="30" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <rect x="140" y="90" width="20" height="30" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <rect x="160" y="10" width="30" height="20" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <rect x="160" y="90" width="30" height="20" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Layer 15: Pixel Explosion Burst (Left of Ship) -->
+  <g transform="translate(1050, 450)">
+    <animateTransform attributeName="transform" type="translate" values="1050,450; 1040,450; 1050,450" dur="0.2s" repeatCount="indefinite"/>
+    
+    <!-- Center Core -->
+    <rect x="-20" y="-20" width="40" height="40" fill="#FFFFFF" filter="url(#glow)">
+      <animate attributeName="width" values="40;50;40" dur="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="40;50;40" dur="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="-20;-25;-20" dur="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="-20;-25;-20" dur="0.3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Explosion Pixel Squares -->
+    <g fill="url(#explosionGrad)">
+      <!-- Up -->
+      <rect x="-10" y="-70" width="20" height="20">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-30; 0,0" dur="0.8s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="90 0 0" dur="0.8s" repeatCount="indefinite" additive="sum"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Down -->
+      <rect x="-10" y="50" width="20" height="20" fill="#FF3838">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,30; 0,0" dur="0.9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Left -->
+      <rect x="-70" y="-10" width="20" height="20" fill="#FFD23F">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -40,0; 0,0" dur="0.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.7s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Right -->
+      <rect x="50" y="-10" width="20" height="20">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 20,0; 0,0" dur="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Diagonals -->
+      <rect x="-50" y="-50" width="15" height="15" fill="#FFFFFF">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -20,-20; 0,0" dur="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="35" y="-35" width="15" height="15">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 20,-20; 0,0" dur="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-40" y="25" width="15" height="15" fill="#FF0066">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -20,20; 0,0" dur="0.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.7s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="30" y="30" width="15" height="15" fill="#00FFFF">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 20,20; 0,0" dur="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Scattering tiny pixels -->
+    <g fill="#FFD23F">
+      <rect x="-80" y="-20" width="8" height="8">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -60,10; 0,0" dur="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="40" y="-60" width="8" height="8" fill="#FF3838">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 30,-40; 0,0" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-30" y="60" width="8" height="8" fill="#39FF88">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -10,50; 0,0" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="60" y="40" width="8" height="8" fill="#FFFFFF">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 50,20; 0,0" dur="0.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Layer 16: Flying Debris & Confetti -->
+  <g>
+    <!-- Confetti 1 (Red Square) -->
+    <rect x="-50" y="200" width="25" height="25" fill="#FF3838">
+      <animateTransform attributeName="transform" type="translate" values="-50,200; 1700,250" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    
+    <!-- Confetti 2 (Yellow Tall Rect) -->
+    <rect x="-50" y="500" width="15" height="40" fill="#FFD23F">
+      <animateTransform attributeName="transform" type="translate" values="-50,500; 1700,400" dur="4s" begin="1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="4s" begin="1s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    
+    <!-- Confetti 3 (Green Square) -->
+    <rect x="1700" y="300" width="20" height="20" fill="#39FF88">
+      <animateTransform attributeName="transform" type="translate" values="1700,300; -100,350" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    
+    <!-- Confetti 4 (Cyan Rect) -->
+    <rect x="1700" y="700" width="30" height="15" fill="#00FFFF">
+      <animateTransform attributeName="transform" type="translate" values="1700,700; -100,600" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="3.5s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+    
+    <!-- Confetti 5 (Pink Triangle-ish via polygon) -->
+    <polygon points="0,0 20,0 10,20" fill="#FF0066" transform="translate(-50, 800)">
+      <animateTransform attributeName="transform" type="translate" values="-50,800; 1700,750" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite" additive="sum"/>
+    </polygon>
+  </g>
+
+  <!-- Layer 17: Foreground Motion Lines (High Speed) -->
+  <g stroke="#FFFFFF" stroke-width="3" opacity="0.8" filter="url(#glow)">
+    <line x1="800" y1="100" x2="1200" y2="100">
+      <animate attributeName="x1" values="800;400;800" dur="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1200;800;1200" dur="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="0.4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="600" y1="800" x2="1000" y2="800" stroke="#39FF88">
+      <animate attributeName="x1" values="600;200;600" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1000;600;1000" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="0.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="700" y1="300" x2="900" y2="300" stroke="#FFD23F" stroke-width="5">
+      <animate attributeName="x1" values="700;500;700" dur="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="900;700;900" dur="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="0.3s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Layer 18: Foreground Floating Shapes -->
+  <g opacity="0.7">
+    <circle cx="1400" cy="150" r="30" fill="none" stroke="#FFFFFF" stroke-width="4">
+      <animate attributeName="r" values="30;40;30" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="1300" y="750" width="40" height="40" fill="#FF3838" transform="rotate(20 1320 770)">
+      <animateTransform attributeName="transform" type="rotate" from="20 1320 770" to="380 1320 770" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1450" y="650" width="50" height="20" fill="#39FF88">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Layer 19: Top Edge Highlights -->
+  <rect x="0" y="0" width="1600" height="10" fill="#FFD23F" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0" y="890" width="1600" height="10" fill="#FF3838" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Layer 20: Flash Overlay (Subtle white flashes for impact) -->
+  <rect width="1600" height="900" fill="#FFFFFF" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.1;0;0" dur="2s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

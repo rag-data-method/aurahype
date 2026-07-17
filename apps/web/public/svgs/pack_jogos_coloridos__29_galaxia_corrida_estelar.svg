@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- GRADIENT: Cosmic Nebula Sky -->
+    <radialGradient id="neb1" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#FF3CAC"/>
+      <stop offset="40%" stop-color="#784BA0"/>
+      <stop offset="80%" stop-color="#2B86C5"/>
+      <stop offset="100%" stop-color="#0D0D1A"/>
+      <animate attributeName="cx" values="50%;55%;45%;50%" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="50%;45%;55%;50%" dur="15s" repeatCount="indefinite"/>
+    </radialGradient>
+
+    <!-- GRADIENT: Neon Rainbow Contrail -->
+    <linearGradient id="rainbow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFD200" stop-opacity="0.8"/>
+      <stop offset="25%" stop-color="#FF3CAC" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#784BA0" stop-opacity="1"/>
+      <stop offset="75%" stop-color="#2B86C5" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0"/>
+      <animate attributeName="x1" values="0;0.1;0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;0.9;1" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- GRADIENT: Pulsing Sunburst -->
+    <linearGradient id="sunPulse" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF3CAC">
+        <animate attributeName="stop-color" values="#FF3CAC;#FFD200;#2B86C5;#FF3CAC" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#2B86C5">
+        <animate attributeName="stop-color" values="#2B86C5;#FF3CAC;#FFD200;#2B86C5" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#FFD200">
+        <animate attributeName="stop-color" values="#FFD200;#784BA0;#FF3CAC;#FFD200" dur="5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- GRADIENT: Ship Engine Glow -->
+    <radialGradient id="engineGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#FFD200"/>
+      <stop offset="100%" stop-color="#FF3CAC" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- FILTER: Orange Glow Burst (Sun) -->
+    <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur1"/>
+      <feGaussianBlur stdDeviation="40" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+      </feMerge>
+    </filter>
+
+    <!-- FILTER: White Engine Burst -->
+    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1"/>
+      <feGaussianBlur stdDeviation="20" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+      </feMerge>
+    </filter>
+
+    <!-- GEOMETRY: Sparkle Star -->
+    <g id="star">
+      <path d="M0,-8 L2,-2 L8,0 L2,2 L0,8 L-2,2 L-8,0 L-2,-2 Z" fill="#FFFFFF"/>
+      <circle cx="0" cy="0" r="4" fill="#FFD200"/>
+    </g>
+
+    <!-- GEOMETRY: Confetti Shapes -->
+    <g id="conf-circle"><circle r="6" fill="#FF3CAC"/></g>
+    <g id="conf-square"><rect x="-5" y="-5" width="10" height="10" fill="#2B86C5"/></g>
+    <g id="conf-tri"><path d="M0,-8 L7,6 L-7,6 Z" fill="#FFD200"/></g>
+    <g id="conf-diamond"><rect x="-5" y="-5" width="10" height="10" transform="rotate(45)" fill="#00F5FF"/></g>
+
+    <!-- CLIP PATH: Sunburst Mask -->
+    <clipPath id="sunClip">
+      <circle cx="1200" cy="450" r="550"/>
+    </clipPath>
+  </defs>
+
+  <!-- LAYER 1: Deep Space Background -->
+  <rect width="100%" height="100%" fill="#0D0D1A"/>
+
+  <!-- LAYER 2: Cosmic Nebula Field -->
+  <g>
+    <ellipse cx="300" cy="300" rx="400" ry="350" fill="url(#neb1)" filter="url(#glow1)" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.9;0.8" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,-30; 0,0" dur="12s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="850" cy="750" rx="300" ry="250" fill="#FF3CAC" filter="url(#glow1)" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.7;0.6" dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,20; 0,0" dur="14s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1400" cy="200" rx="200" ry="180" fill="#2B86C5" filter="url(#glow1)" opacity="0.5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 10,40; 0,0" dur="10s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="500" cy="800" rx="250" ry="200" fill="#784BA0" filter="url(#glow1)" opacity="0.7">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,-10; 0,0" dur="11s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- LAYER 3: Animated Halftone Dots -->
+  <g opacity="0.3">
+    <defs>
+      <pattern id="halftone" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <circle cx="20" cy="20" r="12" fill="#FFD200"/>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="1600" height="900" fill="url(#halftone)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 40,40; 0,0" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- LAYER 4: Geometric Backdrop Chevron Lines -->
+  <g opacity="0.15" stroke="#00F5FF" stroke-width="4">
+    <path d="M0,100 L200,100 L100,0 Z"/>
+    <path d="M0,300 L400,300 L200,100 Z"/>
+    <path d="M0,500 L600,500 L300,200 Z"/>
+    <path d="M0,700 L800,700 L400,300 Z"/>
+    <path d="M0,900 L1000,900 L500,400 Z"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -200,0; 0,0" dur="4s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- LAYER 5: Radial Sunburst (Behind Ship) -->
+  <g clip-path="url(#sunClip)" opacity="0.9">
+    <g transform="translate(1200, 450)">
+      <animateTransform attributeName="transform" type="rotate" from="0 1200 450" to="360 1200 450" dur="20s" repeatCount="indefinite"/>
+      <!-- 16 Rays -->
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(22.5)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(45)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(67.5)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(90)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(112.5)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(135)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(157.5)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(180)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(202.5)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(225)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(247.5)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(270)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(292.5)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(315)"/>
+      <path d="M0,-900 L150,-900 L0,0 Z" fill="url(#sunPulse)" transform="rotate(337.5)"/>
+    </g>
+  </g>
+
+  <!-- LAYER 6: Giant Faded Planet Upper Left -->
+  <g opacity="0.4">
+    <circle cx="200" cy="200" r="120" fill="#2B86C5"/>
+    <ellipse cx="200" cy="200" rx="120" ry="30" fill="none" stroke="#00F5FF" stroke-width="10" transform="rotate(-20 200 200)"/>
+    <ellipse cx="200" cy="200" rx="120" ry="30" fill="none" stroke="#00F5FF" stroke-width="10" transform="rotate(10 200 200)"/>
+    <ellipse cx="200" cy="200" rx="120" ry="30" fill="none" stroke="#00F5FF" stroke-width="10" transform="rotate(40 200 200)"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 10,5; 0,0" dur="10s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- LAYER 7: Medium Planet Lower Right -->
+  <g opacity="0.6">
+    <circle cx="1350" cy="850" r="80" fill="#FF3CAC"/>
+    <path d="M1270,850 Q1350,890 1430,850" fill="none" stroke="#FFD200" stroke-width="6"/>
+    <circle cx="1320" cy="820" r="15" fill="#784BA0"/>
+    <circle cx="1380" cy="880" r="10" fill="#2B86C5"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -15,-10; 0,0" dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- LAYER 8: Small Planet Silhouette Passing -->
+  <g opacity="0.8">
+    <circle cx="100" cy="750" r="40" fill="#FFD200"/>
+    <circle cx="80" cy="730" r="8" fill="#0D0D1A"/>
+    <circle cx="120" cy="770" r="5" fill="#0D0D1A"/>
+    <path d="M60,750 Q100,790 140,750" fill="none" stroke="#0D0D1A" stroke-width="4"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 1600,0" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- LAYER 9: Rainbow Contrail Path -->
+  <g>
+    <!-- Main Trail -->
+    <path d="M-100,450 C100,460 400,470 600,480 C800,490 1000,500 1100,505 C1200,510 1300,515 1350,520" 
+          fill="none" stroke="url(#rainbow)" stroke-width="40" stroke-linecap="round" filter="url(#glow2)">
+      <animate attributeName="stroke-width" values="40;50;40" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="d" 
+               values="M-100,450 C100,460 400,470 600,480 C800,490 1000,500 1100,505 C1200,510 1300,515 1350,520;
+                       M-100,450 C100,440 400,430 600,420 C800,410 1000,400 1100,395 C1200,390 1300,385 1350,380;
+                       M-100,450 C100,460 400,470 600,480 C800,490 1000,500 1100,505 C1200,510 1300,515 1350,520" 
+               dur="3s" repeatCount="indefinite"/>
+    </path>
+    <!-- Fainter Inner Trail -->
+    <path d="M-100,450 C100,455 400,460 600,465 C800,470 1000,475 1100,480 C1200,485 1300,490 1350,495" 
+          fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.8">
+      <animate attributeName="d" 
+               values="M-100,450 C100,455 400,460 600,465 C800,470 1000,475 1100,480 C1200,485 1300,490 1350,495;
+                       M-100,450 C100,445 400,440 600,435 C800,430 1000,425 1100,420 C1200,415 1300,410 1350,405;
+                       M-100,450 C100,455 400,460 600,465 C800,470 1000,475 1100,480 C1200,485 1300,490 1350,495" 
+               dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- LAYER 10: Speed Lines -->
+  <g stroke="#FFFFFF" stroke-width="3" opacity="0.5">
+    <line x1="1200" y1="200" x2="1600" y2="200">
+      <animate attributeName="x1" values="1200;1600" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1600;2000" dur="0.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1000" y1="400" x2="1400" y2="400">
+      <animate attributeName="x1" values="1000;1400" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1400;1800" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1100" y1="600" x2="1500" y2="600">
+      <animate attributeName="x1" values="1100;1500" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1500;1900" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="900" y1="750" x2="1300" y2="750">
+      <animate attributeName="x1" values="900;1300" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1300;1700" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1300" y1="350" x2="1700" y2="350">
+      <animate attributeName="x1" values="1300;1700" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1700;2100" dur="0.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="800" y1="550" x2="1200" y2="550">
+      <animate attributeName="x1" values="800;1200" dur="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1200;1600" dur="0.9s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- LAYER 11: Hero Spaceship Silhouette & Engine Glow -->
+  <g transform="translate(1100, 450)">
+    <!-- POP/BOUNCE Animation -->
+    <animateTransform attributeName="transform" type="translate" 
+                      values="1100,450; 1100,430; 1100,460; 1100,450" 
+                      dur="2s" repeatCount="indefinite" additive="replace"/>
+    <animateTransform attributeName="transform" type="scale" 
+                      values="1;1.05;1" 
+                      dur="2s" repeatCount="indefinite" additive="sum"/>
+
+    <!-- Engine Burst -->
+    <circle cx="-80" cy="0" r="60" fill="url(#engineGlow)" filter="url(#glow2)">
+      <animate attributeName="r" values="60;80;50;70;60" dur="0.4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Ship Body -->
+    <!-- Front Swept Wing Racer Silhouette -->
+    <path d="M-100,-10 L-60,-35 L-20,-25 L40,-45 L140,-15 L180,0 L140,15 L40,45 L-20,25 L-60,35 L-100,10 Z" fill="#0D0D1A"/>
+    
+    <!-- Cockpit / Engine Vents (Simplified flat color details) -->
+    <path d="M-20,-25 L80,-15 L80,15 L-20,25 Z" fill="#2B86C5"/>
+    <path d="M80,-15 L140,-15 L180,0 L140,15 L80,15 Z" fill="#FF3CAC"/>
+    <path d="M-60,-35 L-20,-25 L-20,25 L-60,35 Z" fill="#FFD200"/>
+
+    <!-- Motion Fan Lines on Wings -->
+    <rect x="-90" y="-6" width="120" height="2" fill="#00F5FF" opacity="0.8" rx="1"/>
+    <rect x="-90" y="4" width="120" height="2" fill="#00F5FF" opacity="0.8" rx="1"/>
+  </g>
+
+  <!-- LAYER 12: Foreground Geometric Rings -->
+  <g opacity="0.8">
+    <circle cx="1100" cy="450" r="160" fill="none" stroke="#FFD200" stroke-width="8" stroke-dasharray="20,15">
+      <animateTransform attributeName="transform" type="rotate" from="0 1100 450" to="360 1100 450" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="160;170;160" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="450" r="200" fill="none" stroke="#FF3CAC" stroke-width="4" stroke-dasharray="40,20">
+      <animateTransform attributeName="transform" type="rotate" from="360 1100 450" to="0 1100 450" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- LAYER 13: Floating Sparkle Stars -->
+  <g>
+    <use href="#star" x="900" y="300">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="180" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#star" x="1000" y="200">
+      <animateTransform attributeName="transform" type="scale" values="0;1.2;0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="180" dur="3s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#star" x="1250" y="600">
+      <animateTransform attributeName="transform" type="scale" values="0;0.8;0" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="180" dur="1.5s" begin="1s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#star" x="1400" y="350">
+      <animateTransform attributeName="transform" type="scale" values="0;1.5;0" dur="2.5s" begin="1.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="180" dur="2.5s" begin="1.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#star" x="800" y="500">
+      <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="1.8s" begin="0.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="180" dur="1.8s" begin="0.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#star" x="1500" y="700">
+      <animateTransform attributeName="transform" type="scale" values="0;1.1;0" dur="2.2s" begin="0.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="180" dur="2.2s" begin="0.8s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- LAYER 14: Confetti / Particle Field -->
+  <g>
+    <!-- Top Row Confetti -->
+    <use href="#conf-circle" x="500" y="100">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -200,50" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-square" x="700" y="150">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -150,-20" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-tri" x="900" y="80">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -250,30" dur="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-diamond" x="1100" y="120">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -300,10" dur="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <!-- Mid Row Confetti -->
+    <use href="#conf-tri" x="400" y="350">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,100" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-circle" x="600" y="400">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -180,80" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-diamond" x="850" y="320">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -220,120" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-square" x="1050" y="380">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -280,50" dur="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-circle" x="1300" y="350">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -150,150" dur="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+
+    <!-- Bottom Row Confetti -->
+    <use href="#conf-square" x="450" y="650">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -120,-50" dur="3.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-diamond" x="650" y="720">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -200,-20" dur="2.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="2.8s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-tri" x="900" y="680">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -250,-80" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-circle" x="1150" y="750">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -180,-100" dur="2.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="2.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf-square" x="1400" y="650">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -300,-40" dur="3.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3.8s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- LAYER 15: Foreground Motion Chevron Accent -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.4">
+    <path d="M1200,100 L1250,150 L1200,200">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1250,100 L1300,150 L1250,200">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,0" dur="1s" begin="0.2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1300,100 L1350,150 L1300,200">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,0" dur="1s" begin="0.4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- LAYER 16: Diagonal Burst Lines -->
+  <g stroke="#FFD200" stroke-width="4" opacity="0.6">
+    <line x1="0" y1="0" x2="200" y2="200">
+      <animate attributeName="x2" values="200;300;200" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="200;300;200" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="100" y1="0" x2="300" y2="200">
+      <animate attributeName="x2" values="300;400;300" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="200;300;200" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="100" x2="200" y2="300">
+      <animate attributeName="x2" values="200;300;200" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="300;400;300" dur="0.8s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- LAYER 17: Foreground Floating Dust/Stars -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <circle cx="150" cy="500" r="2">
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="800" r="3">
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="150" r="2">
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="750" cy="650" r="4">
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" begin="0.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="950" cy="750" r="2">
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1450" cy="100" r="3">
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2.2s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1550" cy="550" r="2">
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="1.6s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- LAYER 18: Title Block Placeholder (Subtle geometric frame for text) -->
+  <g opacity="0.8">
+    <rect x="100" y="250" width="500" height="400" rx="20" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="20,10">
+      <animate attributeName="stroke-dashoffset" values="0;30;0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="115" y="265" width="470" height="370" rx="15" fill="none" stroke="#00F5FF" stroke-width="2" stroke-dasharray="10,5">
+      <animate attributeName="stroke-dashoffset" values="0;-15;0" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <!-- Abstract Title Icon Placeholder -->
+    <circle cx="350" cy="350" r="50" fill="none" stroke="#FFD200" stroke-width="6">
+      <animateTransform attributeName="transform" type="rotate" from="0 350 350" to="360 350 350" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M320,350 L380,350 M350,320 L350,380" stroke="#FF3CAC" stroke-width="8" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" from="0 350 350" to="360 350 350" dur="10s" repeatCount="indefinite" additive="sum"/>
+    </path>
+  </g>
+
+  <!-- LAYER 19: Final Foreground Energy Burst Lines -->
+  <g stroke="#FF3CAC" stroke-width="3" opacity="0.7">
+    <line x1="1100" y1="450" x2="900" y2="250">
+      <animate attributeName="x2" values="900;850;900" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="250;200;250" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1100" y1="450" x2="950" y2="650">
+      <animate attributeName="x2" values="950;900;950" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="650;700;650" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1100" y1="450" x2="1200" y2="150">
+      <animate attributeName="x2" values="1200;1250;1200" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="150;100;150" dur="0.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1100" y1="450" x2="1300" y2="750">
+      <animate attributeName="x2" values="1300;1350;1300" dur="1.1s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="750;800;750" dur="1.1s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>

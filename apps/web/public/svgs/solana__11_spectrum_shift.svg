@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="b1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="b3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+
+    <linearGradient id="g1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="0">
+      <stop offset="0%" stop-color="#9945FF">
+        <animate attributeName="offset" values="0%;20%;0%" dur="9s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      </stop>
+      <stop offset="50%" stop-color="#14F195">
+        <animate attributeName="offset" values="50%;75%;50%" dur="9s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      </stop>
+      <stop offset="100%" stop-color="#FF36F9"/>
+    </linearGradient>
+
+    <linearGradient id="g2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="0">
+      <stop offset="0%" stop-color="#14F195">
+        <animate attributeName="offset" values="0%;25%;0%" dur="7s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      </stop>
+      <stop offset="50%" stop-color="#FF36F9">
+        <animate attributeName="offset" values="50%;30%;50%" dur="7s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      </stop>
+      <stop offset="100%" stop-color="#9945FF"/>
+    </linearGradient>
+
+    <linearGradient id="g3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="0">
+      <stop offset="0%" stop-color="#FF36F9">
+        <animate attributeName="offset" values="0%;15%;0%" dur="10s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      </stop>
+      <stop offset="45%" stop-color="#5B21B6">
+        <animate attributeName="offset" values="45%;65%;45%" dur="10s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      </stop>
+      <stop offset="100%" stop-color="#14F195"/>
+    </linearGradient>
+
+    <linearGradient id="g4" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="0">
+      <stop offset="0%" stop-color="#5B21B6">
+        <animate attributeName="offset" values="0%;20%;0%" dur="8s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      </stop>
+      <stop offset="55%" stop-color="#9945FF">
+        <animate attributeName="offset" values="55%;40%;55%" dur="8s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      </stop>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <linearGradient id="g5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="#000000"/>
+
+  <ellipse cx="800" cy="850" rx="1300" ry="280" fill="#5B21B6" opacity="0.65" filter="url(#b1)">
+    <animate attributeName="cy" values="850;820;850" dur="11s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </ellipse>
+
+  <path fill="#5B21B6" opacity="0.75" filter="url(#b2)">
+    <animate attributeName="d" values="M-200,600 C400,500 1000,700 2000,600 V900 H-200 Z;M-200,650 C500,750 1100,550 2000,650 V900 H-200 Z;M-200,600 C400,500 1000,700 2000,600 V900 H-200 Z" dur="12s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </path>
+
+  <path fill="url(#g1)" opacity="0.85" filter="url(#b2)">
+    <animate attributeName="d" values="M-200,260 C250,140 650,380 1050,260 S1750,140 2000,260 L2000,410 C1750,530 1250,290 850,410 S150,530 -200,410 Z;M-200,340 C300,460 700,220 1100,340 S1650,460 2000,340 L2000,490 C1650,370 1250,610 850,490 S250,370 -200,490 Z;M-200,260 C250,140 650,380 1050,260 S1750,140 2000,260 L2000,410 C1750,530 1250,290 850,410 S150,530 -200,410 Z" dur="10s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </path>
+
+  <path fill="url(#g2)" opacity="0.9" filter="url(#b3)" transform="translate(0,140)">
+    <animateTransform attributeName="transform" type="translate" values="0,140;0,190;0,140" dur="7s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </path>
+
+  <path fill="url(#g3)" opacity="0.8" filter="url(#b2)" transform="translate(0,280)">
+    <animate attributeName="d" values="M-200,340 C300,460 700,220 1100,340 S1650,460 2000,340 L2000,490 C1650,370 1250,610 850,490 S250,370 -200,490 Z;M-200,260 C250,140 650,380 1050,260 S1750,140 2000,260 L2000,410 C1750,530 1250,290 850,410 S150,530 -200,410 Z;M-200,340 C300,460 700,220 1100,340 S1650,460 2000,340 L2000,490 C1650,370 1250,610 850,490 S250,370 -200,490 Z" dur="11s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </path>
+
+  <path fill="url(#g4)" opacity="0.75" filter="url(#b3)" transform="translate(0,420)">
+    <animateTransform attributeName="transform" type="translate" values="0,420;0,370;0,420" dur="9s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </path>
+
+  <ellipse cx="800" cy="220" rx="1000" ry="130" fill="#14F195" opacity="0.85" filter="url(#b2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,50;0,0" dur="8s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </ellipse>
+
+  <ellipse cx="500" cy="520" rx="800" ry="150" fill="#FF36F9" opacity="0.85" filter="url(#b3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;140,0;0,0" dur="6s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </ellipse>
+
+  <ellipse cx="900" cy="760" rx="1100" ry="180" fill="#9945FF" opacity="0.8" filter="url(#b2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-80,0;0,0" dur="10s" repeatCount="indefinite" calcMode="ease-in-out" additive="sum"/>
+  </ellipse>
+
+  <ellipse cx="1150" cy="320" rx="220" ry="90" fill="url(#rg)" opacity="0.5" filter="url(#b1)">
+    <animate attributeName="opacity" values="0.45;0.65;0.45" dur="4s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </ellipse>
+
+  <ellipse cx="450" cy="620" rx="90" ry="45" fill="#FFFFFF" opacity="0.6" filter="url(#b2)">
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="5s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </ellipse>
+
+  <ellipse cx="900" cy="180" rx="40" ry="18" fill="#FFFFFF" opacity="0.55" filter="url(#b3)">
+    <animate attributeName="opacity" values="0.4;0.65;0.4" dur="3s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </ellipse>
+
+  <rect width="1600" height="900" fill="url(#g5)" opacity="0.25">
+    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="8s" repeatCount="indefinite" calcMode="ease-in-out"/>
+  </rect>
+</svg>

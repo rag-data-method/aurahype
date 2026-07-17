@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="bloom-xl" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bloom-lg" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="50" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bloom-md" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <radialGradient id="gp-cy" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="20%" stop-color="#14F195" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#9945FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#5B21B6" stop-opacity="0.7"/>
+    </radialGradient>
+    <radialGradient id="gp-mg" cx="35%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="25%" stop-color="#FF36F9" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#9945FF" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#5B21B6" stop-opacity="0.65"/>
+    </radialGradient>
+    <radialGradient id="gp-cp" cx="45%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#14F195" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#9945FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gp-dv" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#9945FF" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#5B21B6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="streak" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#14F195" stop-opacity="0.6"/>
+      <stop offset="65%" stop-color="#FF36F9" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="50%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#000000"/>
+  <circle cx="1200" cy="250" r="420" fill="url(#gp-dv)" filter="url(#bloom-xl)" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -80,60; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+    <animate attributeName="opacity" values="0.6;0.45;0.6" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <g filter="url(#bloom-lg)">
+    <circle cx="380" cy="420" r="310" fill="url(#gp-cy)" opacity="0.85">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 90,-50; 0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <animate attributeName="r" values="310;335;310" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1050" cy="380" r="340" fill="url(#gp-mg)" opacity="0.85">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -70,80; 0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <animate attributeName="r" values="340;365;340" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g filter="url(#bloom-md)">
+    <circle cx="720" cy="180" r="180" fill="url(#gp-cp)" opacity="0.75">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 60,90; 0,0" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.75;0.55;0.75" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1300" cy="650" r="240" fill="url(#gp-cy)" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,-40; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <animate attributeName="r" values="240;265;240" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="580" cy="720" r="150" fill="url(#gp-mg)" opacity="0.7">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,-70; 0,0" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.7;0.5;0.7" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g opacity="0.6">
+    <ellipse cx="800" cy="450" rx="700" ry="35" fill="url(#streak)" filter="url(#bloom-md)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-180; 0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="800" cy="450" rx="650" ry="28" fill="url(#streak)" filter="url(#bloom-md)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,200; 0,0" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.5;0.15;0.5" dur="7s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="800" cy="450" rx="600" ry="22" fill="url(#streak)" filter="url(#bloom-md)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -120,0; 0,0" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <g filter="url(#bloom-md)">
+    <circle cx="420" cy="390" r="18" fill="#FFFFFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="18;24;18" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1080" cy="360" r="22" fill="#FFFFFF" opacity="0.55">
+      <animate attributeName="opacity" values="0.55;0.15;0.55" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="22;30;22" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="740" cy="220" r="14" fill="#FFFFFF" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="14;20;14" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1320" cy="630" r="16" fill="#FFFFFF" opacity="0.45">
+      <animate attributeName="opacity" values="0.45;0.1;0.45" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="16;22;16" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+</svg>

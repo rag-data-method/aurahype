@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<defs>
+<filter id="b1" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="30"/>
+</filter>
+<filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="70"/>
+</filter>
+<filter id="turb" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" seed="5" result="n">
+<animate attributeName="baseFrequency" values="0.01;0.015;0.01" dur="9s" repeatCount="indefinite"/>
+</feTurbulence>
+<feDisplacementMap in="SourceGraphic" in2="n" scale="40"/>
+<feComponentTransfer>
+<feFuncA type="linear" slope="0.08"/>
+</feComponentTransfer>
+</filter>
+</defs>
+<rect fill="#FBF5DF" width="1600" height="900"/>
+<g filter="url(#turb)">
+<rect width="1600" height="900" fill="#4A2511" opacity="0.6"/>
+</g>
+<path fill="#4A2511" filter="url(#b1)" opacity="0.9">
+<animate attributeName="d" values="M200,900 Q400,800 350,700 T400,500 Q450,400 300,300;M220,900 Q380,820 370,680 T420,520 Q480,380 320,280;M200,900 Q400,800 350,700 T400,500 Q450,400 300,300" dur="6s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;0,-80;0,0" dur="7s" repeatCount="indefinite"/>
+</path>
+<path fill="#E63946" filter="url(#b1)" opacity="0.9">
+<animate attributeName="d" values="M600,900 C700,850 650,750 700,650 S800,450 750,300 C780,250 820,200 800,150;M620,900 C680,860 670,740 720,640 S820,460 780,320 C810,240 840,220 820,140;M600,900 C700,850 650,750 700,650 S800,450 750,300 C780,250 820,200 800,150" dur="5s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;-30,-150;0,0" dur="8s" repeatCount="indefinite"/>
+</path>
+<path fill="#6A994E" filter="url(#b1)" opacity="0.85">
+<animate attributeName="d" values="M1100,900 C1200,850 1150,700 1200,600 S1300,400 1250,250;M1120,900 C1180,860 1170,720 1220,580 S1280,420 1280,240;M1100,900 C1200,850 1150,700 1200,600 S1300,400 1250,250" dur="6s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="-5 1200 900;5 1200 900;-5 1200 900" dur="4s" repeatCount="indefinite"/>
+</path>
+<path fill="#F4A261" filter="url(#b2)" opacity="0.9">
+<animate attributeName="d" values="M900,800 Q1000,700 950,500 T1000,200;M920,820 Q980,720 970,520 T1020,180;M900,800 Q1000,700 950,500 T1000,200" dur="7s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;50,-100;0,0" dur="9s" repeatCount="indefinite"/>
+</path>
+<path fill="#4A2511" filter="url(#b2)" opacity="0.85">
+<animate attributeName="d" values="M1300,900 C1400,850 1350,750 1400,650 S1500,450 1450,350;M1320,900 C1380,860 1370,760 1420,660 S1480,460 1480,340;M1300,900 C1400,850 1350,750 1400,650 S1500,450 1450,350" dur="8s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;0,-120;0,0" dur="10s" repeatCount="indefinite"/>
+</path>
+<path fill="#E63946" filter="url(#b1)" opacity="0.95">
+<animate attributeName="d" values="M300,900 C400,850 350,700 400,600 S500,400 450,300;M320,900 C380,860 370,720 420,580 S480,420 480,280;M300,900 C400,850 350,700 400,600 S500,400 450,300" dur="6s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;40,-200;0,0" dur="7s" repeatCount="indefinite"/>
+</path>
+<path fill="#F4A261" filter="url(#b2)" opacity="0.85">
+<animate attributeName="d" values="M700,600 C750,500 800,400 750,300 S700,100 750,50;M720,620 C780,520 820,420 780,280 S720,120 780,40;M700,600 C750,500 800,400 750,300 S700,100 750,50" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.85;0.4;0.85" dur="4s" repeatCount="indefinite"/>
+</path>
+<path fill="#6A994E" filter="url(#b1)" opacity="0.8">
+<animate attributeName="d" values="M100,900 C200,800 150,650 200,550 S300,350 250,200;M120,900 C180,820 170,670 220,530 S280,370 280,180;M100,900 C200,800 150,650 200,550 S300,350 250,200" dur="9s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;-20,-50;0,0" dur="6s" repeatCount="indefinite"/>
+</path>
+<ellipse fill="#4A2511" filter="url(#b2)" opacity="0.7" cx="800" cy="900" rx="600" ry="400">
+<animate attributeName="cy" values="900;700;900" dur="8s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.7;0.3;0.7" dur="5s" repeatCount="indefinite"/>
+</ellipse>
+<path fill="#E63946" filter="url(#b1)" opacity="0.9">
+<animate attributeName="d" values="M500,800 C550,750 520,650 550,550;M520,820 C580,760 540,640 580,540;M500,800 C550,750 520,650 550,550" dur="4s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;30,-300;0,0" dur="10s" repeatCount="indefinite"/>
+</path>
+<path fill="#F4A261" filter="url(#b1)" opacity="0.9">
+<animate attributeName="d" values="M1200,800 C1250,700 1200,600 1250,500;M1180,820 C1240,720 1220,580 1280,480;M1200,800 C1250,700 1200,600 1250,500" dur="6s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;-100,-50;0,0" dur="8s" repeatCount="indefinite"/>
+</path>
+<path fill="#6A994E" filter="url(#b2)" opacity="0.8">
+<animate attributeName="d" values="M900,850 C950,750 900,650 950,550;M920,870 C980,770 940,630 980,530;M900,850 C950,750 900,650 950,550" dur="7s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;0,-400;0,0" dur="9s" repeatCount="indefinite"/>
+</path>
+<path fill="#4A2511" filter="url(#b1)" opacity="0.8">
+<animate attributeName="d" values="M600,850 C650,750 620,650 660,550;M620,870 C680,770 640,630 680,530;M600,850 C650,750 620,650 660,550" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.8;0.2;0.8" dur="6s" repeatCount="indefinite"/>
+</path>
+<path fill="#E63946" filter="url(#b2)" opacity="0.85">
+<animate attributeName="d" values="M1400,850 C1450,750 1400,650 1450,550;M1380,870 C1440,770 1420,630 1480,530;M1400,850 C1450,750 1400,650 1450,550" dur="6s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="0 1400 850;10 1400 850;0 1400 850" dur="5s" repeatCount="indefinite"/>
+</path>
+<path fill="#F4A261" filter="url(#b1)" opacity="0.9">
+<animate attributeName="d" values="M200,850 C250,750 200,650 250,550;M220,870 C280,770 240,630 280,530;M200,850 C250,750 200,650 250,550" dur="8s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="0,0;20,-600;0,0" dur="10s" repeatCount="indefinite"/>
+</path>
+</svg>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A2C17"/>
+      <stop offset="100%" stop-color="#7A4E2E"/>
+    </linearGradient>
+    <linearGradient id="go" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF7B35"/>
+      <stop offset="100%" stop-color="#CC5500"/>
+    </linearGradient>
+    <linearGradient id="gy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE135"/>
+      <stop offset="100%" stop-color="#DAA520"/>
+    </linearGradient>
+    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A8B58D"/>
+      <stop offset="100%" stop-color="#6B7C4A"/>
+    </linearGradient>
+    <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A0522D"/>
+      <stop offset="100%" stop-color="#5D3A1A"/>
+    </linearGradient>
+    <path id="wave" d="M0 900C80 790-80 690 0 580C80 470-80 370 0 260C80 150-80 50 0 0H400C320 110 480 210 400 320C320 430 480 530 400 640C320 750 480 850 400 900Z"/>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <use href="#wave" fill="url(#go)" opacity=".9" transform="translate(-120,0)">
+    <animateTransform attributeName="transform" type="translate" values="-120 0;20 60;-120 0" dur="18s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="skewX" values="-5;5;-5" dur="12s" repeatCount="indefinite" additive="sum"/>
+  </use>
+  <use href="#wave" fill="url(#gy)" opacity=".85" transform="translate(280,0)">
+    <animateTransform attributeName="transform" type="translate" values="280 -40;280 40;280 -40" dur="16s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="skewX" values="4;-4;4" dur="14s" repeatCount="indefinite" additive="sum"/>
+  </use>
+  <use href="#wave" fill="url(#gg)" opacity=".8" transform="translate(680,0)">
+    <animateTransform attributeName="transform" type="translate" values="680 30;680 -30;680 30" dur="20s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="skewX" values="-3;3;-3" dur="11s" repeatCount="indefinite" additive="sum"/>
+  </use>
+  <use href="#wave" fill="url(#gb)" opacity=".9" transform="translate(1080,0)">
+    <animateTransform attributeName="transform" type="translate" values="1080 -30;1080 50;1080 -30" dur="22s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="skewX" values="5;-5;5" dur="13s" repeatCount="indefinite" additive="sum"/>
+  </use>
+</svg>

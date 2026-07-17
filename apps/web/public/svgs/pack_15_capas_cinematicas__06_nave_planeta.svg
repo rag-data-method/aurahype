@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Blur Filters -->
+    <filter id="b120" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="120"/></filter>
+    <filter id="b90" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="90"/></filter>
+    <filter id="b60" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="b20" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="15" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="sm"><feGaussianBlur stdDeviation="2"/></filter>
+
+    <!-- Gradients -->
+    <radialGradient id="sky" cx="30%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#F8F4FF" stop-opacity="0.15"><animate attributeName="stop-opacity" values="0.15;0.25;0.15" dur="18s" repeatCount="indefinite"/></stop>
+      <stop offset="40%" stop-color="#5A8FA8" stop-opacity="0.08"><animate attributeName="stop-color" values="#5A8FA8;#E54B9C;#5A8FA8" dur="20s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#1E4D6B" stop-opacity="0.02"/>
+    </radialGradient>
+
+    <linearGradient id="planetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8F4FF"/>
+      <stop offset="35%" stop-color="#5A8FA8"/>
+      <stop offset="75%" stop-color="#1E4D6B"/>
+      <stop offset="100%" stop-color="#0A1A28"/>
+    </linearGradient>
+
+    <linearGradient id="ringGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#E54B9C" stop-opacity="0.0"/>
+      <stop offset="30%" stop-color="#E54B9C" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#F8F4FF" stop-opacity="0.7"/>
+      <stop offset="70%" stop-color="#5A8FA8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#1E4D6B" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <linearGradient id="trail" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#E54B9C" stop-opacity="0"><animate attributeName="stop-opacity" values="0;0.6;0" dur="2.5s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#F8F4FF" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <!-- Ship Silhouette -->
+    <path id="ship" d="M0,0 L22,2 L78,-2 L68,-14 C66,-18 50,-22 30,-18 C18,-15 8,-8 0,0 Z M15,-12 Q25,-9 45,-14 Q30,-18 15,-12 Z M68,-2 L84,1 L68,4 Z"/>
+    <path id="shipCanopy" d="M15,-12 Q25,-9 45,-14 Q30,-18 15,-12 Z"/>
+
+    <!-- Glows -->
+    <radialGradient id="planetGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#5A8FA8" stop-opacity="0.6"/><stop offset="60%" stop-color="#E54B9C" stop-opacity="0.2"/><stop offset="100%" stop-color="#1E4D6B" stop-opacity="0"/></radialGradient>
+    <radialGradient id="planetOuter" cx="50%" cy="50%" r="50%"><stop offset="60%" stop-color="#F8F4FF" stop-opacity="0"/><stop offset="85%" stop-color="#5A8FA8" stop-opacity="0.25"/><stop offset="100%" stop-color="#E54B9C" stop-opacity="0.1"/></radialGradient>
+    <radialGradient id="engineGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E54B9C" stop-opacity="0.9"/><stop offset="30%" stop-color="#F8F4FF" stop-opacity="0.4"/><stop offset="100%" stop-color="#1E4D6B" stop-opacity="0.0"/></radialGradient>
+
+    <!-- Clip Path for Planet Rings -->
+    <clipPath id="planetClip"><circle cx="350" cy="320" r="280"/></clipPath>
+  </defs>
+
+  <!-- Deep Background -->
+  <rect width="1600" height="900" fill="#0A0F18"/>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- Starfield -->
+  <g fill="#F8F4FF">
+    <circle cx="200" cy="700" r="1.5" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="450" cy="100" r="1" opacity="0.5"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="850" cy="550" r="2" opacity="0.3"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="1200" cy="200" r="1.5" opacity="0.6"><animate attributeName="opacity" values="0.6;0.2;0.6" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="1400" cy="750" r="1" opacity="0.4"><animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="1100" cy="50" r="1" opacity="0.5"/>
+    <circle cx="600" cy="800" r="1.5" opacity="0.3"/>
+    <circle cx="1300" cy="400" r="2" opacity="0.2"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="100" cy="400" r="1" opacity="0.6"/>
+    <circle cx="750" cy="850" r="1" opacity="0.4"/>
+    <circle cx="1550" cy="100" r="1" opacity="0.5"/>
+    <circle cx="950" cy="300" r="2" opacity="0.2"/>
+  </g>
+
+  <!-- Distant Nebula Wisps -->
+  <g transform="translate(0,0)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -40,-10; 0,0" dur="25s" repeatCount="indefinite"/>
+    <path d="M 200 100 Q 500 400 900 100 T 1600 300" fill="none" stroke="#5A8FA8" stroke-width="80" opacity="0.08" filter="url(#b120)"/>
+    <path d="M -100 500 Q 300 200 700 600 T 1400 400" fill="none" stroke="#E54B9C" stroke-width="100" opacity="0.06" filter="url(#b90)"/>
+  </g>
+
+  <!-- Planet Base Mass -->
+  <g>
+    <!-- Giant Planet Body -->
+    <circle cx="350" cy="320" r="280" fill="url(#planetGrad)"/>
+
+    <!-- Atmospheric Layers (Surface Details) -->
+    <path d="M 60 320 Q 170 240 350 320 T 640 320" stroke="#1E4D6B" stroke-width="40" fill="none" opacity="0.6" filter="url(#b60)"/>
+    <path d="M 80 320 Q 200 400 400 320 T 620 320" stroke="#5A8FA8" stroke-width="30" fill="none" opacity="0.5" filter="url(#b20)"/>
+    <path d="M 120 320 Q 250 280 350 320 T 580 320" stroke="#F8F4FF" stroke-width="15" fill="none" opacity="0.2" filter="url(#sm)"/>
+
+    <!-- Planet Outer Glows -->
+    <circle cx="350" cy="320" r="310" fill="url(#planetGlow)" opacity="0.7"/>
+    <circle cx="350" cy="320" r="360" fill="url(#planetOuter)" opacity="0.5"/>
+    <circle cx="350" cy="320" r="400" fill="url(#planetOuter)" opacity="0.3" filter="url(#b20)"/>
+
+    <!-- Planet Surface Ring -->
+    <g clip-path="url(#planetClip)">
+      <ellipse cx="350" cy="320" rx="380" ry="40" fill="none" stroke="url(#ringGrad)" stroke-width="18" transform="rotate(-20 350 320)"/>
+      <ellipse cx="350" cy="320" rx="380" ry="40" fill="none" stroke="#F8F4FF" stroke-width="2" opacity="0.6" transform="rotate(-20 350 320)"/>
+      <ellipse cx="350" cy="320" rx="380" ry="40" fill="none" stroke="#E54B9C" stroke-width="4" opacity="0.3" filter="url(#sm)" transform="rotate(-20 350 320)"/>
+    </g>
+    
+    <!-- Top edge of ring (in front) -->
+    <path d="M 120 260 Q 350 150 580 260" fill="none" stroke="url(#ringGrad)" stroke-width="12" filter="url(#b20)" opacity="0.8"/>
+    <path d="M 120 260 Q 350 150 580 260" fill="none" stroke="#F8F4FF" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Planet Shadow -->
+    <path d="M 160 80 A 280 280 0 0 1 160 560 A 200 280 0 0 0 160 80 Z" fill="#000" opacity="0.5"/>
+  </g>
+
+  <!-- Mid-Ground Haze / Atmosphere Interaction -->
+  <circle cx="500" cy="450" r="250" fill="#5A8FA8" opacity="0.15" filter="url(#b90)">
+    <animate attributeName="cx" values="500;520;500" dur="15s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="350" r="180" fill="#E54B9C" opacity="0.1" filter="url(#b120)">
+    <animate attributeName="cy" values="350;330;350" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Spaceship Group & Thruster -->
+  <g transform="translate(1150, 480) rotate(-12)">
+    <animateTransform attributeName="transform" type="translate" values="1150,480; 1135,475; 1150,480" dur="12s" repeatCount="indefinite"/>
+    
+    <!-- Thruster Glow Core -->
+    <circle cx="86" cy="1" r="12" fill="url(#engineGlow)" filter="url(#glow)">
+      <animate attributeName="r" values="12;16;14;12" dur="0.1s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Thruster Trail -->
+    <path d="M 84 1 L 84 -10 Q 30 1 84 12 Z" fill="url(#trail)" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="d" values="M 84 1 L 84 -8 Q 30 1 84 10 Z; M 84 1 L 84 -12 Q 20 1 84 14 Z; M 84 1 L 84 -8 Q 30 1 84 10 Z" dur="0.15s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Ship Body Silhouette -->
+    <use href="#ship" fill="#101520" />
+    
+    <!-- Ship Rim Light (Right side from planet light source direction) -->
+    <use href="#ship" fill="none" stroke="#F8F4FF" stroke-width="1.5" opacity="0.8"/>
+    <use href="#ship" fill="none" stroke="#5A8FA8" stroke-width="4" opacity="0.4" filter="url(#sm)"/>
+    <use href="#shipCanopy" fill="#F8F4FF" opacity="0.9"/>
+  </g>
+
+  <!-- Foreground Dust / Atmosphere (Right side near ship) -->
+  <g opacity="0.6">
+    <circle cx="1000" cy="400" r="4" fill="#F8F4FF" filter="url(#sm)">
+      <animate attributeName="cx" values="1000;1020;1000" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="400;410;400" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1250" cy="550" r="3" fill="#E54B9C" filter="url(#sm)">
+      <animate attributeName="cx" values="1250;1240;1250" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="550;560;550" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="600" r="5" fill="#5A8FA8" filter="url(#sm)">
+      <animate attributeName="cx" values="900;920;900" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="600;590;600" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1400" cy="350" r="2.5" fill="#F8F4FF" opacity="0.5">
+      <animate attributeName="cx" values="1400;1410;1400" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;360;350" dur="15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Top Vignette for Cinematic Depth -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+    <stop offset="50%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)" pointer-events="none"/>
+</svg>

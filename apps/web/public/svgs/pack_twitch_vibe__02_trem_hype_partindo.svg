@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1A0B2E"/>
+      <stop offset="60%" stop-color="#2A004E"/>
+      <stop offset="100%" stop-color="#050011"/>
+    </radialGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Train Light Beam Filter -->
+    <filter id="beamGlow" x="-20%" y="-50%" width="150%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feComponentTransfer in="blur" result="boost">
+        <feFuncA type="linear" slope="1.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="boost"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Confetti Shapes -->
+    <rect id="conf1" width="8" height="4" fill="#FF00FF"/>
+    <rect id="conf2" width="6" height="6" fill="#00FFFF"/>
+    <circle id="conf3" r="3" fill="#FFFF00"/>
+    <rect id="conf4" width="5" height="9" fill="#ADFF2F" transform="rotate(45 2.5 4.5)"/>
+
+    <!-- Smoke Puff -->
+    <circle id="smoke" r="15" fill="#FF00FF" opacity="0.8">
+      <animate attributeName="fill" values="#FF00FF;#00FFFF;#FFFF00;#FFFFFF;#FF00FF" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="15;45;60" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.4;0" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -150,-80; -350,-120" dur="4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Single Spark -->
+    <line id="spark" x1="0" y1="0" x2="15" y2="0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round">
+      <animate attributeName="opacity" values="1;0" dur="0.5s" repeatCount="indefinite"/>
+    </line>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Platform / Background Elements -->
+  <g>
+    <rect x="0" y="380" width="800" height="220" fill="#0F021C"/>
+    <!-- Neon Platform Line -->
+    <line x1="0" y1="380" x2="800" y2="380" stroke="#00FFFF" stroke-width="4" filter="url(#neonGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="385" x2="800" y2="385" stroke="#FF00FF" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <!-- Tracks -->
+  <g filter="url(#neonGlow)">
+    <!-- Track Ties (Sleepers) -->
+    <g stroke="#FFFFFF" stroke-width="8" opacity="0.4">
+      <rect x="0" y="470" width="60" height="12" rx="2">
+        <animate attributeName="x" values="0;-100" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="100" y="470" width="60" height="12" rx="2">
+        <animate attributeName="x" values="100;0" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="200" y="470" width="60" height="12" rx="2">
+        <animate attributeName="x" values="200;100" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="300" y="470" width="60" height="12" rx="2">
+        <animate attributeName="x" values="300;200" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="400" y="470" width="60" height="12" rx="2">
+        <animate attributeName="x" values="400;300" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="500" y="470" width="60" height="12" rx="2">
+        <animate attributeName="x" values="500;400" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="600" y="470" width="60" height="12" rx="2">
+        <animate attributeName="x" values="600;500" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="700" y="470" width="60" height="12" rx="2">
+        <animate attributeName="x" values="700;600" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="800" y="470" width="60" height="12" rx="2">
+        <animate attributeName="x" values="800;700" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- Track Rails -->
+    <line x1="0" y1="450" x2="800" y2="450" stroke="#ADFF2F" stroke-width="6" fill="none">
+      <animate attributeName="stroke-dasharray" values="0,40,800; 40,800,0" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#ADFF2F;#FFFF00;#ADFF2F" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="500" x2="800" y2="500" stroke="#ADFF2F" stroke-width="6" fill="none">
+      <animate attributeName="stroke-dasharray" values="0,40,800; 40,800,0" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#ADFF2F;#FFFF00;#ADFF2F" dur="2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Train Group -->
+  <g transform="translate(0, 0)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 10,-2; -5,3; 0,0" dur="0.2s" repeatCount="indefinite"/>
+    
+    <!-- Main Body -->
+    <path d="M 50 320 L 350 320 L 380 360 L 380 460 L 30 460 L 30 360 Z" fill="#FF0055" stroke="#FFFFFF" stroke-width="4"/>
+    
+    <!-- Roof -->
+    <path d="M 40 320 Q 200 280 360 320" fill="#00FFFF" stroke="#FFFFFF" stroke-width="3"/>
+    <path d="M 30 360 L 380 360" stroke="#FFFFFF" stroke-width="4"/>
+    
+    <!-- Front Cabin Details -->
+    <rect x="370" y="370" width="30" height="80" fill="#FFFF00" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="380" y="380" width="20" height="60" fill="#00FFFF"/>
+    
+    <!-- Headlight -->
+    <circle cx="390" cy="410" r="15" fill="#FFFFFF" filter="url(#beamGlow)">
+      <animate attributeName="r" values="15;20;15" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.8;1" dur="0.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Windows -->
+    <rect x="60" y="375" width="60" height="50" fill="#00FFFF" stroke="#FFFFFF" stroke-width="3" rx="5"/>
+    <rect x="140" y="375" width="60" height="50" fill="#00FFFF" stroke="#FFFFFF" stroke-width="3" rx="5"/>
+    <rect x="220" y="375" width="60" height="50" fill="#00FFFF" stroke="#FFFFFF" stroke-width="3" rx="5"/>
+    <rect x="300" y="375" width="50" height="50" fill="#FFFF00" stroke="#FFFFFF" stroke-width="3" rx="5"/>
+    
+    <!-- Window Reflections -->
+    <path d="M 65 420 L 115 380 L 125 380 L 75 420 Z" fill="#FFFFFF" opacity="0.6"/>
+    <path d="M 145 420 L 195 380 L 205 380 L 155 420 Z" fill="#FFFFFF" opacity="0.6"/>
+    
+    <!-- Stripes -->
+    <rect x="30" y="425" width="350" height="15" fill="#ADFF2F"/>
+    <rect x="30" y="445" width="350" height="10" fill="#FFFF00"/>
+
+    <!-- Wheels -->
+    <circle cx="90" cy="460" r="25" fill="#111" stroke="#FF00FF" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" values="0 90 460; 360 90 460" dur="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="460" r="25" fill="#111" stroke="#FF00FF" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" values="0 200 460; 360 200 460" dur="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="310" cy="460" r="25" fill="#111" stroke="#FF00FF" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" values="0 310 460; 360 310 460" dur="0.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Connecting Rods -->
+    <rect x="90" y="455" width="220" height="10" fill="#AAAAAA" stroke="#FFFFFF" stroke-width="1">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,0; 0,0; 15,0; 0,0" dur="0.5s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Cowcatcher -->
+    <path d="M 380 460 L 420 490 L 420 510 L 380 510 Z" fill="#00FFFF" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="390" y1="460" x2="390" y2="505" stroke="#000000" stroke-width="2"/>
+    <line x1="400" y1="460" x2="400" y2="510" stroke="#000000" stroke-width="2"/>
+    <line x1="410" y1="460" x2="410" y2="510" stroke="#000000" stroke-width="2"/>
+
+    <!-- Speed Lines / Wind Streamers -->
+    <g opacity="0.8">
+      <line x1="30" y1="330" x2="-50" y2="330" stroke="#00FFFF" stroke-width="3" stroke-linecap="round">
+        <animate attributeName="x2" values="-50;-200;-50" dur="0.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="0.3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="30" y1="350" x2="-80" y2="350" stroke="#FF00FF" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="x2" values="-80;-250;-80" dur="0.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="0.4s" repeatCount="indefinite"/>
+      </line>
+      <line x1="30" y1="400" x2="-60" y2="400" stroke="#FFFF00" stroke-width="4" stroke-linecap="round">
+        <animate attributeName="x2" values="-60;-220;-60" dur="0.25s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="0.25s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+
+  <!-- Colored Smoke Plumes -->
+  <g filter="url(#neonGlow)">
+    <use href="#smoke" x="40" y="300" transform="scale(1)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,-20" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#smoke" x="50" y="310" transform="scale(0.8)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,-15" dur="3.5s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#smoke" x="30" y="290" transform="scale(1.2)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -5,-25" dur="5s" begin="1s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#smoke" x="45" y="305" transform="scale(0.6)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,-10" dur="3s" begin="1.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#smoke" x="35" y="295" transform="scale(1.1)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -8,-22" dur="4.5s" begin="2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- Sparks from Wheels -->
+  <g>
+    <use href="#spark" x="90" y="485" transform="rotate(45 90 485)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -40,40" dur="0.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#spark" x="200" y="485" transform="rotate(60 200 485)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -30,50" dur="0.4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#spark" x="310" y="485" transform="rotate(30 310 485)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -50,30" dur="0.6s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- Confetti Explosion -->
+  <g>
+    <!-- Left Side Confetti -->
+    <use href="#conf1" x="100" y="-50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,450" dur="3.5s" begin="0s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 720" dur="3.5s" begin="0s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf2" x="150" y="-50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -50,500" dur="4s" begin="0.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -540" dur="4s" begin="0.2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf3" x="80" y="-50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -80,400" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="3s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <!-- Center Confetti -->
+    <use href="#conf4" x="400" y="-50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,550" dur="3.8s" begin="0.1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 1080" dur="3.8s" begin="0.1s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf1" x="420" y="-50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,480" dur="4.2s" begin="0.3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -720" dur="4.2s" begin="0.3s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    
+    <!-- Right Side Confetti -->
+    <use href="#conf2" x="700" y="-50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 100,420" dur="3.2s" begin="0.4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 900" dur="3.2s" begin="0.4s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf3" x="650" y="-50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 60,520" dur="3.6s" begin="0.6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; -450" dur="3.6s" begin="0.6s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#conf4" x="750" y="-50">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 120,480" dur="4.5s" begin="0.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0; 630" dur="4.5s" begin="0.7s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+
+  <!-- Foreground Speed Blur -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#bgGrad)" opacity="0.1">
+    <animate attributeName="opacity" values="0.05;0.15;0.05" dur="0.1s" repeatCount="indefinite"/>
+  </rect>
+</svg>

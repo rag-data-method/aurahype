@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#722F37"/>
+<stop offset="100%" stop-color="#1F4E5C"/>
+</linearGradient>
+<filter id="m" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="35"/>
+</filter>
+<filter id="h" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="75"/>
+</filter>
+<filter id="n">
+<feTurbulence baseFrequency="0.025" numOctaves="4" result="t"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.07 0" in="t"/>
+</filter>
+</defs>
+<rect width="1600" height="900" fill="#1F4E5C" opacity="0.95"/>
+<rect width="1600" height="900" fill="url(#g)" opacity="0.92">
+<animate attributeName="opacity" values="0.92;0.98;0.92" dur="8s" repeatCount="indefinite"/>
+</rect>
+<rect width="1600" height="900" filter="url(#n)" opacity="0.07"/>
+<rect x="100" y="50" width="1400" height="800" fill="#722F37" filter="url(#h)" opacity="0.85">
+<animate attributeName="x" values="100;130;100" dur="12s" repeatCount="indefinite"/>
+</rect>
+<g transform="translate(800,450)">
+<rect x="-320" y="-200" width="320" height="400" fill="#F5EDDC" opacity="0.9">
+<animateTransform attributeName="transform" type="scale" values="1 1;0.02 1;1 1" keyTimes="0;0.5;1" dur="6s" repeatCount="indefinite" additive="sum"/>
+<animate attributeName="opacity" values="0.9;0.3;0.9" dur="6s" repeatCount="indefinite"/>
+</rect>
+<rect x="20" y="-180" width="300" height="380" fill="#722F37" opacity="0.95">
+<animateTransform attributeName="transform" type="scale" values="1 1;0.02 1;1 1" keyTimes="0;0.5;1" dur="7s" begin="1s" repeatCount="indefinite" additive="sum"/>
+<animateTransform attributeName="transform" type="translate" values="0 0;40 0;0 0" dur="7s" begin="1s" repeatCount="indefinite" additive="sum"/>
+</rect>
+<rect x="-120" y="-40" width="240" height="80" fill="#B8893A" opacity="0.85" filter="url(#m)">
+<animateTransform attributeName="transform" type="skewX" values="0;25;0;-25;0" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.85;1;0.85" dur="4s" repeatCount="indefinite"/>
+</rect>
+<rect x="0" y="-150" width="340" height="420" fill="#1F4E5C" opacity="0.8">
+<animateTransform attributeName="transform" type="scale" values="1 1;0.01 1;1 1" keyTimes="0;0.5;1" dur="8s" begin="2s" repeatCount="indefinite" additive="sum"/>
+<animateTransform attributeName="transform" type="translate" values="0 0;-50 10;0 0" dur="8s" begin="2s" repeatCount="indefinite" additive="sum"/>
+</rect>
+<rect x="-80" y="-200" width="360" height="50" fill="#1A1614" opacity="0.9">
+<animateTransform attributeName="transform" type="rotate" values="-3 180 25;4 180 25;-3 180 25" dur="4s" repeatCount="indefinite"/>
+<animate attributeName="y" values="-200;-190;-200" dur="3s" repeatCount="indefinite"/>
+</rect>
+<rect x="-280" y="80" width="180" height="280" fill="#F5EDDC" opacity="0.85" filter="url(#m)">
+<animateTransform attributeName="transform" type="scale" values="1 1;0.1 1;1 1" dur="9s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+</rect>
+</g>
+<rect x="50" y="720" width="1500" height="180" fill="#722F37" opacity="0.75" filter="url(#h)">
+<animate attributeName="y" values="720;700;720" dur="10s" repeatCount="indefinite"/>
+</rect>
+<rect x="150" y="100" width="180" height="700" fill="#B8893A" opacity="0.8" filter="url(#m)">
+<animateTransform attributeName="transform" type="skewY" values="0;12;0" dur="6s" repeatCount="indefinite"/>
+</rect>
+<rect x="780" y="420" width="120" height="120" fill="#1A1614" opacity="0.75" filter="url(#m)">
+<animateTransform attributeName="transform" type="rotate" values="0 840 480;360 840 480" dur="20s" repeatCount="indefinite"/>
+</rect>
+</svg>

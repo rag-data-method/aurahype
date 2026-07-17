@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Drop shadow filter for the physical sticker effect -->
+    <filter id="sticker-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="12" dy="18" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Halftone Dot Pattern (Classic Pop Art Texture) -->
+    <pattern id="halftone" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <circle cx="7" cy="7" r="2.5" fill="#000000" opacity="0.85"/>
+    </pattern>
+
+    <!-- Jagged Starburst Base Path -->
+    <path id="burst-path" d="
+      M 500 70 
+      L 555 215 L 670 90 L 680 260 L 840 190 
+      L 790 340 L 930 380 L 810 480 L 915 590 
+      L 780 620 L 850 760 L 700 720 L 680 880 
+      L 580 750 L 500 900 L 420 750 L 320 880 
+      L 300 720 L 150 760 L 220 620 L 85 590 
+      L 190 480 L 70 380 L 210 340 L 160 190 
+      L 320 260 L 330 90 L 445 215 Z
+    "/>
+
+    <!-- Clipping path for applying patterns to the burst shape -->
+    <clipPath id="burst-clip">
+      <use href="#burst-path"/>
+    </clipPath>
+  </defs>
+
+  <!-- Sticker Group with Drop Shadow -->
+  <g filter="url(#sticker-shadow)">
+    
+    <!-- Thick White Die-Cut Border -->
+    <use href="#burst-path" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="65" stroke-linejoin="round"/>
+
+    <!-- Main Starburst Background Base Color -->
+    <use href="#burst-path" fill="#FFD100"/>
+
+    <!-- Pop Art Color Segments with Black Outlines -->
+    <!-- Red Segment (Top Right) -->
+    <path d="M 500 70 L 555 215 L 670 90 L 680 260 L 840 190 L 790 340 L 930 380 L 810 480 L 500 500 Z" 
+          fill="#FF3300" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    
+    <!-- Cyan Segment (Bottom Right) -->
+    <path d="M 500 500 L 915 590 L 780 620 L 850 760 L 700 720 L 680 880 L 580 750 L 500 900 Z" 
+          fill="#00E5FF" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    
+    <!-- Magenta Segment (Bottom Left) -->
+    <path d="M 500 500 L 500 900 L 420 750 L 320 880 L 300 720 L 150 760 L 220 620 L 85 590 Z" 
+          fill="#FF0099" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+    
+    <!-- Yellow Segment (Top Left) - Base color, outlined -->
+    <path d="M 500 70 L 445 215 L 330 90 L 320 260 L 160 190 L 210 340 L 70 380 L 190 480 L 500 500 Z" 
+          fill="#FFD100" stroke="#000000" stroke-width="12" stroke-linejoin="round"/>
+
+    <!-- Halftone Dot Overlays for Pop Art Texture -->
+    <g clip-path="url(#burst-clip)">
+      <!-- Diagonal split for texture pattern -->
+      <rect x="200" y="0" width="800" height="1200" transform="rotate(35 500 500)" fill="url(#halftone)"/>
+    </g>
+
+    <!-- Thick Aggressive Black Outline of the Entire Burst -->
+    <use href="#burst-path" fill="none" stroke="#000000" stroke-width="18" stroke-linejoin="round"/>
+
+    <!-- Action Lines (Speed/Zap lines around the burst) -->
+    <g stroke="#000000" stroke-width="14" stroke-linecap="round">
+      <!-- Top Lines -->
+      <line x1="490" y1="20" x2="480" y2="-60"/>
+      <line x1="540" y1="30" x2="580" y2="-40"/>
+      
+      <!-- Top Right Lines -->
+      <line x1="710" y1="60" x2="780" y2="0"/>
+      <line x1="810" y1="140" x2="900" y2="110"/>
+      
+      <!-- Right Lines -->
+      <line x1="960" y1="380" x2="1040" y2="360"/>
+      <line x1="950" y1="480" x2="1030" y2="500"/>
+      
+      <!-- Bottom Right Lines -->
+      <line x1="890" y1="750" x2="970" y2="790"/>
+      <line x1="820" y1="830" x2="880" y2="900"/>
+      
+      <!-- Bottom Lines -->
+      <line x1="500" y1="950" x2="510" y2="1040"/>
+      <line x1="420" y1="940" x2="380" y2="1020"/>
+      
+      <!-- Bottom Left Lines -->
+      <line x1="180" y1="810" x2="110" y2="880"/>
+      <line x1="110" y1="720" x2="30" y2="760"/>
+      
+      <!-- Left Lines -->
+      <line x1="40" y1="480" x2="-40" y2="470"/>
+      <line x1="50" y1="370" x2="-30" y2="320"/>
+      
+      <!-- Top Left Lines -->
+      <line x1="190" y1="130" x2="110" y2="70"/>
+      <line x1="290" y1="50" x2="250" y2="-30"/>
+    </g>
+
+    <!-- "OUCH!" Text Typography -->
+    <g transform="translate(500, 490) rotate(-10)">
+      <!-- Black Drop Shadow Layer for text depth -->
+      <text x="12" y="18" font-family="'Cooper Black', 'Arial Black', 'Impact', sans-serif" 
+            font-size="190" font-weight="900" text-anchor="middle" fill="#000000" stroke="none">OUCH!</text>
+      
+      <!-- White Outline Layer -->
+      <text x="0" y="0" font-family="'Cooper Black', 'Arial Black', 'Impact', sans-serif" 
+            font-size="190" font-weight="900" text-anchor="middle" fill="#FFFFFF" stroke="#000000" stroke-width="28" stroke-linejoin="round">OUCH!</text>
+      
+      <!-- Cyan Inner Fill -->
+      <text x="0" y="0" font-family="'Cooper Black', 'Arial Black', 'Impact', sans-serif" 
+            font-family="'Arial Black', 'Helvetica Neue', sans-serif"
+            font-size="190" font-weight="900" text-anchor="middle" fill="#00E5FF" stroke="#000000" stroke-width="10" stroke-linejoin="round">OUCH!</text>
+    </g>
+
+    <!-- Secondary "POW" style Zap FX accents -->
+    <g fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-linejoin="round">
+      <polygon points="500,120 515,150 545,150 520,170 530,200 500,180 470,200 480,170 455,150 485,150"/>
+      <polygon points="850,480 860,500 880,500 865,515 870,535 850,520 830,535 835,515 820,500 840,500"/>
+      <polygon points="150,480 160,500 180,500 165,515 170,535 150,520 130,535 135,515 120,500 140,500"/>
+      <polygon points="500,820 510,840 530,840 515,855 520,875 500,860 480,875 485,855 470,840 490,840"/>
+    </g>
+
+  </g>
+</svg>

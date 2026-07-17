@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="tipShine" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <linearGradient id="woodBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#B8984F"/>
+      <stop offset="50%" style="stop-color:#C9A85C"/>
+      <stop offset="100%" style="stop-color:#A88B4A"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#FBF7EE"/>
+  
+  <!-- Paper sheet -->
+  <rect x="250" y="280" width="1100" height="340" rx="12" fill="#F5EFE0" opacity="0.95"/>
+  <rect x="250" y="280" width="1100" height="340" rx="12" fill="none" stroke="#2B2620" stroke-opacity="0.06" stroke-width="3"/>
+  
+  <!-- The drawing line -->
+  <path id="curveLine" d="M 350 520 Q 800 650 1250 520" fill="none" stroke="#2B2620" stroke-width="4" stroke-linecap="round" opacity="0.85" stroke-dasharray="1100" stroke-dashoffset="1100">
+    <animate attributeName="stroke-dashoffset" values="1100;0" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+  </path>
+  
+  <!-- Pencil shadow (follows path) -->
+  <ellipse cx="25" cy="35" rx="70" ry="20" fill="#2B2620" opacity="0.1" filter="url(#softShadow)">
+    <animateMotion dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1">
+      <mpath href="#curveLine"/>
+    </animateMotion>
+    <animate attributeName="rx" values="70;75;70" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.06;0.1" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Eraser shavings -->
+  <g opacity="0.8">
+    <path d="M0,0 Q6,-6 12,0 T24,0" fill="none" stroke="#E8A0A0" stroke-width="3" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="translate" values="450 400; 420 600" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 450 400; 200 420 600" dur="3.5s" begin="0.5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,0 Q8,-4 16,0" fill="none" stroke="#E8A0A0" stroke-width="2.5" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="translate" values="650 430; 620 620" dur="4s" begin="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 650 430; -180 620 620" dur="4s" begin="2s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="4s" begin="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,0 Q5,-8 10,-4 T20,0" fill="none" stroke="#E8A0A0" stroke-width="3.5" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="translate" values="950 410; 930 590" dur="3s" begin="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 950 410; 160 930 590" dur="3s" begin="3.5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.9;0" dur="3s" begin="3.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Pencil group -->
+  <g>
+    <animateMotion dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1">
+      <mpath href="#curveLine"/>
+    </animateMotion>
+    
+    <!-- Rotated and wobbling pencil body -->
+    <g transform="rotate(-45)">
+      <animateTransform attributeName="transform" type="rotate" values="-3;3;-3" dur="0.7s" repeatCount="indefinite" additive="sum"/>
+      
+      <!-- Graphite tip -->
+      <path d="M 0,0 L -10,-25 L 10,-25 Z" fill="#2B2620"/>
+      
+      <!-- Wooden body -->
+      <path d="M -10,-25 L -14,-240 L 14,-240 L 10,-25 Z" fill="url(#woodBody)"/>
+      
+      <!-- Ferrule (metal band) -->
+      <rect x="-14" y="-270" width="28" height="30" fill="#C9A85C"/>
+      <rect x="-14" y="-265" width="28" height="1.5" fill="#A88B4A" opacity="0.6"/>
+      <rect x="-14" y="-255" width="28" height="1.5" fill="#A88B4A" opacity="0.6"/>
+      
+      <!-- Eraser -->
+      <path d="M -14,-270 L -14,-330 Q -14,-335 0,-335 Q 14,-335 14,-330 L 14,-270 Z" fill="#F5A5A5"/>
+      
+      <!-- Tip sparkle -->
+      <circle cx="0" cy="-5" r="4" fill="#FFFFFF" opacity="0.9" filter="url(#tipShine)">
+        <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="4;6;4" dur="1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</svg>

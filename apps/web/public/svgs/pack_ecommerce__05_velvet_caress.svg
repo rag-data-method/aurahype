@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="velvetSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
+    </filter>
+    <filter id="velvetDeep" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="75"/>
+    </filter>
+    <filter id="napTexture" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.06 0" in="noise"/>
+    </filter>
+    <linearGradient id="sheenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E6CCAB;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#B85440;stop-opacity:0.9"/>
+    </linearGradient>
+    <linearGradient id="depthGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4A2C1F;stop-opacity:0.9"/>
+      <stop offset="60%" style="stop-color:#B85440;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#E6CCAB;stop-opacity:0.85"/>
+    </linearGradient>
+    <radialGradient id="napGlow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#FAF5EC;stop-opacity:0.9"/>
+      <stop offset="40%" style="stop-color:#E6CCAB;stop-opacity:0.95"/>
+      <stop offset="100%" style="stop-color:#8A9A5B;stop-opacity:0.8"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FAF5EC"/>
+  <rect width="1600" height="900" filter="url(#napTexture)" opacity="0.08"/>
+  
+  <path d="M0,700 Q400,600 800,750 T1600,700 V900 H0 Z" fill="#4A2C1F" opacity="0.75" filter="url(#velvetDeep)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,25; 0,0" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M0,550 Q300,450 600,600 T1200,550 T1600,600 V900 H0 Z" fill="#B85440" opacity="0.85" filter="url(#velvetSoft)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -40,15; 0,0" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.85;0.93;0.85" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M0,400 Q400,300 800,450 T1600,400 V900 H0 Z" fill="#E6CCAB" opacity="0.92">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 25,-20; 0,0" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="d" values="M0,400 Q400,300 800,450 T1600,400 V900 H0 Z;M0,420 Q400,320 800,430 T1600,420 V900 H0 Z;M0,400 Q400,300 800,450 T1600,400 V900 H0 Z" dur="10s" repeatCount="indefinite"/>
+  </path>
+  
+  <ellipse cx="350" cy="650" rx="280" ry="140" fill="#8A9A5B" opacity="0.82" filter="url(#velvetSoft)">
+    <animate attributeName="cx" values="350;450;350" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="650;600;650" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="280;300;280" dur="10s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <path d="M1250,0 Q1450,200 1350,400 Q1250,600 1450,800 V0 H1250 Z" fill="#B85440" opacity="0.8" filter="url(#velvetSoft)">
+    <animateTransform attributeName="transform" type="rotate" values="0 1350 400; 2 1350 400; 0 1350 400" dur="11s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M150,0 Q350,150 250,350 Q150,550 350,750 V0 H150 Z" fill="#E6CCAB" opacity="0.95" filter="url(#velvetSoft)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,35; 0,0" dur="6s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M500,900 Q700,700 900,850 Q1100,1000 1300,800 V900 H500 Z" fill="#4A2C1F" opacity="0.72" filter="url(#velvetDeep)">
+    <animate attributeName="d" values="M500,900 Q700,700 900,850 Q1100,1000 1300,800 V900 H500 Z;M500,900 Q700,750 900,820 Q1100,950 1300,850 V900 H500 Z;M500,900 Q700,700 900,850 Q1100,1000 1300,800 V900 H500 Z" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <rect x="250" y="150" width="1100" height="600" fill="url(#depthGrad)" opacity="0.88" filter="url(#velvetSoft)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -15,25; 0,0" dur="7s" repeatCount="indefinite"/>
+  </rect>
+  
+  <ellipse cx="1050" cy="350" rx="220" ry="90" fill="#E6CCAB" opacity="0.9" filter="url(#velvetDeep)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 40,25; 0,0" dur="9s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <path d="M1350,900 Q1450,700 1400,500 Q1350,300 1500,100 V900 H1350 Z" fill="#8A9A5B" opacity="0.78" filter="url(#velvetSoft)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 15,-25; 0,0" dur="10s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M650,650 Q850,550 1050,650 Q1250,750 1150,900 H650 Z" fill="url(#sheenGrad)" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -25,-15; 0,0" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M250,850 Q350,750 450,850 Q550,950 650,850 V900 H250 Z" fill="#4A2C1F" opacity="0.8" filter="url(#velvetSoft)">
+    <animate attributeName="opacity" values="0.8;0.87;0.8" dur="5s" repeatCount="indefinite"/>
+  </path>
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#napGlow)" opacity="0.45" style="mix-blend-mode:overlay">
+    <animate attributeName="opacity" values="0.45;0.55;0.45" dur="6s" repeatCount="indefinite"/>
+  </rect>
+</svg>

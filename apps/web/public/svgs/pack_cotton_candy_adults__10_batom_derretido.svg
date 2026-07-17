@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Background Radial -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#2a2438"/>
+      <stop offset="60%" stop-color="#1E1A29"/>
+      <stop offset="100%" stop-color="#150f20"/>
+    </radialGradient>
+
+    <!-- Mirror Gradients -->
+    <radialGradient id="mirrorReflect" cx="30%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#FFDAC1">
+        <animate attributeName="stop-color" values="#FFDAC1;#FFB7B2;#FFDAC1" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="45%" stop-color="#FFB7B2">
+        <animate attributeName="stop-color" values="#FFB7B2;#FFDAC1;#FFB7B2" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#C5A059" stop-opacity="0.6"/>
+    </radialGradient>
+
+    <linearGradient id="mirrorFrameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5A059"/>
+      <stop offset="50%" stop-color="#FFDAC1"/>
+      <stop offset="100%" stop-color="#C5A059"/>
+    </linearGradient>
+
+    <!-- Lipstick Gradients -->
+    <linearGradient id="lipGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFB7B2"/>
+      <stop offset="40%" stop-color="#FFDAC1"/>
+      <stop offset="100%" stop-color="#FFB7B2"/>
+    </linearGradient>
+
+    <!-- Burlesque Neon Glow Gradient -->
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB7B2" stop-opacity="0.9">
+        <animate attributeName="stop-color" values="#FFB7B2;#FFDAC1;#FFB7B2" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#FFDAC1" stop-opacity="0.4">
+        <animate attributeName="stop-color" values="#FFDAC1;#FFB7B2;#FFDAC1" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#C5A059" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Feather Gradient -->
+    <linearGradient id="featherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFDAC1"/>
+      <stop offset="100%" stop-color="#FFB7B2"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <filter id="heavyBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="glow1"/>
+      <feGaussianBlur stdDeviation="20" result="glow2"/>
+      <feMerge>
+        <feMergeNode in="glow2"/>
+        <feMergeNode in="glow1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#1E1A29" flood-opacity="0.6"/>
+    </filter>
+
+    <filter id="innerShadow">
+      <feOffset dx="0" dy="4"/>
+      <feGaussianBlur stdDeviation="4" result="offset-blur"/>
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+      <feFlood flood-color="#1E1A29" flood-opacity="0.4" result="color"/>
+      <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+      <feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+    </filter>
+
+    <filter id="mirrorBlur" x="-20%" y="-30%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="15"/>
+    </filter>
+
+    <!-- Reusable Shapes -->
+    <!-- Kiss Mark (Lips) -->
+    <g id="kissMark">
+      <path d="M 0 0 C -15 -20, -35 -15, -40 5 C -45 25, -20 35, 0 30 C 20 35, 45 25, 40 5 C 35 -15, 15 -20, 0 0 Z" fill="#FFB7B2" opacity="0.8" filter="url(#blur)"/>
+      <path d="M 0 2 C -12 -15, -30 -10, -35 5 C -40 20, -18 28, 0 24 C 18 28, 40 20, 35 5 C 30 -10, 12 -15, 0 2 Z" fill="#FFDAC1" opacity="0.6"/>
+    </g>
+
+    <!-- Feather -->
+    <g id="feather">
+      <path d="M 0 0 Q 30 -40, 10 -90 Q 5 -110, 0 -120 Q -5 -110, -10 -90 Q -30 -40, 0 0 Z" fill="url(#featherGrad)" opacity="0.85" filter="url(#softShadow)"/>
+      <path d="M 0 0 Q 2 -60, 0 -120" stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.5"/>
+    </g>
+
+    <!-- Ribbon -->
+    <g id="ribbon">
+      <path d="M -40 0 Q -20 -20, 0 0 T 40 0" stroke="none" fill="none"/>
+      <path d="M 0 0 C 20 -40, 60 -20, 90 -50 C 110 -70, 130 -40, 150 -60" stroke="url(#neonGrad)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#neonGlow)"/>
+      <path d="M 0 0 C 20 -40, 60 -20, 90 -50 C 110 -70, 130 -40, 150 -60" stroke="#FFDAC1" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+    </g>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+
+  <!-- AMBIENT BOUDOIR LIGHTS -->
+  <circle cx="400" cy="200" r="250" fill="#FFB7B2" opacity="0.15" filter="url(#heavyBlur)">
+    <animate attributeName="r" values="250;270;240;250" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.2;0.12;0.15" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1200" cy="700" r="300" fill="#C5A059" opacity="0.1" filter="url(#heavyBlur)">
+    <animate attributeName="r" values="300;280;310;300" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- REFLECTION POOL ON FLOOR -->
+  <ellipse cx="800" cy="680" rx="400" ry="80" fill="#1E1A29" opacity="0.8" filter="url(#mirrorBlur)"/>
+
+  <!-- MIRROR SHADOW -->
+  <ellipse cx="800" cy="680" rx="220" ry="60" fill="#1E1A29" opacity="0.7" filter="url(#blur)"/>
+
+  <!-- MIRROR GROUP -->
+  <g id="mirror" transform="translate(0, 10)">
+    <!-- Handle -->
+    <rect x="780" y="660" width="40" height="120" rx="20" fill="url(#mirrorFrameGrad)" filter="url(#softShadow)"/>
+    <!-- Handle Inner Detail -->
+    <rect x="790" y="670" width="20" height="80" rx="10" fill="#1E1A29" opacity="0.3" filter="url(#innerShadow)"/>
+
+    <!-- Mirror Glass Base -->
+    <ellipse cx="800" cy="500" rx="200" ry="260" fill="#2a2438" filter="url(#softShadow)"/>
+    
+    <!-- Mirror Reflection (Cotton Candy Sky) -->
+    <ellipse cx="800" cy="500" rx="190" ry="250" fill="url(#mirrorReflect)"/>
+
+    <!-- Mirror Surface Gloss -->
+    <ellipse cx="750" cy="400" rx="120" ry="160" fill="#FFFFFF" opacity="0.08" transform="rotate(-15, 750, 400)"/>
+
+    <!-- Mirror Frame -->
+    <ellipse cx="800" cy="500" rx="200" ry="260" fill="none" stroke="url(#mirrorFrameGrad)" stroke-width="12" filter="url(#softShadow)"/>
+    <ellipse cx="800" cy="500" rx="194" ry="254" fill="none" stroke="#C5A059" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <!-- FLOATING KISS MARK (Above Mirror) -->
+  <g transform="translate(850, 350) rotate(-10) scale(1.2)" filter="url(#neonGlow)">
+    <use href="#kissMark"/>
+    <animateTransform attributeName="transform" type="translate" values="850 350; 855 345; 850 350" dur="4s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="-10; -8; -10" dur="5s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- KISS MARK ON MIRROR -->
+  <g transform="translate(720, 520) rotate(15)" filter="url(#softShadow)">
+    <use href="#kissMark"/>
+    <animateTransform attributeName="transform" type="translate" values="720 520; 718 522; 720 520" dur="6s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- LIPSTICK SHADOW ON MIRROR -->
+  <ellipse cx="700" cy="620" rx="120" ry="30" fill="#1E1A29" opacity="0.6" filter="url(#blur)">
+    <animate attributeName="rx" values="120;125;120" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- LIPSTICK GROUP -->
+  <g transform="translate(600, 450) rotate(-25)" filter="url(#softShadow)">
+    
+    <!-- Tube Shadow Detail -->
+    <ellipse cx="100" cy="170" rx="35" ry="10" fill="#1E1A29" opacity="0.5" filter="url(#blur)"/>
+
+    <!-- Main Gold Tube -->
+    <rect x="60" y="100" width="80" height="70" rx="10" fill="url(#mirrorFrameGrad)"/>
+    <!-- Tube Highlight -->
+    <rect x="65" y="100" width="10" height="70" fill="#FFFFFF" opacity="0.3"/>
+    <rect x="125" y="100" width="5" height="70" fill="#1E1A29" opacity="0.2"/>
+
+    <!-- Tube Collar (Mid-Gold) -->
+    <rect x="55" y="90" width="90" height="15" rx="5" fill="#C5A059"/>
+    <rect x="55" y="90" width="90" height="5" fill="#FFFFFF" opacity="0.3"/>
+
+    <!-- Inner Tube (Lipstick Holder) -->
+    <rect x="75" y="60" width="50" height="35" fill="#FFDAC1" opacity="0.9"/>
+
+    <!-- Lipstick Stick (Main Body) -->
+    <path d="M 80 60 L 80 15 Q 100 5, 120 15 L 120 60 Z" fill="url(#lipGrad)"/>
+    <!-- Lipstick Highlight -->
+    <path d="M 82 58 L 82 20 Q 90 15, 95 18 L 95 58 Z" fill="#FFFFFF" opacity="0.4"/>
+
+    <!-- MELTING WAX DRIPS -->
+    <!-- Drip 1 (Left Side) -->
+    <path fill="#FFB7B2" opacity="0.9">
+      <animate attributeName="d" 
+        values="M 82 58 Q 85 75, 88 80 Q 90 75, 88 58 Z; 
+                M 82 58 Q 85 85, 88 90 Q 90 85, 88 58 Z; 
+                M 82 58 Q 85 75, 88 80 Q 90 75, 88 58 Z" 
+        dur="5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Drip 2 (Right Center) -->
+    <path fill="#FFDAC1" opacity="0.85">
+      <animate attributeName="d" 
+        values="M 100 60 Q 105 80, 108 85 Q 110 80, 110 60 Z; 
+                M 100 60 Q 105 95, 108 100 Q 110 95, 110 60 Z; 
+                M 100 60 Q 105 80, 108 85 Q 110 80, 110 60 Z" 
+        dur="6s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Drip 3 (Far Right) -->
+    <path fill="#FFB7B2" opacity="0.8">
+      <animate attributeName="d" 
+        values="M 115 55 Q 118 70, 120 75 Q 122 70, 120 55 Z; 
+                M 115 55 Q 118 85, 120 90 Q 122 85, 120 55 Z; 
+                M 115 55 Q 118 70, 120 75 Q 122 70, 120 55 Z" 
+        dur="7s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Drip 4 (Thin trail) -->
+    <path fill="#FFDAC1" opacity="0.7">
+      <animate attributeName="d" 
+        values="M 92 58 L 94 58 L 93 70 L 91 70 Z; 
+                M 92 58 L 94 58 L 93 85 L 91 85 Z; 
+                M 92 58 L 94 58 L 93 70 L 91 70 Z" 
+        dur="8s" repeatCount="indefinite"/>
+    </path>
+
+  </g>
+
+  <!-- FLOATING DECORATIVE FEATHERS -->
+  <!-- Feather 1 (Top Left) -->
+  <g transform="translate(250, 150) rotate(45)" filter="url(#neonGlow)">
+    <use href="#feather"/>
+    <animateTransform attributeName="transform" type="rotate" values="45; 50; 45" dur="4s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="translate" values="250 150; 255 145; 250 150" dur="5s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Feather 2 (Bottom Right) -->
+  <g transform="translate(1350, 750) rotate(-30) scale(1.2)" filter="url(#softShadow)">
+    <use href="#feather"/>
+    <animateTransform attributeName="transform" type="rotate" values="-30; -35; -30" dur="6s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="translate" values="1350 750; 1345 755; 1350 750" dur="7s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Feather 3 (Top Right) -->
+  <g transform="translate(1250, 200) rotate(120) scale(0.8)" filter="url(#neonGlow)">
+    <use href="#feather"/>
+    <animateTransform attributeName="transform" type="rotate" values="120; 115; 120" dur="5s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Cotton Candy Clouds (Soft Ambient Blobs) -->
+  <path d="M 100 800 Q 200 700, 350 750 T 600 800" fill="none" stroke="url(#neonGrad)" stroke-width="20" stroke-linecap="round" filter="url(#heavyBlur)" opacity="0.6">
+    <animate attributeName="d" values="M 100 800 Q 200 700, 350 750 T 600 800; M 100 800 Q 220 720, 360 740 T 600 800; M 100 800 Q 200 700, 350 750 T 600 800" dur="10s" repeatCount="indefinite"/>
+  </path>
+
+  <path d="M 1100 100 Q 1250 50, 1400 100 T 1600 150" fill="none" stroke="url(#neonGrad)" stroke-width="25" stroke-linecap="round" filter="url(#heavyBlur)" opacity="0.5">
+    <animate attributeName="d" values="M 1100 100 Q 1250 50, 1400 100 T 1600 150; M 1100 100 Q 1240 60, 1390 90 T 1600 150; M 1100 100 Q 1250 50, 1400 100 T 1600 150" dur="12s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- SWAYING RIBBONS -->
+  <!-- Ribbon 1 (Trailing from top left) -->
+  <g transform="translate(200, 200)" filter="url(#neonGlow)">
+    <path d="M 0 0 C 50 50, 100 -20, 150 30 S 250 -10, 300 50" fill="none" stroke="url(#neonGrad)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 0 0 C 50 50, 100 -20, 150 30 S 250 -10, 300 50" fill="none" stroke="#FFDAC1" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+    <animateTransform attributeName="transform" type="translate" values="200 200; 210 195; 200 200" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Ribbon 2 (Trailing from bottom right) -->
+  <g transform="translate(1400, 700)" filter="url(#neonGlow)">
+    <path d="M 0 0 C -40 60, -90 20, -140 80 S -240 40, -300 100" fill="none" stroke="url(#neonGrad)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 0 0 C -40 60, -90 20, -140 80 S -240 40, -300 100" fill="none" stroke="#FFB7B2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <animateTransform attributeName="transform" type="translate" values="1400 700; 1395 705; 1400 700" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Neon Boudoir Accents (Spotlight Beams) -->
+  <path d="M 500 0 L 700 900 L 900 900 L 1100 0 Z" fill="url(#neonGrad)" opacity="0.15" filter="url(#heavyBlur)" style="mix-blend-mode: screen;">
+    <animate attributeName="opacity" values="0.15;0.25;0.12;0.15" dur="4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="skewX" values="0; 5; 0" dur="8s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Foreground Sparkles / Dust Motes -->
+  <g fill="#FFDAC1" filter="url(#neonGlow)">
+    <circle cx="500" cy="300" r="3" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="300;280;300" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="400" r="2" opacity="0.6">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="cy" values="400;380;400" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="800" cy="200" r="4" opacity="0.9">
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="cy" values="200;180;200" dur="5s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    <circle cx="650" cy="650" r="2.5" opacity="0.7">
+      <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="cy" values="650;630;650" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="950" cy="550" r="3" opacity="0.8">
+      <animate attributeName="opacity" values="0;1;0" dur="4.5s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="cy" values="550;530;550" dur="4.5s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+  </g>
+
+  <!-- FLOATING KISS MARK (Far Right - Extra Flair) -->
+  <g transform="translate(1300, 500) rotate(25) scale(0.8)" filter="url(#neonGlow)">
+    <use href="#kissMark"/>
+    <animateTransform attributeName="transform" type="translate" values="1300 500; 1295 505; 1300 500" dur="5s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+</svg>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="85%">
+      <stop offset="0%" stop-color="#2D2540"/>
+      <stop offset="60%" stop-color="#1E1A29"/>
+      <stop offset="100%" stop-color="#110F1A"/>
+    </radialGradient>
+
+    <!-- Spotlight Gradient -->
+    <radialGradient id="spotGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFDAC1" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#B5EAD7" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#1E1A29" stop-opacity="0"/>
+      <animate attributeName="cx" values="50%;52%;48%;50%" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animate attributeName="cy" values="40%;42%;38%;40%" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </radialGradient>
+
+    <!-- Neon Gradients with Flickering Stops -->
+    <linearGradient id="neonPeach" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFDAC1" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFB89A" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FFDAC1" stop-opacity="0.9">
+        <animate attributeName="stop-color" values="#FFDAC1;#FFDFA0;#FFDAC1" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="neonMint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B5EAD7" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#8EE0C6" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#B5EAD7" stop-opacity="0.9">
+        <animate attributeName="stop-color" values="#B5EAD7;#C0FFF0;#B5EAD7" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Gold Chain Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE6A8"/>
+      <stop offset="30%" stop-color="#C5A059"/>
+      <stop offset="60%" stop-color="#FFF5D4"/>
+      <stop offset="100%" stop-color="#8C7035"/>
+    </linearGradient>
+
+    <!-- Filters for Soft Lighting and Glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softShadowBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur"/>
+    </filter>
+
+    <filter id="neonGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Fuzzy Texture for Dice -->
+    <filter id="fuzz" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.3 0" in="noise" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="compositeNoise"/>
+      <feBlend mode="multiply" in="compositeNoise" in2="SourceGraphic" result="blend"/>
+      <feGaussianBlur stdDeviation="2.5" in="blend"/>
+    </filter>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  <rect width="100%" height="100%" fill="url(#spotGrad)"/>
+
+  <!-- Background Neon Sign -->
+  <g filter="url(#neonGlow)" opacity="0.6">
+    <path d="M 300,150 Q 400,50 500,150 T 700,150 T 900,150 T 1100,150 T 1300,150" stroke="url(#neonPeach)" stroke-width="6" fill="none" stroke-linecap="round">
+      <animate attributeName="stroke-opacity" values="0.6;0.3;0.8;0.4;0.6" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+    <path d="M 300,180 Q 400,80 500,180 T 700,180 T 900,180 T 1100,180 T 1300,180" stroke="url(#neonMint)" stroke-width="4" fill="none" stroke-linecap="round">
+      <animate attributeName="stroke-opacity" values="0.5;0.2;0.7;0.5" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Hanging Silk Tassels (Left) -->
+  <g transform="translate(200, 0)">
+    <path d="M 0,0 C 20,150 -20,300 10,450 C 30,550 -10,650 20,750" stroke="url(#neonPeach)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#softShadowBlur)" opacity="0.3"/>
+    <path d="M 0,0 C 20,150 -20,300 10,450 C 30,550 -10,650 20,750" stroke="url(#neonPeach)" stroke-width="4" fill="none" stroke-linecap="round">
+      <animate attributeName="d" values="M 0,0 C 20,150 -20,300 10,450 C 30,550 -10,650 20,750; M 0,0 C 40,150 0,300 30,450 C 50,550 10,650 40,750; M 0,0 C 20,150 -20,300 10,450 C 30,550 -10,650 20,750" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+    <path d="M 0,0 C -30,100 10,250 -20,400 C -40,500 0,600 -30,700" stroke="url(#neonMint)" stroke-width="3" fill="none" stroke-linecap="round">
+      <animate attributeName="d" values="M 0,0 C -30,100 10,250 -20,400 C -40,500 0,600 -30,700; M 0,0 C -10,100 30,250 0,400 C -20,500 20,600 -10,700; M 0,0 C -30,100 10,250 -20,400 C -40,500 0,600 -30,700" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Hanging Silk Tassels (Right) -->
+  <g transform="translate(1400, 0)">
+    <path d="M 0,0 C -30,100 10,250 -20,400 C -40,500 0,600 -30,700" stroke="url(#neonPeach)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#softShadowBlur)" opacity="0.3"/>
+    <path d="M 0,0 C -30,100 10,250 -20,400 C -40,500 0,600 -30,700" stroke="url(#neonMint)" stroke-width="4" fill="none" stroke-linecap="round">
+      <animate attributeName="d" values="M 0,0 C -30,100 10,250 -20,400 C -40,500 0,600 -30,700; M 0,0 C -50,100 -10,250 -40,400 C -60,500 -20,600 -50,700; M 0,0 C -30,100 10,250 -20,400 C -40,500 0,600 -30,700" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Main Subject: Hanging Plush Dice & Gold Chain -->
+  <g id="mainDiceGroup">
+    <!-- Gold Chain Swing Animation -->
+    <animateTransform attributeName="transform" type="rotate" values="0 800 100; 3 800 100; -3 800 100; 0 800 100" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+    <!-- The Gold Chain -->
+    <path d="M 800,100 Q 802,200 798,300 Q 794,400 800,500" stroke="url(#goldGrad)" stroke-width="3" fill="none" stroke-linecap="round">
+      <!-- Chain Morph for Physics -->
+      <animate attributeName="d" values="M 800,100 Q 802,200 798,300 Q 794,400 800,500; M 800,100 Q 808,200 804,300 Q 800,400 810,500; M 800,100 Q 802,200 798,300 Q 794,400 800,500; M 800,100 Q 792,200 796,300 Q 800,400 790,500; M 800,100 Q 802,200 798,300 Q 794,400 800,500" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </path>
+    
+    <!-- Chain Specular Highlights -->
+    <path d="M 800,100 Q 802,200 798,300 Q 794,400 800,500" stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4">
+      <animate attributeName="d" values="M 800,100 Q 802,200 798,300 Q 794,400 800,500; M 800,100 Q 808,200 804,300 Q 800,400 810,500; M 800,100 Q 802,200 798,300 Q 794,400 800,500; M 800,100 Q 792,200 796,300 Q 800,400 790,500; M 800,100 Q 802,200 798,300 Q 794,400 800,500" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </path>
+
+    <!-- Connection Ring -->
+    <circle cx="800" cy="500" r="12" fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
+
+    <!-- Shadow on Floor -->
+    <ellipse cx="800" cy="820" rx="220" ry="25" fill="#110F1A" filter="url(#softShadowBlur)" opacity="0.85">
+      <animate attributeName="rx" values="220;230;220" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="cx" values="800;820;780;800" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+
+    <!-- LEFT DICE (Pastel Peach) -->
+    <g transform="translate(680, 540) rotate(-12)">
+      <!-- Dice Body -->
+      <rect x="0" y="0" width="140" height="140" rx="30" fill="url(#neonPeach)" filter="url(#fuzz)"/>
+      <!-- Dice 3D Highlight (Soft Top Edge) -->
+      <rect x="10" y="5" width="120" height="130" rx="25" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+      
+      <!-- Pips (Dots) -->
+      <g fill="#1E1A29" opacity="0.85" filter="url(#fuzz)">
+        <circle cx="70" cy="70" r="16"/>
+        <circle cx="40" cy="40" r="16"/>
+        <circle cx="100" cy="100" r="16"/>
+      </g>
+      <!-- Pip Highlights -->
+      <g fill="#FFFFFF" opacity="0.5">
+        <circle cx="66" cy="66" r="4"/>
+        <circle cx="36" cy="36" r="4"/>
+        <circle cx="96" cy="96" r="4"/>
+      </g>
+
+      <!-- Breathing Animation -->
+      <animateTransform attributeName="transform" type="scale" values="1 1; 1.04 1.04; 1 1" dur="4.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+    </g>
+
+    <!-- RIGHT DICE (Pastel Mint) -->
+    <g transform="translate(820, 560) rotate(15)">
+      <!-- Dice Body -->
+      <rect x="0" y="0" width="150" height="150" rx="32" fill="url(#neonMint)" filter="url(#fuzz)"/>
+      <!-- Dice 3D Highlight -->
+      <rect x="10" y="5" width="130" height="140" rx="28" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+
+      <!-- Pips (Dots) -->
+      <g fill="#1E1A29" opacity="0.85" filter="url(#fuzz)">
+        <circle cx="75" cy="75" r="17"/>
+        <circle cx="45" cy="40" r="17"/>
+        <circle cx="105" cy="40" r="17"/>
+        <circle cx="45" cy="110" r="17"/>
+        <circle cx="105" cy="110" r="17"/>
+      </g>
+      <!-- Pip Highlights -->
+      <g fill="#FFFFFF" opacity="0.5">
+        <circle cx="71" cy="71" r="4"/>
+        <circle cx="41" cy="36" r="4"/>
+        <circle cx="101" cy="36" r="4"/>
+        <circle cx="41" cy="106" r="4"/>
+        <circle cx="101" cy="106" r="4"/>
+      </g>
+
+      <!-- Breathing Animation (Offset) -->
+      <animateTransform attributeName="transform" type="scale" values="1 1; 1.03 1.03; 1 1" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+    </g>
+  </g>
+
+  <!-- Floating Feather (Left Foreground) -->
+  <g transform="translate(350, 700)" filter="url(#softShadowBlur)">
+    <path d="M 0,0 C 30,-20 60,10 80,-10 C 100,-30 120,0 140,-20 C 160,-40 180,-10 200,-30 C 220,-50 250,-20 280,0 C 250,30 220,10 200,30 C 180,50 160,20 140,40 C 120,60 100,30 80,50 C 60,70 30,40 0,60 C 10,30 20,10 0,0 Z" fill="url(#neonPeach)" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 30 -50; 0 0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 140 30; 15 140 30; -10 140 30; 0 140 30" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+    </path>
+  </g>
+
+  <!-- Floating Feather (Right Foreground) -->
+  <g transform="translate(1100, 600)" filter="url(#softShadowBlur)">
+    <path d="M 0,0 C -30,-20 -60,10 -80,-10 C -100,-30 -120,0 -140,-20 C -160,-40 -180,-10 -200,-30 C -220,-50 -250,-20 -280,0 C -250,30 -220,10 -200,30 C -180,50 -160,20 -140,40 C -120,60 -100,30 -80,50 C -60,70 -30,40 0,60 C -10,30 -20,10 0,0 Z" fill="url(#neonMint)" opacity="0.5">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -40 -60; 0 0" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 -140 30; -20 -140 30; 10 -140 30; 0 -140 30" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+    </path>
+  </g>
+
+  <!-- Velvet Ribbon (Draped on Floor) -->
+  <g transform="translate(0, 780)">
+    <path d="M 0,50 C 200,120 400,-20 600,60 C 800,140 1000,0 1200,80 C 1400,160 1600,40 1600,50 L 1600,150 L 0,150 Z" fill="#2D2540" filter="url(#softShadowBlur)"/>
+    <path d="M 0,50 C 200,120 400,-20 600,60 C 800,140 1000,0 1200,80 C 1400,160 1600,40 1600,50" stroke="url(#neonMint)" stroke-width="8" fill="none" stroke-linecap="round">
+      <animate attributeName="d" values="M 0,50 C 200,120 400,-20 600,60 C 800,140 1000,0 1200,80 C 1400,160 1600,40 1600,50; M 0,50 C 200,80 400,20 600,40 C 800,160 1000,20 1200,100 C 1400,180 1600,60 1600,50; M 0,50 C 200,120 400,-20 600,60 C 800,140 1000,0 1200,80 C 1400,160 1600,40 1600,50" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+    <path d="M 0,60 C 200,130 400,-10 600,70 C 800,150 1000,10 1200,90 C 1400,170 1600,50 1600,60" stroke="url(#goldGrad)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8">
+      <animate attributeName="d" values="M 0,60 C 200,130 400,-10 600,70 C 800,150 1000,10 1200,90 C 1400,170 1600,50 1600,60; M 0,60 C 200,90 400,30 600,50 C 800,170 1000,30 1200,110 C 1400,190 1600,70 1600,60; M 0,60 C 200,130 400,-10 600,70 C 800,150 1000,10 1200,90 C 1400,170 1600,50 1600,60" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <!-- Champagne Glass & Bottle (Right Side Scene) -->
+  <g transform="translate(1200, 500)">
+    <!-- Bottle Shadow -->
+    <ellipse cx="150" cy="380" rx="50" ry="10" fill="#110F1A" filter="url(#softShadowBlur)" opacity="0.7"/>
+    <ellipse cx="30" cy="380" rx="30" ry="8" fill="#110F1A" filter="url(#softShadowBlur)" opacity="0.7"/>
+
+    <!-- Champagne Bottle -->
+    <path d="M 130,380 L 130,200 L 145,150 L 155,150 L 170,200 L 170,380 Z" fill="url(#neonPeach)" opacity="0.9"/>
+    <path d="M 130,380 L 130,200 L 145,150 L 155,150 L 170,200 L 170,380 Z" fill="none" stroke="#C5A059" stroke-width="2" opacity="0.5"/>
+    <!-- Bottle Label -->
+    <rect x="130" y="220" width="40" height="100" fill="url(#neonMint)" opacity="0.8"/>
+    <rect x="132" y="222" width="36" height="96" fill="none" stroke="#C5A059" stroke-width="1" opacity="0.6"/>
+
+    <!-- Champagne Glass -->
+    <path d="M 0,380 L 15,260 L 45,260 L 60,380 Z" fill="url(#neonMint)" opacity="0.4"/>
+    <path d="M 15,260 L 45,260 L 30,300 Z" fill="#B5EAD7" opacity="0.6"/>
+    <line x1="30" y1="260" x2="30" y2="150" stroke="#FFFFFF" stroke-width="2" opacity="0.4"/>
+
+    <!-- Rising Bubbles -->
+    <circle cx="30" cy="300" r="3" fill="#FFFFFF" opacity="0.8">
+      <animate attributeName="cy" values="300;150" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.8;0" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+    </circle>
+    <circle cx="25" cy="280" r="2" fill="#FFFFFF" opacity="0.8">
+      <animate attributeName="cy" values="280;150" dur="2.5s" repeatCount="indefinite" begin="0.5s" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.8;0" dur="2.5s" repeatCount="indefinite" begin="0.5s" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+    </circle>
+    <circle cx="35" cy="320" r="2.5" fill="#FFFFFF" opacity="0.8">
+      <animate attributeName="cy" values="320;150" dur="4s" repeatCount="indefinite" begin="1s" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.8;0" dur="4s" repeatCount="indefinite" begin="1s" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+    </circle>
+  </g>
+
+  <!-- Foreground Sparkles/Stars -->
+  <g filter="url(#glow)">
+    <path d="M 500,300 C 505,300 510,305 510,310 C 510,315 505,320 500,320 C 495,320 490,315 490,310 C 490,305 495,300 500,300 Z M 500,295 L 502,305 L 510,307 L 502,309 L 500,319 L 498,309 L 490,307 L 498,305 Z" fill="#FFDAC1" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="scale" values="1 1; 1.5 1.5; 1 1" dur="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+    </path>
+    
+    <path d="M 900,200 C 905,200 910,205 910,210 C 910,215 905,220 900,220 C 895,220 890,215 890,210 C 890,205 895,200 900,200 Z M 900,195 L 902,205 L 910,207 L 902,209 L 900,219 L 898,209 L 890,207 L 898,205 Z" fill="#B5EAD7" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.1;0.8" dur="3s" repeatCount="indefinite" begin="1s" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="scale" values="1 1; 1.3 1.3; 1 1" dur="3s" repeatCount="indefinite" begin="1s" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+    </path>
+
+    <path d="M 700,100 C 705,100 710,105 710,110 C 710,115 705,120 700,120 C 695,120 690,115 690,110 C 690,105 695,100 700,100 Z M 700,95 L 702,105 L 710,107 L 702,109 L 700,119 L 698,109 L 690,107 L 698,105 Z" fill="#C5A059" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.5s" repeatCount="indefinite" begin="0.5s" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <animateTransform attributeName="transform" type="scale" values="1 1; 1.2 1.2; 1 1" dur="2.5s" repeatCount="indefinite" begin="0.5s" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+    </path>
+  </g>
+
+</svg>

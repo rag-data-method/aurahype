@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Background Atmosphere -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#FBFAF5">
+        <animate attributeName="stop-color" values="#FBFAF5;#F5F3ED;#FBFAF5" dur="14s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#E8E2DA">
+        <animate attributeName="stop-color" values="#E8E2DA;#DDD6CC;#E8E2DA" dur="18s" repeatCount="indefinite" />
+      </stop>
+    </radialGradient>
+
+    <!-- Main Petal Gradient -->
+    <linearGradient id="petal-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF">
+        <animate attributeName="stop-color" values="#FFFFFF;#FFF5F7;#FFFFFF" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="30%" stop-color="#FDF0F4">
+        <animate attributeName="stop-color" values="#FDF0F4;#FBE8EE;#FDF0F4" dur="14s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="65%" stop-color="#F8C8DC" />
+      <stop offset="90%" stop-color="#E8A0B5" />
+      <stop offset="100%" stop-color="#D4889E">
+        <animate attributeName="stop-color" values="#D4889E;#E09AAF;#D4889E" dur="16s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <!-- Back Petal Gradient -->
+    <linearGradient id="petal-back-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBEEF2" />
+      <stop offset="50%" stop-color="#F8C8DC" />
+      <stop offset="100%" stop-color="#D4A5B8" />
+    </linearGradient>
+
+    <!-- Dewdrop Gradient -->
+    <radialGradient id="dew-grad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="30%" stop-color="#FFFFFF" stop-opacity="0.4" />
+      <stop offset="70%" stop-color="#F8C8DC" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#D4A5B8" stop-opacity="0.5" />
+    </radialGradient>
+
+    <!-- Dewdrop Inner Shadow -->
+    <radialGradient id="dew-in-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#D4A5B8" stop-opacity="0" />
+      <stop offset="100%" stop-color="#D4A5B8" stop-opacity="0.6" />
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="blur-atmo" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="120" />
+    </filter>
+
+    <filter id="blur-med" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="60" />
+    </filter>
+
+    <filter id="blur-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20" />
+    </filter>
+
+    <filter id="blur-tiny" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" />
+    </filter>
+
+    <filter id="vein-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.08" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" />
+      <feGaussianBlur stdDeviation="0.5" />
+    </filter>
+
+    <filter id="petal-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.005" numOctaves="2" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" in="noise" result="tint" />
+      <feComposite operator="in" in="tint" in2="SourceGraphic" result="masked" />
+      <feBlend mode="multiply" in="masked" in2="SourceGraphic" />
+    </filter>
+
+    <!-- Reusable Vein Path -->
+    <path id="vein-path" d="M 800,650 C 800,550 800,450 800,350 C 800,250 820,150 850,80" fill="none" />
+
+    <!-- Reusable Environment Reflection Ellipse -->
+    <ellipse id="dew-reflect" cx="0" cy="0" rx="14" ry="5" fill="#FFFFFF" opacity="0.8" />
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bg-grad)" />
+
+  <!-- Atmospheric / Deep Bokeh -->
+  <ellipse cx="250" cy="200" rx="350" ry="250" fill="#FDE6ED" opacity="0.4" filter="url(#blur-atmo)">
+    <animate attributeName="cx" values="250;300;250" dur="18s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="200;180;200" dur="22s" repeatCount="indefinite" />
+  </ellipse>
+
+  <ellipse cx="1350" cy="750" rx="300" ry="200" fill="#FBE0EA" opacity="0.3" filter="url(#blur-atmo)">
+    <animate attributeName="cx" values="1350;1300;1350" dur="20s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="750;780;750" dur="16s" repeatCount="indefinite" />
+  </ellipse>
+
+  <ellipse cx="650" cy="850" rx="200" ry="150" fill="#F8C8DC" opacity="0.15" filter="url(#blur-med)">
+    <animate attributeName="cx" values="650;680;650" dur="14s" repeatCount="indefinite" />
+  </ellipse>
+
+  <ellipse cx="1100" cy="100" rx="250" ry="180" fill="#FFFFFF" opacity="0.6" filter="url(#blur-med)">
+    <animate attributeName="cx" values="1100;1050;1100" dur="17s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- MAIN PETAL GROUP (Pivots at bottom base for breeze sway) -->
+  <g id="petal-assembly">
+    <!-- Continuous Slow Sway -->
+    <animateTransform attributeName="transform" type="rotate"
+      values="-1.5 800 900; 1.2 800 900; -1.5 800 900"
+      dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+
+    <!-- Gentle Scale Breathing -->
+    <animateTransform attributeName="transform" type="scale"
+      values="1 1; 1.01 1.005; 1 1"
+      dur="10s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+
+    <!-- Deep Shadow (Back of Petal, off-center) -->
+    <g opacity="0.15" filter="url(#blur-soft)">
+      <path d="M 800,900 C 1100,850 1380,700 1450,450 C 1480,320 1400,200 1320,150 C 1200,80 1000,240 800,420 C 600,240 400,80 280,150 C 200,200 120,320 150,450 C 220,700 500,850 800,900 Z"
+        fill="#D4A5B8" transform="translate(20, 15)">
+        <animate attributeName="d" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+          values="M 800,900 C 1100,850 1380,700 1450,450 C 1480,320 1400,200 1320,150 C 1200,80 1000,240 800,420 C 600,240 400,80 280,150 C 200,200 120,320 150,450 C 220,700 500,850 800,900 Z;
+                  M 800,900 C 1090,860 1370,710 1440,460 C 1470,330 1390,210 1310,160 C 1190,90 990,250 800,430 C 610,250 410,90 290,160 C 210,210 130,330 160,460 C 230,710 510,860 800,900 Z;
+                  M 800,900 C 1100,850 1380,700 1450,450 C 1480,320 1400,200 1320,150 C 1200,80 1000,240 800,420 C 600,240 400,80 280,150 C 200,200 120,320 150,450 C 220,700 500,850 800,900 Z" />
+      </path>
+    </g>
+
+    <!-- Medium Shadow (Back of Petal) -->
+    <g opacity="0.2" filter="url(#blur-soft)">
+      <path d="M 800,900 C 1100,850 1380,700 1450,450 C 1480,320 1400,200 1320,150 C 1200,80 1000,240 800,420 C 600,240 400,80 280,150 C 200,200 120,320 150,450 C 220,700 500,850 800,900 Z"
+        fill="#D4A5B8" transform="translate(10, 8)">
+        <animate attributeName="d" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+          values="M 800,900 C 1100,850 1380,700 1450,450 C 1480,320 1400,200 1320,150 C 1200,80 1000,240 800,420 C 600,240 400,80 280,150 C 200,200 120,320 150,450 C 220,700 500,850 800,900 Z;
+                  M 800,900 C 1090,860 1370,710 1440,460 C 1470,330 1390,210 1310,160 C 1190,90 990,250 800,430 C 610,250 410,90 290,160 C 210,210 130,330 160,460 C 230,710 510,860 800,900 Z;
+                  M 800,900 C 1100,850 1380,700 1450,450 C 1480,320 1400,200 1320,150 C 1200,80 1000,240 800,420 C 600,240 400,80 280,150 C 200,200 120,320 150,450 C 220,700 500,850 800,900 Z" />
+      </path>
+    </g>
+
+    <!-- Back Edge Highlights -->
+    <g opacity="0.5" filter="url(#blur-med)">
+      <path d="M 800,420 C 600,240 400,80 280,150" stroke="#FFFFFF" stroke-width="25" fill="none" stroke-linecap="round">
+        <animate attributeName="stroke-width" values="25;28;25" dur="10s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.5;0.6;0.5" dur="8s" repeatCount="indefinite" />
+      </path>
+      <path d="M 800,420 C 1000,240 1200,80 1320,150" stroke="#FFFFFF" stroke-width="25" fill="none" stroke-linecap="round">
+        <animate attributeName="stroke-width" values="25;28;25" dur="10s" repeatCount="indefinite" begin="2s" />
+        <animate attributeName="opacity" values="0.5;0.6;0.5" dur="8s" repeatCount="indefinite" begin="2s" />
+      </path>
+    </g>
+
+    <!-- Main Petal Body (Front) -->
+    <g filter="url(#petal-texture)">
+      <path d="M 800,900 C 1100,850 1380,700 1450,450 C 1480,320 1400,200 1320,150 C 1200,80 1000,240 800,420 C 600,240 400,80 280,150 C 200,200 120,320 150,450 C 220,700 500,850 800,900 Z"
+        fill="url(#petal-grad)" opacity="0.95">
+        <animate attributeName="d" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+          values="M 800,900 C 1100,850 1380,700 1450,450 C 1480,320 1400,200 1320,150 C 1200,80 1000,240 800,420 C 600,240 400,80 280,150 C 200,200 120,320 150,450 C 220,700 500,850 800,900 Z;
+                  M 800,900 C 1090,860 1370,710 1440,460 C 1470,330 1390,210 1310,160 C 1190,90 990,250 800,430 C 610,250 410,90 290,160 C 210,210 130,330 160,460 C 230,710 510,860 800,900 Z;
+                  M 800,900 C 1100,850 1380,700 1450,450 C 1480,320 1400,200 1320,150 C 1200,80 1000,240 800,420 C 600,240 400,80 280,150 C 200,200 120,320 150,450 C 220,700 500,850 800,900 Z" />
+      </path>
+    </g>
+
+    <!-- Soft Inner Pink Veiling -->
+    <ellipse cx="800" cy="500" rx="300" ry="200" fill="#F8C8DC" opacity="0.15" filter="url(#blur-med)">
+      <animate attributeName="rx" values="300;310;300" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="ry" values="200;210;200" dur="14s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.15;0.2;0.15" dur="10s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- Center Blush Intensity -->
+    <ellipse cx="800" cy="650" rx="180" ry="100" fill="#E09AAF" opacity="0.08" filter="url(#blur-soft)">
+      <animate attributeName="opacity" values="0.08;0.12;0.08" dur="16s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- Rim / Edge Highlights -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M 280,150 C 200,200 120,320 150,450 C 160,490 170,520 180,550" stroke="#FFFFFF" stroke-width="12" opacity="0.6" filter="url(#blur-tiny)">
+        <animate attributeName="opacity" values="0.6;0.8;0.6" dur="10s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="12;14;12" dur="12s" repeatCount="indefinite" />
+      </path>
+      <path d="M 1320,150 C 1400,200 1480,320 1450,450 C 1440,490 1430,520 1420,550" stroke="#FFFFFF" stroke-width="12" opacity="0.6" filter="url(#blur-tiny)">
+        <animate attributeName="opacity" values="0.6;0.8;0.6" dur="10s" repeatCount="indefinite" begin="2s" />
+        <animate attributeName="stroke-width" values="12;14;12" dur="12s" repeatCount="indefinite" begin="2s" />
+      </path>
+    </g>
+
+    <!-- Veins (Primary & Secondary) -->
+    <g stroke="#D4A5B8" fill="none" stroke-linecap="round" filter="url(#vein-texture)">
+      <!-- Left Primary Veins -->
+      <use href="#vein-path" transform="translate(-800, 0) scale(-1, 1) translate(800, 0) rotate(12, 800, 900)" stroke-width="2.5" opacity="0.45">
+        <animate attributeName="opacity" values="0.45;0.55;0.45" dur="14s" repeatCount="indefinite" />
+      </use>
+      <use href="#vein-path" transform="translate(-800, 0) scale(-1, 1) translate(800, 0) rotate(28, 800, 900)" stroke-width="1.8" opacity="0.35">
+        <animate attributeName="opacity" values="0.35;0.45;0.35" dur="16s" repeatCount="indefinite" begin="1s" />
+      </use>
+      <use href="#vein-path" transform="translate(-800, 0) scale(-1, 1) translate(800, 0) rotate(45, 800, 900)" stroke-width="1.2" opacity="0.25">
+        <animate attributeName="opacity" values="0.25;0.35;0.25" dur="18s" repeatCount="indefinite" begin="2s" />
+      </use>
+
+      <!-- Right Primary Veins -->
+      <use href="#vein-path" transform="rotate(12, 800, 900)" stroke-width="2.5" opacity="0.45">
+        <animate attributeName="opacity" values="0.45;0.55;0.45" dur="14s" repeatCount="indefinite" begin="3s" />
+      </use>
+      <use href="#vein-path" transform="rotate(28, 800, 900)" stroke-width="1.8" opacity="0.35">
+        <animate attributeName="opacity" values="0.35;0.45;0.35" dur="16s" repeatCount="indefinite" begin="4s" />
+      </use>
+      <use href="#vein-path" transform="rotate(45, 800, 900)" stroke-width="1.2" opacity="0.25">
+        <animate attributeName="opacity" values="0.25;0.35;0.25" dur="18s" repeatCount="indefinite" begin="5s" />
+      </use>
+    </g>
+
+    <!-- Dewdrop Cast Shadow -->
+    <ellipse cx="750" cy="505" rx="18" ry="7" fill="#D4A5B8" opacity="0.3" filter="url(#blur-tiny)">
+      <animate attributeName="cx" values="750;751;752;751;750" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="505;506;507;506;505" dur="8s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="rx" values="18;19;18" dur="6s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- Dewdrop Body -->
+    <g id="dewdrop">
+      <!-- Outer subtle glow -->
+      <circle cx="750" cy="490" r="22" fill="#FFFFFF" opacity="0.15" filter="url(#blur-tiny)">
+        <animate attributeName="opacity" values="0.15;0.25;0.15" dur="6s" repeatCount="indefinite" />
+      </circle>
+      
+      <!-- Main glass sphere -->
+      <circle cx="750" cy="490" r="18" fill="url(#dew-grad)">
+        <animate attributeName="cx" values="750;751;752;751;750" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="cy" values="490;491;492;491;490" dur="8s" repeatCount="indefinite" begin="0.5s" />
+        <animate attributeName="r" values="18;18.5;18" dur="4s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Inner refraction shadow -->
+      <circle cx="750" cy="490" r="18" fill="url(#dew-in-shadow)" opacity="0.8">
+        <animate attributeName="cx" values="750;751;752;751;750" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="cy" values="490;491;492;491;490" dur="8s" repeatCount="indefinite" begin="0.5s" />
+      </circle>
+
+      <!-- Sharp Catchlight (Top Left) -->
+      <ellipse cx="742" cy="482" rx="6" ry="3.5" fill="#FFFFFF" opacity="0.95" transform="rotate(-30, 742, 482)">
+        <animate attributeName="cx" values="742;743;744;743;742" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="cy" values="482;483;484;483;482" dur="8s" repeatCount="indefinite" begin="0.5s" />
+        <animate attributeName="opacity" values="0.95;1;0.95" dur="3s" repeatCount="indefinite" />
+      </ellipse>
+
+      <!-- Secondary Highlight (Bottom Right) -->
+      <path d="M 756,500 A 6,6 0 0,1 764,494" stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7">
+        <animate attributeName="d" values="M 756,500 A 6,6 0 0,1 764,494; M 757,501 A 6,6 0 0,1 765,495; M 756,500 A 6,6 0 0,1 764,494" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.7;0.85;0.7" dur="5s" repeatCount="indefinite" />
+      </path>
+
+      <!-- Environmental Reflections (Upper arc) -->
+      <use href="#dew-reflect" x="746" y="484" opacity="0.6">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 1,1; 0,0" dur="8s" repeatCount="indefinite" />
+      </use>
+      <use href="#dew-reflect" x="754" y="488" rx="10" ry="3" opacity="0.4" transform="rotate(15, 754, 488)">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 1,1; 0,0" dur="8s" repeatCount="indefinite" begin="1s" />
+      </use>
+    </g>
+
+    <!-- Glossy Sheen / Specular Highlight on Petal Surface -->
+    <g fill="none" stroke-linecap="round">
+      <!-- Left sheen -->
+      <path d="M 400,300 C 450,280 500,320 480,380" stroke="#FFFFFF" stroke-width="15" opacity="0.25" filter="url(#blur-soft)">
+        <animate attributeName="opacity" values="0.25;0.4;0.25" dur="12s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="15;18;15" dur="10s" repeatCount="indefinite" />
+      </path>
+      <!-- Right sheen -->
+      <path d="M 1200,300 C 1150,280 1100,320 1120,380" stroke="#FFFFFF" stroke-width="15" opacity="0.25" filter="url(#blur-soft)">
+        <animate attributeName="opacity" values="0.25;0.4;0.25" dur="12s" repeatCount="indefinite" begin="3s" />
+        <animate attributeName="stroke-width" values="15;18;15" dur="10s" repeatCount="indefinite" begin="3s" />
+      </path>
+      <!-- Soft central glow streak -->
+      <path d="M 800,480 Q 850,550 800,650" stroke="#FFFFFF" stroke-width="40" opacity="0.1" filter="url(#blur-med)">
+        <animate attributeName="opacity" values="0.1;0.18;0.1" dur="14s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="40;45;40" dur="12s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    <!-- Subtle Pink Accents (Micro details) -->
+    <g opacity="0.2" filter="url(#blur-tiny)">
+      <circle cx="600" cy="400" r="4" fill="#F8C8DC">
+        <animate attributeName="r" values="4;5;4" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.2;0.3;0.2" dur="10s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1000" cy="380" r="5" fill="#F8C8DC">
+        <animate attributeName="r" values="5;6;5" dur="9s" repeatCount="indefinite" begin="2s" />
+        <animate attributeName="opacity" values="0.2;0.3;0.2" dur="11s" repeatCount="indefinite" begin="2s" />
+      </circle>
+      <circle cx="850" cy="250" r="3" fill="#D4A5B8">
+        <animate attributeName="r" values="3;4;3" dur="7s" repeatCount="indefinite" begin="4s" />
+      </circle>
+    </g>
+  </g>
+
+  <!-- Foreground Soft Bloom Overlay -->
+  <circle cx="300" cy="800" r="400" fill="#FBFAF5" opacity="0.1" filter="url(#blur-atmo)">
+    <animate attributeName="opacity" values="0.1;0.15;0.1" dur="20s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1300" cy="100" r="350" fill="#FBFAF5" opacity="0.1" filter="url(#blur-atmo)">
+    <animate attributeName="opacity" values="0.1;0.15;0.1" dur="18s" repeatCount="indefinite" begin="5s" />
+  </circle>
+
+  <!-- Vignette for Cinematic Depth -->
+  <rect width="1600" height="900" fill="none" stroke="#E8E2DA" stroke-width="300" opacity="0.2" filter="url(#blur-atmo)">
+    <animate attributeName="opacity" values="0.2;0.25;0.2" dur="16s" repeatCount="indefinite" />
+  </rect>
+
+</svg>

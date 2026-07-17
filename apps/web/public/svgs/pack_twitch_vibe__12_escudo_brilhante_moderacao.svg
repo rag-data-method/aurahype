@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#1a0525"/>
+    </linearGradient>
+    
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#7000FF"/>
+      <stop offset="100%" stop-color="#FF0090"/>
+    </linearGradient>
+
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#39FF14"/>
+      <stop offset="100%" stop-color="#FFE600"/>
+    </linearGradient>
+
+    <linearGradient id="grad3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF0055"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="15%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="85%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1"/>
+      <feGaussianBlur stdDeviation="20" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#7000FF" flood-opacity="0.6"/>
+    </filter>
+
+    <g id="hex-core">
+      <polygon points="0,-180 155.88,-90 155.88,90 0,180 -155.88,90 -155.88,-90" fill="none" stroke="url(#grad1)" stroke-width="4"/>
+      <polygon points="0,-150 129.9,-75 129.9,75 0,150 -129.9,75 -129.9,-75" fill="none" stroke="url(#grad2)" stroke-width="3"/>
+      <polygon points="0,-120 103.92,-60 103.92,60 0,120 -103.92,60 -103.92,-60" fill="none" stroke="url(#grad3)" stroke-width="2"/>
+    </g>
+
+    <g id="ray">
+      <polygon points="-3,-300 3,-300 0,-160" fill="#00F0FF" filter="url(#glow-soft)">
+        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite" begin="${Math.random()}s"/>
+      </polygon>
+    </g>
+
+    <g id="confetti">
+      <rect x="-3" y="-3" width="6" height="6" fill="#FF0090">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <g filter="url(#neon)">
+    <circle cx="400" cy="300" r="120" fill="none" stroke="#7000FF" stroke-width="2" stroke-dasharray="10 20">
+      <animate attributeName="r" values="120;260;120" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="300" r="100" fill="none" stroke="#00F0FF" stroke-width="2" stroke-dasharray="15 25">
+      <animate attributeName="r" values="100;240;100" dur="4s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="400" cy="300" r="80" fill="none" stroke="#39FF14" stroke-width="2" stroke-dasharray="20 30">
+      <animate attributeName="r" values="80;220;80" dur="4s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+  </g>
+
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="30 400 300" to="390 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="60 400 300" to="420 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="90 400 300" to="450 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="120 400 300" to="480 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="150 400 300" to="510 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="180 400 300" to="540 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="210 400 300" to="570 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="240 400 300" to="600 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="270 400 300" to="630 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="300 400 300" to="660 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <use href="#ray" x="400" y="300">
+    <animateTransform attributeName="transform" type="rotate" from="330 400 300" to="690 400 300" dur="8s" repeatCount="indefinite"/>
+  </use>
+
+  <use href="#confetti" x="200" y="150">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -50; 0 0" dur="3s" repeatCount="indefinite"/>
+  </use>
+  <use href="#confetti" x="600" y="120" fill="#39FF14">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 60; 0 0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+  </use>
+  <use href="#confetti" x="150" y="450" fill="#00F0FF">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 40 0; 0 0" dur="4s" repeatCount="indefinite" begin="1s"/>
+  </use>
+  <use href="#confetti" x="650" y="480" fill="#FFE600">
+    <animateTransform attributeName="transform" type="translate" values="0 0; -30 0; 0 0" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+  </use>
+
+  <g transform="translate(400, 300)" filter="url(#shadow)">
+    <polygon points="0,-220 190.52,-110 190.52,110 0,220 -190.52,110 -190.52,-110" fill="#11001a" opacity="0.8"/>
+  </g>
+
+  <g transform="translate(400, 300)" filter="url(#neon)">
+    <use href="#hex-core">
+      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="10s" repeatCount="indefinite"/>
+    </use>
+
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#00F0FF" stroke-width="15" stroke-dasharray="10 5">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="0" cy="0" r="65" fill="none" stroke="#39FF14" stroke-width="4" stroke-dasharray="20 10">
+      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#FF0090" stroke-width="2" stroke-dasharray="5 10">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+
+    <g>
+      <polygon points="0,-40 34.64,-20 34.64,20 0,40 -34.64,20 -34.64,-20" fill="url(#grad1)"/>
+      <circle cx="0" cy="0" r="25" fill="none" stroke="#ffffff" stroke-width="3"/>
+      <circle cx="0" cy="0" r="12" fill="#ffffff"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="2s" repeatCount="indefinite"/>
+    </g>
+
+    <g id="orbit">
+      <circle cx="0" cy="0" r="140" fill="none" stroke="url(#grad2)" stroke-width="2" stroke-dasharray="2 8"/>
+      <g>
+        <circle cx="140" cy="0" r="8" fill="#39FF14" filter="url(#glow-soft)"/>
+        <circle cx="140" cy="0" r="3" fill="#ffffff"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="5s" repeatCount="indefinite"/>
+      </g>
+      <g>
+        <circle cx="120" cy="0" r="6" fill="#FF0090" filter="url(#glow-soft)"/>
+        <circle cx="120" cy="0" r="2" fill="#ffffff"/>
+        <animateTransform attributeName="transform" type="rotate" from="120 0 0" to="480 0 0" dur="7s" repeatCount="indefinite"/>
+      </g>
+      <g>
+        <circle cx="160" cy="0" r="10" fill="#00F0FF" filter="url(#glow-soft)"/>
+        <circle cx="160" cy="0" r="4" fill="#ffffff"/>
+        <animateTransform attributeName="transform" type="rotate" from="240 0 0" to="600 0 0" dur="6s" repeatCount="indefinite"/>
+      </g>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="15s" repeatCount="indefinite"/>
+    </g>
+
+    <g id="crosshair">
+      <line x1="-280" y1="0" x2="280" y2="0" stroke="#7000FF" stroke-width="1" stroke-dasharray="600 600">
+        <animate attributeName="stroke-dashoffset" from="600" to="-600" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="-280" x2="0" y2="280" stroke="#7000FF" stroke-width="1" stroke-dasharray="600 600">
+        <animate attributeName="stroke-dashoffset" from="600" to="-600" dur="3s" repeatCount="indefinite"/>
+      </line>
+    </g>
+
+    <g>
+      <polygon points="0,-200 173.2,-100 173.2,100 0,200 -173.2,100 -173.2,-100" fill="none" stroke="url(#metal)" stroke-width="6"/>
+      <polygon points="0,-200 173.2,-100 173.2,100 0,200 -173.2,100 -173.2,-100" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+      
+      <line x1="0" y1="-200" x2="0" y2="200" stroke="url(#metal)" stroke-width="4"/>
+      <line x1="173.2" y1="-100" x2="-173.2" y2="100" stroke="url(#metal)" stroke-width="4"/>
+      <line x1="-173.2" y1="-100" x2="173.2" y2="100" stroke="url(#metal)" stroke-width="4"/>
+
+      <polygon points="0,-150 129.9,-75 129.9,75 0,150 -129.9,75 -129.9,-75" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.7"/>
+      <polygon points="0,-200 173.2,-100 173.2,100 0,200 -173.2,100 -173.2,-100" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="10 20" opacity="0.8">
+        <animate attributeName="stroke-dashoffset" from="30" to="0" dur="1s" repeatCount="indefinite"/>
+      </polygon>
+
+      <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="3s" repeatCount="indefinite"/>
+    </g>
+
+    <g stroke-width="2" fill="none">
+      <path d="M 0 -200 L 86.6 -150 L 86.6 -50 L 0 0 L -86.6 -50 L -86.6 -150 Z" stroke="url(#grad2)" opacity="0.6"/>
+      <path d="M 0 200 L 86.6 150 L 86.6 50 L 0 0 L -86.6 50 L -86.6 150 Z" stroke="url(#grad2)" opacity="0.6"/>
+      <path d="M 173.2 -100 L 86.6 -50 L 86.6 50 L 173.2 100 L 259.8 50 L 259.8 -50 Z" stroke="url(#grad3)" opacity="0.6"/>
+      <path d="M -173.2 -100 L -86.6 -50 L -86.6 50 L -173.2 100 L -259.8 50 L -259.8 -50 Z" stroke="url(#grad3)" opacity="0.6"/>
+      <path d="M 173.2 -100 L 259.8 -50 L 259.8 50 L 173.2 100 L 86.6 50 L 86.6 -50 Z" stroke="url(#grad1)" opacity="0.6"/>
+      <path d="M -173.2 -100 L -259.8 -50 L -259.8 50 L -173.2 100 L -86.6 50 L -86.6 -50 Z" stroke="url(#grad1)" opacity="0.6"/>
+      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="20s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>

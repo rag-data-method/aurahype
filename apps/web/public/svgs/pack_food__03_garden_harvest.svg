@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="blur-mid" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="blur-heavy" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="75"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FBF5DF"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="1"/>
+  
+  <ellipse cx="400" cy="700" rx="350" ry="220" fill="#4A2511" opacity="0.85" filter="url(#blur-heavy)">
+    <animateTransform attributeName="transform" type="translate" values="0,-200;0,0" dur="8s" calcMode="spline" keySplines="0.4 0 0.2 1" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <path d="M800,150 Q1200,50 1400,400 T1300,850 Q950,900 700,650 T800,150" fill="#F4A261" opacity="0.95" filter="url(#blur-mid)">
+    <animateTransform attributeName="transform" type="translate" values="0,-120;0,0" dur="6s" calcMode="spline" keySplines="0.3 0 0.2 1" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="-4;0" dur="6s" additive="sum" repeatCount="indefinite"/>
+  </path>
+  
+  <circle cx="550" cy="550" r="300" fill="#E63946" opacity="1" filter="url(#blur-mid)">
+    <animateTransform attributeName="transform" type="translate" values="0,-100;0,0" dur="5s" calcMode="spline" keySplines="0.4 0 0.3 1" repeatCount="indefinite"/>
+  </circle>
+  
+  <path d="M50,350 Q300,250 550,500 T450,850 Q200,800 50,600 T50,350" fill="#6A994E" opacity="0.9" filter="url(#blur-mid)">
+    <animateTransform attributeName="transform" type="translate" values="0,-150;0,0" dur="7s" calcMode="spline" keySplines="0.5 0 0.2 1" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M480,480 Q600,450 650,550 Q620,650 510,670 Q400,620 420,520 Z" fill="#E63946" opacity="1">
+    <animateTransform attributeName="transform" type="translate" values="0,-80;0,0" dur="4s" calcMode="spline" keySplines="0.4 0 0.2 1" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="6;0" dur="4s" additive="sum" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M950,280 L1000,330 L970,580 L880,540 L920,300 Z" fill="#F4A261" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0,-180;0,0" dur="6s" calcMode="spline" keySplines="0.3 0 0.3 1" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="10;0" dur="6s" additive="sum" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M150,650 Q220,600 280,660 Q250,740 180,760 Q120,700 150,650" fill="#6A994E" opacity="0.85">
+    <animateTransform attributeName="transform" type="translate" values="0,-60;0,0" dur="5s" calcMode="spline" keySplines="0.4 0 0.2 1" repeatCount="indefinite"/>
+  </path>
+  
+  <ellipse cx="1150" cy="680" rx="140" ry="100" fill="#4A2511" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0,-120;0,0" dur="7s" calcMode="spline" keySplines="0.5 0 0.2 1" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <circle cx="1350" cy="720" r="70" fill="#F4A261" opacity="0.95">
+    <animateTransform attributeName="transform" type="translate" values="0,-90;0,0" dur="5s" calcMode="spline" keySplines="0.4 0 0.2 1" repeatCount="indefinite"/>
+  </circle>
+  
+  <path d="M750,780 L810,740 L870,790 L840,850 L770,830 Z" fill="#E63946" opacity="0.95">
+    <animateTransform attributeName="transform" type="rotate" values="-12;0" dur="6s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,-70;0,0" dur="6s" additive="sum" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M1450,480 Q1500,460 1540,510 Q1520,580 1470,570 Q1430,520 1450,480" fill="#6A994E" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,-130;0,0" dur="8s" calcMode="spline" keySplines="0.3 0 0.1 1" repeatCount="indefinite"/>
+  </path>
+  
+  <ellipse cx="650" cy="880" rx="250" ry="50" fill="#4A2511" opacity="0.75" filter="url(#blur-mid)">
+    <animate attributeName="opacity" values="0.75;0.9;0.75" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+</svg>

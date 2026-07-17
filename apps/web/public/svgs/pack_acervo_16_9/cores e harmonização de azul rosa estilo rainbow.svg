@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#FAFAFC" />
+      <stop offset="100%" stop-color="#E8E8EE" />
+    </radialGradient>
+
+    <!-- Iridescent Ribbon Gradient (Animated Stops) -->
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF6F3C">
+        <animate attributeName="stop-color" values="#FF6F3C;#E54B5A;#FF6F3C" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="20%" stop-color="#E54B5A">
+        <animate attributeName="stop-color" values="#E54B5A;#E54B9C;#E54B5A" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="40%" stop-color="#E54B9C">
+        <animate attributeName="stop-color" values="#E54B9C;#6B4FBB;#E54B9C" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="60%" stop-color="#6B4FBB">
+        <animate attributeName="stop-color" values="#6B4FBB;#4DA8DA;#6B4FBB" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="80%" stop-color="#4DA8DA">
+        <animate attributeName="stop-color" values="#4DA8DA;#E54B5A;#4DA8DA" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#FF6F3C">
+        <animate attributeName="stop-color" values="#FF6F3C;#6B4FBB;#FF6F3C" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 800 450" to="360 800 450" dur="20s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow120" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="120" />
+    </filter>
+    <filter id="glow90" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="90" />
+    </filter>
+    <filter id="glow60" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60" />
+    </filter>
+    <filter id="glow30" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30" />
+    </filter>
+
+    <!-- Soft Shadow for Depth -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="25" stdDeviation="40" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg)" />
+
+  <!-- ========================================== -->
+  <!-- GLOW HALOS (Bottom-most layers)            -->
+  <!-- ========================================== -->
+  
+  <!-- Massive Ambient Glow -->
+  <path fill="#E54B9C" filter="url(#glow120)" opacity="0.4">
+    <animate attributeName="d" values="M -200,300 Q 400,-100 900,200 T 1800,100; M -200,350 Q 450,-50 950,250 T 1800,150; M -200,300 Q 400,-100 900,200 T 1800,100" dur="15s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4;0.5;0.4" dur="8s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Deep Purple Glow -->
+  <path fill="#6B4FBB" filter="url(#glow90)" opacity="0.5">
+    <animate attributeName="d" values="M -100,450 C 300,100 700,800 1200,400 S 1700,600 1800,300; M -100,500 C 350,150 750,850 1250,450 S 1700,650 1800,350; M -100,450 C 300,100 700,800 1200,400 S 1700,600 1800,300" dur="14s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5;0.6;0.5" dur="9s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Warm Orange/Coral Glow -->
+  <path fill="#FF6F3C" filter="url(#glow90)" opacity="0.4">
+    <animate attributeName="d" values="M -100,600 C 400,200 800,900 1300,500 S 1700,100 1800,600; M -100,650 C 450,250 850,950 1350,550 S 1700,150 1800,650; M -100,600 C 400,200 800,900 1300,500 S 1700,100 1800,600" dur="16s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4;0.55;0.4" dur="10s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Teal/Cyan Glow -->
+  <path fill="#4DA8DA" filter="url(#glow60)" opacity="0.5">
+    <animate attributeName="d" values="M -100,750 Q 500,400 1100,700 T 1800,400; M -100,700 Q 550,450 1150,750 T 1800,450; M -100,750 Q 500,400 1100,700 T 1800,400" dur="12s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="7s" repeatCount="indefinite" />
+  </path>
+
+
+  <!-- ========================================== -->
+  <!-- RIBBON LAYER 1 (Back - Faint)              -->
+  <!-- ========================================== -->
+  <g opacity="0.4">
+    <path fill="url(#ribbonGrad)" filter="url(#glow60)">
+      <animate attributeName="d" 
+        values="M -100,100 C 200,400 600,-100 1000,300 S 1600,100 1700,400 L 1700,550 C 1500,800 1000,200 500,600 S -100,400 -100,300 Z;
+                M -100,150 C 250,450 650,-50 1050,350 S 1600,150 1700,450 L 1700,600 C 1500,850 1000,250 500,650 S -100,450 -100,350 Z;
+                M -100,100 C 200,400 600,-100 1000,300 S 1600,100 1700,400 L 1700,550 C 1500,800 1000,200 500,600 S -100,400 -100,300 Z" 
+        dur="15s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- RIBBON LAYER 2 (Mid-Back)                  -->
+  <!-- ========================================== -->
+  <g opacity="0.55">
+    <path fill="url(#ribbonGrad)" filter="url(#glow60)">
+      <animate attributeName="d" 
+        values="M -100,250 C 300,550 700,50 1100,450 S 1600,250 1700,550 L 1700,700 C 1500,950 1000,350 500,750 S -100,550 -100,450 Z;
+                M -100,300 C 350,600 750,100 1150,500 S 1600,300 1700,600 L 1700,750 C 1500,1000 1000,400 500,800 S -100,600 -100,500 Z;
+                M -100,250 C 300,550 700,50 1100,450 S 1600,250 1700,550 L 1700,700 C 1500,950 1000,350 500,750 S -100,550 -100,450 Z" 
+        dur="14s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- RIBBON LAYER 3 (Mid - Main Sweep)          -->
+  <!-- ========================================== -->
+  <g opacity="0.75">
+    <!-- Glow for this layer -->
+    <path fill="url(#ribbonGrad)" filter="url(#glow60)" opacity="0.8">
+      <animate attributeName="d" 
+        values="M -100,400 C 350,700 750,200 1150,600 S 1600,400 1700,700 L 1700,850 C 1500,1100 1000,500 500,900 S -100,700 -100,600 Z;
+                M -100,450 C 400,750 800,250 1200,650 S 1600,450 1700,750 L 1700,900 C 1500,1150 1000,550 500,950 S -100,750 -100,650 Z;
+                M -100,400 C 350,700 750,200 1150,600 S 1600,400 1700,700 L 1700,850 C 1500,1100 1000,500 500,900 S -100,700 -100,600 Z" 
+        dur="13s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Core Ribbon -->
+    <path fill="url(#ribbonGrad)" filter="url(#shadow)">
+      <animate attributeName="d" 
+        values="M -100,400 C 350,700 750,200 1150,600 S 1600,400 1700,700 L 1700,850 C 1500,1100 1000,500 500,900 S -100,700 -100,600 Z;
+                M -100,450 C 400,750 800,250 1200,650 S 1600,450 1700,750 L 1700,900 C 1500,1150 1000,550 500,950 S -100,750 -100,650 Z;
+                M -100,400 C 350,700 750,200 1150,600 S 1600,400 1700,700 L 1700,850 C 1500,1100 1000,500 500,900 S -100,700 -100,600 Z" 
+        dur="13s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- RIBBON LAYER 4 (Mid-Front)                 -->
+  <!-- ========================================== -->
+  <g opacity="0.65">
+    <path fill="url(#ribbonGrad)" filter="url(#glow30)">
+      <animate attributeName="d" 
+        values="M -100,550 C 400,850 800,350 1200,750 S 1600,550 1700,850 L 1700,1000 C 1500,1250 1000,650 500,1050 S -100,850 -100,750 Z;
+                M -100,600 C 450,900 850,400 1250,800 S 1600,600 1700,900 L 1700,1050 C 1500,1300 1000,700 500,1100 S -100,900 -100,800 Z;
+                M -100,550 C 400,850 800,350 1200,750 S 1600,550 1700,850 L 1700,1000 C 1500,1250 1000,650 500,1050 S -100,850 -100,750 Z" 
+        dur="12s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- RIBBON LAYER 5 (Front - Highlight)         -->
+  <!-- ========================================== -->
+  <g opacity="0.85">
+    <!-- Inner Glow -->
+    <path fill="url(#ribbonGrad)" filter="url(#glow30)" opacity="0.9">
+      <animate attributeName="d" 
+        values="M -100,700 C 450,1000 850,500 1250,900 S 1600,700 1700,1000 L 1700,1150 C 1500,1400 1000,800 500,1200 S -100,1000 -100,900 Z;
+                M -100,750 C 500,1050 900,550 1300,950 S 1600,750 1700,1050 L 1700,1200 C 1500,1450 1000,850 500,1250 S -100,1050 -100,950 Z;
+                M -100,700 C 450,1000 850,500 1250,900 S 1600,700 1700,1000 L 1700,1150 C 1500,1400 1000,800 500,1200 S -100,1000 -100,900 Z" 
+        dur="11s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Main Front Ribbon -->
+    <path fill="url(#ribbonGrad)" filter="url(#shadow)">
+      <animate attributeName="d" 
+        values="M -100,700 C 450,1000 850,500 1250,900 S 1600,700 1700,1000 L 1700,1150 C 1500,1400 1000,800 500,1200 S -100,1000 -100,900 Z;
+                M -100,750 C 500,1050 900,550 1300,950 S 1600,750 1700,1050 L 1700,1200 C 1500,1450 1000,850 500,1250 S -100,1050 -100,950 Z;
+                M -100,700 C 450,1000 850,500 1250,900 S 1600,700 1700,1000 L 1700,1150 C 1500,1400 1000,800 500,1200 S -100,1000 -100,900 Z" 
+        dur="11s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- ACCENT LAYERS (Fine details & Highlights)  -->
+  <!-- ========================================== -->
+
+  <!-- Thin Highlight Strand 1 -->
+  <path fill="none" stroke="url(#ribbonGrad)" stroke-width="12" opacity="0.6" filter="url(#glow30)">
+    <animate attributeName="d" 
+      values="M -50,200 Q 400,500 800,100 T 1650,300;
+              M -50,250 Q 450,550 850,150 T 1650,350;
+              M -50,200 Q 400,500 800,100 T 1650,300" 
+      dur="10s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="5s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Thin Highlight Strand 2 -->
+  <path fill="none" stroke="url(#ribbonGrad)" stroke-width="8" opacity="0.5" filter="url(#glow30)">
+    <animate attributeName="d" 
+      values="M -50,850 Q 500,550 900,950 T 1650,750;
+              M -50,800 Q 550,500 950,900 T 1650,700;
+              M -50,850 Q 500,550 900,950 T 1650,750" 
+      dur="11s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="6s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Floating Particle/Dot 1 -->
+  <circle r="15" fill="#FFFFFF" filter="url(#glow30)" opacity="0.8">
+    <animate attributeName="cx" values="200; 1400; 200" dur="20s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="100; 800; 100" dur="20s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="4s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Floating Particle/Dot 2 -->
+  <circle r="25" fill="#FF6F3C" filter="url(#glow60)" opacity="0.6">
+    <animate attributeName="cx" values="1400; 200; 1400" dur="22s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="800; 150; 800" dur="22s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="5s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Floating Particle/Dot 3 -->
+  <circle r="10" fill="#4DA8DA" filter="url(#glow30)" opacity="0.9">
+    <animate attributeName="cx" values="800; 1200; 400; 800" dur="18s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="200; 600; 700; 200" dur="18s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="3s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Floating Particle/Dot 4 -->
+  <circle r="20" fill="#E54B9C" filter="url(#glow60)" opacity="0.5">
+    <animate attributeName="cx" values="100; 1500; 100" dur="25s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="700; 200; 700" dur="25s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5;0;0.5" dur="7s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Subtle Vignette for edges -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+    <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0" />
+    <stop offset="100%" stop-color="#FAFAFC" stop-opacity="0.8" />
+  </radialGradient>
+  <rect width="100%" height="100%" fill="url(#vignette)" style="pointer-events: none;" />
+
+</svg>

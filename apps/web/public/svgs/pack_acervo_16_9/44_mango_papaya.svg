@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#FFE5CC"/>
+<stop offset="50%" stop-color="#FFAB40"/>
+<stop offset="100%" stop-color="#FFD54F"/>
+</linearGradient>
+<radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0%" stop-color="#FFF8E1"/>
+<stop offset="100%" stop-color="#FFD54F" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="mango" cx="0.35" cy="0.35" r="0.85">
+<stop offset="0%" stop-color="#FFF176"/>
+<stop offset="55%" stop-color="#FF9800"/>
+<stop offset="100%" stop-color="#E65100"/>
+</radialGradient>
+<radialGradient id="papaya" cx="0.5" cy="0.5" r="0.55">
+<stop offset="0%" stop-color="#FF8A65"/>
+<stop offset="100%" stop-color="#D84315"/>
+</radialGradient>
+<radialGradient id="peach" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0%" stop-color="#FFE0B2"/>
+<stop offset="100%" stop-color="#FF8A65"/>
+</radialGradient>
+<linearGradient id="wave" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#FFCC80" stop-opacity="0.5"/>
+<stop offset="100%" stop-color="#FF7043" stop-opacity="0.85"/>
+</linearGradient>
+</defs>
+
+<rect width="1600" height="900" fill="url(#sky)"/>
+
+<circle cx="1250" cy="160" r="320" fill="url(#sun)" opacity="0.7">
+<animate attributeName="r" values="320;360;320" dur="9s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.7;0.95;0.7" dur="9s" repeatCount="indefinite"/>
+</circle>
+
+<g transform="translate(350,520) rotate(-15)">
+<path d="M-180,60 Q0,-260 180,60 Q0,140 -180,60 Z" fill="url(#mango)" opacity="0.95">
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="55s" repeatCount="indefinite"/>
+</path>
+<path d="M-110,50 Q0,-140 110,50 Q0,90 -110,50 Z" fill="#FFF9C4" opacity="0.3"/>
+</g>
+
+<g transform="translate(1080,500) rotate(10)">
+<ellipse rx="270" ry="190" fill="url(#papaya)" opacity="0.95">
+<animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="65s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse rx="190" ry="130" fill="#FFCCBC" opacity="0.25"/>
+<g fill="#3E2723" opacity="0.35">
+<circle cx="-70" cy="-40" r="9"/>
+<circle cx="10" cy="-70" r="9"/>
+<circle cx="90" cy="-30" r="9"/>
+<circle cx="-40" cy="60" r="9"/>
+<circle cx="60" cy="55" r="9"/>
+</g>
+</g>
+
+<g transform="translate(720,260)">
+<circle r="170" fill="url(#peach)" opacity="0.85">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,25; 0,0" dur="11s" repeatCount="indefinite"/>
+</circle>
+<circle r="110" fill="#FFFFFF" opacity="0.2"/>
+</g>
+
+<path d="M-200,860 Q300,740 800,860 T1800,860 V900 H-200 Z" fill="url(#wave)">
+<animateTransform attributeName="transform" type="translate" values="0,0; -90,0; 0,0" dur="14s" repeatCount="indefinite"/>
+</path>
+<path d="M-200,890 Q350,820 850,890 T1850,890 V900 H-200 Z" fill="#FF8A65" opacity="0.45">
+<animateTransform attributeName="transform" type="translate" values="0,0; 70,0; 0,0" dur="11s" repeatCount="indefinite"/>
+</path>
+
+<g fill="#FFF" opacity="0.45">
+<circle cx="220" cy="950" r="20">
+<animateTransform attributeName="transform" type="translate" values="0,0; 20,-1100" dur="13s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.6;0" dur="13s" repeatCount="indefinite"/>
+</circle>
+<circle cx="520" cy="1000" r="14">
+<animateTransform attributeName="transform" type="translate" values="0,0; -30,-1200" dur="16s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.5;0" dur="16s" repeatCount="indefinite"/>
+</circle>
+<circle cx="1120" cy="980" r="24">
+<animateTransform attributeName="transform" type="translate" values="0,0; 50,-1150" dur="18s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.55;0" dur="18s" repeatCount="indefinite"/>
+</circle>
+<circle cx="1420" cy="1020" r="16">
+<animateTransform attributeName="transform" type="translate" values="0,0; -20,-1250" dur="15s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.5;0" dur="15s" repeatCount="indefinite"/>
+</circle>
+</g>
+</svg>

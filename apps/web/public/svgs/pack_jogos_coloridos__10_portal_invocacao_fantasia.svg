@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGrad" cx="75%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#FFD65C"/>
+      <stop offset="35%" stop-color="#FF65C3"/>
+      <stop offset="70%" stop-color="#B565FF"/>
+      <stop offset="100%" stop-color="#1A0B2E"/>
+    </radialGradient>
+    <linearGradient id="goldPurple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFD65C"/>
+      <stop offset="50%" stop-color="#FF65C3">
+        <animate attributeName="stop-color" values="#FF65C3;#00E5FF;#FF65C3" dur="2.5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#B565FF"/>
+    </linearGradient>
+    <linearGradient id="cyanBlast" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#1A0B2E" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD65C"/>
+      <stop offset="100%" stop-color="#FF65C3" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="brightGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <g id="star">
+      <path d="M0,0 l4,-12 l4,12 l-12,-4 l12,-4 z" fill="#FFD65C"/>
+    </g>
+    <g id="tri">
+      <polygon points="0,-8 7,6 -7,6" fill="#00E5FF"/>
+    </g>
+    <g id="hex">
+      <polygon points="0,-6 5,-3 5,3 0,6 -5,3 -5,-3" fill="#FF65C3"/>
+    </g>
+    <pattern id="checkers" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="30" height="30" fill="#FF65C3" opacity="0.4"/>
+      <rect x="30" y="30" width="30" height="30" fill="#00E5FF" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#1A0B2E"/>
+  <radialGradient id="bgPulse">
+    <stop offset="0%" stop-color="#FFD65C">
+      <animate attributeName="stop-color" values="#FFD65C;#00E5FF;#FFD65C" dur="3s" repeatCount="indefinite"/>
+    </stop>
+    <stop offset="60%" stop-color="#FF65C3"/>
+    <stop offset="100%" stop-color="#1A0B2E"/>
+  </radialGradient>
+  <rect width="100%" height="100%" fill="url(#bgPulse)"/>
+  <g>
+    <polygon points="800,450 1600,0 1600,900" fill="#1A0B2E" opacity="0.2"/>
+    <polygon points="800,450 0,0 0,900" fill="#B565FF" opacity="0.15"/>
+  </g>
+  <g>
+    <polygon points="800,450 1600,-200 1600,200" fill="#FF65C3" opacity="0.3">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="12s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,450 1600,200 1600,600" fill="#FFD65C" opacity="0.3">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="12s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,450 1600,600 1600,1000" fill="#00E5FF" opacity="0.3">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="12s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,450 1600,1000 1600,1400" fill="#B565FF" opacity="0.3">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="12s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,450 -200,0 200,0" fill="#FF65C3" opacity="0.2">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="12s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+  <circle cx="1100" cy="350" r="450" fill="url(#glowGrad)" opacity="0.6" filter="url(#glow)">
+    <animate attributeName="r" values="450;480;450" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="350" r="350" fill="none" stroke="url(#goldPurple)" stroke-width="4" opacity="0.8">
+    <animateTransform attributeName="transform" type="rotate" from="0 1100 350" to="360 1100 350" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="350" r="300" fill="none" stroke="#FF65C3" stroke-width="6" stroke-dasharray="20 15 40 15" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate" from="360 1100 350" to="0 1100 350" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="350" r="250" fill="none" stroke="#00E5FF" stroke-width="8" stroke-dasharray="50 30" opacity="0.7">
+    <animateTransform attributeName="transform" type="rotate" from="0 1100 350" to="360 1100 350" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="350" r="200" fill="none" stroke="#FFD65C" stroke-width="10" opacity="0.6">
+    <animateTransform attributeName="transform" type="rotate" from="360 1100 350" to="0 1100 350" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="350" r="150" fill="none" stroke="#B565FF" stroke-width="4" stroke-dasharray="10 20 5 20" opacity="0.8">
+    <animateTransform attributeName="transform" type="rotate" from="0 1100 350" to="360 1100 350" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="350" r="100" fill="none" stroke="#00E5FF" stroke-width="12" opacity="0.5">
+    <animate attributeName="stroke-width" values="12;16;12" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <polygon points="1100,350 1300,150 900,150" fill="#FFD65C" opacity="0.15">
+    <animateTransform attributeName="transform" type="rotate" from="0 1100 350" to="360 1100 350" dur="20s" repeatCount="indefinite"/>
+  </polygon>
+  <polygon points="1100,350 1300,550 900,550" fill="#FF65C3" opacity="0.15">
+    <animateTransform attributeName="transform" type="rotate" from="360 1100 350" to="0 1100 350" dur="15s" repeatCount="indefinite"/>
+  </polygon>
+  <circle cx="1100" cy="350" r="380" fill="none" stroke="#FF65C3" stroke-width="2" opacity="0.3">
+    <animateTransform attributeName="transform" type="rotate" from="0 1100 350" to="360 1100 350" dur="14s" repeatCount="indefinite"/>
+  </circle>
+  <path d="M1100,350 L600,800" stroke="#FFD65C" stroke-width="4" opacity="0.6" filter="url(#glow)">
+    <animate attributeName="stroke-width" values="4;8;4" dur="0.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="0.8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M1100,350 L550,750" stroke="#FF65C3" stroke-width="3" stroke-dasharray="15 10" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" values="0;25" dur="0.5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M1100,350 L650,850" stroke="#00E5FF" stroke-width="5" opacity="0.4" filter="url(#glow)">
+    <animate attributeName="stroke-width" values="5;10;5" dur="1s" repeatCount="indefinite"/>
+  </path>
+  <g>
+    <use href="#star" x="300" y="100" transform="scale(2)" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 300 100" to="360 300 100" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#star" x="500" y="250" transform="scale(1.5)" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="360 500 250" to="0 500 250" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="0.9s" repeatCount="indefinite"/>
+    </use>
+    <use href="#star" x="150" y="400" transform="scale(2.5)" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="0 150 400" to="360 150 400" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#star" x="400" y="50" transform="scale(1.8)" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="0.7s" repeatCount="indefinite"/>
+    </use>
+    <use href="#tri" x="350" y="180" transform="scale(2)" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="0 350 180" to="360 350 180" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <use href="#hex" x="250" y="300" transform="scale(1.5)" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="360 250 300" to="0 250 300" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#tri" x="450" y="350" transform="scale(2.2)" opacity="0.4">
+      <animateTransform attributeName="transform" type="rotate" from="0 450 350" to="-360 450 350" dur="2.5s" repeatCount="indefinite"/>
+    </use>
+    <use href="#star" x="100" y="600" transform="scale(3)" opacity="0.3" fill="#00E5FF">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#checkers)" opacity="0.4"/>
+  <g transform="translate(0, 20)">
+    <animateTransform attributeName="transform" type="translate" values="0,20;0,-10;0,20" dur="1.5s" repeatCount="indefinite"/>
+    <path d="M 250 800 L 240 600 L 230 550 L 240 600 Z" fill="#1A0B2E" stroke="#FFD65C" stroke-width="4" filter="url(#glow)"/>
+    <circle cx="230" cy="550" r="15" fill="#FFD65C" filter="url(#glow)">
+      <animate attributeName="r" values="15;25;15" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M 150 850 L 150 650 Q 130 600 100 620 Q 120 580 160 580 Q 200 580 220 620 Q 190 600 170 650 L 170 850 Z" fill="#1A0B2E"/>
+    <circle cx="210" cy="600" r="35" fill="#1A0B2E"/>
+    <path d="M 175 580 L 225 580 L 210 620 L 190 620 Z" fill="#1A0B2E"/>
+    <path d="M 140 650 Q 110 640 90 660 Q 100 640 120 630 Q 140 620 150 640 Z" fill="#1A0B2E"/>
+    <path d="M 180 650 Q 210 640 230 660 Q 220 640 200 630 Q 180 620 170 640 Z" fill="#1A0B2E"/>
+    <path d="M 150 850 Q 120 860 100 850 L 100 830 Q 120 840 150 830 Z" fill="#1A0B2E"/>
+    <path d="M 170 850 Q 200 860 220 850 L 220 830 Q 200 840 170 830 Z" fill="#1A0B2E"/>
+  </g>
+  <g>
+    <circle cx="150" cy="150" r="5" fill="#FFD65C">
+      <animate attributeName="cx" values="150;-100" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="150;300" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="80" r="4" fill="#FF65C3">
+      <animate attributeName="cx" values="300;-50" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="80;220" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="200" r="6" fill="#00E5FF">
+      <animate attributeName="cx" values="450;100" dur="3s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="200;400" dur="3s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="400" r="5" fill="#FFD65C">
+      <animate attributeName="cx" values="200;-100" dur="2.2s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="400;600" dur="2.2s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.2s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="500" r="4" fill="#FF65C3">
+      <animate attributeName="cx" values="400;50" dur="2.8s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="500;700" dur="2.8s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.8s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="250" r="6" fill="#00E5FF">
+      <animate attributeName="cx" values="100;-100" dur="2.5s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="250;450" dur="2.5s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.5s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="350" r="5" fill="#FFD65C">
+      <animate attributeName="cx" values="500;150" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;550" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="350" y="120" width="8" height="8" fill="#FF65C3" transform="rotate(45 350 120)">
+      <animate attributeName="x" values="350;0" dur="2.4s" begin="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="120;320" dur="2.4s" begin="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.4s" begin="0.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="45 350 120" to="405 350 120" dur="2.4s" begin="0.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="250" y="450" width="6" height="6" fill="#00E5FF" transform="rotate(15 250 450)">
+      <animate attributeName="x" values="250;-50" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="450;650" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" from="15 250 450" to="375 250 450" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="180" y="200" width="5" height="5" fill="#FFD65C" transform="rotate(30 180 200)">
+      <animate attributeName="x" values="180;-100" dur="2.7s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="200;400" dur="2.7s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.7s" begin="0.9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g opacity="0.7">
+    <polygon points="850,0 870,0 860,40" fill="#00E5FF">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="2.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="950,0 970,0 960,40" fill="#FFD65C">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1050,0 1070,0 1060,40" fill="#FF65C3">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="750,0 770,0 760,40" fill="#B565FF">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="3.5s" begin="0.2s" repeatCount="indefinite"/>
+    </polygon>
+    <circle cx="900" cy="0" r="6" fill="#FFD65C">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="2.2s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="0" r="5" fill="#00E5FF">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="2.8s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="0" r="7" fill="#FF65C3">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="3.2s" begin="0.1s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="880" y="0" width="8" height="8" fill="#00E5FF" transform="rotate(45 880 0)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="980" y="0" width="6" height="6" fill="#FFD65C" transform="rotate(45 980 0)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="2.6s" begin="1.1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1080" y="0" width="10" height="10" fill="#FF65C3" transform="rotate(45 1080 0)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,900" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g opacity="0.8">
+    <circle cx="1100" cy="350" r="4" fill="#FFD65C">
+      <animate attributeName="cx" values="1100;950" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;600" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="4;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="350" r="5" fill="#FF65C3">
+      <animate attributeName="cx" values="1100;800" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;700" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="5;1" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="350" r="4" fill="#00E5FF">
+      <animate attributeName="cx" values="1100;1050" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;650" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="4;1" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="350" r="6" fill="#B565FF">
+      <animate attributeName="cx" values="1100;700" dur="2.2s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;800" dur="2.2s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.2s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="6;1" dur="2.2s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="350" r="5" fill="#FFD65C">
+      <animate attributeName="cx" values="1100;1200" dur="1.6s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;750" dur="1.6s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="1.6s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="5;1" dur="1.6s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="350" r="4" fill="#00E5FF">
+      <animate attributeName="cx" values="1100;850" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;550" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="4;1" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g opacity="0.5">
+    <polygon points="1600,200 1550,250 1600,300" fill="#FF65C3">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-1600,0" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1600,500 1520,550 1600,600" fill="#FFD65C">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-1600,0" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1600,800 1550,850 1600,900" fill="#00E5FF">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-1600,0" dur="3.5s" begin="1s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+</svg>

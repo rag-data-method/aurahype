@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#F7F4F0"/>
+  
+  <g id="bg-elements">
+    <line x1="60" y1="0" x2="60" y2="600" stroke="#111" stroke-width="28" stroke-dasharray="50 70"/>
+    <line x1="740" y1="0" x2="740" y2="600" stroke="#111" stroke-width="28" stroke-dasharray="50 70"/>
+    <circle cx="60" cy="520" r="12" fill="#F7F4F0" stroke="#111" stroke-width="8"/>
+    <circle cx="740" cy="520" r="12" fill="#111" stroke="none"/>
+  </g>
+
+  <g id="halftone-bg">
+    <circle cx="400" cy="300" r="200" fill="url(#halftone)" opacity="0.8"/>
+    <defs>
+      <pattern id="halftone" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+        <circle cx="6" cy="6" r="3.5" fill="#E6A500"/>
+      </pattern>
+    </defs>
+  </g>
+
+  <g id="main-star" stroke="#111" stroke-linejoin="bevel">
+    <g id="piece-center" fill="#F7F4F0" stroke-width="14">
+      <polygon points="400,250 420,300 400,350 380,300"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 90" dur="3s" begin="0.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; 0 90; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="45 400 300" dur="3s" begin="0.8s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 400 300; 45 400 300; 0 400 300" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-top" fill="#E6A500" stroke-width="14">
+      <polygon points="400,130 415,240 385,240"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 -150" dur="3s" begin="0.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; 0 -150; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 400 185" to="-60 400 185" dur="3s" begin="0.2s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 400 185; -60 400 185; 0 400 185" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-upr" fill="#F7F4F0" stroke-width="14">
+      <polygon points="400,130 480,210 420,240 415,240"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="140 -90" dur="3s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; 140 -90; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 400 185" to="80 400 185" dur="3s" begin="0.3s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 400 185; 80 400 185; 0 400 185" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-r1" fill="#111" stroke="#111" stroke-width="14">
+      <polygon points="480,210 530,360 420,300 420,240"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="180 60" dur="3s" begin="0.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; 180 60; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 475 285" to="75 475 285" dur="3s" begin="0.5s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 475 285; 75 475 285; 0 475 285" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-r2" fill="#E6A500" stroke-width="14">
+      <polygon points="530,360 620,300 480,420 420,300"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="200 140" dur="3s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; 200 140; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 520 360" to="110 520 360" dur="3s" begin="0.6s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 520 360; 110 520 360; 0 520 360" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-lwr" fill="#111" stroke="#111" stroke-width="14">
+      <polygon points="530,360 400,420 480,420"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="120 180" dur="3s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; 120 180; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 465 390" to="-90 465 390" dur="3s" begin="0.9s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 465 390; -90 465 390; 0 465 390" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-btm" fill="#F7F4F0" stroke-width="14">
+      <polygon points="400,420 420,300 380,300"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 200" dur="3s" begin="0.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; 0 200; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 400 360" to="-45 400 360" dur="3s" begin="0.7s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 400 360; -45 400 360; 0 400 360" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-lwl" fill="#E6A500" stroke-width="14">
+      <polygon points="400,420 380,300 320,420 270,360"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-100 180" dur="3s" begin="0.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; -100 180; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 335 390" to="-60 335 390" dur="3s" begin="0.8s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 335 390; -60 335 390; 0 335 390" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-l1" fill="#111" stroke="#111" stroke-width="14">
+      <polygon points="270,360 320,420 380,300 380,240 320,210"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-180 80" dur="3s" begin="0.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; -180 80; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 325 315" to="-70 325 315" dur="3s" begin="0.4s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 325 315; -70 325 315; 0 325 315" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-upl" fill="#F7F4F0" stroke-width="14">
+      <polygon points="320,210 380,240 385,240 400,130"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-130 -90" dur="3s" begin="0.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.7 0 1 1" values="0 0; -130 -90; 0 0" keyTimes="0; 0.5; 1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 360 185" to="-80 360 185" dur="3s" begin="0.1s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="0 360 185; -80 360 185; 0 360 185" keyTimes="0; 0.5; 1"/>
+    </g>
+
+    <g id="piece-center-block" fill="#E6A500" stroke-width="14">
+      <polygon points="380,240 420,240 420,300 380,300"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 0" dur="3s" begin="0s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" from="1 1" to="0 0" dur="3s" begin="0s" repeatCount="indefinite" additive="sum" calcMode="spline" keySplines="0.7 0 1 1" values="1 1; 0 0; 1 1" keyTimes="0; 0.5; 1"/>
+    </g>
+    
+    <g id="glitch-pieces">
+      <polygon points="380,240 420,240 420,300 380,300" fill="none" stroke="#111" stroke-width="0">
+        <animate attributeName="points" values="380,240 420,240 420,300 380,300; 360,220 440,220 440,320 360,320; 380,240 420,240 420,300 380,300" dur="0.2s" begin="2s" repeatCount="indefinite" calcMode="discrete"/>
+      </polygon>
+    </g>
+  </g>
+
+  <g id="side-graphics">
+    <g id="left-gear">
+      <polygon points="60,300 100,280 120,320 100,360 60,340 20,320" fill="#E6A500" stroke="#111" stroke-width="14"/>
+      <circle cx="70" cy="320" r="6" fill="#111"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 60 320" to="360 60 320" dur="4s" repeatCount="indefinite"/>
+    </g>
+
+    <g id="right-bolt">
+      <polygon points="740,280 780,300 740,320 700,300" fill="#111" stroke="#111" stroke-width="14"/>
+      <polygon points="720,260 760,260 760,340 720,340" fill="none" stroke="#111" stroke-width="14"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 740 300" to="-180 740 300" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </g>
+  </g>
+
+  <g id="typo-block" fill="#111">
+    <rect x="265" y="535" width="270" height="28" fill="#E6A500"/>
+    <circle cx="270" cy="549" r="4" fill="#F7F4F0"/>
+    <circle cx="530" cy="549" r="4" fill="#111"/>
+    <polygon points="150,545 180,545 175,560 145,560" fill="#111"/>
+    <polygon points="620,545 650,545 645,560 615,560" fill="#111"/>
+    <g stroke="#111" stroke-width="6" stroke-linecap="square">
+      <line x1="190" y1="550" x2="260" y2="550"/>
+      <line x1="540" y1="550" x2="610" y2="550"/>
+      <line x1="190" y1="545" x2="190" y2="555"/>
+      <line x1="610" y1="545" x2="610" y2="555"/>
+      <line x1="250" y1="545" x2="250" y2="555"/>
+      <line x1="550" y1="545" x2="550" y2="555"/>
+    </g>
+  </g>
+
+  <g id="vignette" pointer-events="none">
+    <rect x="0" y="0" width="800" height="30" fill="#111"/>
+    <rect x="0" y="570" width="800" height="30" fill="#111"/>
+    <rect x="0" y="0" width="30" height="600" fill="#111"/>
+    <rect x="770" y="0" width="30" height="600" fill="#111"/>
+  </g>
+</svg>

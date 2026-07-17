@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" style="background-color:#1A0810">
+  <defs>
+    <!-- Deep atmospheric blur -->
+    <filter id="f60" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="60" />
+    </filter>
+    <filter id="f80" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="80" />
+    </filter>
+    <filter id="f120" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="120" />
+    </filter>
+    <filter id="f160" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="160" />
+    </filter>
+
+    <!-- Gradients -->
+    <radialGradient id="skyGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#5C0F1E">
+        <animate attributeName="stop-color" values="#5C0F1E;#8B0F23;#C97864;#8B0F23;#5C0F1E" dur="28s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="60%" stop-color="#1A0810">
+        <animate attributeName="stop-color" values="#1A0810;#5C0F1E;#1A0810" dur="28s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#1A0810" />
+    </radialGradient>
+
+    <radialGradient id="glowBack" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5C97A" stop-opacity="0.7">
+        <animate attributeName="stop-opacity" values="0.7;0.85;0.6;0.7" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#8B0F23" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="candleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5C97A" stop-opacity="0.9">
+        <animate attributeName="stop-opacity" values="0.9;0.6;0.9" dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="40%" stop-color="#C97864" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#1A0810" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="wineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B0F23">
+        <animate attributeName="stop-color" values="#8B0F23;#C97864;#8B0F23" dur="18s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#5C0F1E" />
+    </linearGradient>
+
+    <linearGradient id="wineGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C0F1E" />
+      <stop offset="100%" stop-color="#1A0810" />
+    </linearGradient>
+
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5C97A" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#C97864" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#1A0810" stop-opacity="0.4" />
+    </linearGradient>
+
+    <radialGradient id="highlightGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5C97A" stop-opacity="0.8">
+        <animate attributeName="stop-opacity" values="0.8;0.4;0.8" dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#F5C97A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- 1. Background Canvas -->
+  <rect width="1600" height="900" fill="#1A0810" />
+  
+  <!-- 2. Wide Atmospheric Glow -->
+  <circle cx="350" cy="450" r="500" fill="url(#skyGrad)" filter="url(#f160)" opacity="0.6">
+    <animate attributeName="r" values="500;520;500" dur="24s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;0.7;0.6" dur="24s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 3. Deep Atmosphere Haze -->
+  <circle cx="350" cy="450" r="350" fill="#5C0F1E" filter="url(#f120)" opacity="0.5">
+    <animate attributeName="r" values="350;380;350" dur="22s" repeatCount="indefinite" />
+    <animate attributeName="cx" values="350;330;350" dur="24s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 4. Main Candle Glow Source (Left Negative Space) -->
+  <circle cx="250" cy="400" r="200" fill="url(#glowBack)" filter="url(#f80)">
+    <animate attributeName="r" values="200;220;200" dur="14s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0.85;1" dur="14s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 5. Broad Table Surface -->
+  <path d="M0,800 C400,780 1000,780 1600,800 L1600,900 L0,900 Z" fill="#1A0810">
+    <animate attributeName="d" values="M0,800 C400,780 1000,780 1600,800 L1600,900 L0,900 Z;M0,805 C400,785 1000,785 1600,805 L1600,900 L0,900 Z;M0,800 C400,780 1000,780 1600,800 L1600,900 L0,900 Z" dur="18s" repeatCount="indefinite" />
+  </path>
+
+  <!-- 6. Table Edge Reflection -->
+  <path d="M0,800 C400,780 1000,780 1600,800 L1600,820 L0,820 Z" fill="#5C0F1E" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.4;0.3" dur="16s" repeatCount="indefinite" />
+  </path>
+
+  <!-- 7. Soft Warm Haze Pool on Table -->
+  <ellipse cx="300" cy="850" rx="500" ry="80" fill="#C97864" filter="url(#f120)" opacity="0.2">
+    <animate attributeName="rx" values="500;520;500" dur="20s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.2;0.3;0.2" dur="20s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- 8. Deep Shadow under Glass -->
+  <ellipse cx="1050" cy="865" rx="100" ry="18" fill="#1A0810" opacity="0.9" filter="url(#f60)">
+    <animate attributeName="rx" values="100;105;100" dur="12s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- ========================================== -->
+  <!-- GLASS GROUP (Right Third, Off-Center)      -->
+  <!-- ========================================== -->
+  <g id="glass" transform="translate(1050, 0)">
+    <animateTransform attributeName="transform" type="translate" values="1050,0;1050,2;1050,0" dur="9s" repeatCount="indefinite" />
+
+    <!-- 9. Glass Base -->
+    <path d="M-35,850 Q0,880 35,850 Q0,860 -35,850 Z" fill="url(#glassGrad)" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.7;0.6" dur="18s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 10. Glass Stem -->
+    <path d="M-6,850 L-4,630 L4,630 L6,850 Z" fill="url(#glassGrad)" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.6;0.5" dur="16s" repeatCount="indefinite" />
+    </path>
+    <!-- Stem Highlight -->
+    <path d="M-2,850 L-1,630 L1,630 L2,850 Z" fill="#F5C97A" opacity="0.3" filter="url(#f60)">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="12s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 11. Glass Bowl Outer Curve -->
+    <path d="M-50,330 C-50,500 -30,630 0,630 C30,630 50,500 50,330 C50,280 25,270 0,270 C-25,270 -50,280 -50,330 Z" fill="url(#glassGrad)" opacity="0.3" />
+    <!-- Glass Bowl Inner Glow (Candle Shining Through) -->
+    <path d="M-48,330 C-48,480 -28,620 0,620 C28,620 48,480 48,330 C48,290 25,280 0,280 C-25,280 -48,290 -48,330 Z" fill="url(#candleGlow)" opacity="0.4" filter="url(#f80)">
+      <animate attributeName="opacity" values="0.4;0.55;0.4" dur="10s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 12. Wine Liquid -->
+    <path d="M-42,380 C-42,380 -42,380 -42,380 C-45,480 -20,610 0,610 C20,610 45,480 42,380 C45,380 45,380 45,380 Z" fill="url(#wineGrad)" opacity="0.9">
+      <!-- Slow meniscus / surface level shift -->
+      <animate attributeName="d" 
+        values="M-42,380 C-42,380 -45,480 -20,610 C0,610 20,610 42,380 C45,380 45,380 45,380 Z;
+                M-42,382 C-42,382 -45,482 -20,612 C0,612 20,612 42,382 C45,382 45,382 45,382 Z;
+                M-42,380 C-42,380 -45,480 -20,610 C0,610 20,610 42,380 C45,380 45,380 45,380 Z" 
+        dur="12s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 13. Wine Deep Shadow / Volume -->
+    <path d="M-42,380 C-42,380 -45,480 -20,610 C0,610 20,610 42,380 C45,380 45,380 45,380 Z" fill="url(#wineGrad2)" opacity="0.6">
+      <!-- Slightly offset for volume -->
+      <animate attributeName="opacity" values="0.6;0.7;0.6" dur="14s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 14. Wine Surface (Meniscus) -->
+    <ellipse cx="0" cy="380" rx="43" ry="10" fill="#8B0F23" opacity="0.9">
+      <!-- Surface ripples / breath -->
+      <animate attributeName="rx" values="43;44;43" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="ry" values="10;9;10" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="380;381;380" dur="8s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- 15. Wine Surface Highlight -->
+    <ellipse cx="-18" cy="380" rx="16" ry="5" fill="#C97864" opacity="0.5">
+      <animate attributeName="cx" values="-18;-16;-18" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0.7;0.5" dur="10s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- 16. Glass Rim Edge -->
+    <ellipse cx="0" cy="270" rx="50" ry="12" fill="none" stroke="#C97864" stroke-width="1.5" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="14s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- 17. Dynamic Candle Reflection on Glass Curve (Right side, facing the light from left) -->
+    <path d="M20,300 Q40,350 35,450" stroke="url(#highlightGrad)" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.8" filter="url(#f60)">
+      <animate attributeName="d" 
+        values="M20,300 Q40,350 35,450;
+                M22,302 Q42,352 37,452;
+                M20,300 Q40,350 35,450" 
+        dur="9s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="9s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 18. Stronger Inner Glass Reflection -->
+    <path d="M35,320 Q45,380 38,480" stroke="#F5C97A" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5" filter="url(#f60)">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="11s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 19. Stem Reflection on Glass Bowl -->
+    <path d="M-2,380 L-2,580" stroke="#F5C97A" stroke-width="1" fill="none" opacity="0.3" filter="url(#f60)">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="13s" repeatCount="indefinite" />
+    </path>
+
+    <!-- 20. Wine Base Ambient Light / Caustic -->
+    <path d="M-20,600 Q0,625 20,600" fill="none" stroke="#F5C97A" stroke-width="3" opacity="0.2" filter="url(#f80)">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="15s" repeatCount="indefinite" />
+    </path>
+
+  </g>
+
+  <!-- ========================================== -->
+  <!-- FOREGROUND LAYERS & ATMOSPHERIC PARTICLES  -->
+  <!-- ========================================== -->
+
+  <!-- 21. Foreground Soft Haze (Bottom Right) -->
+  <circle cx="1300" cy="750" r="300" fill="#8B0F23" filter="url(#f160)" opacity="0.2">
+    <animate attributeName="r" values="300;320;300" dur="22s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.2;0.3;0.2" dur="22s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 22. Mid-Ground Soft Glow Ball (Right of glass) -->
+  <circle cx="1250" cy="500" r="150" fill="#C97864" filter="url(#f120)" opacity="0.15">
+    <animate attributeName="r" values="150;170;150" dur="20s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 23. Particle 1 -->
+  <circle cx="0" cy="0" r="4" fill="#F5C97A" filter="url(#f60)" opacity="0.6">
+    <animateMotion path="M 200,300 Q 400,100 600,400 T 900,300 T 1100,500 T 800,700" dur="22s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="22s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 24. Particle 2 -->
+  <circle cx="0" cy="0" r="6" fill="#C97864" filter="url(#f60)" opacity="0.5">
+    <animateMotion path="M 100,600 Q 300,400 500,500 T 800,200 T 1200,600 T 900,800" dur="25s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="25s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 25. Particle 3 -->
+  <circle cx="0" cy="0" r="3" fill="#F5C97A" filter="url(#f60)" opacity="0.4">
+    <animateMotion path="M 400,200 Q 600,400 800,300 T 1100,400 T 1300,200 T 1000,100" dur="20s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4;0;0.4" dur="20s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 26. Particle 4 -->
+  <circle cx="0" cy="0" r="5" fill="#C97864" filter="url(#f120)" opacity="0.3">
+    <animateMotion path="M 150,750 Q 400,600 700,650 T 1100,550 T 1400,700 T 1100,850" dur="24s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.3;0.05;0.3" dur="24s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 27. Particle 5 -->
+  <circle cx="0" cy="0" r="7" fill="#8B0F23" filter="url(#f120)" opacity="0.4">
+    <animateMotion path="M 300,100 Q 500,300 800,200 T 1200,300 T 1000,600 T 600,400" dur="26s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="26s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 28. Particle 6 -->
+  <circle cx="0" cy="0" r="2" fill="#F5C97A" filter="url(#f60)" opacity="0.5">
+    <animateMotion path="M 600,500 Q 800,300 1000,500 T 1200,400 T 1000,700 T 700,600" dur="18s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5;0;0.5" dur="18s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 29. Particle 7 -->
+  <circle cx="0" cy="0" r="4" fill="#C97864" filter="url(#f80)" opacity="0.3">
+    <animateMotion path="M 50,200 Q 250,400 450,250 T 850,350 T 650,600 T 350,450" dur="21s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.3;0.05;0.3" dur="21s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 30. Foreground Soft Vignette Overlay (Bottom) -->
+  <rect x="0" y="600" width="1600" height="300" fill="url(#skyGrad)" opacity="0.3" filter="url(#f160)">
+    <animate attributeName="opacity" values="0.3;0.4;0.3" dur="20s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- 31. Final Top Atmospheric Haze -->
+  <rect x="0" y="0" width="1600" height="300" fill="#1A0810" opacity="0.4" filter="url(#f160)">
+    <animate attributeName="opacity" values="0.4;0.5;0.4" dur="24s" repeatCount="indefinite" />
+  </rect>
+
+</svg>

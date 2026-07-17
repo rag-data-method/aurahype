@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="moonGrad" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#FAFAFA"/>
+      <stop offset="35%" stop-color="#DCE2E8"/>
+      <stop offset="100%" stop-color="#8B9BA7"/>
+    </radialGradient>
+    <radialGradient id="craterGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#8B9BA7"/>
+      <stop offset="100%" stop-color="#5a6a78"/>
+    </radialGradient>
+    <filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="shadowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#0F1828"/>
+  
+  <ellipse cx="800" cy="750" rx="220" ry="45" fill="#000" opacity="0.35" filter="url(#shadowBlur)">
+    <animateTransform attributeName="transform" type="scale" values="1;0.85;1" dur="6s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0.35;0.15;0.35" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <circle cx="800" cy="450" r="380" fill="#DCE2E8" opacity="0.15" filter="url(#glowBlur)">
+    <animate attributeName="r" values="380;420;380" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.3;0.15" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="4s" repeatCount="indefinite"/>
+    
+    <circle cx="800" cy="450" r="280" fill="url(#moonGrad)"/>
+    
+    <g opacity="0.85">
+      <circle cx="680" cy="340" r="25" fill="url(#craterGrad)" filter="url(#softBlur)">
+        <animate attributeName="cx" values="680;690;680" dur="7s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="850" cy="480" r="35" fill="url(#craterGrad)" filter="url(#softBlur)">
+        <animate attributeName="cx" values="850;840;850" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="750" cy="560" r="20" fill="url(#craterGrad)" filter="url(#softBlur)"/>
+      <circle cx="670" cy="460" r="16" fill="url(#craterGrad)" filter="url(#softBlur)"/>
+      <circle cx="900" cy="390" r="28" fill="url(#craterGrad)" filter="url(#softBlur)">
+        <animate attributeName="cx" values="900;890;900" dur="8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <ellipse cx="1100" cy="450" rx="300" ry="280" fill="#0F1828" opacity="0.88">
+      <animate attributeName="cx" values="1180;1000;1180" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <path d="M 800 170 A 280 280 0 0 1 1080 450" fill="none" stroke="#FAFAFA" stroke-width="3" opacity="0.25" filter="url(#softBlur)">
+      <animate attributeName="opacity" values="0.25;0.55;0.25" dur="4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <g>
+    <circle cx="500" cy="250" r="3" fill="#FAFAFA" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0" dur="3s" repeatCount="indefinite" begin="0s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 30,15; 0,0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="200" r="2.5" fill="#DCE2E8" opacity="0">
+      <animate attributeName="opacity" values="0;0.8;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,25; 0,0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="550" r="3" fill="#FAFAFA" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" begin="2s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,-15; 0,0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="650" r="2" fill="#8B9BA7" opacity="0">
+      <animate attributeName="opacity" values="0;0.7;0" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,-8; 0,0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="150" r="3" fill="#FAFAFA" opacity="0">
+      <animate attributeName="opacity" values="0;0.8;0" dur="4.5s" repeatCount="indefinite" begin="1.5s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 8,20; 0,0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="750" r="2.5" fill="#DCE2E8" opacity="0">
+      <animate attributeName="opacity" values="0;0.9;0" dur="5.5s" repeatCount="indefinite" begin="3s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -18,12; 0,0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1300" cy="350" r="3" fill="#FAFAFA" opacity="0">
+      <animate attributeName="opacity" values="0;0.6;0" dur="4s" repeatCount="indefinite" begin="2.5s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 12,-18; 0,0" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="450" r="2" fill="#8B9BA7" opacity="0">
+      <animate attributeName="opacity" values="0;0.8;0" dur="3.2s" repeatCount="indefinite" begin="4s"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 22,10; 0,0" dur="9.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <!-- Halftone Dot Patterns -->
+        <pattern id="halftone-large" width="32" height="32" patternUnits="userSpaceOnUse" patternTransform="rotate(22.5)">
+            <circle cx="16" cy="16" r="14" fill="#001F54" />
+        </pattern>
+        <pattern id="halftone-small" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(22.5)">
+            <circle cx="8" cy="8" r="6" fill="#FFFFFF" />
+        </pattern>
+        <pattern id="halftone-magenta" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(22.5)">
+            <circle cx="12" cy="12" r="10" fill="#FF0055" />
+        </pattern>
+        <pattern id="halftone-cyan" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(22.5)">
+            <circle cx="10" cy="10" r="8" fill="#00FFFF" />
+        </pattern>
+
+        <!-- Filters for Thick Outlines -->
+        <filter id="outline-black" x="-30%" y="-30%" width="160%" height="160%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="12" result="thicken"/>
+            <feFlood flood-color="#000000"/>
+            <feComposite operator="in" in2="thicken" result="outline"/>
+            <feMerge>
+                <feMergeNode in="outline"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        
+        <filter id="outline-thin" x="-20%" y="-20%" width="140%" height="140%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="5" result="thicken"/>
+            <feFlood flood-color="#000000"/>
+            <feComposite operator="in" in2="thicken" result="outline"/>
+            <feMerge>
+                <feMergeNode in="outline"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- Action Line Component -->
+        <g id="action-line">
+            <line x1="0" y1="0" x2="150" y2="0" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+            <line x1="0" y1="15" x2="100" y2="15" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+            <line x1="0" y1="30" x2="60" y2="30" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+        </g>
+    </defs>
+
+    <!-- 1. Base Background -->
+    <rect width="1600" height="900" fill="#FF0099" />
+
+    <!-- 2. Animated Background Halftone Layer -->
+    <rect width="1600" height="900" fill="url(#halftone-large)" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.5s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- 3. Explosive Burst Rays -->
+    <g id="burst-rays" transform="translate(800, 450)">
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite" />
+            <!-- Yellow Rays -->
+            <path d="M-40,-400 L0,-900 L40,-400 Z" fill="#FFEB3B" stroke="#000000" stroke-width="6" />
+            <path d="M-40,-400 L0,-900 L40,-400 Z" fill="#FFEB3B" stroke="#000000" stroke-width="6" transform="rotate(45)" />
+            <path d="M-40,-400 L0,-900 L40,-400 Z" fill="#FFEB3B" stroke="#000000" stroke-width="6" transform="rotate(90)" />
+            <path d="M-40,-400 L0,-900 L40,-400 Z" fill="#FFEB3B" stroke="#000000" stroke-width="6" transform="rotate(135)" />
+            <path d="M-40,-400 L0,-900 L40,-400 Z" fill="#FFEB3B" stroke="#000000" stroke-width="6" transform="rotate(180)" />
+            <path d="M-40,-400 L0,-900 L40,-400 Z" fill="#FFEB3B" stroke="#000000" stroke-width="6" transform="rotate(225)" />
+            <path d="M-40,-400 L0,-900 L40,-400 Z" fill="#FFEB3B" stroke="#000000" stroke-width="6" transform="rotate(270)" />
+            <path d="M-40,-400 L0,-900 L40,-400 Z" fill="#FFEB3B" stroke="#000000" stroke-width="6" transform="rotate(315)" />
+            
+            <!-- Red Rays -->
+            <path d="M-30,-350 L0,-800 L30,-350 Z" fill="#E60000" stroke="#000000" stroke-width="6" transform="rotate(22.5)" />
+            <path d="M-30,-350 L0,-800 L30,-350 Z" fill="#E60000" stroke="#000000" stroke-width="6" transform="rotate(67.5)" />
+            <path d="M-30,-350 L0,-800 L30,-350 Z" fill="#E60000" stroke="#000000" stroke-width="6" transform="rotate(112.5)" />
+            <path d="M-30,-350 L0,-800 L30,-350 Z" fill="#E60000" stroke="#000000" stroke-width="6" transform="rotate(157.5)" />
+            <path d="M-30,-350 L0,-800 L30,-350 Z" fill="#E60000" stroke="#000000" stroke-width="6" transform="rotate(202.5)" />
+            <path d="M-30,-350 L0,-800 L30,-350 Z" fill="#E60000" stroke="#000000" stroke-width="6" transform="rotate(247.5)" />
+            <path d="M-30,-350 L0,-800 L30,-350 Z" fill="#E60000" stroke="#000000" stroke-width="6" transform="rotate(292.5)" />
+            <path d="M-30,-350 L0,-800 L30,-350 Z" fill="#E60000" stroke="#000000" stroke-width="6" transform="rotate(337.5)" />
+        </g>
+    </g>
+
+    <!-- 4. Central Shockwave Circles -->
+    <g transform="translate(800, 450)" opacity="0.6">
+        <circle r="320" fill="none" stroke="#000000" stroke-width="12">
+            <animate attributeName="r" values="100;450;100" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="stroke-width" values="40;0;40" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle r="240" fill="none" stroke="#FFFFFF" stroke-width="12">
+            <animate attributeName="r" values="80;500;80" dur="2.5s" repeatCount="indefinite" />
+            <animate attributeName="stroke-width" values="50;0;50" dur="2.5s" repeatCount="indefinite" />
+        </circle>
+    </g>
+
+    <!-- 5. Explosion Clouds -->
+    <g transform="translate(800, 450)">
+        <path d="M-400,-250 C-350,-350 -200,-380 -100,-320 C-50,-380 50,-400 150,-350 C250,-380 350,-300 400,-200 C450,-100 420,50 350,150 C400,250 350,350 250,400 C150,450 50,420 -50,400 C-150,450 -250,400 -350,300 C-450,200 -420,50 -400,-250 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8" filter="url(#outline-thin)">
+            <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="1s" repeatCount="indefinite" />
+        </path>
+        <path d="M-280,-150 C-200,-250 -80,-280 0,-220 C50,-280 120,-300 200,-250 C280,-280 320,-180 350,-100 C380,-20 360,80 300,150 C340,220 300,300 220,340 C140,380 60,360 -20,340 C-100,380 -180,340 -260,250 C-340,160 -320,20 -280,-150 Z" fill="#FFEB3B" stroke="#000000" stroke-width="8" filter="url(#outline-thin)">
+            <animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="1.2s" repeatCount="indefinite" />
+        </path>
+    </g>
+
+    <!-- 6. Halftone Overlays on Clouds -->
+    <g transform="translate(800, 450)" opacity="0.7" pointer-events="none">
+        <circle r="300" fill="url(#halftone-magenta)">
+            <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.2s" repeatCount="indefinite" />
+        </circle>
+        <circle r="200" fill="url(#halftone-cyan)" transform="translate(-50, 50)">
+            <animate attributeName="opacity" values="0.5;0.1;0.5" dur="0.8s" repeatCount="indefinite" />
+        </circle>
+    </g>
+
+    <!-- 7. Action Lines (Animated Zoom) -->
+    <g transform="translate(800, 450)">
+        <g transform="translate(-600, -300) rotate(-30)">
+            <use href="#action-line" />
+            <animateTransform attributeName="transform" type="translate" values="-600,-300; -650,-350; -600,-300" dur="2s" repeatCount="indefinite" />
+        </g>
+        <g transform="translate(450, -350) rotate(20)">
+            <use href="#action-line" />
+            <animateTransform attributeName="transform" type="translate" values="450,-350; 500,-400; 450,-350" dur="2.5s" repeatCount="indefinite" />
+        </g>
+        <g transform="translate(-550, 250) rotate(-120)">
+            <use href="#action-line" />
+            <animateTransform attributeName="transform" type="translate" values="-550,250; -600,300; -550,250" dur="1.8s" repeatCount="indefinite" />
+        </g>
+        <g transform="translate(500, 300) rotate(150)">
+            <use href="#action-line" />
+            <animateTransform attributeName="transform" type="translate" values="500,300; 550,350; 500,300" dur="2.2s" repeatCount="indefinite" />
+        </g>
+    </g>
+
+    <!-- 8. Floating Burst Stars -->
+    <g transform="translate(800, 450)">
+        <g transform="translate(-350, -200)">
+            <path d="M0,-40 L10,-10 L40,0 L10,10 L0,40 L-10,10 L-40,0 L-10,-10 Z" fill="#00FFFF" stroke="#000000" stroke-width="5" filter="url(#outline-thin)">
+                <animateTransform attributeName="transform" type="rotate" values="0;45;0" dur="1s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite" />
+            </path>
+        </g>
+        <g transform="translate(400, -250)">
+            <path d="M0,-30 L8,-8 L30,0 L8,8 L0,30 L-8,8 L-30,0 L-8,-8 Z" fill="#FF0055" stroke="#000000" stroke-width="5" filter="url(#outline-thin)">
+                <animateTransform attributeName="transform" type="rotate" values="0;-60;0" dur="1.2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite" />
+            </path>
+        </g>
+        <g transform="translate(-300, 250)">
+            <path d="M0,-50 L12,-12 L50,0 L12,12 L0,50 L-12,12 L-50,0 L-12,-12 Z" fill="#FFFF00" stroke="#000000" stroke-width="5" filter="url(#outline-thin)">
+                <animateTransform attributeName="transform" type="rotate" values="0;90;0" dur="1.5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="1;0.2;1" dur="0.6s" repeatCount="indefinite" />
+            </path>
+        </g>
+        <g transform="translate(350, 200)">
+            <path d="M0,-25 L6,-6 L25,0 L6,6 L0,25 L-6,6 L-25,0 L-6,-6 Z" fill="#FFFFFF" stroke="#000000" stroke-width="5" filter="url(#outline-thin)">
+                <animateTransform attributeName="transform" type="rotate" values="0;180;0" dur="2s" repeatCount="indefinite" />
+            </path>
+        </g>
+    </g>
+
+    <!-- 9. Massive "BOOM!" Text -->
+    <g transform="translate(800, 480)">
+        <!-- Group to pulsate the text -->
+        <g>
+            <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="0.5s" repeatCount="indefinite" />
+            
+            <!-- Letter B -->
+            <g transform="translate(-380, 0)">
+                <path d="M-70,-110 L20,-110 C60,-110 90,-90 90,-50 C90,-20 70,0 40,10 C80,20 100,50 100,80 C100,120 60,140 10,140 L-70,140 Z M-10,-60 L-10,-10 L10,-10 C30,-10 40,-20 40,-40 C40,-50 30,-60 10,-60 Z M-10,40 L-10,90 L20,90 C40,90 50,80 50,60 C50,50 40,40 20,40 Z" fill="#E60000" stroke="#000000" stroke-width="14" stroke-linejoin="round" filter="url(#outline-black)" />
+                <path d="M-70,-110 L20,-110 C60,-110 90,-90 90,-50 C90,-20 70,0 40,10 C80,20 100,50 100,80 C100,120 60,140 10,140 L-70,140 Z M-10,-60 L-10,-10 L10,-10 C30,-10 40,-20 40,-40 C40,-50 30,-60 10,-60 Z M-10,40 L-10,90 L20,90 C40,90 50,80 50,60 C50,50 40,40 20,40 Z" fill="url(#halftone-small)" opacity="0.6" />
+            </g>
+
+            <!-- Letter O -->
+            <g transform="translate(-130, 0)">
+                <path d="M0,-120 C80,-120 120,-60 120,20 C120,100 80,150 0,150 C-80,150 -120,100 -120,20 C-120,-60 -80,-120 0,-120 Z M0,-60 C-30,-60 -50,-30 -50,20 C-50,70 -30,90 0,90 C30,90 50,70 50,20 C50,-30 30,-60 0,-60 Z" fill="#00FFFF" stroke="#000000" stroke-width="14" stroke-linejoin="round" filter="url(#outline-black)" />
+                <path d="M0,-120 C80,-120 120,-60 120,20 C120,100 80,150 0,150 C-80,150 -120,100 -120,20 C-120,-60 -80,-120 0,-120 Z M0,-60 C-30,-60 -50,-30 -50,20 C-50,70 -30,90 0,90 C30,90 50,70 50,20 C50,-30 30,-60 0,-60 Z" fill="url(#halftone-small)" opacity="0.6" />
+            </g>
+
+            <!-- Second O (Shifted slightly up for pop art asymmetry) -->
+            <g transform="translate(130, -20)">
+                <path d="M0,-120 C80,-120 120,-60 120,20 C120,100 80,150 0,150 C-80,150 -120,100 -120,20 C-120,-60 -80,-120 0,-120 Z M0,-60 C-30,-60 -50,-30 -50,20 C-50,70 -30,90 0,90 C30,90 50,70 50,20 C50,-30 30,-60 0,-60 Z" fill="#FFEB3B" stroke="#000000" stroke-width="14" stroke-linejoin="round" filter="url(#outline-black)" />
+                <path d="M0,-120 C80,-120 120,-60 120,20 C120,100 80,150 0,150 C-80,150 -120,100 -120,20 C-120,-60 -80,-120 0,-120 Z M0,-60 C-30,-60 -50,-30 -50,20 C-50,70 -30,90 0,90 C30,90 50,70 50,20 C50,-30 30,-60 0,-60 Z" fill="url(#halftone-small)" opacity="0.6" />
+            </g>
+
+            <!-- Letter M -->
+            <g transform="translate(380, 0)">
+                <path d="M-70,140 L-70,-110 L-10,-110 L40,40 L90,-110 L150,-110 L150,140 L90,140 L90,20 L50,140 L-10,140 L-50,20 L-50,140 Z" fill="#FF0055" stroke="#000000" stroke-width="14" stroke-linejoin="round" filter="url(#outline-black)" />
+                <path d="M-70,140 L-70,-110 L-10,-110 L40,40 L90,-110 L150,-110 L150,140 L90,140 L90,20 L50,140 L-10,140 L-50,20 L-50,140 Z" fill="url(#halftone-small)" opacity="0.6" />
+            </g>
+        </g>
+    </g>
+
+    <!-- 10. Exclamation Point (Offset for dynamic composition) -->
+    <g transform="translate(1250, 350)">
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-30; 0,0" dur="0.4s" repeatCount="indefinite" />
+            <path d="M-30,-100 L-20,80 L20,80 L30,-100 Z" fill="#00FFFF" stroke="#000000" stroke-width="14" stroke-linejoin="round" filter="url(#outline-black)" />
+            <path d="M-30,-100 L-20,80 L20,80 L30,-100 Z" fill="url(#halftone-small)" opacity="0.6" />
+            <circle cx="0" cy="140" r="35" fill="#FFFF00" stroke="#000000" stroke-width="14" filter="url(#outline-black)" />
+            <circle cx="0" cy="140" r="35" fill="url(#halftone-small)" opacity="0.6" />
+        </g>
+    </g>
+
+    <!-- 11. Vibrating Speed Lines around Text -->
+    <g stroke="#000000" stroke-width="6" stroke-linecap="round">
+        <line x1="200" y1="200" x2="350" y2="250">
+            <animate attributeName="x1" values="200;180;200" dur="0.2s" repeatCount="indefinite" />
+            <animate attributeName="x2" values="350;330;350" dur="0.2s" repeatCount="indefinite" />
+        </line>
+        <line x1="1200" y1="150" x2="1050" y2="220">
+            <animate attributeName="x1" values="1200;1220;1200" dur="0.25s" repeatCount="indefinite" />
+            <animate attributeName="x2" values="1050;1070;1050" dur="0.25s" repeatCount="indefinite" />
+        </line>
+        <line x1="150" y1="700" x2="300" y2="650">
+            <animate attributeName="x1" values="150;130;150" dur="0.3s" repeatCount="indefinite" />
+            <animate attributeName="x2" values="300;280;300" dur="0.3s" repeatCount="indefinite" />
+        </line>
+        <line x1="1450" y1="750" x2="1300" y2="680">
+            <animate attributeName="x1" values="1450;1470;1450" dur="0.15s" repeatCount="indefinite" />
+            <animate attributeName="x2" values="1300;1320;1300" dur="0.15s" repeatCount="indefinite" />
+        </line>
+    </g>
+
+    <!-- 12. Halftone Border Overlay (Top/Bottom) -->
+    <rect x="0" y="0" width="1600" height="60" fill="url(#halftone-large)">
+        <animate attributeName="x" values="0;-32;0" dur="0.8s" repeatCount="indefinite" />
+    </rect>
+    <rect x="0" y="840" width="1600" height="60" fill="url(#halftone-large)">
+        <animate attributeName="x" values="0;32;0" dur="0.8s" repeatCount="indefinite" />
+    </rect>
+</svg>

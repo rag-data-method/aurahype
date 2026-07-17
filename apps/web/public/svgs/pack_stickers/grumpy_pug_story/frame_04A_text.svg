@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="6" fill="#000000" opacity="0.25"/>
+    </pattern>
+    <path id="ray" d="M960,540 L2216,204 L2216,877 Z"/>
+    <filter id="popShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="16" dy="16" stdDeviation="0" flood-color="#000000" flood-opacity="1"/>
+    </filter>
+  </defs>
+  
+  <style>
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes shift {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-30px, -30px); }
+    }
+    @keyframes burst-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+    }
+    @keyframes text-beat {
+      0% { transform: scale(1) rotate(0deg); }
+      20% { transform: scale(1.08) rotate(-2deg); }
+      40% { transform: scale(1) rotate(0deg); }
+      60% { transform: scale(1.08) rotate(2deg); }
+      80% { transform: scale(1) rotate(0deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+    
+    #sunburst {
+      animation: spin 25s linear infinite;
+      transform-origin: 960px 540px;
+    }
+    #halftone {
+      animation: shift 2s linear infinite;
+    }
+    #burst {
+      animation: burst-pulse 3s ease-in-out infinite;
+      transform-origin: 960px 540px;
+    }
+    #text-group {
+      animation: text-beat 2.2s ease-in-out infinite;
+      transform-origin: 960px 540px;
+    }
+    
+    text {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 190px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      fill: #000000;
+      stroke: #FFFFFF;
+      stroke-width: 12px;
+      paint-order: stroke fill;
+      text-anchor: middle;
+    }
+  </style>
+
+  <rect width="1920" height="1080" fill="#00FFFF"/>
+
+  <g id="sunburst">
+    <use href="#ray" fill="#FF00FF"/>
+    <use href="#ray" fill="#FFFFFF" transform="rotate(30, 960, 540)"/>
+    <use href="#ray" fill="#FF00FF" transform="rotate(60, 960, 540)"/>
+    <use href="#ray" fill="#FFFFFF" transform="rotate(90, 960, 540)"/>
+    <use href="#ray" fill="#FF00FF" transform="rotate(120, 960, 540)"/>
+    <use href="#ray" fill="#FFFFFF" transform="rotate(150, 960, 540)"/>
+    <use href="#ray" fill="#FF00FF" transform="rotate(180, 960, 540)"/>
+    <use href="#ray" fill="#FFFFFF" transform="rotate(210, 960, 540)"/>
+    <use href="#ray" fill="#FF00FF" transform="rotate(240, 960, 540)"/>
+    <use href="#ray" fill="#FFFFFF" transform="rotate(270, 960, 540)"/>
+    <use href="#ray" fill="#FF00FF" transform="rotate(300, 960, 540)"/>
+    <use href="#ray" fill="#FFFFFF" transform="rotate(330, 960, 540)"/>
+  </g>
+
+  <rect id="halftone" x="-100" y="-100" width="2120" height="1280" fill="url(#dots)"/>
+
+  <polygon id="burst" points="960,-160 1151,78 1455,45 1422,349 1660,540 1422,731 1455,1035 1151,1002 960,1240 769,1002 465,1035 498,731 260,540 498,349 465,45 769,78" fill="#FFFF00" stroke="#000000" stroke-width="24" stroke-linejoin="round"/>
+
+  <g id="text-group" filter="url(#popShadow)">
+    <text x="960" y="460">O ALVO:</text>
+    <text x="960" y="660">MISS CANVAS.</text>
+  </g>
+</svg>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Glow filter for neon elements -->
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Soft glow for visor reflection -->
+    <filter id="visor-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Drop shadow for die-cut effect -->
+    <filter id="sticker-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="6" dy="10" stdDeviation="8" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+    
+    <!-- Cyan gradient for accents -->
+    <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#00a8b5"/>
+    </linearGradient>
+    
+    <!-- Magenta gradient -->
+    <linearGradient id="magenta-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff00ff"/>
+      <stop offset="100%" stop-color="#b000b0"/>
+    </linearGradient>
+    
+    <!-- Headset body gradient -->
+    <linearGradient id="body-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="40%" stop-color="#0d0418"/>
+      <stop offset="100%" stop-color="#05020a"/>
+    </linearGradient>
+    
+    <!-- Visor dark reflective base -->
+    <radialGradient id="visor-grad" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1e0030"/>
+      <stop offset="60%" stop-color="#0a0014"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Die-cut sticker group -->
+  <g filter="url(#sticker-shadow)">
+    <!-- Thick white die-cut border outline (behind illustration) -->
+    <path d="M500 175 
+             C620 175, 710 210, 760 260 
+             C820 320, 835 400, 835 500 
+             C835 600, 820 680, 760 740 
+             C710 790, 620 825, 500 825 
+             C380 825, 290 790, 240 740 
+             C180 680, 165 600, 165 500 
+             C165 400, 180 320, 240 260 
+             C290 210, 380 175, 500 175 Z" 
+          fill="none" stroke="#ffffff" stroke-width="34" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Main illustration group -->
+  <g>
+    <!-- Outer sticker shape fill (dark backing) -->
+    <path d="M500 175 
+             C620 175, 710 210, 760 260 
+             C820 320, 835 400, 835 500 
+             C835 600, 820 680, 760 740 
+             C710 790, 620 825, 500 825 
+             C380 825, 290 790, 240 740 
+             C180 680, 165 600, 165 500 
+             C165 400, 180 320, 240 260 
+             C290 210, 380 175, 500 175 Z" 
+          fill="url(#body-grad)"/>
+    
+    <!-- Background geometric ring -->
+    <circle cx="500" cy="500" r="280" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.25"/>
+    <circle cx="500" cy="500" r="255" fill="none" stroke="#ff00ff" stroke-width="1.5" opacity="0.35" stroke-dasharray="15 10"/>
+    <circle cx="500" cy="500" r="305" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.15" stroke-dasharray="4 8"/>
+    
+    <!-- Perspective grid floor (behind headset) -->
+    <g opacity="0.2" stroke="#ff00ff" stroke-width="1.5">
+      <line x1="500" y1="500" x2="220" y2="780"/>
+      <line x1="500" y1="500" x2="780" y2="780"/>
+      <line x1="500" y1="500" x2="500" y2="820"/>
+      <line x1="500" y1="500" x2="320" y2="820"/>
+      <line x1="500" y1="500" x2="680" y2="820"/>
+      <line x1="230" y1="650" x2="770" y2="650"/>
+      <line x1="270" y1="720" x2="730" y2="720"/>
+      <line x1="350" y1="790" x2="650" y2="790"/>
+    </g>
+    
+    <!-- Top headband -->
+    <path d="M300 360 
+             C300 220, 700 220, 700 360 
+             L700 390 
+             C700 280, 300 280, 300 390 Z" 
+          fill="#120520" stroke="#00f0ff" stroke-width="3" filter="url(#neon-glow)"/>
+    <path d="M320 350 C320 250, 680 250, 680 350" fill="none" stroke="#ff00ff" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Side arms / headphones -->
+    <path d="M230 380 
+             C210 380, 190 420, 190 500 
+             C190 580, 210 620, 230 620 
+             L270 610 
+             C255 580, 255 420, 270 390 Z" 
+          fill="#0d0418" stroke="#00f0ff" stroke-width="3" filter="url(#neon-glow)"/>
+    <path d="M770 380 
+             C790 380, 810 420, 810 500 
+             C810 580, 790 620, 770 620 
+             L730 610 
+             C745 580, 745 420, 730 390 Z" 
+          fill="#0d0418" stroke="#00f0ff" stroke-width="3" filter="url(#neon-glow)"/>
+    
+    <!-- Side cyber vents -->
+    <g stroke="#00f0ff" stroke-width="2" opacity="0.8" filter="url(#neon-glow)">
+      <line x1="205" y1="450" x2="245" y2="445"/>
+      <line x1="202" y1="475" x2="248" y2="470"/>
+      <line x1="200" y1="500" x2="250" y2="500"/>
+      <line x1="202" y1="525" x2="248" y2="530"/>
+      <line x1="205" y1="550" x2="245" y2="555"/>
+      
+      <line x1="795" y1="450" x2="755" y2="445"/>
+      <line x1="798" y1="475" x2="752" y2="470"/>
+      <line x1="800" y1="500" x2="750" y2="500"/>
+      <line x1="798" y1="525" x2="752" y2="530"/>
+      <line x1="795" y1="550" x2="755" y2="555"/>
+    </g>
+    
+    <!-- Main headset front body -->
+    <path d="M280 360 
+             C280 320, 720 320, 720 360 
+             L735 500 
+             C745 580, 720 660, 500 670 
+             C280 660, 255 580, 265 500 Z" 
+          fill="url(#body-grad)" stroke="#00f0ff" stroke-width="4" filter="url(#neon-glow)"/>
+    
+    <!-- Inner bezel -->
+    <path d="M300 375 
+             C300 350, 700 350, 700 375 
+             L710 500 
+             C718 565, 700 635, 500 645 
+             C300 635, 282 565, 290 500 Z" 
+          fill="#05020a" stroke="#ff00ff" stroke-width="2" opacity="0.9"/>
+    
+    <!-- Visor glass -->
+    <path d="M315 385 
+             C315 365, 685 365, 685 385 
+             L692 500 
+             C698 555, 685 615, 500 625 
+             C315 615, 302 555, 308 500 Z" 
+          fill="url(#visor-grad)" stroke="#ff00ff" stroke-width="3" filter="url(#visor-glow)"/>
+    
+    <!-- Wireframe grid reflected in visor (perspective) -->
+    <g stroke="#ff00ff" stroke-width="2" fill="none" opacity="0.9" filter="url(#visor-glow)">
+      <!-- Horizontal receding lines -->
+      <line x1="330" y1="420" x2="670" y2="420"/>
+      <line x1="325" y1="450" x2="675" y2="450"/>
+      <line x1="320" y1="485" x2="680" y2="485"/>
+      <line x1="318" y1="525" x2="682" y2="525"/>
+      <line x1="320" y1="565" x2="680" y2="565"/>
+      <line x1="330" y1="600" x2="670" y2="600"/>
+      
+      <!-- Vertical converging lines -->
+      <line x1="500" y1="380" x2="500" y2="615"/>
+      <line x1="460" y1="382" x2="430" y2="610"/>
+      <line x1="420" y1="385" x2="360" y2="600"/>
+      <line x1="380" y1="388" x2="290" y2="585"/>
+      <line x1="540" y1="382" x2="570" y2="610"/>
+      <line x1="580" y1="385" x2="640" y2="600"/>
+      <line x1="620" y1="388" x2="710" y2="585"/>
+    </g>
+    
+    <!-- Horizon line in visor -->
+    <line x1="310" y1="500" x2="690" y2="500" stroke="#00f0ff" stroke-width="2" opacity="0.7" filter="url(#neon-glow)"/>
+    
+    <!-- Visor highlight sheen -->
+    <path d="M330 390 C330 390, 400 395, 500 395 C600 395, 670 390, 670 390" 
+          fill="none" stroke="#ffffff" stroke-width="2" opacity="0.25"/>
+    <ellipse cx="420" cy="430" rx="60" ry="25" fill="#ffffff" opacity="0.06"/>
+    
+    <!-- Front sensor / camera modules -->
+    <rect x="460" y="660" width="80" height="25" rx="5" fill="#0d0418" stroke="#00f0ff" stroke-width="2" filter="url(#neon-glow)"/>
+    <circle cx="500" cy="672" r="7" fill="#ff00ff" filter="url(#neon-glow)"/>
+    <circle cx="475" cy="672" r="4" fill="#00f0ff" opacity="0.8"/>
+    <circle cx="525" cy="672" r="4" fill="#00f0ff" opacity="0.8"/>
+    
+    <!-- Hacker / tech accents -->
+    <g fill="#00f0ff" opacity="0.85" filter="url(#neon-glow)">
+      <rect x="360" y="330" width="40" height="6" rx="2"/>
+      <rect x="600" y="330" width="40" height="6" rx="2"/>
+      <rect x="345" y="345" width="25" height="5" rx="2"/>
+      <rect x="630" y="345" width="25" height="5" rx="2"/>
+    </g>
+    
+    <!-- Corner bracket accents -->
+    <g stroke="#ff00ff" stroke-width="3" fill="none" filter="url(#neon-glow)">
+      <polyline points="290 380 290 420 330 420"/>
+      <polyline points="710 380 710 420 670 420"/>
+      <polyline points="290 620 290 580 330 580"/>
+      <polyline points="710 620 710 580 670 580"/>
+    </g>
+    
+    <!-- Small geometric floating elements -->
+    <g opacity="0.7">
+      <polygon points="210,280 225,305 195,305" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#neon-glow)"/>
+      <polygon points="790,280 775,305 805,305" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#neon-glow)"/>
+      <rect x="235" y="680" width="18" height="18" fill="none" stroke="#ff00ff" stroke-width="2" transform="rotate(45 244 689)" filter="url(#neon-glow)"/>
+      <rect x="747" y="680" width="18" height="18" fill="none" stroke="#ff00ff" stroke-width="2" transform="rotate(45 756 689)" filter="url(#neon-glow)"/>
+    </g>
+    
+    <!-- Digital scan lines overlay on visor -->
+    <g opacity="0.12">
+      <line x1="315" y1="400" x2="685" y2="400" stroke="#00f0ff" stroke-width="1"/>
+      <line x1="312" y1="435" x2="688" y2="435" stroke="#00f0ff" stroke-width="1"/>
+      <line x1="310" y1="470" x2="690" y2="470" stroke="#00f0ff" stroke-width="1"/>
+      <line x1="310" y1="535" x2="690" y2="535" stroke="#00f0ff" stroke-width="1"/>
+      <line x1="312" y1="570" x2="688" y2="570" stroke="#00f0ff" stroke-width="1"/>
+      <line x1="315" y1="605" x2="685" y2="605" stroke="#00f0ff" stroke-width="1"/>
+    </g>
+    
+    <!-- "VR" / HUD text elements -->
+    <g font-family="monospace" font-weight="bold" fill="#00f0ff" filter="url(#neon-glow)">
+      <text x="260" y="300" font-size="18" opacity="0.8">&lt;/VR&gt;</text>
+      <text x="660" y="300" font-size="16" opacity="0.7">SYS.ON</text>
+      <text x="500" y="760" text-anchor="middle" font-size="20" fill="#ff00ff" opacity="0.9">NEURAL LINK</text>
+    </g>
+    
+    <!-- Bottom status bar -->
+    <rect x="380" y="785" width="240" height="8" rx="4" fill="#0d0418" stroke="#00f0ff" stroke-width="1.5" opacity="0.8"/>
+    <rect x="385" y="787" width="160" height="4" rx="2" fill="#ff00ff" filter="url(#neon-glow)"/>
+    
+    <!-- Lime green tiny accent LEDs -->
+    <g fill="#39ff14" filter="url(#neon-glow)">
+      <circle cx="290" cy="590" r="4"/>
+      <circle cx="710" cy="590" r="4"/>
+      <circle cx="500" y="705" r="5"/>
+    </g>
+  </g>
+  
+  <!-- Final clean white die-cut border on top to ensure crisp edge -->
+  <path d="M500 175 
+           C620 175, 710 210, 760 260 
+           C820 320, 835 400, 835 500 
+           C835 600, 820 680, 760 740 
+           C710 790, 620 825, 500 825 
+           C380 825, 290 790, 240 740 
+           C180 680, 165 600, 165 500 
+           C165 400, 180 320, 240 260 
+           C290 210, 380 175, 500 175 Z" 
+        fill="none" stroke="#ffffff" stroke-width="22" stroke-linejoin="round"/>
+</svg>

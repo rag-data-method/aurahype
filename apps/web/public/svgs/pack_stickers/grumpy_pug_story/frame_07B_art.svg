@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#ff0055"/>
+      <stop offset="100%" stop-color="#8a0029"/>
+    </radialGradient>
+
+    <!-- Halftone Pattern -->
+    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="6" fill="#ffb300" opacity="0.3"/>
+    </pattern>
+
+    <!-- Vault Grid Pattern -->
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="none" stroke="#00f0ff" stroke-width="3"/>
+    </pattern>
+
+    <!-- Glowing Glow Filters -->
+    <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-magenta" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip Path for the Vault Opening -->
+    <clipPath id="vault-clip">
+      <polygon points="960,280 1280,460 1280,820 960,1000 640,820 640,460"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    /* Global Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Background Pulse */
+    @keyframes bg-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+    .bg-layer { animation: bg-pulse 6s infinite alternate ease-in-out; }
+
+    /* Floating Elements (Paint Buckets and Paint Blobs) */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-25px); }
+    }
+    .float-1 { animation: float 3.5s ease-in-out infinite; }
+    .float-2 { animation: float 4.2s ease-in-out infinite 0.5s; }
+    .float-3 { animation: float 3.8s ease-in-out infinite 1.2s; }
+
+    /* Hovering Effect (Heavy Bobbing) */
+    @keyframes hover {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-35px) rotate(3deg); }
+    }
+    .hover-1 { animation: hover 4s ease-in-out infinite; }
+    .hover-2 { animation: hover 4.5s ease-in-out infinite 0.8s; }
+
+    /* Glowing Pulse */
+    @keyframes glow-pulse {
+      0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 10px currentColor); }
+      50% { opacity: 1; filter: drop-shadow(0 0 25px currentColor); }
+    }
+    .glow-c { animation: glow-pulse 2s infinite alternate; color: #00f0ff; }
+    .glow-m { animation: glow-pulse 2.5s infinite alternate; color: #ff0077; }
+
+    /* Vault Light Flicker */
+    @keyframes flicker {
+      0%, 100% { opacity: 0.6; }
+      25% { opacity: 0.9; }
+      50% { opacity: 0.4; }
+      75% { opacity: 0.8; }
+    }
+    .flicker { animation: flicker 0.2s infinite alternate; }
+
+    /* Pug Breathing / Shake */
+    @keyframes shake {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(2px, 2px); }
+      50% { transform: translate(-2px, 1px); }
+      75% { transform: translate(1px, -2px); }
+    }
+    .pug-shake { animation: shake 4s steps(4) infinite; }
+
+    /* Pug Blinking */
+    @keyframes blink {
+      0%, 90%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+    .pug-blink { transform-origin: center; animation: blink 5s infinite; }
+
+    /* Sparkles Twinkle */
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    .twinkle-1 { animation: twinkle 2s infinite 0.2s; }
+    .twinkle-2 { animation: twinkle 2.5s infinite 1.0s; }
+    .twinkle-3 { animation: twinkle 1.8s infinite 0.5s; }
+
+    /* Rotating Vault Hologram */
+    @keyframes rotate-holo {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .holo-rotate { transform-origin: 960px 640px; animation: rotate-holo 20s linear infinite; }
+
+    /* Paint Splash Drip */
+    @keyframes drip {
+      0% { transform: scaleY(0); opacity: 0; transform-origin: top; }
+      20% { transform: scaleY(1); opacity: 1; }
+      100% { transform: scaleY(1.2) translateY(50px); opacity: 0; }
+    }
+    .drip-anim { animation: drip 3s infinite ease-in; }
+  </style>
+
+  <!-- Layer 1: Background & Floor -->
+  <g class="bg-layer">
+    <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+    <rect width="1920" height="1080" fill="url(#dots)"/>
+  </g>
+  
+  <!-- Floor -->
+  <path d="M0 850 L1920 850 L1920 1080 L0 1080 Z" fill="#1a1a2e" stroke="#000" stroke-width="8"/>
+  <path d="M0 850 L1920 850" stroke="#000" stroke-width="12"/>
+  <!-- Floor Perspective Lines -->
+  <line x1="200" y1="850" x2="-200" y2="1080" stroke="#000" stroke-width="4" opacity="0.3"/>
+  <line x1="500" y1="850" x2="300" y2="1080" stroke="#000" stroke-width="4" opacity="0.3"/>
+  <line x1="800" y1="850" x2="800" y2="1080" stroke="#000" stroke-width="4" opacity="0.3"/>
+  <line x1="1100" y1="850" x2="1300" y2="1080" stroke="#000" stroke-width="4" opacity="0.3"/>
+  <line x1="1400" y1="850" x2="1700" y2="1080" stroke="#000" stroke-width="4" opacity="0.3"/>
+  <line x1="1700" y1="850" x2="2100" y2="1080" stroke="#000" stroke-width="4" opacity="0.3"/>
+
+  <!-- Layer 2: The Digital Vault -->
+  <g id="vault">
+    <!-- Outer Frame -->
+    <polygon points="600,250 1320,250 1320,830 600,830" fill="#0a0a12" stroke="#000" stroke-width="12"/>
+    <polygon points="620,270 1300,270 1300,810 620,810" fill="#1a1a2e" stroke="#00f0ff" stroke-width="8"/>
+    
+    <!-- Inner Grid Background -->
+    <polygon points="640,300 1280,300 1280,780 640,780" fill="url(#grid)"/>
+    
+    <!-- Glowing Center Core -->
+    <circle cx="960" cy="540" r="250" fill="#00f0ff" opacity="0.2" filter="url(#glow-cyan)" class="flicker"/>
+    <circle cx="960" cy="540" r="180" fill="#ff0077" opacity="0.2" filter="url(#glow-magenta)" class="flicker" style="animation-delay: 0.1s;"/>
+
+    <!-- Vault Door (Hexagonal, slightly open) -->
+    <g transform="translate(960, 640) scale(0.9) translate(-960, -640)">
+      <polygon points="960,280 1280,460 1280,820 960,1000 640,820 640,460" fill="#2a2a3e" stroke="#000" stroke-width="12"/>
+      <polygon points="960,320 1240,480 1240,800 960,960 680,800 680,480" fill="#3a3a52" stroke="#000" stroke-width="8"/>
+      
+      <!-- Digital Locks & Bolts -->
+      <rect x="910" y="300" width="100" height="40" fill="#00f0ff" stroke="#000" stroke-width="6"/>
+      <rect x="910" y="940" width="100" height="40" fill="#00f0ff" stroke="#000" stroke-width="6"/>
+      <rect x="620" y="610" width="40" height="100" fill="#ff0077" stroke="#000" stroke-width="6"/>
+      <rect x="1260" y="610" width="40" height="100" fill="#ff0077" stroke="#000" stroke-width="6"/>
+
+      <!-- Center Spinning Lock -->
+      <g class="holo-rotate">
+        <circle cx="960" cy="640" r="120" fill="none" stroke="#00f0ff" stroke-width="15" stroke-dasharray="40 20"/>
+        <circle cx="960" cy="640" r="80" fill="none" stroke="#ff0077" stroke-width="10" stroke-dasharray="20 40"/>
+        <circle cx="960" cy="640" r="40" fill="#ffb300" stroke="#000" stroke-width="6"/>
+      </g>
+      
+      <!-- Holographic Data Streams -->
+      <line x1="960" y1="280" x2="960" y2="1000" stroke="#00f0ff" stroke-width="4" opacity="0.5" stroke-dasharray="30 50"/>
+      <line x1="640" y1="460" x2="1280" y2="820" stroke="#ff0077" stroke-width="4" opacity="0.5" stroke-dasharray="30 50"/>
+      <line x1="1280" y1="460" x2="640" y2="820" stroke="#ffb300" stroke-width="4" opacity="0.5" stroke-dasharray="30 50"/>
+    </g>
+  </g>
+
+  <!-- Layer 3: Paint Splashes (Behind Pug) -->
+  <g id="splashes">
+    <!-- Cyan Splash Left -->
+    <path d="M600 750 Q550 650 650 600 Q750 550 800 650 Q850 750 750 800 Q650 850 600 750 Z" fill="#00f0ff" stroke="#000" stroke-width="8" class="float-1"/>
+    <circle cx="550" cy="700" r="20" fill="#00f0ff" stroke="#000" stroke-width="5" class="float-1"/>
+    <circle cx="820" cy="720" r="30" fill="#00f0ff" stroke="#000" stroke-width="5" class="float-1"/>
+    
+    <!-- Magenta Splash Right -->
+    <path d="M1320 750 Q1270 650 1370 600 Q1470 550 1520 650 Q1570 750 1470 800 Q1370 850 1320 750 Z" fill="#ff0077" stroke="#000" stroke-width="8" class="float-2"/>
+    <circle cx="1280" cy="680" r="25" fill="#ff0077" stroke="#000" stroke-width="5" class="float-2"/>
+    <circle cx="1550" cy="740" r="35" fill="#ff0077" stroke="#000" stroke-width="5" class="float-2"/>
+
+    <!-- Center Splash behind Pug -->
+    <path d="M850 800 Q900 700 960 720 Q1020 700 1070 800 Q1020 900 960 880 Q900 900 850 800 Z" fill="#ffb300" stroke="#000" stroke-width="8" class="float-3"/>
+  </g>
+
+  <!-- Layer 4: The Grumpy Pug -->
+  <g id="pug" transform="translate(0, 50)">
+    <g class="pug-shake">
+      <!-- Tail -->
+      <path d="M860 700 Q820 650 840 600 Q860 550 900 580" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+
+      <!-- Back Legs -->
+      <path d="M850 800 L850 900 L890 900 L890 820 Z" fill="#d4a373" stroke="#000" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M1070 800 L1070 900 L1110 900 L1110 820 Z" fill="#d4a373" stroke="#000" stroke-width="8" stroke-linejoin="round"/>
+
+      <!-- Body -->
+      <ellipse cx="960" cy="750" rx="130" ry="110" fill="#d4a373" stroke="#000" stroke-width="10"/>
+
+      <!-- Front Legs -->
+      <path d="M920 820 L920 920 L960 920 L960 840 Z" fill="#d4a373" stroke="#000" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M1000 820 L1000 920 L1040 920 L1040 840 Z" fill="#d4a373" stroke="#000" stroke-width="8" stroke-linejoin="round"/>
+
+      <!-- Head -->
+      <circle cx="960" cy="620" r="110" fill="#d4a373" stroke="#000" stroke-width="10"/>
+
+      <!-- Ears -->
+      <path d="M860 560 Q800 500 820 620 Q840 680 880 620 Z" fill="#b07d4a" stroke="#000" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M1060 560 Q1120 500 1100 620 Q1080 680 1040 620 Z" fill="#b07d4a" stroke="#000" stroke-width="8" stroke-linejoin="round"/>
+
+      <!-- Muzzle -->
+      <ellipse cx="960" cy="660" rx="55" ry="45" fill="#eacfb5" stroke="#000" stroke-width="8"/>
+      
+      <!-- Nose -->
+      <path d="M940 645 Q960 635 980 645 Q970 665 960 665 Q950 665 940 645 Z" fill="#111" stroke="#000" stroke-width="4"/>
+      
+      <!-- Mouth (Frown) -->
+      <path d="M940 675 Q960 665 980 675" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+      <path d="M935 670 Q940 680 945 675" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+      <path d="M985 670 Q980 680 975 675" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+
+      <!-- Eyes (Grumpy) -->
+      <g class="pug-blink">
+        <ellipse cx="920" cy="600" rx="25" ry="30" fill="#fff" stroke="#000" stroke-width="6"/>
+        <circle cx="925" cy="605" r="10" fill="#000"/>
+        <!-- Eyebrow / Wrinkle -->
+        <path d="M890 580 Q920 570 940 590" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+
+        <ellipse cx="1000" cy="600" rx="25" ry="30" fill="#fff" stroke="#000" stroke-width="6"/>
+        <circle cx="995" cy="605" r="10" fill="#000"/>
+        <!-- Eyebrow / Wrinkle -->
+        <path d="M1030 580 Q1000 570 980 590" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+      </g>
+
+      <!-- Wrinkles -->
+      <path d="M920 550 Q960 530 1000 550" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+      <path d="M930 530 Q960 520 990 530" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+
+      <!-- Front Paws holding buckets -->
+      <ellipse cx="890" cy="780" rx="25" ry="20" fill="#d4a373" stroke="#000" stroke-width="6"/>
+      <ellipse cx="1030" cy="780" rx="25" ry="20" fill="#d4a373" stroke="#000" stroke-width="6"/>
+    </g>
+  </g>
+
+  <!-- Layer 5: Glowing Paint Buckets -->
+  <g id="buckets">
+    <!-- Cyan Bucket (Left) -->
+    <g class="hover-1" transform="translate(820, 750)">
+      <!-- Handle -->
+      <path d="M10 10 Q50 -40 90 10" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+      <!-- Bucket Body -->
+      <path d="M0 10 L100 10 L90 100 L10 100 Z" fill="#00f0ff" stroke="#000" stroke-width="8" stroke-linejoin="round" class="glow-c" filter="url(#glow-cyan)"/>
+      <!-- Paint Overflow -->
+      <path d="M5 15 Q50 35 95 15 L90 100 L10 100 Z" fill="#fff" opacity="0.6"/>
+      <!-- Highlight -->
+      <path d="M15 20 L20 90" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+      <!-- Drip -->
+      <path d="M50 100 L50 130 Q60 140 70 130 L70 100 Z" fill="#00f0ff" stroke="#000" stroke-width="4" stroke-linejoin="round" class="drip-anim"/>
+    </g>
+
+    <!-- Magenta Bucket (Right) -->
+    <g class="hover-2" transform="translate(1000, 750)">
+      <!-- Handle -->
+      <path d="M10 10 Q50 -40 90 10" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+      <!-- Bucket Body -->
+      <path d="M0 10 L100 10 L90 100 L10 100 Z" fill="#ff0077" stroke="#000" stroke-width="8" stroke-linejoin="round" class="glow-m" filter="url(#glow-magenta)"/>
+      <!-- Paint Overflow -->
+      <path d="M5 15 Q50 35 95 15 L90 100 L10 100 Z" fill="#fff" opacity="0.6"/>
+      <!-- Highlight -->
+      <path d="M15 20 L20 90" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+      <!-- Drip -->
+      <path d="M30 100 L30 125 Q40 135 50 125 L50 100 Z" fill="#ff0077" stroke="#000" stroke-width="4" stroke-linejoin="round" class="drip-anim" style="animation-delay: 1.5s;"/>
+    </g>
+  </g>
+
+  <!-- Layer 6: Foreground Paint Blobs & Sparkles -->
+  <g id="foreground">
+    <!-- Left Blob -->
+    <path d="M100 950 Q150 850 250 900 Q350 950 300 1050 Q200 1100 100 1050 Z" fill="#00f0ff" stroke="#000" stroke-width="8" class="float-3"/>
+    <circle cx="200" cy="1000" r="15" fill="#fff" opacity="0.7"/>
+    
+    <!-- Right Blob -->
+    <path d="M1700 950 Q1750 850 1850 900 Q1950 950 1900 1050 Q1800 1100 1700 1050 Z" fill="#ff0077" stroke="#000" stroke-width="8" class="float-1"/>
+    <circle cx="1800" cy="1000" r="20" fill="#fff" opacity="0.7"/>
+
+    <!-- Sparkles -->
+    <g class="twinkle-1" transform="translate(750, 600)">
+      <path d="M0 -30 L10 0 L0 30 L-10 0 Z" fill="#fff"/>
+      <path d="M-30 0 L0 10 L30 0 L0 -10 Z" fill="#fff"/>
+    </g>
+    <g class="twinkle-2" transform="translate(1200, 500)">
+      <path d="M0 -25 L8 0 L0 25 L-8 0 Z" fill="#fff"/>
+      <path d="M-25 0 L0 8 L25 0 L0 -8 Z" fill="#fff"/>
+    </g>
+    <g class="twinkle-3" transform="translate(900, 400)">
+      <path d="M0 -20 L6 0 L0 20 L-6 0 Z" fill="#ffb300"/>
+      <path d="M-20 0 L0 6 L20 0 L0 -6 Z" fill="#ffb300"/>
+    </g>
+    
+    <!-- Digital Glitch Lines -->
+    <line x1="0" y1="200" x2="400" y2="200" stroke="#00f0ff" stroke-width="4" opacity="0.6" class="flicker"/>
+    <line x1="1520" y1="350" x2="1920" y2="350" stroke="#ff0077" stroke-width="4" opacity="0.6" class="flicker" style="animation-delay: 0.15s;"/>
+    <line x1="300" y1="900" x2="600" y2="900" stroke="#ffb300" stroke-width="4" opacity="0.6" class="flicker" style="animation-delay: 0.3s;"/>
+  </g>
+</svg>

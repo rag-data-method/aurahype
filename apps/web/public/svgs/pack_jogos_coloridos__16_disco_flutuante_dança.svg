@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="grad1" cx="80%" cy="20%" r="1"><stop offset="0%" stop-color="#FF2FB1"/><stop offset="40%" stop-color="#2FE3FF"/><stop offset="80%" stop-color="#FFE93F"/><stop offset="100%" stop-color="#170B33"/></radialGradient>
+    <radialGradient id="grad2" cx="50%" cy="50%" r="1"><stop offset="0%" stop-color="#FFE93F"/><stop offset="100%" stop-color="#FF2FB1"/></radialGradient>
+    <linearGradient id="lg1"><stop offset="0%" stop-color="#FFE93F"/><stop offset="50%" stop-color="#2FE3FF"/><stop offset="100%" stop-color="#FF2FB1"/></linearGradient>
+    <linearGradient id="lg2"><stop offset="0%" stop-color="#2FE3FF"/><stop offset="100%" stop-color="#FF2FB1"/></linearGradient>
+    <linearGradient id="lg3"><stop offset="0%" stop-color="#FF2FB1"/><stop offset="100%" stop-color="#FFE93F"/></linearGradient>
+
+    <linearGradient id="beamGrad"><stop offset="0%" stop-color="#FFE93F" stop-opacity="0.7"/><stop offset="50%" stop-color="#2FE3FF" stop-opacity="0.3"/><stop offset="100%" stop-color="#FF2FB1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="beamGrad2"><stop offset="0%" stop-color="#FF2FB1" stop-opacity="0.7"/><stop offset="50%" stop-color="#FFE93F" stop-opacity="0.3"/><stop offset="100%" stop-color="#2FE3FF" stop-opacity="0"/></linearGradient>
+    <linearGradient id="beamGrad3"><stop offset="0%" stop-color="#2FE3FF" stop-opacity="0.7"/><stop offset="50%" stop-color="#FF2FB1" stop-opacity="0.3"/><stop offset="100%" stop-color="#FFE93F" stop-opacity="0"/></linearGradient>
+
+    <filter id="glow1"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow2"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow3"><feGaussianBlur stdDeviation="20" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow4"><feGaussianBlur stdDeviation="35" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+
+    <clipPath id="floor-clip"><polygon points="0,900 1600,900 1600,700 0,700"/></clipPath>
+
+    <g id="layer-floor">
+      <rect width="1600" height="200" fill="#170B33" clip-path="url(#floor-clip)"/>
+      <rect width="1600" height="5" fill="#2FE3FF" y="700" opacity="0.9" filter="url(#glow1)"/>
+      <rect width="1600" height="5" fill="#FFE93F" y="700" opacity="0.9" filter="url(#glow1)">
+        <animate attributeName="x" values="0;-20;0" dur="0.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.4;0.9" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+
+      <g clip-path="url(#floor-clip)">
+        <polygon points="-200,900 400,700 600,700 0,900" fill="#FF2FB1" opacity="0.6">
+          <animate attributeName="fill" values="#FF2FB1;#2FE3FF;#FFE93F;#FF2FB1" dur="2s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="200,900 800,700 1000,700 400,900" fill="#2FE3FF" opacity="0.6">
+          <animate attributeName="fill" values="#2FE3FF;#FFE93F;#FF2FB1;#2FE3FF" dur="2.5s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="600,900 1200,700 1400,700 800,900" fill="#FFE93F" opacity="0.6">
+          <animate attributeName="fill" values="#FFE93F;#FF2FB1;#2FE3FF;#FFE93F" dur="3s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="1000,900 1600,700 1800,700 1200,900" fill="#FF8A2F" opacity="0.6">
+          <animate attributeName="fill" values="#FF8A2F;#FF2FB1;#2FE3FF;#FF8A2F" dur="2.2s" repeatCount="indefinite"/>
+        </polygon>
+
+        <polygon points="0,900 200,700 400,700 200,900" fill="#2FE3FF" opacity="0.3"/>
+        <polygon points="400,900 600,700 800,700 600,900" fill="#FF2FB1" opacity="0.3"/>
+        <polygon points="800,900 1000,700 1200,700 1000,900" fill="#FFE93F" opacity="0.3"/>
+        <polygon points="1200,900 1400,700 1600,700 1400,900" fill="#2FE3FF" opacity="0.3"/>
+
+        <line x1="400" y1="700" x2="-200" y2="900" stroke="#FFE93F" stroke-width="4" opacity="0.8"/>
+        <line x1="800" y1="700" x2="200" y2="900" stroke="#FF2FB1" stroke-width="4" opacity="0.8"/>
+        <line x1="1200" y1="700" x2="600" y2="900" stroke="#2FE3FF" stroke-width="4" opacity="0.8"/>
+        <line x1="1600" y1="700" x2="1000" y2="900" stroke="#FFE93F" stroke-width="4" opacity="0.8"/>
+      </g>
+    </g>
+
+    <g id="dancer">
+      <ellipse cx="0" cy="120" rx="60" ry="8" fill="#2FE3FF" opacity="0.7" filter="url(#glow1)"/>
+      <ellipse cx="0" cy="120" rx="30" ry="4" fill="#FFE93F" opacity="0.9"/>
+      <path d="M-15 35 Q0 0 15 35 L0 40 Z" fill="#2FE3FF"/>
+      <circle cx="0" cy="-20" r="18" fill="#FFE93F"/>
+      <path d="M-15 35 L-35 80 L-50 110" stroke="#FFE93F" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M15 35 L35 75 L55 60" stroke="#FFE93F" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M-10 80 L-10 110" stroke="#FFE93F" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M10 80 L10 110" stroke="#FFE93F" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M-35 80 Q0 60 35 75 L25 100 Q0 85 -25 95 Z" fill="#2FE3FF"/>
+      <circle cx="-35" cy="80" r="8" fill="#FF2FB1"/><circle cx="35" cy="75" r="8" fill="#FF2FB1"/>
+      <circle cx="-50" cy="110" r="8" fill="#FF2FB1"/><circle cx="55" cy="60" r="8" fill="#FF2FB1"/>
+      <circle cx="-10" cy="110" r="8" fill="#FF2FB1"/><circle cx="10" cy="110" r="8" fill="#FF2FB1"/>
+      <animateTransform attributeName="transform" type="rotate" values="-5 0 110; 5 0 110; -5 0 110" dur="0.8s" repeatCount="indefinite"/>
+    </g>
+
+    <g id="star">
+      <polygon points="0,-15 4,-4 15,0 4,4 0,15 -4,4 -15,0 -4,-4" fill="#FFE93F">
+        <animate attributeName="opacity" values="1;0.2;1" dur="0.6s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="1;0.5;1" dur="0.6s" repeatCount="indefinite"/>
+      </polygon>
+    </g>
+
+    <g id="confetti">
+      <rect x="0" y="0" width="12" height="6" rx="2" fill="#FF2FB1">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <g id="confetti2">
+      <rect x="0" y="0" width="12" height="6" rx="2" fill="#2FE3FF">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="4s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <g id="confetti3">
+      <circle cx="0" cy="0" r="4" fill="#FFE93F">
+        <animate attributeName="r" values="4;2;4" dur="1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </defs>
+
+  <rect width="1600" height="900" fill="#170B33"/>
+
+  <rect width="1600" height="900" fill="url(#grad1)">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <g id="sunburst">
+    <circle cx="800" cy="450" r="900" fill="none" stroke="#FF2FB1" stroke-width="800" stroke-dasharray="40 40" opacity="0.2">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="60s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="450" r="900" fill="none" stroke="#2FE3FF" stroke-width="800" stroke-dasharray="40 40" stroke-dashoffset="20" opacity="0.2">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="-360 800 450" dur="45s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <circle cx="800" cy="450" r="650" fill="url(#grad2)" opacity="0.15" filter="url(#glow4)">
+    <animate attributeName="r" values="650;700;650" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.3;0.15" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <polygon points="0,0 600,0 300,900 0,900" fill="#2FE3FF" opacity="0.05">
+    <animate attributeName="opacity" values="0.05;0.15;0.05" dur="3s" repeatCount="indefinite"/>
+  </polygon>
+  <polygon points="1600,0 1000,0 1300,900 1600,900" fill="#FF2FB1" opacity="0.05">
+    <animate attributeName="opacity" values="0.05;0.15;0.05" dur="4s" repeatCount="indefinite"/>
+  </polygon>
+
+  <circle cx="800" cy="450" r="600" fill="none" stroke="#FFE93F" stroke-width="2" stroke-dasharray="10 20" opacity="0.3">
+    <animateTransform attributeName="transform" type="rotate" from="0 800 450" to="360 800 450" dur="20s" repeatCount="indefinite"/>
+  </circle>
+
+  <g id="light-columns">
+    <rect x="300" y="0" width="80" height="900" fill="#FF2FB1" opacity="0.1" filter="url(#glow2)">
+      <animate attributeName="y" values="900;0;900" dur="3s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="fill" values="#FF2FB1;#2FE3FF;#FFE93F;#FF2FB1" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="500" y="0" width="60" height="900" fill="#2FE3FF" opacity="0.1" filter="url(#glow2)">
+      <animate attributeName="y" values="900;0;900" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="fill" values="#2FE3FF;#FFE93F;#FF2FB1;#2FE3FF" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="900" y="0" width="100" height="900" fill="#FFE93F" opacity="0.1" filter="url(#glow2)">
+      <animate attributeName="y" values="900;0;900" dur="3.5s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.5s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="fill" values="#FFE93F;#FF2FB1;#2FE3FF;#FFE93F" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1200" y="0" width="70" height="900" fill="#FF2FB1" opacity="0.1" filter="url(#glow2)">
+      <animate attributeName="y" values="900;0;900" dur="2.8s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="2.8s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="fill" values="#FF2FB1;#FFE93F;#2FE3FF;#FF2FB1" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <g id="chevrons">
+    <polygon points="100,100 150,150 100,200 50,150" fill="none" stroke="#2FE3FF" stroke-width="6" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1300,300 1350,350 1300,400 1250,350" fill="none" stroke="#FF2FB1" stroke-width="6" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,20; 0,0" dur="2.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="200,600 250,650 200,700 150,650" fill="none" stroke="#FFE93F" stroke-width="6" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <use href="#layer-floor"/>
+
+  <g id="disco-ball" transform="translate(800, 220)">
+    <ellipse cx="0" cy="0" rx="140" ry="30" fill="#2FE3FF" filter="url(#glow3)" opacity="0.8">
+      <animate attributeName="rx" values="140;160;140" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <g>
+      <polygon points="0,-120 -20,0 20,0" fill="#FF2FB1" opacity="0.4" filter="url(#glow1)">
+         <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="0,-120 -20,0 20,0" fill="#2FE3FF" opacity="0.4" filter="url(#glow1)">
+         <animateTransform attributeName="transform" type="rotate" from="120" to="480" dur="8s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="0,-120 -20,0 20,0" fill="#FFE93F" opacity="0.4" filter="url(#glow1)">
+         <animateTransform attributeName="transform" type="rotate" from="240" to="600" dur="8s" repeatCount="indefinite"/>
+      </polygon>
+    </g>
+
+    <circle cx="0" cy="0" r="110" fill="url(#lg1)" filter="url(#glow2)">
+      <animate attributeName="r" values="110;115;110" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <g id="ball-facets" opacity="0.9">
+      <path d="M-110 0 A110 110 0 0 1 110 0" fill="none" stroke="#170B33" stroke-width="2"/>
+      <path d="M-80 -77 A110 110 0 0 1 80 -77" fill="none" stroke="#170B33" stroke-width="2"/>
+      <path d="M-80 77 A110 110 0 0 0 80 77" fill="none" stroke="#170B33" stroke-width="2"/>
+      <line x1="0" y1="-110" x2="0" y2="110" stroke="#170B33" stroke-width="2"/>
+      <line x1="-55" y1="-95" x2="-55" y2="95" stroke="#170B33" stroke-width="2"/>
+      <line x1="55" y1="-95" x2="55" y2="95" stroke="#170B33" stroke-width="2"/>
+      <line x1="-95" y1="-55" x2="-95" y2="55" stroke="#170B33" stroke-width="2"/>
+      <line x1="95" y1="-55" x2="95" y2="55" stroke="#170B33" stroke-width="2"/>
+
+      <polygon points="0,-110 -55,-95 0,-80 55,-95" fill="#2FE3FF" opacity="0.9"><animate attributeName="fill" values="#2FE3FF;#FFE93F;#FF2FB1;#2FE3FF" dur="2s" repeatCount="indefinite"/></polygon>
+      <polygon points="-55,-95 -95,-55 -55,-30 0,-55 0,-80" fill="#FFE93F" opacity="0.8"><animate attributeName="fill" values="#FFE93F;#FF2FB1;#2FE3FF;#FFE93F" dur="1.5s" repeatCount="indefinite"/></polygon>
+      <polygon points="55,-95 95,-55 55,-30 0,-55 0,-80" fill="#FF2FB1" opacity="0.8"><animate attributeName="fill" values="#FF2FB1;#2FE3FF;#FFE93F;#FF2FB1" dur="3s" repeatCount="indefinite"/></polygon>
+      <polygon points="-95,-55 -110,0 -80,0 -55,-30" fill="#2FE3FF" opacity="0.6"><animate attributeName="fill" values="#2FE3FF;#FFE93F;#FF2FB1;#2FE3FF" dur="2.5s" repeatCount="indefinite"/></polygon>
+      <polygon points="95,-55 110,0 80,0 55,-30" fill="#FFE93F" opacity="0.6"><animate attributeName="fill" values="#FFE93F;#FF2FB1;#2FE3FF;#FFE93F" dur="1.8s" repeatCount="indefinite"/></polygon>
+      <polygon points="-110,0 -95,55 -55,30 -80,0" fill="#FF2FB1" opacity="0.5"><animate attributeName="fill" values="#FF2FB1;#2FE3FF;#FFE93F;#FF2FB1" dur="2.2s" repeatCount="indefinite"/></polygon>
+      <polygon points="110,0 95,55 55,30 80,0" fill="#2FE3FF" opacity="0.5"><animate attributeName="fill" values="#2FE3FF;#FFE93F;#FF2FB1;#2FE3FF" dur="3.2s" repeatCount="indefinite"/></polygon>
+      <polygon points="-95,55 -55,95 -55,30" fill="#FFE93F" opacity="0.7"><animate attributeName="fill" values="#FFE93F;#FF2FB1;#2FE3FF;#FFE93F" dur="1.2s" repeatCount="indefinite"/></polygon>
+      <polygon points="95,55 55,95 55,30" fill="#FF2FB1" opacity="0.7"><animate attributeName="fill" values="#FF2FB1;#2FE3FF;#FFE93F;#FF2FB1" dur="2.7s" repeatCount="indefinite"/></polygon>
+      <polygon points="-55,95 0,110 -55,30 0,55" fill="#2FE3FF" opacity="0.9"><animate attributeName="fill" values="#2FE3FF;#FFE93F;#FF2FB1;#2FE3FF" dur="1.7s" repeatCount="indefinite"/></polygon>
+      <polygon points="55,95 0,110 55,30 0,55" fill="#FFE93F" opacity="0.9"><animate attributeName="fill" values="#FFE93F;#FF2FB1;#2FE3FF;#FFE93F" dur="2.3s" repeatCount="indefinite"/></polygon>
+      <polygon points="-55,-30 -80,0 -55,30 0,55 0,-55" fill="#FF2FB1" opacity="0.7"><animate attributeName="fill" values="#FF2FB1;#2FE3FF;#FFE93F;#FF2FB1" dur="1.9s" repeatCount="indefinite"/></polygon>
+      <polygon points="55,-30 80,0 55,30 0,55 0,-55" fill="#2FE3FF" opacity="0.7"><animate attributeName="fill" values="#2FE3FF;#FFE93F;#FF2FB1;#2FE3FF" dur="2.8s" repeatCount="indefinite"/></polygon>
+    </g>
+
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#FFE93F" stroke-width="4" opacity="0.8">
+      <animate attributeName="r" values="110;115;110" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#2FE3FF" stroke-width="2" opacity="0.9">
+      <animate attributeName="r" values="110;118;110" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <line x1="0" y1="-110" x2="0" y2="-180" stroke="#170B33" stroke-width="4"/>
+    <rect x="-15" y="-185" width="30" height="10" rx="3" fill="#FF2FB1"/>
+
+    <animateTransform attributeName="transform" type="translate" values="800,220; 800,215; 800,220" dur="2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" values="-5 800 220; 5 800 220; -5 800 220" dur="4s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <g id="sweeping-beams">
+    <polygon points="800,220 -200,900 200,900" fill="url(#beamGrad)" opacity="0.4">
+      <animateTransform attributeName="transform" type="rotate" values="-30 800 220; 30 800 220; -30 800 220" dur="5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,220 600,900 1000,900" fill="url(#beamGrad2)" opacity="0.3">
+      <animateTransform attributeName="transform" type="rotate" values="10 800 220; -40 800 220; 10 800 220" dur="6s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,220 1000,900 1400,900" fill="url(#beamGrad3)" opacity="0.3">
+      <animateTransform attributeName="transform" type="rotate" values="50 800 220; 0 800 220; 50 800 220" dur="7s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,220 1400,900 1800,900" fill="url(#beamGrad)" opacity="0.2">
+      <animateTransform attributeName="transform" type="rotate" values="70 800 220; 20 800 220; 70 800 220" dur="8s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <g id="dancer-frame" transform="translate(930, 580)">
+    <use href="#dancer">
+      <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="0.6s" repeatCount="indefinite"/>
+    </use>
+    <ellipse cx="0" cy="120" rx="50" ry="10" fill="#2FE3FF" opacity="0.5" filter="url(#glow1)">
+      <animate attributeName="rx" values="50;40;50" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="0.6s" repeatCount="indefinite"/>
+    </ellipse>
+    <animateTransform attributeName="transform" type="translate" values="930,580; 930,570; 930,580" dur="0.6s" repeatCount="indefinite"/>
+  </g>
+
+  <g id="sparkles">
+    <use href="#star" x="700" y="350"><animateTransform attributeName="transform" type="translate" values="0,0; 0,-30; 0,0" dur="1.5s" repeatCount="indefinite"/></use>
+    <use href="#star" x="900" y="400"><animateTransform attributeName="transform" type="translate" values="0,0; 10,0; 0,0" dur="1.2s" repeatCount="indefinite"/></use>
+    <use href="#star" x="850" y="300"><animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="2s" repeatCount="indefinite"/></use>
+    <use href="#star" x="750" y="450"><animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="1.8s" repeatCount="indefinite"/></use>
+    <use href="#star" x="950" y="480"><animateTransform attributeName="transform" type="translate" values="0,0; 0,30; 0,0" dur="1.3s" repeatCount="indefinite"/></use>
+    <use href="#star" x="1000" y="350"><animateTransform attributeName="transform" type="translate" values="0,0; 20,0; 0,0" dur="2.2s" repeatCount="indefinite"/></use>
+  </g>
+
+  <g id="confetti-layer">
+    <use href="#confetti" x="200" y="100"><animateTransform attributeName="transform" type="translate" values="0,0; 40,200; 0,400; -40,600; 0,800" dur="4s" repeatCount="indefinite"/></use>
+    <use href="#confetti2" x="400" y="50"><animateTransform attributeName="transform" type="translate" values="0,0; -20,150; 20,350; 0,550; -20,850" dur="5s" repeatCount="indefinite"/></use>
+    <use href="#confetti3" x="600" y="150"><animateTransform attributeName="transform" type="translate" values="0,0; 30,250; -30,450; 30,650; 0,850" dur="3.5s" repeatCount="indefinite"/></use>
+    <use href="#confetti" x="1000" y="80"><animateTransform attributeName="transform" type="translate" values="0,0; -50,200; 50,400; -50,600; 0,800" dur="4.5s" repeatCount="indefinite"/></use>
+    <use href="#confetti2" x="1200" y="120"><animateTransform attributeName="transform" type="translate" values="0,0; 20,180; -20,380; 20,580; 0,780" dur="3s" repeatCount="indefinite"/></use>
+    <use href="#confetti3" x="1400" y="60"><animateTransform attributeName="transform" type="translate" values="0,0; -30,220; 30,420; -30,620; 0,820" dur="5.5s" repeatCount="indefinite"/></use>
+    <use href="#confetti" x="300" y="600"><animateTransform attributeName="transform" type="translate" values="0,0; 40,100; 0,200; -40,300" dur="2s" repeatCount="indefinite"/></use>
+    <use href="#confetti2" x="800" y="650"><animateTransform attributeName="transform" type="translate" values="0,0; -20,80; 20,180; 0,280" dur="2.5s" repeatCount="indefinite"/></use>
+    <use href="#confetti3" x="1100" y="550"><animateTransform attributeName="transform" type="translate" values="0,0; 30,120; -30,220; 30,320" dur="1.8s" repeatCount="indefinite"/></use>
+    <use href="#confetti" x="500" y="750"><animateTransform attributeName="transform" type="translate" values="0,0; -40,60; 40,160; 0,260" dur="2.2s" repeatCount="indefinite"/></use>
+    <use href="#confetti2" x="1300" y="700"><animateTransform attributeName="transform" type="translate" values="0,0; 20,90; -20,190; 20,290" dur="2.8s" repeatCount="indefinite"/></use>
+    <use href="#confetti3" x="150" y="400"><animateTransform attributeName="transform" type="translate" values="0,0; -30,150; 30,350; -30,550" dur="3.2s" repeatCount="indefinite"/></use>
+    <use href="#confetti" x="1500" y="450"><animateTransform attributeName="transform" type="translate" values="0,0; 40,160; -40,360; 40,560" dur="3.8s" repeatCount="indefinite"/></use>
+  </g>
+
+  <g id="foreground-lines">
+    <line x1="0" y1="150" x2="300" y2="150" stroke="#FFE93F" stroke-width="6" stroke-dasharray="40 20" opacity="0.8">
+      <animate attributeName="x1" values="0;40;0" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="300;340;300" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="250" x2="200" y2="250" stroke="#2FE3FF" stroke-width="4" stroke-dasharray="20 10" opacity="0.8">
+      <animate attributeName="x1" values="0;-30;0" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="200;170;200" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+
+    <line x1="1600" y1="200" x2="1300" y2="200" stroke="#FF2FB1" stroke-width="6" stroke-dasharray="40 20" opacity="0.8">
+      <animate attributeName="x1" values="1600;1560;1600" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1300;1260;1300" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1600" y1="350" x2="1400" y2="350" stroke="#FFE93F" stroke-width="4" stroke-dasharray="30 15" opacity="0.8">
+      <animate attributeName="x1" values="1600;1630;1600" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1400;1430;1400" dur="0.8s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <g id="foreground-particles">
+    <circle cx="100" cy="800" r="6" fill="#2FE3FF" filter="url(#glow1)">
+      <animate attributeName="cy" values="800;750;800" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="850" r="8" fill="#FF2FB1" filter="url(#glow1)">
+      <animate attributeName="cy" values="850;800;850" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="820" r="5" fill="#FFE93F" filter="url(#glow1)">
+      <animate attributeName="cy" values="820;780;820" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="780" r="7" fill="#2FE3FF" filter="url(#glow1)">
+      <animate attributeName="cy" values="780;740;780" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g id="halftone-overlay" opacity="0.2">
+    <pattern id="halftone" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="4" fill="#FFE93F"/>
+    </pattern>
+    <rect width="1600" height="900" fill="url(#halftone)"/>
+    <rect width="1600" height="900" fill="url(#halftone)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,20; 0,0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

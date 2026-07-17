@@ -1,0 +1,24 @@
+{
+  "slug": "09_patinho_borracha",
+  "title": "Patinho de Borracha",
+  "category": "cotton_candy",
+  "objects": "rubber duck + bubbly water + floating soap bubbles",
+  "colors": {
+    "primary": "#FFDAC1",
+    "secondary": "#B5EAD7",
+    "accent": "#FFFFFF",
+    "bg": "#C7CEEA"
+  },
+  "tags": [
+    "light",
+    "candy",
+    "bath",
+    "bubbles"
+  ],
+  "svgFile": "09_patinho_borracha.svg",
+  "sizeKB": 11.68,
+  "animations": 52,
+  "gradients": 6,
+  "generatedAt": "2026-06-19",
+  "model": "@cf/moonshotai/kimi-k2.7-code"
+}

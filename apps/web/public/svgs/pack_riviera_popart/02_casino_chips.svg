@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="background-color:#000000;">
+  <defs>
+    <!-- HALFTONE PATTERNS -->
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2.5" fill="#000000"/>
+    </pattern>
+    <pattern id="dots-lg" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="5" fill="#000000"/>
+    </pattern>
+    
+    <!-- CHIP SHADOW FILTER -->
+    <filter id="pop-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="15" dy="25" stdDeviation="4" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+
+    <!-- CHIP TEMPLATE (SIDE + FACE) -->
+    <g id="chip-tpl">
+      <!-- Side (thickness) -->
+      <rect x="-15" y="-15" width="30" height="160" rx="4" fill="var(--side-c)" stroke="#000000" stroke-width="6"/>
+      <!-- Side Dashes -->
+      <line x1="-15" y1="25" x2="15" y2="25" stroke="#000000" stroke-width="6" stroke-dasharray="10 10"/>
+      <line x1="-15" y1="65" x2="15" y2="65" stroke="#000000" stroke-width="6" stroke-dasharray="10 10"/>
+      <line x1="-15" y1="105" x2="15" y2="105" stroke="#000000" stroke-width="6" stroke-dasharray="10 10"/>
+      
+      <!-- Face -->
+      <ellipse cx="0" cy="-15" rx="78" ry="38" fill="var(--face-c)" stroke="#000000" stroke-width="6"/>
+      <!-- Face Inner Ring -->
+      <ellipse cx="0" cy="-15" rx="62" ry="30" fill="none" stroke="#000000" stroke-width="6"/>
+      <!-- Face Dashes -->
+      <ellipse cx="0" cy="-15" rx="70" ry="34" fill="none" stroke="#000000" stroke-width="6" stroke-dasharray="12 14"/>
+      
+      <!-- Halftone Dots on Face -->
+      <ellipse cx="0" cy="-15" rx="62" ry="30" fill="url(#dots)" opacity="0.45"/>
+      
+      <!-- Dollar Sign -->
+      <path d="M -2,-38 L -2,-25 M -2,-5 L -2,8 M -12,-18 C -12,-28 12,-28 12,-18 C 12,-12 -12,-12 -12,-6 C -12,4 12,4 12,-6" fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- ACTION LINE TEMPLATE -->
+    <g id="action-line">
+      <line x1="0" y1="0" x2="120" y2="0" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+    </g>
+
+    <!-- SPARK / STAR TEMPLATE -->
+    <polygon id="spark" points="0,-25 6,-6 25,0 6,6 0,25 -6,6 -25,0 -6,-6" fill="#FFDF00" stroke="#000000" stroke-width="5" stroke-linejoin="round"/>
+  </defs>
+
+  <!-- ================= BACKGROUND ================= -->
+  <g id="bg-layers">
+    <!-- Base Cyan Background -->
+    <rect width="1600" height="900" fill="#00FFFF" />
+    
+    <!-- Dynamic Background Halftone Pattern -->
+    <rect width="1600" height="900" fill="url(#dots)" opacity="0.15">
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="2s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Animated Color Blocks -->
+    <rect x="0" y="0" width="1600" height="300" fill="#E6007E">
+      <animate attributeName="fill" values="#E6007E;#00FFFF;#E6007E" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="600" width="1600" height="300" fill="#E6007E">
+      <animate attributeName="fill" values="#E6007E;#00FFFF;#E6007E" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Central Yellow Ring -->
+    <circle cx="800" cy="450" r="350" fill="#FFDF00" stroke="#000000" stroke-width="12"/>
+    <circle cx="800" cy="450" r="280" fill="none" stroke="#000000" stroke-width="8" stroke-dasharray="40 20"/>
+    
+    <!-- Center Massive Halftone -->
+    <circle cx="800" cy="450" r="350" fill="url(#dots-lg)" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Floating Background Elements -->
+    <use href="#spark" x="200" y="150" transform="scale(2)">
+      <animateTransform attributeName="transform" type="rotate" values="0;45;0" dur="3s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <use href="#spark" x="1400" y="750" transform="scale(2.5)">
+      <animateTransform attributeName="transform" type="rotate" values="0;-45;0" dur="4s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="1;0;1" dur="4s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- ================= FOREGROUND ACTION LINES ================= -->
+  <g id="motion-lines">
+    <!-- Top Left Burst -->
+    <g transform="translate(100, 100)">
+      <use href="#action-line" transform="rotate(0)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 40 0" dur="0.8s" repeatCount="indefinite" additive="sum"/>
+      </use>
+      <use href="#action-line" transform="rotate(45)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 40 0" dur="0.8s" begin="0.1s" repeatCount="indefinite" additive="sum"/>
+      </use>
+      <use href="#action-line" transform="rotate(90)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 40 0" dur="0.8s" begin="0.2s" repeatCount="indefinite" additive="sum"/>
+      </use>
+    </g>
+
+    <!-- Bottom Right Burst -->
+    <g transform="translate(1500, 800)">
+      <use href="#action-line" transform="rotate(180)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 40 0" dur="0.9s" repeatCount="indefinite" additive="sum"/>
+      </use>
+      <use href="#action-line" transform="rotate(225)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 40 0" dur="0.9s" begin="0.1s" repeatCount="indefinite" additive="sum"/>
+      </use>
+      <use href="#action-line" transform="rotate(270)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 40 0" dur="0.9s" begin="0.2s" repeatCount="indefinite" additive="sum"/>
+      </use>
+    </g>
+
+    <!-- Explosive Radiating Lines from Center -->
+    <g transform="translate(800, 450)">
+      <use href="#action-line" transform="rotate(20) translate(380, 0)" />
+      <use href="#action-line" transform="rotate(70) translate(380, 0)" />
+      <use href="#action-line" transform="rotate(110) translate(380, 0)" />
+      <use href="#action-line" transform="rotate(160) translate(380, 0)" />
+      <use href="#action-line" transform="rotate(200) translate(380, 0)" />
+      <use href="#action-line" transform="rotate(250) translate(380, 0)" />
+      <use href="#action-line" transform="rotate(290) translate(380, 0)" />
+      <use href="#action-line" transform="rotate(340) translate(380, 0)" />
+      
+      <!-- Animated pulsing ring of lines -->
+      <circle cx="0" cy="0" r="360" fill="none" stroke="#000000" stroke-width="6" stroke-dasharray="20 40">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="380" fill="none" stroke="#000000" stroke-width="4" stroke-dasharray="15 30">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- ================= FLYING CHIPS ================= -->
+  <g id="chips-layer">
+    
+    <!-- CHIP 1: RED (Center Focus) -->
+    <g transform="translate(800, 450)" filter="url(#pop-shadow)">
+      <!-- Floating Motion -->
+      <animateTransform attributeName="transform" type="translate" 
+        values="800,450; 800,420; 800,450" dur="3s" repeatCount="indefinite" additive="replace"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0; 360" dur="6s" repeatCount="indefinite" additive="sum"/>
+      
+      <g transform="scale(2.8)">
+        <g style="--side-c:#B30000; --face-c:#FF0000;">
+          <use href="#chip-tpl"/>
+          <!-- Inner Dollar Color Swap -->
+          <path d="M -2,-38 L -2,-25 M -2,-5 L -2,8 M -12,-18 C -12,-28 12,-28 12,-18 C 12,-12 -12,-12 -12,-6 C -12,4 12,4 12,-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- CHIP 2: BLUE (Top Left) -->
+    <g transform="translate(250, 200)" filter="url(#pop-shadow)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="250,200; 280,220; 250,200" dur="4s" repeatCount="indefinite" additive="replace"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0; -360" dur="8s" repeatCount="indefinite" additive="sum"/>
+      
+      <g transform="scale(2.0)">
+        <g style="--side-c:#0033CC; --face-c:#0085FF;">
+          <use href="#chip-tpl"/>
+          <path d="M -2,-38 L -2,-25 M -2,-5 L -2,8 M -12,-18 C -12,-28 12,-28 12,-18 C 12,-12 -12,-12 -12,-6 C -12,4 12,4 12,-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- CHIP 3: YELLOW (Bottom Right) -->
+    <g transform="translate(1350, 700)" filter="url(#pop-shadow)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1350,700; 1320,680; 1350,700" dur="3.5s" repeatCount="indefinite" additive="replace"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0; 360" dur="7s" repeatCount="indefinite" additive="sum"/>
+      
+      <g transform="scale(2.2)">
+        <g style="--side-c:#CC9900; --face-c:#FFDF00;">
+          <use href="#chip-tpl"/>
+          <path d="M -2,-38 L -2,-25 M -2,-5 L -2,8 M -12,-18 C -12,-28 12,-28 12,-18 C 12,-12 -12,-12 -12,-6 C -12,4 12,4 12,-6" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- CHIP 4: MAGENTA (Left Center) -->
+    <g transform="translate(150, 500)" filter="url(#pop-shadow)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="150,500; 170,530; 150,500" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0; -360" dur="9s" repeatCount="indefinite" additive="sum"/>
+      
+      <g transform="scale(1.8)">
+        <g style="--side-c:#99005C; --face-c:#E6007E;">
+          <use href="#chip-tpl"/>
+          <path d="M -2,-38 L -2,-25 M -2,-5 L -2,8 M -12,-18 C -12,-28 12,-28 12,-18 C 12,-12 -12,-12 -12,-6 C -12,4 12,4 12,-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- CHIP 5: CYAN (Top Right) -->
+    <g transform="translate(1450, 200)" filter="url(#pop-shadow)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1450,200; 1420,230; 1450,200" dur="4.2s" repeatCount="indefinite" additive="replace"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0; 360" dur="5s" repeatCount="indefinite" additive="sum"/>
+      
+      <g transform="scale(1.6)">
+        <g style="--side-c:#007A99; --face-c:#00FFFF;">
+          <use href="#chip-tpl"/>
+          <path d="M -2,-38 L -2,-25 M -2,-5 L -2,8 M -12,-18 C -12,-28 12,-28 12,-18 C 12,-12 -12,-12 -12,-6 C -12,4 12,4 12,-6" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- CHIP 6: RED (Bottom Left) -->
+    <g transform="translate(300, 750)" filter="url(#pop-shadow)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="300,750; 330,720; 300,750" dur="3.8s" repeatCount="indefinite" additive="replace"/>
+      <animateTransform attributeName="transform" type="rotate" 
+        values="0; -360" dur="6s" repeatCount="indefinite" additive="sum"/>
+      
+      <g transform="scale(1.5)">
+        <g style="--side-c:#B30000; --face-c:#FF0000;">
+          <use href="#chip-tpl"/>
+          <path d="M -2,-38 L -2,-25 M -2,-5 L -2,8 M -12,-18 C -12,-28 12,-28 12,-18 C 12,-12 -12,-12 -12,-6 C -12,4 12,4 12,-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= FOREGROUND HALFTONE OVERLAYS ================= -->
+  <!-- These add comic-book texture and depth over the chips -->
+  <g id="overlays">
+    <!-- Top-left overlay -->
+    <rect x="0" y="0" width="400" height="400" fill="url(#dots)" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.05;0.2" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <!-- Bottom-right overlay -->
+    <rect x="1200" y="500" width="400" height="400" fill="url(#dots)" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.05;0.2" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Diagonal sweeping halftone band -->
+    <polygon points="-100,900 700,900 300,0 -500,0" fill="#000000" opacity="0.1">
+      <animate attributeName="opacity" values="0.1;0.3;0.1" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="900,900 1700,900 1300,0 500,0" fill="#FFFFFF" opacity="0.1">
+      <animate attributeName="opacity" values="0.1;0.3;0.1" dur="2.5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- ================= COMIC TEXT / BURST ================= -->
+  <g id="comic-text" transform="translate(800, 450)">
+    <!-- Main Starburst behind text -->
+    <polygon points="0,-160 40,-60 150,-50 70,10 100,120 0,60 -100,120 -70,10 -150,-50 -40,-60" fill="#FFFFFF" stroke="#000000" stroke-width="8" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="1.5s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Halftone on Starburst -->
+    <polygon points="0,-160 40,-60 150,-50 70,10 100,120 0,60 -100,120 -70,10 -150,-50 -40,-60" fill="url(#dots)" opacity="0.3"/>
+
+    <!-- "WIN" Text -->
+    <g transform="translate(0, 15)">
+      <text x="0" y="0" text-anchor="middle" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="110" fill="#FF0000" stroke="#000000" stroke-width="8" stroke-linejoin="round" letter-spacing="8">WIN
+        <animate attributeName="fill" values="#FF0000;#00FFFF;#FFDF00;#FF0000" dur="1s" repeatCount="indefinite"/>
+      </text>
+    </g>
+    
+    <!-- Secondary floating sparks -->
+    <use href="#spark" x="180" y="-100" transform="scale(1.5)">
+      <animateTransform attributeName="transform" type="rotate" values="0;90;0" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </use>
+    <use href="#spark" x="-180" y="100" transform="scale(1.5)">
+      <animateTransform attributeName="transform" type="rotate" values="0;-90;0" dur="2.5s" repeatCount="indefinite" additive="sum"/>
+    </use>
+  </g>
+</svg>

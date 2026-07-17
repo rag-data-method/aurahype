@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="skyReflect" x1="0%" y1="0%" x2="0%" y2="100%" gradientTransform="translate(0,0)">
+<stop offset="0%" stop-color="#DCE2E8" stop-opacity="0.85"/>
+<stop offset="100%" stop-color="#F5F7FA" stop-opacity="0.2"/>
+<animateTransform attributeName="gradientTransform" type="translate" values="0,0; 0,80; 0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</linearGradient>
+<linearGradient id="lightSweep" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#DCE2E8" stop-opacity="0"/>
+<stop offset="50%" stop-color="#DCE2E8" stop-opacity="0.75"/>
+<stop offset="100%" stop-color="#DCE2E8" stop-opacity="0"/>
+</linearGradient>
+<filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="45">
+<animate attributeName="stdDeviation" values="45;60;45" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</feGaussianBlur>
+</filter>
+<filter id="deepHaze" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="70">
+<animate attributeName="stdDeviation" values="70;85;70" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</feGaussianBlur>
+</filter>
+<filter id="mineralGrain">
+<feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch">
+<animate attributeName="baseFrequency" values="0.8;0.85;0.8" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</feTurbulence>
+<feColorMatrix type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope="0.04"/></feComponentTransfer>
+</filter>
+</defs>
+<rect width="1600" height="900" fill="#F5F7FA"/>
+<rect x="0" y="0" width="1600" height="900" fill="#2B2E33" opacity="0.75" filter="url(#deepHaze)">
+<animate attributeName="opacity" values="0.7;0.8;0.7" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</rect>
+<g opacity="0.8">
+<animate attributeName="opacity" values="0.75;0.85;0.75" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<rect x="120" y="0" width="130" height="900" fill="url(#skyReflect)" opacity="0.7"/>
+<rect x="270" y="0" width="130" height="900" fill="url(#skyReflect)" opacity="0.6"/>
+<rect x="420" y="0" width="130" height="900" fill="url(#skyReflect)" opacity="0.75"/>
+<rect x="570" y="0" width="130" height="900" fill="url(#skyReflect)" opacity="0.65"/>
+<rect x="720" y="0" width="130" height="900" fill="url(#skyReflect)" opacity="0.7"/>
+<rect x="870" y="0" width="130" height="900" fill="url(#skyReflect)" opacity="0.6"/>
+<rect x="1020" y="0" width="130" height="900" fill="url(#skyReflect)" opacity="0.8"/>
+<rect x="1170" y="0" width="130" height="900" fill="url(#skyReflect)" opacity="0.65"/>
+<rect x="1320" y="0" width="130" height="900" fill="url(#skyReflect)" opacity="0.75"/>
+</g>
+<g fill="#8B8680" opacity="0.75">
+<animate attributeName="opacity" values="0.7;0.8;0.7" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+<rect x="250" y="0" width="20" height="900"/>
+<rect x="400" y="0" width="20" height="900"/>
+<rect x="550" y="0" width="20" height="900"/>
+<rect x="700" y="0" width="20" height="900"/>
+<rect x="850" y="0" width="20" height="900"/>
+<rect x="1000" y="0" width="20" height="900"/>
+<rect x="1150" y="0" width="20" height="900"/>
+<rect x="1300" y="0" width="20" height="900"/>
+</g>
+<g fill="#2B2E33" opacity="0.7">
+<rect x="0" y="280" width="1600" height="3"/>
+<rect x="0" y="580" width="1600" height="5"/>
+<animateTransform attributeName="transform" type="translate" values="0,0; 30,0; 0,0" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</g>
+<rect x="-500" y="50" width="700" height="800" fill="url(#lightSweep)" opacity="0.4" style="mix-blend-mode: soft-light">
+<animateTransform attributeName="transform" type="translate" values="0,0; 2200,0; 0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+</rect>
+<circle cx="400" cy="250" r="180" fill="#DCE2E8" opacity="0.75" filter="url(#softGlow)">
+<animate attributeName="cy" values="250;300;250" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</circle>
+<circle cx="1200" cy="650" r="220" fill="#DCE2E8" opacity="0.7" filter="url(#softGlow)">
+<animate attributeName="cy" values="650;600;650" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</circle>
+<rect x="0" y="350" width="1600" height="250" fill="#8B8680" opacity="0.25" filter="url(#deepHaze)">
+<animateTransform attributeName="transform" type="translate" values="0,0; 0,40; 0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+</rect>
+<rect width="1600" height="900" fill="transparent" filter="url(#mineralGrain)" opacity="0.6" style="pointer-events: none"/>
+</svg>

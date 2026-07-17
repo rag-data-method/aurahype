@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gradP" cx="0.35" cy="0.35" r="0.8">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="45%" stop-color="#B5EAD7" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#B5EAD7" stop-opacity="0.85"/>
+    </radialGradient>
+    <radialGradient id="gradS" cx="0.35" cy="0.35" r="0.8">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="45%" stop-color="#FFB7B2" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFB7B2" stop-opacity="0.8"/>
+    </radialGradient>
+    <radialGradient id="gradA" cx="0.35" cy="0.35" r="0.8">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+    </radialGradient>
+    <filter id="cloudBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="14"/>
+    </filter>
+    <filter id="shadowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="9"/>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="22"/>
+    </filter>
+    <symbol id="cloud" viewBox="-150 -80 300 160">
+      <path d="M-110,40 Q-130,40 -130,10 Q-130,-30 -90,-30 Q-80,-60 -40,-60 Q0,-60 20,-30 Q50,-50 80,-20 Q120,-20 120,20 Q120,50 90,50 L-90,50 Q-110,50 -110,40Z" fill="#FFFFFF" fill-opacity="0.85"/>
+    </symbol>
+    <symbol id="balloonP" viewBox="-30 -45 60 90">
+      <ellipse cx="0" cy="-12" rx="26" ry="32" fill="url(#gradP)"/>
+      <polygon points="0,20 -5,28 5,28" fill="#B5EAD7" fill-opacity="0.9"/>
+      <path d="M0,28 Q2,48 0,66" stroke="#B5EAD7" stroke-width="2" stroke-opacity="0.7" fill="none"/>
+    </symbol>
+    <symbol id="balloonS" viewBox="-30 -45 60 90">
+      <ellipse cx="0" cy="-12" rx="26" ry="32" fill="url(#gradS)"/>
+      <polygon points="0,20 -5,28 5,28" fill="#FFB7B2" fill-opacity="0.9"/>
+      <path d="M0,28 Q2,48 0,66" stroke="#FFB7B2" stroke-width="2" stroke-opacity="0.7" fill="none"/>
+    </symbol>
+    <symbol id="balloonA" viewBox="-30 -45 60 90">
+      <ellipse cx="0" cy="-12" rx="26" ry="32" fill="url(#gradA)"/>
+      <polygon points="0,20 -5,28 5,28" fill="#FFFFFF" fill-opacity="0.9"/>
+      <path d="M0,28 Q2,48 0,66" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.7" fill="none"/>
+    </symbol>
+    <symbol id="gondola" viewBox="-20 -14 40 28">
+      <rect x="-18" y="-12" width="36" height="24" rx="12" fill="#FFB7B2" fill-opacity="0.9"/>
+      <rect x="-12" y="-5" width="24" height="10" rx="5" fill="#FFFFFF" fill-opacity="0.75"/>
+    </symbol>
+  </defs>
+
+  <rect width="1600" height="900" fill="#E2F0CB"/>
+
+  <circle cx="800" cy="420" r="420" fill="url(#glow)" filter="url(#softGlow)" opacity="0.55">
+    <animate attributeName="r" values="400;440;400" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.65;0.5" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <g opacity="0.75">
+    <use href="#cloud" x="180" y="560" width="340" height="180" filter="url(#cloudBlur)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;45,-12;0,0" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+    <use href="#cloud" x="1180" y="500" width="380" height="200" filter="url(#cloudBlur)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-35,15;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+    <use href="#cloud" x="620" y="160" width="260" height="140" filter="url(#cloudBlur)" opacity="0.55">
+      <animateTransform attributeName="transform" type="translate" values="0,0;25,8;0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </use>
+  </g>
+
+  <g transform="translate(800,460)">
+    <path d="M0,35 L-90,360 M0,35 L90,360" stroke="#B5EAD7" stroke-width="16" stroke-linecap="round" stroke-opacity="0.85"/>
+    <ellipse cx="0" cy="330" rx="230" ry="32" fill="#B5EAD7" fill-opacity="0.22" filter="url(#shadowBlur)">
+      <animate attributeName="rx" values="230;250;230" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.22;0.32;0.22" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+      <circle r="265" fill="none" stroke="#B5EAD7" stroke-width="20" stroke-opacity="0.9" stroke-linecap="round"/>
+      <circle r="235" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-opacity="0.8" stroke-linecap="round"/>
+      <g stroke="#B5EAD7" stroke-width="11" stroke-opacity="0.85" stroke-linecap="round">
+        <line x1="0" y1="-265" x2="0" y2="265"/>
+        <line x1="-265" y1="0" x2="265" y2="0"/>
+        <line x1="-187" y1="-187" x2="187" y2="187"/>
+        <line x1="187" y1="-187" x2="-187" y2="187"/>
+      </g>
+
+      <g transform="rotate(0) translate(0,-265)">
+        <g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60s" repeatCount="indefinite"/><use href="#gondola" x="-20" y="-14" width="40" height="28"/></g>
+      </g>
+      <g transform="rotate(45) translate(0,-265)">
+        <g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60s" repeatCount="indefinite"/><use href="#gondola" x="-20" y="-14" width="40" height="28"/></g>
+      </g>
+      <g transform="rotate(90) translate(0,-265)">
+        <g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60s" repeatCount="indefinite"/><use href="#gondola" x="-20" y="-14" width="40" height="28"/></g>
+      </g>
+      <g transform="rotate(135) translate(0,-265)">
+        <g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60s" repeatCount="indefinite"/><use href="#gondola" x="-20" y="-14" width="40" height="28"/></g>
+      </g>
+      <g transform="rotate(180) translate(0,-265)">
+        <g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60s" repeatCount="indefinite"/><use href="#gondola" x="-20" y="-14" width="40" height="28"/></g>
+      </g>
+      <g transform="rotate(225) translate(0,-265)">
+        <g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60s" repeatCount="indefinite"/><use href="#gondola" x="-20" y="-14" width="40" height="28"/></g>
+      </g>
+      <g transform="rotate(270) translate(0,-265)">
+        <g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60s" repeatCount="indefinite"/><use href="#gondola" x="-20" y="-14" width="40" height="28"/></g>
+      </g>
+      <g transform="rotate(315) translate(0,-265)">
+        <g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60s" repeatCount="indefinite"/><use href="#gondola" x="-20" y="-14" width="40" height="28"/></g>
+      </g>
+    </g>
+
+    <circle r="38" fill="#FFB7B2" fill-opacity="0.9"/>
+    <circle r="20" fill="#FFFFFF" fill-opacity="0.85"/>
+  </g>
+
+  <g transform="translate(240,720)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;18,-65;0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <g><animateTransform attributeName="transform" type="scale" values="1;1.07;1" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/><use href="#balloonP" x="-30" y="-45" width="60" height="90"/></g>
+    <ellipse cx="0" cy="80" rx="24" ry="7" fill="#B5EAD7" fill-opacity="0.25" filter="url(#shadowBlur)"><animate attributeName="rx" values="24;18;24" dur="6s" repeatCount="indefinite"/></ellipse>
+  </g>
+  <g transform="translate(420,660)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-12,-55;0,0" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <g><animateTransform attributeName="transform" type="scale" values="1;1.06;1" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/><use href="#balloonS" x="-30" y="-45" width="60" height="90"/></g>
+    <ellipse cx="0" cy="80" rx="24" ry="7" fill="#FFB7B2" fill-opacity="0.25" filter="url(#shadowBlur)"><animate attributeName="rx" values="24;18;24" dur="7s" repeatCount="indefinite"/></ellipse>
+  </g>
+  <g transform="translate(580,780)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;22,-50;0,0" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <g><animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="4.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/><use href="#balloonA" x="-30" y="-45" width="60" height="90"/></g>
+    <ellipse cx="0" cy="80" rx="24" ry="7" fill="#FFFFFF" fill-opacity="0.3" filter="url(#shadowBlur)"><animate attributeName="rx" values="24;18;24" dur="5s" repeatCount="indefinite"/></ellipse>
+  </g>
+  <g transform="translate(1280,680)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-16,-70;0,0" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <g><animateTransform attributeName="transform" type="scale" values="1;1.07;1" dur="5.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/><use href="#balloonP" x="-30" y="-45" width="60" height="90"/></g>
+    <ellipse cx="0" cy="80" rx="24" ry="7" fill="#B5EAD7" fill-opacity="0.25" filter="url(#shadowBlur)"><animate attributeName="rx" values="24;18;24" dur="8s" repeatCount="indefinite"/></ellipse>
+  </g>
+  <g transform="translate(1440,760)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;14,-60;0,0" dur="6.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <g><animateTransform attributeName="transform" type="scale" values="1;1.06;1" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/><use href="#balloonS" x="-30" y="-45" width="60" height="90"/></g>
+    <ellipse cx="0" cy="80" rx="24" ry="7" fill="#FFB7B2" fill-opacity="0.25" filter="url(#shadowBlur)"><animate attributeName="rx" values="24;18;24" dur="6.5s" repeatCount="indefinite"/></ellipse>
+  </g>
+  <g transform="translate(1120,620)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-10,-45;0,0" dur="7.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <g><animateTransform attributeName="transform" type="scale" values="1;1.08;1" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/><use href="#balloonA" x="-30" y="-45" width="60" height="90"/></g>
+    <ellipse cx="0" cy="80" rx="24" ry="7" fill="#FFFFFF" fill-opacity="0.3" filter="url(#shadowBlur)"><animate attributeName="rx" values="24;18;24" dur="7.5s" repeatCount="indefinite"/></ellipse>
+  </g>
+  <g transform="translate(900,280)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;8,-35;0,0" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <g><animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/><use href="#balloonP" x="-22" y="-33" width="44" height="66"/></g>
+  </g>
+
+  <use href="#cloud" x="220" y="760" width="520" height="280" filter="url(#cloudBlur)" opacity="0.95">
+    <animateTransform attributeName="transform" type="translate" values="0,0;30,-8;0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </use>
+  <use href="#cloud" x="920" y="740" width="460" height="250" filter="url(#cloudBlur)" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-25,10;0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </use>
+</svg>

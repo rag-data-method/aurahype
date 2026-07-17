@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF1493"/>
+      <stop offset="100%" stop-color="#FF69B4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <g fill="#98FF98" opacity="0.28">
+    <circle cx="120" cy="120" r="10"><animate attributeName="r" values="10;16;10" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="240" cy="80" r="14"><animate attributeName="r" values="14;20;14" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="360" cy="160" r="8"><animate attributeName="r" values="8;14;8" dur="3.5s" repeatCount="indefinite"/></circle>
+    <circle cx="1360" cy="110" r="12"><animate attributeName="r" values="12;18;12" dur="4.5s" repeatCount="indefinite"/></circle>
+    <circle cx="1480" cy="220" r="16"><animate attributeName="r" values="16;22;16" dur="5.5s" repeatCount="indefinite"/></circle>
+    <circle cx="1460" cy="720" r="10"><animate attributeName="r" values="10;15;10" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="1320" cy="820" r="14"><animate attributeName="r" values="14;20;14" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="90" cy="760" r="12"><animate attributeName="r" values="12;18;12" dur="4.5s" repeatCount="indefinite"/></circle>
+    <circle cx="220" cy="840" r="8"><animate attributeName="r" values="8;13;8" dur="3.5s" repeatCount="indefinite"/></circle>
+    <circle cx="800" cy="70" r="10"><animate attributeName="r" values="10;15;10" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="800" cy="830" r="10"><animate attributeName="r" values="10;15;10" dur="4s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <g>
+    <polygon points="800,450 520,120 1080,120" fill="#FF1493" stroke="#98FF98" stroke-width="48" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="scale" values="1;1.04;1" dur="6s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,450 1280,260 1280,640" fill="#FF6B9D" stroke="#98FF98" stroke-width="48" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="7s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,450 520,780 1080,780" fill="#FF85C1" stroke="#98FF98" stroke-width="48" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="scale" values="1;1.04;1" dur="6.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="800,450 320,260 320,640" fill="#FF69B4" stroke="#98FF98" stroke-width="48" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="7.5s" repeatCount="indefinite"/>
+    </polygon>
+    <animateTransform attributeName="transform" type="rotate" values="0 800 450;3 800 450;0 800 450;-3 800 450;0 800 450" dur="18s" repeatCount="indefinite"/>
+  </g>
+
+  <g fill="#111">
+    <ellipse cx="800" cy="250" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="3s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="660" cy="200" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,8;0,0" dur="3.6s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="940" cy="200" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="4.2s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="1090" cy="450" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,9;0,0" dur="3.3s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="1190" cy="450" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,-9;0,0" dur="3.9s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="800" cy="650" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,10;0,0" dur="3.5s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="660" cy="700" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="4.5s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="940" cy="700" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,8;0,0" dur="3.7s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="410" cy="450" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="3.2s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="510" cy="450" rx="12" ry="20"><animateTransform attributeName="transform" type="translate" values="0,0;0,9;0,0" dur="4s" repeatCount="indefinite"/></ellipse>
+  </g>
+</svg>

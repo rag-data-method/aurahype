@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="halftone" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0A0A0A" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#0A0A0A" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#0A0A0A" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="clip-drip">
+      <rect x="0" y="0" width="800" height="600" />
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F5F1E6"/>
+  
+  <!-- Massive Red Background Block -->
+  <rect x="300" y="0" width="500" height="600" fill="#D21A1A"/>
+
+  <!-- Heavy Dynamic Diagonal Lines (Shadow & Motion) -->
+  <path d="M -50 650 L 850 -50" stroke="#0A0A0A" stroke-width="40" />
+  <path d="M -50 750 L 850 50" stroke="#0A0A0A" stroke-width="40" />
+  <path d="M -50 850 L 850 150" stroke="#0A0A0A" stroke-width="40" />
+  <path d="M -50 950 L 850 250" stroke="#0A0A0A" stroke-width="40" />
+
+  <!-- Left Halftone Burst (Massive dot grid on Red) -->
+  <g id="halftone-burst">
+    <circle cx="50" cy="50" r="45" fill="#0A0A0A"/>
+    <circle cx="155" cy="50" r="45" fill="#0A0A0A"/>
+    <circle cx="260" cy="50" r="45" fill="#0A0A0A"/>
+    <circle cx="365" cy="50" r="45" fill="#0A0A0A"/>
+    <circle cx="50" cy="155" r="45" fill="#0A0A0A"/>
+    <circle cx="155" cy="155" r="45" fill="#0A0A0A"/>
+    <circle cx="260" cy="155" r="45" fill="#0A0A0A"/>
+    <circle cx="365" cy="155" r="45" fill="#0A0A0A"/>
+    <circle cx="50" cy="260" r="45" fill="#0A0A0A"/>
+    <circle cx="155" cy="260" r="45" fill="#0A0A0A"/>
+    <circle cx="260" cy="260" r="45" fill="#0A0A0A"/>
+    <circle cx="365" cy="260" r="45" fill="#0A0A0A"/>
+    <circle cx="50" cy="365" r="45" fill="#0A0A0A"/>
+    <circle cx="155" cy="365" r="45" fill="#0A0A0A"/>
+    <circle cx="260" cy="365" r="45" fill="#0A0A0A"/>
+    <circle cx="365" cy="365" r="45" fill="#0A0A0A"/>
+    <animateTransform attributeName="transform" type="translate" from="-300 0" to="0 0" begin="0s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+  </g>
+
+  <!-- Flying Debris / Explosion Lines -->
+  <g opacity="0.95">
+    <!-- Top Left -->
+    <rect x="220" y="80" width="180" height="25" fill="#0A0A0A" transform="rotate(-35 220 80)">
+      <animateTransform attributeName="transform" type="translate" from="-100 -100" to="0 0" begin="0s" dur="0.5s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+    </rect>
+    <!-- Right -->
+    <rect x="680" y="150" width="140" height="180" fill="#0A0A0A" transform="rotate(15 680 150)">
+      <animateTransform attributeName="transform" type="translate" from="200 0" to="0 0" begin="0s" dur="0.5s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+    </rect>
+    <!-- Bottom Left -->
+    <rect x="150" y="480" width="180" height="25" fill="#0A0A0A" transform="rotate(30 150 480)">
+      <animateTransform attributeName="transform" type="translate" from="-100 100" to="0 0" begin="0s" dur="0.5s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+    </rect>
+    <!-- Bottom Right -->
+    <rect x="580" y="500" width="25" height="120" fill="#0A0A0A" transform="rotate(-15 580 500)">
+      <animateTransform attributeName="transform" type="translate" from="100 200" to="0 0" begin="0s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+    </rect>
+  </g>
+
+  <!-- Speed / Sweat Streaks (Arched Motion) -->
+  <g fill="#F5F1E6">
+    <path d="M 360 120 A 140 140 0 0 1 480 20 L 465 20 A 125 125 0 0 0 360 120 Z">
+      <animateTransform attributeName="transform" type="translate" values="0 -800; 0 0" begin="0.4s" dur="0.4s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+      <animate attributeName="opacity" values="0;1" begin="0.4s" dur="0.1s" fill="freeze"/>
+    </path>
+    <path d="M 440 120 A 160 160 0 0 1 600 0 L 585 0 A 145 145 0 0 0 440 120 Z">
+      <animateTransform attributeName="transform" type="translate" values="300 -800; 0 0" begin="0.5s" dur="0.35s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+      <animate attributeName="opacity" values="0;1" begin="0.5s" dur="0.1s" fill="freeze"/>
+    </path>
+  </g>
+
+  <!-- Brutalist Speed Lines (Impact) -->
+  <g stroke="#0A0A0A" stroke-width="25">
+    <line x1="400" y1="-50" x2="400" y2="200">
+      <animate attributeName="y2" values="-100;200" begin="0s" dur="0.3s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+    </line>
+    <line x1="450" y1="-50" x2="450" y2="150">
+      <animate attributeName="y2" values="-100;150" begin="0.05s" dur="0.3s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+    </line>
+    <line x1="500" y1="-50" x2="500" y2="100">
+      <animate attributeName="y2" values="-100;100" begin="0.1s" dur="0.3s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+    </line>
+  </g>
+
+  <!-- Main Fist Group -->
+  <g id="fist" transform="translate(0,800)">
+    <animateTransform attributeName="transform" type="translate" from="0 800" to="0 0" begin="0s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+
+    <!-- Solid Red Fist Body (No Stroke) -->
+    <path id="red-fist" d="M 490 280 L 320 280 L 320 540 L 490 540 Z M 320 280 Q 300 150 360 120 L 430 120 Q 510 150 490 280 Z" fill="#D21A1A"/>
+
+    <!-- Black Geometric Fingers (Simplified) -->
+    <g id="fingers">
+      <!-- Finger 1 (Index) -->
+      <rect x="330" y="130" width="40" height="140" fill="#0A0A0A"/>
+      <!-- Finger 2 (Middle) -->
+      <rect x="380" y="105" width="40" height="165" fill="#0A0A0A"/>
+      <!-- Finger 3 (Ring) -->
+      <rect x="430" y="120" width="40" height="150" fill="#0A0A0A"/>
+      <!-- Finger 4 (Pinky) - Triangle for Brutalist Edge -->
+      <polygon points="480,145 530,280 480,280" fill="#0A0A0A"/>
+      <!-- Finger Clench Animation -->
+      <animateTransform attributeName="transform" type="translate" values="0 0; 15 -10; 15 -10" begin="0.6s" dur="0.35s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0; 0.5 0 0.75 0"/>
+    </g>
+
+    <!-- Black Thumb (Massive, Overlapping) -->
+    <g transform="translate(0,0)">
+      <polygon points="350,280 450,280 540,380 420,380" fill="#0A0A0A"/>
+      <!-- Thumb Sharp Rise Animation -->
+      <animateTransform attributeName="transform" type="translate" values="0 0; -10 -40; -10 -40" begin="0.6s" dur="0.35s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0; 0.5 0 0.75 0"/>
+    </g>
+
+    <!-- Wrist / Sleeve (Massive Black Block) -->
+    <rect x="320" y="540" width="170" height="160" fill="#0A0A0A"/>
+
+    <!-- Sleeve Dynamic Angled Cut / Shadow -->
+    <polygon points="320,700 340,540 490,540 450,700" fill="#0A0A0A" opacity="0.3">
+      <animate attributeName="opacity" values="0;0.3" begin="0.6s" dur="0.2s" fill="freeze"/>
+    </polygon>
+    
+    <!-- Sleeve Sweat / Blood Drips (Falling) -->
+    <g fill="#D21A1A" clip-path="url(#clip-drip)">
+      <rect x="350" y="700" width="12" height="60" rx="6" ry="6">
+        <animateTransform attributeName="transform" type="translate" values="0 -80; 0 120" begin="0.8s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+      </rect>
+      <rect x="410" y="700" width="18" height="100" rx="9" ry="9">
+        <animateTransform attributeName="transform" type="translate" values="0 -120; 0 200" begin="0.9s" dur="0.9s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+      </rect>
+      <rect x="460" y="700" width="10" height="40" rx="5" ry="5">
+        <animateTransform attributeName="transform" type="translate" values="0 -60; 0 80" begin="1s" dur="0.7s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Foreground Geometric Shards -->
+  <g fill="#0A0A0A">
+    <polygon points="0,600 100,600 0,400">
+      <animateTransform attributeName="transform" type="translate" values="0 200; 0 0" begin="0s" dur="0.5s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+    </polygon>
+    <polygon points="0,600 60,600 0,500">
+      <animateTransform attributeName="transform" type="translate" values="0 200; 0 0" begin="0s" dur="0.4s" fill="freeze" calcMode="spline" keySplines="0.5 0 0.75 0"/>
+    </polygon>
+  </g>
+
+  <g fill="#F5F1E6">
+    <!-- Extreme right jagged cut -->
+    <polygon points="800,0 700,0 800,150"/>
+    <polygon points="800,550 700,600 800,600"/>
+  </g>
+
+  <!-- Top Left Info Block -->
+  <g fill="#0A0A0A">
+    <rect x="0" y="30" width="120" height="140" />
+    <rect x="140" y="30" width="60" height="60" />
+  </g>
+
+</svg>

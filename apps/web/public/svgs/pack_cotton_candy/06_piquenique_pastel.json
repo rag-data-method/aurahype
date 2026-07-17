@@ -1,0 +1,24 @@
+{
+  "slug": "06_piquenique_pastel",
+  "title": "Piquenique Pastel",
+  "category": "cotton_candy",
+  "objects": "woven basket + pastel macarons + checkered blanket",
+  "colors": {
+    "primary": "#B5EAD7",
+    "secondary": "#FFDAC1",
+    "accent": "#FFB7B2",
+    "bg": "#C7CEEA"
+  },
+  "tags": [
+    "light",
+    "candy",
+    "picnic",
+    "food"
+  ],
+  "svgFile": "06_piquenique_pastel.svg",
+  "sizeKB": 10.23,
+  "animations": 33,
+  "gradients": 2,
+  "generatedAt": "2026-06-19",
+  "model": "@cf/moonshotai/kimi-k2.7-code"
+}

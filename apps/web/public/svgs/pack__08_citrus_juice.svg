@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="blur-mid" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="32"/>
+    </filter>
+    <filter id="blur-deep" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="72"/>
+    </filter>
+    <filter id="noise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="5" result="t"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="#FFF5EB"/>
+  <rect width="1600" height="900" fill="#FF7F00" opacity="0.08" filter="url(#noise)"/>
+  
+  <g opacity="0.7">
+    <ellipse cx="850" cy="480" rx="420" ry="340" fill="#B85440" filter="url(#blur-deep)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.25;1" dur="7s" repeatCount="indefinite" additive="sum"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 850 480" to="360 850 480" dur="25s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+  </g>
+  
+  <g opacity="0.85">
+    <path d="M 350 280 Q 580 180 720 380 T 520 620 T 280 420 Z" fill="#B85440" filter="url(#blur-mid)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 60,-40; 0,0" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 500 400; 18 500 400; 0 500 400" dur="9s" repeatCount="indefinite" additive="sum"/>
+    </path>
+  </g>
+  
+  <g opacity="0.95">
+    <circle cx="780" cy="460" r="195" fill="#FF7F00">
+      <animate attributeName="r" values="195;220;195" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.12;1" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <g opacity="0.88">
+    <ellipse cx="680" cy="220" rx="320" ry="170" fill="#FFB088" filter="url(#blur-mid)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,50; 0,0" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  
+  <g opacity="0.9">
+    <path d="M 920 320 C 1040 270 1160 380 1100 520 C 1040 640 880 580 920 450 Z" fill="#FA8072" filter="url(#blur-mid)">
+      <animateTransform attributeName="transform" type="rotate" values="0 1000 450; -22 1000 450; 0 1000 450" dur="6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <g opacity="0.86">
+    <path d="M 1150 380 Q 1350 320 1280 580 Q 1160 680 1080 520 Z" fill="#FF7F00" filter="url(#blur-mid)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -70,30; 0,0" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <g opacity="0.82">
+    <path d="M 580 620 Q 820 560 940 720 Q 720 840 520 720 Z" fill="#FA8072">
+      <animateTransform attributeName="transform" type="rotate" values="0 730 690; 12 730 690; 0 730 690" dur="7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <g opacity="0.6">
+    <ellipse cx="1250" cy="280" rx="230" ry="280" fill="#B85440" filter="url(#blur-deep)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -40,60; 0,0" dur="9s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  
+  <g opacity="0.78">
+    <circle cx="800" cy="450" r="280" fill="#FFB088" filter="url(#blur-deep)">
+      <animate attributeName="r" values="280;310;280" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <g opacity="0.92">
+    <circle cx="580" cy="360" r="45" fill="#FF7F00">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 120,60; 0,0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1080" cy="620" r="40" fill="#FF7F00">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -60,-100; 0,0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="550" r="35" fill="#FA8072">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 80,-40; 0,0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <g opacity="0.84">
+    <path d="M 280 480 Q 400 360 540 480 T 420 740 Z" fill="#FA8072" filter="url(#blur-mid)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.4;1" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <g opacity="0.94">
+    <path d="M 720 380 C 880 320 1000 440 940 560 C 880 680 680 620 760 480 Z" fill="#FF7F00">
+      <animateTransform attributeName="transform" type="rotate" values="0 850 500; 8 850 500; 0 850 500" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

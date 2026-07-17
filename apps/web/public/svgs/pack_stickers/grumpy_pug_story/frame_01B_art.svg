@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Radial -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#FFEE58"/>
+      <stop offset="100%" stop-color="#FF9800"/>
+    </radialGradient>
+
+    <!-- Pug Fur Gradient -->
+    <linearGradient id="pugGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D2B48C"/>
+      <stop offset="100%" stop-color="#A0522D"/>
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Pug Clip Path -->
+    <clipPath id="pugClip">
+      <rect x="810" y="400" width="300" height="350" rx="120"/>
+    </clipPath>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+
+  <!-- Halftone Dots -->
+  <g fill="#E65100" opacity="0.5">
+    <circle cx="200" cy="200" r="15"/>
+    <circle cx="600" cy="500" r="25"/>
+    <circle cx="1700" cy="800" r="20"/>
+    <circle cx="1400" cy="200" r="30"/>
+    <circle cx="300" cy="900" r="18"/>
+    <circle cx="1600" cy="400" r="22"/>
+    <circle cx="100" cy="600" r="12"/>
+  </g>
+
+  <!-- Thick Diagonal Retro Stripes -->
+  <g stroke="#B71C1C" stroke-width="40" opacity="0.6">
+    <line x1="-200" y1="1200" x2="400" y2="0"/>
+    <line x1="200" y1="1200" x2="800" y2="0"/>
+    <line x1="600" y1="1200" x2="1200" y2="0"/>
+    <line x1="1000" y1="1200" x2="1600" y2="0"/>
+    <line x1="1400" y1="1200" x2="2000" y2="0"/>
+  </g>
+
+  <!-- Floor -->
+  <rect x="0" y="850" width="1920" height="230" fill="#009688"/>
+  <line x1="0" y1="850" x2="1920" y2="850" stroke="#000" stroke-width="12"/>
+
+  <!-- SHADOW -->
+  <ellipse cx="960" cy="880" rx="360" ry="60" fill="#000" opacity="0.3"/>
+
+  <!-- DOG BED -->
+  <g id="dog-bed">
+    <!-- Bed Back -->
+    <path d="M 660 800 C 660 550, 1260 550, 1260 800 Z" fill="#7B1FA2" stroke="#000" stroke-width="12"/>
+    
+    <!-- Bed Cushion -->
+    <ellipse cx="960" cy="800" rx="320" ry="100" fill="#E040FB" stroke="#000" stroke-width="12"/>
+    
+    <!-- Bed Neon Rings (Animated Pulsing) -->
+    <ellipse cx="960" cy="800" rx="280" ry="70" fill="none" stroke="#00E5FF" stroke-width="8" filter="url(#neonGlow)" opacity="0.9" class="pulse-glow"/>
+    <ellipse cx="960" cy="800" rx="240" ry="50" fill="none" stroke="#FFEA00" stroke-width="6" filter="url(#neonGlow)" opacity="0.8" class="pulse-glow"/>
+  </g>
+
+  <!-- PUG TAIL -->
+  <path d="M 1110 750 Q 1180 680 1140 620 T 1110 550" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 1110 750 Q 1180 680 1140 620 T 1110 550" fill="none" stroke="#A0522D" stroke-width="8" stroke-linecap="round" class="wag-tail"/>
+
+  <!-- PUG TORSO (Behind Head) -->
+  <ellipse cx="960" cy="820" rx="140" ry="110" fill="url(#pugGrad)" stroke="#000" stroke-width="12" class="breathe"/>
+
+  <!-- PUG HEAD -->
+  <g id="pug-head" class="breathe">
+    <!-- Ears -->
+    <path d="M 810 480 C 700 450, 720 650, 820 620 Z" fill="#5D4037" stroke="#000" stroke-width="12"/>
+    <path d="M 1110 480 C 1220 450, 1200 650, 1100 620 Z" fill="#5D4037" stroke="#000" stroke-width="12"/>
+
+    <!-- Main Head Shape -->
+    <rect x="810" y="400" width="300" height="300" rx="120" fill="url(#pugGrad)" stroke="#000" stroke-width="12"/>
+
+    <!-- Dark Face Mask -->
+    <path d="M 840 520 C 840 480, 1080 480, 1080 520 C 1100 600, 1100 700, 960 720 C 820 700, 820 600, 840 520 Z" fill="#3E2723" stroke="#000" stroke-width="10"/>
+
+    <!-- Snout -->
+    <ellipse cx="960" cy="620" rx="70" ry="55" fill="#1A1A1A" stroke="#000" stroke-width="10"/>
+    <ellipse cx="945" cy="605" rx="18" ry="12" fill="#333"/>
+    <ellipse cx="975" cy="605" rx="18" ry="12" fill="#333"/>
+
+    <!-- Mouth (Frown) -->
+    <path d="M 920 660 Q 960 640 1000 660" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Eyes -->
+    <circle cx="890" cy="540" r="35" fill="#FFF" stroke="#000" stroke-width="8"/>
+    <circle cx="1030" cy="540" r="35" fill="#FFF" stroke="#000" stroke-width="8"/>
+
+    <!-- Pupils (Looking Up/Angry) -->
+    <circle cx="900" cy="530" r="14" fill="#000"/>
+    <circle cx="1020" cy="530" r="14" fill="#000"/>
+
+    <!-- Wrinkles -->
+    <path d="M 880 480 Q 960 520 1040 480" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 900 500 Q 960 530 1020 500" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- ANGRY EYEBROWS (Twitching) -->
+    <g class="eyebrow-twitch">
+      <path d="M 840 490 L 930 520 L 920 505 Z" fill="#3E2723" stroke="#000" stroke-width="8" stroke-linejoin="round"/>
+    </g>
+    <g class="eyebrow-twitch-alt">
+      <path d="M 1080 490 L 990 520 L 1000 505 Z" fill="#3E2723" stroke="#000" stroke-width="8" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- PUG PAWS (Resting on the bed edge) -->
+  <g class="breathe">
+    <ellipse cx="860" cy="810" rx="35" ry="50" fill="url(#pugGrad)" stroke="#000" stroke-width="10"/>
+    <ellipse cx="1060" cy="810" rx="35" ry="50" fill="url(#pugGrad)" stroke="#000" stroke-width="10"/>
+    <!-- Toes -->
+    <line x1="845" y1="830" x2="845" y2="855" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+    <line x1="860" y1="835" x2="860" y2="860" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+    <line x1="875" y1="830" x2="875" y2="855" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+    
+    <line x1="1045" y1="830" x2="1045" y2="855" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+    <line x1="1060" y1="835" x2="1060" y2="860" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+    <line x1="1075" y1="830" x2="1075" y2="855" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- FOREGROUND STARS (Complaining visual effect) -->
+  <g fill="#FF1744" stroke="#000" stroke-width="6">
+    <!-- Star 1 -->
+    <g class="star-spin" transform-origin="700 400">
+      <polygon points="700,360 715,395 755,395 725,415 735,450 700,425 665,450 675,415 645,395 685,395"/>
+    </g>
+    <!-- Star 2 -->
+    <g class="star-spin" transform-origin="1220 400" style="animation-delay: 0.3s;">
+      <polygon points="1220,360 1235,395 1275,395 1245,415 1255,450 1220,425 1185,450 1195,415 1165,395 1205,395"/>
+    </g>
+    <!-- Star 3 -->
+    <g class="star-spin" transform-origin="960 280" style="animation-delay: 0.6s;">
+      <polygon points="960,240 975,275 1015,275 985,295 995,330 960,305 925,330 935,295 905,275 945,275"/>
+    </g>
+  </g>
+
+  <style>
+    /* Bed Pulsing Animation */
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+    .pulse-glow {
+      animation: pulse-glow 2.5s ease-in-out infinite;
+      transform-origin: 960px 800px;
+    }
+
+    /* Pug Breathing Animation */
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    .breathe {
+      animation: breathe 3s ease-in-out infinite;
+      transform-origin: 960px 850px;
+    }
+
+    /* Eyebrow Twitch Animation */
+    @keyframes twitch {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      10% { transform: translateY(-5px) rotate(-5deg); }
+      20% { transform: translateY(0) rotate(0deg); }
+      30% { transform: translateY(-3px) rotate(3deg); }
+      40% { transform: translateY(0) rotate(0deg); }
+    }
+    .eyebrow-twitch {
+      animation: twitch 1.2s ease-in-out infinite;
+      transform-origin: 885px 505px;
+    }
+    .eyebrow-twitch-alt {
+      animation: twitch 1.2s ease-in-out infinite reverse;
+      transform-origin: 1035px 505px;
+    }
+
+    /* Tail Wag Animation */
+    @keyframes wag {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(15deg); }
+      75% { transform: rotate(-15deg); }
+    }
+    .wag-tail {
+      animation: wag 0.4s ease-in-out infinite;
+      transform-origin: 1110px 750px;
+    }
+
+    /* Star Spin Animation */
+    @keyframes spin-star {
+      0% { transform: scale(0) rotate(0deg); opacity: 0; }
+      50% { transform: scale(1.3) rotate(180deg); opacity: 1; }
+      100% { transform: scale(0) rotate(360deg); opacity: 0; }
+    }
+    .star-spin {
+      animation: spin-star 1.5s ease-in-out infinite;
+    }
+  </style>
+</svg>

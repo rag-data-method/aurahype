@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Halftone Pattern -->
+    <pattern id="halftone" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="5" fill="#cc0000"/>
+    </pattern>
+    
+    <!-- Halftone Pattern for Pop Art Background -->
+    <pattern id="halftone2" width="25" height="25" patternUnits="userSpaceOnUse">
+      <circle cx="12.5" cy="12.5" r="6" fill="#ffcc00"/>
+    </pattern>
+
+    <!-- Gradient for the Crown Glow -->
+    <linearGradient id="crownGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffff00"/>
+      <stop offset="50%" stop-color="#ff9900"/>
+      <stop offset="100%" stop-color="#ff0000"/>
+    </linearGradient>
+
+    <!-- Glow Filter for Crown -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Reusable 3D Cube Component -->
+    <g id="cube">
+      <!-- Top Face -->
+      <polygon points="0,-40 60,-70 120,-40 60,-10" fill="#00aaaa" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+      <!-- Front Face -->
+      <polygon points="0,-40 60,-10 60,50 0,20" fill="#008888" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+      <!-- Side Face -->
+      <polygon points="60,-10 120,-40 120,20 60,50" fill="#00cccc" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <style>
+    /* Throne Hover Animation */
+    .throne-group {
+      animation: throneHover 4s ease-in-out infinite;
+    }
+    
+    @keyframes throneHover {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-25px); }
+    }
+
+    /* Crown Glow Animation */
+    .crown {
+      animation: crownGlowAnim 3s ease-in-out infinite;
+    }
+    
+    @keyframes crownGlowAnim {
+      0%, 100% { filter: drop-shadow(0 0 10px #ffcc00); }
+      50% { filter: drop-shadow(0 0 40px #ff0000) drop-shadow(0 0 80px #ffff00); }
+    }
+
+    /* Pug Breathing Animation */
+    .pug-group {
+      animation: pugBreath 2s ease-in-out infinite;
+    }
+    
+    @keyframes pugBreath {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    /* Floating Background Elements Animation */
+    .float-1 { animation: float 6s ease-in-out infinite; }
+    .float-2 { animation: float 8s ease-in-out infinite reverse; }
+    .float-3 { animation: float 5s ease-in-out infinite 1s; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(5deg); }
+    }
+
+    /* Speech Bubble Pulse */
+    .speech-bubble {
+      animation: bubblePulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes bubblePulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1920" height="1080" fill="#ff3333"/>
+  
+  <!-- Halftone Background Overlay -->
+  <rect width="1920" height="1080" fill="url(#halftone)" opacity="0.3"/>
+  
+  <!-- Yellow Burst Background -->
+  <polygon points="960,540 0,0 1920,0 1920,1080 0,1080" fill="#ffcc00" opacity="0.9"/>
+  
+  <!-- Radial White Burst -->
+  <circle cx="960" cy="540" r="800" fill="none" stroke="#ffffff" stroke-width="1500" stroke-dasharray="100 100" opacity="0.5"/>
+
+  <!-- Floating Pop Art Background Elements -->
+  <g class="float-1">
+    <circle cx="200" cy="200" r="80" fill="#00ccff" stroke="#000" stroke-width="8"/>
+  </g>
+  <g class="float-2">
+    <rect x="1600" y="150" width="120" height="120" fill="#ff00ff" stroke="#000" stroke-width="8" transform="rotate(15 1660 210)"/>
+  </g>
+  <g class="float-3">
+    <polygon points="250,800 300,700 350,800" fill="#00ff00" stroke="#000" stroke-width="8"/>
+  </g>
+  <g class="float-1" style="animation-delay: 2s;">
+    <polygon points="1700,850 1750,750 1800,850" fill="#00ff00" stroke="#000" stroke-width="8"/>
+  </g>
+
+  <!-- Speech Bubble (No Text) -->
+  <g class="speech-bubble">
+    <path d="M 1350 250 Q 1350 150 1450 150 L 1650 150 Q 1750 150 1750 250 L 1750 350 Q 1750 450 1650 450 L 1500 450 L 1400 550 L 1420 450 Q 1350 450 1350 350 Z" fill="#ffffff" stroke="#000" stroke-width="10" stroke-linejoin="round"/>
+    <!-- Halftone Inside Bubble -->
+    <path d="M 1370 250 Q 1370 170 1450 170 L 1650 170 Q 1730 170 1730 250 L 1730 350 Q 1730 430 1650 430 L 1440 430 Q 1370 430 1370 350 Z" fill="url(#halftone2)"/>
+  </g>
+
+  <!-- THRONE GROUP -->
+  <g class="throne-group">
+    <!-- Central Pillar -->
+    <rect x="900" y="600" width="120" height="300" fill="#008888" stroke="#000" stroke-width="8"/>
+    <polygon points="900,600 960,570 1020,600" fill="#00cccc" stroke="#000" stroke-width="8"/>
+    
+    <!-- 3D Cubes Stack Left -->
+    <use href="#cube" x="600" y="700"/>
+    <use href="#cube" x="540" y="630"/>
+    <use href="#cube" x="660" y="630"/>
+    <use href="#cube" x="600" y="560"/>
+    
+    <!-- 3D Cubes Stack Right -->
+    <use href="#cube" x="1200" y="700"/>
+    <use href="#cube" x="1140" y="630"/>
+    <use href="#cube" x="1260" y="630"/>
+    <use href="#cube" x="1200" y="560"/>
+
+    <!-- Floating 3D Cubes -->
+    <use href="#cube" x="700" y="450" transform="scale(0.6)"/>
+    <use href="#cube" x="1500" y="500" transform="scale(0.5)"/>
+    <use href="#cube" x="400" y="550" transform="scale(0.4)"/>
+
+    <!-- Armrests -->
+    <rect x="620" y="550" width="200" height="80" rx="20" fill="#00cccc" stroke="#000" stroke-width="8"/>
+    <rect x="1100" y="550" width="200" height="80" rx="20" fill="#00cccc" stroke="#000" stroke-width="8"/>
+    <!-- Armrest Highlights -->
+    <rect x="640" y="570" width="160" height="40" rx="10" fill="#00eeee"/>
+    <rect x="1120" y="570" width="160" height="40" rx="10" fill="#00eeee"/>
+  </g>
+
+  <!-- PUG GROUP -->
+  <g class="pug-group">
+    <!-- Pug Body -->
+    <ellipse cx="960" cy="520" rx="140" ry="160" fill="#d4a76a" stroke="#000" stroke-width="8"/>
+    
+    <!-- Pug Belly -->
+    <ellipse cx="960" cy="540" rx="90" ry="110" fill="#e6c288"/>
+
+    <!-- Pug Legs (Front) -->
+    <rect x="850" y="620" width="40" height="100" rx="20" fill="#d4a76a" stroke="#000" stroke-width="6"/>
+    <rect x="1030" y="620" width="40" height="100" rx="20" fill="#d4a76a" stroke="#000" stroke-width="6"/>
+    <!-- Pug Paws -->
+    <ellipse cx="870" cy="720" rx="30" ry="15" fill="#8b5a2b" stroke="#000" stroke-width="5"/>
+    <ellipse cx="1050" cy="720" rx="30" ry="15" fill="#8b5a2b" stroke="#000" stroke-width="5"/>
+
+    <!-- Pug Head -->
+    <circle cx="960" cy="380" r="130" fill="#d4a76a" stroke="#000" stroke-width="8"/>
+
+    <!-- Pug Ears (Black, Floppy) -->
+    <path d="M 840 320 Q 780 250 820 380 Z" fill="#222" stroke="#000" stroke-width="6"/>
+    <path d="M 1080 320 Q 1140 250 1100 380 Z" fill="#222" stroke="#000" stroke-width="6"/>
+
+    <!-- Pug Face Mask (Black Muzzle/Eyes area) -->
+    <path d="M 860 380 Q 960 320 1060 380 Q 1080 450 960 470 Q 840 450 860 380 Z" fill="#222"/>
+
+    <!-- Pug Eyes (Wide, White with small black pupils for grumpy look) -->
+    <circle cx="910" cy="370" r="25" fill="#fff" stroke="#000" stroke-width="4"/>
+    <circle cx="1010" cy="370" r="25" fill="#fff" stroke="#000" stroke-width="4"/>
+    <circle cx="910" cy="370" r="8" fill="#000"/>
+    <circle cx="1010" cy="370" r="8" fill="#000"/>
+    
+    <!-- Angry Eyebrows (Thick black lines) -->
+    <path d="M 880 340 L 940 360" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+    <path d="M 1040 340 L 980 360" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+
+    <!-- Pug Nose -->
+    <ellipse cx="960" cy="410" rx="20" ry="15" fill="#111" stroke="#000" stroke-width="3"/>
+    <ellipse cx="955" cy="405" rx="5" ry="3" fill="#fff" opacity="0.5"/>
+
+    <!-- Pug Wrinkles -->
+    <path d="M 900 330 Q 960 350 1020 330" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 920 350 Q 960 370 1000 350" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Pug Mouth (Frown) -->
+    <path d="M 920 440 Q 960 460 1000 440" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 960 425 L 960 450" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Pug Tongue (Tiny, sticking out grumpily) -->
+    <path d="M 950 455 Q 960 480 970 455" fill="#ff6666" stroke="#000" stroke-width="4"/>
+
+    <!-- Pug Tail (Curly) -->
+    <path d="M 1080 520 Q 1150 500 1130 450 Q 1110 420 1080 450" fill="none" stroke="#d4a76a" stroke-width="20" stroke-linecap="round"/>
+    <path d="M 1080 520 Q 1150 500 1130 450 Q 1110 420 1080 450" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- CROWN GROUP -->
+  <g class="crown" transform="translate(0, -20)">
+    <!-- Crown Base -->
+    <path d="M 860 280 L 1060 280 L 1050 200 Q 1030 220 1010 200 Q 990 180 970 200 Q 950 220 930 200 Q 910 180 890 200 Q 870 220 850 200 L 860 280 Z" fill="url(#crownGlow)" stroke="#000" stroke-width="8" stroke-linejoin="round" filter="url(#glow)"/>
+    
+    <!-- Crown Jewels -->
+    <circle cx="890" cy="240" r="12" fill="#ff0000" stroke="#000" stroke-width="4"/>
+    <circle cx="930" cy="240" r="12" fill="#00ccff" stroke="#000" stroke-width="4"/>
+    <circle cx="970" cy="240" r="12" fill="#ff0000" stroke="#000" stroke-width="4"/>
+    <circle cx="1010" cy="240" r="12" fill="#00ccff" stroke="#000" stroke-width="4"/>
+    <circle cx="1050" cy="240" r="12" fill="#ff0000" stroke="#000" stroke-width="4"/>
+    
+    <!-- Crown Base Rim -->
+    <rect x="850" y="270" width="220" height="20" fill="#ff9900" stroke="#000" stroke-width="6"/>
+  </g>
+
+  <!-- Foreground Floating Elements -->
+  <g class="float-2" style="animation-delay: 1s;">
+    <circle cx="300" cy="900" r="50" fill="#ff00ff" stroke="#000" stroke-width="6"/>
+    <rect x="280" y="880" width="40" height="40" fill="#ffffff"/>
+  </g>
+</svg>

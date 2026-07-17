@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="b40" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="b80" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="b120" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="b160" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="25" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" in="noise" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="composite"/>
+      <feBlend mode="multiply" in="composite" in2="SourceGraphic"/>
+    </filter>
+
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D2A1F">
+        <animate attributeName="stop-color" values="#3D2A1F;#5C2D2A;#3D2A1F" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#5C2D2A">
+        <animate attributeName="stop-color" values="#5C2D2A;#3D2A1F;#5C2D2A" dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2A6C8">
+        <animate attributeName="stop-color" values="#F2A6C8;#F8C8DC;#F2A6C8" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#F8C8DC">
+        <animate attributeName="stop-color" values="#F8C8DC;#F2A6C8;#F8C8DC" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="grad3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5A2B">
+        <animate attributeName="stop-color" values="#8B5A2B;#5C2D2A;#8B5A2B" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="50%" stop-color="#F8C8DC">
+        <animate attributeName="stop-color" values="#F8C8DC;#F2A6C8;#F8C8DC" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#3D2A1F">
+        <animate attributeName="stop-color" values="#3D2A1F;#8B5A2B;#3D2A1F" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </linearGradient>
+
+    <radialGradient id="grad4" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#F8C8DC">
+        <animate attributeName="stop-color" values="#F8C8DC;#F2A6C8;#F8C8DC" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="60%" stop-color="#5C2D2A">
+        <animate attributeName="stop-color" values="#5C2D2A;#3D2A1F;#5C2D2A" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+      <stop offset="100%" stop-color="#3D2A1F">
+        <animate attributeName="stop-color" values="#3D2A1F;#5C2D2A;#3D2A1F" dur="26s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </stop>
+    </radialGradient>
+
+    <path id="drift1" d="M -100,200 Q 400,100 900,450 T 1700,300" fill="none"/>
+    <path id="drift2" d="M -100,700 Q 500,600 800,500 T 1700,650" fill="none"/>
+    <path id="drift3" d="M 1700,150 Q 1200,300 700,450 T -100,400" fill="none"/>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#3D2A1F">
+    <animate attributeName="fill" values="#3D2A1F;#2A1A12;#3D2A1F" dur="30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </rect>
+
+  <!-- Layer 1: Far brown wash -->
+  <ellipse cx="1200" cy="450" rx="700" ry="600" fill="url(#grad1)" opacity="0.35" filter="url(#b160)">
+    <animate attributeName="cx" values="1200;1150;1250;1200" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="450;420;480;450" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="0.98;1.02;0.98" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </ellipse>
+
+  <!-- Layer 2: Far pink wash -->
+  <ellipse cx="450" cy="300" rx="600" ry="500" fill="url(#grad2)" opacity="0.3" filter="url(#b160)">
+    <animate attributeName="cx" values="450;500;400;450" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="300;340;260;300" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1.02;0.98;1.02" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </ellipse>
+
+  <!-- Layer 3: Deep brown right mass -->
+  <path d="M 700,0 C 950,180 1100,80 1300,250 C 1500,420 1650,300 1600,600 C 1550,900 1400,950 1200,850 C 1000,750 950,950 800,900 L 700,0 Z" fill="#3D2A1F" opacity="0.9" filter="url(#b80)">
+    <animate attributeName="d" values="M 700,0 C 950,180 1100,80 1300,250 C 1500,420 1650,300 1600,600 C 1550,900 1400,950 1200,850 C 1000,750 950,950 800,900 L 700,0 Z;M 720,0 C 920,200 1120,60 1280,280 C 1480,450 1670,320 1580,620 C 1530,920 1380,970 1180,870 C 980,770 930,970 780,900 L 720,0 Z;M 700,0 C 950,180 1100,80 1300,250 C 1500,420 1650,300 1600,600 C 1550,900 1400,950 1200,850 C 1000,750 950,950 800,900 L 700,0 Z" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;15,-10;0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 4: Soft pink left mass -->
+  <path d="M 0,150 C 180,80 350,220 500,180 C 650,140 750,350 650,500 C 550,650 700,800 500,900 C 300,1000 100,850 0,950 L 0,150 Z" fill="#F2A6C8" opacity="0.75" filter="url(#b80)">
+    <animate attributeName="d" values="M 0,150 C 180,80 350,220 500,180 C 650,140 750,350 650,500 C 550,650 700,800 500,900 C 300,1000 100,850 0,950 L 0,150 Z;M 0,130 C 200,100 370,200 520,170 C 670,130 770,370 670,520 C 570,670 720,820 520,920 C 320,1020 120,870 0,970 L 0,130 Z;M 0,150 C 180,80 350,220 500,180 C 650,140 750,350 650,500 C 550,650 700,800 500,900 C 300,1000 100,850 0,950 L 0,150 Z" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-10,15;0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 5: Mid brown ribbon -->
+  <path d="M 650,50 C 850,200 950,150 1150,350 C 1350,550 1550,400 1600,700 L 1600,900 L 900,900 C 750,750 850,600 750,450 C 650,300 550,200 650,50 Z" fill="url(#grad1)" opacity="0.7" filter="url(#b40)">
+    <animate attributeName="d" values="M 650,50 C 850,200 950,150 1150,350 C 1350,550 1550,400 1600,700 L 1600,900 L 900,900 C 750,750 850,600 750,450 C 650,300 550,200 650,50 Z;M 630,70 C 830,220 930,170 1130,370 C 1330,570 1530,420 1580,720 L 1580,900 L 880,900 C 730,770 830,620 730,470 C 630,320 530,220 630,70 Z;M 650,50 C 850,200 950,150 1150,350 C 1350,550 1550,400 1600,700 L 1600,900 L 900,900 C 750,750 850,600 750,450 C 650,300 550,200 650,50 Z" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,10;0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 6: Mid pink ribbon -->
+  <path d="M 0,300 C 200,250 350,400 550,350 C 750,300 850,500 700,650 C 550,800 750,950 500,950 L 0,950 L 0,300 Z" fill="url(#grad2)" opacity="0.65" filter="url(#b40)">
+    <animate attributeName="d" values="M 0,300 C 200,250 350,400 550,350 C 750,300 850,500 700,650 C 550,800 750,950 500,950 L 0,950 L 0,300 Z;M 0,280 C 220,270 370,420 570,370 C 770,320 870,520 720,670 C 570,820 770,970 520,970 L 0,970 L 0,280 Z;M 0,300 C 200,250 350,400 550,350 C 750,300 850,500 700,650 C 550,800 750,950 500,950 L 0,950 L 0,300 Z" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;25,-15;0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 7: Bronze highlight right -->
+  <path d="M 900,100 C 1050,250 1200,200 1350,400 C 1500,600 1600,500 1600,750 L 1600,900 L 1100,900 C 950,800 1000,650 900,550 C 800,450 800,250 900,100 Z" fill="#8B5A2B" opacity="0.5" filter="url(#b80)">
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-15,20;0,0" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </path>
+
+  <!-- Layer 8: Cotton pink highlight left -->
+  <path d="M 0,400 C 150,350 250,500 400,450 C 550,400 650,600 500,750 C 350,900 550,1000 300,1000 L 0,1000 L 0,400 Z" fill="#F8C8DC" opacity="0.55" filter="url(#b80)">
+    <animate attributeName="opacity" values="0.55;0.75;0.55" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;20,-10;0,0" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;0.98;1" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </path>
+
+  <!-- Layer 9: Transition blend zone upper -->
+  <path d="M 500,0 C 650,150 850,100 1000,250 C 1150,400 1050,550 900,600 C 750,650 650,750 750,900 L 500,900 C 350,750 450,600 550,450 C 650,300 400,150 500,0 Z" fill="url(#grad3)" opacity="0.6" filter="url(#b120)">
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-30,15;0,0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="0.98;1.02;0.98" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </path>
+
+  <!-- Layer 10: Transition blend zone lower -->
+  <path d="M 400,900 C 550,800 700,850 850,700 C 1000,550 1100,650 1000,800 C 900,950 1100,1050 900,1050 L 400,1050 Z" fill="url(#grad3)" opacity="0.5" filter="url(#b120)">
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;25,-20;0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1.02;0.98;1.02" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </path>
+
+  <!-- Layer 11: Sharp brown ribbon -->
+  <path d="M 800,0 C 950,120 1100,80 1250,220 C 1400,360 1550,280 1600,500 L 1600,0 Z" fill="#5C2D2A" opacity="0.85">
+    <animate attributeName="d" values="M 800,0 C 950,120 1100,80 1250,220 C 1400,360 1550,280 1600,500 L 1600,0 Z;M 820,0 C 970,140 1120,100 1270,240 C 1420,380 1570,300 1600,520 L 1600,0 Z;M 800,0 C 950,120 1100,80 1250,220 C 1400,360 1550,280 1600,500 L 1600,0 Z" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-10,5;0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 12: Sharp pink ribbon -->
+  <path d="M 0,0 L 500,0 C 400,120 300,80 200,200 C 100,320 250,400 150,550 C 50,700 180,800 0,900 L 0,0 Z" fill="#F2A6C8" opacity="0.8">
+    <animate attributeName="d" values="M 0,0 L 500,0 C 400,120 300,80 200,200 C 100,320 250,400 150,550 C 50,700 180,800 0,900 L 0,0 Z;M 0,0 L 520,0 C 420,140 320,100 220,220 C 120,340 270,420 170,570 C 70,720 200,820 0,920 L 0,0 Z;M 0,0 L 500,0 C 400,120 300,80 200,200 C 100,320 250,400 150,550 C 50,700 180,800 0,900 L 0,0 Z" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;15,-8;0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 13: Central blend swirl -->
+  <ellipse cx="850" cy="450" rx="350" ry="400" fill="url(#grad4)" opacity="0.45" filter="url(#b80)">
+    <animate attributeName="cx" values="850;820;880;850" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="450;480;420;450" dur="21s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="rx" values="350;380;350" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="ry" values="400;370;400" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- Layer 14: Gold brown wave -->
+  <path d="M 700,150 C 850,250 950,200 1100,350 C 1250,500 1400,400 1550,550 L 1550,750 C 1350,650 1200,750 1050,600 C 900,450 800,500 700,400 L 700,150 Z" fill="#8B5A2B" opacity="0.6" filter="url(#b40)">
+    <animate attributeName="d" values="M 700,150 C 850,250 950,200 1100,350 C 1250,500 1400,400 1550,550 L 1550,750 C 1350,650 1200,750 1050,600 C 900,450 800,500 700,400 L 700,150 Z;M 720,170 C 870,270 970,220 1120,370 C 1270,520 1420,420 1570,570 L 1570,770 C 1370,670 1220,770 1070,620 C 920,470 820,520 720,420 L 720,170 Z;M 700,150 C 850,250 950,200 1100,350 C 1250,500 1400,400 1550,550 L 1550,750 C 1350,650 1200,750 1050,600 C 900,450 800,500 700,400 L 700,150 Z" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;10,-15;0,0" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 15: Soft pink wave -->
+  <path d="M 50,500 C 200,450 300,600 450,550 C 600,500 700,700 550,850 C 400,1000 600,1050 350,1050 L 50,1050 L 50,500 Z" fill="#F8C8DC" opacity="0.55" filter="url(#b40)">
+    <animate attributeName="d" values="M 50,500 C 200,450 300,600 450,550 C 600,500 700,700 550,850 C 400,1000 600,1050 350,1050 L 50,1050 L 50,500 Z;M 30,520 C 180,470 280,620 430,570 C 580,520 680,720 530,870 C 380,1020 580,1070 330,1070 L 30,1070 L 30,520 Z;M 50,500 C 200,450 300,600 450,550 C 600,500 700,700 550,850 C 400,1000 600,1050 350,1050 L 50,1050 L 50,500 Z" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-12,18;0,0" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 16: Dark brown accent stroke -->
+  <path d="M 1000,100 C 1150,200 1250,150 1350,300 C 1450,450 1550,350 1600,500 L 1600,700 C 1450,600 1300,700 1150,550 C 1000,400 950,450 900,350 L 1000,100 Z" fill="#3D2A1F" opacity="0.7" filter="url(#b40)">
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-18,12;0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </path>
+
+  <!-- Layer 17: Rose pink accent stroke -->
+  <path d="M 0,600 C 150,550 250,700 400,650 C 550,600 650,800 500,950 C 350,1100 550,1150 300,1150 L 0,1150 L 0,600 Z" fill="#F2A6C8" opacity="0.65" filter="url(#b40)">
+    <animate attributeName="opacity" values="0.65;0.85;0.65" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;22,-14;0,0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;0.98;1" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+  </path>
+
+  <!-- Layer 18: Marbled transition vein 1 -->
+  <path d="M 600,200 C 750,300 850,250 950,400 C 1050,550 950,650 850,700 C 750,750 650,850 750,950" fill="none" stroke="url(#grad3)" stroke-width="90" opacity="0.4" filter="url(#b80)">
+    <animate attributeName="d" values="M 600,200 C 750,300 850,250 950,400 C 1050,550 950,650 850,700 C 750,750 650,850 750,950;M 620,220 C 770,320 870,270 970,420 C 1070,570 970,670 870,720 C 770,770 670,870 770,970;M 600,200 C 750,300 850,250 950,400 C 1050,550 950,650 850,700 C 750,750 650,850 750,950" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="stroke-width" values="90;110;90" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 19: Marbled transition vein 2 -->
+  <path d="M 500,400 C 650,500 750,450 850,600 C 950,750 850,850 750,900 C 650,950 550,1050 650,1150" fill="none" stroke="url(#grad3)" stroke-width="70" opacity="0.35" filter="url(#b80)">
+    <animate attributeName="d" values="M 500,400 C 650,500 750,450 850,600 C 950,750 850,850 750,900 C 650,950 550,1050 650,1150;M 520,420 C 670,520 770,470 870,620 C 970,770 870,870 770,920 C 670,970 570,1070 670,1170;M 500,400 C 650,500 750,450 850,600 C 950,750 850,850 750,900 C 650,950 550,1050 650,1150" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="stroke-width" values="70;90;70" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </path>
+
+  <!-- Layer 20: Glow halo in transition -->
+  <ellipse cx="800" cy="500" rx="200" ry="250" fill="#F8C8DC" opacity="0.25" filter="url(#glow)">
+    <animate attributeName="cx" values="800;770;830;800" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="500;530;470;500" dur="19s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.25;0.45;0.25" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="0.98;1.04;0.98" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- Layer 21: Second glow halo -->
+  <ellipse cx="750" cy="400" rx="150" ry="180" fill="#8B5A2B" opacity="0.2" filter="url(#glow)">
+    <animate attributeName="cx" values="750;780;720;750" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="400;370;430;400" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.2;0.35;0.2" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1.02;0.96;1.02" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+
+  <!-- Layer 22: Drifting particle 1 -->
+  <circle r="6" fill="#F8C8DC" opacity="0.7" filter="url(#b40)">
+    <animateMotion dur="22s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+      <mpath href="#drift1"/>
+    </animateMotion>
+    <animate attributeName="r" values="6;10;6" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+
+  <!-- Layer 23: Drifting particle 2 -->
+  <circle r="8" fill="#F2A6C8" opacity="0.6" filter="url(#b40)">
+    <animateMotion dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+      <mpath href="#drift2"/>
+    </animateMotion>
+    <animate attributeName="r" values="8;5;8" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+
+  <!-- Layer 24: Drifting particle 3 -->
+  <circle r="5" fill="#8B5A2B" opacity="0.65" filter="url(#b40)">
+    <animateMotion dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+      <mpath href="#drift3"/>
+    </animateMotion>
+    <animate attributeName="r" values="5;9;5" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.65;0.25;0.65" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+
+  <!-- Layer 25: Drifting particle 4 -->
+  <circle r="7" fill="#5C2D2A" opacity="0.5" filter="url(#b40)">
+    <animateMotion dur="28s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+      <mpath href="#drift1"/>
+    </animateMotion>
+    <animate attributeName="r" values="7;4;7" dur="13s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animate attributeName="opacity" values="0.5;0.15;0.5" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+
+  <!-- Layer 26: Top grain overlay -->
+  <rect width="100%" height="100%" fill="transparent" filter="url(#grain)" opacity="0.6" pointer-events="none"/>
+</svg>

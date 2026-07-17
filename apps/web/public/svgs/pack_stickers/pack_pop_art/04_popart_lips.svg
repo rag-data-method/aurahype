@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="dR" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="4" fill="#E63946"/>
+    </pattern>
+    <pattern id="dC" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="4" fill="#009DC4"/>
+    </pattern>
+    <pattern id="dK" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="3" fill="#111"/>
+    </pattern>
+    <clipPath id="uC">
+      <path d="M-400,0C-380,-130-220,-170-120,-100C-70,-70-30,-90,0,-110C30,-9070,-70120,-100C220,-170380,-130400,0C380,40220,20120,30C70,3530,300,35C-30,30-70,35-120,30C-220,20-380,40-400,0Z"/>
+    </clipPath>
+    <clipPath id="lC">
+      <path d="M-400,0C-380,180-220,260-120,280C-50,300-20,2900,295C20,29050,300120,280C220,260380,180400,0C380,90220,100120,95C70,9030,950,90C-30,95-70,90-120,95C-220,100-380,90-400,0Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1600" height="900" fill="#F2B807"/>
+
+  <g opacity="0.25">
+    <path d="M-500,-200L300,-200L-900,1100L-1700,1100Z" fill="#E63946">
+      <animateTransform attributeName="transform" type="translate" from="-1200,0" to="1200,0" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M-500,-200L300,-200L-900,1100L-1700,1100Z" fill="#009DC4">
+      <animateTransform attributeName="transform" type="translate" from="-1200,0" to="1200,0" dur="5s" begin="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g transform="translate(200,200)">
+    <circle cx="0" cy="0" r="150" fill="url(#dR)" opacity="0.5">
+      <animateTransform attributeName="transform" type="scale" values="0.9;1.2;0.9" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g transform="translate(1400,750)">
+    <circle cx="0" cy="0" r="180" fill="url(#dC)" opacity="0.5">
+      <animateTransform attributeName="transform" type="scale" values="1.1;0.8;1.1" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g transform="translate(1300,150)">
+    <circle cx="0" cy="0" r="100" fill="url(#dR)" opacity="0.4">
+      <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g transform="translate(120,800)">
+    <circle cx="0" cy="0" r="140" fill="url(#dC)" opacity="0.4">
+      <animateTransform attributeName="transform" type="scale" values="1.2;0.9;1.2" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <path d="M1100,540L911,586L1012,752L846,651L800,840L754,651L588,752L689,586L500,540L689,494L588,328L754,429L800,240L846,429L1012,328L911,494Z" fill="#FFF" stroke="#111" stroke-width="3" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate" from="0 800 540" to="360 800 540" dur="12s" repeatCount="indefinite"/>
+  </path>
+
+  <g transform="translate(800,540)">
+    <g>
+      <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+
+      <path d="M-380,35Q0,65380,35L380,90Q0,120-380,90Z" fill="#590D22"/>
+
+      <path d="M-360,40Q0,70360,40L350,85Q0,115-350,85Z" fill="#FFF" stroke="#111" stroke-width="4"/>
+
+      <path d="M-400,0C-380,-130-220,-170-120,-100C-70,-70-30,-90,0,-110C30,-9070,-70120,-100C220,-170380,-130400,0C380,40220,20120,30C70,3530,300,35C-30,30-70,35-120,30C-220,20-380,40-400,0Z" fill="#F42B2B" stroke="#111" stroke-width="6"/>
+
+      <path d="M-400,0C-380,180-220,260-120,280C-50,300-20,2900,295C20,29050,300120,280C220,260380,180400,0C380,90220,100120,95C70,9030,950,90C-30,95-70,90-120,95C-220,100-380,90-400,0Z" fill="#F42B2B" stroke="#111" stroke-width="6"/>
+
+      <ellipse cx="0" cy="-50" rx="280" ry="60" fill="url(#dK)" clip-path="url(#uC)" opacity="0.3"/>
+      <ellipse cx="0" cy="160" rx="320" ry="90" fill="url(#dK)" clip-path="url(#lC)" opacity="0.3"/>
+
+      <path d="M-160,-90q30,-2060,0q-20,15-60,0z" fill="#FFF">
+        <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-100,160q100,-20200,0q-20,40-100,45q-80,-5-100,-45z" fill="#FFF">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite"/>
+      </path>
+
+      <g transform="translate(0,65)">
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0" dur="3s" repeatCount="indefinite" additive="sum"/>
+          <rect x="-200" y="-30" width="400" height="60" fill="#FFF" stroke="#111" stroke-width="5"/>
+          <rect x="-200" y="-30" width="28" height="60" fill="#E63946"/>
+          <rect x="172" y="-30" width="28" height="60" fill="#E63946"/>
+          <text x="0" y="10" text-anchor="middle" font-family="Impact,Arial Black,sans-serif" font-size="36" fill="#111" font-weight="bold">misscanvas.com</text>
+
+          <path d="M-200,-30L-160,-30L-220,30L-260,30Z" fill="#FFF" opacity="0.4">
+            <animateTransform attributeName="transform" type="translate" from="0,0" to="500,0" dur="2.5s" repeatCount="indefinite"/>
+          </path>
+
+          <path d="M-240,0l-40,15M-240,10l-45,5M-240,20l-35,-10M240,0l40,15M240,10l45,5M240,20l35,-10" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(800,820)">
+    <rect x="-150" y="-30" width="300" height="60" rx="30" fill="#E63946" stroke="#111" stroke-width="4">
+      <animate attributeName="fill" values="#E63946;#FF6B78;#E63946" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="0" y="14" text-anchor="middle" font-family="Impact,Arial Black,sans-serif" font-size="28" fill="#FFF" font-weight="bold">GET YOURS NOW</text>
+  </g>
+</svg>
