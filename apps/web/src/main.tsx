@@ -25,10 +25,10 @@ declare global {
 
 const apiBaseUrl = (import.meta.env.VITE_API_URL || window.__SITE_FORGE_RUNTIME__?.apiUrl || "").replace(/\/$/, "");
 
-const modelCopy: Record<GenerationModel, { title: string; promise: string; badge: string }> = {
-  sol: { title: "Sol", promise: "energia que atropela o feed", badge: "manifesto de luz" },
-  terra: { title: "Terra", promise: "verdade que segura os olhos", badge: "editorial de raiz" },
-  luna: { title: "Luna", promise: "presença que a gente lembra", badge: "cinema noturno" }
+const modelCopy: Record<GenerationModel, { title: string; promise: string; face: string }> = {
+  luna: { title: "Luna", promise: "exploração intuitiva", face: "a face que sente" },
+  terra: { title: "Terra", promise: "fundamentação lógica", face: "a face que estrutura" },
+  sol: { title: "Sol", promise: "síntese iluminada", face: "a face que revela" }
 };
 
 interface GenerationResponse {
@@ -137,31 +137,32 @@ function App() {
       <div className="orb-container"><div className="orb luna" /><div className="orb terra" /><div className="orb sol" /></div>
       <div className="triad-halo" aria-hidden="true" />
       <nav>
-        <span className="wordmark">AURA<span>HYPE</span></span>
+        <a href="#top" className="wordmark"><span className="triad-logo" aria-hidden="true"><span /><span /><span /></span>AuraHype</a>
         {!install.installed && install.canInstall && <button type="button" className="install-button" onClick={install.install}>Instalar app  ↗</button>}
-        {!install.installed && !install.canInstall && <span className="nav-note">galeria → obra de arte</span>}
+        {!install.installed && !install.canInstall && <span className="nav-note">ambiente de criação ativo</span>}
       </nav>
       <div className="intro-copy">
-        <p className="kicker">SUA GALERIA MERECE MUSEU</p>
-        <h1>Cole seu <em>@</em>.<br />Veja sua galeria virar <em>obra de arte</em>.</h1>
-        <p className="lede">Três GPTs autorais leem cada foto, cada legenda, cada pausa entre publicações — e devolvem uma página que parece assinada por uma diretora de arte. Em <b>60 segundos</b>. Direto do seu Instagram.</p>
+        <p className="hero-badge"><span className="badge-dot" aria-hidden="true" /> AMBIENTE DE CRIAÇÃO ATIVO</p>
+        <h1>A inteligência,<br /><em>Redefinida.</em></h1>
+        <h2 className="hero-sub">Sobre a triangulação e suas faces</h2>
+        <p className="lede">A triangulação. Um fluxo dinâmico representado por três faces fundamentais — a exploração intuitiva (<i>Luna</i>), a fundamentação lógica (<i>Terra</i>) e a síntese iluminada (<i>Sol</i>). Transforma o banal em conhecimento absoluto.</p>
         <form onSubmit={submit} className="hero-generator">
           <label className="hero-profile-field">
-            <span>COMECE PELO SEU @</span>
+            <span>ATIVE A TRÍADE COM O SEU @</span>
             <div>
               <b>@</b>
               <input value={username} onChange={(event) => setUsername(event.target.value)} placeholder="seuperfil" autoComplete="off" required maxLength={30} aria-label="Seu usuário no Instagram" />
-              <button type="submit" disabled={submitting || !consent || !username.trim()}>{submitting ? "TRANSFORMANDO…" : "VIRAR OBRA DE ARTE  →"}</button>
+              <button type="submit" disabled={submitting || !consent || !username.trim()}>{submitting ? "TRIANGULANDO…" : "INICIAR IMERSÃO  →"}</button>
             </div>
           </label>
           <fieldset className="hero-model-choice">
-            <legend>QUAL GPT ASSINA</legend>
-            <div className="model-pills">{GENERATION_MODELS.map((item) => <label className={model === item ? "selected" : ""} key={item}>
+            <legend>ESCOLHA A FACE INICIAL</legend>
+            <div className="model-pills">{GENERATION_MODELS.map((item) => <label className={`model-${item} ${model === item ? "selected" : ""}`} key={item}>
               <input type="radio" name="model" value={item} checked={model === item} onChange={() => setModel(item)} />
               <strong>{modelCopy[item].title}</strong>
-              <small>{modelCopy[item].badge}</small>
+              <small>{modelCopy[item].face}</small>
             </label>)}</div>
-            <p className="model-promise" aria-live="polite"><i>{modelCopy[model].title}</i> — {modelCopy[model].promise}.</p>
+            <p className="model-promise" aria-live="polite"><i>{modelCopy[model].title}</i> · {modelCopy[model].promise}.</p>
           </fieldset>
           <label className="hero-consent">
             <input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} required />
@@ -169,29 +170,29 @@ function App() {
           </label>
         </form>
         {error && <p className="error" role="alert">{error}</p>}
-        {install.showIosHint && !install.installed && <p className="install-hint">Pra instalar no iPhone: toque no botão de <b>compartilhar</b> no Safari e depois em <b>“Adicionar à Tela de Início”</b>.</p>}
+        {install.showIosHint && !install.installed && <p className="install-hint">Pra instalar no iPhone: toque em <b>compartilhar</b> no Safari e depois em <b>“Adicionar à Tela de Início”</b>.</p>}
       </div>
-      <div className="scroll-hint">DESLIZE PRA VER A MÁGICA <span>↓</span></div>
+      <div className="scroll-hint">DESLIZE PARA A IMERSÃO <span>↓</span></div>
     </section>
 
     <section className="forge">
-      <div className="forge-title"><p className="kicker">EM 60 SEGUNDOS</p><h2>Você cola o <i>@</i>.<br />A gente devolve <i>presença.</i></h2></div>
+      <div className="forge-title"><p className="kicker">O PROCESSO</p><h2>Tecnologia que<br /><i>respira.</i></h2></div>
       <div className="how-it-works">
-        <article><span>01</span><h3>Cola seu @</h3><p>Instagram, TikTok ou Twitch. Escolhe Sol, Terra ou Luna. Um clique só.</p></article>
-        <article><span>02</span><h3>Sol, Terra & Luna leem sua alma</h3><p>Três GPTs autorais analisam cada foto, legenda e cor. Extraem paleta, voz e ritmo.</p></article>
-        <article><span>03</span><h3>O mundo vê o que você já era</h3><p>Uma página assinada, com CTA, galeria e link pronto pra bio. Compartilha. Vira hype.</p></article>
+        <article className="face-luna"><span>LUNA</span><h3>A exploração intuitiva</h3><p>Lê o que ainda não é palavra. Extrai atmosfera, temperatura e nuance da sua expressão.</p></article>
+        <article className="face-terra"><span>TERRA</span><h3>A fundamentação lógica</h3><p>Ancora a intuição em estrutura, hierarquia e ritmo. Faz o pensamento parar em pé.</p></article>
+        <article className="face-sol"><span>SOL</span><h3>A síntese iluminada</h3><p>Fecha o triângulo. Une intuição e lógica em uma presença que transforma o banal em conhecimento absoluto.</p></article>
       </div>
     </section>
 
     {site && <section className="result">
       <div className="result-label">
-        <span>PRONTO</span>
-        <p>Sua galeria, <i>virada museu.</i></p>
+        <span>OBRA</span>
+        <p>A Tríade, <i>manifestada.</i></p>
       </div>
-      {shareUrl && <p className="share-line">Compartilha: <a href={shareUrl} target="_blank" rel="noreferrer">{shareUrl}</a></p>}
+      {shareUrl && <p className="share-line">Compartilhe: <a href={shareUrl} target="_blank" rel="noreferrer">{shareUrl}</a></p>}
       <GeneratedLanding site={site} />
     </section>}
-    <footer>AuraHype · Sol, Terra e Luna transformam seu @ em obra de arte · dados usados apenas com autorização</footer>
+    <footer>AuraHype · a triangulação da inteligência · Luna &nbsp;·&nbsp; Terra &nbsp;·&nbsp; Sol</footer>
   </main>;
 }
 
