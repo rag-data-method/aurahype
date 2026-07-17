@@ -158,10 +158,13 @@ function App() {
               <button type="submit" disabled={submitting || !consent || !username.trim()}>{submitting ? "TRIANGULANDO…" : "INICIAR IMERSÃO  →"}</button>
             </div>
           </label>
-          <p className="hero-price">
-            <span className="hero-price-value">R$ 14,90<small>/mês</small></span>
-            <span className="hero-price-hint"><em>uma face</em> · comece pela essência</span>
-          </p>
+          <div className="hero-price">
+            <div className="hero-price-row">
+              <span className="hero-price-value">R$ 15,60<small>/mês</small></span>
+              <span className="hero-price-signature" aria-label="Seu site assinado pelo GPT 5.6"><em>Seu site assinado pelo</em> <b>GPT&nbsp;5.6</b></span>
+            </div>
+            <p className="hero-price-hint"><em>uma face</em> · comece pela essência</p>
+          </div>
           <label className="hero-consent">
             <input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} required />
             <span>Este perfil é meu — ou tenho autorização de quem é.</span>
@@ -244,7 +247,8 @@ function App() {
       <div className="plans-grid">
         <article className="plan plan-essencia">
           <p className="plan-tag">Essência</p>
-          <p className="plan-price">R$ 14,90<small>/mês</small></p>
+          <p className="plan-price">R$ 15,60<small>/mês</small></p>
+          <p className="plan-signature"><em>Seu site assinado pelo</em> <b>GPT&nbsp;5.6</b></p>
           <p className="plan-line">Comece pequeno. Prove pra você mesma.</p>
           <ul className="plan-features">
             <li><b>1 face</b> — você escolhe Luna, Terra ou Sol</li>
@@ -317,7 +321,7 @@ function App() {
         <p className="kicker">Pronta pra começar?</p>
         <h2>Cole seu <em>@</em>.<br />Deixe o resto <i>respirar</i>.</h2>
         <a href="#top" className="final-cta-btn">Voltar ao topo e começar  ↑</a>
-        <p className="final-cta-hint">A partir de <b>R$ 14,90/mês</b> · cancele quando quiser</p>
+        <p className="final-cta-hint">A partir de <b>R$ 15,60/mês</b> · assinado pelo <b>GPT&nbsp;5.6</b> · cancele quando quiser</p>
       </div>
     </section>
 

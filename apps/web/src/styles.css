@@ -198,12 +198,13 @@ h1 em { display: block; color: var(--fg-secondary); }
 .hero-profile-shell button:disabled { opacity: .35; cursor: not-allowed; }
 
 /* Preço logo abaixo da cápsula */
-.hero-price {
-  margin: 18px 0 0;
+.hero-price { margin: 22px 0 0; }
+.hero-price-row {
   display: flex;
   align-items: baseline;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
+  margin-bottom: 6px;
 }
 .hero-price-value {
   font-family: "Instrument Serif", serif;
@@ -211,14 +212,46 @@ h1 em { display: block; color: var(--fg-secondary); }
   font-size: clamp(1.7rem, 3vw, 2.1rem);
   color: var(--fg);
   letter-spacing: 0;
+  line-height: 1;
 }
 .hero-price-value small {
   font-family: "Inter", sans-serif;
   font-style: normal;
-  font-size: .7em;
+  font-size: .68em;
   color: var(--fg-tertiary);
   font-weight: 400;
   margin-left: 2px;
+}
+/* Assinatura GPT 5.6 — em itálico, com brilho suave que chama atenção */
+.hero-price-signature {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(.98rem, 1.5vw, 1.15rem);
+  color: #ffd48a;
+  letter-spacing: 0;
+  line-height: 1.15;
+  animation: signatureGlow 3.2s ease-in-out infinite;
+}
+.hero-price-signature em {
+  font-style: italic;
+  color: color-mix(in srgb, #ffd48a, transparent 25%);
+  font-weight: 400;
+}
+.hero-price-signature b {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--c-sol);
+  letter-spacing: .01em;
+  padding: 3px 10px;
+  margin-left: 2px;
+  border-radius: 100px;
+  border: 1px solid color-mix(in srgb, var(--c-sol), transparent 65%);
+  background: color-mix(in srgb, var(--c-sol), transparent 90%);
+  font-size: .95em;
+}
+@keyframes signatureGlow {
+  0%, 100% { text-shadow: 0 0 0 rgba(255, 212, 138, 0); }
+  50%      { text-shadow: 0 0 16px rgba(255, 212, 138, .35), 0 0 4px rgba(255, 212, 138, .3); }
 }
 .hero-price-hint {
   font-size: .78rem;
@@ -231,6 +264,31 @@ h1 em { display: block; color: var(--fg-secondary); }
   font-style: italic;
   font-weight: 400;
   margin-right: 4px;
+}
+
+/* Assinatura no card do plano Essência */
+.plan-signature {
+  margin-top: -4px;
+  margin-bottom: 18px;
+  font-family: "Instrument Serif", serif;
+  font-size: .95rem;
+  color: #ffd48a;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+.plan-signature em { font-style: italic; color: color-mix(in srgb, #ffd48a, transparent 30%); font-weight: 400; }
+.plan-signature b {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--c-sol);
+  letter-spacing: .01em;
+  padding: 2px 9px;
+  margin-left: 3px;
+  border-radius: 100px;
+  border: 1px solid color-mix(in srgb, var(--c-sol), transparent 65%);
+  background: color-mix(in srgb, var(--c-sol), transparent 90%);
+  font-size: .88em;
 }
 
 /* Consent */
