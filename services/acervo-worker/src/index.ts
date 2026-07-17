@@ -21,6 +21,12 @@ import { Hono } from "hono";
 import type { Env, IngestBody, SearchBody } from "./types.js";
 import { handleIngest } from "./ingest.js";
 import { handleSearch } from "./search.js";
+import {
+  handleExtract,
+  handleCrawl,
+  type ExtractBody,
+  type CrawlBody,
+} from "./scrape.js";
 import { classifyOne } from "./classify.js";
 import { getUnclassifiedSites, updateClassification } from "./db.js";
 import { parseJsonSafe } from "./util.js";
@@ -84,6 +90,54 @@ app.post("/search", async (c) => {
   }
   const result = await handleSearch(c.env, body);
   return c.json(result);
+});
+
+/**
+ * POST /scrape/extract — N URLs conhecidas → conteudo limpo → ingest.
+ * Provider: Tavily (default) ou Scrapfly (fallback). Auto-seleciona pela env.
+ * Protegido por INGEST_TOKEN pra nao torrar creditos.
+ */
+app.post("/scrape/extract", async (c) => {
+  if (!requireIngestToken(c.env, c.req.header("Authorization"))) {
+    return c.json({ ok: false, error: "unauthorized" }, 401);
+  }
+  const body = (await c.req.json().catch(() => null)) as ExtractBody | null;
+  if (!body || !Array.isArray(body.urls)) {
+    return c.json(
+      { ok: false, error: "body inválido: esperado {urls: string[]}" },
+      400
+    );
+  }
+  const result = await handleExtract(c.env, body);
+  if (!result.ok) return c.json(result, 501);
+  return c.json(result);
+});
+
+/**
+ * POST /scrape/crawl — URL raiz + instructions → Tavily crawl → ingest.
+ * So Tavily por enquanto (Scrapfly nao tem endpoint de crawl).
+ */
+app.post("/scrape/crawl", async (c) => {
+  if (!requireIngestToken(c.env, c.req.header("Authorization"))) {
+    return c.json({ ok: false, error: "unauthorized" }, 401);
+  }
+  const body = (await c.req.json().catch(() => null)) as CrawlBody | null;
+  if (!body || typeof body.url !== "string") {
+    return c.json(
+      { ok: false, error: "body inválido: esperado {url: string, instructions?: string, ...}" },
+      400
+    );
+  }
+  try {
+    const result = await handleCrawl(c.env, body);
+    if (!result.ok) return c.json(result, 501);
+    return c.json(result);
+  } catch (e) {
+    return c.json(
+      { ok: false, error: e instanceof Error ? e.message : String(e) },
+      500
+    );
+  }
 });
 
 /**

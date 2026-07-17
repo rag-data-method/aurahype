@@ -89,6 +89,46 @@ Resposta:
 
 Se você mandar `classify: true`, cada site também passa pelo LLM classifier no mesmo request (~1-2s por site, cuidado com lote grande). O jeito recomendado é ingerir rápido sem classificar e chamar `/classify` depois em batch.
 
+### `POST /scrape/extract`
+
+Recebe N URLs, extrai conteudo limpo (markdown), joga no `/ingest` internamente. Estilo Tavily Extract.
+
+Header: `Authorization: Bearer <INGEST_TOKEN>`.
+
+```json
+{
+  "urls": [
+    "https://algum-site.lovable.app/",
+    "https://outro-site.com/"
+  ],
+  "query": "estilo minimal com hero em video",
+  "classify": true
+}
+```
+
+Provider: **Tavily** se `TAVILY_API_KEY` setada (preferido — funciona bem em Lovable/SPA), **Scrapfly** como fallback se `SCRAPFLY_API_KEY` setada. Se nenhuma, retorna 501.
+
+### `POST /scrape/crawl`
+
+Recebe uma URL raiz + instrucoes, o Tavily segue os links por N niveis e devolve as paginas descobertas em markdown, tudo ingerido de uma vez. Estilo Tavily Crawl.
+
+Header: `Authorization: Bearer <INGEST_TOKEN>`.
+
+```json
+{
+  "url": "https://gallery.lovable.app/",
+  "instructions": "sites de portfolio e servico, estilo minimal e organico",
+  "max_depth": 2,
+  "max_breadth": 30,
+  "limit": 50,
+  "select_paths": ["/project/.*", "/showcase/.*"],
+  "exclude_paths": ["/blog/.*"],
+  "classify": true
+}
+```
+
+So Tavily por enquanto — Scrapfly nao tem endpoint equivalente. Se `TAVILY_API_KEY` nao setada, retorna 501.
+
 ### `POST /search`
 
 Público (sem token). É o endpoint que o frontend do Tríade 56 chama.

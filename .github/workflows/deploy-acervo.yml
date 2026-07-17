@@ -3,10 +3,13 @@ name: Deploy acervo-worker
 # Roda sozinho toda vez que a pasta services/acervo-worker mudar em main,
 # ou manualmente pelo botao "Run workflow" no GitHub.
 #
-# Precisa de 3 secrets no repo (Settings -> Secrets and variables -> Actions):
-#   CLOUDFLARE_API_TOKEN    (obrigatorio)
-#   CLOUDFLARE_ACCOUNT_ID   (obrigatorio)
-#   INGEST_TOKEN            (opcional — se nao setar, /ingest fica aberto)
+# Precisa de secrets no repo (Settings -> Secrets and variables -> Actions):
+#   CLOUDFLARE_API_TOKEN    (obrigatorio) — gera em dash.cloudflare.com/profile/api-tokens (template "Edit Cloudflare Workers")
+#   CLOUDFLARE_ACCOUNT_ID   (obrigatorio) — ID da conta, no topo direito do dashboard
+#   INGEST_TOKEN            (opcional)    — protege /ingest, /scrape/extract, /scrape/crawl
+#   TAVILY_API_KEY          (opcional)    — habilita /scrape/extract (Tavily) e /scrape/crawl
+#   SCRAPFLY_API_KEY        (opcional)    — fallback pro /scrape/extract quando Tavily ausente
+#   SOCIALCRAWL_KEY         (opcional)    — reservado pra /scrape/social (feature futura)
 
 on:
   push:
@@ -35,12 +38,15 @@ jobs:
         working-directory: services/acervo-worker
         run: npx tsc --noEmit
 
-      - name: Bootstrap Cloudflare (Vectorize + D1 + schema)
+      - name: Bootstrap Cloudflare (Vectorize + D1 + schema + secrets)
         working-directory: services/acervo-worker
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          SCRAPFLY_API_KEY: ${{ secrets.SCRAPFLY_API_KEY }}
+          SOCIALCRAWL_KEY: ${{ secrets.SOCIALCRAWL_KEY }}
         run: node scripts/bootstrap.mjs
 
       - name: Deploy Worker

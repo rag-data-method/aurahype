@@ -12,6 +12,12 @@ export interface Env {
   EMBED_MODEL: string;
   CLASSIFY_MODEL: string;
   INGEST_TOKEN?: string;
+  /** Habilita /scrape/extract e /scrape/crawl via Tavily (prioritario). */
+  TAVILY_API_KEY?: string;
+  /** Fallback pra /scrape/extract quando TAVILY_API_KEY nao setada. */
+  SCRAPFLY_API_KEY?: string;
+  /** Reservado pra scraping social (Instagram/TikTok/YouTube) — feature futura. */
+  SOCIALCRAWL_KEY?: string;
 }
 
 /**

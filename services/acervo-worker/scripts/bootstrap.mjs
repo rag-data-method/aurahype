@@ -187,26 +187,25 @@ function applySchema() {
 
 // ---- secret ------------------------------------------------------------
 
-function maybeSetSecret() {
-  const token = process.env.INGEST_TOKEN;
-  if (!token) {
-    log(`INGEST_TOKEN nao setado no CI — /ingest ficara aberto (sem auth). ` +
-        `Adicione um secret no GitHub chamado INGEST_TOKEN pra proteger.`);
+function maybeSetSecret(name, humanHint) {
+  const value = process.env[name];
+  if (!value) {
+    log(`${name} nao setado no CI — ${humanHint}`);
     return;
   }
-  log(`setando secret INGEST_TOKEN no worker...`);
-  const setRes = spawnSync("npx", ["--yes", "wrangler", "secret", "put", "INGEST_TOKEN"], {
+  log(`setando secret ${name} no worker...`);
+  const setRes = spawnSync("npx", ["--yes", "wrangler", "secret", "put", name], {
     cwd: WORKER_DIR,
-    input: token + "\n",
+    input: value + "\n",
     encoding: "utf-8",
     env: process.env,
   });
   if (setRes.status !== 0) {
     console.error(setRes.stdout);
     console.error(setRes.stderr);
-    throw new Error("falha ao setar secret INGEST_TOKEN");
+    throw new Error(`falha ao setar secret ${name}`);
   }
-  ok(`secret INGEST_TOKEN setado`);
+  ok(`secret ${name} setado`);
 }
 
 // ---- main --------------------------------------------------------------
@@ -216,7 +215,22 @@ try {
   const dbUuid = ensureD1();
   ensureWranglerToml(dbUuid);
   applySchema();
-  maybeSetSecret();
+  maybeSetSecret(
+    "INGEST_TOKEN",
+    "/ingest e /scrape/url ficarao abertos. Adicione INGEST_TOKEN como secret do GitHub pra proteger."
+  );
+  maybeSetSecret(
+    "TAVILY_API_KEY",
+    "/scrape/extract e /scrape/crawl vao usar Scrapfly como fallback (ou 501 se nao tiver nenhum). Adicione TAVILY_API_KEY como secret do GitHub pra habilitar."
+  );
+  maybeSetSecret(
+    "SCRAPFLY_API_KEY",
+    "sem fallback pra /scrape/extract quando TAVILY_API_KEY tambem falta. Adicione SCRAPFLY_API_KEY como secret do GitHub se quiser."
+  );
+  maybeSetSecret(
+    "SOCIALCRAWL_KEY",
+    "reservado pra /scrape/social (feature futura, perfis TikTok/IG/YT). Pode ignorar por enquanto."
+  );
   console.log("\n\ud83c\udf89 bootstrap OK — pronto pra `wrangler deploy`");
 } catch (e) {
   console.error(`\n\u274c bootstrap falhou:`, e instanceof Error ? e.message : e);
