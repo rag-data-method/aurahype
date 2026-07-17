@@ -1,0 +1,41 @@
+name = "triade-acervo"
+main = "src/index.ts"
+compatibility_date = "2025-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# ============================================================
+# Bindings — Miriam precisa criar estes recursos no dashboard
+# Cloudflare (ou usar os comandos wrangler abaixo) antes do
+# primeiro deploy:
+#
+#   npx wrangler vectorize create triade-acervo \
+#     --dimensions=1024 --metric=cosine
+#
+#   npx wrangler d1 create triade-acervo
+#     (copia o database_id que aparecer no output pra baixo)
+#
+#   npm run db:init:remote
+# ============================================================
+
+[ai]
+binding = "AI"
+
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "triade-acervo"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "triade-acervo"
+database_id = "REPLACE_WITH_ID_FROM_WRANGLER_D1_CREATE"
+
+[vars]
+# Modelos Workers AI. Trocar aqui se quiser testar outros.
+EMBED_MODEL = "@cf/baai/bge-m3"
+CLASSIFY_MODEL = "@cf/meta/llama-3.1-8b-instruct"
+# Chave simples pra proteger /ingest de spam. Definir com:
+#   npx wrangler secret put INGEST_TOKEN
+# INGEST_TOKEN vai como secret, não como var em texto plano.
+
+[observability]
+enabled = true
