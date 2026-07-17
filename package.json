@@ -1,0 +1,19 @@
+{
+  "name": "instagram-site-forge",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@10.9.2",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*",
+    "infra"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=@site-forge/shared && npm run build --workspace=@site-forge/api && npm run build --workspace=@site-forge/web && npm run build --workspace=@site-forge/infra",
+    "typecheck": "npm run typecheck --workspace=@site-forge/shared && npm run typecheck --workspace=@site-forge/api && npm run typecheck --workspace=@site-forge/web && npm run typecheck --workspace=@site-forge/infra"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="2Minutes">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17141a" />
+      <stop offset="1" stop-color="#2b1e35" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.25" r="0.6">
+      <stop offset="0" stop-color="#ffbb46" stop-opacity="0.85" />
+      <stop offset="0.55" stop-color="#ee4d72" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#17141a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)" />
+  <rect width="512" height="512" rx="112" fill="url(#glow)" />
+  <g fill="#fff8f0" font-family="Georgia, 'Playfair Display', serif" font-weight="700">
+    <text x="88" y="330" font-size="330" letter-spacing="-16">2</text>
+    <text x="292" y="330" font-size="120" letter-spacing="-4" fill="#ffbb46">M</text>
+    <text x="292" y="410" font-size="42" letter-spacing="4" fill="#f9eae4" font-family="'DM Mono', monospace" font-weight="500">MIN</text>
+  </g>
+</svg>

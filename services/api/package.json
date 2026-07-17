@@ -1,0 +1,23 @@
+{
+  "name": "@site-forge/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/handlers.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "npm run build --workspace=@site-forge/shared && tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.846.0",
+    "@aws-sdk/client-secrets-manager": "^3.846.0",
+    "@aws-sdk/client-s3": "^3.846.0",
+    "@aws-sdk/client-sqs": "^3.846.0",
+    "@aws-sdk/lib-dynamodb": "^3.846.0",
+    "@site-forge/shared": "*",
+    "@types/aws-lambda": "^8.10.152"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.34"
+  }
+}

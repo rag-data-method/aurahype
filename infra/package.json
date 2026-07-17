@@ -1,0 +1,21 @@
+{
+  "name": "@site-forge/infra",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "synth": "npm run build && cdk synth",
+    "deploy": "npm run build && cdk deploy"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.205.0",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.25.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.34",
+    "aws-cdk": "^2.1028.0"
+  }
+}
