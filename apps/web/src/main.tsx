@@ -31,6 +31,36 @@ function useGeneratingHash(active: boolean) {
 const USE_SELO_3D = (import.meta.env.VITE_SELO_3D as string | undefined) === "true";
 
 // ─────────────────────────────────────────────────────────────────
+// Rastreia qual seção está mais visível na tela e devolve o "tom"
+// dominante dela. Site inteiro respira as cores da Tríade conforme
+// o usuário rola. Cada seção declara seu tom em data-tone="X".
+// ─────────────────────────────────────────────────────────────────
+type Tone = "mix" | "luna" | "terra" | "sol" | "zenite";
+
+function useScrollTone(): Tone {
+  const [tone, setTone] = useState<Tone>("mix");
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        // Escolhe a seção com maior interseção como o tom vigente
+        let best: { tone: Tone; ratio: number } | null = null;
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const t = (entry.target as HTMLElement).dataset.tone as Tone | undefined;
+          if (!t) continue;
+          if (!best || entry.intersectionRatio > best.ratio) best = { tone: t, ratio: entry.intersectionRatio };
+        }
+        if (best) setTone(best.tone);
+      },
+      { rootMargin: "-30% 0px -30% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+    document.querySelectorAll<HTMLElement>("[data-tone]").forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+  return tone;
+}
+
+// ─────────────────────────────────────────────────────────────────
 // CONFIGURAÇÃO — Miriam, você mexe SÓ AQUI pra lançar:
 //   1) TRIADE_API_URL = URL do worker MissCanvas que gera o site
 //      (handleInstaSite). Probe 2026-07-17: misscanvas.com/api/insta-site = 404.
@@ -174,6 +204,7 @@ function App() {
   const [errorMsg, setErrorMsg] = useState<string>();
   const install = useInstallPrompt();
   const gerandoHash = useGeneratingHash(status === "gerando");
+  const currentTone = useScrollTone();
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -200,16 +231,16 @@ function App() {
     return whatsappLink(`Oi Miriam! Quero assinar o plano ${planoNome} da Tríade 56 (${preco}/mês). Meu perfil é ${perfil}. Como pago?`);
   }
 
-  return <main>
+  return <main data-current-tone={currentTone}>
     {/* Selo Three.js fullscreen — DORMANT. Só ativa se VITE_SELO_3D=true.
         Substitui a tela simples "gerando" por espetáculo hexagonal 3D. */}
     <SeloMemoria active={USE_SELO_3D && status === "gerando"} legend={username ? `Perfil: @${username.replace(/^@+/, "")}` : undefined} />
 
-    {/* Bolota que acompanha o scroll — fica ancorada na viewport, flutua por trás/frente
-        de todas as seções conforme o usuário rola a página. */}
+    {/* Bolota que acompanha o scroll — muda de cor conforme a seção visível.
+        Site inteiro respira Luna → Terra → Sol → Zênite conforme o usuário rola. */}
     <div className="triad-halo triad-halo-floating" aria-hidden="true" />
 
-    <section className="intro">
+    <section className="intro" data-tone="mix">
       <div className="orb-container"><div className="orb luna" /><div className="orb terra" /><div className="orb sol" /></div>
       <span className="big-56" aria-hidden="true">56</span>
       <nav>
@@ -272,7 +303,7 @@ function App() {
       <div className="scroll-hint">DESLIZE PARA CONHECER AS FACES <span>↓</span></div>
     </section>
 
-    <section className="faces" aria-labelledby="faces-title">
+    <section className="faces" aria-labelledby="faces-title" data-tone="mix">
       <div className="faces-title">
         <p className="kicker">Quatro presenças</p>
         <h2 id="faces-title">Três compõem a <i>triangulação</i>.<br />Uma faz a <i>síntese</i>.</h2>
@@ -302,7 +333,7 @@ function App() {
       </div>
     </section>
 
-    <section className="breathe" aria-labelledby="breathe-title">
+    <section className="breathe" aria-labelledby="breathe-title" data-tone="luna">
       <div className="breathe-inner">
         <p className="kicker">O que a gente faz</p>
         <h2 id="breathe-title"><i>Sites que respiram.</i></h2>
@@ -310,7 +341,7 @@ function App() {
       </div>
     </section>
 
-    <section className="editor" aria-labelledby="editor-title">
+    <section className="editor" aria-labelledby="editor-title" data-tone="zenite">
       <div className="editor-inner">
         <div className="editor-emblem" aria-hidden="true">
           <svg viewBox="0 0 120 120" width="88" height="88">
@@ -335,7 +366,7 @@ function App() {
       </div>
     </section>
 
-    <section className="flow" aria-labelledby="flow-title">
+    <section className="flow" aria-labelledby="flow-title" data-tone="terra">
       <div className="flow-title">
         <p className="kicker">Do @ ao site</p>
         <h2 id="flow-title">Três passos.<br /><i>Nada de complicado.</i></h2>
@@ -359,7 +390,7 @@ function App() {
       </ol>
     </section>
 
-    <section className="plans" aria-labelledby="plans-title" id="planos">
+    <section className="plans" aria-labelledby="plans-title" id="planos" data-tone="sol">
       <div className="plans-title">
         <p className="kicker">Planos mensais</p>
         <h2 id="plans-title">Comece pela <i>essência</i>.<br />Cresça até a <i>tríade</i>.</h2>
@@ -415,7 +446,7 @@ function App() {
       </div>
     </section>
 
-    <section className="faq" aria-labelledby="faq-title">
+    <section className="faq" aria-labelledby="faq-title" data-tone="mix">
       <div className="faq-title">
         <p className="kicker">Antes de você começar</p>
         <h2 id="faq-title">Perguntas que <i>já ouvi</i>.</h2>
@@ -452,7 +483,7 @@ function App() {
       </div>
     </section>
 
-    <section className="final-cta">
+    <section className="final-cta" data-tone="mix">
       <div className="final-cta-inner">
         <p className="kicker">Pronta pra começar?</p>
         <h2>Cole seu <em>@</em>.<br />Deixe o resto <i>respirar</i>.</h2>

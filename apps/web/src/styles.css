@@ -766,3 +766,85 @@ footer { padding: 60px 24px 40px; background: var(--bg-elev); border-top: 1px so
   content: "▸ ";
   color: var(--c-sol);
 }
+
+
+
+/* ─── TOM DINÂMICO POR SEÇÃO ───────────────────────────────────────
+   O <main> recebe data-current-tone conforme a seção mais visível.
+   A bolota flutuante e alguns detalhes puxam a --tone-color e a
+   --tone-gradient correspondentes, com transição suave. */
+main {
+  --tone-color: var(--c-luna);
+  --tone-color-2: var(--c-terra);
+  --tone-glow: rgba(167, 139, 250, 0.5);
+  --tone-gradient: conic-gradient(from 0deg, var(--c-luna), var(--c-terra), var(--c-sol), var(--c-luna));
+  transition: --tone-color 1s ease, --tone-glow 1s ease;
+}
+main[data-current-tone="luna"] {
+  --tone-color: #a78bfa;
+  --tone-color-2: #c9b3ff;
+  --tone-glow: rgba(167, 139, 250, 0.6);
+  --tone-gradient: radial-gradient(circle at 50% 50%, #a78bfa 0%, #6b4faf 55%, transparent 80%);
+}
+main[data-current-tone="terra"] {
+  --tone-color: #34d399;
+  --tone-color-2: #a7f3d0;
+  --tone-glow: rgba(52, 211, 153, 0.55);
+  --tone-gradient: radial-gradient(circle at 50% 50%, #34d399 0%, #0f8760 55%, transparent 80%);
+}
+main[data-current-tone="sol"] {
+  --tone-color: #fbbf24;
+  --tone-color-2: #fde68a;
+  --tone-glow: rgba(251, 191, 36, 0.6);
+  --tone-gradient: radial-gradient(circle at 50% 50%, #fbbf24 0%, #b47a00 55%, transparent 80%);
+}
+main[data-current-tone="zenite"] {
+  --tone-color: #ffffff;
+  --tone-color-2: #d8d8e8;
+  --tone-glow: rgba(255, 255, 255, 0.5);
+  --tone-gradient: radial-gradient(circle at 50% 50%, #ffffff 0%, #7a7a95 55%, transparent 80%);
+}
+main[data-current-tone="mix"] {
+  --tone-color: #a78bfa;
+  --tone-color-2: #fbbf24;
+  --tone-glow: rgba(167, 139, 250, 0.5);
+  --tone-gradient: conic-gradient(from 0deg, var(--c-luna), var(--c-terra), var(--c-sol), var(--c-luna));
+}
+
+/* A bolota flutuante puxa o gradiente do tom vigente — muda de cor
+   conforme o scroll, transição bem suave */
+.triad-halo-floating::before {
+  background: var(--tone-gradient) !important;
+  transition: background 1.2s ease, opacity 0.8s ease;
+}
+
+/* Detalhes por seção que puxam o tom — bordas sutis, glows */
+.faces[data-tone] .faces-title h2 i,
+.breathe[data-tone] h2 i,
+.editor[data-tone] h2 i,
+.flow[data-tone] h2 i,
+.plans[data-tone] h2 i,
+.faq[data-tone] h2 i {
+  transition: color 0.8s ease;
+}
+
+/* Cada seção com data-tone específico ganha um leve toque na cor secundária */
+main[data-current-tone="luna"] .kicker { color: color-mix(in srgb, var(--c-luna), var(--fg-tertiary) 30%); transition: color 1s ease; }
+main[data-current-tone="terra"] .kicker { color: color-mix(in srgb, var(--c-terra), var(--fg-tertiary) 30%); transition: color 1s ease; }
+main[data-current-tone="sol"] .kicker { color: color-mix(in srgb, var(--c-sol), var(--fg-tertiary) 30%); transition: color 1s ease; }
+main[data-current-tone="zenite"] .kicker { color: var(--fg-secondary); transition: color 1s ease; }
+main[data-current-tone="mix"] .kicker { color: var(--fg-tertiary); transition: color 1s ease; }
+
+/* Emblema do Pitágoras — ganha halo do tom */
+.editor .editor-emblem { transition: box-shadow 1s ease, border-color 1s ease; }
+main[data-current-tone="zenite"] .editor-emblem { box-shadow: 0 0 40px rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.15); }
+
+/* Selection também respeita o tom */
+main[data-current-tone="luna"] ::selection { background: rgba(167,139,250,.35); }
+main[data-current-tone="terra"] ::selection { background: rgba(52,211,153,.35); }
+main[data-current-tone="sol"] ::selection { background: rgba(251,191,36,.35); }
+
+/* Reduce motion: transição instantânea, não anima cor */
+@media (prefers-reduced-motion: reduce) {
+  main, .triad-halo-floating::before { transition: none !important; }
+}
