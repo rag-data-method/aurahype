@@ -375,6 +375,160 @@ function App() {
       </div>
     </section>
 
+    <section className="gallery" data-tone="mix" aria-labelledby="gallery-title">
+      <div className="gallery-title">
+        <p className="kicker">Coleção de estilos</p>
+        <h2 id="gallery-title">Seu site, <i>do jeito que você imagina</i>.</h2>
+        <p className="gallery-lede">Cada estilo é uma direção visual pronta. Luna, Terra e Sol trabalham em cima da que você escolher. E o <i>Pitágoras</i> troca quando você pedir, no chat.</p>
+      </div>
+      <div className="gallery-grid">
+        <article className="gallery-card" data-theme="hexagons">
+          <div className="gallery-preview">
+            <svg viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gp-hex-bg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stopColor="#00b8ff" stopOpacity="0.85" />
+                  <stop offset="0.55" stopColor="#2a1f4d" />
+                  <stop offset="1" stopColor="#4b1552" />
+                </linearGradient>
+                <pattern id="gp-hex-pat" x="0" y="0" width="34" height="30" patternUnits="userSpaceOnUse">
+                  <polygon points="17,2 32,10 32,22 17,30 2,22 2,10" fill="none" stroke="rgba(0,255,255,0.55)" strokeWidth="0.7" />
+                </pattern>
+              </defs>
+              <rect width="240" height="160" fill="url(#gp-hex-bg)" />
+              <rect width="240" height="160" fill="url(#gp-hex-pat)" />
+              <polygon points="180,42 190,48 190,60 180,66 170,60 170,48" fill="none" stroke="#ff2ea8" strokeWidth="1.2" />
+              <polygon points="80,110 90,116 90,128 80,134 70,128 70,116" fill="none" stroke="#ff2ea8" strokeWidth="1.2" />
+            </svg>
+          </div>
+          <div className="gallery-info">
+            <span className="gallery-tag">Cyber Hexagons</span>
+            <h3>Elite tech</h3>
+            <p>Malha cyberpunk. Tons de neon sobre roxo profundo. Vibração de blockchain e IA.</p>
+          </div>
+        </article>
+
+        <article className="gallery-card" data-theme="aurora">
+          <div className="gallery-preview">
+            <svg viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="gp-aur-luna" cx="0.2" cy="0.3" r="0.5">
+                  <stop offset="0" stopColor="#a78bfa" stopOpacity="0.9" />
+                  <stop offset="1" stopColor="#a78bfa" stopOpacity="0" />
+                </radialGradient>
+                <radialGradient id="gp-aur-terra" cx="0.75" cy="0.55" r="0.45">
+                  <stop offset="0" stopColor="#34d399" stopOpacity="0.85" />
+                  <stop offset="1" stopColor="#34d399" stopOpacity="0" />
+                </radialGradient>
+                <radialGradient id="gp-aur-sol" cx="0.55" cy="0.85" r="0.45">
+                  <stop offset="0" stopColor="#fbbf24" stopOpacity="0.9" />
+                  <stop offset="1" stopColor="#fbbf24" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+              <rect width="240" height="160" fill="#0a0a0c" />
+              <rect width="240" height="160" fill="url(#gp-aur-luna)" />
+              <rect width="240" height="160" fill="url(#gp-aur-terra)" />
+              <rect width="240" height="160" fill="url(#gp-aur-sol)" />
+            </svg>
+          </div>
+          <div className="gallery-info">
+            <span className="gallery-tag">Tríade Aurora</span>
+            <h3>A marca original</h3>
+            <p>As três faces em coro. Luna violeta, Terra verde, Sol âmbar. A identidade da casa.</p>
+          </div>
+        </article>
+
+        <article className="gallery-card" data-theme="luna">
+          <div className="gallery-preview">
+            <svg viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gp-lun-bg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stopColor="#1a0f36" />
+                  <stop offset="1" stopColor="#050505" />
+                </linearGradient>
+              </defs>
+              <rect width="240" height="160" fill="url(#gp-lun-bg)" />
+              <circle cx="180" cy="42" r="26" fill="none" stroke="#a78bfa" strokeWidth="0.8" opacity="0.55" />
+              <circle cx="180" cy="42" r="18" fill="#a78bfa" opacity="0.28" />
+              {[[45,90],[70,45],[95,110],[120,60],[145,130],[165,80],[200,120],[35,60],[210,55]].map(([cx,cy],i) => (
+                <circle key={i} cx={cx} cy={cy} r={i % 3 === 0 ? 1.6 : 1} fill="#c9b3ff" opacity={0.4 + (i % 5) * 0.12} />
+              ))}
+            </svg>
+          </div>
+          <div className="gallery-info">
+            <span className="gallery-tag">Luna Noturna</span>
+            <h3>Sonhador</h3>
+            <p>Céu profundo, violeta líquido, pontos como constelação. Pra marca sensível, poética.</p>
+          </div>
+        </article>
+
+        <article className="gallery-card" data-theme="terra">
+          <div className="gallery-preview">
+            <svg viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gp-ter-bg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stopColor="#0d2820" />
+                  <stop offset="1" stopColor="#0a1a15" />
+                </linearGradient>
+              </defs>
+              <rect width="240" height="160" fill="url(#gp-ter-bg)" />
+              <path d="M0,110 Q60,90 120,110 T240,105 L240,160 L0,160 Z" fill="#34d399" opacity="0.35" />
+              <path d="M0,130 Q60,115 120,130 T240,125 L240,160 L0,160 Z" fill="#34d399" opacity="0.5" />
+              <circle cx="200" cy="35" r="14" fill="#a7f3d0" opacity="0.6" />
+            </svg>
+          </div>
+          <div className="gallery-info">
+            <span className="gallery-tag">Terra Orgânica</span>
+            <h3>Natural</h3>
+            <p>Ondas verdes, chão firme, luz suave. Pra marca de bem-estar, natureza, comida.</p>
+          </div>
+        </article>
+
+        <article className="gallery-card" data-theme="sol">
+          <div className="gallery-preview">
+            <svg viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="gp-sol-bg" cx="0.7" cy="0.3" r="0.7">
+                  <stop offset="0" stopColor="#fbbf24" />
+                  <stop offset="0.5" stopColor="#b47a00" />
+                  <stop offset="1" stopColor="#3d1f00" />
+                </radialGradient>
+              </defs>
+              <rect width="240" height="160" fill="url(#gp-sol-bg)" />
+              {[0, 22, 45, 67, 90, 112, 135, 157].map((deg) => (
+                <line key={deg} x1="168" y1="48" x2={168 + Math.cos((deg * Math.PI) / 180) * 90} y2={48 + Math.sin((deg * Math.PI) / 180) * 90} stroke="#fff8f0" strokeWidth="0.6" opacity="0.35" />
+              ))}
+              <circle cx="168" cy="48" r="12" fill="#fff8f0" opacity="0.8" />
+            </svg>
+          </div>
+          <div className="gallery-info">
+            <span className="gallery-tag">Sol Bold</span>
+            <h3>Alta voltagem</h3>
+            <p>Radial dourado, linhas explosivas, contraste alto. Pra marca que quer parar polegar.</p>
+          </div>
+        </article>
+
+        <article className="gallery-card" data-theme="zenite">
+          <div className="gallery-preview">
+            <svg viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="240" height="160" fill="#fdfbf7" />
+              <line x1="0" y1="80" x2="240" y2="80" stroke="#111" strokeWidth="0.5" />
+              <line x1="120" y1="0" x2="120" y2="160" stroke="#111" strokeWidth="0.5" />
+              <circle cx="120" cy="80" r="42" fill="none" stroke="#111" strokeWidth="1" />
+              <polygon points="120,45 149,97 91,97" fill="none" stroke="#111" strokeWidth="0.8" />
+              <text x="120" y="88" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="14" fill="#111">56</text>
+            </svg>
+          </div>
+          <div className="gallery-info">
+            <span className="gallery-tag">Zênite Mínimo</span>
+            <h3>Elegante</h3>
+            <p>Branco absoluto, linha preta fina, tipografia serifada. Pra marca de luxo silencioso.</p>
+          </div>
+        </article>
+      </div>
+      <p className="gallery-footnote">Quer um estilo diferente? Peça pro Pitágoras no chat. Ele cria em cima do que você imaginar.</p>
+    </section>
+
     <section className="flow" aria-labelledby="flow-title" data-tone="terra">
       <div className="flow-title">
         <p className="kicker">Do @ ao site</p>

@@ -872,3 +872,70 @@ main[data-current-tone="sol"] ::selection { background: rgba(251,191,36,.35); }
   .wa-toast { right: 12px; bottom: 12px; left: 12px; width: auto; }
   .wa-toast-body { font-size: .78rem; }
 }
+
+
+
+/* ─── SEÇÃO GALERIA DE ESTILOS ─── */
+.gallery {
+  position: relative;
+  z-index: 1;
+  padding: 140px clamp(24px, 8vw, 120px);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.gallery-title { text-align: center; max-width: 780px; margin: 0 auto 72px; }
+.gallery-title .kicker { display: block; margin-bottom: 22px; }
+.gallery-title h2 {
+  font-family: "Inter"; font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 500; letter-spacing: -.035em; line-height: 1.08;
+}
+.gallery-title h2 i { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--fg-secondary); }
+.gallery-lede {
+  margin: 26px auto 0; max-width: 580px; font-size: clamp(.98rem, 1.5vw, 1.08rem);
+  line-height: 1.65; color: var(--fg-secondary); font-weight: 300;
+}
+.gallery-lede i { color: var(--fg); font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+
+.gallery-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.gallery-card {
+  display: flex; flex-direction: column;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+  overflow: hidden; transition: .5s cubic-bezier(.22,1,.36,1); cursor: pointer;
+}
+.gallery-card:hover {
+  background: var(--bg-card-hover); border-color: var(--border-hover);
+  transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+.gallery-preview {
+  position: relative; aspect-ratio: 3/2; overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.gallery-preview svg { width: 100%; height: 100%; display: block; transition: transform .6s cubic-bezier(.22,1,.36,1); }
+.gallery-card:hover .gallery-preview svg { transform: scale(1.05); }
+.gallery-info { padding: 22px 24px 24px; }
+.gallery-tag {
+  display: inline-block; margin-bottom: 12px;
+  font-size: .62rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--fg-tertiary); font-weight: 600;
+}
+.gallery-info h3 {
+  font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+  font-size: 1.5rem; letter-spacing: 0; color: var(--fg); margin-bottom: 10px; line-height: 1.15;
+}
+.gallery-info p {
+  color: var(--fg-secondary); font-size: .88rem; font-weight: 300; line-height: 1.55;
+}
+
+.gallery-footnote {
+  max-width: 720px; margin: 60px auto 0; text-align: center;
+  font-size: .88rem; color: var(--fg-tertiary); font-weight: 300;
+}
+
+@media (max-width: 980px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery { padding: 100px 24px; }
+}
