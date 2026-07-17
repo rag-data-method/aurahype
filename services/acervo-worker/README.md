@@ -9,28 +9,29 @@ Worker Cloudflare que indexa acervo de sites (scraper Lovable + outros) com **bu
 - **D1** — SQLite serverless pros metadados + tags + payload cru.
 - **Hono** — router leve (~30KB) em cima do Workers runtime.
 
-## Primeiro deploy (a Miriam roda uma vez)
+## Deploy automatico via GitHub Actions (recomendado)
+
+Você **não abre terminal**. Cola 2 secrets uma vez no GitHub e o CI faz tudo:
+
+1. Vai em `github.com/rag-data-method/aurahype` → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+2. Adiciona:
+   - `CLOUDFLARE_API_TOKEN` → gera em [dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens) usando o template **"Edit Cloudflare Workers"** (dá permissão pra Workers + AI + Vectorize + D1).
+   - `CLOUDFLARE_ACCOUNT_ID` → aparece no topo direito de qualquer página do dashboard Cloudflare, tipo `1a2b3c...`.
+   - (opcional) `INGEST_TOKEN` → qualquer string longa que você inventar. Se não setar, `/ingest` fica aberto.
+3. Faz qualquer commit que toque `services/acervo-worker/` → o workflow `.github/workflows/deploy-acervo.yml` roda sozinho, cria Vectorize + D1, aplica schema, deploya, e pinga `/health`.
+
+Também dá pra rodar manualmente no botão **Actions** → **Deploy acervo-worker** → **Run workflow**.
+
+## Deploy manual (se preferir controle total)
 
 ```bash
 cd services/acervo-worker
 npm install
-
-# 1) cria o índice Vectorize
-npx wrangler vectorize create triade-acervo --dimensions=1024 --metric=cosine
-
-# 2) cria o D1 e copia o database_id que aparecer
-npx wrangler d1 create triade-acervo
-# -> cola o id no wrangler.toml em [[d1_databases]].database_id
-
-# 3) roda o schema no D1 remoto
-npm run db:init:remote
-
-# 4) opcional: define um token pra proteger /ingest e /classify
-npx wrangler secret put INGEST_TOKEN
-# (cola qualquer string longa — vai virar o Bearer)
-
-# 5) deploy
-npm run deploy
+export CLOUDFLARE_API_TOKEN=...
+export CLOUDFLARE_ACCOUNT_ID=...
+export INGEST_TOKEN=<opcional>
+node scripts/bootstrap.mjs   # cria Vectorize + D1 + schema, idempotente
+npx wrangler deploy
 ```
 
 Depois disso o worker fica em algo tipo `https://triade-acervo.<subdomain>.workers.dev`. Você pode plugar num Custom Domain (`acervo.triade56.com`) pelo dashboard.
