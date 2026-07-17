@@ -173,9 +173,12 @@ function App() {
   }
 
   return <main>
+    {/* Bolota que acompanha o scroll — fica ancorada na viewport, flutua por trás/frente
+        de todas as seções conforme o usuário rola a página. */}
+    <div className="triad-halo triad-halo-floating" aria-hidden="true" />
+
     <section className="intro">
       <div className="orb-container"><div className="orb luna" /><div className="orb terra" /><div className="orb sol" /></div>
-      <div className="triad-halo" aria-hidden="true" />
       <span className="big-56" aria-hidden="true">56</span>
       <nav>
         <a href="#top" className="wordmark" aria-label="Tríade 56 — sites que respiram">

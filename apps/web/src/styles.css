@@ -71,6 +71,50 @@ em, .serif { font-family: "Instrument Serif", serif; font-style: italic; font-we
 .triad-halo::after { content: ""; position: absolute; inset: 14%; border-radius: 50%; background: radial-gradient(circle at 32% 30%, rgba(255,255,255,.18), rgba(5,5,5,.9) 62%); }
 @keyframes haloSpin { to { transform: rotate(360deg); } }
 
+/* Variante "flutuante": bolota fixa na viewport, acompanha o scroll pela página inteira.
+   mix-blend-mode: screen faz ela "brilhar através" dos fundos escuros das seções, então
+   fica sempre visível como aura de fundo — sem atrapalhar leitura de texto. */
+.triad-halo-floating {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(72vw, 480px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  z-index: 100;                       /* acima dos backgrounds das seções */
+  pointer-events: none;
+  mix-blend-mode: screen;             /* soma as cores sobre o fundo escuro em vez de tapar */
+  will-change: transform;
+}
+.triad-halo-floating::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--c-luna), var(--c-terra), var(--c-sol), var(--c-luna));
+  filter: blur(56px);
+  opacity: .28;                       /* sutil — presença sem invasão */
+  animation: haloSpin 26s linear infinite;
+}
+.triad-halo-floating::after {
+  /* Versão flutuante não tem a "cratera" central escura — só o glow puro */
+  display: none;
+}
+/* Menos intensa dentro do hero (onde a bolota original + os orbs + o "56" já competem) */
+.intro ~ .triad-halo-floating,
+.triad-halo-floating.at-hero::before { opacity: .18; }
+
+/* Suave em mobile — tela menor, evita sensação de "nuvem tomando tudo" */
+@media (max-width: 720px) {
+  .triad-halo-floating { width: 88vw; }
+  .triad-halo-floating::before { opacity: .22; filter: blur(44px); }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .triad-halo-floating::before { animation: none; }
+}
+
 /* "56" gigante como marca d'água atrás do hero — protagonismo do número, onda OpenAI */
 .big-56 {
   position: absolute;
