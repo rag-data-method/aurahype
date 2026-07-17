@@ -28,7 +28,8 @@ Duas variáveis mandam em tudo — dá pra setar no Cloudflare Pages (Environmen
 - `VITE_TRIADE_API` — URL do worker MissCanvas que gera o site (default: `https://2minutes.site/api/insta-site`; `misscanvas.com/api/insta-site` = 404)
 - `VITE_WHATSAPP` — número da Miriam com DDI, só dígitos (default placeholder: `5511999999999`)
 
-Detalhes em [`COMO-LANCAR-HOJE.md`](./COMO-LANCAR-HOJE.md).
+- Guia rápido: [`COMO-LANCAR-HOJE.md`](./COMO-LANCAR-HOJE.md)
+- Handoff Cursor → Kiro (planos, API, scrape sem upload): [`docs/HANDOFF-CURSOR-PARA-KIRO.md`](./docs/HANDOFF-CURSOR-PARA-KIRO.md)
 
 ## Estrutura
 

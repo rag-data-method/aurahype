@@ -2,6 +2,20 @@
 
 Miriam, é isso aqui. 4 passos, sem enrolação. Todo o código já está pronto no `main` do repo.
 
+**Contexto completo pra Kiro:** [`docs/HANDOFF-CURSOR-PARA-KIRO.md`](./docs/HANDOFF-CURSOR-PARA-KIRO.md)
+
+### Planos oficiais (UI + WhatsApp)
+
+| Plano | Preço | Modelos / chat |
+|-------|-------|----------------|
+| **Essência** | **R$ 15,60** | Luna · só site |
+| **Dupla** | **R$ 35,60** | 2 modelos · **40 créditos** · Luna edita · Pitágoras no template |
+| **Tríade** | **R$ 96,50** | 3 modelos · **100 créditos** · Terra no chat · Sol fora do hot path |
+
+### Fluxo SEM upload
+
+Não pedir upload de foto/vídeo. Scraping (Context.dev → cascade 2Minutes) → usuário escolhe mídia **principal** / **secundária** → publica.
+
 ---
 
 ## 1. Confirme 2 valores no código (2 minutos)
@@ -72,9 +86,11 @@ O seu `corsHeaders()` já faz isso — só confere que ele está sendo aplicado 
 Abre **triade56.com** no celular. Cola um @, escolhe uma face, clica **INICIAR IMERSÃO**. Se aparecer link do preview, deu tudo certo.
 
 Vende assim:
-- Poste no seu Instagram: **"Digite seu @ em triade56.com. Seu site nasce assinado pelo GPT 5.6. R$ 15,60/mês."**
+- Poste no seu Instagram: **"Digite seu @ em triade56.com. Seu site nasce assinado pelo GPT 5.6. A partir de R$ 15,60/mês."**
+- Planos: Essência R$15,60 · Dupla R$35,60 · Tríade R$96,50.
 - Cada clique em "Assinar" nos planos abre WhatsApp com mensagem pronta.
 - Você recebe Pix, libera o site na mão pelo painel do MissCanvas.
+- API de geração: só `https://2minutes.site/api/insta-site` (misscanvas.com = 404).
 
 Se algo der errado (404, CORS, botão não faz nada), me manda:
 
